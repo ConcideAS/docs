@@ -1,11 +1,21 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "almond",
+  "name": "Saga",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#BA9939",
+    "light": "#E0C666",
+    "dark": "#987508"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Raleway",
+      "weight": 700
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -14,35 +24,27 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Overview",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "guides/getting-started"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Features",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "guides/matters",
+              "guides/chat",
+              "guides/legal-research",
+              "guides/grid-review",
+              "guides/translate",
+              "guides/workflows"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Administration",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "guides/admin-panel"
             ]
           }
         ]
@@ -72,12 +74,12 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://docs.saga.com",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://saga.com/blog",
           "icon": "newspaper"
         }
       ]
@@ -91,14 +93,9 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@saga.com"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ] 
   },
   "contextual": {
     "options": [
@@ -114,9 +111,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/saga",
+      "github": "https://github.com/saga",
+      "linkedin": "https://linkedin.com/company/saga"
     }
   }
 }
