@@ -1,18 +1,59 @@
 ---
 title: Chat
-description: Use AI chat to ask questions, analyze documents, and get legal research assistance.
+description: Ask questions, analyze documents, and draft content using Saga's AI chat.
 ---
 
-Chat is Saga's conversational AI interface. Ask questions in natural language, attach documents for context, and choose from built-in or custom assistants.
+Chat is Saga's conversational AI interface. Type a question in natural language, and the AI responds based on the context you provide — whether that's documents in a project, files you attach directly, or organizational knowledge bases.
+
+<Tip>
+Upload a contract to a project, then ask chat to summarize the key obligations. Click any citation to verify the source passage in the original document.
+</Tip>
 
 ## Start a conversation
 
-1. Click **Chat** in the sidebar.
+1. Click **Chat** in the sidebar to open a global chat, or open the **Chat** tab inside a project to start a conversation scoped to that project's documents.
 2. Type your question in the message input.
-3. Press **Enter** or click send.
+3. Press **Enter** to send.
 
-You can also start a chat from within a [project](/guides/matters) to automatically scope the conversation to that project's knowledge base.
+## Global chat vs. project chat
+
+- **Global chat** — A standalone conversation. You can attach files directly or select organizational sources as context.
+- **Project chat** — Scoped to a specific project's knowledge base. The AI automatically uses the project's documents as context.
 
 ## Citations
 
-The AI includes citations that reference specific passages in your documents. Click a citation to view the source in the **Instruments sheet** side panel.
+When the AI references your documents, it includes numbered citations in its response. Each citation links to a specific passage in the source document. Click a citation to open the document in the [side panel](/guides/projects/document-viewer) with the relevant passage highlighted.
+
+## Message actions
+
+Hover over any message to access these actions:
+
+| Action | Description |
+|--------|-------------|
+| **Copy** | Copy the message content to your clipboard |
+| **Regenerate** | Generate a new response to the same question |
+| **Export to Word** | Download the message as a .docx file |
+| **Edit** | Modify your original message and get a new response |
+| **Like / Dislike** | Provide feedback on the response quality |
+| **Delete** | Remove the message from the conversation |
+
+## Message branching
+
+When you edit a message or regenerate a response, Saga creates a new version rather than overwriting the original. Use the version navigation arrows to switch between different response versions.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Assistants" href="/guides/chat/assistants">
+    Choose AI models and custom assistants.
+  </Card>
+  <Card title="Prompt library" href="/guides/chat/prompt-library">
+    Save and reuse prompts across conversations.
+  </Card>
+  <Card title="Slash commands" href="/guides/chat/slash-commands">
+    Use built-in commands for common tasks.
+  </Card>
+  <Card title="Context and sources" href="/guides/chat/context-and-sources">
+    Control what information the AI has access to.
+  </Card>
+</CardGroup>

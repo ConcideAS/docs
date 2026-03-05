@@ -1,0 +1,28 @@
+---
+title: Question types
+description: Choose the right answer format for each column in your grid review.
+---
+
+Each column in a grid review has a question type that determines how the AI formats its answer. Choosing the right type helps you get consistent, structured results across all documents.
+
+## Available question types
+
+| Type | What it returns | Best for |
+|------|----------------|----------|
+| **Extract** | Verbatim text from the document | Pulling out specific clauses, definitions, or passages |
+| **Short review** | A brief AI-generated summary or analysis | Quick assessments, yes/no with explanation |
+| **Long review** | A detailed AI-generated analysis | In-depth reviews, multi-part answers |
+| **Number** | A numeric value | Financial figures, quantities, limits |
+| **Currency** | A monetary amount | Contract values, fees, penalties |
+| **True / False** | True or False | Binary checks — "Does the contract contain a non-compete clause?" |
+| **Date** | A date value | Effective dates, deadlines, expiration dates |
+
+When the AI cannot find the requested information, it returns a message specific to the type — for example, "Requested date not found" or "Cannot determine true or false."
+
+## Per-question instructions
+
+Each question can optionally use the grid-level custom instruction. Toggle this on or off per column when the grid has a custom instruction set.
+
+## Improve prompt
+
+When defining a question, click **Improve prompt** to let the AI refine your question text for more precise results. This is especially useful for complex extraction or review questions.

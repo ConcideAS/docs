@@ -3,17 +3,32 @@ title: Databases
 description: Legal databases available in Saga for case law, legislation, and commentary.
 ---
 
-Saga connects to multiple legal databases:
+Saga integrates with multiple legal databases. The databases available to you depend on your organization's configuration and jurisdiction.
 
-| Database | Coverage |
-|----------|---------|
-| **Lovdata** | Norwegian legislation and case law |
-| **Rettsdata** | Norwegian legal commentary and analysis |
-| **SDU GenIA-L** | Danish legal resources |
-| **NL (Rechtspraak)** | Dutch court decisions |
-| **Moonlit** | EU legislation and case law |
-| **Kennisbank** | Legal knowledge base |
+## Available databases
+
+| Database | Content | Jurisdiction |
+|----------|---------|-------------|
+| **Rettsdata** | Case law, legislation, and legal commentary | Norway |
+| **Lovdata** | Legislation, regulations, and court decisions | Norway |
+| **SDU GenIA-L** | Legal research and analysis | Denmark |
+| **Rechtspraak.nl** | Court decisions | Netherlands |
+| **Wetten** | Legislation and regulations | Netherlands |
+| **Moonlit** | Case law across multiple jurisdictions | Multi-jurisdiction |
+| **EurLex** | EU legislation, case law, and treaties | European Union |
+| **Kennisbank** | Tax law knowledge base | Netherlands |
 
 <Note>
-Available databases depend on your organization's subscriptions and configuration.
+Not all databases are available in every Saga instance. Your organization's administrators configure which databases are enabled. If you need access to a database that isn't available, contact your administrator.
 </Note>
+
+## Database-specific features
+
+Some databases offer additional capabilities:
+
+- **Moonlit** provides filtering by fields of law, document types, jurisdictions, and portals
+- **Lovdata** includes document type filters (e.g., law gazette, regulations)
+- **Kennisbank** supports filtering by tax type
+- **Rettsdata** and **Rechtspraak.nl** offer institution and jurisdiction filters
+
+See [Search modes and filters](/guides/legal-research/search-and-filters) for details on how to use these options.

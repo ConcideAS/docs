@@ -1,14 +1,35 @@
 ---
 title: Assistants
-description: Choose from built-in assistants or create custom ones for your organization.
+description: Choose between AI models and custom assistants tailored to specific legal tasks.
 ---
 
-Saga provides built-in assistants and supports custom ones created by your organization.
+Saga lets you choose which AI assistant handles your conversation. Switch between different AI models or use custom assistants that your organization has configured for specific tasks.
 
-## Switch assistants
+## Basic assistants
 
-Click the assistant selector at the top of the chat to choose a different assistant. Each assistant may have different capabilities and instructions.
+Basic assistants correspond to different AI models (such as GPT, Claude, Mistral, or DeepSeek). Each model has different strengths — some are faster, others are better at complex reasoning.
+
+To select a basic assistant, click the **assistant selector** at the bottom of the chat input and choose from the available models.
 
 ## Custom assistants
 
-Admins can create custom assistants with specific instructions, tone, and focus areas. See [Admin panel](/guides/admin-panel) for setup details.
+Custom assistants are pre-configured by your organization's administrators with specific instructions, behavior, and capabilities. For example, your firm might have a custom assistant tailored for contract analysis or regulatory compliance.
+
+Custom assistants appear in a separate tab in the assistant selector.
+
+<Note>
+Custom assistants are created and managed by admins in the [admin panel](/guides/admin/libraries). If you need a custom assistant for your team, contact your administrator.
+</Note>
+
+## Default assistant
+
+Saga uses a default assistant when you start a new conversation. This default can be set at two levels:
+
+- **Workspace default** — Set by an admin, applies to all users in the organization
+- **User default** — Set in your personal [settings](/guides/account/settings), overrides the workspace default
+
+## Thinking mode
+
+Some models support a thinking or reasoning mode, where the AI shows its step-by-step reasoning process in an expandable section before the final answer. This is useful for complex legal questions where you want to see how the AI arrived at its conclusion.
+
+You can skip thinking mode for faster responses when you don't need the detailed reasoning.

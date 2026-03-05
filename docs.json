@@ -8,7 +8,7 @@
     "dark": "#F3DB80"
   },
   "appearance": {
-    "default": "system"
+    "default": "dark"
   },
   "background": {
     "color": {
@@ -34,22 +34,22 @@
         "default": true,
         "groups": [
           {
-            "group": "Get started",
+            "group": "Welcome",
             "pages": [
               "index",
-              "guides/quickstart",
-              "guides/getting-started"
+              "guides/quickstart"
             ]
           },
           {
-            "group": "Features",
+            "group": "Core",
             "pages": [
               {
                 "group": "Projects",
                 "pages": [
-                  "guides/matters",
-                  "guides/matters/knowledge-base",
-                  "guides/matters/manage"
+                  "guides/projects",
+                  "guides/projects/knowledge-base",
+                  "guides/projects/sharing",
+                  "guides/projects/document-viewer"
                 ]
               },
               {
@@ -57,7 +57,11 @@
                 "pages": [
                   "guides/chat",
                   "guides/chat/assistants",
-                  "guides/chat/context-and-features"
+                  "guides/chat/prompt-library",
+                  "guides/chat/slash-commands",
+                  "guides/chat/context-and-sources",
+                  "guides/chat/zero-data-retention",
+                  "guides/chat/export"
                 ]
               },
               {
@@ -65,15 +69,16 @@
                 "pages": [
                   "guides/legal-research",
                   "guides/legal-research/databases",
-                  "guides/legal-research/search-modes"
+                  "guides/legal-research/search-and-filters"
                 ]
               },
               {
                 "group": "Grid review",
                 "pages": [
                   "guides/grid-review",
-                  "guides/grid-review/templates",
-                  "guides/grid-review/working-with-grids"
+                  "guides/grid-review/question-types",
+                  "guides/grid-review/working-with-grids",
+                  "guides/grid-review/templates"
                 ]
               },
               {
@@ -88,7 +93,8 @@
                 "group": "Workflows",
                 "pages": [
                   "guides/workflows",
-                  "guides/workflows/create-and-run",
+                  "guides/workflows/builder",
+                  "guides/workflows/running",
                   "guides/workflows/library"
                 ]
               }
@@ -97,7 +103,24 @@
           {
             "group": "Administration",
             "pages": [
-              "guides/admin-panel"
+              "guides/admin",
+              "guides/admin/workspace-settings",
+              "guides/admin/theme",
+              "guides/admin/users",
+              "guides/admin/integrations",
+              "guides/admin/organizational-sources",
+              "guides/admin/libraries",
+              "guides/admin/usage"
+            ]
+          },
+          {
+            "group": "Account and setup",
+            "pages": [
+              "guides/account/getting-started",
+              "guides/account/settings",
+              "guides/account/security",
+              "guides/account/word-plugin",
+              "guides/account/troubleshooting"
             ]
           },
           {

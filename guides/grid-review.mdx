@@ -1,9 +1,13 @@
 ---
 title: Grid review
-description: Review documents systematically with AI-powered question grids.
+description: Review multiple documents against a set of questions in a structured grid powered by AI.
 ---
 
-Grid review lets you analyze multiple documents against a set of questions. Each document becomes a row, each question a column, and the AI fills in answers — giving you a structured overview of your documents.
+Grid review lets you analyze multiple documents systematically. Each document becomes a row, each question becomes a column, and the AI fills in the answers — giving you a structured table you can review, edit, and export.
+
+<Tip>
+Set up a grid review to extract key dates, termination clauses, and change-of-control provisions from a set of contracts — all in one structured view.
+</Tip>
 
 ## Create a grid review
 
@@ -11,16 +15,39 @@ Grid review lets you analyze multiple documents against a set of questions. Each
   <Step title="Open a project">
     Go to **Projects** and open the project containing your documents.
   </Step>
-  <Step title="Start a grid review">
-    Click the **Grid review** tab, then click **New grid review**.
+  <Step title="Start a new grid">
+    Click the **Grid review** tab, then click **New grid review**. Choose to create a blank grid or start from a [template](/guides/grid-review/templates).
+  </Step>
+  <Step title="Name your grid">
+    Give the grid a descriptive name. Optionally add a custom instruction that applies to all questions in the grid.
   </Step>
   <Step title="Add questions">
-    Define the questions you want answered for each document. Each question becomes a column in the grid.
+    Define the questions you want answered for each document. Each question becomes a column. Choose a [question type](/guides/grid-review/question-types) for each column.
   </Step>
   <Step title="Add documents">
-    Select which documents from the project's knowledge base to include. Each document becomes a row.
+    Select documents from the project's knowledge base to include. Each document becomes a row.
   </Step>
   <Step title="Run the review">
-    Click **Run** and the AI analyzes each document against your questions, filling in the grid.
+    Click **Run** and the AI analyzes each document against your questions, filling in the grid cell by cell.
   </Step>
 </Steps>
+
+## Custom instructions
+
+When creating or editing a grid, you can add a custom instruction that provides additional context to the AI. For example: "Focus on financial terms and obligations" or "Answer in the context of Norwegian law."
+
+Each question can individually opt in or out of using the grid-level instruction.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Question types" href="/guides/grid-review/question-types">
+    Choose the right answer format for each question.
+  </Card>
+  <Card title="Working with grids" href="/guides/grid-review/working-with-grids">
+    Edit cells, reorder content, and export results.
+  </Card>
+  <Card title="Templates" href="/guides/grid-review/templates">
+    Save and reuse question sets across projects.
+  </Card>
+</CardGroup>

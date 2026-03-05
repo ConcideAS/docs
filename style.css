@@ -13,3 +13,17 @@
   letter-spacing: 0.05em;
   font-weight: 700 !important;
 }
+
+:root[class~="light"] .prev-next-nav a,
+:root[class~="light"] [class*="pagination"] a {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E5DE;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+:root[class~="light"] .prev-next-nav a:hover,
+:root[class~="light"] [class*="pagination"] a:hover {
+  background-color: #FDFCFA;
+  border-color: #D9D4C9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}

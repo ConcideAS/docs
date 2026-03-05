@@ -1,23 +1,42 @@
 ---
 title: Working with grids
-description: Edit columns and rows, view citations, and export grid review results.
+description: Edit cells, reorder content, and export grid review results.
 ---
 
-## Edit columns
+Once a grid review has been generated, you can refine the results, reorganize the layout, and export the data.
 
-- **Add** a column by clicking the **+** button.
-- **Edit** a column's question by clicking the column header.
-- **Delete** a column by right-clicking the header and selecting **Delete**.
+## Edit cells
 
-## Edit rows
+Click on a cell to select it, then click again to open the inline editor. The editor supports rich text formatting including bold, italic, lists, and tables.
 
-- **Add** documents as rows from the project's knowledge base.
-- **Remove** a row by right-clicking and selecting **Delete**.
+For longer edits, click **Expand** to open the cell in a full modal editor. Changes save automatically when you close the editor. Press **Ctrl+Enter** (or **Cmd+Enter** on Mac) to save and close.
 
-## Citations
+## Citations in cells
 
-Each AI-generated answer includes citations. Click a citation to view the referenced passage in the **Instruments sheet** side panel.
+Grid review answers can include citation badges that reference specific passages in the source document. Click a citation badge to open the document in the [side panel](/guides/projects/document-viewer) with the referenced passage highlighted.
 
-## Export
+## Reorder rows and columns
 
-Click **Export** to download the grid as an Excel file. The export includes all questions, documents, and AI-generated answers.
+Drag and drop rows (documents) and columns (questions) to rearrange the grid layout. The new order is preserved and reflected in exports.
+
+## Column controls
+
+- **Resize** columns by dragging the column border
+- **Sort** a column to reorder rows by that column's values
+- **Text wrap** — Toggle between truncated and full-text display using the wrap button in the toolbar
+
+## Automatic generation
+
+The AI automatically generates answers when you:
+
+- Add a new column to an existing grid
+- Add new documents to an existing grid
+- Edit a question — existing answers for that column are cleared and regenerated
+
+## Export to Excel
+
+Click the export button to download the grid as an Excel file. The export includes:
+
+- The grid name as a title row
+- All columns and rows in their current order
+- Styled formatting with headers and borders
