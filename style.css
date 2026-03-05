@@ -48,32 +48,3 @@
   letter-spacing: 0.05em;
 }
 
-#pagination a,
-#pagination [class*="pagination"] {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-#pagination a:hover,
-#pagination [class*="pagination"]:hover {
-  background: transparent !important;
-}
-
-#pagination [class*="pagination-next"],
-#pagination [class*="pagination-prev"] {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-#pagination p:not([class*="title"]),
-#pagination span:not([class*="title"]) {
-  display: none !important;
-}
-
-#pagination [class*="description"],
-#pagination [class*="label"] {
-  display: none !important;
-}
