@@ -26,155 +26,204 @@
       {
         "language": "en",
         "default": true,
-        "groups": [
+        "tabs": [
           {
-            "group": "Get started",
-            "pages": [
-              "index",
-              "guides/quickstart",
-              "guides/getting-started"
-            ]
-          },
-          {
-            "group": "Features",
-            "pages": [
+            "tab": "Documentation",
+            "groups": [
               {
-                "group": "Projects",
+                "group": "Get started",
                 "pages": [
-                  "guides/matters",
-                  "guides/matters/knowledge-base",
-                  "guides/matters/manage"
+                  "index",
+                  "guides/quickstart",
+                  "guides/getting-started"
                 ]
               },
               {
-                "group": "Chat",
+                "group": "Features",
                 "pages": [
-                  "guides/chat",
-                  "guides/chat/assistants",
-                  "guides/chat/context-and-features"
+                  {
+                    "group": "Projects",
+                    "pages": [
+                      "guides/matters",
+                      "guides/matters/knowledge-base",
+                      "guides/matters/manage"
+                    ]
+                  },
+                  {
+                    "group": "Chat",
+                    "pages": [
+                      "guides/chat",
+                      "guides/chat/assistants",
+                      "guides/chat/context-and-features"
+                    ]
+                  },
+                  {
+                    "group": "Legal research",
+                    "pages": [
+                      "guides/legal-research",
+                      "guides/legal-research/databases",
+                      "guides/legal-research/search-modes"
+                    ]
+                  },
+                  {
+                    "group": "Grid review",
+                    "pages": [
+                      "guides/grid-review",
+                      "guides/grid-review/templates",
+                      "guides/grid-review/working-with-grids"
+                    ]
+                  },
+                  {
+                    "group": "Translate",
+                    "pages": [
+                      "guides/translate",
+                      "guides/translate/text",
+                      "guides/translate/documents"
+                    ]
+                  },
+                  {
+                    "group": "Workflows",
+                    "pages": [
+                      "guides/workflows",
+                      "guides/workflows/create-and-run",
+                      "guides/workflows/library"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Legal research",
+                "group": "Administration",
                 "pages": [
-                  "guides/legal-research",
-                  "guides/legal-research/databases",
-                  "guides/legal-research/search-modes"
+                  "guides/admin-panel"
                 ]
               },
               {
-                "group": "Grid review",
+                "group": "API documentation",
                 "pages": [
-                  "guides/grid-review",
-                  "guides/grid-review/templates",
-                  "guides/grid-review/working-with-grids"
+                  "api-reference/introduction"
                 ]
               },
               {
-                "group": "Translate",
+                "group": "Endpoint examples",
                 "pages": [
-                  "guides/translate",
-                  "guides/translate/text",
-                  "guides/translate/documents"
-                ]
-              },
-              {
-                "group": "Workflows",
-                "pages": [
-                  "guides/workflows",
-                  "guides/workflows/create-and-run",
-                  "guides/workflows/library"
+                  "api-reference/endpoint/get",
+                  "api-reference/endpoint/create",
+                  "api-reference/endpoint/delete",
+                  "api-reference/endpoint/webhook"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Administration",
-            "pages": [
-              "guides/admin-panel"
-            ]
-          },
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
       },
       {
         "language": "no",
-        "groups": [
-          { "group": "Kom i gang", "pages": ["no/index"] }
+        "tabs": [
+          {
+            "tab": "Dokumentasjon",
+            "groups": [
+              { "group": "Kom i gang", "pages": ["no/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "nl",
-        "groups": [
-          { "group": "Aan de slag", "pages": ["nl/index"] }
-        ]
-      },
-      {
-        "language": "da",
-        "groups": [
-          { "group": "Kom godt i gang", "pages": ["da/index"] }
+        "tabs": [
+          {
+            "tab": "Documentatie",
+            "groups": [
+              { "group": "Aan de slag", "pages": ["nl/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "pl",
-        "groups": [
-          { "group": "Rozpocznij", "pages": ["pl/index"] }
+        "tabs": [
+          {
+            "tab": "Dokumentacja",
+            "groups": [
+              { "group": "Rozpocznij", "pages": ["pl/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "es",
-        "groups": [
-          { "group": "Primeros pasos", "pages": ["es/index"] }
+        "tabs": [
+          {
+            "tab": "Documentación",
+            "groups": [
+              { "group": "Primeros pasos", "pages": ["es/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "de",
-        "groups": [
-          { "group": "Erste Schritte", "pages": ["de/index"] }
+        "tabs": [
+          {
+            "tab": "Dokumentation",
+            "groups": [
+              { "group": "Erste Schritte", "pages": ["de/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "it",
-        "groups": [
-          { "group": "Per iniziare", "pages": ["it/index"] }
+        "tabs": [
+          {
+            "tab": "Documentazione",
+            "groups": [
+              { "group": "Per iniziare", "pages": ["it/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "pt",
-        "groups": [
-          { "group": "Primeiros passos", "pages": ["pt/index"] }
+        "tabs": [
+          {
+            "tab": "Documentação",
+            "groups": [
+              { "group": "Primeiros passos", "pages": ["pt/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "tr",
-        "groups": [
-          { "group": "Başlarken", "pages": ["tr/index"] }
+        "tabs": [
+          {
+            "tab": "Belgeler",
+            "groups": [
+              { "group": "Başlarken", "pages": ["tr/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "fr",
-        "groups": [
-          { "group": "Pour commencer", "pages": ["fr/index"] }
+        "tabs": [
+          {
+            "tab": "Documentation",
+            "groups": [
+              { "group": "Pour commencer", "pages": ["fr/index"] }
+            ]
+          }
         ]
       },
       {
         "language": "sv",
-        "groups": [
-          { "group": "Kom igång", "pages": ["sv/index"] }
+        "tabs": [
+          {
+            "tab": "Dokumentation",
+            "groups": [
+              { "group": "Kom igång", "pages": ["sv/index"] }
+            ]
+          }
         ]
       }
     ]
