@@ -1,50 +1,12 @@
 #sidebar,
 #sidebar-content,
-#navbar,
-#table-of-contents,
-#pagination,
-#banner,
-#search-bar-entry,
-#search-bar-entry-mobile,
-#feedback-form,
-.sidebar-group,
-.sidebar-title,
-.nav-tabs,
-.nav-tabs-item,
-.nav-anchor,
-.nav-anchors,
-.nav-logo,
-.navbar-link,
-.pagination-title,
-.callout,
-.card,
-.card-group,
-.badge,
-.tooltip,
-.toc,
-.toc-item,
-.eyebrow,
-.method-pill,
-.nav-tag-pill,
-.nav-tag-pill-text,
-.field,
-.expandable,
-.step,
-.steps,
-.tab,
-.tabs {
-  font-family: 'Raleway', sans-serif;
-}
-
-#sidebar,
-#sidebar-content,
 .sidebar-group,
 .sidebar-title {
-  font-weight: 500 !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-
