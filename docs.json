@@ -4,11 +4,17 @@
   "name": "Saga",
   "colors": {
     "primary": "#BA9939",
-    "light": "#E0C666",
-    "dark": "#987508"
+    "light": "#BA9939",
+    "dark": "#F3DB80"
   },
   "appearance": {
     "default": "system"
+  },
+  "background": {
+    "color": {
+      "light": "#F9F8F5",
+      "dark": "#191918"
+    }
   },
   "fonts": {
     "heading": {
