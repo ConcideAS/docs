@@ -1,11 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "Saga",
   "colors": {
     "primary": "#BA9939",
     "light": "#E0C666",
     "dark": "#987508"
+  },
+  "appearance": {
+    "default": "system"
   },
   "fonts": {
     "heading": {
@@ -19,71 +22,90 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Get started",
+        "pages": [
+          "index",
+          "guides/quickstart",
+          "guides/getting-started"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
           {
-            "group": "Overview",
-            "pages": [
-              "index",
-              "guides/getting-started"
-            ]
-          },
-          {
-            "group": "Features",
+            "group": "Projects",
             "pages": [
               "guides/matters",
-              "guides/chat",
-              "guides/legal-research",
-              "guides/grid-review",
-              "guides/translate",
-              "guides/workflows"
+              "guides/matters/knowledge-base",
+              "guides/matters/manage"
             ]
           },
           {
-            "group": "Administration",
+            "group": "Chat",
             "pages": [
-              "guides/admin-panel"
+              "guides/chat",
+              "guides/chat/assistants",
+              "guides/chat/context-and-features"
+            ]
+          },
+          {
+            "group": "Legal research",
+            "pages": [
+              "guides/legal-research",
+              "guides/legal-research/databases",
+              "guides/legal-research/search-modes"
+            ]
+          },
+          {
+            "group": "Grid review",
+            "pages": [
+              "guides/grid-review",
+              "guides/grid-review/templates",
+              "guides/grid-review/working-with-grids"
+            ]
+          },
+          {
+            "group": "Translate",
+            "pages": [
+              "guides/translate",
+              "guides/translate/text",
+              "guides/translate/documents"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "guides/workflows",
+              "guides/workflows/create-and-run",
+              "guides/workflows/library"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "Administration",
+        "pages": [
+          "guides/admin-panel"
+        ]
+      },
+      {
+        "group": "API documentation",
+        "pages": [
+          "api-reference/introduction"
+        ]
+      },
+      {
+        "group": "Endpoint examples",
+        "pages": [
+          "api-reference/endpoint/get",
+          "api-reference/endpoint/create",
+          "api-reference/endpoint/delete",
+          "api-reference/endpoint/webhook"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://docs.saga.com",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://saga.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
