@@ -2,41 +2,42 @@
 title: Context and sources
 ---
 
-The quality of AI responses depends on the context it has access to. Saga gives you several ways to provide relevant information to the AI during a conversation.
+The AI's answers are only as good as the context it has. Saga gives you several ways to control what information the AI can access — from a project's full document library to a single file you attach in the moment — and you can combine them in one conversation.
 
-## Attach files to a message
+## Knowledge base vs. attached files
 
-Drag and drop files onto the chat input or click the attachment button to add files directly to a message. These files are used as context for that specific conversation.
+There are two ways to give the AI access to documents, and they work differently.
 
-If your organization has SharePoint or Epona365 integrations configured, you can also import files from those services using their document pickers.
+**Knowledge base** documents are uploaded to a project and processed in advance. Saga reads and indexes every page so the AI can search across your entire collection and pull out the most relevant passages — even from hundreds of documents. This is the right choice when you're working on a matter over time and want the AI to have deep, persistent access to a body of material.
 
-## Project knowledge base
+**Attached files** are added directly to a single conversation. You can upload a file from your computer or pull one in from any knowledge base available to you. The AI reads the full contents of the attachment as part of that message. This is better for quick, one-off questions — when you want to hand the AI a specific document and ask something about it without setting up a project.
 
-When you use chat inside a [project](/guides/projects), the AI automatically has access to all active documents in the project's knowledge base. You don't need to attach files individually — the AI searches across the full knowledge base to find relevant passages.
+In practice: if you'll ask multiple questions about a set of documents over days or weeks, upload them to a project's knowledge base. If you just need a fast answer about one file, attach it in chat.
 
 ## Organizational sources
 
-Organizational sources are knowledge bases set up by your admin that are available across all projects and chats. To include organizational sources in your conversation:
+Organizational sources are firm-wide knowledge bases managed by your admin — things like standard clause libraries, internal guidelines, or regulatory handbooks. When they're available, a toggle appears in the chat toolbar. Enable the ones you want and the AI draws on them alongside your other context.
 
-1. Click the organizational sources option in the chat input area.
-2. Select which sources to include.
+If you don't see the organizational sources toggle, your organization hasn't set any up yet. Ask your admin to create one from the [admin panel](/guides/admin).
 
-The AI then uses those sources alongside any other context you've provided.
+## Web search and URLs
 
-## Web search
+You can also bring in information from outside your organization. Enable **web search** from the toolbar and the AI searches the internet as part of its response. Only the message you send with web search enabled is exposed to external search engines — the rest of your conversation, your project documents, and any other files in the chat are not shared. Turn web search off for the next message and that message stays entirely within Saga.
 
-Toggle web search to let the AI search the internet for additional context beyond your documents. A banner appears in the chat when web search is active.
+For a specific webpage, paste the URL directly into the chat. Saga extracts the page content automatically, and the AI can reference it with citations linking back to the source.
 
-<Note>
-Web search queries are sent to external search engines. Use this feature only when you're comfortable with the query content being transmitted externally.
-</Note>
+## Legal research
 
-## URL extraction
+Enable legal research databases from the toolbar before sending your message. The AI searches the selected databases as part of generating its response and includes the results with citations. A timeline shows the search progress, queries used, and results found for each database.
 
-Paste a URL into the chat, and Saga automatically extracts and processes the page content. The AI can then reference that content in its response.
+See [Legal research](/guides/legal-research) for more on available databases and search options.
 
-## System prompt
+## Drafting
 
-Set a custom system prompt to give the AI specific instructions for the conversation — for example, "Always respond in bullet points" or "Focus only on Norwegian contract law." Access the system prompt from the badge in the chat input area.
+When drafting is enabled, the AI can produce standalone documents as part of its response — a memo, a summary, a contract clause, or any other written output. These appear as downloadable files you can open in the side panel or export as Word documents.
 
-The system prompt applies to the current conversation only. To set a default system prompt for all your conversations, update it in your [settings](/guides/account/settings).
+Toggle drafting on or off from the toolbar. When it's off, the AI responds only in the chat. When it's on, the AI decides whether the request calls for a document and generates one when appropriate.
+
+## Additional AI instructions
+
+If there's something you always want the AI to keep in mind — a preferred language, a jurisdiction focus, a formatting convention — you can set it once and forget about it. Go to **Settings > Personalization** and add your instructions under **AI instructions**. They apply to every conversation you start, so you don't need to repeat yourself.

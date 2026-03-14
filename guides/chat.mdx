@@ -2,57 +2,77 @@
 title: Overview
 ---
 
-Chat is Saga's conversational AI interface. Type a question in natural language, and the AI responds based on the context you provide — whether that's documents in a project, files you attach directly, or organizational knowledge bases.
+Chat is where you work with AI in Saga. Ask questions about your documents, draft content, analyze materials, or run research — all through a natural language conversation. The AI draws on whatever context you give it and cites its sources so you can verify every answer.
 
-<Tip>
-Upload a contract to a project, then ask chat to summarize the key obligations. Click any citation to verify the source passage in the original document.
-</Tip>
+## Starting a conversation
 
-## Start a conversation
+Click **Chat** in the sidebar to open a new conversation. Type your question and press **Enter** to send.
 
-1. Click **Chat** in the sidebar to open a global chat, or open the **Chat** tab inside a project to start a conversation scoped to that project's documents.
-2. Type your question in the message input.
-3. Press **Enter** to send.
+You can also start a chat from inside a project. When you do, the AI automatically has access to that project's knowledge base — every active document becomes context for the conversation without you needing to attach anything.
 
-## Global chat vs. project chat
+## How context works
 
-- **Global chat** — A standalone conversation. You can attach files directly or select organizational sources as context.
-- **Project chat** — Scoped to a specific project's knowledge base. The AI automatically uses the project's documents as context.
+The AI's answers depend on what information it has access to. In a **project chat**, that context comes from the project's knowledge base. In a **global chat** (outside any project), you provide context by attaching files, selecting organizational sources, or enabling web search. You can also combine multiple sources in a single conversation.
+
+For a full breakdown of how to control what the AI sees, see [Context and sources](/guides/chat/context-and-sources).
 
 ## Citations
 
-When the AI references your documents, it includes numbered citations in its response. Each citation links to a specific passage in the source document. Click a citation to open the document in the [side panel](/guides/projects/document-viewer) with the relevant passage highlighted.
+When the AI references a document, it includes inline citations — small numbered chips linked to the specific passage it drew from. Hover over a citation to see the original excerpt. Click it to open the source document in the side panel, scrolled to the relevant section.
+
+Citations work for project documents, legal research results, and web sources. They're how you verify what the AI is telling you without hunting through files yourself.
 
 ## Message actions
 
-Hover over any message to access these actions:
+Hover over any message to see its available actions:
 
-| Action | Description |
-|--------|-------------|
-| **Copy** | Copy the message content to your clipboard |
-| **Regenerate** | Generate a new response to the same question |
-| **Export to Word** | Download the message as a .docx file |
-| **Edit** | Modify your original message and get a new response |
-| **Like / Dislike** | Provide feedback on the response quality |
-| **Delete** | Remove the message from the conversation |
+- **Copy** the message content to your clipboard
+- **Regenerate** a new response to the same question
+- **Export to Word** to download the message as a .docx file
+- **Edit** your original message to get a revised response
+- **Like / Dislike** to give feedback on the response quality
+- **Save to Prompt Library** to reuse a prompt you've written
+- **Delete** the message from the conversation
 
-## Message branching
+## Message versions
 
-When you edit a message or regenerate a response, Saga creates a new version rather than overwriting the original. Use the version navigation arrows to switch between different response versions.
+When you edit a message or regenerate a response, Saga creates a new version instead of overwriting the original. Navigation arrows appear so you can move between versions.
 
-## Next steps
+This is useful when you want to explore different angles on the same question — for example, asking the AI to analyze a clause under two different jurisdictions, or rephrasing a question to see whether a broader or narrower framing surfaces better results. Each version is preserved, so you can always go back.
 
-<CardGroup cols={2}>
-  <Card title="Assistants" href="/guides/chat/assistants">
-    Choose AI models and custom assistants.
-  </Card>
-  <Card title="Prompt library" href="/guides/chat/prompt-library">
-    Save and reuse prompts across conversations.
-  </Card>
-  <Card title="Slash commands" href="/guides/chat/slash-commands">
-    Use built-in commands for common tasks.
-  </Card>
-  <Card title="Context and sources" href="/guides/chat/context-and-sources">
-    Control what information the AI has access to.
-  </Card>
-</CardGroup>
+## Tasks
+
+Tasks are built-in commands for common operations. Access them from the **Tasks** button in the chat toolbar or type `/` in the input:
+
+| Task | What it does |
+|------|-------------|
+| `/summarize` | Generate a concise summary of the provided text or documents |
+| `/anonymize` | Redact personal identifiers and sensitive information |
+| `/proofread` | Check text for grammar, spelling, and style improvements |
+| `/compare` | Compare two texts or document sections and highlight differences |
+
+Select a task from the dropdown, then provide the text or documents to process.
+
+## Improve prompt
+
+Before sending a message, click the pen icon next to the send button to let the AI refine your prompt. This can help you get more targeted results, especially for complex questions. If you prefer your original text, click the revert arrow to undo the improvement.
+
+## Thinking mode
+
+Some models show their step-by-step reasoning in an expandable section before the final answer. This is useful for complex legal questions where you want to see how the AI arrived at its conclusion. If you don't need the reasoning, click **Skip thinking for a faster answer** to get a direct response.
+
+## Export a conversation
+
+To download an entire chat as a Word document, click the export button in the chat header. The export includes all messages, citations, and the conversation title. You can also export individual messages from the message action menu.
+
+## AI-generated documents
+
+When the AI drafts a document — such as a memo, summary, or contract clause — it appears as a chip below the response. Click the chip to open the document in the side panel. Hover over it and click the download icon to export it as a Word file.
+
+## Chat history
+
+Your conversations are saved in the chat history, accessible from the sidebar. You can search chats by title, star favorites for quick access, rename conversations, or delete them. Chat history is organized with favorites first, then by most recent activity.
+
+## Context limits
+
+If a conversation approaches the AI's context limit, a warning appears letting you know the chat is almost full. When this happens, start a new conversation or create a project with a knowledge base to give the AI a broader document context.

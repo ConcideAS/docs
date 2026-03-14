@@ -2,85 +2,34 @@
 title: Overview
 ---
 
-A project is your workspace for a case, transaction, or any body of work. It brings your documents, AI conversations, and grid reviews together in one place — so the AI always has the right context when you ask questions or run analyses.
-
-<Note>
-Create a project for each matter or engagement to keep all related documents, chats, and grid reviews organized and scoped to the right context.
-</Note>
+A project is your workspace for a case, transaction, or any body of work. It keeps everything in one place — the documents you're working with, the AI conversations you've had, and the structured reviews you've run. When you ask the AI a question inside a project, it draws on that project's documents automatically.
 
 ## Create a project
 
-1. Click **Projects** in the sidebar, or click the **+** button next to Projects.
-2. Click **New project**.
-3. Fill in the project details:
+Click **Projects** in the sidebar, then click **New project**. Give it a name that identifies the matter — a case name, client reference, or deal name works well.
 
-| Field | Details |
-|-------|---------|
-| **Name** | Required. Up to 300 characters. Use the case name, client reference, or any label that identifies the matter. |
-| **Default assistant** | The AI assistant that opens by default for new chats in this project. Falls back to your personal default if left unset. |
-| **Description** | Optional. Up to 250 characters. Shown on the project card in the projects list. |
-| **Custom instructions** | Optional. Up to 3,000 characters. Instructions applied to every AI interaction in this project — for example, jurisdiction preferences, response language, or tone. |
+You can also configure a few optional settings upfront:
 
-4. Click **Create project**. You are taken directly into the new project.
+- **Description** — a short note shown on the project card, useful when you have many projects
+- **Default assistant** — the AI model or custom assistant that opens by default for new chats in this project
+- **Custom instructions** — standing context that applies to every AI interaction in the project, such as "This matter relates to Dutch employment law" or "Always respond in Norwegian"
 
-<Note>
-Use **Custom instructions** to give the AI standing context that applies to the whole project — for example: "This project relates to Dutch employment law. Always cite relevant Dutch legislation."
-</Note>
+You can change any of these later from the project's settings menu.
+
+## What's inside a project
+
+Every project has two tabs: **Chat** and **Grid review**.
+
+The **Chat** tab is where you have AI conversations scoped to the project. You can open the knowledge base panel at any time by clicking **Show knowledge base**, so you can manage files and ask questions in the same view.
+
+The **Grid review** tab is where you run structured document reviews. Define a set of questions, select the documents, and the AI analyzes each one against your questions in a table format.
+
+Both tabs draw on the same knowledge base, so any document you upload is available across chat and grid review.
 
 ## Edit a project
 
-Open the project, click the **...** menu in the header, and select **Edit project**. You can update the name, default assistant, description, and custom instructions at any time. Click **Undo Changes** to revert unsaved edits.
-
-## Project list
-
-All your projects appear as cards on the **Projects** page. Each card shows:
-
-- Project name and description
-- **Last updated** date
-- Collaborators who have access (shown as avatars)
-- **Ext.** badge if the project was imported from an external system
-
-Use the **Search projects** bar at the top to filter cards by name.
-
-## Project structure
-
-Every project has two tabs:
-
-| Tab | Purpose |
-|-----|---------|
-| **Chat** | AI conversations scoped to the project, with the knowledge base in the right panel |
-| **Grid review** | Structured document reviews with AI-generated answers across all your documents |
-
-The **knowledge base** lives inside the Chat tab as a persistent right-hand panel. Documents you upload there become the context for both chat and grid reviews.
-
-## Work within a project
-
-Once your project has documents in its knowledge base, you can:
-
-- **Ask questions in chat** — The AI draws on your uploaded documents to answer. Responses include citations you can click to verify in the original document.
-- **Run a grid review** — Define a set of questions and let the AI analyze each document against them, producing a structured table of results.
-- **Share with colleagues** — Invite team members and assign permission levels to collaborate on the same project.
-- **Manage your knowledge base** — Upload, organize, tag, and activate or deactivate documents at any time.
+Open the project, click the **...** menu in the header, and select **Edit project**. You can update the name, description, default assistant, and custom instructions at any time.
 
 ## Delete a project
 
-Open the **...** menu in the project header and select **Delete project**. You will be asked to confirm. Deletion is permanent and removes all documents, chats, and grid reviews in the project.
-
-Co-owners can also delete projects they do not own. Shared projects show how many collaborators will lose access before you confirm.
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Knowledge base" href="/guides/projects/knowledge-base">
-    Upload, organize, tag, and manage documents in your project.
-  </Card>
-  <Card title="Sharing and permissions" href="/guides/projects/sharing">
-    Invite colleagues and control what they can do.
-  </Card>
-  <Card title="Chat" href="/guides/chat">
-    Learn how to ask questions and use AI conversations.
-  </Card>
-  <Card title="Grid review" href="/guides/grid-review">
-    Run structured AI-powered document reviews.
-  </Card>
-</CardGroup>
+Open the **...** menu and select **Delete project**. Deletion is permanent — it removes all documents, chats, and grid reviews in the project. If the project is shared, collaborators lose access immediately.

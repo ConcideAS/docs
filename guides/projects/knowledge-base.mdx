@@ -2,20 +2,13 @@
 title: Knowledge base
 ---
 
-The knowledge base stores the documents that power your project. Every file you add becomes available as context for AI chat and grid reviews within that project. It lives in the right panel of the **Chat** tab inside each project.
+The knowledge base is the document library inside a project. Every file you upload is processed by Saga — the text is extracted, broken into passages, and stored so the AI can find the most relevant parts when you ask a question. This is what makes Saga's answers grounded in your actual documents rather than general knowledge.
 
-## Upload documents
+## Add documents
 
-You can add documents to the knowledge base in several ways:
+Drag and drop files or folders directly into the knowledge base panel, or click **Upload** to browse your computer. If your organization has SharePoint or Epona365 configured, you can import files from those services as well.
 
-- **Drag and drop** files or folders directly onto the knowledge base area
-- Click **Upload** and choose **Upload files** to select one or more files from your computer
-- Click **Upload** and choose **Upload folders** to upload an entire folder — the existing folder structure is preserved
-- Click **Upload** and choose **Import from SharePoint** or **Import from Epona365** if your organization has these integrations configured
-
-A project can hold up to **1,000 documents**.
-
-## Supported file types
+Saga supports a wide range of file types:
 
 | Category | Formats |
 |----------|---------|
@@ -25,92 +18,24 @@ A project can hold up to **1,000 documents**.
 | Email | EML, MSG |
 | Images | PNG, JPG, JPEG, GIF, WEBP, TIFF |
 
-The maximum file size is 1 GB per file.
+The maximum file size is 1 GB. A project can hold up to 1,000 documents.
 
-If you drop files in an unsupported format, a dialog lists the invalid file names so you can review them.
-
-## Document processing
-
-After upload, Saga processes each file to make it searchable and available for AI analysis. A progress indicator appears next to each file during processing.
-
-| Status | Meaning |
-|--------|---------|
-| Queued | Waiting to start processing |
-| Uploading | File is being transferred |
-| Pending | Processing in progress |
-| Retrying | Processing is being reattempted |
-| Ready | Processing complete — available for chat and grid review |
-| Failed | Processing failed — use **Retry** to try again |
-
-<Note>
-You can continue working while documents process in the background. The knowledge base updates automatically as each file becomes ready.
-</Note>
+After upload, each file goes through processing before it's available to the AI. You can keep working while this happens — documents become available automatically as they're ready. If a file fails to process, you can retry it from its action menu.
 
 ## Active and inactive documents
 
-Each document has an active/inactive toggle. Active documents are included as AI context in chat and grid reviews. Inactive documents remain in the knowledge base but are excluded from AI interactions.
+Every document has an active/inactive toggle. Only active documents are used as context by the AI. Inactive documents stay in the knowledge base but are excluded from chat and grid review.
 
-Use this to temporarily remove a document from context without deleting it — for example, to focus the AI on a specific subset of files.
+This is useful when you want to narrow the AI's focus to a specific subset of files — for example, during a phase of a matter where only certain contracts are relevant.
 
-## Organize with folders
+## Folders and tags
 
-Create folders to keep your knowledge base structured:
+You can organize documents with folders and color-coded tags.
 
-1. Click the **folder** icon in the knowledge base toolbar.
-2. Name the folder.
-3. Drag documents into folders, or use **Move to** in the document action menu.
+**Folders** let you replicate your existing file structure. Create nested folders, drag documents between them, and download an entire folder as a ZIP when you need to share files outside Saga.
 
-Folders can be nested — you can create subfolders within folders. You can also rename, download, and delete folders. Deleting a folder asks you to confirm how many subfolders and documents will be affected.
-
-## Search and filter
-
-- Use the **search bar** in the knowledge base toolbar to filter documents and folders by name.
-- Use the **tag filter** to show only documents with a specific tag.
-
-## Tag documents
-
-Tags help you categorize and filter documents:
-
-1. Open the **...** menu for a document and select **Manage tags**.
-2. Create a new tag, choose a color, or select an existing tag.
-3. Confirm to apply.
-
-Use the tag filter in the knowledge base toolbar to show only documents with a specific tag.
-
-## Duplicate detection
-
-If you upload a file with the same name as one already in the knowledge base, a dialog lists the duplicates and asks whether to upload anyway or cancel.
+**Tags** work across folders. Assign a tag to a document, give it a color, and use the tag filter to show only documents with that label. Tags are useful for marking document types, review status, or anything else that cuts across your folder structure.
 
 ## Document actions
 
-Each document supports the following actions from its **...** menu:
-
-| Action | Description |
-|--------|-------------|
-| **Download** | Download the file to your computer |
-| **Rename** | Edit the document's display name inline |
-| **Move to** | Move the document to a different folder |
-| **Manage tags** | Add or remove tags |
-| **Retry** | Re-process a document that has a Failed status |
-| **Delete** | Permanently remove the document from the project |
-
-## Bulk actions
-
-Select multiple documents using the checkboxes to:
-
-- **Download** all selected files at once
-- **Delete** all selected files with a single confirmation
-
-The toolbar shows how many items are selected (for example, "3 of 12 selected") and a **Select all** checkbox to select everything in the current view.
-
-## Folder actions
-
-Each folder's **...** menu provides:
-
-| Action | Description |
-|--------|-------------|
-| **Download folder contents** | Download all files in the folder as a ZIP |
-| **Move to** | Move the entire folder to another location or to the root |
-| **Create subfolder** | Add a nested folder inside this folder |
-| **Rename** | Edit the folder name inline |
-| **Delete folder** | Remove the folder and all its contents |
+Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it. You can also select multiple documents at once for bulk download or deletion.

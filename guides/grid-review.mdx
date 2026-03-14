@@ -2,51 +2,48 @@
 title: Overview
 ---
 
-Grid review lets you analyze multiple documents systematically. Each document becomes a row, each question becomes a column, and the AI fills in the answers — giving you a structured table you can review, edit, and export.
+Grid review is how you analyze a set of documents against the same questions in one structured pass. Define what you want to know — termination clauses, effective dates, governing law, liability caps — and the AI works through every document, filling in a table where each row is a document and each column is a question.
 
-<Tip>
-Set up a grid review to extract key dates, termination clauses, and change-of-control provisions from a set of contracts — all in one structured view.
-</Tip>
+It's built for the kind of work where you'd normally open twenty contracts side by side and make a spreadsheet by hand. Grid review does that in minutes, with citations linking every answer back to the source passage.
 
-## Create a grid review
+## Where grid reviews live
 
-<Steps>
-  <Step title="Open a project">
-    Go to **Projects** and open the project containing your documents.
-  </Step>
-  <Step title="Start a new grid">
-    Click the **Grid review** tab, then click **New grid review**. Choose to create a blank grid or start from a [template](/guides/grid-review/templates).
-  </Step>
-  <Step title="Name your grid">
-    Give the grid a descriptive name. Optionally add a custom instruction that applies to all questions in the grid.
-  </Step>
-  <Step title="Add questions">
-    Define the questions you want answered for each document. Each question becomes a column. Choose a [question type](/guides/grid-review/question-types) for each column.
-  </Step>
-  <Step title="Add documents">
-    Select documents from the project's knowledge base to include. Each document becomes a row.
-  </Step>
-  <Step title="Run the review">
-    Click **Run** and the AI analyzes each document against your questions, filling in the grid cell by cell.
-  </Step>
-</Steps>
+Grid reviews can live inside a [project](/guides/projects) or on their own. Inside a project, you'll find them under the **Grid review** tab alongside chat. The grid automatically has access to that project's [knowledge base](/guides/projects/knowledge-base), so you can pull documents directly from there.
+
+You can also create standalone grids from the **Grid reviews** page in the sidebar. Standalone grids have their own document set. If you decide later that a grid belongs in a project, you can move it.
+
+## Creating a grid
+
+Click **New grid review** to start from scratch, or open the **Grid library** to begin from a [template](/guides/grid-review/templates). Give the grid a name that identifies the task — "Lease Agreement Review" or "Employment Contract Extraction" works well.
+
+From there, you add questions and documents. Questions become columns; documents become rows. The AI starts generating answers as soon as both are in place.
+
+## Answer modes
+
+Each question has an answer mode that tells the AI what kind of response you expect. Choosing the right mode keeps results consistent and makes the grid easier to scan.
+
+| Mode | What the AI returns | When to use it |
+|------|-------------------|----------------|
+| **Extract** | Verbatim text from the document | Pulling out specific clauses, definitions, or passages |
+| **Short review** | A brief summary or analysis | Quick assessments, concise observations |
+| **Long review** | A detailed, multi-paragraph analysis | In-depth reviews, multi-part questions |
+| **True / False** | True or False | Binary checks — "Does the contract contain a non-compete clause?" |
+| **Date** | A date | Effective dates, deadlines, expiration dates |
+| **Number** | A numeric value | Financial figures, quantities, limits |
+| **Currency** | A monetary amount | Contract values, fees, penalties |
+
+When the AI can't find what you're asking for, it tells you — "Requested date not found" or "Cannot determine true or false" — rather than guessing.
+
+You can also click **Improve prompt** when writing a question to let the AI refine your phrasing for more precise results.
 
 ## Custom instructions
 
-When creating or editing a grid, you can add a custom instruction that provides additional context to the AI. For example: "Focus on financial terms and obligations" or "Answer in the context of Norwegian law."
+If there's context the AI should keep in mind across all questions — a jurisdiction focus, a specific legal framework, a formatting preference — you can add it as a custom instruction when creating or editing the grid. Something like "Answer in the context of Norwegian employment law" or "Focus on financial obligations and penalties."
 
-Each question can individually opt in or out of using the grid-level instruction.
+Each question can opt in or out of the grid-level instruction, so you have control over which questions benefit from the extra context and which should stand on their own.
 
-## Next steps
+## Adding documents
 
-<CardGroup cols={2}>
-  <Card title="Question types" href="/guides/grid-review/question-types">
-    Choose the right answer format for each question.
-  </Card>
-  <Card title="Working with grids" href="/guides/grid-review/working-with-grids">
-    Edit cells, reorder content, and export results.
-  </Card>
-  <Card title="Templates" href="/guides/grid-review/templates">
-    Save and reuse question sets across projects.
-  </Card>
-</CardGroup>
+You can add documents from several places: any [knowledge base](/guides/projects/knowledge-base) available to you (not just the current project's), a file upload, or integrations like SharePoint and Epona365 if your organization has them configured. Select as many as you need — the AI generates answers for every document against every question.
+
+Documents can be added or removed at any time. When you add new documents to an existing grid, the AI fills in the answers automatically. The grid isn't fixed at creation.

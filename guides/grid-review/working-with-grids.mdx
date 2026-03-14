@@ -1,41 +1,33 @@
 ---
-title: Working with grids
+title: Working with results
 ---
 
-Once a grid review has been generated, you can refine the results, reorganize the layout, and export the data.
+Once the AI has filled in your grid, you're looking at a table of answers — one per document, per question. From here you can review what the AI found, edit anything that needs adjusting, rearrange the layout, and export the whole thing when you're done.
 
-## Edit cells
+## Editing cells
 
-Click on a cell to select it, then click again to open the inline editor. The editor supports rich text formatting including bold, italic, lists, and tables.
+Click a cell to select it, then click again to open the inline editor. You can fix wording, add detail, or rewrite the answer entirely. The editor supports rich text — bold, italic, lists — so you can format answers the way you'd want them in a final deliverable.
 
-For longer edits, click **Expand** to open the cell in a full modal editor. Changes save automatically when you close the editor. Press **Ctrl+Enter** (or **Cmd+Enter** on Mac) to save and close.
+For longer edits, click **Expand** to open the cell in a full-size modal. Changes save when you close the editor or press **Ctrl+Enter** (**Cmd+Enter** on Mac). Edited cells are marked so you can tell at a glance which answers you've touched and which are the AI's original output.
 
-## Citations in cells
+## Citations
 
-Grid review answers can include citation badges that reference specific passages in the source document. Click a citation badge to open the document in the [side panel](/guides/projects/document-viewer) with the referenced passage highlighted.
+Grid review answers can include citations — small badges in the cell that reference specific passages in the source document. Click a citation to see the original text and jump to the relevant section of the document. This works the same way as [citations in chat](/guides/quickstart#citations): every answer is traceable back to what the document actually says.
 
-## Reorder rows and columns
+You can add or remove citations when editing a cell, which is useful when you want to link an answer to a different passage or clean up a reference that isn't relevant.
 
-Drag and drop rows (documents) and columns (questions) to rearrange the grid layout. The new order is preserved and reflected in exports.
+## Reordering and organizing
 
-## Column controls
+Drag rows up or down to arrange documents in the order that makes sense for your review — alphabetical, by date, by risk level, however you think about the matter. Drag columns left or right to reorder questions. The arrangement you set is what shows up in exports.
 
-- **Resize** columns by dragging the column border
-- **Sort** a column to reorder rows by that column's values
-- **Text wrap** — Toggle between truncated and full-text display using the wrap button in the toolbar
+You can also resize columns, sort by a column's values, and toggle between truncated and full-text display using the wrap button in the toolbar. Truncated mode keeps the grid scannable; full-text mode lets you read everything without expanding cells.
 
 ## Automatic generation
 
-The AI automatically generates answers when you:
+The grid stays alive as you work with it. When you add a new question, the AI generates answers for every document in the grid. When you add new documents, the AI fills in answers for every question. If you edit a question's text, existing answers for that column are cleared and regenerated with the updated phrasing.
 
-- Add a new column to an existing grid
-- Add new documents to an existing grid
-- Edit a question — existing answers for that column are cleared and regenerated
+This means you can build a grid iteratively — start with a few questions, review the results, then add more questions or documents as the analysis evolves.
 
-## Export to Excel
+## Export
 
-Click the export button to download the grid as an Excel file. The export includes:
-
-- The grid name as a title row
-- All columns and rows in their current order
-- Styled formatting with headers and borders
+Click **Export to Excel** in the grid header to download the entire grid as an `.xlsx` file. The export includes the grid name, all columns and rows in their current order, and styled formatting with headers and borders — ready to share with a colleague or attach to a client report.

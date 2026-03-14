@@ -52,6 +52,14 @@
                 ]
               },
               {
+                "group": "Chat",
+                "pages": [
+                  "guides/chat",
+                  "guides/chat/context-and-sources",
+                  "guides/chat/prompt-library"
+                ]
+              },
+              {
                 "group": "Assistants",
                 "pages": [
                   "guides/assistants",
@@ -60,27 +68,17 @@
                 ]
               },
               {
-                "group": "Chat",
-                "pages": [
-                  "guides/chat",
-                  "guides/chat/context-and-sources",
-                  "guides/chat/prompt-library",
-                  "guides/chat/zero-data-retention"
-                ]
-              },
-              {
                 "group": "Legal research",
                 "pages": [
                   "guides/legal-research",
-                  "guides/legal-research/databases",
-                  "guides/legal-research/search-and-filters"
+                  "guides/legal-research/search-and-results",
+                  "guides/legal-research/in-chat"
                 ]
               },
               {
                 "group": "Grid review",
                 "pages": [
                   "guides/grid-review",
-                  "guides/grid-review/question-types",
                   "guides/grid-review/working-with-grids",
                   "guides/grid-review/templates"
                 ]
@@ -97,26 +95,21 @@
             ]
           },
           {
-            "group": "Administration",
+            "group": "Integrations",
             "pages": [
-              "guides/admin",
-              "guides/admin/workspace-settings",
-              "guides/admin/theme",
-              "guides/admin/users",
-              "guides/admin/integrations",
-              "guides/admin/organizational-sources",
-              "guides/admin/libraries",
-              "guides/admin/usage"
+              "guides/integrations"
             ]
           },
           {
-            "group": "Account and setup",
+            "group": "Administration",
             "pages": [
-              "guides/account/getting-started",
-              "guides/account/settings",
-              "guides/account/security",
-              "guides/account/word-plugin",
-              "guides/account/troubleshooting"
+              "guides/admin"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "guides/troubleshooting"
             ]
           }
         ]
