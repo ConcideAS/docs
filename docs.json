@@ -97,7 +97,21 @@
           {
             "group": "Integrations",
             "pages": [
-              "guides/integrations"
+              {
+                "group": "Document management",
+                "pages": [
+                  "guides/integrations/sharepoint",
+                  "guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word add-in",
+                "pages": [
+                  "guides/integrations/word-add-in",
+                  "guides/integrations/word-add-in/user-setup",
+                  "guides/integrations/word-add-in/admin-setup"
+                ]
+              }
             ]
           },
           {
@@ -184,7 +198,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@saga.com"
+        "href": "mailto:support@sagalegal.io"
       }
     ] 
   },
