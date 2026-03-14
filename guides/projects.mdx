@@ -1,51 +1,86 @@
 ---
-title: Projects
+title: Overview
 ---
 
-A project is your workspace for a case, transaction, or any body of work. It keeps documents, AI conversations, and grid reviews together in one place, so the AI always has the right context when you ask questions or run analyses.
+A project is your workspace for a case, transaction, or any body of work. It brings your documents, AI conversations, and grid reviews together in one place — so the AI always has the right context when you ask questions or run analyses.
 
-<Tip>
-Create a project for a due diligence matter to keep all related contracts, AI conversations, and review grids in one place.
-</Tip>
+<Note>
+Create a project for each matter or engagement to keep all related documents, chats, and grid reviews organized and scoped to the right context.
+</Note>
 
 ## Create a project
 
-1. Click **Projects** in the sidebar.
+1. Click **Projects** in the sidebar, or click the **+** button next to Projects.
 2. Click **New project**.
-3. Enter a name for the project — for example, the case name or client reference.
-4. Optionally add a description, default assistant, or custom instructions that apply to all AI interactions within the project.
+3. Fill in the project details:
+
+| Field | Details |
+|-------|---------|
+| **Name** | Required. Up to 300 characters. Use the case name, client reference, or any label that identifies the matter. |
+| **Default assistant** | The AI assistant that opens by default for new chats in this project. Falls back to your personal default if left unset. |
+| **Description** | Optional. Up to 250 characters. Shown on the project card in the projects list. |
+| **Custom instructions** | Optional. Up to 3,000 characters. Instructions applied to every AI interaction in this project — for example, jurisdiction preferences, response language, or tone. |
+
+4. Click **Create project**. You are taken directly into the new project.
+
+<Note>
+Use **Custom instructions** to give the AI standing context that applies to the whole project — for example: "This project relates to Dutch employment law. Always cite relevant Dutch legislation."
+</Note>
+
+## Edit a project
+
+Open the project, click the **...** menu in the header, and select **Edit project**. You can update the name, default assistant, description, and custom instructions at any time. Click **Undo Changes** to revert unsaved edits.
+
+## Project list
+
+All your projects appear as cards on the **Projects** page. Each card shows:
+
+- Project name and description
+- **Last updated** date
+- Collaborators who have access (shown as avatars)
+- **Ext.** badge if the project was imported from an external system
+
+Use the **Search projects** bar at the top to filter cards by name.
 
 ## Project structure
 
-Every project has three tabs:
+Every project has two tabs:
 
 | Tab | Purpose |
 |-----|---------|
-| **Knowledge base** | Upload and organize documents that the AI uses as context |
-| **Chat** | AI conversations scoped to this project's documents |
-| **Grid review** | Structured document reviews with AI-generated answers |
+| **Chat** | AI conversations scoped to the project, with the knowledge base in the right panel |
+| **Grid review** | Structured document reviews with AI-generated answers across all your documents |
+
+The **knowledge base** lives inside the Chat tab as a persistent right-hand panel. Documents you upload there become the context for both chat and grid reviews.
 
 ## Work within a project
 
 Once your project has documents in its knowledge base, you can:
 
-- **Ask questions in chat** — The AI draws on your uploaded documents to answer. Responses include citations you can click to verify.
+- **Ask questions in chat** — The AI draws on your uploaded documents to answer. Responses include citations you can click to verify in the original document.
 - **Run a grid review** — Define a set of questions and let the AI analyze each document against them, producing a structured table of results.
-- **Share with colleagues** — Invite other users and assign permission levels to collaborate on the same project.
+- **Share with colleagues** — Invite team members and assign permission levels to collaborate on the same project.
+- **Manage your knowledge base** — Upload, organize, tag, and activate or deactivate documents at any time.
+
+## Delete a project
+
+Open the **...** menu in the project header and select **Delete project**. You will be asked to confirm. Deletion is permanent and removes all documents, chats, and grid reviews in the project.
+
+Co-owners can also delete projects they do not own. Shared projects show how many collaborators will lose access before you confirm.
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="Knowledge base" href="/guides/projects/knowledge-base">
-    Upload, organize, and manage documents in your project.
+    Upload, organize, tag, and manage documents in your project.
   </Card>
   <Card title="Sharing and permissions" href="/guides/projects/sharing">
-    Collaborate with colleagues on shared projects.
-  </Card>
-  <Card title="Document viewer" href="/guides/projects/document-viewer">
-    View and navigate documents in the side panel.
+    Invite colleagues and control what they can do.
   </Card>
   <Card title="Chat" href="/guides/chat">
-    Learn more about AI conversations.
+    Learn how to ask questions and use AI conversations.
+  </Card>
+  <Card title="Grid review" href="/guides/grid-review">
+    Run structured AI-powered document reviews.
   </Card>
 </CardGroup>

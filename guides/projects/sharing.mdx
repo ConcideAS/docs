@@ -2,41 +2,57 @@
 title: Sharing and permissions
 ---
 
-Projects can be shared with other users in your organization. When you share a project, collaborators get access to the knowledge base, chats, and grid reviews inside it.
+Projects can be shared with other users in your organization. Collaborators get access to the knowledge base, chats, and grid reviews inside the project, within the limits of their permission level.
 
 ## Permission levels
 
-| Role | What they can do |
-|------|-----------------|
-| **Owner** | Full control — edit, share, delete the project |
-| **Co-owner** | Edit, share, and manage the project. Can leave or delete |
-| **Edit** | Add and edit documents, create chats and grid reviews |
-| **Read-only** | View documents, chats, and grid reviews without making changes |
+| Permission | What they can do |
+|------------|-----------------|
+| **Owner** | Full control — edit, share, delete the project. The original creator is always the owner. |
+| **Co-owner** | Edit, share, and manage the project. Can leave or delete the project. |
+| **Can edit** | Upload and manage documents, create and edit chats and grid reviews. |
+| **Read-only** | View all documents, chats, and grid reviews. Cannot make changes. |
+
+Owners and co-owners see a **Share** button in the project header and can open the share dialog to manage access. Users with edit or read-only permissions do not see the Share button.
 
 ## Share a project
 
 1. Open the project you want to share.
-2. Click the **Share** button.
-3. Search for a colleague by email address.
-4. Select a permission level for them.
+2. Click **Share** in the project header.
+3. Search for a colleague by name or email address. The list shows users in your organization.
+4. Select a permission level from the dropdown next to their name.
 5. Click **Add**.
 
-You can change permissions or remove users at any time from the same share dialog.
+The user immediately gains access to the project at the assigned permission level.
+
+## Change or remove access
+
+Open the share dialog for the project. Each user listed under **Shared with** has a permission dropdown — change the level or select **No access** to remove them from the project.
+
+## Stop sharing entirely
+
+To remove all shared users at once, click **Stop sharing** in the share dialog and confirm. All collaborators except the owner lose access immediately.
 
 ## Share a chat
 
-Within a shared project, individual chats are private by default. To share a chat with all project members:
+Chats within a project are private by default — only you can see them. To share a chat with all project members:
 
 1. Open the chat inside the project.
-2. Click the **Share** button in the chat header.
-3. Confirm sharing — all project members will be able to view the conversation and its referenced documents.
+2. Click **Share** in the chat header.
+3. Confirm — all project members will be able to view the conversation and its referenced documents.
 
-A system message appears in the chat when it is shared.
+A system message appears in the chat when sharing is enabled.
 
 ## Filter project chats
 
-In a shared project, you can filter the chat list to see:
+In a shared project, use the filter pills above the chat list to show:
 
-- **All** chats you have access to
-- **Shared** chats that have been made visible to project members
-- **Private** chats that only you can see
+| Filter | Shows |
+|--------|-------|
+| **All** | Every chat you have access to in this project |
+| **Private** | Chats only you can see |
+| **Shared** | Chats shared with all project members |
+
+## Leave a project
+
+If you are a co-owner or have edit/read-only access, you can leave a project from the **...** menu in the project header. Leaving removes your access — the project owner can re-add you at any time.

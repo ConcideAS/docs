@@ -41,27 +41,31 @@
             ]
           },
           {
-            "group": "Core",
+            "group": "Core capabilities",
             "pages": [
               {
                 "group": "Projects",
                 "pages": [
                   "guides/projects",
                   "guides/projects/knowledge-base",
-                  "guides/projects/sharing",
-                  "guides/projects/document-viewer"
+                  "guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Assistants",
+                "pages": [
+                  "guides/assistants",
+                  "guides/assistants/models",
+                  "guides/assistants/custom-assistants"
                 ]
               },
               {
                 "group": "Chat",
                 "pages": [
                   "guides/chat",
-                  "guides/chat/assistants",
-                  "guides/chat/prompt-library",
-                  "guides/chat/slash-commands",
                   "guides/chat/context-and-sources",
-                  "guides/chat/zero-data-retention",
-                  "guides/chat/export"
+                  "guides/chat/prompt-library",
+                  "guides/chat/zero-data-retention"
                 ]
               },
               {
@@ -81,20 +85,12 @@
                   "guides/grid-review/templates"
                 ]
               },
-              {
-                "group": "Translate",
-                "pages": [
-                  "guides/translate",
-                  "guides/translate/text",
-                  "guides/translate/documents"
-                ]
-              },
+              "guides/translate",
               {
                 "group": "Workflows",
                 "pages": [
                   "guides/workflows",
-                  "guides/workflows/builder",
-                  "guides/workflows/running",
+                  "guides/workflows/building-and-running",
                   "guides/workflows/library"
                 ]
               }

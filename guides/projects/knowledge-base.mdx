@@ -2,16 +2,18 @@
 title: Knowledge base
 ---
 
-The knowledge base is where you store the documents that power your project. Every file you upload becomes available as context for AI chat and grid reviews within that project.
+The knowledge base stores the documents that power your project. Every file you add becomes available as context for AI chat and grid reviews within that project. It lives in the right panel of the **Chat** tab inside each project.
 
 ## Upload documents
 
 You can add documents to the knowledge base in several ways:
 
 - **Drag and drop** files or folders directly onto the knowledge base area
-- **Click to browse** and select files from your computer
-- **Upload folders** to preserve your existing directory structure
-- **Import from SharePoint or Epona365** if your organization has these integrations configured
+- Click **Upload** and choose **Upload files** to select one or more files from your computer
+- Click **Upload** and choose **Upload folders** to upload an entire folder — the existing folder structure is preserved
+- Click **Upload** and choose **Import from SharePoint** or **Import from Epona365** if your organization has these integrations configured
+
+A project can hold up to **1,000 documents**.
 
 ## Supported file types
 
@@ -25,41 +27,90 @@ You can add documents to the knowledge base in several ways:
 
 The maximum file size is 1 GB per file.
 
+If you drop files in an unsupported format, a dialog lists the invalid file names so you can review them.
+
+## Document processing
+
+After upload, Saga processes each file to make it searchable and available for AI analysis. A progress indicator appears next to each file during processing.
+
+| Status | Meaning |
+|--------|---------|
+| Queued | Waiting to start processing |
+| Uploading | File is being transferred |
+| Pending | Processing in progress |
+| Retrying | Processing is being reattempted |
+| Ready | Processing complete — available for chat and grid review |
+| Failed | Processing failed — use **Retry** to try again |
+
+<Note>
+You can continue working while documents process in the background. The knowledge base updates automatically as each file becomes ready.
+</Note>
+
+## Active and inactive documents
+
+Each document has an active/inactive toggle. Active documents are included as AI context in chat and grid reviews. Inactive documents remain in the knowledge base but are excluded from AI interactions.
+
+Use this to temporarily remove a document from context without deleting it — for example, to focus the AI on a specific subset of files.
+
 ## Organize with folders
 
 Create folders to keep your knowledge base structured:
 
-1. Click **New folder** in the knowledge base toolbar.
+1. Click the **folder** icon in the knowledge base toolbar.
 2. Name the folder.
-3. Drag documents into folders, or move them using the document action menu.
+3. Drag documents into folders, or use **Move to** in the document action menu.
 
-You can nest folders, rename them, and download an entire folder as a ZIP file.
+Folders can be nested — you can create subfolders within folders. You can also rename, download, and delete folders. Deleting a folder asks you to confirm how many subfolders and documents will be affected.
+
+## Search and filter
+
+- Use the **search bar** in the knowledge base toolbar to filter documents and folders by name.
+- Use the **tag filter** to show only documents with a specific tag.
 
 ## Tag documents
 
-Tags help you categorize and filter documents across folders:
+Tags help you categorize and filter documents:
 
-1. Select a document and choose **Add tag** from the action menu.
-2. Create a new tag or select an existing one.
-3. Assign a color to make tags visually distinct.
+1. Open the **...** menu for a document and select **Manage tags**.
+2. Create a new tag, choose a color, or select an existing tag.
+3. Confirm to apply.
 
 Use the tag filter in the knowledge base toolbar to show only documents with a specific tag.
 
-## Manage documents
+## Duplicate detection
 
-Each document in the knowledge base supports the following actions:
+If you upload a file with the same name as one already in the knowledge base, a dialog lists the duplicates and asks whether to upload anyway or cancel.
 
-- **Rename** — Update the display name
-- **Move** — Move to a different folder
-- **Tags** — Add or remove tags
-- **Active/inactive** — Toggle whether the document is included as AI context. Inactive documents remain in the knowledge base but are excluded from chat and grid review
-- **Delete** — Permanently remove the document
-- **Retry** — Re-process a document that failed during upload
+## Document actions
 
-## Document processing
+Each document supports the following actions from its **...** menu:
 
-After upload, Saga processes each document to make it searchable and available for AI analysis. You can see the processing status next to each file. Once processing completes, the document is ready to use in chat and grid reviews.
+| Action | Description |
+|--------|-------------|
+| **Download** | Download the file to your computer |
+| **Rename** | Edit the document's display name inline |
+| **Move to** | Move the document to a different folder |
+| **Manage tags** | Add or remove tags |
+| **Retry** | Re-process a document that has a Failed status |
+| **Delete** | Permanently remove the document from the project |
 
-<Tip>
-For large uploads, you can continue working while documents process in the background. The knowledge base updates automatically as each file becomes ready.
-</Tip>
+## Bulk actions
+
+Select multiple documents using the checkboxes to:
+
+- **Download** all selected files at once
+- **Delete** all selected files with a single confirmation
+
+The toolbar shows how many items are selected (for example, "3 of 12 selected") and a **Select all** checkbox to select everything in the current view.
+
+## Folder actions
+
+Each folder's **...** menu provides:
+
+| Action | Description |
+|--------|-------------|
+| **Download folder contents** | Download all files in the folder as a ZIP |
+| **Move to** | Move the entire folder to another location or to the root |
+| **Create subfolder** | Add a nested folder inside this folder |
+| **Rename** | Edit the folder name inline |
+| **Delete folder** | Remove the folder and all its contents |
