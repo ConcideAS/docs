@@ -1,0 +1,76 @@
+---
+title: FAQ and troubleshooting
+---
+
+## Documents
+
+<AccordionGroup>
+
+<Accordion title="My document failed to upload or process">
+Check the file format and size. Saga supports PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG, and common image formats. The maximum file size is 1 GB — and PDFs or images that need text extraction (OCR) are limited to 500 MB.
+
+If the file format and size are fine, click **Retry** on the failed document in the knowledge base. If it still doesn't work, try re-uploading the file. Corrupted files or heavily scanned documents with poor image quality can sometimes cause processing to fail.
+</Accordion>
+
+</AccordionGroup>
+
+## Chat and AI
+
+<AccordionGroup>
+
+<Accordion title="The AI says the chat context is almost full">
+Each AI model has a limit on how much text it can consider at once. When a conversation gets long — many messages, large attachments, or both — you'll see a warning that the context is almost full.
+
+Start a new conversation to reset the context. If you're working with a large set of documents, consider uploading them to a project's [knowledge base](/guides/projects/knowledge-base) instead of attaching them in chat — the knowledge base indexes your files so the AI can search across them without needing to hold everything in context at once.
+</Accordion>
+
+<Accordion title="The AI gave an incorrect or incomplete answer">
+The quality of the AI's response depends on the context it has and the model you're using. A few things to try:
+
+- **Switch to a more capable model** — a model with higher intelligence may handle your question better. See [Models](/guides/assistants/models) for guidance.
+- **Narrow the context** — if the knowledge base has many documents, toggle inactive the ones that aren't relevant to focus the AI's attention.
+- **Rephrase your question** — more specific questions tend to produce better results. Use **Improve prompt** to let the AI refine your phrasing before sending.
+- **Check citations** — always verify the AI's claims against the cited sources.
+</Accordion>
+
+<Accordion title="I'm getting rate-limited or seeing 'too many requests'">
+Saga limits how frequently certain actions can be performed. If you're seeing this during login or two-factor authentication, wait a few minutes and try again. For chat-related rate limits, wait briefly and resend your message.
+</Accordion>
+
+</AccordionGroup>
+
+## Features and access
+
+<AccordionGroup>
+
+<Accordion title="I don't see SharePoint or Epona365 when uploading documents">
+These integrations need to be enabled by your admin. Ask them to configure the integration from the [admin panel](/guides/admin) under **Settings > Integrations**. Once it's set up, the option appears for everyone in the organization.
+</Accordion>
+
+<Accordion title="I don't see organizational sources in the chat toolbar">
+Organizational sources are created by your admin or content admin. If the toggle doesn't appear in the **Add sources** menu, your organization hasn't set any up yet. Ask your admin to create one from the [admin panel](/guides/admin).
+</Accordion>
+
+<Accordion title="I don't see a legal source I need">
+Your admin controls which legal sources are enabled. If a source isn't showing up, ask your admin to enable it from the workspace settings. For the full catalog of available sources, see [moonlit.ai/coverage](https://moonlit.ai/coverage).
+</Accordion>
+
+<Accordion title="I can't access the admin panel">
+The admin panel is only visible to users with the **Admin** or **Content admin** role. If you need access, ask an existing admin to update your role. Content admins can manage libraries and organizational sources; full admins can manage everything including users and settings.
+</Accordion>
+
+<Accordion title="The Word add-in doesn't appear in Word">
+This is usually a permissions or licensing issue. Check that your organization allows third-party Office add-ins, that your Office version is up to date, and that you're signed in with your Microsoft account. For detailed steps, see [Word add-in troubleshooting](/guides/integrations/word-add-in/user-setup#troubleshooting).
+</Accordion>
+
+</AccordionGroup>
+
+## Support
+
+<AccordionGroup>
+
+<Accordion title="How do I contact support?">
+Click **Get help** in the sidebar to open the feedback form, or email the support team directly at [support@sagalegal.io](mailto:support@sagalegal.io). Include as much detail as possible — what you were doing, what you expected, and any error messages you saw.
+</Accordion>
+
+</AccordionGroup>

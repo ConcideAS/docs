@@ -1,23 +1,33 @@
 ---
-title: Working with grids
-description: Edit columns and rows, view citations, and export grid review results.
+title: Working with results
 ---
 
-## Edit columns
+Once the AI has filled in your grid, you're looking at a table of answers — one per document, per question. From here you can review what the AI found, edit anything that needs adjusting, rearrange the layout, and export the whole thing when you're done.
 
-- **Add** a column by clicking the **+** button.
-- **Edit** a column's question by clicking the column header.
-- **Delete** a column by right-clicking the header and selecting **Delete**.
+## Editing cells
 
-## Edit rows
+Click a cell to select it, then click again to open the inline editor. You can fix wording, add detail, or rewrite the answer entirely. The editor supports rich text — bold, italic, lists — so you can format answers the way you'd want them in a final deliverable.
 
-- **Add** documents as rows from the project's knowledge base.
-- **Remove** a row by right-clicking and selecting **Delete**.
+For longer edits, click **Expand** to open the cell in a full-size modal. Changes save when you close the editor or press **Ctrl+Enter** (**Cmd+Enter** on Mac). Edited cells are marked so you can tell at a glance which answers you've touched and which are the AI's original output.
 
 ## Citations
 
-Each AI-generated answer includes citations. Click a citation to view the referenced passage in the **Instruments sheet** side panel.
+Grid review answers can include citations — small badges in the cell that reference specific passages in the source document. Click a citation to see the original text and jump to the relevant section of the document. This works the same way as [citations in chat](/guides/quickstart#citations): every answer is traceable back to what the document actually says.
+
+You can add or remove citations when editing a cell, which is useful when you want to link an answer to a different passage or clean up a reference that isn't relevant.
+
+## Reordering and organizing
+
+Drag rows up or down to arrange documents in the order that makes sense for your review — alphabetical, by date, by risk level, however you think about the matter. Drag columns left or right to reorder questions. The arrangement you set is what shows up in exports.
+
+You can also resize columns, sort by a column's values, and toggle between truncated and full-text display using the wrap button in the toolbar. Truncated mode keeps the grid scannable; full-text mode lets you read everything without expanding cells.
+
+## Automatic generation
+
+The grid stays alive as you work with it. When you add a new question, the AI generates answers for every document in the grid. When you add new documents, the AI fills in answers for every question. If you edit a question's text, existing answers for that column are cleared and regenerated with the updated phrasing.
+
+This means you can build a grid iteratively — start with a few questions, review the results, then add more questions or documents as the analysis evolves.
 
 ## Export
 
-Click **Export** to download the grid as an Excel file. The export includes all questions, documents, and AI-generated answers.
+Click **Export to Excel** in the grid header to download the entire grid as an `.xlsx` file. The export includes the grid name, all columns and rows in their current order, and styled formatting with headers and borders — ready to share with a colleague or attach to a client report.

@@ -4,11 +4,17 @@
   "name": "Saga",
   "colors": {
     "primary": "#BA9939",
-    "light": "#E0C666",
-    "dark": "#987508"
+    "light": "#BA9939",
+    "dark": "#F3DB80"
   },
   "appearance": {
-    "default": "system"
+    "default": "dark"
+  },
+  "background": {
+    "color": {
+      "light": "#F9F8F5",
+      "dark": "#191918"
+    }
   },
   "fonts": {
     "heading": {
@@ -22,100 +28,177 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "groups": [
+    "languages": [
       {
-        "group": "Get started",
-        "pages": [
-          "index",
-          "guides/quickstart",
-          "guides/getting-started"
-        ]
-      },
-      {
-        "group": "Features",
-        "pages": [
+        "language": "en",
+        "default": true,
+        "groups": [
           {
-            "group": "Projects",
+            "group": "Welcome",
             "pages": [
-              "guides/matters",
-              "guides/matters/knowledge-base",
-              "guides/matters/manage"
+              "index",
+              "guides/quickstart"
             ]
           },
           {
-            "group": "Chat",
+            "group": "Core capabilities",
             "pages": [
-              "guides/chat",
-              "guides/chat/assistants",
-              "guides/chat/context-and-features"
-            ]
-          },
-          {
-            "group": "Legal research",
-            "pages": [
-              "guides/legal-research",
-              "guides/legal-research/databases",
-              "guides/legal-research/search-modes"
-            ]
-          },
-          {
-            "group": "Grid review",
-            "pages": [
-              "guides/grid-review",
-              "guides/grid-review/templates",
-              "guides/grid-review/working-with-grids"
-            ]
-          },
-          {
-            "group": "Translate",
-            "pages": [
+              {
+                "group": "Projects",
+                "pages": [
+                  "guides/projects",
+                  "guides/projects/knowledge-base",
+                  "guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "guides/chat",
+                  "guides/chat/context-and-sources",
+                  "guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistants",
+                "pages": [
+                  "guides/assistants",
+                  "guides/assistants/models",
+                  "guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Legal research",
+                "pages": [
+                  "guides/legal-research",
+                  "guides/legal-research/search-and-results",
+                  "guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Grid review",
+                "pages": [
+                  "guides/grid-review",
+                  "guides/grid-review/working-with-grids",
+                  "guides/grid-review/templates"
+                ]
+              },
               "guides/translate",
-              "guides/translate/text",
-              "guides/translate/documents"
+              {
+                "group": "Workflows",
+                "pages": [
+                  "guides/workflows",
+                  "guides/workflows/building-and-running",
+                  "guides/workflows/library"
+                ]
+              }
             ]
           },
           {
-            "group": "Workflows",
+            "group": "Integrations",
             "pages": [
-              "guides/workflows",
-              "guides/workflows/create-and-run",
-              "guides/workflows/library"
+              {
+                "group": "Document management",
+                "pages": [
+                  "guides/integrations/sharepoint",
+                  "guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word add-in",
+                "pages": [
+                  "guides/integrations/word-add-in",
+                  "guides/integrations/word-add-in/user-setup",
+                  "guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "guides/admin"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "guides/troubleshooting"
             ]
           }
         ]
       },
       {
-        "group": "Administration",
-        "pages": [
-          "guides/admin-panel"
+        "language": "no",
+        "groups": [
+          { "group": "Kom i gang", "pages": ["no/index"] }
         ]
       },
       {
-        "group": "API documentation",
-        "pages": [
-          "api-reference/introduction"
+        "language": "nl",
+        "groups": [
+          { "group": "Aan de slag", "pages": ["nl/index"] }
         ]
       },
       {
-        "group": "Endpoint examples",
-        "pages": [
-          "api-reference/endpoint/get",
-          "api-reference/endpoint/create",
-          "api-reference/endpoint/delete",
-          "api-reference/endpoint/webhook"
+        "language": "pl",
+        "groups": [
+          { "group": "Rozpocznij", "pages": ["pl/index"] }
+        ]
+      },
+      {
+        "language": "es",
+        "groups": [
+          { "group": "Primeros pasos", "pages": ["es/index"] }
+        ]
+      },
+      {
+        "language": "de",
+        "groups": [
+          { "group": "Erste Schritte", "pages": ["de/index"] }
+        ]
+      },
+      {
+        "language": "it",
+        "groups": [
+          { "group": "Per iniziare", "pages": ["it/index"] }
+        ]
+      },
+      {
+        "language": "pt",
+        "groups": [
+          { "group": "Primeiros passos", "pages": ["pt/index"] }
+        ]
+      },
+      {
+        "language": "tr",
+        "groups": [
+          { "group": "Başlarken", "pages": ["tr/index"] }
+        ]
+      },
+      {
+        "language": "fr",
+        "groups": [
+          { "group": "Pour commencer", "pages": ["fr/index"] }
+        ]
+      },
+      {
+        "language": "sv",
+        "groups": [
+          { "group": "Kom igång", "pages": ["sv/index"] }
         ]
       }
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/dark.svg",
+    "dark": "/logo/light.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@saga.com"
+        "href": "mailto:support@sagalegal.io"
       }
     ] 
   },

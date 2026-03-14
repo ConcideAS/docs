@@ -1,0 +1,54 @@
+---
+title: Building and running
+---
+
+Building a workflow means laying out the steps you want to automate and configuring what each one does. Running it means executing those steps with real inputs and getting results.
+
+## The builder
+
+Open the workflow builder from the **Workflows** page in the sidebar. You'll see a visual canvas — an empty workspace where you assemble your flow.
+
+Add steps from the sidebar catalog, which is organized into **Inputs** and **Actions**. Drag a step onto the canvas or click to add it. Connect steps by dragging from one step's output handle to the next step's input handle. The connections define the order of execution and how data passes between steps.
+
+Each step has a configuration panel. Select a step on the canvas to open it in the sidebar, where you can set:
+
+- **Step title** — a label that identifies what this step does (this is what you see when referencing it from other steps)
+- **Instructions or query** — the prompt, search query, or directions for this step
+- **Assistant** — for prompt-based steps, which AI model or [custom assistant](/guides/assistants/custom-assistants) to use
+- **Step-specific options** — things like which [legal sources](/guides/legal-research) to search, which languages to translate between, or which [task](/guides/chat#tasks) to run
+
+You can also click **Improve prompt** on instruction fields to let the AI refine your phrasing.
+
+## Referencing earlier steps
+
+When writing instructions for a step, you can reference the output of any earlier step by mentioning it with `@`. Start typing `@` and select the step you want to reference. At runtime, that mention is replaced with the actual output from that step — so the data threads through the workflow automatically.
+
+This is how you build up context across the flow. A prompt step can analyze documents from an upload step. A drafting step can pull together the results of a research step and a review step into a final memo.
+
+## Saving
+
+Click **Save** when your workflow is ready. You'll give it a name, an optional description, and a language. You can also tag it with practice areas to make it easier to find later. If you want to make it available to your whole organization, check **Request to make organizational** — an admin will review and approve it.
+
+A workflow must be saved before it can be run.
+
+## Running a workflow
+
+Click **Run** in the builder to start execution. The sidebar switches to run mode, showing each step's status as it progresses:
+
+- **Pending** — waiting to start
+- **In progress** — currently running
+- **Waiting for input** — the step needs something from you (text or files)
+- **Completed** — finished, with results shown
+- **Failed** — something went wrong, with an error message
+
+When a step needs input — like a prompt input or file upload — the workflow pauses and waits for you to provide it before continuing. Fill in what's needed and the workflow picks up where it left off.
+
+Each step shows its execution time, and the final results appear in a **Final assets** section at the bottom — documents to download, text to copy, grid reviews to open, or research results to browse.
+
+## Running from chat
+
+You can also start a workflow directly from a chat conversation. The workflow runs inline — step by step in the chat thread — so you can see the results as they come in without leaving the conversation.
+
+## When something goes wrong
+
+If a step fails, the workflow stops and shows an error message for that step. Downstream steps won't run. You can adjust the failing step's configuration and run the workflow again from the start.

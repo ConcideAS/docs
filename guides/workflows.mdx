@@ -1,8 +1,49 @@
 ---
-title: Workflows
-description: Build visual automation flows to streamline repetitive legal tasks.
+title: Overview
 ---
 
-Workflows let you create visual, node-based automation flows. Chain together steps like document analysis, research, and content generation to automate repetitive tasks.
+Workflows let you chain together AI tasks into an automated sequence. Instead of running each step manually — extracting key terms, researching the relevant law, drafting a summary — you build a flow once and run it whenever you need it. Each step feeds its output into the next, so the whole process runs end to end without you switching between tools.
 
-Click **Workflows** in the sidebar to access the workflow builder.
+They're built on a visual canvas where you lay out steps, connect them, and configure what each one does. The result is a reusable pipeline that can handle complex, multi-step work in a fraction of the time it would take to do manually.
+
+<Note>
+Saga's legal engineers can help you design workflows tailored to your firm's specific processes — reach out to your account team if you'd like assistance.
+</Note>
+
+## How workflows are structured
+
+A workflow is a linear sequence of steps. Each step is a **node** that does one thing — generate text, search legal sources, translate a document, run a grid review. You connect nodes in the order you want them to run, and data flows from one step to the next automatically.
+
+There's no branching or looping — every workflow is a straight line from start to finish. This keeps things predictable: you always know what runs when, and each step can reference the output of any earlier step.
+
+## What steps can do
+
+Steps fall into two categories: **inputs** that collect information from you, and **actions** that do something with it.
+
+### Inputs
+
+| Step | What it does |
+|------|-------------|
+| **Prompt input** | Asks you to enter text — context, instructions, a question — that later steps can use |
+| **Files upload** | Asks you to upload one or more documents for the workflow to process |
+
+### Actions
+
+| Step | What it does |
+|------|-------------|
+| **Run prompt** | Sends a prompt to an AI assistant and returns the response |
+| **Drafting** | Generates one or more documents based on earlier inputs |
+| **Legal research** | Searches across selected [legal sources](/guides/legal-research) and returns results with citations |
+| **Prompt library** | Runs a saved prompt from your [prompt library](/guides/chat/prompt-library) |
+| **Grid review** | Creates a [grid review](/guides/grid-review) with uploaded documents and AI-generated questions |
+| **Translate** | Translates text or documents between languages via [DeepL](/guides/translate) |
+| **Tasks** | Runs a built-in task like `/summarize`, `/anonymize`, or `/proofread` |
+| **Logical thinking** | Applies step-by-step reasoning to analyze or evaluate earlier outputs |
+| **Web search** | Searches the web and returns relevant information |
+| **Code interpreter** | Executes Python code for data processing, calculations, or analysis |
+
+## How data flows between steps
+
+Each step can reference the output of any step that came before it. When you're configuring a step's instructions, type `@` to mention a previous step by name. At runtime, that mention is replaced with the actual output from that step.
+
+For example, a "Run prompt" step can `@` a "Files upload" step to analyze the uploaded documents, and a "Drafting" step further down can `@` both to produce a final report. The data threads through the workflow automatically.

@@ -1,36 +1,57 @@
 ---
-title: Basics
-description: Get up and running with Saga in minutes.
+title: Key concepts
 ---
 
-Watch the product walkthrough to see Saga in action, then follow the steps below to get started.
+Saga is built around a small set of ideas that connect everything together. Understanding them makes the rest of the platform click into place.
 
-{/* Replace the URL below with your product walkthrough video */}
-{/* <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Saga product walkthrough" width="100%" style={{ aspectRatio: '16/9' }} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
+## Projects
 
-## 1. Sign in
+A project is your workspace for a case, transaction, or any other body of work. It keeps everything related to that matter in one place — the documents you're working with, the conversations you've had, and the structured reviews you've run.
 
-Go to your organization's Saga URL or [app.saga.com](https://app.saga.com) and sign in with your credentials.
+When you create a project, you can give it a default assistant and a set of standing instructions that apply to every AI conversation inside it. That way, the AI always has the right context before you even ask your first question.
 
-## 2. Create a project
+Projects can be shared with colleagues at different permission levels, so your team can work on the same matter without duplicating effort.
 
-Click **Projects** in the sidebar, then click **New project**. Give it a name that matches your case or project.
+## Knowledge base
 
-## 3. Upload documents
+The knowledge base is the document library inside a project. Every file you upload is processed by Saga — the text is extracted, broken into chunks, and stored in a way that lets the AI find the most relevant passages when you ask a question.
 
-Add files to your project's **Knowledge base**. These documents become context for AI conversations and reviews.
+This is what makes Saga's answers accurate and traceable. The AI isn't generating answers from thin air — it's reading your documents and surfacing what's actually in them.
 
-## 4. Start asking questions
+You can organize documents with folders and tags, toggle individual documents active or inactive, and import files from SharePoint or Epona365 if your organization has those integrations set up.
 
-Open **Chat** and ask questions about your documents. Saga's AI uses your uploaded files as context to give accurate, sourced answers.
+## Citations
 
-## Next steps
+Whenever the AI answers using a document — from your knowledge base, a legal database, or the web — it links back to the exact passage it drew from. These are citations.
 
-<CardGroup cols={2}>
-  <Card title="Getting started" icon="book-open" href="/guides/getting-started">
-    Detailed walkthrough of Saga's interface and features.
-  </Card>
-  <Card title="Projects" icon="folder-open" href="/guides/matters">
-    Learn how to organize your work with projects.
-  </Card>
-</CardGroup>
+Each citation appears inline in the AI's response. Hover over one to see the original excerpt. Click it to open the source document in the side panel, scrolled directly to the relevant passage.
+
+Citations are how you verify what the AI is telling you. They make it possible to check every claim against the original source without hunting through documents yourself.
+
+## Assistants and models
+
+An **assistant** is what the AI behaves like in a conversation. There are two kinds.
+
+**Models** are the underlying AI systems — GPT, Claude, Mistral, and others — that your organization has enabled. Each has different strengths. You choose a model when you want to work directly with a particular AI without any pre-configured behavior layered on top.
+
+**Custom assistants** are built on top of models by your organization's administrators or Saga's legal engineers. They have a name, a defined purpose, and built-in instructions that shape how they respond — for example, a contract review assistant with specific guidance on what to look for and how to report findings. When a custom assistant fits your task, it will generally give better results than starting from a blank model.
+
+Inside a project, you can set a default assistant that pre-selects every time you open a new chat. You can always switch mid-conversation.
+
+## Libraries
+
+Libraries are shared collections of reusable content — prompts, grid review question sets, workflow templates, and custom assistants. They follow the same structure across the platform:
+
+- **Personal** — content you've created, only visible to you
+- **Organization** — content published by your administrators, available to everyone
+- **Saga Lab** — curated content provided by the Saga team
+
+The **prompt library** lets you save instructions you use repeatedly and apply them to a conversation in one click. Organization-wide prompts are created by your admin and available to the full team — useful for standardizing how the firm approaches common tasks like contract review or due diligence.
+
+Grid review templates and workflow templates work the same way: you can save your own, use templates your organization has set up, or browse what Saga has pre-built.
+
+## Organizational sources
+
+An organizational source is a knowledge base that lives at the firm level rather than inside a project. It's managed by administrators and accessible across all conversations — regardless of which project you're working in.
+
+Use organizational sources for reference material that applies across matters: standard clause libraries, internal guidelines, regulatory handbooks, or frequently referenced legislation. The AI can draw on them alongside your project documents when you need both.

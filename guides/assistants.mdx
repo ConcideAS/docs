@@ -1,0 +1,36 @@
+---
+title: Overview
+---
+
+Every conversation in Saga is powered by an assistant — the AI you're talking to. Some assistants are general-purpose models you can use for anything. Others are custom assistants built for specific tasks, with instructions already baked in. Understanding the difference helps you pick the right one and get better results faster.
+
+## The assistant selector
+
+The assistant selector appears at the bottom of the chat input. Click it to open a panel with two categories:
+
+- **Models** — the underlying AI systems (GPT, Claude, Mistral, and others). These are general-purpose: no pre-configured behavior, no built-in instructions. You're working directly with the model.
+- **Custom assistants** — AI assistants built on top of a model with structured instructions that shape how they respond. They have a name, a description, and a defined purpose — like a contract review assistant or a due diligence assistant.
+
+Hover over any option to see its details: a description, capability indicators (speed, intelligence, capacity), and for custom assistants, which model it's built on.
+
+## When to use which
+
+If a custom assistant matches your task, start there. It will generally give better results because the instructions are already dialed in — the AI knows what to look for, how to structure its response, and who it's writing for. You skip the setup and go straight to the work.
+
+If your task doesn't match any available assistant, or you want full control over the conversation without any pre-set behavior, pick a model directly. Models are the right choice for open-ended questions, exploratory analysis, or anything that doesn't fit a standard workflow.
+
+## Defaults
+
+You don't have to pick an assistant every time you start a chat. Saga uses a layered default system:
+
+- **Workspace default** — set by your admin, applies to everyone unless overridden
+- **User default** — set by you in **Settings > Personalization**, overrides the workspace default
+- **Project default** — set per project in the project settings, applies to all new chats in that project
+
+The most specific default wins. If you've set a user default, that's what you get in global chats. If a project has its own default, that takes priority inside that project. You can always override any default by selecting a different assistant from the selector.
+
+## Switching mid-conversation
+
+You can change the assistant between messages. Click the assistant selector and pick a different one — the new assistant applies from that point forward. Earlier messages in the conversation stay as they were.
+
+This is useful when you start with a general model to explore a question, then switch to a specialized assistant once you know what kind of analysis you need. Or when you want to compare how two different models handle the same prompt — send the message, switch, and regenerate.
