@@ -204,21 +204,12 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
+     "copy"
    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/saga",
-      "github": "https://github.com/saga",
-      "linkedin": "https://linkedin.com/company/saga"
+      "linkedin": "https://www.linkedin.com/company/sagalegal-io/posts/?feedView=all"
     }
   }
 }
