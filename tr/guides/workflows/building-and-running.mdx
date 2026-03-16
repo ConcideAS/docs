@@ -1,0 +1,54 @@
+---
+title: Oluşturma ve çalıştırma
+---
+
+Bir iş akışı oluşturmak, otomatikleştirmek istediğiniz adımları düzenlemek ve her birinin ne yapacağını yapılandırmak demektir. Çalıştırmak, bu adımları gerçek girdilerle yürütmek ve sonuçları almak demektir.
+
+## Oluşturucu
+
+Kenar çubuğundaki **İş akışları** sayfasından iş akışı oluşturucuyu açın. Görsel bir tuval göreceksiniz — akışınızı birleştirdiğiniz boş bir çalışma alanı.
+
+**Girdiler** ve **Eylemler** olarak düzenlenmiş kenar çubuğu kataloğundan adımlar ekleyin. Bir adımı tuvale sürükleyin veya eklemek için tıklayın. Bir adımın çıktı tutamağından sonraki adımın giriş tutamağına sürükleyerek adımları bağlayın. Bağlantılar, yürütme sırasını ve verilerin adımlar arasında nasıl aktığını tanımlar.
+
+Her adımın bir yapılandırma paneli vardır. Tuvaldeki bir adımı seçerek kenar çubuğunda açın; burada şunları ayarlayabilirsiniz:
+
+- **Adım başlığı** — bu adımın ne yaptığını tanımlayan bir etiket (diğer adımlardan referans verirken gördüğünüz budur)
+- **Talimatlar veya sorgu** — bu adım için istem, arama sorgusu veya yönergeler
+- **Asistan** — istem tabanlı adımlar için hangi yapay zeka modeli veya [özel asistanın](/tr/guides/assistants/custom-assistants) kullanılacağı
+- **Adıma özel seçenekler** — hangi [hukuki kaynakların](/tr/guides/legal-research) aranacağı, hangi diller arasında çeviri yapılacağı veya hangi [görevin](/tr/guides/chat#görevler) çalıştırılacağı gibi şeyler
+
+Yapay zekanın ifadenizi iyileştirmesine izin vermek için talimat alanlarında **İstemi iyileştir**'e de tıklayabilirsiniz.
+
+## Önceki adımlara referans verme
+
+Bir adım için talimat yazarken, `@` ile önceki herhangi bir adımın çıktısına referans verebilirsiniz. `@` yazmaya başlayın ve referans vermek istediğiniz adımı seçin. Çalışma zamanında bu atıf, o adımın gerçek çıktısıyla değiştirilir — böylece veri iş akışı boyunca otomatik olarak akar.
+
+Akış boyunca bağlam böyle oluşturulur. Bir istem adımı, bir yükleme adımındaki belgeleri analiz edebilir. Bir taslak oluşturma adımı, bir araştırma adımının ve bir inceleme adımının sonuçlarını nihai bir muhtırada bir araya getirebilir.
+
+## Kaydetme
+
+İş akışınız hazır olduğunda **Kaydet**'e tıklayın. Bir ad, isteğe bağlı bir açıklama ve bir dil vereceksiniz. Ayrıca daha sonra bulmayı kolaylaştırmak için uygulama alanlarıyla etiketleyebilirsiniz. Tüm kuruluşunuza sunmak istiyorsanız, **Kuruluş genelinde yayınlanmasını talep et** seçeneğini işaretleyin — bir yönetici inceler ve onaylar.
+
+Bir iş akışının çalıştırılabilmesi için kaydedilmiş olması gerekir.
+
+## İş akışını çalıştırma
+
+Yürütmeyi başlatmak için oluşturucuda **Çalıştır**'a tıklayın. Kenar çubuğu çalıştırma moduna geçer ve ilerledikçe her adımın durumunu gösterir:
+
+- **Beklemede** — başlamayı bekliyor
+- **Devam ediyor** — şu anda çalışıyor
+- **Giriş bekleniyor** — adım sizden bir şey istiyor (metin veya dosya)
+- **Tamamlandı** — bitti, sonuçlar gösteriliyor
+- **Başarısız** — bir şeyler ters gitti, hata mesajıyla birlikte
+
+Bir adım giriş gerektirdiğinde — istem girişi veya dosya yükleme gibi — iş akışı duraklar ve devam etmeden önce sağlamanızı bekler. Gerekeni doldurun ve iş akışı kaldığı yerden devam eder.
+
+Her adım yürütme süresini gösterir ve nihai sonuçlar alt kısımdaki **Son varlıklar** bölümünde görünür — indirilecek belgeler, kopyalanacak metin, açılacak tablo incelemeleri veya göz atılacak araştırma sonuçları.
+
+## Sohbetten çalıştırma
+
+Bir iş akışını doğrudan bir sohbet konuşmasından da başlatabilirsiniz. İş akışı satır içi çalışır — sohbet akışında adım adım — böylece konuşmayı terk etmeden sonuçları geldikçe görebilirsiniz.
+
+## Bir şeyler ters gittiğinde
+
+Bir adım başarısız olursa, iş akışı durur ve o adım için bir hata mesajı gösterir. Sonraki adımlar çalışmaz. Başarısız adımın yapılandırmasını ayarlayabilir ve iş akışını baştan çalıştırabilirsiniz.

@@ -1,0 +1,49 @@
+---
+title: Översikt
+---
+
+Arbetsflöden låter dig kedja ihop AI-uppgifter till en automatiserad sekvens. Istället för att köra varje steg manuellt — extrahera nyckeltermer, söka efter relevant lag, skriva en sammanfattning — bygger du ett flöde en gång och kör det när du behöver det. Varje steg matar sitt resultat vidare till nästa, så hela processen körs från början till slut utan att du behöver byta mellan verktyg.
+
+De är byggda på en visuell arbetsyta där du lägger ut steg, kopplar ihop dem och konfigurerar vad vart och ett gör. Resultatet är en återanvändbar pipeline som kan hantera komplext arbete i flera steg på en bråkdel av den tid det skulle ta att göra manuellt.
+
+<Note>
+Sagas juridiska ingenjörer kan hjälpa dig designa arbetsflöden anpassade efter din byrås specifika processer — kontakta ditt kontoteam om du vill ha hjälp.
+</Note>
+
+## Hur arbetsflöden är strukturerade
+
+Ett arbetsflöde är en linjär sekvens av steg. Varje steg är en **nod** som gör en sak — generera text, söka i juridiska källor, översätta ett dokument, köra en tabellgranskning. Du kopplar ihop noder i den ordning du vill att de ska köras, och data flödar från ett steg till nästa automatiskt.
+
+Det finns ingen förgrening eller looping — varje arbetsflöde är en rak linje från start till mål. Det håller saker förutsägbara: du vet alltid vad som körs när, och varje steg kan referera till resultatet av valfritt tidigare steg.
+
+## Vad steg kan göra
+
+Steg delas in i två kategorier: **inmatningar** som samlar information från dig, och **åtgärder** som gör något med den.
+
+### Inmatningar
+
+| Steg | Vad det gör |
+|------|-------------|
+| **Promptinmatning** | Ber dig ange text — kontext, instruktioner, en fråga — som senare steg kan använda |
+| **Filuppladdning** | Ber dig ladda upp ett eller flera dokument som arbetsflödet ska bearbeta |
+
+### Åtgärder
+
+| Steg | Vad det gör |
+|------|-------------|
+| **Kör prompt** | Skickar en prompt till en AI-assistent och returnerar svaret |
+| **Utkast** | Genererar ett eller flera dokument baserat på tidigare inmatningar |
+| **Juridisk sökning** | Söker i valda [juridiska källor](/sv/guides/legal-research) och returnerar resultat med källhänvisningar |
+| **Promptbibliotek** | Kör en sparad prompt från ditt [promptbibliotek](/sv/guides/chat/prompt-library) |
+| **Tabellgranskning** | Skapar en [tabellgranskning](/sv/guides/grid-review) med uppladdade dokument och AI-genererade frågor |
+| **Översätt** | Översätter text eller dokument mellan språk via [DeepL](/sv/guides/translate) |
+| **Uppgifter** | Kör en inbyggd uppgift som `/summarize`, `/anonymize` eller `/proofread` |
+| **Logiskt tänkande** | Tillämpar steg-för-steg-resonemang för att analysera eller utvärdera tidigare resultat |
+| **Webbsökning** | Söker på webben och returnerar relevant information |
+| **Kodtolk** | Kör Python-kod för databearbetning, beräkningar eller analys |
+
+## Hur data flödar mellan steg
+
+Varje steg kan referera till resultatet av valfritt steg som kom före det. När du konfigurerar ett stegs instruktioner, skriv `@` för att nämna ett tidigare steg vid namn. Vid körning ersätts den omnämnandet med det faktiska resultatet från det steget.
+
+Till exempel kan ett "Kör prompt"-steg `@`-referera ett "Filuppladdning"-steg för att analysera de uppladdade dokumenten, och ett "Utkast"-steg längre ner kan `@`-referera båda för att producera en slutrapport. Data trådar sig genom arbetsflödet automatiskt.

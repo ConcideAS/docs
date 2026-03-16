@@ -1,0 +1,76 @@
+---
+title: FAQ e resolução de problemas
+---
+
+## Documentos
+
+<AccordionGroup>
+
+<Accordion title="O meu documento falhou ao carregar ou processar">
+Verifique o formato e tamanho do ficheiro. O Saga suporta PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG e formatos de imagem comuns. O tamanho máximo de ficheiro é 1 GB — e PDFs ou imagens que necessitam de extração de texto (OCR) estão limitados a 500 MB.
+
+Se o formato e tamanho do ficheiro estão corretos, clique em **Tentar novamente** no documento falhado na base de conhecimento. Se ainda não funcionar, tente voltar a carregar o ficheiro. Ficheiros corrompidos ou documentos muito digitalizados com fraca qualidade de imagem podem por vezes causar falhas no processamento.
+</Accordion>
+
+</AccordionGroup>
+
+## Chat e IA
+
+<AccordionGroup>
+
+<Accordion title="A IA diz que o contexto do chat está quase cheio">
+Cada modelo de IA tem um limite de quanto texto pode considerar de uma vez. Quando uma conversa fica longa — muitas mensagens, anexos grandes, ou ambos — verá um aviso de que o contexto está quase cheio.
+
+Inicie uma nova conversa para repor o contexto. Se está a trabalhar com um grande conjunto de documentos, considere carregá-los para a [base de conhecimento](/pt/guides/projects/knowledge-base) de um projeto em vez de os anexar no chat — a base de conhecimento indexa os seus ficheiros para que a IA possa pesquisar entre eles sem precisar de manter tudo em contexto ao mesmo tempo.
+</Accordion>
+
+<Accordion title="A IA deu uma resposta incorreta ou incompleta">
+A qualidade da resposta da IA depende do contexto que tem e do modelo que está a usar. Algumas coisas a tentar:
+
+- **Mude para um modelo mais capaz** — um modelo com maior inteligência pode lidar melhor com a sua questão. Consulte [Modelos](/pt/guides/assistants/models) para orientação.
+- **Restrinja o contexto** — se a base de conhecimento tem muitos documentos, desative os que não são relevantes para focar a atenção da IA.
+- **Reformule a sua pergunta** — perguntas mais específicas tendem a produzir melhores resultados. Use **Melhorar prompt** para que a IA refine a sua formulação antes de enviar.
+- **Verifique as citações** — verifique sempre as afirmações da IA contra as fontes citadas.
+</Accordion>
+
+<Accordion title="Estou a ser limitado na taxa ou a ver 'demasiados pedidos'">
+O Saga limita a frequência com que certas ações podem ser realizadas. Se está a ver isto durante o início de sessão ou autenticação de dois fatores, aguarde alguns minutos e tente novamente. Para limites de taxa relacionados com o chat, aguarde brevemente e reenvie a sua mensagem.
+</Accordion>
+
+</AccordionGroup>
+
+## Funcionalidades e acesso
+
+<AccordionGroup>
+
+<Accordion title="Não vejo SharePoint ou Epona365 ao carregar documentos">
+Estas integrações precisam de ser ativadas pelo seu administrador. Peça-lhe para configurar a integração a partir do [painel de administração](/pt/guides/admin) em **Definições > Integrações**. Uma vez configurada, a opção aparece para todos na organização.
+</Accordion>
+
+<Accordion title="Não vejo fontes organizacionais na barra de ferramentas do chat">
+As fontes organizacionais são criadas pelo seu administrador ou administrador de conteúdo. Se o botão não aparece no menu **Adicionar fontes**, a sua organização ainda não configurou nenhuma. Peça ao seu administrador para criar uma a partir do [painel de administração](/pt/guides/admin).
+</Accordion>
+
+<Accordion title="Não vejo uma fonte jurídica de que preciso">
+O seu administrador controla quais fontes jurídicas estão ativadas. Se uma fonte não aparece, peça ao seu administrador para a ativar nas definições do espaço de trabalho. Para o catálogo completo de fontes disponíveis, consulte [moonlit.ai/coverage](https://moonlit.ai/coverage).
+</Accordion>
+
+<Accordion title="Não consigo aceder ao painel de administração">
+O painel de administração só é visível para utilizadores com o papel de **Administrador** ou **Administrador de conteúdo**. Se precisa de acesso, peça a um administrador existente para atualizar o seu papel. Os administradores de conteúdo podem gerir bibliotecas e fontes organizacionais; os administradores completos podem gerir tudo incluindo utilizadores e definições.
+</Accordion>
+
+<Accordion title="O suplemento do Word não aparece no Word">
+Isto é normalmente um problema de permissões ou licenciamento. Verifique que a sua organização permite suplementos do Office de terceiros, que a sua versão do Office está atualizada e que tem sessão iniciada com a sua conta Microsoft. Para passos detalhados, consulte [Resolução de problemas do suplemento do Word](/pt/guides/integrations/word-add-in/user-setup#resolução-de-problemas).
+</Accordion>
+
+</AccordionGroup>
+
+## Suporte
+
+<AccordionGroup>
+
+<Accordion title="Como contacto o suporte?">
+Clique em **Obter ajuda** na barra lateral para abrir o formulário de feedback, ou envie e-mail diretamente à equipa de suporte em [support@sagalegal.io](mailto:support@sagalegal.io). Inclua o máximo de detalhe possível — o que estava a fazer, o que esperava e quaisquer mensagens de erro que viu.
+</Accordion>
+
+</AccordionGroup>

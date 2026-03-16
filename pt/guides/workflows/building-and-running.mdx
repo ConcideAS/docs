@@ -1,0 +1,54 @@
+---
+title: Construir e executar
+---
+
+Construir um fluxo de trabalho significa dispor os passos que quer automatizar e configurar o que cada um faz. Executá-lo significa processar esses passos com entradas reais e obter resultados.
+
+## O construtor
+
+Abra o construtor de fluxos de trabalho a partir da página **Fluxos de trabalho** na barra lateral. Verá um canvas visual — um espaço de trabalho vazio onde monta o seu fluxo.
+
+Adicione passos a partir do catálogo na barra lateral, que está organizado em **Entradas** e **Ações**. Arraste um passo para o canvas ou clique para o adicionar. Ligue os passos arrastando da saída de um passo para a entrada do passo seguinte. As ligações definem a ordem de execução e como os dados passam entre passos.
+
+Cada passo tem um painel de configuração. Selecione um passo no canvas para o abrir na barra lateral, onde pode definir:
+
+- **Título do passo** — uma etiqueta que identifica o que este passo faz (é o que vê ao referenciá-lo a partir de outros passos)
+- **Instruções ou consulta** — o prompt, consulta de pesquisa ou indicações para este passo
+- **Assistente** — para passos baseados em prompts, que modelo de IA ou [assistente personalizado](/pt/guides/assistants/custom-assistants) usar
+- **Opções específicas do passo** — como que [fontes jurídicas](/pt/guides/legal-research) pesquisar, entre que idiomas traduzir, ou que [tarefa](/pt/guides/chat#tarefas) executar
+
+Pode também clicar em **Melhorar prompt** nos campos de instrução para que a IA refine a sua formulação.
+
+## Referenciar passos anteriores
+
+Ao escrever instruções para um passo, pode referenciar o resultado de qualquer passo anterior mencionando-o com `@`. Comece a escrever `@` e selecione o passo que quer referenciar. Na execução, essa menção é substituída pelo resultado real desse passo — para que os dados atravessem o fluxo de trabalho automaticamente.
+
+É assim que constrói contexto ao longo do fluxo. Um passo de prompt pode analisar documentos de um passo de carregamento. Um passo de redação pode reunir os resultados de um passo de pesquisa e de um passo de revisão num memorando final.
+
+## Guardar
+
+Clique em **Guardar** quando o seu fluxo de trabalho estiver pronto. Dará um nome, uma descrição opcional e um idioma. Pode também etiquetá-lo com áreas de prática para facilitar a sua localização mais tarde. Se quiser disponibilizá-lo para toda a organização, marque **Solicitar tornar organizacional** — um administrador revê e aprova.
+
+Um fluxo de trabalho deve ser guardado antes de poder ser executado.
+
+## Executar um fluxo de trabalho
+
+Clique em **Executar** no construtor para iniciar a execução. A barra lateral muda para o modo de execução, mostrando o estado de cada passo à medida que progride:
+
+- **Pendente** — a aguardar início
+- **Em progresso** — em execução
+- **A aguardar entrada** — o passo precisa de algo seu (texto ou ficheiros)
+- **Concluído** — terminado, com resultados apresentados
+- **Falhado** — algo correu mal, com uma mensagem de erro
+
+Quando um passo precisa de entrada — como uma entrada de prompt ou carregamento de ficheiro — o fluxo de trabalho faz pausa e aguarda que forneça o necessário antes de continuar. Preencha o que é pedido e o fluxo retoma de onde parou.
+
+Cada passo mostra o seu tempo de execução, e os resultados finais aparecem numa secção **Ativos finais** no fundo — documentos para transferir, texto para copiar, revisões em grelha para abrir ou resultados de pesquisa para consultar.
+
+## Executar a partir do chat
+
+Pode também iniciar um fluxo de trabalho diretamente a partir de uma conversa de chat. O fluxo de trabalho corre inline — passo a passo no fio da conversa — para que possa ver os resultados à medida que vão surgindo sem sair da conversa.
+
+## Quando algo corre mal
+
+Se um passo falhar, o fluxo de trabalho para e mostra uma mensagem de erro para esse passo. Os passos seguintes não são executados. Pode ajustar a configuração do passo que falhou e executar o fluxo de trabalho novamente desde o início.

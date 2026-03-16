@@ -1,0 +1,49 @@
+---
+title: Descripción general
+---
+
+Los flujos de trabajo le permiten encadenar tareas de IA en una secuencia automatizada. En lugar de ejecutar cada paso manualmente — extraer términos clave, investigar la ley relevante, redactar un resumen — construye un flujo una vez y lo ejecuta siempre que lo necesite. Cada paso alimenta su resultado al siguiente, de modo que todo el proceso se ejecuta de principio a fin sin que usted cambie entre herramientas.
+
+Se construyen sobre un lienzo visual donde dispone los pasos, los conecta y configura lo que hace cada uno. El resultado es una canalización reutilizable que puede manejar trabajo complejo y de múltiples pasos en una fracción del tiempo que tomaría hacerlo manualmente.
+
+<Note>
+Los ingenieros jurídicos de Saga pueden ayudarle a diseñar flujos de trabajo adaptados a los procesos específicos de su despacho — contacte a su equipo de cuenta si desea asistencia.
+</Note>
+
+## Cómo se estructuran los flujos de trabajo
+
+Un flujo de trabajo es una secuencia lineal de pasos. Cada paso es un **nodo** que hace una cosa — generar texto, buscar en fuentes jurídicas, traducir un documento, ejecutar una revisión en cuadrícula. Conecta los nodos en el orden en que desea que se ejecuten, y los datos fluyen de un paso al siguiente automáticamente.
+
+No hay ramificaciones ni bucles — cada flujo de trabajo es una línea recta de principio a fin. Esto mantiene las cosas predecibles: siempre sabe qué se ejecuta cuándo, y cada paso puede hacer referencia a la salida de cualquier paso anterior.
+
+## Qué pueden hacer los pasos
+
+Los pasos se dividen en dos categorías: **entradas** que recopilan información de usted, y **acciones** que hacen algo con ella.
+
+### Entradas
+
+| Paso | Qué hace |
+|------|----------|
+| **Entrada de prompt** | Le pide que ingrese texto — contexto, instrucciones, una pregunta — que los pasos posteriores pueden usar |
+| **Carga de archivos** | Le pide que cargue uno o más documentos para que el flujo de trabajo los procese |
+
+### Acciones
+
+| Paso | Qué hace |
+|------|----------|
+| **Ejecutar prompt** | Envía un prompt a un asistente de IA y devuelve la respuesta |
+| **Redacción** | Genera uno o más documentos basados en entradas anteriores |
+| **Investigación jurídica** | Busca en [fuentes jurídicas](/es/guides/legal-research) seleccionadas y devuelve resultados con citas |
+| **Biblioteca de prompts** | Ejecuta un prompt guardado de su [biblioteca de prompts](/es/guides/chat/prompt-library) |
+| **Revisión en cuadrícula** | Crea una [revisión en cuadrícula](/es/guides/grid-review) con documentos cargados y preguntas generadas por IA |
+| **Traducir** | Traduce texto o documentos entre idiomas mediante [DeepL](/es/guides/translate) |
+| **Tareas** | Ejecuta una tarea integrada como `/summarize`, `/anonymize` o `/proofread` |
+| **Razonamiento lógico** | Aplica razonamiento paso a paso para analizar o evaluar salidas anteriores |
+| **Búsqueda web** | Busca en la web y devuelve información relevante |
+| **Intérprete de código** | Ejecuta código Python para procesamiento de datos, cálculos o análisis |
+
+## Cómo fluyen los datos entre pasos
+
+Cada paso puede hacer referencia a la salida de cualquier paso anterior. Cuando configura las instrucciones de un paso, escriba `@` para mencionar un paso anterior por nombre. En tiempo de ejecución, esa mención se reemplaza con la salida real de ese paso.
+
+Por ejemplo, un paso de "Ejecutar prompt" puede usar `@` para referirse a un paso de "Carga de archivos" y analizar los documentos cargados, y un paso de "Redacción" más adelante puede usar `@` en ambos para producir un informe final. Los datos se enlazan a través del flujo de trabajo automáticamente.

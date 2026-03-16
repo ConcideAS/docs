@@ -1,0 +1,49 @@
+---
+title: Przegląd
+---
+
+Przepływy pracy pozwalają łączyć zadania AI w zautomatyzowaną sekwencję. Zamiast uruchamiać każdy krok ręcznie — wyodrębnianie kluczowych terminów, badanie odpowiednich przepisów, tworzenie podsumowania — budujesz przepływ raz i uruchamiasz go, gdy jest potrzebny. Każdy krok przekazuje swój wynik do następnego, więc cały proces przebiega od początku do końca bez przełączania się między narzędziami.
+
+Są zbudowane na wizualnym kanwie, na którym rozmieszczasz kroki, łączysz je i konfigurujesz, co każdy z nich robi. Rezultatem jest potok wielokrotnego użytku, który może obsłużyć złożoną, wieloetapową pracę w ułamku czasu, jaki zajęłoby to ręcznie.
+
+<Note>
+Inżynierowie prawni Saga mogą pomóc zaprojektować przepływy pracy dostosowane do konkretnych procesów Twojej firmy — skontaktuj się z zespołem obsługi konta, jeśli potrzebujesz pomocy.
+</Note>
+
+## Struktura przepływów pracy
+
+Przepływ pracy to liniowa sekwencja kroków. Każdy krok to **węzeł**, który wykonuje jedną czynność — generuje tekst, przeszukuje źródła prawne, tłumaczy dokument, uruchamia przegląd tabelaryczny. Łączysz węzły w kolejności, w jakiej mają być wykonywane, a dane przepływają z jednego kroku do następnego automatycznie.
+
+Nie ma rozgałęzień ani pętli — każdy przepływ pracy to prosta linia od początku do końca. Dzięki temu wszystko jest przewidywalne: zawsze wiesz, co uruchamia się kiedy, a każdy krok może odwoływać się do wyniku dowolnego wcześniejszego kroku.
+
+## Co mogą robić kroki
+
+Kroki dzielą się na dwie kategorie: **dane wejściowe**, które zbierają od Ciebie informacje, i **akcje**, które coś z nimi robią.
+
+### Dane wejściowe
+
+| Krok | Co robi |
+|------|---------|
+| **Wprowadzanie tekstu** | Prosi o wpisanie tekstu — kontekstu, instrukcji, pytania — który mogą wykorzystać późniejsze kroki |
+| **Przesyłanie plików** | Prosi o przesłanie jednego lub więcej dokumentów do przetworzenia przez przepływ pracy |
+
+### Akcje
+
+| Krok | Co robi |
+|------|---------|
+| **Uruchom prompt** | Wysyła prompt do asystenta AI i zwraca odpowiedź |
+| **Redagowanie** | Generuje jeden lub więcej dokumentów na podstawie wcześniejszych danych wejściowych |
+| **Badania prawne** | Przeszukuje wybrane [źródła prawne](/pl/guides/legal-research) i zwraca wyniki z cytowaniami |
+| **Biblioteka promptów** | Uruchamia zapisany prompt z [biblioteki promptów](/pl/guides/chat/prompt-library) |
+| **Przegląd tabelaryczny** | Tworzy [przegląd tabelaryczny](/pl/guides/grid-review) z przesłanymi dokumentami i pytaniami wygenerowanymi przez AI |
+| **Tłumaczenie** | Tłumaczy tekst lub dokumenty między językami za pomocą [DeepL](/pl/guides/translate) |
+| **Zadania** | Uruchamia wbudowane zadanie, takie jak `/summarize`, `/anonymize` lub `/proofread` |
+| **Logiczne myślenie** | Stosuje rozumowanie krok po kroku do analizy lub oceny wcześniejszych wyników |
+| **Wyszukiwanie internetowe** | Przeszukuje internet i zwraca istotne informacje |
+| **Interpreter kodu** | Wykonuje kod Python do przetwarzania danych, obliczeń lub analiz |
+
+## Jak dane przepływają między krokami
+
+Każdy krok może odwoływać się do wyniku dowolnego wcześniejszego kroku. Konfigurując instrukcje kroku, wpisz `@`, aby wspomnieć poprzedni krok po nazwie. W czasie wykonania ta wzmianka jest zastępowana rzeczywistym wynikiem tego kroku.
+
+Na przykład krok „Uruchom prompt" może użyć `@` do kroku „Przesyłanie plików", aby przeanalizować przesłane dokumenty, a krok „Redagowanie" dalej w przepływie może użyć `@` do obu, aby stworzyć końcowy raport. Dane przepływają przez przepływ pracy automatycznie.

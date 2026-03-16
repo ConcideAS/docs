@@ -1,0 +1,49 @@
+---
+title: Översikt
+---
+
+Tabellgranskning är hur du analyserar en uppsättning dokument mot samma frågor i en strukturerad genomgång. Definiera vad du vill veta — uppsägningsklausuler, ikraftträdandedatum, tillämplig lag, ansvarsbegränsningar — och AI:n arbetar sig igenom varje dokument och fyller i en tabell där varje rad är ett dokument och varje kolumn är en fråga.
+
+Det är byggt för den typ av arbete där du normalt skulle öppna tjugo avtal sida vid sida och göra ett kalkylblad för hand. Tabellgranskning gör det på minuter, med källhänvisningar som kopplar varje svar till ursprungspassagen.
+
+## Var tabellgranskningar finns
+
+Tabellgranskningar kan finnas inuti ett [projekt](/sv/guides/projects) eller fristående. Inuti ett projekt hittar du dem under fliken **Tabellgranskning** bredvid chatt. Tabellen har automatiskt tillgång till projektets [kunskapsbas](/sv/guides/projects/knowledge-base), så du kan hämta dokument direkt därifrån.
+
+Du kan även skapa fristående tabellgranskningar från sidan **Tabellgranskningar** i sidofältet. Fristående tabellgranskningar har sin egen dokumentuppsättning. Om du senare bestämmer att en tabell hör hemma i ett projekt kan du flytta den.
+
+## Skapa en tabellgranskning
+
+Klicka på **Ny tabellgranskning** för att börja från grunden, eller öppna **Tabellbiblioteket** för att börja från en [mall](/sv/guides/grid-review/templates). Ge tabellen ett namn som identifierar uppgiften — "Granskning av hyresavtal" eller "Extraktion av anställningsavtal" fungerar bra.
+
+Därifrån lägger du till frågor och dokument. Frågor blir kolumner; dokument blir rader. AI:n börjar generera svar så snart båda finns på plats.
+
+## Svarslägen
+
+Varje fråga har ett svarsläge som talar om för AI:n vilken typ av svar du förväntar dig. Att välja rätt läge håller resultaten konsekventa och gör tabellen lättare att överblicka.
+
+| Läge | Vad AI:n returnerar | När du ska använda det |
+|------|---------------------|----------------------|
+| **Extrahera** | Ordagrann text från dokumentet | Plocka ut specifika klausuler, definitioner eller passager |
+| **Kort granskning** | En kortfattad sammanfattning eller analys | Snabba bedömningar, koncisa observationer |
+| **Lång granskning** | En detaljerad analys i flera stycken | Djupgående granskningar, frågor med flera delar |
+| **Sant / Falskt** | Sant eller Falskt | Binära kontroller — "Innehåller avtalet en konkurrensklausul?" |
+| **Datum** | Ett datum | Ikraftträdandedatum, tidsfrister, utgångsdatum |
+| **Tal** | Ett numeriskt värde | Ekonomiska siffror, kvantiteter, gränsvärden |
+| **Valuta** | Ett monetärt belopp | Avtalsvärden, avgifter, viten |
+
+När AI:n inte kan hitta det du frågar efter meddelar den dig — "Begärt datum hittades inte" eller "Kan inte avgöra sant eller falskt" — istället för att gissa.
+
+Du kan även klicka på **Förbättra prompt** när du skriver en fråga för att låta AI:n förfina din formulering för mer precisa resultat.
+
+## Anpassade instruktioner
+
+Om det finns kontext som AI:n bör ha i åtanke för alla frågor — ett jurisdiktionsfokus, ett specifikt juridiskt ramverk, en formateringspreferens — kan du lägga till det som en anpassad instruktion när du skapar eller redigerar tabellen. Något som "Svara i kontexten av norsk arbetsrätt" eller "Fokusera på ekonomiska åtaganden och viten."
+
+Varje fråga kan välja att inkludera eller exkludera tabellnivåns instruktion, så du har kontroll över vilka frågor som drar nytta av den extra kontexten och vilka som ska stå på egna ben.
+
+## Lägga till dokument
+
+Du kan lägga till dokument från flera ställen: vilken [kunskapsbas](/sv/guides/projects/knowledge-base) som helst som är tillgänglig för dig (inte bara det aktuella projektets), en filuppladdning, eller integrationer som SharePoint och Epona365 om din organisation har dem konfigurerade. Välj så många du behöver — AI:n genererar svar för varje dokument mot varje fråga.
+
+Dokument kan läggas till eller tas bort när som helst. När du lägger till nya dokument i en befintlig tabell fyller AI:n i svaren automatiskt. Tabellen är inte låst vid skapandet.

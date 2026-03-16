@@ -1,0 +1,49 @@
+---
+title: Vue d'ensemble
+---
+
+La revue en grille vous permet d'analyser un ensemble de documents selon les mêmes questions en une seule passe structurée. Définissez ce que vous voulez savoir — clauses de résiliation, dates d'effet, droit applicable, plafonds de responsabilité — et l'IA parcourt chaque document, remplissant un tableau où chaque ligne est un document et chaque colonne est une question.
+
+C'est conçu pour le type de travail où vous ouvririez normalement vingt contrats côte à côte pour constituer un tableur manuellement. La revue en grille fait cela en quelques minutes, avec des citations reliant chaque réponse au passage source.
+
+## Où se trouvent les revues en grille
+
+Les revues en grille peuvent se trouver à l'intérieur d'un [projet](/fr/guides/projects) ou de manière autonome. Dans un projet, vous les trouvez sous l'onglet **Revue en grille** aux côtés du chat. La grille a automatiquement accès à la [base de connaissances](/fr/guides/projects/knowledge-base) de ce projet, vous pouvez donc en extraire directement des documents.
+
+Vous pouvez également créer des grilles autonomes depuis la page **Revues en grille** dans la barre latérale. Les grilles autonomes ont leur propre ensemble de documents. Si vous décidez par la suite qu'une grille appartient à un projet, vous pouvez la déplacer.
+
+## Créer une grille
+
+Cliquez sur **Nouvelle revue en grille** pour partir de zéro, ou ouvrez la **Bibliothèque de grilles** pour commencer à partir d'un [modèle](/fr/guides/grid-review/templates). Donnez à la grille un nom qui identifie la tâche — « Revue de baux commerciaux » ou « Extraction de contrats de travail » convient bien.
+
+À partir de là, vous ajoutez des questions et des documents. Les questions deviennent des colonnes ; les documents deviennent des lignes. L'IA commence à générer les réponses dès que les deux sont en place.
+
+## Modes de réponse
+
+Chaque question a un mode de réponse qui indique à l'IA le type de réponse attendu. Choisir le bon mode assure la cohérence des résultats et facilite la lecture de la grille.
+
+| Mode | Ce que l'IA renvoie | Quand l'utiliser |
+|------|-------------------|----------------|
+| **Extraction** | Texte verbatim du document | Extraire des clauses, définitions ou passages spécifiques |
+| **Revue courte** | Un bref résumé ou analyse | Évaluations rapides, observations concises |
+| **Revue détaillée** | Une analyse détaillée en plusieurs paragraphes | Revues approfondies, questions à plusieurs volets |
+| **Vrai / Faux** | Vrai ou Faux | Vérifications binaires — « Le contrat contient-il une clause de non-concurrence ? » |
+| **Date** | Une date | Dates d'effet, échéances, dates d'expiration |
+| **Nombre** | Une valeur numérique | Montants financiers, quantités, limites |
+| **Devise** | Un montant monétaire | Valeurs contractuelles, honoraires, pénalités |
+
+Lorsque l'IA ne trouve pas ce que vous demandez, elle vous le signale — « Date demandée non trouvée » ou « Impossible de déterminer vrai ou faux » — plutôt que de deviner.
+
+Vous pouvez également cliquer sur **Améliorer le prompt** lors de la rédaction d'une question pour laisser l'IA affiner votre formulation et obtenir des résultats plus précis.
+
+## Instructions personnalisées
+
+S'il y a un contexte que l'IA devrait garder à l'esprit pour toutes les questions — un focus juridictionnel, un cadre juridique spécifique, une préférence de mise en forme — vous pouvez l'ajouter comme instruction personnalisée lors de la création ou de la modification de la grille. Par exemple : « Répondre dans le contexte du droit du travail norvégien » ou « Se concentrer sur les obligations financières et les pénalités ».
+
+Chaque question peut inclure ou exclure l'instruction au niveau de la grille, vous avez ainsi le contrôle sur les questions qui bénéficient du contexte supplémentaire et celles qui doivent être autonomes.
+
+## Ajouter des documents
+
+Vous pouvez ajouter des documents depuis plusieurs sources : n'importe quelle [base de connaissances](/fr/guides/projects/knowledge-base) à votre disposition (pas seulement celle du projet en cours), un import de fichier, ou des intégrations comme SharePoint et Epona365 si votre organisation les a configurées. Sélectionnez autant de documents que nécessaire — l'IA génère des réponses pour chaque document par rapport à chaque question.
+
+Les documents peuvent être ajoutés ou supprimés à tout moment. Lorsque vous ajoutez de nouveaux documents à une grille existante, l'IA remplit automatiquement les réponses. La grille n'est pas figée à sa création.

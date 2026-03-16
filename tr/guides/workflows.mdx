@@ -1,0 +1,49 @@
+---
+title: Genel bakış
+---
+
+İş akışları, yapay zeka görevlerini otomatik bir sıraya zincirlemenize olanak tanır. Her adımı manuel olarak çalıştırmak yerine — anahtar terimleri çıkarmak, ilgili hukuku araştırmak, bir özet taslağı hazırlamak — bir akışı bir kez oluşturur ve ihtiyaç duyduğunuzda çalıştırırsınız. Her adım çıktısını bir sonrakine besler, böylece tüm süreç araçlar arasında geçiş yapmadan uçtan uca çalışır.
+
+Adımları yerleştirdiğiniz, bağladığınız ve her birinin ne yapacağını yapılandırdığınız görsel bir tuval üzerine kurulmuşlardır. Sonuç, karmaşık, çok adımlı işleri manuel olarak yapmanın çok daha kısa sürede halledebilen yeniden kullanılabilir bir hattır.
+
+<Note>
+Saga'nın hukuk mühendisleri, firmanızın özel süreçlerine özel iş akışları tasarlamanıza yardımcı olabilir — yardım istiyorsanız hesap ekibinize ulaşın.
+</Note>
+
+## İş akışlarının yapısı
+
+Bir iş akışı, doğrusal bir adım dizisidir. Her adım, bir şey yapan bir **düğümdür** — metin oluşturma, hukuki kaynaklarda arama, belge çevirme, tablo incelemesi çalıştırma. Düğümleri çalışmasını istediğiniz sırayla bağlarsınız ve veriler bir adımdan diğerine otomatik olarak akar.
+
+Dallanma veya döngü yoktur — her iş akışı baştan sona düz bir çizgidir. Bu, işleri öngörülebilir tutar: neyin ne zaman çalıştığını her zaman bilirsiniz ve her adım önceki herhangi bir adımın çıktısına referans verebilir.
+
+## Adımların yapabilecekleri
+
+Adımlar iki kategoriye ayrılır: sizden bilgi toplayan **girdiler** ve bu bilgiyle bir şey yapan **eylemler**.
+
+### Girdiler
+
+| Adım | Ne yapar |
+|------|----------|
+| **İstem girişi** | Metin girmenizi ister — bağlam, talimatlar, bir soru — sonraki adımların kullanabileceği |
+| **Dosya yükleme** | İş akışının işlemesi için bir veya daha fazla belge yüklemenizi ister |
+
+### Eylemler
+
+| Adım | Ne yapar |
+|------|----------|
+| **İstem çalıştır** | Bir yapay zeka asistanına istem gönderir ve yanıtı döndürür |
+| **Taslak oluşturma** | Önceki girdilere dayalı olarak bir veya daha fazla belge oluşturur |
+| **Hukuki araştırma** | Seçilen [hukuki kaynaklar](/tr/guides/legal-research) arasında arama yapar ve atıflarla birlikte sonuçlar döndürür |
+| **İstem kütüphanesi** | [İstem kütüphanenizden](/tr/guides/chat/prompt-library) kayıtlı bir istemi çalıştırır |
+| **Tablo incelemesi** | Yüklenen belgeler ve yapay zeka tarafından oluşturulan sorularla bir [tablo incelemesi](/tr/guides/grid-review) oluşturur |
+| **Çeviri** | [DeepL](/tr/guides/translate) aracılığıyla metin veya belgeleri diller arasında çevirir |
+| **Görevler** | `/summarize`, `/anonymize` veya `/proofread` gibi yerleşik bir görevi çalıştırır |
+| **Mantıksal düşünme** | Önceki çıktıları analiz etmek veya değerlendirmek için adım adım akıl yürütme uygular |
+| **Web araması** | Webde arama yapar ve ilgili bilgileri döndürür |
+| **Kod yorumlayıcı** | Veri işleme, hesaplama veya analiz için Python kodu çalıştırır |
+
+## Adımlar arasında veri akışı
+
+Her adım, kendisinden önce gelen herhangi bir adımın çıktısına referans verebilir. Bir adımın talimatlarını yapılandırırken, önceki bir adıma adıyla atıfta bulunmak için `@` yazın. Çalışma zamanında bu atıf, o adımın gerçek çıktısıyla değiştirilir.
+
+Örneğin, bir "İstem çalıştır" adımı yüklenen belgeleri analiz etmek için bir "Dosya yükleme" adımına `@` ile referans verebilir ve aşağıdaki bir "Taslak oluşturma" adımı nihai bir rapor üretmek için her ikisine de `@` ile referans verebilir. Veri, iş akışı boyunca otomatik olarak akar.
