@@ -1,0 +1,49 @@
+---
+title: Oversikt
+---
+
+Arbeidsflyter lar deg kjede sammen AI-oppgaver i en automatisert sekvens. I stedet for å kjøre hvert steg manuelt — hente ut nøkkeltermer, undersøke relevant lovgivning, lage et sammendrag — bygger du en flyt én gang og kjører den når du trenger den. Hvert steg mater resultatet sitt inn i det neste, slik at hele prosessen kjører fra start til slutt uten at du bytter mellom verktøy.
+
+De er bygget på et visuelt lerret der du legger ut steg, kobler dem sammen og konfigurerer hva hvert steg gjør. Resultatet er en gjenbrukbar pipeline som kan håndtere komplekst, flerstegarbeid på en brøkdel av tiden det ville tatt å gjøre manuelt.
+
+<Note>
+Sagas juridiske ingeniører kan hjelpe deg med å designe arbeidsflyter tilpasset firmaets spesifikke prosesser — kontakt kontoteamet ditt hvis du ønsker hjelp.
+</Note>
+
+## Hvordan arbeidsflyter er strukturert
+
+En arbeidsflyt er en lineær sekvens av steg. Hvert steg er en **node** som gjør én ting — generere tekst, søke i juridiske kilder, oversette et dokument, kjøre en rutenettgjennomgang. Du kobler noder i den rekkefølgen du vil at de skal kjøre, og data flyter fra ett steg til det neste automatisk.
+
+Det er ingen forgreining eller løkker — hver arbeidsflyt er en rett linje fra start til slutt. Dette holder ting forutsigbart: du vet alltid hva som kjører når, og hvert steg kan referere til resultatet fra et tidligere steg.
+
+## Hva steg kan gjøre
+
+Steg faller i to kategorier: **inndata** som samler informasjon fra deg, og **handlinger** som gjør noe med den.
+
+### Inndata
+
+| Steg | Hva det gjør |
+|------|-------------|
+| **Instruksjonsinndata** | Ber deg skrive inn tekst — kontekst, instruksjoner, et spørsmål — som senere steg kan bruke |
+| **Filopplasting** | Ber deg laste opp ett eller flere dokumenter for arbeidsflyten å behandle |
+
+### Handlinger
+
+| Steg | Hva det gjør |
+|------|-------------|
+| **Kjør instruksjon** | Sender en instruksjon til en AI-assistent og returnerer svaret |
+| **Utkast** | Genererer ett eller flere dokumenter basert på tidligere inndata |
+| **Juridisk forskning** | Søker på tvers av valgte [juridiske kilder](/no/guides/legal-research) og returnerer resultater med referanser |
+| **Instruksjonsbibliotek** | Kjører en lagret instruksjon fra [instruksjonsbiblioteket](/no/guides/chat/prompt-library) |
+| **Rutenettgjennomgang** | Oppretter en [rutenettgjennomgang](/no/guides/grid-review) med opplastede dokumenter og AI-genererte spørsmål |
+| **Oversett** | Oversetter tekst eller dokumenter mellom språk via [DeepL](/no/guides/translate) |
+| **Oppgaver** | Kjører en innebygd oppgave som `/summarize`, `/anonymize` eller `/proofread` |
+| **Logisk tenkning** | Bruker steg-for-steg-resonnering for å analysere eller evaluere tidligere resultater |
+| **Nettsøk** | Søker på nettet og returnerer relevant informasjon |
+| **Kodetolker** | Kjører Python-kode for databehandling, beregninger eller analyse |
+
+## Hvordan data flyter mellom steg
+
+Hvert steg kan referere til resultatet fra et hvilket som helst steg som kom før det. Når du konfigurerer et stegs instruksjoner, skriv `@` for å nevne et tidligere steg ved navn. Ved kjøring erstattes den nevnelsen med det faktiske resultatet fra det steget.
+
+For eksempel kan et «Kjør instruksjon»-steg `@`-referere et «Filopplasting»-steg for å analysere de opplastede dokumentene, og et «Utkast»-steg lenger ned kan `@`-referere begge for å produsere en sluttrapport. Dataen trådes gjennom arbeidsflyten automatisk.

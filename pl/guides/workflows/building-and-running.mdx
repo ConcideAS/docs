@@ -1,0 +1,54 @@
+---
+title: Budowanie i uruchamianie
+---
+
+Budowanie przepływu pracy oznacza ułożenie kroków, które chcesz zautomatyzować, i skonfigurowanie tego, co każdy z nich robi. Uruchamianie oznacza wykonanie tych kroków z rzeczywistymi danymi wejściowymi i uzyskanie wyników.
+
+## Konstruktor
+
+Otwórz konstruktor przepływów pracy ze strony **Przepływy pracy** na pasku bocznym. Zobaczysz wizualne płótno — pustą przestrzeń roboczą, na której składasz swój przepływ.
+
+Dodawaj kroki z katalogu na pasku bocznym, który jest zorganizowany w **Dane wejściowe** i **Akcje**. Przeciągnij krok na płótno lub kliknij, aby go dodać. Łącz kroki, przeciągając z uchwytu wyjściowego jednego kroku do uchwytu wejściowego następnego. Połączenia definiują kolejność wykonania i sposób, w jaki dane przechodzą między krokami.
+
+Każdy krok ma panel konfiguracji. Wybierz krok na płótnie, aby otworzyć go na pasku bocznym, gdzie możesz ustawić:
+
+- **Tytuł kroku** — etykieta identyfikująca, co ten krok robi (to jest to, co widzisz, odwołując się do niego z innych kroków)
+- **Instrukcje lub zapytanie** — prompt, zapytanie wyszukiwania lub wskazówki dla tego kroku
+- **Asystent** — dla kroków opartych na promptach, który model AI lub [niestandardowy asystent](/pl/guides/assistants/custom-assistants) użyć
+- **Opcje specyficzne dla kroku** — takie jak, które [źródła prawne](/pl/guides/legal-research) przeszukać, między jakimi językami tłumaczyć lub które [zadanie](/pl/guides/chat#zadania) uruchomić
+
+Możesz też kliknąć **Ulepsz prompt** w polach instrukcji, aby AI dopracowało sformułowanie.
+
+## Odwoływanie się do wcześniejszych kroków
+
+Pisząc instrukcje dla kroku, możesz odwołać się do wyniku dowolnego wcześniejszego kroku, wspominając go za pomocą `@`. Zacznij wpisywać `@` i wybierz krok, do którego chcesz się odwołać. W czasie wykonania ta wzmianka jest zastępowana rzeczywistym wynikiem tego kroku — dzięki czemu dane przepływają przez przepływ pracy automatycznie.
+
+W ten sposób budujesz kontekst w całym przepływie. Krok z promptem może analizować dokumenty z kroku przesyłania. Krok redagowania może zebrać wyniki kroku badawczego i przeglądu w końcową notatkę.
+
+## Zapisywanie
+
+Kliknij **Zapisz**, gdy Twój przepływ pracy jest gotowy. Nadasz mu nazwę, opcjonalny opis i język. Możesz też otagować go obszarami praktyki, aby łatwiej go później znaleźć. Jeśli chcesz udostępnić go całej organizacji, zaznacz **Poproś o udostępnienie organizacyjne** — administrator przejrzy i zatwierdzi.
+
+Przepływ pracy musi być zapisany, zanim będzie można go uruchomić.
+
+## Uruchamianie przepływu pracy
+
+Kliknij **Uruchom** w konstruktorze, aby rozpocząć wykonanie. Pasek boczny przełącza się w tryb uruchamiania, pokazując status każdego kroku w miarę postępu:
+
+- **Oczekuje** — czeka na uruchomienie
+- **W trakcie** — aktualnie wykonywany
+- **Oczekuje na dane wejściowe** — krok potrzebuje czegoś od Ciebie (tekstu lub plików)
+- **Zakończony** — zakończony, z wyświetlonymi wynikami
+- **Niepowodzenie** — coś poszło nie tak, z komunikatem o błędzie
+
+Gdy krok potrzebuje danych wejściowych — jak wprowadzenie tekstu lub przesłanie pliku — przepływ pracy zatrzymuje się i czeka, aż je dostarczysz, zanim będzie kontynuować. Uzupełnij to, co potrzebne, a przepływ pracy wznowi się od miejsca, w którym się zatrzymał.
+
+Każdy krok pokazuje swój czas wykonania, a końcowe wyniki pojawiają się w sekcji **Zasoby końcowe** na dole — dokumenty do pobrania, tekst do skopiowania, przeglądy tabelaryczne do otwarcia lub wyniki badań do przeglądnięcia.
+
+## Uruchamianie z czatu
+
+Możesz też uruchomić przepływ pracy bezpośrednio z rozmowy czatowej. Przepływ pracy uruchamia się inline — krok po kroku w wątku czatu — więc widzisz wyniki w miarę ich pojawiania się, bez opuszczania rozmowy.
+
+## Gdy coś pójdzie nie tak
+
+Jeśli krok zawiedzie, przepływ pracy zatrzymuje się i wyświetla komunikat o błędzie dla tego kroku. Kolejne kroki nie zostaną uruchomione. Możesz dostosować konfigurację wadliwego kroku i uruchomić przepływ pracy ponownie od początku.

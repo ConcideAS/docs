@@ -1,0 +1,54 @@
+---
+title: Bouwen en uitvoeren
+---
+
+Een workflow bouwen betekent de stappen die u wilt automatiseren uitlegen en configureren wat elk doet. Uitvoeren betekent die stappen met echte invoer doorlopen en resultaten krijgen.
+
+## De bouwer
+
+Open de workflowbouwer vanuit de pagina **Workflows** in de zijbalk. U ziet een visueel canvas — een lege werkruimte waar u uw flow samenstelt.
+
+Voeg stappen toe vanuit de zijbalkcatalogus, die is onderverdeeld in **Invoer** en **Acties**. Sleep een stap op het canvas of klik om toe te voegen. Verbind stappen door te slepen van de uitvoergreep van een stap naar de invoergreep van de volgende stap. De verbindingen definiëren de uitvoeringsvolgorde en hoe gegevens tussen stappen worden doorgegeven.
+
+Elke stap heeft een configuratiepaneel. Selecteer een stap op het canvas om het in de zijbalk te openen, waar u kunt instellen:
+
+- **Staptitel** — een label dat identificeert wat deze stap doet (dit is wat u ziet wanneer u ernaar verwijst vanuit andere stappen)
+- **Instructies of zoekopdracht** — de prompt, zoekopdracht of aanwijzingen voor deze stap
+- **Assistent** — voor promptgebaseerde stappen, welk AI-model of welke [aangepaste assistent](/nl/guides/assistants/custom-assistants) te gebruiken
+- **Stapspecifieke opties** — zaken als welke [juridische bronnen](/nl/guides/legal-research) te doorzoeken, tussen welke talen te vertalen of welke [taak](/nl/guides/chat#taken) uit te voeren
+
+U kunt ook op **Prompt verbeteren** klikken bij instructievelden om de AI uw formulering te laten verfijnen.
+
+## Verwijzen naar eerdere stappen
+
+Bij het schrijven van instructies voor een stap kunt u verwijzen naar de output van elke eerdere stap door deze te vermelden met `@`. Begin `@` te typen en selecteer de stap waarnaar u wilt verwijzen. Tijdens uitvoering wordt die vermelding vervangen door de werkelijke output van die stap — zodat de gegevens automatisch door de workflow stromen.
+
+Zo bouwt u context op doorheen de flow. Een promptstap kan documenten analyseren van een uploadstap. Een opstelstap kan de resultaten van een onderzoeksstap en een beoordelingsstap samenvoegen tot een definitieve memo.
+
+## Opslaan
+
+Klik op **Opslaan** wanneer uw workflow gereed is. U geeft het een naam, een optionele beschrijving en een taal. U kunt het ook taggen met rechtsgebieden om het later makkelijker te vinden. Als u het beschikbaar wilt maken voor uw hele organisatie, vink **Verzoek om organisatiebreed te maken** aan — een beheerder beoordeelt en keurt het goed.
+
+Een workflow moet worden opgeslagen voordat deze kan worden uitgevoerd.
+
+## Een workflow uitvoeren
+
+Klik op **Uitvoeren** in de bouwer om de uitvoering te starten. De zijbalk schakelt over naar uitvoermodus en toont de status van elke stap naarmate deze vordert:
+
+- **Wachtend** — wacht om te starten
+- **Bezig** — wordt momenteel uitgevoerd
+- **Wacht op invoer** — de stap heeft iets van u nodig (tekst of bestanden)
+- **Voltooid** — afgerond, met getoonde resultaten
+- **Mislukt** — er is iets misgegaan, met een foutmelding
+
+Wanneer een stap invoer nodig heeft — zoals een promptinvoer of bestandsupload — pauzeert de workflow en wacht tot u het levert voordat het verdergaat. Vul in wat nodig is en de workflow gaat verder waar het was gebleven.
+
+Elke stap toont de uitvoeringstijd, en de eindresultaten verschijnen in een sectie **Eindresultaten** onderaan — documenten om te downloaden, tekst om te kopiëren, rasterbeoordelingen om te openen of onderzoeksresultaten om te bekijken.
+
+## Uitvoeren vanuit chat
+
+U kunt een workflow ook direct starten vanuit een chatgesprek. De workflow wordt inline uitgevoerd — stap voor stap in de chatthread — zodat u de resultaten kunt zien zodra ze binnenkomen zonder het gesprek te verlaten.
+
+## Wanneer er iets misgaat
+
+Als een stap mislukt, stopt de workflow en toont een foutmelding voor die stap. Vervolgstappen worden niet uitgevoerd. U kunt de configuratie van de mislukte stap aanpassen en de workflow opnieuw uitvoeren vanaf het begin.

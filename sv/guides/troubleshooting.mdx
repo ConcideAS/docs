@@ -1,0 +1,76 @@
+---
+title: Vanliga frågor och felsökning
+---
+
+## Dokument
+
+<AccordionGroup>
+
+<Accordion title="Mitt dokument kunde inte laddas upp eller bearbetas">
+Kontrollera filformat och storlek. Saga stöder PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG och vanliga bildformat. Maximal filstorlek är 1 GB — och PDF:er eller bilder som behöver textextrahering (OCR) är begränsade till 500 MB.
+
+Om filformatet och storleken är korrekta, klicka på **Försök igen** på det misslyckade dokumentet i kunskapsbasen. Om det fortfarande inte fungerar, prova att ladda upp filen igen. Korrupta filer eller kraftigt skannade dokument med dålig bildkvalitet kan ibland orsaka att bearbetningen misslyckas.
+</Accordion>
+
+</AccordionGroup>
+
+## Chatt och AI
+
+<AccordionGroup>
+
+<Accordion title="AI:n säger att chattkontexten nästan är full">
+Varje AI-modell har en gräns för hur mycket text den kan beakta samtidigt. När en konversation blir lång — många meddelanden, stora bilagor, eller båda — ser du en varning om att kontexten nästan är full.
+
+Starta en ny konversation för att nollställa kontexten. Om du arbetar med en stor uppsättning dokument, överväg att ladda upp dem till ett projekts [kunskapsbas](/sv/guides/projects/knowledge-base) istället för att bifoga dem i chatten — kunskapsbasen indexerar dina filer så att AI:n kan söka igenom dem utan att behöva hålla allt i kontexten samtidigt.
+</Accordion>
+
+<Accordion title="AI:n gav ett felaktigt eller ofullständigt svar">
+Kvaliteten på AI:ns svar beror på vilken kontext den har och vilken modell du använder. Några saker att prova:
+
+- **Byt till en mer kapabel modell** — en modell med högre intelligens kan hantera din fråga bättre. Se [Modeller](/sv/guides/assistants/models) för vägledning.
+- **Avgränsa kontexten** — om kunskapsbasen har många dokument, inaktivera de som inte är relevanta för att fokusera AI:ns uppmärksamhet.
+- **Omformulera din fråga** — mer specifika frågor tenderar att ge bättre resultat. Använd **Förbättra prompt** för att låta AI:n förfina din formulering innan du skickar.
+- **Kontrollera källhänvisningarna** — verifiera alltid AI:ns påståenden mot de angivna källorna.
+</Accordion>
+
+<Accordion title="Jag blir hastighetsbegränsad eller ser 'för många förfrågningar'">
+Saga begränsar hur ofta vissa åtgärder kan utföras. Om du ser detta vid inloggning eller tvåfaktorsautentisering, vänta några minuter och försök igen. För chattrelaterade hastighetsbegränsningar, vänta kort och skicka om ditt meddelande.
+</Accordion>
+
+</AccordionGroup>
+
+## Funktioner och åtkomst
+
+<AccordionGroup>
+
+<Accordion title="Jag ser inte SharePoint eller Epona365 när jag laddar upp dokument">
+Dessa integrationer behöver aktiveras av din admin. Be dem konfigurera integrationen från [adminpanelen](/sv/guides/admin) under **Inställningar > Integrationer**. När den är konfigurerad visas alternativet för alla i organisationen.
+</Accordion>
+
+<Accordion title="Jag ser inte organisationskällor i chattverktygsfältet">
+Organisationskällor skapas av din admin eller innehållsadmin. Om växlingen inte visas i menyn **Lägg till källor** har din organisation inte satt upp några ännu. Be din admin att skapa en från [adminpanelen](/sv/guides/admin).
+</Accordion>
+
+<Accordion title="Jag ser inte en juridisk källa jag behöver">
+Din admin styr vilka juridiska källor som är aktiverade. Om en källa inte visas, be din admin att aktivera den från arbetsytans inställningar. För hela katalogen av tillgängliga källor, se [moonlit.ai/coverage](https://moonlit.ai/coverage).
+</Accordion>
+
+<Accordion title="Jag kan inte komma åt adminpanelen">
+Adminpanelen är bara synlig för användare med rollen **Admin** eller **Innehållsadmin**. Om du behöver åtkomst, be en befintlig admin att uppdatera din roll. Innehållsadmins kan hantera bibliotek och organisationskällor; fullständiga admins kan hantera allt inklusive användare och inställningar.
+</Accordion>
+
+<Accordion title="Word-tillägget visas inte i Word">
+Detta beror vanligtvis på behörigheter eller licensiering. Kontrollera att din organisation tillåter Office-tillägg från tredje part, att din Office-version är uppdaterad och att du är inloggad med ditt Microsoft-konto. För detaljerade steg, se [Felsökning av Word-tillägg](/sv/guides/integrations/word-add-in/user-setup#felsökning).
+</Accordion>
+
+</AccordionGroup>
+
+## Support
+
+<AccordionGroup>
+
+<Accordion title="Hur kontaktar jag support?">
+Klicka på **Få hjälp** i sidofältet för att öppna feedbackformuläret, eller mejla supportteamet direkt på [support@sagalegal.io](mailto:support@sagalegal.io). Inkludera så mycket detaljer som möjligt — vad du gjorde, vad du förväntade dig och eventuella felmeddelanden du såg.
+</Accordion>
+
+</AccordionGroup>

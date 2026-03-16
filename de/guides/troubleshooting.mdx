@@ -1,0 +1,76 @@
+---
+title: FAQ und Fehlerbehebung
+---
+
+## Dokumente
+
+<AccordionGroup>
+
+<Accordion title="Mein Dokument konnte nicht hochgeladen oder verarbeitet werden">
+Prüfen Sie das Dateiformat und die Grösse. Saga unterstützt PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG und gängige Bildformate. Die maximale Dateigrösse beträgt 1 GB — und PDFs oder Bilder, die Texterkennung (OCR) erfordern, sind auf 500 MB beschränkt.
+
+Wenn Dateiformat und -grösse in Ordnung sind, klicken Sie auf **Erneut versuchen** beim fehlgeschlagenen Dokument in der Wissensdatenbank. Wenn es immer noch nicht funktioniert, versuchen Sie, die Datei erneut hochzuladen. Beschädigte Dateien oder stark gescannte Dokumente mit schlechter Bildqualität können gelegentlich zu Verarbeitungsfehlern führen.
+</Accordion>
+
+</AccordionGroup>
+
+## Chat und KI
+
+<AccordionGroup>
+
+<Accordion title="Die KI sagt, der Chat-Kontext ist fast voll">
+Jedes KI-Modell hat ein Limit für die Textmenge, die es gleichzeitig berücksichtigen kann. Wenn eine Unterhaltung lang wird — viele Nachrichten, grosse Anhänge oder beides — erscheint eine Warnung, dass der Kontext fast voll ist.
+
+Starten Sie eine neue Unterhaltung, um den Kontext zurückzusetzen. Wenn Sie mit einer grossen Dokumentenmenge arbeiten, sollten Sie diese in die [Wissensdatenbank](/de/guides/projects/knowledge-base) eines Projekts hochladen, anstatt sie im Chat anzuhängen — die Wissensdatenbank indexiert Ihre Dateien, sodass die KI sie durchsuchen kann, ohne alles gleichzeitig im Kontext halten zu müssen.
+</Accordion>
+
+<Accordion title="Die KI hat eine falsche oder unvollständige Antwort gegeben">
+Die Qualität der KI-Antwort hängt vom verfügbaren Kontext und dem verwendeten Modell ab. Einige Massnahmen, die Sie versuchen können:
+
+- **Wechseln Sie zu einem leistungsfähigeren Modell** — ein Modell mit höherer Intelligenz kann Ihre Frage besser verarbeiten. Siehe [Modelle](/de/guides/assistants/models) für Hinweise.
+- **Schränken Sie den Kontext ein** — wenn die Wissensdatenbank viele Dokumente enthält, schalten Sie die nicht relevanten inaktiv, um den Fokus der KI zu schärfen.
+- **Formulieren Sie Ihre Frage um** — spezifischere Fragen liefern tendenziell bessere Ergebnisse. Verwenden Sie **Prompt verbessern**, um die KI Ihre Formulierung vor dem Senden verfeinern zu lassen.
+- **Prüfen Sie die Quellenverweise** — überprüfen Sie die Aussagen der KI immer anhand der zitierten Quellen.
+</Accordion>
+
+<Accordion title="Ich werde ratenbegrenzt oder sehe 'zu viele Anfragen'">
+Saga begrenzt, wie häufig bestimmte Aktionen durchgeführt werden können. Wenn Sie dies bei der Anmeldung oder der Zwei-Faktor-Authentifizierung sehen, warten Sie einige Minuten und versuchen Sie es erneut. Bei Chat-bezogenen Ratenbegrenzungen warten Sie kurz und senden Ihre Nachricht erneut.
+</Accordion>
+
+</AccordionGroup>
+
+## Funktionen und Zugang
+
+<AccordionGroup>
+
+<Accordion title="Ich sehe SharePoint oder Epona365 beim Hochladen von Dokumenten nicht">
+Diese Integrationen müssen von Ihrem Administrator aktiviert werden. Bitten Sie ihn, die Integration im [Admin-Bereich](/de/guides/admin) unter **Einstellungen > Integrationen** zu konfigurieren. Sobald sie eingerichtet ist, erscheint die Option für alle in der Organisation.
+</Accordion>
+
+<Accordion title="Ich sehe keine Organisationsquellen in der Chat-Symbolleiste">
+Organisationsquellen werden von Ihrem Administrator oder Content-Admin erstellt. Wenn der Schalter im Menü **Quellen hinzufügen** nicht erscheint, hat Ihre Organisation noch keine eingerichtet. Bitten Sie Ihren Administrator, eine im [Admin-Bereich](/de/guides/admin) zu erstellen.
+</Accordion>
+
+<Accordion title="Ich sehe eine benötigte Rechtsquelle nicht">
+Ihr Administrator steuert, welche Rechtsquellen aktiviert sind. Wenn eine Quelle nicht angezeigt wird, bitten Sie Ihren Administrator, sie in den Workspace-Einstellungen zu aktivieren. Den vollständigen Katalog der verfügbaren Quellen finden Sie unter [moonlit.ai/coverage](https://moonlit.ai/coverage).
+</Accordion>
+
+<Accordion title="Ich kann nicht auf den Admin-Bereich zugreifen">
+Der Admin-Bereich ist nur für Benutzer mit der Rolle **Admin** oder **Content-Admin** sichtbar. Wenn Sie Zugang benötigen, bitten Sie einen bestehenden Administrator, Ihre Rolle zu aktualisieren. Content-Admins können Bibliotheken und Organisationsquellen verwalten; vollständige Administratoren können alles verwalten, einschliesslich Benutzer und Einstellungen.
+</Accordion>
+
+<Accordion title="Das Word-Add-In erscheint nicht in Word">
+Dies ist in der Regel ein Berechtigungs- oder Lizenzproblem. Prüfen Sie, ob Ihre Organisation Add-Ins von Drittanbietern für Office zulässt, ob Ihre Office-Version aktuell ist und ob Sie mit Ihrem Microsoft-Konto angemeldet sind. Detaillierte Schritte finden Sie in der [Fehlerbehebung des Word-Add-Ins](/de/guides/integrations/word-add-in/user-setup#fehlerbehebung).
+</Accordion>
+
+</AccordionGroup>
+
+## Support
+
+<AccordionGroup>
+
+<Accordion title="Wie kontaktiere ich den Support?">
+Klicken Sie in der Seitenleiste auf **Hilfe erhalten**, um das Feedback-Formular zu öffnen, oder schreiben Sie dem Support-Team direkt an [support@sagalegal.io](mailto:support@sagalegal.io). Geben Sie so viele Details wie möglich an — was Sie getan haben, was Sie erwartet haben und welche Fehlermeldungen Sie gesehen haben.
+</Accordion>
+
+</AccordionGroup>

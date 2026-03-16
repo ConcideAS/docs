@@ -1,0 +1,54 @@
+---
+title: Bygge og kjøre
+---
+
+Å bygge en arbeidsflyt betyr å legge ut stegene du vil automatisere og konfigurere hva hvert steg gjør. Å kjøre den betyr å utføre disse stegene med ekte inndata og få resultater.
+
+## Byggeren
+
+Åpne arbeidsflytbyggeren fra **Arbeidsflyter**-siden i sidemenyen. Du ser et visuelt lerret — et tomt arbeidsområde der du setter sammen flyten din.
+
+Legg til steg fra sidemenykatalogen, som er organisert i **Inndata** og **Handlinger**. Dra et steg til lerretet eller klikk for å legge det til. Koble steg ved å dra fra et stegs utgangshåndtak til neste stegs inngangshåndtak. Koblingene definerer utførelsesrekkefølgen og hvordan data sendes mellom stegene.
+
+Hvert steg har et konfigurasjonspanel. Velg et steg på lerretet for å åpne det i sidemenyen, der du kan angi:
+
+- **Stegtittel** — en etikett som identifiserer hva dette steget gjør (dette er det du ser når du refererer til det fra andre steg)
+- **Instruksjoner eller spørring** — instruksjonen, søkespørringen eller retningslinjene for dette steget
+- **Assistent** — for instruksjonsbaserte steg, hvilken AI-modell eller [egendefinert assistent](/no/guides/assistants/custom-assistants) som skal brukes
+- **Stegspesifikke alternativer** — ting som hvilke [juridiske kilder](/no/guides/legal-research) det skal søkes i, hvilke språk det skal oversettes mellom, eller hvilken [oppgave](/no/guides/chat#oppgaver) som skal kjøres
+
+Du kan også klikke **Forbedre instruksjon** på instruksjonsfelt for å la AI-en forbedre formuleringen din.
+
+## Referere til tidligere steg
+
+Når du skriver instruksjoner for et steg, kan du referere til resultatet fra et tidligere steg ved å nevne det med `@`. Begynn å skrive `@` og velg steget du vil referere til. Ved kjøring erstattes den nevnelsen med det faktiske resultatet fra det steget — slik at dataen trådes gjennom arbeidsflyten automatisk.
+
+Slik bygger du opp kontekst på tvers av flyten. Et instruksjonssteg kan analysere dokumenter fra et opplastingssteg. Et utkastssteg kan samle resultatene fra et forskningssteg og et gjennomgangssteg til et endelig notat.
+
+## Lagring
+
+Klikk **Lagre** når arbeidsflyten er klar. Du gir den et navn, en valgfri beskrivelse og et språk. Du kan også tagge den med fagområder for å gjøre den lettere å finne senere. Hvis du vil gjøre den tilgjengelig for hele organisasjonen, huk av **Be om å gjøre organisasjonsdekkende** — en administrator vil gjennomgå og godkjenne den.
+
+En arbeidsflyt må lagres før den kan kjøres.
+
+## Kjøre en arbeidsflyt
+
+Klikk **Kjør** i byggeren for å starte utførelsen. Sidemenyen bytter til kjøremodus og viser hvert stegs status etter hvert som det kjører:
+
+- **Venter** — venter på å starte
+- **Pågår** — kjører for øyeblikket
+- **Venter på inndata** — steget trenger noe fra deg (tekst eller filer)
+- **Fullført** — ferdig, med resultater vist
+- **Feilet** — noe gikk galt, med en feilmelding
+
+Når et steg trenger inndata — som en instruksjonsinndata eller filopplasting — pauser arbeidsflyten og venter på at du gir det som trengs før den fortsetter. Fyll inn det som trengs, og arbeidsflyten fortsetter der den slapp.
+
+Hvert steg viser utførelsestiden, og de endelige resultatene vises i en **Endelige ressurser**-seksjon nederst — dokumenter å laste ned, tekst å kopiere, rutenettgjennomganger å åpne eller forskningsresultater å bla gjennom.
+
+## Kjøre fra chat
+
+Du kan også starte en arbeidsflyt direkte fra en chatsamtale. Arbeidsflyten kjører innebygd — steg for steg i chattråden — slik at du kan se resultatene etter hvert som de kommer uten å forlate samtalen.
+
+## Når noe går galt
+
+Hvis et steg feiler, stopper arbeidsflyten og viser en feilmelding for det steget. Nedstrøms steg kjøres ikke. Du kan justere det feilende stegets konfigurasjon og kjøre arbeidsflyten på nytt fra starten.

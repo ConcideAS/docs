@@ -1,0 +1,54 @@
+---
+title: Costruzione ed esecuzione
+---
+
+Costruire un flusso di lavoro significa disporre i passaggi che vuoi automatizzare e configurare cosa fa ciascuno. Eseguirlo significa far funzionare quei passaggi con input reali e ottenere risultati.
+
+## Il costruttore
+
+Apri il costruttore di flussi di lavoro dalla pagina **Flussi di lavoro** nella barra laterale. Vedrai un canvas visuale — uno spazio di lavoro vuoto dove assembli il tuo flusso.
+
+Aggiungi passaggi dal catalogo nella barra laterale, organizzato in **Input** e **Azioni**. Trascina un passaggio sul canvas o clicca per aggiungerlo. Collega i passaggi trascinando dalla maniglia di output di un passaggio alla maniglia di input del successivo. I collegamenti definiscono l'ordine di esecuzione e come i dati passano tra i passaggi.
+
+Ogni passaggio ha un pannello di configurazione. Seleziona un passaggio sul canvas per aprirlo nella barra laterale, dove puoi impostare:
+
+- **Titolo del passaggio** — un'etichetta che identifica cosa fa questo passaggio (è quello che vedi quando lo referenzi da altri passaggi)
+- **Istruzioni o query** — il prompt, la query di ricerca o le direttive per questo passaggio
+- **Assistente** — per i passaggi basati su prompt, quale modello IA o [assistente personalizzato](/it/guides/assistants/custom-assistants) utilizzare
+- **Opzioni specifiche del passaggio** — cose come quali [fonti giuridiche](/it/guides/legal-research) cercare, tra quali lingue tradurre o quale [attività](/it/guides/chat#attività) eseguire
+
+Puoi anche cliccare su **Migliora il prompt** nei campi delle istruzioni per far perfezionare la formulazione dall'IA.
+
+## Fare riferimento a passaggi precedenti
+
+Quando scrivi le istruzioni per un passaggio, puoi fare riferimento all'output di qualsiasi passaggio precedente menzionandolo con `@`. Inizia a digitare `@` e seleziona il passaggio che vuoi referenziare. Al momento dell'esecuzione, quella menzione viene sostituita con l'output effettivo di quel passaggio — così i dati scorrono attraverso il flusso di lavoro automaticamente.
+
+È così che costruisci il contesto attraverso il flusso. Un passaggio prompt può analizzare documenti da un passaggio di caricamento. Un passaggio bozze può raccogliere i risultati di un passaggio di ricerca e di un passaggio di revisione in un memorandum finale.
+
+## Salvataggio
+
+Clicca su **Salva** quando il tuo flusso di lavoro è pronto. Gli darai un nome, una descrizione opzionale e una lingua. Puoi anche etichettarlo con aree di pratica per renderlo più facile da trovare in seguito. Se vuoi renderlo disponibile per tutta la tua organizzazione, seleziona **Richiedi di rendere organizzativo** — un amministratore lo revisionerà e lo approverà.
+
+Un flusso di lavoro deve essere salvato prima di poter essere eseguito.
+
+## Esecuzione di un flusso di lavoro
+
+Clicca su **Esegui** nel costruttore per avviare l'esecuzione. La barra laterale passa alla modalità di esecuzione, mostrando lo stato di ogni passaggio man mano che procede:
+
+- **In attesa** — in attesa di avvio
+- **In corso** — attualmente in esecuzione
+- **In attesa di input** — il passaggio ha bisogno di qualcosa da te (testo o file)
+- **Completato** — terminato, con risultati mostrati
+- **Fallito** — qualcosa è andato storto, con un messaggio di errore
+
+Quando un passaggio ha bisogno di input — come un input prompt o un caricamento file — il flusso di lavoro si mette in pausa e attende che tu lo fornisca prima di continuare. Compila ciò che serve e il flusso di lavoro riprende da dove si era fermato.
+
+Ogni passaggio mostra il suo tempo di esecuzione, e i risultati finali appaiono in una sezione **Risorse finali** in fondo — documenti da scaricare, testo da copiare, revisioni a griglia da aprire o risultati di ricerca da consultare.
+
+## Esecuzione dalla chat
+
+Puoi anche avviare un flusso di lavoro direttamente da una conversazione in chat. Il flusso di lavoro viene eseguito inline — passaggio per passaggio nel thread della chat — così puoi vedere i risultati man mano che arrivano senza lasciare la conversazione.
+
+## Quando qualcosa va storto
+
+Se un passaggio fallisce, il flusso di lavoro si ferma e mostra un messaggio di errore per quel passaggio. I passaggi successivi non verranno eseguiti. Puoi modificare la configurazione del passaggio che ha fallito e eseguire nuovamente il flusso di lavoro dall'inizio.

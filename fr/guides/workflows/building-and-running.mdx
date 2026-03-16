@@ -1,0 +1,54 @@
+---
+title: Construction et exécution
+---
+
+Construire un workflow signifie disposer les étapes que vous souhaitez automatiser et configurer ce que chacune fait. L'exécuter signifie lancer ces étapes avec des données réelles et obtenir des résultats.
+
+## Le constructeur
+
+Ouvrez le constructeur de workflows depuis la page **Workflows** dans la barre latérale. Vous verrez un canevas visuel — un espace de travail vide où vous assemblez votre flux.
+
+Ajoutez des étapes depuis le catalogue dans la barre latérale, organisé en **Entrées** et **Actions**. Faites glisser une étape sur le canevas ou cliquez pour l'ajouter. Connectez les étapes en faisant glisser depuis le point de sortie d'une étape vers le point d'entrée de la suivante. Les connexions définissent l'ordre d'exécution et la circulation des données entre les étapes.
+
+Chaque étape possède un panneau de configuration. Sélectionnez une étape sur le canevas pour l'ouvrir dans la barre latérale, où vous pouvez définir :
+
+- **Titre de l'étape** — un libellé qui identifie ce que fait cette étape (c'est ce que vous voyez lorsque vous y faites référence depuis d'autres étapes)
+- **Instructions ou requête** — le prompt, la requête de recherche ou les directives pour cette étape
+- **Assistant** — pour les étapes basées sur des prompts, quel modèle IA ou [assistant personnalisé](/fr/guides/assistants/custom-assistants) utiliser
+- **Options spécifiques à l'étape** — par exemple quelles [sources juridiques](/fr/guides/legal-research) interroger, entre quelles langues traduire ou quelle [tâche](/fr/guides/chat#tâches) exécuter
+
+Vous pouvez également cliquer sur **Améliorer le prompt** dans les champs d'instructions pour laisser l'IA affiner votre formulation.
+
+## Référencer les étapes précédentes
+
+Lorsque vous rédigez les instructions d'une étape, vous pouvez faire référence au résultat de n'importe quelle étape précédente en la mentionnant avec `@`. Commencez à taper `@` et sélectionnez l'étape à laquelle vous souhaitez faire référence. À l'exécution, cette mention est remplacée par le résultat réel de cette étape — les données s'enchaînent ainsi automatiquement dans le workflow.
+
+C'est ainsi que vous construisez le contexte à travers le flux. Une étape de prompt peut analyser des documents provenant d'une étape d'import. Une étape de rédaction peut rassembler les résultats d'une étape de recherche et d'une étape de revue en un mémo final.
+
+## Enregistrement
+
+Cliquez sur **Enregistrer** lorsque votre workflow est prêt. Vous lui donnerez un nom, une description optionnelle et une langue. Vous pouvez également l'étiqueter avec des domaines de pratique pour le retrouver plus facilement par la suite. Si vous souhaitez le rendre disponible à toute votre organisation, cochez **Demander à rendre organisationnel** — un administrateur l'examinera et l'approuvera.
+
+Un workflow doit être enregistré avant de pouvoir être exécuté.
+
+## Exécuter un workflow
+
+Cliquez sur **Exécuter** dans le constructeur pour lancer l'exécution. La barre latérale passe en mode exécution, affichant le statut de chaque étape au fur et à mesure de sa progression :
+
+- **En attente** — en attente de démarrage
+- **En cours** — en cours d'exécution
+- **En attente d'entrée** — l'étape a besoin d'une information de votre part (texte ou fichiers)
+- **Terminé** — terminé, avec les résultats affichés
+- **Échoué** — un problème est survenu, avec un message d'erreur
+
+Lorsqu'une étape nécessite une entrée — comme une saisie de prompt ou un import de fichiers — le workflow se met en pause et attend que vous la fournissiez avant de continuer. Remplissez ce qui est demandé et le workflow reprend là où il s'était arrêté.
+
+Chaque étape affiche son temps d'exécution, et les résultats finaux apparaissent dans une section **Livrables finaux** en bas — documents à télécharger, texte à copier, revues en grille à ouvrir ou résultats de recherche à parcourir.
+
+## Exécuter depuis le chat
+
+Vous pouvez également lancer un workflow directement depuis une conversation de chat. Le workflow s'exécute en ligne — étape par étape dans le fil de discussion — afin que vous puissiez voir les résultats au fur et à mesure sans quitter la conversation.
+
+## En cas de problème
+
+Si une étape échoue, le workflow s'arrête et affiche un message d'erreur pour cette étape. Les étapes en aval ne s'exécuteront pas. Vous pouvez ajuster la configuration de l'étape défaillante et relancer le workflow depuis le début.

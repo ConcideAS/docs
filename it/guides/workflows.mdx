@@ -1,0 +1,49 @@
+---
+title: Panoramica
+---
+
+I flussi di lavoro ti permettono di concatenare attività IA in una sequenza automatizzata. Invece di eseguire ogni passaggio manualmente — estrarre i termini chiave, ricercare la normativa pertinente, redigere un riassunto — costruisci un flusso una volta e lo esegui ogni volta che ne hai bisogno. Ogni passaggio alimenta il successivo con il suo output, così l'intero processo si esegue dall'inizio alla fine senza che tu debba passare da uno strumento all'altro.
+
+Sono costruiti su un canvas visuale dove disponi i passaggi, li colleghi e configuri cosa fa ciascuno. Il risultato è una pipeline riutilizzabile che può gestire lavori complessi e multi-step in una frazione del tempo che ci vorrebbe manualmente.
+
+<Note>
+Gli ingegneri legali di Saga possono aiutarti a progettare flussi di lavoro su misura per i processi specifici del tuo studio — contatta il tuo account team se desideri assistenza.
+</Note>
+
+## Come sono strutturati i flussi di lavoro
+
+Un flusso di lavoro è una sequenza lineare di passaggi. Ogni passaggio è un **nodo** che fa una cosa — generare testo, cercare nelle fonti giuridiche, tradurre un documento, eseguire una revisione a griglia. Colleghi i nodi nell'ordine in cui vuoi che vengano eseguiti, e i dati fluiscono da un passaggio al successivo automaticamente.
+
+Non ci sono ramificazioni o cicli — ogni flusso di lavoro è una linea retta dall'inizio alla fine. Questo mantiene le cose prevedibili: sai sempre cosa viene eseguito e quando, e ogni passaggio può fare riferimento all'output di qualsiasi passaggio precedente.
+
+## Cosa possono fare i passaggi
+
+I passaggi si dividono in due categorie: **input** che raccolgono informazioni da te, e **azioni** che fanno qualcosa con esse.
+
+### Input
+
+| Passaggio | Cosa fa |
+|-----------|---------|
+| **Input prompt** | Ti chiede di inserire testo — contesto, istruzioni, una domanda — che i passaggi successivi possono utilizzare |
+| **Caricamento file** | Ti chiede di caricare uno o più documenti che il flusso di lavoro deve elaborare |
+
+### Azioni
+
+| Passaggio | Cosa fa |
+|-----------|---------|
+| **Esegui prompt** | Invia un prompt a un assistente IA e restituisce la risposta |
+| **Bozze** | Genera uno o più documenti basati sugli input precedenti |
+| **Ricerca giuridica** | Cerca nelle [fonti giuridiche](/it/guides/legal-research) selezionate e restituisce risultati con citazioni |
+| **Libreria dei prompt** | Esegue un prompt salvato dalla tua [libreria dei prompt](/it/guides/chat/prompt-library) |
+| **Revisione a griglia** | Crea una [revisione a griglia](/it/guides/grid-review) con i documenti caricati e domande generate dall'IA |
+| **Traduci** | Traduce testo o documenti tra lingue tramite [DeepL](/it/guides/translate) |
+| **Attività** | Esegue un'attività integrata come `/summarize`, `/anonymize` o `/proofread` |
+| **Ragionamento logico** | Applica un ragionamento passo dopo passo per analizzare o valutare gli output precedenti |
+| **Ricerca web** | Cerca nel web e restituisce informazioni pertinenti |
+| **Interprete di codice** | Esegue codice Python per elaborazione dati, calcoli o analisi |
+
+## Come fluiscono i dati tra i passaggi
+
+Ogni passaggio può fare riferimento all'output di qualsiasi passaggio che lo precede. Quando configuri le istruzioni di un passaggio, digita `@` per menzionare un passaggio precedente per nome. Al momento dell'esecuzione, quella menzione viene sostituita con l'output effettivo di quel passaggio.
+
+Ad esempio, un passaggio "Esegui prompt" può usare `@` su un passaggio "Caricamento file" per analizzare i documenti caricati, e un passaggio "Bozze" più avanti può usare `@` su entrambi per produrre un report finale. I dati scorrono attraverso il flusso di lavoro automaticamente.

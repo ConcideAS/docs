@@ -1,0 +1,49 @@
+---
+title: Oversikt
+---
+
+Rutenettgjennomgang er hvordan du analyserer et sett med dokumenter mot de samme spørsmålene i én strukturert gjennomgang. Definer hva du vil vite — oppsigelsesklausuler, ikrafttredelsesdatoer, gjeldende lov, ansvarsgrenser — og AI-en arbeider gjennom hvert dokument, og fyller ut en tabell der hver rad er et dokument og hver kolonne er et spørsmål.
+
+Den er bygget for den typen arbeid der du normalt ville åpnet tjue kontrakter side om side og laget et regneark for hånd. Rutenettgjennomgang gjør det på minutter, med referanser som lenker hvert svar tilbake til kildepassasjen.
+
+## Hvor rutenettgjennomganger befinner seg
+
+Rutenettgjennomganger kan leve inne i et [prosjekt](/no/guides/projects) eller frittstående. Inne i et prosjekt finner du dem under **Rutenettgjennomgang**-fanen ved siden av chat. Rutenettet har automatisk tilgang til prosjektets [kunnskapsbase](/no/guides/projects/knowledge-base), slik at du kan hente dokumenter direkte derfra.
+
+Du kan også opprette frittstående rutenett fra **Rutenettgjennomganger**-siden i sidemenyen. Frittstående rutenett har sitt eget dokumentsett. Hvis du senere bestemmer at et rutenett hører hjemme i et prosjekt, kan du flytte det.
+
+## Opprette et rutenett
+
+Klikk **Ny rutenettgjennomgang** for å starte fra bunnen av, eller åpne **Rutenettbiblioteket** for å begynne fra en [mal](/no/guides/grid-review/templates). Gi rutenettet et navn som identifiserer oppgaven — «Gjennomgang av leieavtaler» eller «Utdrag fra arbeidskontrakter» fungerer godt.
+
+Derfra legger du til spørsmål og dokumenter. Spørsmål blir kolonner; dokumenter blir rader. AI-en begynner å generere svar så snart begge er på plass.
+
+## Svarmoduser
+
+Hvert spørsmål har en svarmodus som forteller AI-en hva slags svar du forventer. Å velge riktig modus holder resultatene konsistente og gjør rutenettet lettere å skanne.
+
+| Modus | Hva AI-en returnerer | Når du bør bruke den |
+|-------|---------------------|---------------------|
+| **Utdrag** | Ordrett tekst fra dokumentet | Hente ut spesifikke klausuler, definisjoner eller passasjer |
+| **Kort gjennomgang** | Et kort sammendrag eller en analyse | Raske vurderinger, konsise observasjoner |
+| **Lang gjennomgang** | En detaljert analyse over flere avsnitt | Dybdegjennomganger, flerdelsspørsmål |
+| **Sant / Usant** | Sant eller Usant | Binære sjekker — «Inneholder kontrakten en konkurranseklausul?» |
+| **Dato** | En dato | Ikrafttredelsesdatoer, frister, utløpsdatoer |
+| **Tall** | En numerisk verdi | Økonomiske tall, mengder, grenser |
+| **Valuta** | Et pengebeløp | Kontraktsverdier, gebyrer, bøter |
+
+Når AI-en ikke finner det du spør etter, forteller den deg det — «Forespurt dato ikke funnet» eller «Kan ikke avgjøre sant eller usant» — i stedet for å gjette.
+
+Du kan også klikke **Forbedre instruksjon** når du skriver et spørsmål for å la AI-en forbedre formuleringen for mer presise resultater.
+
+## Egendefinerte instruksjoner
+
+Hvis det er kontekst AI-en bør ha i bakhodet for alle spørsmål — et jurisdiksjonsfokus, et spesifikt juridisk rammeverk, en formateringspreferanse — kan du legge det til som en egendefinert instruksjon når du oppretter eller redigerer rutenettet. Noe som «Svar i konteksten av norsk arbeidsrett» eller «Fokuser på økonomiske forpliktelser og bøter.»
+
+Hvert spørsmål kan velge å inkludere eller ekskludere instruksjonen på rutenettnivå, slik at du har kontroll over hvilke spørsmål som drar nytte av den ekstra konteksten og hvilke som bør stå alene.
+
+## Legge til dokumenter
+
+Du kan legge til dokumenter fra flere steder: enhver [kunnskapsbase](/no/guides/projects/knowledge-base) tilgjengelig for deg (ikke bare det gjeldende prosjektets), en filopplasting, eller integrasjoner som SharePoint og Epona365 hvis organisasjonen din har dem konfigurert. Velg så mange du trenger — AI-en genererer svar for hvert dokument mot hvert spørsmål.
+
+Dokumenter kan legges til eller fjernes når som helst. Når du legger til nye dokumenter i et eksisterende rutenett, fyller AI-en inn svarene automatisk. Rutenettet er ikke låst ved opprettelse.

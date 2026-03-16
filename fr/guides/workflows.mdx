@@ -1,0 +1,49 @@
+---
+title: Vue d'ensemble
+---
+
+Les workflows vous permettent d'enchaîner des tâches IA dans une séquence automatisée. Au lieu d'exécuter chaque étape manuellement — extraire les termes clés, rechercher le droit applicable, rédiger un résumé — vous construisez un flux une fois et l'exécutez chaque fois que nécessaire. Chaque étape transmet son résultat à la suivante, de sorte que l'ensemble du processus s'exécute de bout en bout sans que vous ayez à basculer entre les outils.
+
+Ils sont construits sur un canevas visuel où vous disposez les étapes, les connectez et configurez ce que chacune fait. Le résultat est un pipeline réutilisable capable de gérer un travail complexe en plusieurs étapes en une fraction du temps qu'il faudrait pour le faire manuellement.
+
+<Note>
+Les ingénieurs juridiques de Saga peuvent vous aider à concevoir des workflows adaptés aux processus spécifiques de votre cabinet — contactez votre équipe de compte si vous souhaitez de l'assistance.
+</Note>
+
+## Structure des workflows
+
+Un workflow est une séquence linéaire d'étapes. Chaque étape est un **nœud** qui effectue une action — générer du texte, rechercher des sources juridiques, traduire un document, lancer une revue en grille. Vous connectez les nœuds dans l'ordre d'exécution souhaité, et les données circulent d'une étape à l'autre automatiquement.
+
+Il n'y a ni embranchement ni boucle — chaque workflow est une ligne droite du début à la fin. Cela garantit la prévisibilité : vous savez toujours ce qui s'exécute et quand, et chaque étape peut faire référence au résultat de n'importe quelle étape précédente.
+
+## Ce que les étapes peuvent faire
+
+Les étapes se répartissent en deux catégories : les **entrées** qui collectent des informations auprès de vous, et les **actions** qui les traitent.
+
+### Entrées
+
+| Étape | Ce qu'elle fait |
+|------|-------------|
+| **Saisie de prompt** | Vous demande de saisir du texte — contexte, instructions, une question — que les étapes suivantes peuvent utiliser |
+| **Import de fichiers** | Vous demande d'importer un ou plusieurs documents que le workflow va traiter |
+
+### Actions
+
+| Étape | Ce qu'elle fait |
+|------|-------------|
+| **Exécuter un prompt** | Envoie un prompt à un assistant IA et renvoie la réponse |
+| **Rédaction** | Génère un ou plusieurs documents à partir des entrées précédentes |
+| **Recherche juridique** | Effectue des recherches dans les [sources juridiques](/fr/guides/legal-research) sélectionnées et renvoie les résultats avec des citations |
+| **Bibliothèque de prompts** | Exécute un prompt enregistré de votre [bibliothèque de prompts](/fr/guides/chat/prompt-library) |
+| **Revue en grille** | Crée une [revue en grille](/fr/guides/grid-review) avec les documents importés et des questions générées par l'IA |
+| **Traduction** | Traduit du texte ou des documents entre les langues via [DeepL](/fr/guides/translate) |
+| **Tâches** | Exécute une tâche intégrée comme `/summarize`, `/anonymize` ou `/proofread` |
+| **Raisonnement logique** | Applique un raisonnement étape par étape pour analyser ou évaluer les résultats précédents |
+| **Recherche web** | Effectue une recherche sur le web et renvoie les informations pertinentes |
+| **Interpréteur de code** | Exécute du code Python pour le traitement de données, les calculs ou l'analyse |
+
+## Circulation des données entre les étapes
+
+Chaque étape peut faire référence au résultat de n'importe quelle étape précédente. Lorsque vous configurez les instructions d'une étape, tapez `@` pour mentionner une étape précédente par son nom. À l'exécution, cette mention est remplacée par le résultat réel de cette étape.
+
+Par exemple, une étape « Exécuter un prompt » peut utiliser `@` pour faire référence à une étape « Import de fichiers » afin d'analyser les documents importés, et une étape « Rédaction » plus en aval peut faire `@` sur les deux pour produire un rapport final. Les données s'enchaînent automatiquement dans le workflow.

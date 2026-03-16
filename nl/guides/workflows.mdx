@@ -1,0 +1,49 @@
+---
+title: Overzicht
+---
+
+Workflows laten u AI-taken aan elkaar koppelen in een geautomatiseerde reeks. In plaats van elke stap handmatig uit te voeren — kernbegrippen extraheren, het relevante recht onderzoeken, een samenvatting opstellen — bouwt u één keer een flow en voert u deze uit wanneer u het nodig hebt. Elke stap voert zijn output door naar de volgende, zodat het hele proces van begin tot eind loopt zonder dat u tussen hulpmiddelen hoeft te wisselen.
+
+Ze zijn gebouwd op een visueel canvas waar u stappen uitlegt, met elkaar verbindt en configureert wat elk doet. Het resultaat is een herbruikbare pipeline die complex, meerstaps werk aankan in een fractie van de tijd die het handmatig zou kosten.
+
+<Note>
+De juridische engineers van Saga kunnen u helpen workflows te ontwerpen die zijn afgestemd op de specifieke processen van uw kantoor — neem contact op met uw accountteam als u hulp wenst.
+</Note>
+
+## Hoe workflows zijn opgebouwd
+
+Een workflow is een lineaire reeks van stappen. Elke stap is een **knooppunt** dat één ding doet — tekst genereren, juridische bronnen doorzoeken, een document vertalen, een rasterbeoordeling uitvoeren. U verbindt knooppunten in de volgorde waarin u ze wilt uitvoeren, en gegevens stromen automatisch van de ene stap naar de volgende.
+
+Er is geen vertakking of lus — elke workflow is een rechte lijn van begin tot eind. Dit houdt het voorspelbaar: u weet altijd wat wanneer wordt uitgevoerd, en elke stap kan verwijzen naar de output van een eerdere stap.
+
+## Wat stappen kunnen doen
+
+Stappen vallen in twee categorieën: **invoer** die informatie van u verzamelt, en **acties** die er iets mee doen.
+
+### Invoer
+
+| Stap | Wat het doet |
+|------|-------------|
+| **Promptinvoer** | Vraagt u tekst in te voeren — context, instructies, een vraag — die latere stappen kunnen gebruiken |
+| **Bestanden uploaden** | Vraagt u een of meer documenten te uploaden die de workflow moet verwerken |
+
+### Acties
+
+| Stap | Wat het doet |
+|------|-------------|
+| **Prompt uitvoeren** | Stuurt een prompt naar een AI-assistent en retourneert het antwoord |
+| **Opstellen** | Genereert een of meer documenten op basis van eerdere invoer |
+| **Juridisch onderzoek** | Doorzoekt geselecteerde [juridische bronnen](/nl/guides/legal-research) en retourneert resultaten met bronverwijzingen |
+| **Promptbibliotheek** | Voert een opgeslagen prompt uit vanuit uw [promptbibliotheek](/nl/guides/chat/prompt-library) |
+| **Rasterbeoordeling** | Maakt een [rasterbeoordeling](/nl/guides/grid-review) met geüploade documenten en door AI gegenereerde vragen |
+| **Vertalen** | Vertaalt tekst of documenten tussen talen via [DeepL](/nl/guides/translate) |
+| **Taken** | Voert een ingebouwde taak uit zoals `/summarize`, `/anonymize` of `/proofread` |
+| **Logisch denken** | Past stapsgewijze redenering toe om eerdere outputs te analyseren of te evalueren |
+| **Webzoekopdracht** | Doorzoekt het web en retourneert relevante informatie |
+| **Code-interpreter** | Voert Python-code uit voor gegevensverwerking, berekeningen of analyses |
+
+## Hoe gegevens tussen stappen stromen
+
+Elke stap kan verwijzen naar de output van elke stap die ervoor kwam. Wanneer u de instructies van een stap configureert, typ `@` om een eerdere stap bij naam te vermelden. Tijdens uitvoering wordt die vermelding vervangen door de werkelijke output van die stap.
+
+Een "Prompt uitvoeren"-stap kan bijvoorbeeld `@` gebruiken bij een "Bestanden uploaden"-stap om de geüploade documenten te analyseren, en een "Opstellen"-stap verderop kan `@` bij beide gebruiken om een eindrapport te produceren. De gegevens stromen automatisch door de workflow.

@@ -1,0 +1,54 @@
+---
+title: Construir y ejecutar
+---
+
+Construir un flujo de trabajo significa disponer los pasos que desea automatizar y configurar lo que hace cada uno. Ejecutarlo significa poner esos pasos en marcha con entradas reales y obtener resultados.
+
+## El constructor
+
+Abra el constructor de flujos de trabajo desde la página **Flujos de trabajo** en la barra lateral. Verá un lienzo visual — un espacio de trabajo vacío donde ensambla su flujo.
+
+Agregue pasos desde el catálogo de la barra lateral, que está organizado en **Entradas** y **Acciones**. Arrastre un paso al lienzo o haga clic para agregarlo. Conecte los pasos arrastrando desde el conector de salida de un paso hasta el conector de entrada del siguiente. Las conexiones definen el orden de ejecución y cómo se pasan los datos entre pasos.
+
+Cada paso tiene un panel de configuración. Seleccione un paso en el lienzo para abrirlo en la barra lateral, donde puede configurar:
+
+- **Título del paso** — una etiqueta que identifica lo que hace este paso (es lo que ve cuando lo referencia desde otros pasos)
+- **Instrucciones o consulta** — el prompt, la consulta de búsqueda o las indicaciones para este paso
+- **Asistente** — para pasos basados en prompts, qué modelo de IA o [asistente personalizado](/es/guides/assistants/custom-assistants) usar
+- **Opciones específicas del paso** — cosas como qué [fuentes jurídicas](/es/guides/legal-research) buscar, entre qué idiomas traducir, o qué [tarea](/es/guides/chat#tareas) ejecutar
+
+También puede hacer clic en **Mejorar prompt** en los campos de instrucciones para que la IA refine su formulación.
+
+## Hacer referencia a pasos anteriores
+
+Al escribir instrucciones para un paso, puede hacer referencia a la salida de cualquier paso anterior mencionándolo con `@`. Comience a escribir `@` y seleccione el paso que desea referenciar. En tiempo de ejecución, esa mención se reemplaza con la salida real de ese paso — de modo que los datos se enlazan a través del flujo de trabajo automáticamente.
+
+Así es como se construye contexto a lo largo del flujo. Un paso de prompt puede analizar documentos de un paso de carga. Un paso de redacción puede reunir los resultados de un paso de investigación y un paso de revisión en un memorando final.
+
+## Guardar
+
+Haga clic en **Guardar** cuando su flujo de trabajo esté listo. Le dará un nombre, una descripción opcional y un idioma. También puede etiquetarlo con áreas de práctica para facilitar su búsqueda más adelante. Si desea ponerlo a disposición de toda su organización, marque **Solicitar hacer organizacional** — un administrador lo revisará y aprobará.
+
+Un flujo de trabajo debe guardarse antes de poder ejecutarse.
+
+## Ejecutar un flujo de trabajo
+
+Haga clic en **Ejecutar** en el constructor para iniciar la ejecución. La barra lateral cambia al modo de ejecución, mostrando el estado de cada paso a medida que avanza:
+
+- **Pendiente** — esperando para comenzar
+- **En progreso** — ejecutándose actualmente
+- **Esperando entrada** — el paso necesita algo de usted (texto o archivos)
+- **Completado** — terminado, con resultados mostrados
+- **Fallido** — algo salió mal, con un mensaje de error
+
+Cuando un paso necesita entrada — como una entrada de prompt o carga de archivos — el flujo de trabajo se pausa y espera a que usted la proporcione antes de continuar. Complete lo necesario y el flujo de trabajo retoma donde se quedó.
+
+Cada paso muestra su tiempo de ejecución, y los resultados finales aparecen en una sección de **Activos finales** en la parte inferior — documentos para descargar, texto para copiar, revisiones en cuadrícula para abrir o resultados de investigación para explorar.
+
+## Ejecutar desde el chat
+
+También puede iniciar un flujo de trabajo directamente desde una conversación de chat. El flujo de trabajo se ejecuta en línea — paso a paso en el hilo del chat — para que pueda ver los resultados a medida que llegan sin abandonar la conversación.
+
+## Cuando algo sale mal
+
+Si un paso falla, el flujo de trabajo se detiene y muestra un mensaje de error para ese paso. Los pasos posteriores no se ejecutarán. Puede ajustar la configuración del paso que falló y ejecutar el flujo de trabajo de nuevo desde el inicio.

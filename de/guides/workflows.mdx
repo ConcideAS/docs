@@ -1,0 +1,49 @@
+---
+title: Übersicht
+---
+
+Workflows ermöglichen es Ihnen, KI-Aufgaben zu einer automatisierten Abfolge zu verketten. Anstatt jeden Schritt manuell auszuführen — Schlüsselbegriffe extrahieren, das einschlägige Recht recherchieren, eine Zusammenfassung erstellen — bauen Sie einen Ablauf einmal auf und führen ihn aus, wann immer Sie ihn brauchen. Jeder Schritt gibt seine Ausgabe an den nächsten weiter, sodass der gesamte Prozess durchgängig abläuft, ohne dass Sie zwischen Werkzeugen wechseln müssen.
+
+Sie basieren auf einer visuellen Arbeitsfläche, auf der Sie Schritte anordnen, verbinden und konfigurieren, was jeder einzelne tut. Das Ergebnis ist eine wiederverwendbare Pipeline, die komplexe, mehrstufige Arbeit in einem Bruchteil der Zeit bewältigt, die eine manuelle Bearbeitung erfordern würde.
+
+<Note>
+Die Legal Engineers von Saga können Ihnen helfen, Workflows zu entwickeln, die auf die spezifischen Prozesse Ihrer Kanzlei zugeschnitten sind — wenden Sie sich an Ihr Account-Team, wenn Sie Unterstützung wünschen.
+</Note>
+
+## Wie Workflows aufgebaut sind
+
+Ein Workflow ist eine lineare Abfolge von Schritten. Jeder Schritt ist ein **Knoten**, der eine Sache erledigt — Text generieren, Rechtsquellen durchsuchen, ein Dokument übersetzen, eine Rasterprüfung durchführen. Sie verbinden Knoten in der gewünschten Reihenfolge, und die Daten fliessen automatisch von einem Schritt zum nächsten.
+
+Es gibt keine Verzweigungen oder Schleifen — jeder Workflow ist eine gerade Linie vom Start bis zum Ende. Das macht die Abläufe vorhersehbar: Sie wissen immer, was wann ausgeführt wird, und jeder Schritt kann auf die Ausgabe jedes früheren Schritts verweisen.
+
+## Was Schritte leisten können
+
+Schritte lassen sich in zwei Kategorien einteilen: **Eingaben**, die Informationen von Ihnen erfassen, und **Aktionen**, die etwas damit tun.
+
+### Eingaben
+
+| Schritt | Funktion |
+|---------|----------|
+| **Prompt-Eingabe** | Fordert Sie auf, Text einzugeben — Kontext, Anweisungen, eine Frage — den spätere Schritte verwenden können |
+| **Datei-Upload** | Fordert Sie auf, ein oder mehrere Dokumente hochzuladen, die der Workflow verarbeiten soll |
+
+### Aktionen
+
+| Schritt | Funktion |
+|---------|----------|
+| **Prompt ausführen** | Sendet einen Prompt an einen KI-Assistenten und gibt die Antwort zurück |
+| **Dokumentenerstellung** | Generiert ein oder mehrere Dokumente basierend auf früheren Eingaben |
+| **Rechtsrecherche** | Durchsucht ausgewählte [Rechtsquellen](/de/guides/legal-research) und gibt Ergebnisse mit Quellenverweisen zurück |
+| **Prompt-Bibliothek** | Führt einen gespeicherten Prompt aus Ihrer [Prompt-Bibliothek](/de/guides/chat/prompt-library) aus |
+| **Rasterprüfung** | Erstellt eine [Rasterprüfung](/de/guides/grid-review) mit hochgeladenen Dokumenten und KI-generierten Fragen |
+| **Übersetzen** | Übersetzt Text oder Dokumente zwischen Sprachen über [DeepL](/de/guides/translate) |
+| **Aufgaben** | Führt eine integrierte Aufgabe wie `/summarize`, `/anonymize` oder `/proofread` aus |
+| **Logisches Denken** | Wendet schrittweise Argumentation an, um frühere Ausgaben zu analysieren oder zu bewerten |
+| **Websuche** | Durchsucht das Internet und gibt relevante Informationen zurück |
+| **Code-Interpreter** | Führt Python-Code für Datenverarbeitung, Berechnungen oder Analysen aus |
+
+## Wie Daten zwischen Schritten fliessen
+
+Jeder Schritt kann auf die Ausgabe jedes früheren Schritts verweisen. Wenn Sie die Anweisungen eines Schritts konfigurieren, geben Sie `@` ein, um einen früheren Schritt namentlich zu erwähnen. Zur Laufzeit wird diese Erwähnung durch die tatsächliche Ausgabe dieses Schritts ersetzt.
+
+Beispielsweise kann ein Schritt „Prompt ausführen" per `@` einen Schritt „Datei-Upload" referenzieren, um die hochgeladenen Dokumente zu analysieren, und ein weiter unten liegender Schritt „Dokumentenerstellung" kann beide per `@` referenzieren, um einen Abschlussbericht zu erstellen. Die Daten fliessen automatisch durch den Workflow.

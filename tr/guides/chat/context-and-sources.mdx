@@ -1,0 +1,43 @@
+---
+title: Bağlam ve kaynaklar
+---
+
+Yapay zekanın yanıtları, sahip olduğu bağlam kadar iyidir. Saga, yapay zekanın hangi bilgilere erişebileceğini kontrol etmeniz için çeşitli yollar sunar — bir projenin tam belge kütüphanesinden o an eklediğiniz tek bir dosyaya kadar — ve bunları tek bir konuşmada birleştirebilirsiniz.
+
+## Bilgi tabanı ve ekli dosyalar
+
+Yapay zekaya belge erişimi sağlamanın iki yolu vardır ve farklı çalışırlar.
+
+**Bilgi tabanı** belgeleri bir projeye yüklenir ve önceden işlenir. Saga her sayfayı okur ve dizinler, böylece yapay zeka tüm koleksiyonunuz arasında arama yapabilir ve en ilgili pasajları çıkarabilir — yüzlerce belgeden bile. Bir konu üzerinde zaman içinde çalışıyorsanız ve yapay zekanın bir materyal bütününe derin, kalıcı erişime sahip olmasını istiyorsanız bu doğru seçimdir.
+
+**Ekli dosyalar** doğrudan tek bir konuşmaya eklenir. Bilgisayarınızdan bir dosya yükleyebilir veya erişiminiz olan herhangi bir bilgi tabanından birini çekebilirsiniz. Yapay zeka, ekin tam içeriğini o mesajın parçası olarak okur. Bu, hızlı, tek seferlik sorular için daha iyidir — bir proje kurmadan yapay zekaya belirli bir belge verip onun hakkında bir şey sormak istediğinizde.
+
+Pratikte: bir dizi belge hakkında günler veya haftalar boyunca birden fazla soru soracaksanız, bunları bir projenin bilgi tabanına yükleyin. Bir dosya hakkında hızlı bir yanıt istiyorsanız, sohbette ekleyin.
+
+## Kuruluş kaynakları
+
+Kuruluş kaynakları, yöneticiniz tarafından yönetilen firma genelindeki bilgi tabanlarıdır — standart madde kütüphaneleri, dahili kılavuzlar veya mevzuat el kitapları gibi şeyler. Mevcut olduklarında, sohbet araç çubuğunda bir geçiş düğmesi görünür. İstediklerinizi etkinleştirin ve yapay zeka bunları diğer bağlamınızla birlikte kullanır.
+
+Kuruluş kaynakları geçiş düğmesini görmüyorsanız, kuruluşunuz henüz hiçbirini oluşturmamıştır. Yöneticinizden [yönetim paneli](/tr/guides/admin)nden bir tane oluşturmasını isteyin.
+
+## Web araması ve URL'ler
+
+Kuruluşunuzun dışından bilgi de getirebilirsiniz. Araç çubuğundan **web araması**'nı etkinleştirin ve yapay zeka yanıtının bir parçası olarak internette arama yapar. Yalnızca web araması etkinken gönderdiğiniz mesaj harici arama motorlarına sunulur — konuşmanızın geri kalanı, proje belgeleriniz ve sohbetteki diğer dosyalar paylaşılmaz. Sonraki mesaj için web aramasını kapatın ve o mesaj tamamen Saga içinde kalır.
+
+Belirli bir web sayfası için URL'yi doğrudan sohbete yapıştırın. Saga sayfa içeriğini otomatik olarak çıkarır ve yapay zeka kaynağa geri bağlanan atıflarla buna referans verebilir.
+
+## Hukuki araştırma
+
+Mesajınızı göndermeden önce araç çubuğundan hukuki araştırma veritabanlarını etkinleştirin. Yapay zeka, yanıtını oluştururken seçilen veritabanlarında arama yapar ve sonuçları atıflarla birlikte sunar. Bir zaman çizelgesi; arama ilerlemesini, kullanılan sorguları ve her veritabanı için bulunan sonuçları gösterir.
+
+Mevcut veritabanları ve arama seçenekleri hakkında daha fazla bilgi için [Hukuki araştırma](/tr/guides/legal-research) bölümüne bakın.
+
+## Taslak oluşturma
+
+Taslak oluşturma etkinleştirildiğinde, yapay zeka yanıtının bir parçası olarak bağımsız belgeler üretebilir — bir muhtıra, özet, sözleşme maddesi veya başka herhangi bir yazılı çıktı. Bunlar, yan panelde açabileceğiniz veya Word belgesi olarak dışa aktarabileceğiniz indirilebilir dosyalar olarak görünür.
+
+Araç çubuğundan taslak oluşturmayı açın veya kapatın. Kapalıyken yapay zeka yalnızca sohbette yanıt verir. Açıkken yapay zeka, isteğin bir belge gerektirip gerektirmediğine karar verir ve uygun olduğunda bir belge oluşturur.
+
+## Ek yapay zeka talimatları
+
+Yapay zekanın her zaman aklında tutmasını istediğiniz bir şey varsa — tercih edilen bir dil, yargı alanı odağı, biçimlendirme kuralı — bir kez ayarlayıp unutabilirsiniz. **Ayarlar > Kişiselleştirme**'ye gidin ve **Yapay zeka talimatları** altına talimatlarınızı ekleyin. Başlattığınız her konuşmaya uygulanır, böylece kendinizi tekrarlamanız gerekmez.

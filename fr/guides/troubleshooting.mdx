@@ -1,0 +1,76 @@
+---
+title: FAQ et dépannage
+---
+
+## Documents
+
+<AccordionGroup>
+
+<Accordion title="Mon document n'a pas pu être importé ou traité">
+Vérifiez le format et la taille du fichier. Saga prend en charge les formats PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG et les formats d'image courants. La taille maximale est de 1 Go — et les PDF ou images nécessitant une extraction de texte (OCR) sont limités à 500 Mo.
+
+Si le format et la taille du fichier sont corrects, cliquez sur **Réessayer** sur le document en échec dans la base de connaissances. Si cela ne fonctionne toujours pas, essayez de réimporter le fichier. Les fichiers corrompus ou les documents numérisés de mauvaise qualité peuvent parfois entraîner un échec du traitement.
+</Accordion>
+
+</AccordionGroup>
+
+## Chat et IA
+
+<AccordionGroup>
+
+<Accordion title="L'IA indique que le contexte du chat est presque plein">
+Chaque modèle IA a une limite sur la quantité de texte qu'il peut prendre en compte à la fois. Lorsqu'une conversation devient longue — beaucoup de messages, des pièces jointes volumineuses, ou les deux — vous verrez un avertissement indiquant que le contexte est presque plein.
+
+Démarrez une nouvelle conversation pour réinitialiser le contexte. Si vous travaillez avec un grand nombre de documents, pensez à les importer dans la [base de connaissances](/fr/guides/projects/knowledge-base) d'un projet au lieu de les joindre dans le chat — la base de connaissances indexe vos fichiers afin que l'IA puisse effectuer des recherches sans avoir besoin de tout garder en contexte simultanément.
+</Accordion>
+
+<Accordion title="L'IA a donné une réponse incorrecte ou incomplète">
+La qualité de la réponse de l'IA dépend du contexte dont elle dispose et du modèle que vous utilisez. Voici quelques pistes :
+
+- **Passez à un modèle plus performant** — un modèle avec une intelligence plus élevée peut mieux traiter votre question. Consultez [Modèles](/fr/guides/assistants/models) pour des conseils.
+- **Affinez le contexte** — si la base de connaissances contient de nombreux documents, désactivez ceux qui ne sont pas pertinents pour concentrer l'attention de l'IA.
+- **Reformulez votre question** — les questions plus spécifiques tendent à produire de meilleurs résultats. Utilisez **Améliorer le prompt** pour laisser l'IA affiner votre formulation avant l'envoi.
+- **Vérifiez les citations** — vérifiez toujours les affirmations de l'IA par rapport aux sources citées.
+</Accordion>
+
+<Accordion title="Je suis limité en fréquence ou je vois « trop de requêtes »">
+Saga limite la fréquence de certaines actions. Si cela se produit lors de la connexion ou de l'authentification à deux facteurs, attendez quelques minutes et réessayez. Pour les limites liées au chat, attendez brièvement et renvoyez votre message.
+</Accordion>
+
+</AccordionGroup>
+
+## Fonctionnalités et accès
+
+<AccordionGroup>
+
+<Accordion title="Je ne vois pas SharePoint ou Epona365 lors de l'import de documents">
+Ces intégrations doivent être activées par votre administrateur. Demandez-lui de configurer l'intégration depuis le [panneau d'administration](/fr/guides/admin) sous **Paramètres > Intégrations**. Une fois configurée, l'option apparaît pour tout le monde dans l'organisation.
+</Accordion>
+
+<Accordion title="Je ne vois pas les sources organisationnelles dans la barre d'outils du chat">
+Les sources organisationnelles sont créées par votre administrateur ou administrateur de contenu. Si l'interrupteur n'apparaît pas dans le menu **Ajouter des sources**, votre organisation n'en a pas encore configuré. Demandez à votre administrateur d'en créer une depuis le [panneau d'administration](/fr/guides/admin).
+</Accordion>
+
+<Accordion title="Je ne vois pas une source juridique dont j'ai besoin">
+Votre administrateur contrôle les sources juridiques activées. Si une source n'apparaît pas, demandez à votre administrateur de l'activer depuis les paramètres de l'espace de travail. Pour le catalogue complet des sources disponibles, consultez [moonlit.ai/coverage](https://moonlit.ai/coverage).
+</Accordion>
+
+<Accordion title="Je ne peux pas accéder au panneau d'administration">
+Le panneau d'administration n'est visible que pour les utilisateurs ayant le rôle **Administrateur** ou **Administrateur de contenu**. Si vous avez besoin d'un accès, demandez à un administrateur existant de mettre à jour votre rôle. Les administrateurs de contenu peuvent gérer les bibliothèques et les sources organisationnelles ; les administrateurs complets peuvent tout gérer, y compris les utilisateurs et les paramètres.
+</Accordion>
+
+<Accordion title="Le complément Word n'apparaît pas dans Word">
+Il s'agit généralement d'un problème d'autorisations ou de licence. Vérifiez que votre organisation autorise les compléments Office tiers, que votre version d'Office est à jour et que vous êtes connecté avec votre compte Microsoft. Pour les étapes détaillées, consultez [Dépannage du complément Word](/fr/guides/integrations/word-add-in/user-setup#dépannage).
+</Accordion>
+
+</AccordionGroup>
+
+## Support
+
+<AccordionGroup>
+
+<Accordion title="Comment contacter le support ?">
+Cliquez sur **Obtenir de l'aide** dans la barre latérale pour ouvrir le formulaire de retour, ou envoyez un e-mail directement à l'équipe de support à [support@sagalegal.io](mailto:support@sagalegal.io). Incluez autant de détails que possible — ce que vous faisiez, ce que vous attendiez et tout message d'erreur rencontré.
+</Accordion>
+
+</AccordionGroup>

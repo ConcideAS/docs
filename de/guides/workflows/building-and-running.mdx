@@ -1,0 +1,54 @@
+---
+title: Erstellen und ausführen
+---
+
+Einen Workflow erstellen bedeutet, die zu automatisierenden Schritte anzulegen und zu konfigurieren, was jeder einzelne tut. Ihn auszuführen bedeutet, diese Schritte mit echten Eingaben abzuarbeiten und Ergebnisse zu erhalten.
+
+## Der Builder
+
+Öffnen Sie den Workflow-Builder über die Seite **Workflows** in der Seitenleiste. Sie sehen eine visuelle Arbeitsfläche — einen leeren Arbeitsbereich, in dem Sie Ihren Ablauf zusammenstellen.
+
+Fügen Sie Schritte aus dem Seitenleisten-Katalog hinzu, der in **Eingaben** und **Aktionen** unterteilt ist. Ziehen Sie einen Schritt auf die Arbeitsfläche oder klicken Sie, um ihn hinzuzufügen. Verbinden Sie Schritte, indem Sie vom Ausgangs-Handle eines Schritts zum Eingangs-Handle des nächsten ziehen. Die Verbindungen definieren die Ausführungsreihenfolge und den Datenfluss zwischen den Schritten.
+
+Jeder Schritt hat ein Konfigurationspanel. Wählen Sie einen Schritt auf der Arbeitsfläche aus, um ihn in der Seitenleiste zu öffnen, wo Sie Folgendes festlegen können:
+
+- **Schritttitel** — eine Bezeichnung, die beschreibt, was dieser Schritt tut (das sehen Sie, wenn Sie ihn von anderen Schritten aus referenzieren)
+- **Anweisungen oder Anfrage** — der Prompt, die Suchanfrage oder die Vorgaben für diesen Schritt
+- **Assistent** — für prompt-basierte Schritte, welches KI-Modell oder welchen [benutzerdefinierten Assistenten](/de/guides/assistants/custom-assistants) Sie verwenden möchten
+- **Schrittspezifische Optionen** — z. B. welche [Rechtsquellen](/de/guides/legal-research) durchsucht, zwischen welchen Sprachen übersetzt oder welche [Aufgabe](/de/guides/chat#aufgaben) ausgeführt werden soll
+
+Sie können auch auf **Prompt verbessern** in Anweisungsfeldern klicken, um die KI Ihre Formulierung verfeinern zu lassen.
+
+## Frühere Schritte referenzieren
+
+Beim Schreiben von Anweisungen für einen Schritt können Sie die Ausgabe jedes früheren Schritts referenzieren, indem Sie ihn mit `@` erwähnen. Beginnen Sie `@` einzugeben und wählen Sie den gewünschten Schritt aus. Zur Laufzeit wird diese Erwähnung durch die tatsächliche Ausgabe dieses Schritts ersetzt — so fliessen die Daten automatisch durch den Workflow.
+
+So bauen Sie schrittweise Kontext im Ablauf auf. Ein Prompt-Schritt kann Dokumente eines Upload-Schritts analysieren. Ein Dokumentenerstellungs-Schritt kann die Ergebnisse eines Recherche-Schritts und eines Prüfungsschritts in ein abschliessendes Memo zusammenführen.
+
+## Speichern
+
+Klicken Sie auf **Speichern**, wenn Ihr Workflow fertig ist. Sie geben ihm einen Namen, eine optionale Beschreibung und eine Sprache. Sie können ihn auch mit Praxisbereichen taggen, damit er später leichter zu finden ist. Wenn Sie ihn Ihrer gesamten Organisation zur Verfügung stellen möchten, aktivieren Sie **Als organisationsweit vorschlagen** — ein Administrator prüft und genehmigt ihn.
+
+Ein Workflow muss gespeichert werden, bevor er ausgeführt werden kann.
+
+## Workflow ausführen
+
+Klicken Sie im Builder auf **Ausführen**, um die Ausführung zu starten. Die Seitenleiste wechselt in den Ausführungsmodus und zeigt den Status jedes Schritts im Verlauf an:
+
+- **Ausstehend** — wartet auf den Start
+- **In Bearbeitung** — wird gerade ausgeführt
+- **Wartet auf Eingabe** — der Schritt benötigt etwas von Ihnen (Text oder Dateien)
+- **Abgeschlossen** — fertig, mit angezeigten Ergebnissen
+- **Fehlgeschlagen** — etwas ist schiefgelaufen, mit einer Fehlermeldung
+
+Wenn ein Schritt eine Eingabe benötigt — wie eine Prompt-Eingabe oder ein Datei-Upload — pausiert der Workflow und wartet, bis Sie die Eingabe bereitgestellt haben, bevor er fortfährt. Füllen Sie das Benötigte aus und der Workflow setzt dort fort, wo er aufgehört hat.
+
+Jeder Schritt zeigt seine Ausführungszeit, und die Endergebnisse erscheinen in einem Abschnitt **Finale Ergebnisse** am unteren Rand — Dokumente zum Herunterladen, Text zum Kopieren, Rasterprüfungen zum Öffnen oder Recherche-Ergebnisse zum Durchsuchen.
+
+## Aus dem Chat ausführen
+
+Sie können einen Workflow auch direkt aus einer Chat-Unterhaltung starten. Der Workflow läuft inline — Schritt für Schritt im Chat-Thread — sodass Sie die Ergebnisse sehen können, sobald sie eintreffen, ohne die Unterhaltung zu verlassen.
+
+## Wenn etwas schiefgeht
+
+Wenn ein Schritt fehlschlägt, stoppt der Workflow und zeigt eine Fehlermeldung für diesen Schritt an. Nachfolgende Schritte werden nicht ausgeführt. Sie können die Konfiguration des fehlgeschlagenen Schritts anpassen und den Workflow von vorne neu starten.

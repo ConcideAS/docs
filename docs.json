@@ -131,61 +131,911 @@
       {
         "language": "no",
         "groups": [
-          { "group": "Kom i gang", "pages": ["no/index"] }
+          {
+            "group": "Velkommen",
+            "pages": ["no/index", "no/guides/quickstart"]
+          },
+          {
+            "group": "Kjernefunksjoner",
+            "pages": [
+              {
+                "group": "Prosjekter",
+                "pages": [
+                  "no/guides/projects",
+                  "no/guides/projects/knowledge-base",
+                  "no/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "no/guides/chat",
+                  "no/guides/chat/context-and-sources",
+                  "no/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistenter",
+                "pages": [
+                  "no/guides/assistants",
+                  "no/guides/assistants/models",
+                  "no/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Juridisk forskning",
+                "pages": [
+                  "no/guides/legal-research",
+                  "no/guides/legal-research/search-and-results",
+                  "no/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Rutenettgjennomgang",
+                "pages": [
+                  "no/guides/grid-review",
+                  "no/guides/grid-review/working-with-grids",
+                  "no/guides/grid-review/templates"
+                ]
+              },
+              "no/guides/translate",
+              {
+                "group": "Arbeidsflyter",
+                "pages": [
+                  "no/guides/workflows",
+                  "no/guides/workflows/building-and-running",
+                  "no/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrasjoner",
+            "pages": [
+              {
+                "group": "Dokumenthåndtering",
+                "pages": [
+                  "no/guides/integrations/sharepoint",
+                  "no/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word-tillegg",
+                "pages": [
+                  "no/guides/integrations/word-add-in",
+                  "no/guides/integrations/word-add-in/user-setup",
+                  "no/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administrasjon",
+            "pages": ["no/guides/admin"]
+          },
+          {
+            "group": "Feilsøking",
+            "pages": ["no/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "nl",
         "groups": [
-          { "group": "Aan de slag", "pages": ["nl/index"] }
+          {
+            "group": "Welkom",
+            "pages": ["nl/index", "nl/guides/quickstart"]
+          },
+          {
+            "group": "Kernfunctionaliteiten",
+            "pages": [
+              {
+                "group": "Projecten",
+                "pages": [
+                  "nl/guides/projects",
+                  "nl/guides/projects/knowledge-base",
+                  "nl/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "nl/guides/chat",
+                  "nl/guides/chat/context-and-sources",
+                  "nl/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistenten",
+                "pages": [
+                  "nl/guides/assistants",
+                  "nl/guides/assistants/models",
+                  "nl/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Juridisch onderzoek",
+                "pages": [
+                  "nl/guides/legal-research",
+                  "nl/guides/legal-research/search-and-results",
+                  "nl/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Rasteranalyse",
+                "pages": [
+                  "nl/guides/grid-review",
+                  "nl/guides/grid-review/working-with-grids",
+                  "nl/guides/grid-review/templates"
+                ]
+              },
+              "nl/guides/translate",
+              {
+                "group": "Workflows",
+                "pages": [
+                  "nl/guides/workflows",
+                  "nl/guides/workflows/building-and-running",
+                  "nl/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integraties",
+            "pages": [
+              {
+                "group": "Documentbeheer",
+                "pages": [
+                  "nl/guides/integrations/sharepoint",
+                  "nl/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word-invoegtoepassing",
+                "pages": [
+                  "nl/guides/integrations/word-add-in",
+                  "nl/guides/integrations/word-add-in/user-setup",
+                  "nl/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Beheer",
+            "pages": ["nl/guides/admin"]
+          },
+          {
+            "group": "Probleemoplossing",
+            "pages": ["nl/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "pl",
         "groups": [
-          { "group": "Rozpocznij", "pages": ["pl/index"] }
+          {
+            "group": "Witamy",
+            "pages": ["pl/index", "pl/guides/quickstart"]
+          },
+          {
+            "group": "Kluczowe funkcje",
+            "pages": [
+              {
+                "group": "Projekty",
+                "pages": [
+                  "pl/guides/projects",
+                  "pl/guides/projects/knowledge-base",
+                  "pl/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Czat",
+                "pages": [
+                  "pl/guides/chat",
+                  "pl/guides/chat/context-and-sources",
+                  "pl/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Asystenci",
+                "pages": [
+                  "pl/guides/assistants",
+                  "pl/guides/assistants/models",
+                  "pl/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Badania prawne",
+                "pages": [
+                  "pl/guides/legal-research",
+                  "pl/guides/legal-research/search-and-results",
+                  "pl/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Przegląd tabelaryczny",
+                "pages": [
+                  "pl/guides/grid-review",
+                  "pl/guides/grid-review/working-with-grids",
+                  "pl/guides/grid-review/templates"
+                ]
+              },
+              "pl/guides/translate",
+              {
+                "group": "Przepływy pracy",
+                "pages": [
+                  "pl/guides/workflows",
+                  "pl/guides/workflows/building-and-running",
+                  "pl/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integracje",
+            "pages": [
+              {
+                "group": "Zarządzanie dokumentami",
+                "pages": [
+                  "pl/guides/integrations/sharepoint",
+                  "pl/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Dodatek Word",
+                "pages": [
+                  "pl/guides/integrations/word-add-in",
+                  "pl/guides/integrations/word-add-in/user-setup",
+                  "pl/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administracja",
+            "pages": ["pl/guides/admin"]
+          },
+          {
+            "group": "Rozwiązywanie problemów",
+            "pages": ["pl/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "es",
         "groups": [
-          { "group": "Primeros pasos", "pages": ["es/index"] }
+          {
+            "group": "Bienvenido",
+            "pages": ["es/index", "es/guides/quickstart"]
+          },
+          {
+            "group": "Funciones principales",
+            "pages": [
+              {
+                "group": "Proyectos",
+                "pages": [
+                  "es/guides/projects",
+                  "es/guides/projects/knowledge-base",
+                  "es/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "es/guides/chat",
+                  "es/guides/chat/context-and-sources",
+                  "es/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Asistentes",
+                "pages": [
+                  "es/guides/assistants",
+                  "es/guides/assistants/models",
+                  "es/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Investigación jurídica",
+                "pages": [
+                  "es/guides/legal-research",
+                  "es/guides/legal-research/search-and-results",
+                  "es/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Revisión en cuadrícula",
+                "pages": [
+                  "es/guides/grid-review",
+                  "es/guides/grid-review/working-with-grids",
+                  "es/guides/grid-review/templates"
+                ]
+              },
+              "es/guides/translate",
+              {
+                "group": "Flujos de trabajo",
+                "pages": [
+                  "es/guides/workflows",
+                  "es/guides/workflows/building-and-running",
+                  "es/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integraciones",
+            "pages": [
+              {
+                "group": "Gestión documental",
+                "pages": [
+                  "es/guides/integrations/sharepoint",
+                  "es/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Complemento de Word",
+                "pages": [
+                  "es/guides/integrations/word-add-in",
+                  "es/guides/integrations/word-add-in/user-setup",
+                  "es/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administración",
+            "pages": ["es/guides/admin"]
+          },
+          {
+            "group": "Solución de problemas",
+            "pages": ["es/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "de",
         "groups": [
-          { "group": "Erste Schritte", "pages": ["de/index"] }
+          {
+            "group": "Willkommen",
+            "pages": ["de/index", "de/guides/quickstart"]
+          },
+          {
+            "group": "Kernfunktionen",
+            "pages": [
+              {
+                "group": "Projekte",
+                "pages": [
+                  "de/guides/projects",
+                  "de/guides/projects/knowledge-base",
+                  "de/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "de/guides/chat",
+                  "de/guides/chat/context-and-sources",
+                  "de/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistenten",
+                "pages": [
+                  "de/guides/assistants",
+                  "de/guides/assistants/models",
+                  "de/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Juristische Recherche",
+                "pages": [
+                  "de/guides/legal-research",
+                  "de/guides/legal-research/search-and-results",
+                  "de/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Tabellenprüfung",
+                "pages": [
+                  "de/guides/grid-review",
+                  "de/guides/grid-review/working-with-grids",
+                  "de/guides/grid-review/templates"
+                ]
+              },
+              "de/guides/translate",
+              {
+                "group": "Workflows",
+                "pages": [
+                  "de/guides/workflows",
+                  "de/guides/workflows/building-and-running",
+                  "de/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrationen",
+            "pages": [
+              {
+                "group": "Dokumentenmanagement",
+                "pages": [
+                  "de/guides/integrations/sharepoint",
+                  "de/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word-Add-in",
+                "pages": [
+                  "de/guides/integrations/word-add-in",
+                  "de/guides/integrations/word-add-in/user-setup",
+                  "de/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": ["de/guides/admin"]
+          },
+          {
+            "group": "Fehlerbehebung",
+            "pages": ["de/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "it",
         "groups": [
-          { "group": "Per iniziare", "pages": ["it/index"] }
+          {
+            "group": "Benvenuto",
+            "pages": ["it/index", "it/guides/quickstart"]
+          },
+          {
+            "group": "Funzionalità principali",
+            "pages": [
+              {
+                "group": "Progetti",
+                "pages": [
+                  "it/guides/projects",
+                  "it/guides/projects/knowledge-base",
+                  "it/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "it/guides/chat",
+                  "it/guides/chat/context-and-sources",
+                  "it/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistenti",
+                "pages": [
+                  "it/guides/assistants",
+                  "it/guides/assistants/models",
+                  "it/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Ricerca giuridica",
+                "pages": [
+                  "it/guides/legal-research",
+                  "it/guides/legal-research/search-and-results",
+                  "it/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Revisione a griglia",
+                "pages": [
+                  "it/guides/grid-review",
+                  "it/guides/grid-review/working-with-grids",
+                  "it/guides/grid-review/templates"
+                ]
+              },
+              "it/guides/translate",
+              {
+                "group": "Flussi di lavoro",
+                "pages": [
+                  "it/guides/workflows",
+                  "it/guides/workflows/building-and-running",
+                  "it/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrazioni",
+            "pages": [
+              {
+                "group": "Gestione documentale",
+                "pages": [
+                  "it/guides/integrations/sharepoint",
+                  "it/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Componente aggiuntivo Word",
+                "pages": [
+                  "it/guides/integrations/word-add-in",
+                  "it/guides/integrations/word-add-in/user-setup",
+                  "it/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Amministrazione",
+            "pages": ["it/guides/admin"]
+          },
+          {
+            "group": "Risoluzione dei problemi",
+            "pages": ["it/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "pt",
         "groups": [
-          { "group": "Primeiros passos", "pages": ["pt/index"] }
+          {
+            "group": "Bem-vindo",
+            "pages": ["pt/index", "pt/guides/quickstart"]
+          },
+          {
+            "group": "Funcionalidades principais",
+            "pages": [
+              {
+                "group": "Projetos",
+                "pages": [
+                  "pt/guides/projects",
+                  "pt/guides/projects/knowledge-base",
+                  "pt/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "pt/guides/chat",
+                  "pt/guides/chat/context-and-sources",
+                  "pt/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistentes",
+                "pages": [
+                  "pt/guides/assistants",
+                  "pt/guides/assistants/models",
+                  "pt/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Pesquisa jurídica",
+                "pages": [
+                  "pt/guides/legal-research",
+                  "pt/guides/legal-research/search-and-results",
+                  "pt/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Revisão em grade",
+                "pages": [
+                  "pt/guides/grid-review",
+                  "pt/guides/grid-review/working-with-grids",
+                  "pt/guides/grid-review/templates"
+                ]
+              },
+              "pt/guides/translate",
+              {
+                "group": "Fluxos de trabalho",
+                "pages": [
+                  "pt/guides/workflows",
+                  "pt/guides/workflows/building-and-running",
+                  "pt/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrações",
+            "pages": [
+              {
+                "group": "Gestão de documentos",
+                "pages": [
+                  "pt/guides/integrations/sharepoint",
+                  "pt/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Suplemento do Word",
+                "pages": [
+                  "pt/guides/integrations/word-add-in",
+                  "pt/guides/integrations/word-add-in/user-setup",
+                  "pt/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administração",
+            "pages": ["pt/guides/admin"]
+          },
+          {
+            "group": "Solução de problemas",
+            "pages": ["pt/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "tr",
         "groups": [
-          { "group": "Başlarken", "pages": ["tr/index"] }
+          {
+            "group": "Hoş geldiniz",
+            "pages": ["tr/index", "tr/guides/quickstart"]
+          },
+          {
+            "group": "Temel özellikler",
+            "pages": [
+              {
+                "group": "Projeler",
+                "pages": [
+                  "tr/guides/projects",
+                  "tr/guides/projects/knowledge-base",
+                  "tr/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Sohbet",
+                "pages": [
+                  "tr/guides/chat",
+                  "tr/guides/chat/context-and-sources",
+                  "tr/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Asistanlar",
+                "pages": [
+                  "tr/guides/assistants",
+                  "tr/guides/assistants/models",
+                  "tr/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Hukuki araştırma",
+                "pages": [
+                  "tr/guides/legal-research",
+                  "tr/guides/legal-research/search-and-results",
+                  "tr/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Tablo inceleme",
+                "pages": [
+                  "tr/guides/grid-review",
+                  "tr/guides/grid-review/working-with-grids",
+                  "tr/guides/grid-review/templates"
+                ]
+              },
+              "tr/guides/translate",
+              {
+                "group": "İş akışları",
+                "pages": [
+                  "tr/guides/workflows",
+                  "tr/guides/workflows/building-and-running",
+                  "tr/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Entegrasyonlar",
+            "pages": [
+              {
+                "group": "Belge yönetimi",
+                "pages": [
+                  "tr/guides/integrations/sharepoint",
+                  "tr/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word eklentisi",
+                "pages": [
+                  "tr/guides/integrations/word-add-in",
+                  "tr/guides/integrations/word-add-in/user-setup",
+                  "tr/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Yönetim",
+            "pages": ["tr/guides/admin"]
+          },
+          {
+            "group": "Sorun giderme",
+            "pages": ["tr/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "fr",
         "groups": [
-          { "group": "Pour commencer", "pages": ["fr/index"] }
+          {
+            "group": "Bienvenue",
+            "pages": ["fr/index", "fr/guides/quickstart"]
+          },
+          {
+            "group": "Fonctionnalités principales",
+            "pages": [
+              {
+                "group": "Projets",
+                "pages": [
+                  "fr/guides/projects",
+                  "fr/guides/projects/knowledge-base",
+                  "fr/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chat",
+                "pages": [
+                  "fr/guides/chat",
+                  "fr/guides/chat/context-and-sources",
+                  "fr/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistants",
+                "pages": [
+                  "fr/guides/assistants",
+                  "fr/guides/assistants/models",
+                  "fr/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Recherche juridique",
+                "pages": [
+                  "fr/guides/legal-research",
+                  "fr/guides/legal-research/search-and-results",
+                  "fr/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Revue en grille",
+                "pages": [
+                  "fr/guides/grid-review",
+                  "fr/guides/grid-review/working-with-grids",
+                  "fr/guides/grid-review/templates"
+                ]
+              },
+              "fr/guides/translate",
+              {
+                "group": "Flux de travail",
+                "pages": [
+                  "fr/guides/workflows",
+                  "fr/guides/workflows/building-and-running",
+                  "fr/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Intégrations",
+            "pages": [
+              {
+                "group": "Gestion documentaire",
+                "pages": [
+                  "fr/guides/integrations/sharepoint",
+                  "fr/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Complément Word",
+                "pages": [
+                  "fr/guides/integrations/word-add-in",
+                  "fr/guides/integrations/word-add-in/user-setup",
+                  "fr/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": ["fr/guides/admin"]
+          },
+          {
+            "group": "Dépannage",
+            "pages": ["fr/guides/troubleshooting"]
+          }
         ]
       },
       {
         "language": "sv",
         "groups": [
-          { "group": "Kom igång", "pages": ["sv/index"] }
+          {
+            "group": "Välkommen",
+            "pages": ["sv/index", "sv/guides/quickstart"]
+          },
+          {
+            "group": "Kärnfunktioner",
+            "pages": [
+              {
+                "group": "Projekt",
+                "pages": [
+                  "sv/guides/projects",
+                  "sv/guides/projects/knowledge-base",
+                  "sv/guides/projects/sharing"
+                ]
+              },
+              {
+                "group": "Chatt",
+                "pages": [
+                  "sv/guides/chat",
+                  "sv/guides/chat/context-and-sources",
+                  "sv/guides/chat/prompt-library"
+                ]
+              },
+              {
+                "group": "Assistenter",
+                "pages": [
+                  "sv/guides/assistants",
+                  "sv/guides/assistants/models",
+                  "sv/guides/assistants/custom-assistants"
+                ]
+              },
+              {
+                "group": "Juridisk forskning",
+                "pages": [
+                  "sv/guides/legal-research",
+                  "sv/guides/legal-research/search-and-results",
+                  "sv/guides/legal-research/in-chat"
+                ]
+              },
+              {
+                "group": "Tabellgranskning",
+                "pages": [
+                  "sv/guides/grid-review",
+                  "sv/guides/grid-review/working-with-grids",
+                  "sv/guides/grid-review/templates"
+                ]
+              },
+              "sv/guides/translate",
+              {
+                "group": "Arbetsflöden",
+                "pages": [
+                  "sv/guides/workflows",
+                  "sv/guides/workflows/building-and-running",
+                  "sv/guides/workflows/library"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrationer",
+            "pages": [
+              {
+                "group": "Dokumenthantering",
+                "pages": [
+                  "sv/guides/integrations/sharepoint",
+                  "sv/guides/integrations/epona"
+                ]
+              },
+              {
+                "group": "Word-tillägg",
+                "pages": [
+                  "sv/guides/integrations/word-add-in",
+                  "sv/guides/integrations/word-add-in/user-setup",
+                  "sv/guides/integrations/word-add-in/admin-setup"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": ["sv/guides/admin"]
+          },
+          {
+            "group": "Felsökning",
+            "pages": ["sv/guides/troubleshooting"]
+          }
         ]
       }
     ]

@@ -1,0 +1,54 @@
+---
+title: Bygga och köra
+---
+
+Att bygga ett arbetsflöde innebär att lägga ut de steg du vill automatisera och konfigurera vad vart och ett gör. Att köra det innebär att exekvera dessa steg med verkliga indata och få resultat.
+
+## Byggaren
+
+Öppna arbetsflödesbyggaren från sidan **Arbetsflöden** i sidofältet. Du ser en visuell arbetsyta — en tom yta där du monterar ditt flöde.
+
+Lägg till steg från sidofältets katalog, som är organiserad i **Inmatningar** och **Åtgärder**. Dra ett steg till arbetsytan eller klicka för att lägga till det. Koppla ihop steg genom att dra från ett stegs utmatningshandtag till nästa stegs inmatningshandtag. Kopplingarna definierar körningsordningen och hur data passerar mellan steg.
+
+Varje steg har en konfigurationspanel. Välj ett steg på arbetsytan för att öppna det i sidofältet, där du kan ställa in:
+
+- **Stegtitel** — en etikett som identifierar vad steget gör (det är detta du ser när du refererar det från andra steg)
+- **Instruktioner eller sökning** — prompten, sökfrågan eller anvisningarna för detta steg
+- **Assistent** — för promptbaserade steg, vilken AI-modell eller [anpassad assistent](/sv/guides/assistants/custom-assistants) som ska användas
+- **Stegspecifika alternativ** — saker som vilka [juridiska källor](/sv/guides/legal-research) att söka i, vilka språk att översätta mellan, eller vilken [uppgift](/sv/guides/chat#uppgifter) att köra
+
+Du kan även klicka på **Förbättra prompt** på instruktionsfält för att låta AI:n förfina din formulering.
+
+## Referera till tidigare steg
+
+När du skriver instruktioner för ett steg kan du referera till resultatet av valfritt tidigare steg genom att nämna det med `@`. Börja skriva `@` och välj det steg du vill referera till. Vid körning ersätts omnämnandet med det faktiska resultatet från det steget — så data trådar sig genom arbetsflödet automatiskt.
+
+Det är så du bygger upp kontext genom flödet. Ett promptsteg kan analysera dokument från ett uppladdningssteg. Ett utkaststeg kan sammanställa resultaten av ett söksteg och ett granskningssteg till ett slutgiltigt PM.
+
+## Spara
+
+Klicka på **Spara** när ditt arbetsflöde är klart. Du ger det ett namn, en valfri beskrivning och ett språk. Du kan även tagga det med praktikområden för att göra det lättare att hitta senare. Om du vill göra det tillgängligt för hela din organisation, markera **Begär att göra organisationsövergripande** — en admin granskar och godkänner det.
+
+Ett arbetsflöde måste sparas innan det kan köras.
+
+## Köra ett arbetsflöde
+
+Klicka på **Kör** i byggaren för att starta körningen. Sidofältet växlar till körningsläge och visar varje stegs status allt eftersom det fortskrider:
+
+- **Väntar** — väntar på att starta
+- **Pågår** — körs just nu
+- **Väntar på inmatning** — steget behöver något från dig (text eller filer)
+- **Slutfört** — klart, med resultat visade
+- **Misslyckat** — något gick fel, med ett felmeddelande
+
+När ett steg behöver inmatning — som en promptinmatning eller filuppladdning — pausar arbetsflödet och väntar på att du tillhandahåller det innan det fortsätter. Fyll i det som behövs och arbetsflödet fortsätter där det slutade.
+
+Varje steg visar sin körningstid, och de slutgiltiga resultaten visas i en sektion med **Slutgiltiga tillgångar** längst ner — dokument att ladda ner, text att kopiera, tabellgranskningar att öppna eller sökresultat att bläddra i.
+
+## Köra från chatt
+
+Du kan även starta ett arbetsflöde direkt från en chattkonversation. Arbetsflödet körs inline — steg för steg i chatttråden — så att du kan se resultaten allt eftersom de kommer in utan att lämna konversationen.
+
+## När något går fel
+
+Om ett steg misslyckas stannar arbetsflödet och visar ett felmeddelande för det steget. Efterföljande steg körs inte. Du kan justera det felande stegets konfiguration och köra arbetsflödet igen från början.
