@@ -101,7 +101,8 @@
                 "group": "Document management",
                 "pages": [
                   "guides/integrations/sharepoint",
-                  "guides/integrations/epona"
+                  "guides/integrations/epona",
+                  "guides/integrations/netdocuments"
                 ]
               },
               {
@@ -196,7 +197,8 @@
                 "group": "Dokumenthåndtering",
                 "pages": [
                   "no/guides/integrations/sharepoint",
-                  "no/guides/integrations/epona"
+                  "no/guides/integrations/epona",
+                  "no/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -287,7 +289,8 @@
                 "group": "Documentbeheer",
                 "pages": [
                   "nl/guides/integrations/sharepoint",
-                  "nl/guides/integrations/epona"
+                  "nl/guides/integrations/epona",
+                  "nl/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -378,7 +381,8 @@
                 "group": "Zarządzanie dokumentami",
                 "pages": [
                   "pl/guides/integrations/sharepoint",
-                  "pl/guides/integrations/epona"
+                  "pl/guides/integrations/epona",
+                  "pl/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -469,7 +473,8 @@
                 "group": "Gestión documental",
                 "pages": [
                   "es/guides/integrations/sharepoint",
-                  "es/guides/integrations/epona"
+                  "es/guides/integrations/epona",
+                  "es/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -560,7 +565,8 @@
                 "group": "Dokumentenmanagement",
                 "pages": [
                   "de/guides/integrations/sharepoint",
-                  "de/guides/integrations/epona"
+                  "de/guides/integrations/epona",
+                  "de/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -651,7 +657,8 @@
                 "group": "Gestione documentale",
                 "pages": [
                   "it/guides/integrations/sharepoint",
-                  "it/guides/integrations/epona"
+                  "it/guides/integrations/epona",
+                  "it/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -742,7 +749,8 @@
                 "group": "Gestão de documentos",
                 "pages": [
                   "pt/guides/integrations/sharepoint",
-                  "pt/guides/integrations/epona"
+                  "pt/guides/integrations/epona",
+                  "pt/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -833,7 +841,8 @@
                 "group": "Belge yönetimi",
                 "pages": [
                   "tr/guides/integrations/sharepoint",
-                  "tr/guides/integrations/epona"
+                  "tr/guides/integrations/epona",
+                  "tr/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -924,7 +933,8 @@
                 "group": "Gestion documentaire",
                 "pages": [
                   "fr/guides/integrations/sharepoint",
-                  "fr/guides/integrations/epona"
+                  "fr/guides/integrations/epona",
+                  "fr/guides/integrations/netdocuments"
                 ]
               },
               {
@@ -1015,7 +1025,8 @@
                 "group": "Dokumenthantering",
                 "pages": [
                   "sv/guides/integrations/sharepoint",
-                  "sv/guides/integrations/epona"
+                  "sv/guides/integrations/epona",
+                  "sv/guides/integrations/netdocuments"
                 ]
               },
               {
