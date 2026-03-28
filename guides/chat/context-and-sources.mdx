@@ -14,6 +14,16 @@ There are two ways to give the AI access to documents, and they work differently
 
 In practice: if you'll ask multiple questions about a set of documents over days or weeks, upload them to a project's knowledge base. If you just need a fast answer about one file, attach it in chat.
 
+## Working with many files
+
+When you attach a large number of files to a chat, Saga automatically switches to a smart retrieval mode. Instead of loading every file in full — which would exceed the AI's context window — Saga searches your documents for the passages most relevant to your question and loads those.
+
+Every uploaded file is guaranteed baseline coverage, so the AI always knows what documents are available and can reference any of them. If the AI can't find the specific section you're asking about, it will ask you for a key term or section heading to help locate the right content. You don't need to re-upload or re-attach the file.
+
+<Tip>
+If the AI asks you for a key term, try providing the name of a clause, section heading, or a distinctive phrase from the document you want it to focus on.
+</Tip>
+
 ## Organizational sources
 
 Organizational sources are firm-wide knowledge bases managed by your admin — things like standard clause libraries, internal guidelines, or regulatory handbooks. When they're available, a toggle appears in the chat toolbar. Enable the ones you want and the AI draws on them alongside your other context.
