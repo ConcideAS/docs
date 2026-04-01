@@ -35,6 +35,14 @@ There's no single best model — it depends on what you're doing.
 - **Large document context** (long contracts, extensive due diligence sets): check capacity. A model with higher capacity can hold more of your material in context at once.
 - **Current information** (recent legislation, recent case law): check the knowledge cutoff, and enable web search if needed.
 
+## Auto mode
+
+If you're not sure which model to pick, select **Auto** from the assistant selector. Auto analyzes your message and routes it to the best available model based on the complexity of the task. Simple questions go to faster, lighter models; complex analysis goes to more capable ones.
+
+Auto appears as the first option in the model selector. When active, each response shows which model was used so you always know what generated the answer.
+
+Your preference for Auto is remembered across sessions. If you edit a previously sent message, Saga preserves the original routing — the edited message uses the same model selection strategy as the original, and your current setting is restored afterward.
+
 ## Enabled models
 
 Your admin decides which models are available in your organization's Saga instance. If you need a model that isn't showing up in the assistant selector, ask your admin to enable it from the workspace settings.
