@@ -55,6 +55,26 @@ Tanto los administradores como los administradores de contenido gestionan el con
 
 Cuando un usuario crea un prompt, plantilla o flujo de trabajo personal y solicita hacerlo organizacional, aparece aquí para revisión. Apruébelo y queda disponible para todos.
 
+## Retención de datos
+
+Los administradores controlan cuánto tiempo se conservan los datos de chat en el espacio de trabajo. Abra la pestaña **Retención de datos** en el panel de administración para elegir un período de retención. Saga elimina automáticamente los chats más antiguos que el período seleccionado tras un período de gracia de 24 horas.
+
+Períodos de retención disponibles:
+
+| Configuración | Comportamiento |
+| --- | --- |
+| **Cero (Chat temporal)** | No se almacena nada. Los mensajes existen solo en el navegador durante la sesión actual y se eliminan al actualizar. El historial de chat se desactiva por completo. |
+| **1 semana** | Los chats de más de una semana se eliminan automáticamente. |
+| **1 mes** | Los chats de más de un mes se eliminan automáticamente. |
+| **3 meses** | Los chats de más de tres meses se eliminan automáticamente. |
+| **6 meses** | Los chats de más de seis meses se eliminan automáticamente. |
+| **12 meses** | Los chats de más de doce meses se eliminan automáticamente. |
+| **Ilimitado** (predeterminado) | Los chats nunca se eliminan automáticamente. |
+
+<Note>La retención de datos se aplica tanto a los chats independientes como a los chats de proyecto. No elimina otros datos del proyecto como documentos, archivos de la base de conocimiento ni revisiones en cuadrícula.</Note>
+
+Al seleccionar un nuevo período de retención, la **Vista previa del efecto** muestra cuántos chats y usuarios se verían afectados. Revise este resumen antes de guardar. Los cambios entran en vigor tras un período de gracia de 24 horas.
+
 ## Uso
 
 Los administradores pueden ver métricas de uso de todo el espacio de trabajo — total de mensajes, proyectos, chats y documentos — filtrados por rango de tiempo. Esto ayuda a rastrear la adopción y entender cómo el equipo está usando Saga.

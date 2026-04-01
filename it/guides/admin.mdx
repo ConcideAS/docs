@@ -55,6 +55,26 @@ Sia gli amministratori che gli amministratori dei contenuti gestiscono i contenu
 
 Quando un utente crea un prompt, modello o flusso di lavoro personale e richiede di renderlo organizzativo, appare qui per la revisione. Approvalo e diventa disponibile per tutti.
 
+## Conservazione dei dati
+
+Gli amministratori controllano per quanto tempo i dati delle chat vengono conservati nello spazio di lavoro. Apri la scheda **Conservazione dei dati** nel pannello di amministrazione per scegliere un periodo di conservazione. Saga elimina automaticamente le chat più vecchie del periodo selezionato dopo un periodo di grazia di 24 ore.
+
+Periodi di conservazione disponibili:
+
+| Impostazione | Comportamento |
+| --- | --- |
+| **Zero (Chat temporanea)** | Nulla viene memorizzato. I messaggi esistono solo nel browser per la sessione corrente e vengono cancellati al ricaricamento. La cronologia delle chat è completamente disattivata. |
+| **1 settimana** | Le chat più vecchie di una settimana vengono eliminate automaticamente. |
+| **1 mese** | Le chat più vecchie di un mese vengono eliminate automaticamente. |
+| **3 mesi** | Le chat più vecchie di tre mesi vengono eliminate automaticamente. |
+| **6 mesi** | Le chat più vecchie di sei mesi vengono eliminate automaticamente. |
+| **12 mesi** | Le chat più vecchie di dodici mesi vengono eliminate automaticamente. |
+| **Illimitato** (predefinito) | Le chat non vengono mai eliminate automaticamente. |
+
+<Note>La conservazione dei dati si applica sia alle chat autonome che alle chat di progetto. Non elimina altri dati del progetto come documenti, file della knowledge base o revisioni a griglia.</Note>
+
+Quando selezioni un nuovo periodo di conservazione, la **Panoramica degli effetti** mostra quante chat e utenti sarebbero interessati. Esamina questo riepilogo prima di salvare. Le modifiche entrano in vigore dopo un periodo di grazia di 24 ore.
+
 ## Utilizzo
 
 Gli amministratori possono visualizzare le metriche di utilizzo a livello di spazio di lavoro — messaggi totali, progetti, chat e documenti — filtrate per intervallo di tempo. Questo aiuta a monitorare l'adozione e comprendere come il team sta utilizzando Saga.

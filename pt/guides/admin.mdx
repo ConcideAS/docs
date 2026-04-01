@@ -55,6 +55,26 @@ Tanto administradores como administradores de conteúdo gerem o conteúdo partil
 
 Quando um utilizador cria um prompt, modelo ou fluxo de trabalho pessoal e solicita torná-lo organizacional, este aparece aqui para revisão. Aprove-o e fica disponível para todos.
 
+## Retenção de dados
+
+Os administradores controlam durante quanto tempo os dados de chat são mantidos no espaço de trabalho. Abra o separador **Retenção de dados** no painel de administração para escolher um período de retenção. O Saga elimina automaticamente os chats mais antigos do que o período selecionado após um período de carência de 24 horas.
+
+Períodos de retenção disponíveis:
+
+| Definição | Comportamento |
+| --- | --- |
+| **Zero (Chat temporário)** | Nada é armazenado. As mensagens existem apenas no navegador durante a sessão atual e são eliminadas ao atualizar. O histórico de chat é totalmente desativado. |
+| **1 semana** | Os chats com mais de uma semana são eliminados automaticamente. |
+| **1 mês** | Os chats com mais de um mês são eliminados automaticamente. |
+| **3 meses** | Os chats com mais de três meses são eliminados automaticamente. |
+| **6 meses** | Os chats com mais de seis meses são eliminados automaticamente. |
+| **12 meses** | Os chats com mais de doze meses são eliminados automaticamente. |
+| **Ilimitado** (predefinição) | Os chats nunca são eliminados automaticamente. |
+
+<Note>A retenção de dados aplica-se tanto a chats autónomos como a chats de projeto. Não elimina outros dados do projeto, como documentos, ficheiros da base de conhecimento ou revisões em grelha.</Note>
+
+Ao selecionar um novo período de retenção, a **Vista geral do efeito** mostra quantos chats e utilizadores seriam afetados. Reveja este resumo antes de guardar. As alterações entram em vigor após um período de carência de 24 horas.
+
 ## Utilização
 
 Os administradores podem ver métricas de utilização de todo o espaço de trabalho — total de mensagens, projetos, chats e documentos — filtradas por intervalo de tempo. Isto ajuda a acompanhar a adoção e a compreender como a equipa está a usar o Saga.

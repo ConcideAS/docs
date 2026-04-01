@@ -55,6 +55,26 @@ Both admins and content admins manage the shared content that appears in everyon
 
 When a user creates a personal prompt, template, or workflow and requests to make it organizational, it appears here for review. Approve it and it becomes available to everyone.
 
+## Data retention
+
+Admins control how long chat data is kept in the workspace. Open the **Data Retention** tab in the admin panel to choose a retention period. Saga automatically deletes chats older than the selected timeframe after a 24-hour grace period.
+
+Available retention periods:
+
+| Setting | Behavior |
+| --- | --- |
+| **Zero (Temporary Chat)** | Nothing is stored. Messages exist only in the browser for the current session and are cleared on refresh. Chat history is disabled entirely. |
+| **1 week** | Chats older than one week are deleted automatically. |
+| **1 month** | Chats older than one month are deleted automatically. |
+| **3 months** | Chats older than three months are deleted automatically. |
+| **6 months** | Chats older than six months are deleted automatically. |
+| **12 months** | Chats older than twelve months are deleted automatically. |
+| **Unlimited** (default) | Chats are never deleted automatically. |
+
+<Note>Data retention applies to both standalone chats and project chats. It does not delete other project data such as documents, knowledge base files, or grid reviews.</Note>
+
+When you select a new retention period, the **Effect overview** shows how many chats and users would be affected. Review this summary before saving. Changes take effect after a 24-hour grace period.
+
 ## Usage
 
 Admins can view workspace-wide usage metrics — total messages, projects, chats, and documents — filtered by time range. This helps track adoption and understand how the team is using Saga.

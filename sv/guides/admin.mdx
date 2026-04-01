@@ -55,6 +55,26 @@ Både admins och innehållsadmins hanterar det delade innehåll som visas i alla
 
 När en användare skapar en personlig prompt, mall eller arbetsflöde och begär att göra det organisationsövergripande visas det här för granskning. Godkänn det så blir det tillgängligt för alla.
 
+## Datalagring
+
+Admins styr hur länge chattdata lagras i arbetsytan. Öppna fliken **Datalagring** i adminpanelen för att välja en lagringsperiod. Saga tar automatiskt bort chattar som är äldre än den valda tidsramen efter en 24-timmars respitperiod.
+
+Tillgängliga lagringsperioder:
+
+| Inställning | Beteende |
+| --- | --- |
+| **Noll (Tillfällig chatt)** | Inget lagras. Meddelanden finns bara i webbläsaren under den aktuella sessionen och rensas vid uppdatering. Chatthistorik är helt inaktiverad. |
+| **1 vecka** | Chattar äldre än en vecka tas bort automatiskt. |
+| **1 månad** | Chattar äldre än en månad tas bort automatiskt. |
+| **3 månader** | Chattar äldre än tre månader tas bort automatiskt. |
+| **6 månader** | Chattar äldre än sex månader tas bort automatiskt. |
+| **12 månader** | Chattar äldre än tolv månader tas bort automatiskt. |
+| **Obegränsad** (standard) | Chattar tas aldrig bort automatiskt. |
+
+<Note>Datalagring gäller både fristående chattar och projektchattar. Det tar inte bort andra projektdata som dokument, kunskapsbasfiler eller tabellgranskningar.</Note>
+
+När du väljer en ny lagringsperiod visar **Effektöversikt** hur många chattar och användare som påverkas. Granska denna sammanfattning innan du sparar. Ändringar träder i kraft efter en 24-timmars respitperiod.
+
 ## Användning
 
 Admins kan se arbetsyteövergripande användningsstatistik — totalt antal meddelanden, projekt, chattar och dokument — filtrerat efter tidsperiod. Det hjälper till att följa adoption och förstå hur teamet använder Saga.

@@ -55,6 +55,26 @@ Les administrateurs et les administrateurs de contenu gèrent le contenu partag�
 
 Lorsqu'un utilisateur crée un prompt, un modèle ou un workflow personnel et demande à le rendre organisationnel, il apparaît ici pour examen. Approuvez-le et il devient accessible à tous.
 
+## Conservation des données
+
+Les administrateurs contrôlent la durée de conservation des données de chat dans l'espace de travail. Ouvrez l'onglet **Conservation des données** dans le panneau d'administration pour choisir une période de conservation. Saga supprime automatiquement les conversations plus anciennes que la période sélectionnée après un délai de grâce de 24 heures.
+
+Périodes de conservation disponibles :
+
+| Paramètre | Comportement |
+| --- | --- |
+| **Zéro (Chat temporaire)** | Rien n'est stocké. Les messages n'existent que dans le navigateur pour la session en cours et sont effacés lors de l'actualisation. L'historique des conversations est entièrement désactivé. |
+| **1 semaine** | Les conversations de plus d'une semaine sont supprimées automatiquement. |
+| **1 mois** | Les conversations de plus d'un mois sont supprimées automatiquement. |
+| **3 mois** | Les conversations de plus de trois mois sont supprimées automatiquement. |
+| **6 mois** | Les conversations de plus de six mois sont supprimées automatiquement. |
+| **12 mois** | Les conversations de plus de douze mois sont supprimées automatiquement. |
+| **Illimité** (par défaut) | Les conversations ne sont jamais supprimées automatiquement. |
+
+<Note>La conservation des données s'applique aux conversations autonomes et aux conversations de projet. Elle ne supprime pas les autres données du projet telles que les documents, les fichiers de la base de connaissances ou les revues en grille.</Note>
+
+Lorsque vous sélectionnez une nouvelle période de conservation, l'**Aperçu de l'effet** indique combien de conversations et d'utilisateurs seraient concernés. Examinez ce résumé avant d'enregistrer. Les modifications prennent effet après un délai de grâce de 24 heures.
+
 ## Utilisation
 
 Les administrateurs peuvent consulter les métriques d'utilisation à l'échelle de l'espace de travail — nombre total de messages, projets, chats et documents — filtrés par période. Cela permet de suivre l'adoption et de comprendre comment l'équipe utilise Saga.
