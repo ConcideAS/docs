@@ -35,6 +35,14 @@ There's no single best model — it depends on what you're doing.
 - **Large document context** (long contracts, extensive due diligence sets): check capacity. A model with higher capacity can hold more of your material in context at once.
 - **Current information** (recent legislation, recent case law): check the knowledge cutoff, and enable web search if needed.
 
+## Auto mode
+
+Instead of choosing a model yourself, you can select **Auto** from the assistant selector. Auto mode evaluates your message and picks the most suitable model from those enabled in your organization — balancing cost, speed, and capability.
+
+For straightforward requests, it picks a fast, lightweight model. For complex legal analysis or multi-step reasoning, it selects a more capable one. If your message includes images, it automatically restricts selection to vision-capable models.
+
+After the AI responds, an "Answered by" label shows which model was used and why it was chosen. You stay in control — switch to a specific model at any time if you prefer to override the automatic selection.
+
 ## Enabled models
 
 Your admin decides which models are available in your organization's Saga instance. If you need a model that isn't showing up in the assistant selector, ask your admin to enable it from the workspace settings.
