@@ -56,7 +56,8 @@
                 "pages": [
                   "guides/chat",
                   "guides/chat/context-and-sources",
-                  "guides/chat/prompt-library"
+                  "guides/chat/prompt-library",
+                  "guides/chat/zero-data-retention"
                 ]
               },
               {

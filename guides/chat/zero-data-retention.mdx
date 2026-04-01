@@ -1,0 +1,57 @@
+---
+title: Zero data retention
+description: Use Saga chat without storing messages or conversation history.
+---
+
+Zero data retention mode lets your organization use Saga chat without persisting any conversation data. When enabled, messages are not saved to chat history, uploaded documents are processed in memory only, and all data is cleared when you leave or refresh the page.
+
+This is useful for organizations with strict data handling requirements — for example, when discussing sensitive matters where no record of the conversation should be retained.
+
+## How it works
+
+When zero data retention is active:
+
+- Messages exist only in your browser session. Refreshing or closing the page clears everything.
+- Conversations do not appear in chat history and cannot be recovered.
+- Uploaded documents are processed in memory and discarded after the session. The maximum file size for uploads is 20 MB.
+- All other chat features — assistants, legal research, organizational sources, knowledge bases, and drafting — work as usual.
+
+A banner at the top of the chat window confirms that zero data retention is active.
+
+<Note>
+Zero data retention applies to standalone chats and project chats. It does not affect other project data such as documents, grid reviews, or knowledge base files.
+</Note>
+
+## Word add-in support
+
+Zero data retention mode also applies to the [Word add-in](/guides/integrations/word-add-in). When your workspace has zero data retention enabled, conversations in the Word add-in follow the same rules — messages are not stored and document content is processed without being retained.
+
+## Enabling zero data retention
+
+Zero data retention is a workspace-level setting managed by admins. To enable it:
+
+1. Open the **Admin panel** from the sidebar.
+2. Go to the **Data retention** section.
+3. Set the time frame to **Zero (Temporary Chat)**.
+4. Click **Save**.
+
+Once saved, the setting applies to all users in the workspace. Individual users cannot override it — if you need to change the setting, contact your administrator.
+
+<Warning>
+Enabling zero data retention deletes all existing chat history across the workspace. This cannot be undone.
+</Warning>
+
+## Other retention options
+
+If your organization doesn't need zero data retention but still wants to limit how long chats are kept, admins can choose a retention period instead:
+
+| Setting | Behavior |
+|---------|----------|
+| **Zero (Temporary Chat)** | No messages are stored. Data exists only in the browser session. |
+| **1 month** | Chats older than 1 month are automatically deleted. |
+| **3 months** | Chats older than 3 months are automatically deleted. |
+| **6 months** | Chats older than 6 months are automatically deleted. |
+| **12 months** | Chats older than 12 months are automatically deleted. |
+| **Unlimited** | Chats are never deleted automatically. This is the default. |
+
+Changes to the retention setting take effect after a 24-hour grace period.
