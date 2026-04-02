@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+Advisor-integrasjonen lar deg sende dokumenter fra Advisor direkte inn i Saga. I stedet for å eksportere filer og laste dem opp manuelt, sender Advisor dokumenter til Saga gjennom et API — slik at de vises i prosjektene dine automatisk.
+
+## Slik fungerer det
+
+Advisor kobler seg til Saga ved hjelp av plattform-URLen din og en API-nøkkel. Når du sender et dokument fra Advisor, lastes filen opp til Sagas dokument-API og knyttes til et prosjekt. Hvis prosjektet ikke finnes ennå, oppretter Saga det automatisk.
+
+Dokumenter sendes som en enveisoverføring fra Advisor til Saga. Oppdateringer i Advisor synkroniseres ikke automatisk til Saga — hver opplasting oppretter eller erstatter dokumentet i målprosjektet.
+
+## Oppsett
+
+For å sette opp integrasjonen trenger du to verdier fra Saga: **plattform-URL** og en **API-nøkkel**. Begge er tilgjengelige i Saga under **Innstillinger > API**.
+
+1. Gå til **Innstillinger > API** i Saga.
+2. Hvis du ikke har en API-nøkkel ennå, klikk **Generer** for å opprette en.
+3. Kopier **Plattform-URL** og lim den inn i Advisors integrasjonsinnstillinger.
+4. Kopier **API-nøkkelen** og lim den inn i Advisors integrasjonsinnstillinger.
+
+<Note>
+API-nøkler har en utløpsdato som vises ved siden av nøkkelen. Når en nøkkel utløper, må du generere en ny i Saga og oppdatere den i Advisor.
+</Note>
+
+## Støttede filtyper
+
+Advisor kan sende følgende filtyper til Saga:
+
+| Kategori | Formater |
+|----------|----------|
+| Dokumenter | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Tekst (.txt), CSV, OpenDocument (.odt, .ods) |
+| Bilder | PNG, JPEG, GIF, WebP, TIFF |
+| E-post | EML, Outlook (.msg) |
+
+## Administrere API-nøkkelen din
+
+Du kan administrere API-nøkkelen din fra **Innstillinger > API** i Saga:
+
+- **Opprett på nytt** — genererer en ny nøkkel og ugyldiggjør den gamle. Oppdater nøkkelen i Advisor etter gjenskaping.
+- **Tilbakekall** — sletter nøkkelen helt. Integrasjonen slutter å fungere til du genererer en ny nøkkel.

@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+La integración de Advisor le permite enviar documentos desde Advisor directamente a Saga. En lugar de exportar archivos y subirlos manualmente, Advisor envía documentos a Saga a través de una API — para que aparezcan automáticamente en sus proyectos.
+
+## Cómo funciona
+
+Advisor se conecta a Saga utilizando la URL de su plataforma y una clave API. Cuando envía un documento desde Advisor, el archivo se sube a la API de documentos de Saga y se asocia con un proyecto. Si el proyecto aún no existe, Saga lo crea automáticamente.
+
+Los documentos se envían como una transferencia unidireccional de Advisor a Saga. Las actualizaciones en Advisor no se sincronizan automáticamente con Saga — cada carga crea o reemplaza el documento en el proyecto de destino.
+
+## Configuración
+
+Configurar la integración requiere dos valores de Saga: la **URL de la plataforma** y una **clave API**. Ambos están disponibles en Saga en **Configuración > API**.
+
+1. En Saga, vaya a **Configuración > API**.
+2. Si aún no tiene una clave API, haga clic en **Generar** para crear una.
+3. Copie la **URL de la plataforma** y péguela en la configuración de integración de Advisor.
+4. Copie la **Clave API** y péguela en la configuración de integración de Advisor.
+
+<Note>
+Las claves API tienen una fecha de vencimiento que se muestra junto a la clave. Cuando una clave vence, debe generar una nueva en Saga y actualizarla en Advisor.
+</Note>
+
+## Tipos de archivo compatibles
+
+Advisor puede enviar los siguientes tipos de archivo a Saga:
+
+| Categoría | Formatos |
+|-----------|----------|
+| Documentos | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Texto (.txt), CSV, OpenDocument (.odt, .ods) |
+| Imágenes | PNG, JPEG, GIF, WebP, TIFF |
+| Correo electrónico | EML, Outlook (.msg) |
+
+## Gestionar su clave API
+
+Puede gestionar su clave API desde **Configuración > API** en Saga:
+
+- **Recrear** — genera una nueva clave e invalida la anterior. Actualice la clave en Advisor después de recrearla.
+- **Revocar** — elimina la clave por completo. La integración deja de funcionar hasta que genere una nueva clave.

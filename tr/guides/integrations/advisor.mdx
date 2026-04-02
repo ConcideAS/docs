@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+Advisor entegrasyonu, belgelerinizi Advisor'dan doğrudan Saga'ya göndermenizi sağlar. Dosyaları dışa aktarıp elle yüklemek yerine, Advisor belgeleri bir API aracılığıyla Saga'ya gönderir — böylece projelerinizde otomatik olarak görünürler.
+
+## Nasıl çalışır
+
+Advisor, platform URL'niz ve bir API anahtarı kullanarak Saga'ya bağlanır. Advisor'dan bir belge gönderdiğinizde, dosya Saga'nın belge API'sine yüklenir ve bir projeyle ilişkilendirilir. Proje henüz mevcut değilse, Saga otomatik olarak oluşturur.
+
+Belgeler, Advisor'dan Saga'ya tek yönlü aktarım olarak gönderilir. Advisor'daki güncellemeler otomatik olarak Saga ile senkronize edilmez — her yükleme, hedef projedeki belgeyi oluşturur veya değiştirir.
+
+## Kurulum
+
+Entegrasyonun kurulumu Saga'dan iki değer gerektirir: **Platform URL'niz** ve bir **API anahtarı**. Her ikisi de Saga'da **Ayarlar > API** altında mevcuttur.
+
+1. Saga'da **Ayarlar > API** bölümüne gidin.
+2. Henüz bir API anahtarınız yoksa, oluşturmak için **Oluştur**'a tıklayın.
+3. **Platform URL'sini** kopyalayıp Advisor'ın entegrasyon ayarlarına yapıştırın.
+4. **API anahtarını** kopyalayıp Advisor'ın entegrasyon ayarlarına yapıştırın.
+
+<Note>
+API anahtarlarının, anahtarın yanında gösterilen bir son kullanma tarihi vardır. Bir anahtar süresi dolduğunda, Saga'da yeni bir anahtar oluşturmanız ve Advisor'da güncellemeniz gerekir.
+</Note>
+
+## Desteklenen dosya türleri
+
+Advisor, Saga'ya aşağıdaki dosya türlerini gönderebilir:
+
+| Kategori | Formatlar |
+|----------|-----------|
+| Belgeler | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Metin (.txt), CSV, OpenDocument (.odt, .ods) |
+| Görüntüler | PNG, JPEG, GIF, WebP, TIFF |
+| E-posta | EML, Outlook (.msg) |
+
+## API anahtarınızı yönetme
+
+API anahtarınızı Saga'da **Ayarlar > API** bölümünden yönetebilirsiniz:
+
+- **Yeniden oluştur** — yeni bir anahtar oluşturur ve eskisini geçersiz kılar. Yeniden oluşturma sonrasında Advisor'daki anahtarı güncelleyin.
+- **İptal et** — anahtarı tamamen siler. Yeni bir anahtar oluşturana kadar entegrasyon çalışmayı durdurur.

@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+The Advisor integration lets you send documents from Advisor directly into Saga. Instead of exporting files and uploading them manually, Advisor pushes documents to Saga through an API — so they appear in your projects automatically.
+
+## How it works
+
+Advisor connects to Saga using your platform URL and an API key. When you send a document from Advisor, it uploads the file to Saga's document API and associates it with a project. If the project doesn't exist yet, Saga creates it automatically.
+
+Documents are sent as a one-way push from Advisor to Saga. Updates in Advisor don't automatically sync to Saga — each upload creates or replaces the document in the target project.
+
+## Setup
+
+Setting up the integration requires two values from Saga: your **platform URL** and an **API key**. Both are available in Saga under **Settings > API**.
+
+1. In Saga, go to **Settings > API**.
+2. If you don't have an API key yet, click **Generate** to create one.
+3. Copy the **Platform URL** and paste it into Advisor's integration settings.
+4. Copy the **API key** and paste it into Advisor's integration settings.
+
+<Note>
+API keys have an expiration date shown next to the key. When a key expires, you need to generate a new one in Saga and update it in Advisor.
+</Note>
+
+## Supported file types
+
+Advisor can send the following file types to Saga:
+
+| Category | Formats |
+|----------|---------|
+| Documents | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Text (.txt), CSV, OpenDocument (.odt, .ods) |
+| Images | PNG, JPEG, GIF, WebP, TIFF |
+| Email | EML, Outlook (.msg) |
+
+## Managing your API key
+
+You can manage your API key from **Settings > API** in Saga:
+
+- **Recreate** — generates a new key and invalidates the old one. Update the key in Advisor after recreating.
+- **Revoke** — deletes the key entirely. The integration stops working until you generate a new key.

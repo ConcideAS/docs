@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+L'integrazione Advisor consente di inviare documenti da Advisor direttamente in Saga. Invece di esportare file e caricarli manualmente, Advisor invia i documenti a Saga tramite un'API — in modo che appaiano automaticamente nei tuoi progetti.
+
+## Come funziona
+
+Advisor si connette a Saga utilizzando l'URL della piattaforma e una chiave API. Quando invii un documento da Advisor, il file viene caricato nell'API documenti di Saga e associato a un progetto. Se il progetto non esiste ancora, Saga lo crea automaticamente.
+
+I documenti vengono inviati come trasferimento unidirezionale da Advisor a Saga. Gli aggiornamenti in Advisor non vengono sincronizzati automaticamente con Saga — ogni caricamento crea o sostituisce il documento nel progetto di destinazione.
+
+## Configurazione
+
+La configurazione dell'integrazione richiede due valori da Saga: l'**URL della piattaforma** e una **chiave API**. Entrambi sono disponibili in Saga in **Impostazioni > API**.
+
+1. In Saga, vai su **Impostazioni > API**.
+2. Se non hai ancora una chiave API, clicca su **Genera** per crearne una.
+3. Copia l'**URL della piattaforma** e incollalo nelle impostazioni di integrazione di Advisor.
+4. Copia la **Chiave API** e incollala nelle impostazioni di integrazione di Advisor.
+
+<Note>
+Le chiavi API hanno una data di scadenza mostrata accanto alla chiave. Quando una chiave scade, devi generarne una nuova in Saga e aggiornarla in Advisor.
+</Note>
+
+## Tipi di file supportati
+
+Advisor può inviare i seguenti tipi di file a Saga:
+
+| Categoria | Formati |
+|-----------|---------|
+| Documenti | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Testo (.txt), CSV, OpenDocument (.odt, .ods) |
+| Immagini | PNG, JPEG, GIF, WebP, TIFF |
+| E-mail | EML, Outlook (.msg) |
+
+## Gestire la chiave API
+
+Puoi gestire la tua chiave API da **Impostazioni > API** in Saga:
+
+- **Ricrea** — genera una nuova chiave e invalida quella vecchia. Aggiorna la chiave in Advisor dopo la rigenerazione.
+- **Revoca** — elimina completamente la chiave. L'integrazione smette di funzionare finché non generi una nuova chiave.
