@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+L'intégration Advisor vous permet d'envoyer des documents depuis Advisor directement dans Saga. Au lieu d'exporter des fichiers et de les télécharger manuellement, Advisor envoie les documents à Saga via une API — ils apparaissent ainsi automatiquement dans vos projets.
+
+## Comment ça fonctionne
+
+Advisor se connecte à Saga en utilisant l'URL de votre plateforme et une clé API. Lorsque vous envoyez un document depuis Advisor, le fichier est téléchargé vers l'API de documents de Saga et associé à un projet. Si le projet n'existe pas encore, Saga le crée automatiquement.
+
+Les documents sont envoyés en transfert unidirectionnel d'Advisor vers Saga. Les mises à jour dans Advisor ne sont pas automatiquement synchronisées avec Saga — chaque envoi crée ou remplace le document dans le projet cible.
+
+## Configuration
+
+La configuration de l'intégration nécessite deux valeurs de Saga : l'**URL de la plateforme** et une **clé API**. Les deux sont disponibles dans Saga sous **Paramètres > API**.
+
+1. Dans Saga, accédez à **Paramètres > API**.
+2. Si vous n'avez pas encore de clé API, cliquez sur **Générer** pour en créer une.
+3. Copiez l'**URL de la plateforme** et collez-la dans les paramètres d'intégration d'Advisor.
+4. Copiez la **Clé API** et collez-la dans les paramètres d'intégration d'Advisor.
+
+<Note>
+Les clés API ont une date d'expiration affichée à côté de la clé. Lorsqu'une clé expire, vous devez en générer une nouvelle dans Saga et la mettre à jour dans Advisor.
+</Note>
+
+## Types de fichiers pris en charge
+
+Advisor peut envoyer les types de fichiers suivants à Saga :
+
+| Catégorie | Formats |
+|-----------|---------|
+| Documents | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Texte (.txt), CSV, OpenDocument (.odt, .ods) |
+| Images | PNG, JPEG, GIF, WebP, TIFF |
+| E-mail | EML, Outlook (.msg) |
+
+## Gérer votre clé API
+
+Vous pouvez gérer votre clé API depuis **Paramètres > API** dans Saga :
+
+- **Recréer** — génère une nouvelle clé et invalide l'ancienne. Mettez à jour la clé dans Advisor après la recréation.
+- **Révoquer** — supprime complètement la clé. L'intégration cesse de fonctionner jusqu'à ce que vous génériez une nouvelle clé.

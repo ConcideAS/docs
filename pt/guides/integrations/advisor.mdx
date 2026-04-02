@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+A integração Advisor permite enviar documentos do Advisor diretamente para o Saga. Em vez de exportar arquivos e carregá-los manualmente, o Advisor envia documentos para o Saga através de uma API — para que apareçam automaticamente nos seus projetos.
+
+## Como funciona
+
+O Advisor conecta-se ao Saga usando a URL da sua plataforma e uma chave API. Quando você envia um documento do Advisor, o arquivo é carregado na API de documentos do Saga e associado a um projeto. Se o projeto ainda não existir, o Saga o cria automaticamente.
+
+Os documentos são enviados como uma transferência unidirecional do Advisor para o Saga. Atualizações no Advisor não são sincronizadas automaticamente com o Saga — cada upload cria ou substitui o documento no projeto de destino.
+
+## Configuração
+
+A configuração da integração requer dois valores do Saga: a **URL da plataforma** e uma **chave API**. Ambos estão disponíveis no Saga em **Configurações > API**.
+
+1. No Saga, vá para **Configurações > API**.
+2. Se ainda não tiver uma chave API, clique em **Gerar** para criar uma.
+3. Copie a **URL da plataforma** e cole nas configurações de integração do Advisor.
+4. Copie a **Chave API** e cole nas configurações de integração do Advisor.
+
+<Note>
+As chaves API têm uma data de expiração exibida ao lado da chave. Quando uma chave expira, você precisa gerar uma nova no Saga e atualizá-la no Advisor.
+</Note>
+
+## Tipos de arquivo suportados
+
+O Advisor pode enviar os seguintes tipos de arquivo para o Saga:
+
+| Categoria | Formatos |
+|-----------|----------|
+| Documentos | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Texto (.txt), CSV, OpenDocument (.odt, .ods) |
+| Imagens | PNG, JPEG, GIF, WebP, TIFF |
+| E-mail | EML, Outlook (.msg) |
+
+## Gerenciar sua chave API
+
+Você pode gerenciar sua chave API em **Configurações > API** no Saga:
+
+- **Recriar** — gera uma nova chave e invalida a antiga. Atualize a chave no Advisor após a recriação.
+- **Revogar** — exclui a chave completamente. A integração para de funcionar até que você gere uma nova chave.

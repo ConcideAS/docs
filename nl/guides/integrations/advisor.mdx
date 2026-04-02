@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+De Advisor-integratie stelt u in staat om documenten rechtstreeks vanuit Advisor naar Saga te sturen. In plaats van bestanden te exporteren en handmatig te uploaden, stuurt Advisor documenten naar Saga via een API — zodat ze automatisch in uw projecten verschijnen.
+
+## Hoe het werkt
+
+Advisor maakt verbinding met Saga via uw platform-URL en een API-sleutel. Wanneer u een document vanuit Advisor verstuurt, wordt het bestand geüpload naar Saga's document-API en gekoppeld aan een project. Als het project nog niet bestaat, maakt Saga het automatisch aan.
+
+Documenten worden als eenrichtingsoverdracht van Advisor naar Saga verzonden. Wijzigingen in Advisor worden niet automatisch gesynchroniseerd met Saga — elke upload maakt het document in het doelproject aan of vervangt het.
+
+## Instellen
+
+Voor het instellen van de integratie hebt u twee waarden uit Saga nodig: uw **platform-URL** en een **API-sleutel**. Beide zijn beschikbaar in Saga onder **Instellingen > API**.
+
+1. Ga in Saga naar **Instellingen > API**.
+2. Als u nog geen API-sleutel hebt, klik dan op **Genereren** om er een aan te maken.
+3. Kopieer de **Platform-URL** en plak deze in de integratie-instellingen van Advisor.
+4. Kopieer de **API-sleutel** en plak deze in de integratie-instellingen van Advisor.
+
+<Note>
+API-sleutels hebben een vervaldatum die naast de sleutel wordt weergegeven. Wanneer een sleutel verloopt, moet u een nieuwe genereren in Saga en deze bijwerken in Advisor.
+</Note>
+
+## Ondersteunde bestandstypen
+
+Advisor kan de volgende bestandstypen naar Saga sturen:
+
+| Categorie | Formaten |
+|-----------|----------|
+| Documenten | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Tekst (.txt), CSV, OpenDocument (.odt, .ods) |
+| Afbeeldingen | PNG, JPEG, GIF, WebP, TIFF |
+| E-mail | EML, Outlook (.msg) |
+
+## Uw API-sleutel beheren
+
+U kunt uw API-sleutel beheren via **Instellingen > API** in Saga:
+
+- **Opnieuw aanmaken** — genereert een nieuwe sleutel en maakt de oude ongeldig. Werk de sleutel in Advisor bij na het opnieuw aanmaken.
+- **Intrekken** — verwijdert de sleutel volledig. De integratie stopt met werken totdat u een nieuwe sleutel genereert.

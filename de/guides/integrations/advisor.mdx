@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+Die Advisor-Integration ermöglicht es Ihnen, Dokumente direkt aus Advisor an Saga zu senden. Anstatt Dateien zu exportieren und manuell hochzuladen, überträgt Advisor Dokumente über eine API an Saga — sodass sie automatisch in Ihren Projekten erscheinen.
+
+## So funktioniert es
+
+Advisor verbindet sich mit Saga über Ihre Plattform-URL und einen API-Schlüssel. Wenn Sie ein Dokument aus Advisor senden, wird die Datei in Sagas Dokument-API hochgeladen und einem Projekt zugeordnet. Wenn das Projekt noch nicht existiert, erstellt Saga es automatisch.
+
+Dokumente werden als Einwegübertragung von Advisor an Saga gesendet. Aktualisierungen in Advisor werden nicht automatisch mit Saga synchronisiert — jeder Upload erstellt oder ersetzt das Dokument im Zielprojekt.
+
+## Einrichtung
+
+Für die Einrichtung der Integration benötigen Sie zwei Werte aus Saga: Ihre **Plattform-URL** und einen **API-Schlüssel**. Beide sind in Saga unter **Einstellungen > API** verfügbar.
+
+1. Gehen Sie in Saga zu **Einstellungen > API**.
+2. Wenn Sie noch keinen API-Schlüssel haben, klicken Sie auf **Generieren**, um einen zu erstellen.
+3. Kopieren Sie die **Plattform-URL** und fügen Sie sie in die Integrationseinstellungen von Advisor ein.
+4. Kopieren Sie den **API-Schlüssel** und fügen Sie ihn in die Integrationseinstellungen von Advisor ein.
+
+<Note>
+API-Schlüssel haben ein Ablaufdatum, das neben dem Schlüssel angezeigt wird. Wenn ein Schlüssel abläuft, müssen Sie einen neuen in Saga generieren und ihn in Advisor aktualisieren.
+</Note>
+
+## Unterstützte Dateitypen
+
+Advisor kann die folgenden Dateitypen an Saga senden:
+
+| Kategorie | Formate |
+|-----------|---------|
+| Dokumente | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Text (.txt), CSV, OpenDocument (.odt, .ods) |
+| Bilder | PNG, JPEG, GIF, WebP, TIFF |
+| E-Mail | EML, Outlook (.msg) |
+
+## Ihren API-Schlüssel verwalten
+
+Sie können Ihren API-Schlüssel unter **Einstellungen > API** in Saga verwalten:
+
+- **Neu erstellen** — generiert einen neuen Schlüssel und macht den alten ungültig. Aktualisieren Sie den Schlüssel in Advisor nach der Neuerstellung.
+- **Widerrufen** — löscht den Schlüssel vollständig. Die Integration funktioniert nicht mehr, bis Sie einen neuen Schlüssel generieren.

@@ -1,0 +1,41 @@
+---
+title: Advisor
+---
+
+Integracja Advisor umożliwia wysyłanie dokumentów z Advisor bezpośrednio do Saga. Zamiast eksportować pliki i przesyłać je ręcznie, Advisor wysyła dokumenty do Saga przez API — dzięki czemu pojawiają się one automatycznie w Twoich projektach.
+
+## Jak to działa
+
+Advisor łączy się z Saga za pomocą adresu URL platformy i klucza API. Gdy wysyłasz dokument z Advisor, plik jest przesyłany do API dokumentów Saga i przypisywany do projektu. Jeśli projekt jeszcze nie istnieje, Saga tworzy go automatycznie.
+
+Dokumenty są przesyłane jednokierunkowo z Advisor do Saga. Aktualizacje w Advisor nie są automatycznie synchronizowane z Saga — każde przesłanie tworzy lub zastępuje dokument w projekcie docelowym.
+
+## Konfiguracja
+
+Konfiguracja integracji wymaga dwóch wartości z Saga: **adresu URL platformy** i **klucza API**. Oba są dostępne w Saga w sekcji **Ustawienia > API**.
+
+1. W Saga przejdź do **Ustawienia > API**.
+2. Jeśli nie masz jeszcze klucza API, kliknij **Generuj**, aby go utworzyć.
+3. Skopiuj **Adres URL platformy** i wklej go w ustawieniach integracji Advisor.
+4. Skopiuj **Klucz API** i wklej go w ustawieniach integracji Advisor.
+
+<Note>
+Klucze API mają datę wygaśnięcia wyświetlaną obok klucza. Po wygaśnięciu klucza musisz wygenerować nowy w Saga i zaktualizować go w Advisor.
+</Note>
+
+## Obsługiwane typy plików
+
+Advisor może wysyłać do Saga następujące typy plików:
+
+| Kategoria | Formaty |
+|-----------|---------|
+| Dokumenty | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Tekst (.txt), CSV, OpenDocument (.odt, .ods) |
+| Obrazy | PNG, JPEG, GIF, WebP, TIFF |
+| E-mail | EML, Outlook (.msg) |
+
+## Zarządzanie kluczem API
+
+Kluczem API możesz zarządzać w sekcji **Ustawienia > API** w Saga:
+
+- **Utwórz ponownie** — generuje nowy klucz i unieważnia stary. Zaktualizuj klucz w Advisor po ponownym utworzeniu.
+- **Odwołaj** — całkowicie usuwa klucz. Integracja przestaje działać do momentu wygenerowania nowego klucza.
