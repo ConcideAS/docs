@@ -26,9 +26,30 @@ Bu, karmaşık hukuki sorular için kullanışlıdır — çok yargı alanlı ka
 
 Akıl yürütmeye ihtiyacınız yoksa ve daha hızlı bir yanıt istiyorsanız, doğrudan yanıt almak için **Daha hızlı bir yanıt için düşünmeyi atla**'ya tıklayın.
 
+## Otomatik mod
+
+Kendiniz bir model seçmek yerine, asistan seçiciden **Auto** seçebilirsiniz. Auto aktif olduğunda, Saga mesajınızı analiz eder ve kuruluşunuzun etkinleştirilmiş modelleri arasından otomatik olarak en iyi modeli seçer — maliyet ve zekayı dengeleyerek basit sorularda fazla harcamadan yeterli bir yanıt almanızı sağlar.
+
+Otomatik mod her mesajı karmaşıklığına göre sınıflandırır:
+
+- **Basit** — hızlı bir çeviri veya tek cümlelik bir soru gibi kısa, doğrudan istekler. Auto, minimum kalite seviyesini karşılayan en hızlı modeli seçer.
+- **Standart** — orta düzeyde ayrıntılı komutlar. Auto, sağlam zekaya ve iyi hıza sahip bir model seçer.
+- **Karmaşık** — sözleşme incelemesi, hukuki araştırma veya belge karşılaştırması gibi analitik çalışmalar. Auto, yüksek zekalı bir model seçer.
+- **Uzman** — yargı yetki alanları arası çok adımlı akıl yürütme, emsal analizi veya birçok değişkenli görevler. Auto, gelişmiş akıl yürütme yeteneklerine sahip olanları tercih ederek mevcut en güçlü modeli seçer.
+
+### Konuşmalarda kalite tutarlılığı
+
+Auto devam eden bir konuşmada kullanıldığında, Saga önceki mesajlarda kullanılan modellerin zeka seviyesini izler ve konuşmanın geri kalanı için minimum bir zeka tabanı uygular. Bu, AI'nın konuşma ortasında daha zayıf bir modele düşürülmesini önler; bu durum takip yanıtlarının kalitesini azaltabilir.
+
+Auto'nun sınıflandırıcısı bir takip mesajı için daha hızlı ancak daha az yetenekli bir model önerirse, Saga seçimi konuşmanın zeka tabanını hâlâ karşılayan en hızlı modele yükseltir.
+
+### Auto'yu ne zaman kullanmalı
+
+Auto, günlük çalışmaların çoğu için iyi bir varsayılan seçimdir. Her soruyu değerlendirip manuel olarak bir model seçmenizi gerektirmez. Belirli bir görevin sürekli olarak belirli bir model gerektirdiğini fark ederseniz — örneğin, risk değerlendirmeleri için her zaman en güçlü akıl yürütme modelini istiyorsanız — doğrudan bir model seçerek Auto'yu istediğiniz zaman geçersiz kılabilirsiniz.
+
 ## Doğru modeli seçmek
 
-Tek bir en iyi model yoktur — ne yaptığınıza bağlıdır.
+Bir modeli manuel olarak seçmeyi tercih ediyorsanız, tek bir en iyi model yoktur — ne yaptığınıza bağlıdır.
 
 - **Hızlı görevler** (özetleme, çeviri, kısa yanıt taslağı): hızlı bir model seçin. Basit işler için ağır akıl yürütmeye ihtiyacınız yoktur.
 - **Karmaşık analiz** (çok taraflı sözleşme incelemesi, mevzuat karşılaştırması, risk değerlendirmesi): zeki bir model seçin. Ekstra işlem süresi, daha ayrıntılı çıktıya değer.

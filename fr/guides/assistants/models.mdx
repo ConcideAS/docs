@@ -26,9 +26,30 @@ C'est utile pour les questions juridiques complexes — comparaisons multi-jurid
 
 Si vous n'avez pas besoin du raisonnement et souhaitez une réponse plus rapide, cliquez sur **Passer la réflexion pour une réponse plus rapide** pour obtenir la réponse directement.
 
+## Mode Auto
+
+Au lieu de choisir un modèle vous-même, vous pouvez sélectionner **Auto** dans le sélecteur d'assistant. Lorsque Auto est actif, Saga analyse votre message et sélectionne automatiquement le meilleur modèle parmi les modèles activés de votre organisation — en équilibrant coût et intelligence pour que vous obteniez une réponse performante sans dépenser trop pour des questions simples.
+
+Le mode Auto classe chaque message par complexité :
+
+- **Simple** — demandes courtes et directes comme une traduction rapide ou une question en une phrase. Auto choisit le modèle le plus rapide qui atteint un seuil minimum de qualité.
+- **Standard** — des instructions modérément détaillées. Auto choisit un modèle avec une bonne intelligence et une bonne vitesse.
+- **Complexe** — travail analytique comme la revue de contrat, la recherche juridique ou la comparaison de documents. Auto choisit un modèle à haute intelligence.
+- **Expert** — raisonnement multi-étapes entre juridictions, analyse de jurisprudence ou tâches avec de nombreuses variables. Auto choisit le modèle le plus puissant disponible, en préférant ceux ayant des capacités de raisonnement avancées.
+
+### Cohérence de qualité dans les conversations
+
+Lorsque Auto est utilisé dans une conversation en cours, Saga suit le niveau d'intelligence des modèles utilisés dans les messages précédents et impose un seuil minimum d'intelligence pour le reste de la conversation. Cela empêche l'IA de rétrograder vers un modèle plus faible en cours de conversation, ce qui pourrait réduire la qualité des réponses de suivi.
+
+Si le classificateur d'Auto suggère un modèle plus rapide mais moins performant pour un message de suivi, Saga promeut la sélection vers le modèle le plus rapide qui respecte encore le seuil d'intelligence de la conversation.
+
+### Quand utiliser Auto
+
+Auto est un bon choix par défaut pour la plupart du travail quotidien. Cela vous évite d'évaluer chaque question et de choisir un modèle manuellement. Si vous constatez qu'une tâche spécifique nécessite systématiquement un modèle particulier — par exemple, vous voulez toujours le modèle de raisonnement le plus puissant pour les évaluations de risques — vous pouvez remplacer Auto à tout moment en sélectionnant directement un modèle.
+
 ## Choisir le bon modèle
 
-Il n'existe pas de meilleur modèle unique — tout dépend de ce que vous faites.
+Si vous préférez sélectionner un modèle manuellement, il n'existe pas de meilleur modèle unique — tout dépend de ce que vous faites.
 
 - **Tâches rapides** (résumer, traduire, rédiger une courte réponse) : choisissez un modèle rapide. Vous n'avez pas besoin d'un raisonnement poussé pour un travail simple.
 - **Analyse complexe** (revue de contrat multipartite, comparaison réglementaire, évaluation des risques) : choisissez un modèle intelligent. Le temps de traitement supplémentaire vaut un résultat plus nuancé.

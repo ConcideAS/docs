@@ -26,9 +26,30 @@ Dies ist bei komplexen juristischen Fragen nützlich — Vergleiche zwischen meh
 
 Wenn Sie die Argumentation nicht benötigen und eine schnellere Antwort möchten, klicken Sie auf **Denken überspringen für eine schnellere Antwort**, um die Antwort direkt zu erhalten.
 
+## Auto-Modus
+
+Anstatt selbst ein Modell auszuwählen, können Sie **Auto** im Assistentenauswahl wählen. Wenn Auto aktiv ist, analysiert Saga Ihre Nachricht und wählt automatisch das beste Modell aus den aktivierten Modellen Ihrer Organisation — mit einer Abwägung zwischen Kosten und Intelligenz, damit Sie eine leistungsfähige Antwort erhalten, ohne bei einfachen Fragen zu viel auszugeben.
+
+Der Auto-Modus klassifiziert jede Nachricht nach Komplexität:
+
+- **Einfach** — kurze, unkomplizierte Anfragen wie eine schnelle Übersetzung oder eine einzeilige Frage. Auto wählt das schnellste Modell, das eine Mindestqualität erfüllt.
+- **Standard** — mässig detaillierte Eingaben. Auto wählt ein Modell mit solider Intelligenz und guter Geschwindigkeit.
+- **Komplex** — analytische Arbeit wie Vertragsüberprüfung, juristische Recherche oder Dokumentenvergleich. Auto wählt ein Modell mit hoher Intelligenz.
+- **Experte** — mehrstufiges Argumentieren über Jurisdiktionen hinweg, Präzedenzfallanalyse oder Aufgaben mit vielen Variablen. Auto wählt das stärkste verfügbare Modell und bevorzugt solche mit fortgeschrittenen Denkfähigkeiten.
+
+### Qualitätskonsistenz in Gesprächen
+
+Wenn Auto in einem laufenden Gespräch verwendet wird, verfolgt Saga das Intelligenzniveau der in früheren Nachrichten verwendeten Modelle und setzt eine Mindestintelligenzschwelle für den Rest des Gesprächs durch. Dies verhindert, dass die KI mitten im Gespräch auf ein schwächeres Modell heruntergestuft wird, was die Qualität der Folgeantworten beeinträchtigen könnte.
+
+Wenn der Auto-Klassifizierer für eine Folgenachricht ein schnelleres, aber weniger leistungsfähiges Modell vorschlägt, stuft Saga die Auswahl auf das schnellste Modell hoch, das noch die Intelligenzschwelle des Gesprächs erfüllt.
+
+### Wann Sie Auto verwenden sollten
+
+Auto ist eine gute Standardeinstellung für die meiste tägliche Arbeit. Es erspart Ihnen, jede Frage bewerten und ein Modell manuell auswählen zu müssen. Wenn Sie feststellen, dass eine bestimmte Aufgabe konsequent ein bestimmtes Modell erfordert — zum Beispiel, wenn Sie für Risikobewertungen immer das stärkste Argumentationsmodell wünschen — können Sie Auto jederzeit überschreiben, indem Sie direkt ein Modell auswählen.
+
 ## Das richtige Modell wählen
 
-Es gibt kein einzelnes bestes Modell — es kommt darauf an, was Sie tun.
+Wenn Sie ein Modell lieber manuell auswählen möchten, gibt es kein einzelnes bestes Modell — es kommt darauf an, was Sie tun.
 
 - **Schnelle Aufgaben** (zusammenfassen, übersetzen, eine kurze Antwort entwerfen): Wählen Sie ein schnelles Modell. Für unkomplizierte Arbeit brauchen Sie keine tiefgehende Argumentation.
 - **Komplexe Analysen** (Prüfung mehrseitiger Verträge, regulatorische Vergleiche, Risikobewertung): Wählen Sie ein intelligentes Modell. Die zusätzliche Verarbeitungszeit lohnt sich für die nuanciertere Ausgabe.

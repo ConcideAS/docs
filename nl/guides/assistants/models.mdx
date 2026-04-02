@@ -26,9 +26,30 @@ Dit is handig bij complexe juridische vragen — vergelijkingen tussen meerdere 
 
 Als u de redenering niet nodig hebt en een sneller antwoord wilt, klik op **Sla het denken over voor een sneller antwoord** om het antwoord direct te krijgen.
 
+## Auto-modus
+
+In plaats van zelf een model te kiezen, kunt u **Auto** selecteren in de assistentselector. Wanneer Auto actief is, analyseert Saga uw bericht en selecteert automatisch het beste model uit de ingeschakelde modellen van uw organisatie — met een balans tussen kosten en intelligentie zodat u een goed antwoord krijgt zonder te veel uit te geven aan eenvoudige vragen.
+
+De Auto-modus classificeert elk bericht op complexiteit:
+
+- **Eenvoudig** — korte, eenvoudige verzoeken zoals een snelle vertaling of een vraag van één zin. Auto kiest het snelste model dat voldoet aan een minimumkwaliteitsnorm.
+- **Standaard** — matig gedetailleerde prompts. Auto kiest een model met degelijke intelligentie en goede snelheid.
+- **Complex** — analytisch werk zoals contractbeoordeling, juridisch onderzoek of documentvergelijking. Auto kiest een model met hoge intelligentie.
+- **Expert** — meerstaps redenering over jurisdicties, precedentanalyse of taken met veel variabelen. Auto kiest het sterkste beschikbare model, met voorkeur voor modellen met geavanceerde redeneercapaciteiten.
+
+### Kwaliteitsconsistentie in gesprekken
+
+Wanneer Auto wordt gebruikt in een lopend gesprek, houdt Saga het intelligentieniveau bij van modellen die in eerdere berichten zijn gebruikt en handhaaft een minimaal intelligentieniveau voor de rest van het gesprek. Dit voorkomt dat de AI midden in een gesprek degradeert naar een zwakker model, wat de kwaliteit van vervolgantwoorden zou kunnen verminderen.
+
+Als de Auto-classificeerder een sneller maar minder capabel model voorstelt voor een vervolgbericht, promoveert Saga de selectie naar het snelste model dat nog steeds voldoet aan het intelligentieniveau van het gesprek.
+
+### Wanneer Auto gebruiken
+
+Auto is een goede standaard voor het meeste dagelijkse werk. Het bespaart u het evalueren van elke vraag en het handmatig kiezen van een model. Als u merkt dat een specifieke taak consequent een bepaald model nodig heeft — bijvoorbeeld dat u altijd het sterkste redeneermodel wilt voor risicobeoordelingen — kunt u Auto op elk moment overschrijven door direct een model te selecteren.
+
 ## Het juiste model kiezen
 
-Er is geen enkel beste model — het hangt af van wat u doet.
+Als u liever handmatig een model selecteert, is er geen enkel beste model — het hangt af van wat u doet.
 
 - **Snelle taken** (samenvatten, vertalen, een kort antwoord opstellen): kies een snel model. U hebt geen zware redenering nodig voor eenvoudig werk.
 - **Complexe analyses** (contractbeoordeling met meerdere partijen, vergelijking van regelgeving, risicobeoordeling): kies een intelligent model. De extra verwerkingstijd is de meer genuanceerde output waard.

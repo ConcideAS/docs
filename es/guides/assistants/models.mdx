@@ -26,9 +26,30 @@ Esto es útil para preguntas jurídicas complejas — comparaciones entre múlti
 
 Si no necesita el razonamiento y desea una respuesta más rápida, haga clic en **Omitir el razonamiento para una respuesta más rápida** para obtener la respuesta directamente.
 
+## Modo Auto
+
+En lugar de elegir un modelo usted mismo, puede seleccionar **Auto** en el selector de asistentes. Cuando Auto está activo, Saga analiza su mensaje y selecciona automáticamente el mejor modelo de los modelos habilitados de su organización — equilibrando coste e inteligencia para que obtenga una respuesta capaz sin gastar demasiado en preguntas sencillas.
+
+El modo Auto clasifica cada mensaje por complejidad:
+
+- **Simple** — solicitudes cortas y directas como una traducción rápida o una pregunta de una sola frase. Auto elige el modelo más rápido que cumple con un nivel mínimo de calidad.
+- **Estándar** — indicaciones moderadamente detalladas. Auto elige un modelo con buena inteligencia y velocidad.
+- **Complejo** — trabajo analítico como revisión de contratos, investigación jurídica o comparación de documentos. Auto elige un modelo de alta inteligencia.
+- **Experto** — razonamiento de múltiples pasos entre jurisdicciones, análisis de precedentes o tareas con muchas variables. Auto elige el modelo más potente disponible, prefiriendo aquellos con capacidades de razonamiento avanzadas.
+
+### Consistencia de calidad en conversaciones
+
+Cuando Auto se usa en una conversación en curso, Saga rastrea el nivel de inteligencia de los modelos usados en mensajes anteriores y aplica un nivel mínimo de inteligencia para el resto de la conversación. Esto evita que la IA se degrade a un modelo más débil a mitad de la conversación, lo que podría reducir la calidad de las respuestas de seguimiento.
+
+Si el clasificador de Auto sugiere un modelo más rápido pero menos capaz para un mensaje de seguimiento, Saga promueve la selección al modelo más rápido que aún cumple con el nivel de inteligencia de la conversación.
+
+### Cuándo usar Auto
+
+Auto es una buena opción predeterminada para la mayoría del trabajo diario. Le ahorra tener que evaluar cada pregunta y elegir un modelo manualmente. Si encuentra que una tarea específica necesita consistentemente un modelo particular — por ejemplo, siempre quiere el modelo de razonamiento más potente para evaluaciones de riesgo — puede anular Auto en cualquier momento seleccionando un modelo directamente.
+
 ## Elegir el modelo adecuado
 
-No existe un único mejor modelo — depende de lo que esté haciendo.
+Si prefiere seleccionar un modelo manualmente, no existe un único mejor modelo — depende de lo que esté haciendo.
 
 - **Tareas rápidas** (resumir, traducir, redactar una respuesta corta): elija un modelo rápido. No necesita razonamiento pesado para trabajo sencillo.
 - **Análisis complejos** (revisión de contratos multipartitos, comparación regulatoria, evaluación de riesgos): elija un modelo inteligente. El tiempo de procesamiento adicional vale la pena por el resultado más matizado.

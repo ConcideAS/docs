@@ -26,9 +26,30 @@ Dette er nyttig for komplekse juridiske spørsmål — sammenligninger på tvers
 
 Hvis du ikke trenger resonneringen og vil ha et raskere svar, klikk **Hopp over tenking for et raskere svar** for å få svaret direkte.
 
+## Auto-modus
+
+I stedet for å velge en modell selv, kan du velge **Auto** fra assistentvelgeren. Når Auto er aktiv, analyserer Saga meldingen din og velger automatisk den beste modellen fra organisasjonens aktiverte modeller — med balanse mellom kostnad og intelligens slik at du får et godt svar uten å bruke unødvendige ressurser på enkle spørsmål.
+
+Auto-modus klassifiserer hver melding etter kompleksitet:
+
+- **Enkel** — korte, enkle forespørsler som en rask oversettelse eller et spørsmål på én setning. Auto velger den raskeste modellen som oppfyller et minimumskvalitetsnivå.
+- **Standard** — middels detaljerte instruksjoner. Auto velger en modell med solid intelligens og god hastighet.
+- **Kompleks** — analytisk arbeid som kontraktgjennomgang, juridisk forskning eller dokumentsammenligning. Auto velger en høyintelligent modell.
+- **Ekspert** — flerstegs resonnering på tvers av jurisdiksjoner, prejudikatanalyse eller oppgaver med mange variabler. Auto velger den sterkeste tilgjengelige modellen, og foretrekker de med avanserte resonneringsevner.
+
+### Kvalitetskonsistens i samtaler
+
+Når Auto brukes i en pågående samtale, sporer Saga intelligensnivået til modellene som ble brukt i tidligere meldinger og håndhever et minimum intelligensgulv for resten av samtalen. Dette hindrer AI-en i å nedgradere til en svakere modell midt i samtalen, noe som kan redusere kvaliteten på oppfølgingssvar.
+
+Hvis Autos klassifiserer foreslår en raskere men mindre kapabel modell for en oppfølgingsmelding, oppgraderer Saga valget til den raskeste modellen som fortsatt oppfyller samtalens intelligensgulv.
+
+### Når du bør bruke Auto
+
+Auto er en god standard for det meste av daglig arbeid. Det sparer deg fra å måtte vurdere hvert spørsmål og velge en modell manuelt. Hvis du opplever at en spesifikk oppgave konsekvent trenger en bestemt modell — for eksempel at du alltid vil ha den sterkeste resonneringsmodellen for risikovurderinger — kan du overstyre Auto når som helst ved å velge en modell direkte.
+
 ## Velge riktig modell
 
-Det finnes ingen enkelt beste modell — det avhenger av hva du gjør.
+Hvis du foretrekker å velge en modell manuelt, finnes det ingen enkelt beste modell — det avhenger av hva du gjør.
 
 - **Raske oppgaver** (oppsummere, oversette, lage et kort utkast): velg en rask modell. Du trenger ikke tung resonnering for enkelt arbeid.
 - **Kompleks analyse** (flerparts kontraktgjennomgang, regulatorisk sammenligning, risikovurdering): velg en intelligent modell. Den ekstra behandlingstiden er verdt det mer nyanserte resultatet.

@@ -26,9 +26,30 @@ Jest to przydatne przy złożonych pytaniach prawnych — porównaniach międzyj
 
 Jeśli nie potrzebujesz rozumowania i chcesz szybszej odpowiedzi, kliknij **Pomiń myślenie, aby uzyskać szybszą odpowiedź**, aby otrzymać odpowiedź bezpośrednio.
 
+## Tryb Auto
+
+Zamiast samodzielnie wybierać model, możesz wybrać **Auto** z selektora asystentów. Gdy Auto jest aktywny, Saga analizuje Twoją wiadomość i automatycznie wybiera najlepszy model spośród włączonych modeli Twojej organizacji — balansując koszt i inteligencję, abyś otrzymał dobrą odpowiedź bez nadmiernych kosztów przy prostych pytaniach.
+
+Tryb Auto klasyfikuje każdą wiadomość według złożoności:
+
+- **Prosty** — krótkie, proste zapytania jak szybkie tłumaczenie lub jednozdaniowe pytanie. Auto wybiera najszybszy model spełniający minimalne wymagania jakościowe.
+- **Standardowy** — umiarkowanie szczegółowe polecenia. Auto wybiera model o solidnej inteligencji i dobrej szybkości.
+- **Złożony** — praca analityczna jak przegląd umów, badania prawne lub porównywanie dokumentów. Auto wybiera model o wysokiej inteligencji.
+- **Ekspert** — wieloetapowe rozumowanie w różnych jurysdykcjach, analiza precedensów lub zadania z wieloma zmiennymi. Auto wybiera najsilniejszy dostępny model, preferując te z zaawansowanymi zdolnościami rozumowania.
+
+### Spójność jakości w rozmowach
+
+Gdy Auto jest używany w trwającej rozmowie, Saga śledzi poziom inteligencji modeli używanych we wcześniejszych wiadomościach i wymusza minimalny próg inteligencji dla reszty rozmowy. Zapobiega to degradacji AI do słabszego modelu w trakcie rozmowy, co mogłoby obniżyć jakość odpowiedzi na dalsze pytania.
+
+Jeśli klasyfikator Auto zasugeruje szybszy, ale mniej zdolny model dla wiadomości następczej, Saga promuje wybór do najszybszego modelu, który nadal spełnia próg inteligencji rozmowy.
+
+### Kiedy używać Auto
+
+Auto to dobry domyślny wybór do większości codziennej pracy. Oszczędza konieczności oceniania każdego pytania i ręcznego wybierania modelu. Jeśli stwierdzisz, że konkretne zadanie konsekwentnie wymaga określonego modelu — na przykład zawsze chcesz najsilniejszego modelu rozumowania do oceny ryzyka — możesz w każdej chwili nadpisać Auto, wybierając model bezpośrednio.
+
 ## Wybór odpowiedniego modelu
 
-Nie ma jednego najlepszego modelu — zależy to od tego, co robisz.
+Jeśli wolisz wybrać model ręcznie, nie ma jednego najlepszego modelu — zależy to od tego, co robisz.
 
 - **Szybkie zadania** (podsumuj, przetłumacz, napisz krótką odpowiedź): wybierz szybki model. Nie potrzebujesz zaawansowanego rozumowania do prostej pracy.
 - **Złożona analiza** (przegląd umów wielostronnych, porównanie regulacji, ocena ryzyka): wybierz inteligentny model. Dodatkowy czas przetwarzania jest wart bardziej precyzyjnego wyniku.

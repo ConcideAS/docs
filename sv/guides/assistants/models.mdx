@@ -26,9 +26,30 @@ Detta är användbart för komplexa juridiska frågor — jämförelser mellan j
 
 Om du inte behöver resonemanget och vill ha ett snabbare svar, klicka på **Hoppa över tänkandet för ett snabbare svar** för att få svaret direkt.
 
+## Auto-läge
+
+Istället för att välja en modell själv kan du välja **Auto** i assistentväljaren. När Auto är aktivt analyserar Saga ditt meddelande och väljer automatiskt den bästa modellen bland din organisations aktiverade modeller — med en balans mellan kostnad och intelligens så att du får ett kapabelt svar utan att spendera för mycket på enkla frågor.
+
+Auto-läget klassificerar varje meddelande efter komplexitet:
+
+- **Enkel** — korta, okomplicerade förfrågningar som en snabb översättning eller en fråga på en mening. Auto väljer den snabbaste modellen som uppfyller en minimikvalitetsnivå.
+- **Standard** — måttligt detaljerade uppmaningar. Auto väljer en modell med god intelligens och hastighet.
+- **Komplex** — analytiskt arbete som avtalsgranskning, juridisk forskning eller dokumentjämförelse. Auto väljer en modell med hög intelligens.
+- **Expert** — flerstegsresonemang över jurisdiktioner, prejudikatanalys eller uppgifter med många variabler. Auto väljer den starkaste tillgängliga modellen, med preferens för de med avancerade resonemangsförmågor.
+
+### Kvalitetskonsistens i konversationer
+
+När Auto används i en pågående konversation spårar Saga intelligensnivån för modeller som använts i tidigare meddelanden och tillämpar en minimigräns för intelligens under resten av konversationen. Detta förhindrar att AI:n nedgraderas till en svagare modell mitt i konversationen, vilket kunde försämra kvaliteten på uppföljningssvar.
+
+Om Autos klassificerare föreslår en snabbare men mindre kapabel modell för ett uppföljningsmeddelande, befordrar Saga valet till den snabbaste modellen som fortfarande uppfyller konversationens intelligensgräns.
+
+### När du ska använda Auto
+
+Auto är ett bra standardval för det mesta av det dagliga arbetet. Det sparar dig från att behöva utvärdera varje fråga och välja en modell manuellt. Om du upplever att en specifik uppgift konsekvent kräver en viss modell — till exempel att du alltid vill ha den starkaste resonemangsmodellen för riskbedömningar — kan du åsidosätta Auto när som helst genom att välja en modell direkt.
+
 ## Välja rätt modell
 
-Det finns ingen enskild bästa modell — det beror på vad du gör.
+Om du föredrar att välja en modell manuellt finns det ingen enskild bästa modell — det beror på vad du gör.
 
 - **Snabba uppgifter** (sammanfatta, översätta, skriva ett kort svar): välj en snabb modell. Du behöver inte tungt resonemang för okomplicerat arbete.
 - **Komplex analys** (granskning av avtal med flera parter, regulatorisk jämförelse, riskbedömning): välj en intelligent modell. Den extra bearbetningstiden är värd det mer nyanserade resultatet.

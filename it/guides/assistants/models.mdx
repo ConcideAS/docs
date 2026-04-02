@@ -26,9 +26,30 @@ Questo è utile per domande legali complesse — confronti multi-giurisdizionali
 
 Se non hai bisogno del ragionamento e vuoi una risposta più veloce, clicca su **Salta il ragionamento per una risposta più veloce** per ottenere la risposta direttamente.
 
+## Modalità Auto
+
+Invece di scegliere un modello da solo, puoi selezionare **Auto** dal selettore dell'assistente. Quando Auto è attivo, Saga analizza il tuo messaggio e seleziona automaticamente il miglior modello tra i modelli abilitati della tua organizzazione — bilanciando costo e intelligenza in modo da ottenere una risposta capace senza spendere troppo per domande semplici.
+
+La modalità Auto classifica ogni messaggio per complessità:
+
+- **Semplice** — richieste brevi e dirette come una traduzione rapida o una domanda di una frase. Auto sceglie il modello più veloce che soddisfa un livello minimo di qualità.
+- **Standard** — indicazioni moderatamente dettagliate. Auto sceglie un modello con buona intelligenza e velocità.
+- **Complesso** — lavoro analitico come revisione contrattuale, ricerca giuridica o confronto di documenti. Auto sceglie un modello ad alta intelligenza.
+- **Esperto** — ragionamento multi-step tra giurisdizioni, analisi di precedenti o compiti con molte variabili. Auto sceglie il modello più potente disponibile, preferendo quelli con capacità di ragionamento avanzate.
+
+### Coerenza della qualità nelle conversazioni
+
+Quando Auto viene utilizzato in una conversazione in corso, Saga traccia il livello di intelligenza dei modelli usati nei messaggi precedenti e impone un livello minimo di intelligenza per il resto della conversazione. Questo impedisce all'IA di degradare a un modello più debole a metà conversazione, il che potrebbe ridurre la qualità delle risposte successive.
+
+Se il classificatore di Auto suggerisce un modello più veloce ma meno capace per un messaggio successivo, Saga promuove la selezione al modello più veloce che soddisfa ancora il livello di intelligenza della conversazione.
+
+### Quando usare Auto
+
+Auto è un buon predefinito per la maggior parte del lavoro quotidiano. Ti evita di dover valutare ogni domanda e scegliere manualmente un modello. Se scopri che un compito specifico richiede costantemente un modello particolare — ad esempio, vuoi sempre il modello di ragionamento più potente per le valutazioni del rischio — puoi sovrascrivere Auto in qualsiasi momento selezionando direttamente un modello.
+
 ## Scegliere il modello giusto
 
-Non esiste un singolo modello migliore — dipende da cosa stai facendo.
+Se preferisci selezionare un modello manualmente, non esiste un singolo modello migliore — dipende da cosa stai facendo.
 
 - **Compiti rapidi** (riassumere, tradurre, redigere una breve risposta): scegli un modello veloce. Non hai bisogno di ragionamento pesante per lavori semplici.
 - **Analisi complessa** (revisione di contratti multi-parte, confronto normativo, valutazione del rischio): scegli un modello intelligente. Il tempo di elaborazione extra vale per un output più sfumato.

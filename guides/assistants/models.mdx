@@ -26,9 +26,30 @@ This is useful for complex legal questions — multi-jurisdiction comparisons, r
 
 If you don't need the reasoning and want a faster answer, click **Skip thinking for a faster answer** to get the response directly.
 
+## Auto mode
+
+Instead of picking a model yourself, you can select **Auto** from the assistant selector. When Auto is active, Saga analyzes your message and automatically picks the best model from your organization's enabled models — balancing cost and intelligence so you get a capable answer without overspending on simple questions.
+
+Auto mode classifies each message by complexity:
+
+- **Simple** — short, straightforward requests like a quick translation or a single-sentence question. Auto picks the fastest model that meets a minimum quality bar.
+- **Standard** — moderately detailed prompts. Auto picks a model with solid intelligence and good speed.
+- **Complex** — analytical work such as contract review, legal research, or document comparison. Auto picks a high-intelligence model.
+- **Expert** — multi-step reasoning across jurisdictions, precedent analysis, or tasks with many variables. Auto picks the strongest available model, preferring those with advanced reasoning capabilities.
+
+### Quality consistency in conversations
+
+When Auto is used in an ongoing conversation, Saga tracks the intelligence level of models used in earlier messages and enforces a minimum intelligence floor for the rest of the conversation. This prevents the AI from downgrading to a weaker model mid-conversation, which could reduce the quality of follow-up answers.
+
+If Auto's classifier suggests a faster but less capable model for a follow-up message, Saga promotes the selection to the fastest model that still meets the conversation's intelligence floor.
+
+### When to use Auto
+
+Auto is a good default for most daily work. It saves you from having to evaluate each question and pick a model manually. If you find that a specific task consistently needs a particular model — for example, you always want the strongest reasoning model for risk assessments — you can override Auto at any time by selecting a model directly.
+
 ## Choosing the right model
 
-There's no single best model — it depends on what you're doing.
+If you prefer to select a model manually, there's no single best model — it depends on what you're doing.
 
 - **Quick tasks** (summarize, translate, draft a short response): pick a fast model. You don't need heavy reasoning for straightforward work.
 - **Complex analysis** (multi-party contract review, regulatory comparison, risk assessment): pick an intelligent model. The extra processing time is worth the more nuanced output.
