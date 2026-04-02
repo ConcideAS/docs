@@ -39,3 +39,9 @@ You can organize documents with folders and color-coded tags.
 ## Document actions
 
 Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it. You can also select multiple documents at once for bulk download or deletion.
+
+## Undo actions
+
+When you rename, move, or delete a document or folder, Saga shows a brief toast notification with an **Undo** button. Click it to reverse the action immediately.
+
+Deletions use a soft-delete approach — the item is removed from view but not permanently erased right away. If you click **Undo** within a few seconds, the document or folder is fully restored along with its contents. Once the undo window closes, the deletion becomes permanent.
