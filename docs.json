@@ -89,7 +89,8 @@
                 "pages": [
                   "guides/workflows",
                   "guides/workflows/building-and-running",
-                  "guides/workflows/library"
+                  "guides/workflows/library",
+                  "guides/workflows/rgpd-compliance"
                 ]
               }
             ]
@@ -465,7 +466,8 @@
                 "pages": [
                   "es/guides/workflows",
                   "es/guides/workflows/building-and-running",
-                  "es/guides/workflows/library"
+                  "es/guides/workflows/library",
+                  "es/guides/workflows/rgpd-compliance"
                 ]
               }
             ]

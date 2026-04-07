@@ -1,0 +1,112 @@
+---
+title: GDPR compliance audit
+description: Automated end-to-end workflow for evaluating GDPR and LOPDGDD compliance across your data protection documentation.
+---
+
+The **GDPR Compliance Assessment (End-to-End)** workflow is a Saga Lab template that automates a full data protection audit. It takes your documents, analyzes them against GDPR and LOPDGDD requirements, and produces a professional report with a compliance score, risk matrix, and prioritized recommendations.
+
+It is designed for legal and compliance teams that need to evaluate an organization's compliance posture in a structured and repeatable way.
+
+<Note>
+This workflow and the associated prompt template are available in Spanish and Portuguese. The workflow runs its analysis in Spanish, and the prompt templates are available under the names **Cumplimiento del RGPD** (Spanish) and **Conformidade com o RGPD** (Portuguese) in the Saga Lab library.
+</Note>
+
+## When to use it
+
+Use this workflow when you need to:
+
+- Audit data protection documentation for a client or your own organization
+- Evaluate data processing agreements (DPAs) against GDPR Article 28
+- Generate a compliance report with identified risks and recommendations
+- Produce an objective compliance score for presentation to a committee or client
+
+## Getting started
+
+Open the [workflow library](/guides/workflows/library) and search for **Evaluación de Cumplimiento RGPD** in the **Saga Lab** section. Select the template to preview its steps before running, or duplicate it into your personal collection to customize it.
+
+## What you need to prepare
+
+Before running the workflow, gather whatever data protection documents you have available. The more documents you provide, the more thorough the analysis will be — but you can run it with whatever you have.
+
+Documents you can include:
+
+- Privacy policy
+- Record of processing activities (ROPA)
+- Data processing agreement (DPA)
+- Data protection impact assessment (DPIA)
+- Security breach protocol
+- Related resolutions or reports
+
+<Note>
+Documents don't need to be complete. If any document is missing, the analysis runs on the available information and flags what it could not evaluate.
+</Note>
+
+## Workflow steps
+
+The workflow runs eight sequential steps. Each step feeds its output to the next, building a progressively more detailed analysis.
+
+### 1. Document upload
+
+Upload one or more data protection documents. This is the only step that requires your direct input — the rest of the workflow runs automatically.
+
+### 2. Standard data protection audit
+
+Runs a structured [grid review](/guides/grid-review) that extracts key information from each document:
+
+| Column | What it extracts |
+|--------|-----------------|
+| **Personal data** | Explicit data types (name, email, phone, biometric data, IP) |
+| **Data subjects** | Categories of affected individuals (clients, employees, web users, suppliers) |
+| **Purpose** | Processing purpose (client management, marketing, labor control) |
+| **Legal basis** | Legal basis for processing (consent, contract, legal obligation, legitimate interest) |
+| **GDPR principles** | Applicable principles per Article 5 |
+| **Transfers** | International transfers and mechanisms used |
+| **Security** | Security measures implemented (encryption, access control, backups) |
+| **Retention** | Data retention periods and criteria |
+| **Risks** | Identified risks (unauthorized access, data loss, misuse) |
+| **GDPR obligations** | Legal obligations mentioned (ROPA, DPA, DPIA, breach notification) |
+| **Non-compliance** | Explicit non-compliance findings |
+| **Sanctions** | Amounts, infringement types, and competent authority |
+
+### 3. Compliance analysis
+
+Analyzes the grid review results and generates a report with:
+
+- GDPR compliance level (high, medium, or low)
+- Main risks identified by category
+- Detected non-compliance findings
+- Prioritized recommendations (high, medium, low)
+
+### 4. Legal impact assessment
+
+For each identified risk, classifies the legal impact as high, medium, or low — considering the type of data involved, the absence or weakness of security measures, and possible GDPR principle violations.
+
+### 5. Professional compliance report
+
+Drafts a structured report with an executive summary, compliance level, principal risks, detected non-compliance findings, and recommendations. The report uses clear legal language targeted at legal and compliance teams.
+
+### 6. Risk matrix
+
+Generates a professional risk matrix (impact vs. probability) that classifies each risk as critical, high, medium, or low. It includes the top three priority risks and distinguishes between regulatory and operational risks.
+
+### 7. Compliance score
+
+Calculates a score from 0 to 100 based on the detected non-compliance findings:
+
+| Score | Classification |
+|-------|---------------|
+| 80–100 | High compliance |
+| 50–79 | Medium compliance |
+| Below 50 | Low compliance |
+
+The result includes the factors that most reduce the score and quick wins for improvement.
+
+### 8. Executive summary
+
+Produces an executive dashboard with the overall compliance status, key risks, risk distribution, and a traffic-light indicator (green, yellow, red). It is designed for direct presentation to committees or clients.
+
+## GDPR compliance prompt
+
+In addition to the workflow, the [prompt library](/guides/chat/prompt-library) includes a **GDPR compliance** template in the Saga Lab section (available in Spanish as **Cumplimiento del RGPD** and in Portuguese as **Conformidade com o RGPD**). This prompt evaluates a data processing agreement against GDPR Article 28 requirements and generates a compliance table with comments and improvement suggestions.
+
+Use this prompt when you need a quick review of an individual DPA in chat, without running the full workflow.

@@ -1,0 +1,108 @@
+---
+title: Auditoría de cumplimiento RGPD
+description: Flujo de trabajo automatizado de extremo a extremo para evaluar el cumplimiento del RGPD y la LOPDGDD en su documentación de protección de datos.
+---
+
+El flujo de trabajo **Evaluación de Cumplimiento RGPD (End-to-End)** es una plantilla de Saga Lab que automatiza una auditoría completa de protección de datos. Sube sus documentos, los analiza contra los requisitos del RGPD y la LOPDGDD, y produce un informe profesional con puntuación de cumplimiento, matriz de riesgos y recomendaciones priorizadas.
+
+Está diseñado para equipos legales y de compliance que necesitan evaluar el estado de cumplimiento de una organización de forma estructurada y repetible.
+
+## Cuándo utilizarlo
+
+Use este flujo de trabajo cuando necesite:
+
+- Auditar la documentación de protección de datos de un cliente o de su propia organización
+- Evaluar acuerdos de tratamiento de datos (DPA) contra el artículo 28 del RGPD
+- Generar un informe de cumplimiento con riesgos identificados y recomendaciones
+- Obtener una puntuación de cumplimiento objetiva para presentar a un comité o cliente
+
+## Cómo empezar
+
+Abra la [biblioteca de flujos de trabajo](/es/guides/workflows/library) y busque **Evaluación de Cumplimiento RGPD** en la sección **Saga Lab**. Seleccione la plantilla para previsualizar los pasos antes de ejecutarla, o duplíquela en su colección personal si desea personalizarla.
+
+## Lo que necesita preparar
+
+Antes de ejecutar el flujo de trabajo, reúna los documentos de protección de datos disponibles. El análisis será más completo cuantos más documentos proporcione, pero puede ejecutarlo con lo que tenga disponible.
+
+Los documentos que puede incluir son:
+
+- Política de privacidad
+- Registro de actividades de tratamiento (ROPA)
+- Contrato con encargado del tratamiento (DPA)
+- Evaluación de impacto en protección de datos (DPIA/EIPD)
+- Protocolo de brechas de seguridad
+- Resoluciones o informes relacionados
+
+<Note>
+No es necesario que los documentos estén completos. Si falta algún documento, el análisis se realiza con la información disponible e indica qué información no se pudo evaluar.
+</Note>
+
+## Los pasos del flujo de trabajo
+
+El flujo de trabajo ejecuta ocho pasos secuenciales. Cada paso alimenta su resultado al siguiente, construyendo un análisis progresivamente más detallado.
+
+### 1. Carga de documentación
+
+Sube uno o más documentos de protección de datos. Este es el único paso que requiere su intervención directa — el resto del flujo se ejecuta automáticamente.
+
+### 2. Auditoría estándar de protección de datos
+
+Ejecuta una [revisión en cuadrícula](/es/guides/grid-review) estructurada que extrae información clave de cada documento:
+
+| Columna | Qué extrae |
+|---------|------------|
+| **Datos personales** | Tipos de datos explícitos (nombre, correo electrónico, teléfono, datos biométricos, IP) |
+| **Interesados** | Categorías de personas afectadas (clientes, empleados, usuarios web, proveedores) |
+| **Finalidad** | Finalidad del tratamiento (gestión de clientes, marketing, control laboral) |
+| **Base legal** | Base jurídica del tratamiento (consentimiento, contrato, obligación legal, interés legítimo) |
+| **Principios RGPD** | Principios aplicables conforme al artículo 5 del RGPD |
+| **Transferencias** | Transferencias internacionales y mecanismos utilizados |
+| **Seguridad** | Medidas de seguridad implementadas (cifrado, control de accesos, copias de seguridad) |
+| **Conservación** | Plazos y criterios de conservación de datos |
+| **Riesgos** | Riesgos identificados (acceso no autorizado, pérdida de datos, uso indebido) |
+| **Obligaciones RGPD** | Obligaciones legales mencionadas (ROPA, contrato con encargado, DPIA, notificación de brechas) |
+| **Incumplimientos** | Incumplimientos explícitos detectados |
+| **Sanciones** | Importes, tipos de infracción y autoridad competente |
+
+### 3. Análisis de cumplimiento
+
+Analiza los resultados de la revisión en cuadrícula y genera un informe con:
+
+- Nivel de cumplimiento RGPD (alto, medio o bajo)
+- Principales riesgos identificados por categoría
+- Incumplimientos detectados
+- Recomendaciones priorizadas (alta, media, baja)
+
+### 4. Evaluación del impacto legal
+
+Para cada riesgo identificado, clasifica el impacto legal como alto, medio o bajo, considerando el tipo de datos involucrados, la ausencia o debilidad de medidas de seguridad, y las posibles infracciones de principios del RGPD.
+
+### 5. Informe profesional de cumplimiento
+
+Redacta un informe estructurado con resumen ejecutivo, nivel de cumplimiento, riesgos principales, incumplimientos detectados y recomendaciones. El informe utiliza lenguaje jurídico claro y está dirigido a equipos legales y de compliance.
+
+### 6. Matriz de riesgos
+
+Genera una matriz de riesgos profesional (impacto vs. probabilidad) que clasifica cada riesgo como crítico, alto, medio o bajo. Incluye los tres riesgos prioritarios y distingue entre riesgos regulatorios y operativos.
+
+### 7. Puntuación de cumplimiento
+
+Calcula una puntuación de 0 a 100 basada en los incumplimientos detectados:
+
+| Puntuación | Clasificación |
+|------------|---------------|
+| 80–100 | Alto cumplimiento |
+| 50–79 | Cumplimiento medio |
+| Menor de 50 | Bajo cumplimiento |
+
+El resultado incluye los factores que más reducen la puntuación y acciones rápidas para mejorarla.
+
+### 8. Resumen ejecutivo
+
+Produce un dashboard ejecutivo con el estado general del cumplimiento, los riesgos clave, la distribución de riesgos y un semáforo ejecutivo (verde, amarillo, rojo). Está diseñado para presentación directa a comités o clientes.
+
+## Prompt de cumplimiento del RGPD
+
+Además del flujo de trabajo, la [biblioteca de prompts](/es/guides/chat/prompt-library) incluye la plantilla **Cumplimiento del RGPD** en la sección Saga Lab. Este prompt evalúa un acuerdo de tratamiento de datos (DPA) contra los requisitos del artículo 28 del RGPD y genera una tabla de cumplimiento con comentarios y sugerencias de mejora.
+
+Use este prompt cuando necesite una revisión rápida de un DPA individual en el chat, sin ejecutar el flujo de trabajo completo.
