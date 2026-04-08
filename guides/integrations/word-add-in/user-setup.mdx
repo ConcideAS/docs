@@ -41,6 +41,27 @@ You can also install it directly from the [Microsoft AppSource Marketplace](http
 
 When you open the add-in for the first time, enter your **email** and your organization's **Saga URL** (e.g., `https://your-firm.sagalegal.io`). Saga sends you a magic link — click it to confirm, and the add-in connects to your account. You only need to do this once.
 
+## Default apply option
+
+When the AI returns suggestions in **Suggest** mode, you can choose how those suggestions are applied to the document. By default, the add-in asks you to pick an apply method each time. If you prefer to always use the same method, you can set a default in your profile settings.
+
+To configure your default:
+
+1. Open **Settings** in Saga.
+2. Go to the **Profile** tab.
+3. Under **Word add-in**, select your preferred **Default apply option**.
+
+The available options are:
+
+| Option | Description |
+|--------|-------------|
+| **Direct** | Applies the suggestion directly to the document text. |
+| **Comment** | Inserts the suggestion as a Word comment. |
+| **Tracked change** | Applies the suggestion as a tracked change, so you can accept or reject it later. |
+| **Tracked change with comment** | Applies the suggestion as a tracked change and adds a comment with the AI's reasoning. |
+
+If no default is set, the add-in prompts you to choose an apply method each time you apply a suggestion.
+
 ## Troubleshooting
 
 If the add-in doesn't appear in search results or fails to install:
