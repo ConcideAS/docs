@@ -1,5 +1,6 @@
 ---
 title: Advisor
+description: Send documents from Advisor into Saga projects using a presigned-URL upload flow.
 ---
 
 The Advisor integration lets you send documents from Advisor directly into Saga. Instead of exporting files and uploading them manually, Advisor pushes documents to Saga through an API — so they appear in your projects automatically.
@@ -9,6 +10,37 @@ The Advisor integration lets you send documents from Advisor directly into Saga.
 Advisor connects to Saga using your platform URL and an API key. When you send a document from Advisor, it uploads the file to Saga's document API and associates it with a project. If the project doesn't exist yet, Saga creates it automatically.
 
 Documents are sent as a one-way push from Advisor to Saga. Updates in Advisor don't automatically sync to Saga — each upload creates or replaces the document in the target project.
+
+### Upload flow
+
+The document upload uses a three-step presigned-URL flow:
+
+<Steps>
+  <Step title="Initiate the upload">
+    Send file metadata (name, size, content type, project, and user email) to the Saga API. You receive a time-limited upload URL and a document ID.
+  </Step>
+  <Step title="Upload the file">
+    PUT the raw file bytes directly to the upload URL. No authorization header is needed for this step — the URL itself grants write access. The URL expires after 15 minutes.
+
+    You must include these headers with the PUT request:
+    - `Content-Type` — must match the MIME type from step 1.
+    - `x-ms-blob-type` — must be set to `BlockBlob`.
+  </Step>
+  <Step title="Trigger processing">
+    Call the process endpoint with the document ID from step 1. Saga validates the uploaded file, promotes it to production storage, and queues it for asynchronous processing.
+
+    Processing includes text extraction, OCR for images, and vectorization so the document becomes searchable within the project.
+  </Step>
+</Steps>
+
+### Document replacement
+
+If you upload a document with the same external document ID as an existing document in the project, Saga replaces the old version. The previous document is deleted and the new one takes its place after processing completes. Replacements do not count against the per-project document limit.
+
+### Project handling
+
+- If the external project ID you provide doesn't match an existing Saga project, a new project is created automatically.
+- The project name and metadata are updated on every upload request, so they always reflect the latest values from Advisor.
 
 ## Setup
 
@@ -29,9 +61,11 @@ Advisor can send the following file types to Saga:
 
 | Category | Formats |
 |----------|---------|
-| Documents | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), Text (.txt), CSV, OpenDocument (.odt, .ods) |
+| Documents | PDF, Word (.doc, .docx), Excel (.xls, .xlsx), PowerPoint (.pptx), Text (.txt), HTML, CSV, OpenDocument (.odt, .ods) |
 | Images | PNG, JPEG, GIF, WebP, TIFF |
 | Email | EML, Outlook (.msg) |
+
+The maximum file size is **1 GB** per document.
 
 ## Managing your API key
 
