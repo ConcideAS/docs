@@ -45,6 +45,8 @@ When a step needs input — like a prompt input or file upload — the workflow 
 
 Each step shows its execution time, and the final results appear in a **Final assets** section at the bottom — documents to download, text to copy, grid reviews to open, or research results to browse.
 
+For prompt-based steps (like **Run prompt** and **Tasks**), the results also show an "Answered by" label indicating which AI model produced the output. This is especially useful when a step is configured to use [Auto](/guides/assistants/models#auto), since different steps may be routed to different models depending on the task.
+
 ## Running from chat
 
 You can also start a workflow directly from a chat conversation. The workflow runs inline — step by step in the chat thread — so you can see the results as they come in without leaving the conversation.

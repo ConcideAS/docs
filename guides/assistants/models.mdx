@@ -32,7 +32,9 @@ If you're not sure which model to use, select **Auto** from the assistant select
 
 Auto works well for everyday tasks. It routes simple questions to fast, lightweight models and sends complex analysis to more capable ones. You don't need to think about which model fits — Saga decides based on what you're asking.
 
-When Auto selects a model, you'll see an "Answered by" label on the response showing which model was used. This way you always know what's behind the answer, even when you didn't choose it yourself.
+When Auto selects a model, you'll see an "Answered by" label on the response showing which model was used. This way you always know what's behind the answer, even when you didn't choose it yourself. The same label appears on prompt-based steps in [workflow](/guides/workflows) results, so you can see which model handled each part of the flow.
+
+If you edit a message that was originally sent with Auto, Saga keeps Auto selected — so the re-sent message is routed the same way, rather than being locked to whatever specific model was used last time.
 
 You can set Auto as your default in **Settings > Personalization**, or your admin can set it as the workspace default. It's also available as a project default.
 
