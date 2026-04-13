@@ -23,3 +23,16 @@ Documents are copied into Saga as a one-way import. Changes you make to the docu
 SharePoint is configured by your admin from the [admin panel](/guides/admin) under **Settings > Integrations**. Your admin provides the SharePoint tenant URL (e.g., `https://your-firm.sharepoint.com`) and enables the integration. Once it's on, everyone in your organization can use it.
 
 If you don't see the SharePoint option when uploading documents, ask your admin to enable it.
+
+## Troubleshooting
+
+If something goes wrong while browsing or downloading files, Saga shows a specific error message describing what happened. Here are common issues and how to resolve them:
+
+| Error message | What it means | What to do |
+| --- | --- | --- |
+| **Your Microsoft session has expired** | Your authentication token is no longer valid. | Sign out and sign back in with your Microsoft account. |
+| **You don't have permission** | Your Microsoft account doesn't have access to the requested site, folder, or file. | Ask your SharePoint administrator to grant you access. |
+| **The SharePoint site could not be found** | The site URL may be incorrect, or the site was moved or deleted. | Verify the site still exists in SharePoint, then try again. |
+| **The document library could not be found** | The document library was removed or renamed in SharePoint. | Check with your SharePoint administrator that the library still exists. |
+| **Could not connect to SharePoint** | Saga couldn't reach SharePoint — usually a network or service issue. | Wait a moment and try again. If the problem persists, check your internet connection. |
+| **An unexpected error occurred** | Something went wrong communicating with SharePoint. The error may include additional detail to help identify the cause. | Try again or re-select the site. If it keeps happening, contact [support](mailto:support@sagalegal.io). |
