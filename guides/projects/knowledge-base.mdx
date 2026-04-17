@@ -38,6 +38,14 @@ You can organize documents with folders and color-coded tags.
 
 ## Document actions
 
-Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it. You can also select multiple documents at once for bulk download or deletion.
+Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it. You can also select multiple documents at once for bulk download, deletion, or moving.
+
+### Bulk move
+
+When you have multiple documents or folders selected, click the **Move** button in the bulk action bar to relocate them all at once. A folder picker lets you choose the destination folder, or you can select **Remove from folder** to move items back to the root level.
+
+Bulk move is aware of your folder structure. If every document inside a folder is selected, the entire folder moves as a single unit — subfolders and their contents come along automatically. If only some documents in a folder are selected, those individual files are moved while the folder stays in place. Items that are already in the destination folder are skipped.
+
+After a bulk move completes, a confirmation toast appears with an **Undo** option. Click it to return all moved items to their original locations. If the destination folder is nested, you can also click **Open folder** in the toast to jump directly to it.
 
 When selecting documents, folder checkboxes show a partial-selection indicator if only some files inside are selected, making it easier to see exactly what's included. Toggling a single document's active state shows a loading indicator only on that item, so you can continue working with the rest of the list.
