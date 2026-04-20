@@ -26,7 +26,7 @@ If the AI asks you for a key term, try providing the name of a clause, section h
 
 ## Organizational sources
 
-Organizational sources are firm-wide knowledge bases managed by your admin — things like standard clause libraries, internal guidelines, or regulatory handbooks. When they're available, a toggle appears in the chat toolbar. Enable the ones you want and the AI draws on them alongside your other context.
+Organizational sources are firm-wide knowledge bases managed by your admin — things like standard clause libraries, internal guidelines, or regulatory handbooks. When they're available, a toggle appears in the chat toolbar. Enable the ones you want and the AI draws on them alongside your other context. You can enable up to 20 organizational sources per message.
 
 If you don't see the organizational sources toggle, your organization hasn't set any up yet. Ask your admin to create one from the [admin panel](/guides/admin).
 
@@ -36,11 +36,23 @@ You can also bring in information from outside your organization. Enable **web s
 
 For a specific webpage, paste the URL directly into the chat. Saga extracts the page content automatically, and the AI can reference it with citations linking back to the source.
 
+## Deep research
+
+For questions that need a broader sweep — a literature-style overview, a multi-source comparison, or a comprehensive background report — enable **deep research** from the toolbar. The AI runs an extended research pass across multiple web sources and synthesizes the findings into a structured report.
+
+Deep research takes longer than a standard web search (typically 30–60 seconds), so it's best suited for questions where breadth and thoroughness matter more than speed. For quick, targeted lookups, regular web search is faster.
+
 ## Legal research
 
-Enable legal research databases from the toolbar before sending your message. The AI searches the selected databases as part of generating its response and includes the results with citations. A timeline shows the search progress, queries used, and results found for each database.
+Enable legal research databases from the toolbar before sending your message. The AI evaluates your question and searches the selected databases when it determines legal references would improve the answer. Results appear with citations, and a timeline shows the search progress, queries used, and results found for each database.
+
+The AI may skip searching if your question can be answered from context already in the conversation, or chain multiple searches when a broad topic spans different source types.
 
 See [Legal research](/guides/legal-research) for more on available databases and search options.
+
+<Note>
+Legal research, web search, deep research, and organizational sources require a model that supports function calling. If you enable any of these sources with an incompatible model, Saga will prompt you to switch before sending.
+</Note>
 
 ## Drafting
 

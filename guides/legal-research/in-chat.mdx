@@ -4,7 +4,13 @@ title: Research in chat
 
 Sometimes you're in the middle of a conversation — analyzing a document, drafting advice, working through a question — and you need to check what the case law says. Instead of switching to the [legal research page](/guides/legal-research/search-and-results), you can bring the research into the conversation.
 
-Open the **Add sources** menu in the chat toolbar, check the legal sources you want, and send your message. The AI takes your question, expands it into search queries tailored to each source, and runs the searches behind the scenes. The results come back woven into the AI's response, with citations linking to the original material.
+Open the **Add sources** menu in the chat toolbar, check the legal sources you want, and send your message. The AI decides whether your question needs a search and, if it does, runs targeted queries against the sources you enabled. The results come back woven into the AI's response, with citations linking to the original material.
+
+## How the AI searches
+
+When you enable sources, the AI doesn't search everything on every message. It reads your question, decides which sources are relevant, and only searches the ones that can actually help. If your question is a follow-up that can be answered from results already in the conversation, it skips the search entirely.
+
+This means faster responses when a search isn't needed, and more focused results when it is. The AI can also chain searches — for example, starting with a legal database lookup and then running a web search to fill in gaps — without you having to send multiple messages.
 
 ## The timeline
 
@@ -21,3 +27,7 @@ Every claim the AI makes based on a legal source gets an inline [citation](/guid
 Legal research in chat doesn't exist in isolation. You can enable legal sources, attach a file, draw on a project's knowledge base, and turn on web search — all in the same message. The AI considers everything together. That means you can do things like compare a contract clause against both your internal guidelines and the relevant case law, without jumping between tools.
 
 For more on how to control what the AI sees, see [Context and sources](/guides/chat/context-and-sources).
+
+## Model compatibility
+
+In-chat research requires a model that supports function calling. Most models — including all GPT and Claude variants — work out of the box. If you select a model that doesn't support it (such as certain Mistral or DeepSeek variants) and have legal sources or organizational sources enabled, Saga will let you know before sending the message so you can switch to a compatible model.
