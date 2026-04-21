@@ -28,6 +28,8 @@ If the AI asks you for a key term, try providing the name of a clause, section h
 
 Organizational sources are firm-wide knowledge bases managed by your admin — things like standard clause libraries, internal guidelines, or regulatory handbooks. When they're available, a toggle appears in the chat toolbar. Enable the ones you want and the AI draws on them alongside your other context.
 
+Once enabled, the AI treats your selection as a signal of intent. It proactively searches organizational sources for any question where internal materials could plausibly help — drafting assistance, policy questions, "how do we usually handle this," or anything touching playbooks, templates, and precedent — even if you don't explicitly reference a specific document or say "check our files." You don't need to tell the AI to use the sources; enabling them is enough.
+
 If you don't see the organizational sources toggle, your organization hasn't set any up yet. Ask your admin to create one from the [admin panel](/guides/admin).
 
 ## Web search and URLs
@@ -40,7 +42,15 @@ For a specific webpage, paste the URL directly into the chat. Saga extracts the 
 
 Enable legal research databases from the toolbar before sending your message. The AI searches the selected databases as part of generating its response and includes the results with citations. A timeline shows the search progress, queries used, and results found for each database.
 
+The AI interprets enabled databases as a signal that your question likely involves law in those jurisdictions. It searches proactively for anything touching statutes, regulations, case law, or compliance — even when you don't explicitly ask it to "look up" a specific source. A question like "does this clause comply with applicable law" triggers a search automatically because you've told the AI which jurisdictions matter by enabling the relevant databases.
+
 See [Legal research](/guides/legal-research) for more on available databases and search options.
+
+## How sources work together
+
+When you enable multiple source types — say, a project's knowledge base, legal databases, and organizational sources — the AI considers all of them together. If your question spans more than one source type, the AI searches each relevant source in turn and synthesizes the results. For example, you could ask whether a contract clause in your project aligns with applicable law and your firm's standard playbook, and the AI will draw on the project documents, legal databases, and organizational sources in a single response.
+
+You don't need to tell the AI which sources to check. It uses your enabled sources to decide where to look based on what you're asking.
 
 ## Drafting
 
