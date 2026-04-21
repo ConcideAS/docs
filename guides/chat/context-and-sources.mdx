@@ -8,20 +8,30 @@ The AI's answers are only as good as the context it has. Saga gives you several 
 
 There are two ways to give the AI access to documents, and they work differently.
 
-**Knowledge base** documents are uploaded to a project and processed in advance. Saga reads and indexes every page so the AI can search across your entire collection and pull out the most relevant passages — even from hundreds of documents. This is the right choice when you're working on a matter over time and want the AI to have deep, persistent access to a body of material.
+**Knowledge base** documents are uploaded to a project and processed in advance. Saga reads and indexes every page so the AI can intelligently search your entire collection on demand. When you ask a question, the AI decides whether to search across all documents for relevant passages or fetch a specific document in full — depending on what the question requires. This is the right choice when you're working on a matter over time and want the AI to have deep, persistent access to a body of material.
 
 **Attached files** are added directly to a single conversation. You can upload a file from your computer or pull one in from any knowledge base available to you. The AI reads the full contents of the attachment as part of that message. This is better for quick, one-off questions — when you want to hand the AI a specific document and ask something about it without setting up a project.
 
 In practice: if you'll ask multiple questions about a set of documents over days or weeks, upload them to a project's knowledge base. If you just need a fast answer about one file, attach it in chat.
 
+### What happens when you ask a question in a project
+
+When you send a message in a project chat, the AI has access to the names and count of every active document in the knowledge base. It then decides how to retrieve content based on your question:
+
+- For broad or topical questions (overviews, comparisons, locating information), the AI **searches across all documents** and pulls in the most relevant passages.
+- For whole-document tasks (full summaries, clause-by-clause reviews, structural analysis), the AI **fetches the entire document** by name.
+- For questions that span multiple specific documents, the AI may **fetch several documents individually** when the full content of each is needed.
+
+This means the AI uses your project's full context budget efficiently — retrieving only what's needed for each question rather than loading everything upfront. You can see the search progress in the timeline that appears while the AI works.
+
 ## Working with many files
 
-When you attach a large number of files to a chat, Saga automatically switches to a smart retrieval mode. Instead of loading every file in full — which would exceed the AI's context window — Saga searches your documents for the passages most relevant to your question and loads those.
+Saga is designed to work with large document collections. In a project knowledge base, the AI sees the names of every active document and retrieves content intelligently — searching for relevant passages across all files or fetching specific documents in full, depending on your question. This works efficiently even with hundreds of documents.
 
-Every uploaded file is guaranteed baseline coverage, so the AI always knows what documents are available and can reference any of them. If the AI can't find the specific section you're asking about, it will ask you for a key term or section heading to help locate the right content. You don't need to re-upload or re-attach the file.
+When you attach files directly to a chat, Saga uses the same smart retrieval approach for large sets. Instead of loading every file in full — which would exceed the AI's context window — it searches your attachments for the passages most relevant to your question and loads those.
 
 <Tip>
-If the AI asks you for a key term, try providing the name of a clause, section heading, or a distinctive phrase from the document you want it to focus on.
+For the best results with project documents, use the exact document name when you want the AI to focus on a specific file. The AI can see every active document's name and uses it to target its search.
 </Tip>
 
 ## Organizational sources

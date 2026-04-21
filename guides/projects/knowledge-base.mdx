@@ -4,6 +4,19 @@ title: Knowledge base
 
 The knowledge base is the document library inside a project. Every file you upload is processed by Saga — the text is extracted, broken into passages, and stored so the AI can find the most relevant parts when you ask a question. This is what makes Saga's answers grounded in your actual documents rather than general knowledge.
 
+## How the AI searches your documents
+
+When you ask a question in a project chat, the AI has intelligent access to every active document in the knowledge base. Rather than loading all documents upfront, Saga equips the AI with two specialized search capabilities that it uses on demand:
+
+- **Document search** — the AI searches across all project documents at once to find the most relevant passages. This is what the AI uses by default for most questions: summaries, topical lookups, comparisons across files, or any question that could touch multiple documents.
+- **Full document fetch** — the AI retrieves the complete content of a specific named document. This is used for tasks that require the entire text, such as a clause-by-clause review, a full summary of one contract, or extracting every occurrence of a term from a single file.
+
+The AI chooses the right approach automatically. For a broad question like "What are the payment terms across these agreements?", it searches all documents. For "Summarize the NDA with Acme Corp", it fetches that specific document in full. For a deep side-by-side comparison, it may fetch multiple documents individually.
+
+<Tip>
+You don't need to tell the AI how to search. It sees the names of all active documents in the knowledge base and decides the best retrieval strategy for each question. If it can't find what you're looking for, try using the exact document name or a specific term from the text.
+</Tip>
+
 ## Add documents
 
 Drag and drop files or folders directly into the knowledge base panel, or click **Upload** to browse your computer. If your organization has SharePoint or Epona365 configured, you can import files from those services as well.
