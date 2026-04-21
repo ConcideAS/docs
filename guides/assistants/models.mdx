@@ -45,6 +45,27 @@ If you prefer to pick a model yourself, there's no single best choice — it dep
 - **Large document context** (long contracts, extensive due diligence sets): check capacity. A model with higher capacity can hold more of your material in context at once.
 - **Current information** (recent legislation, recent case law): check the knowledge cutoff, and enable web search if needed.
 
+## Tool and feature support
+
+Chat tools — like document drafting, legal research lookup, web search, and URL extraction — rely on a capability called function calling. All models in Saga now support function calling, which means you can use the full set of chat tools regardless of which model you pick.
+
+Here's what each model supports:
+
+| Feature | GPT | Claude | Mistral Large 3 | DeepSeek V3.2 | Gemini 3.1 Pro |
+|---|---|---|---|---|---|
+| Chat tools (drafting, legal research, web search, URLs) | Yes | Yes | Yes | Yes | Yes |
+| Image understanding | Yes | Yes | No | No | Yes |
+| Thinking mode | Yes | Yes | No | No | Yes |
+| Temperature control | Varies by model | No | Yes | Yes | Yes |
+
+**Image understanding** lets you paste or attach images in chat and ask the AI about their contents. This is available on GPT, Claude, and Gemini models.
+
+**Thinking mode** shows step-by-step reasoning before the final answer. It's available on GPT 5 series, Claude, and Gemini models. DeepSeek uses internal chain-of-thought reasoning that is surfaced alongside responses, but does not have a dedicated thinking toggle.
+
+<Note>
+Mistral Large 3 and DeepSeek V3.2 support all chat tools — including document generation, legal research, web search, URL content extraction, and MCP integrations. The only features they don't support are image understanding and the explicit thinking mode toggle.
+</Note>
+
 ## Enabled models
 
 Your admin decides which models are available in your organization's Saga instance. If you need a model that isn't showing up in the assistant selector, ask your admin to enable it from the workspace settings.
