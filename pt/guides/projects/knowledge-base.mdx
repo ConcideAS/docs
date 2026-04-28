@@ -2,7 +2,7 @@
 title: Base de conhecimento
 ---
 
-A base de conhecimento é a biblioteca de documentos dentro de um projeto. Cada ficheiro que carrega é processado pelo Saga — o texto é extraído, dividido em passagens e armazenado para que a IA consiga encontrar as partes mais relevantes quando faz uma pergunta. É isto que torna as respostas do Saga fundamentadas nos seus documentos reais em vez de conhecimento geral.
+A base de conhecimento é a biblioteca de documentos dentro de um projeto. Cada ficheiro que carrega é processado pelo Saga — o texto é extraído, dividido em passagens e indexado para que a IA consiga encontrar o material certo a pedido. Quando faz uma pergunta num chat de projeto, a IA procura em toda a base de conhecimento e extrai as passagens mais relevantes para a sua pergunta, com citações que ligam a cada fonte. Não é o utilizador que escolhe que documentos a IA consulta — ela decide a cada pergunta, com base no que realmente está a perguntar.
 
 ## Adicionar documentos
 
@@ -22,12 +22,6 @@ O tamanho máximo de ficheiro é 1 GB. Um projeto pode conter até 1.000 documen
 
 Após o carregamento, cada ficheiro passa por um processamento antes de ficar disponível para a IA. Pode continuar a trabalhar enquanto isso acontece — os documentos ficam disponíveis automaticamente à medida que ficam prontos. Se um ficheiro falhar no processamento, pode tentar novamente a partir do seu menu de ações.
 
-## Documentos ativos e inativos
-
-Cada documento tem um botão de ativo/inativo. Apenas os documentos ativos são usados como contexto pela IA. Os documentos inativos permanecem na base de conhecimento mas são excluídos do chat e da revisão em grelha.
-
-Isto é útil quando quer restringir o foco da IA a um subconjunto específico de ficheiros — por exemplo, durante uma fase de um assunto em que apenas determinados contratos são relevantes.
-
 ## Pastas e etiquetas
 
 Pode organizar documentos com pastas e etiquetas com código de cores.
@@ -38,6 +32,6 @@ As **etiquetas** funcionam de forma transversal às pastas. Atribua uma etiqueta
 
 ## Ações de documento
 
-Cada documento tem um menu de ações onde pode renomeá-lo, movê-lo para uma pasta diferente, gerir as suas etiquetas, transferi-lo, tentar novamente o processamento ou eliminá-lo. Pode também selecionar múltiplos documentos de uma vez para transferência ou eliminação em massa.
+Cada documento tem um menu de ações onde pode renomeá-lo, movê-lo para uma pasta diferente, gerir as suas etiquetas, transferi-lo, tentar novamente o processamento ou eliminá-lo.
 
-Ao selecionar documentos, as caixas de seleção das pastas mostram um indicador de seleção parcial se apenas alguns ficheiros na pasta estão selecionados, facilitando ver exatamente o que está incluído. Ao ativar ou desativar um documento individual, o indicador de carregamento aparece apenas nesse item, permitindo-lhe continuar a trabalhar com o resto da lista.
+Para agir sobre vários documentos de uma vez, use as caixas de seleção junto a cada documento ou pasta. Com uma seleção ativa, pode **transferir**, **eliminar**, **mover** ou **etiquetar** todos os documentos selecionados num único passo. As caixas de seleção das pastas mostram um indicador de seleção parcial quando apenas alguns ficheiros na pasta estão selecionados, para que possa ver exatamente o que está incluído.

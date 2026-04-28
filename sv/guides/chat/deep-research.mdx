@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research är Sagas grundligaste webbforskningsverktyg. Du ställer en fråga och verktyget ägnar allt från trettio sekunder till ett par minuter åt att söka igenom det öppna nätet över många källor, läsa det det hittar och skriva en syntetiserad rapport med hänvisningar. Det är byggt för frågor som en enskild sökfråga inte egentligen kan besvara på egen hand — marknadsöversikter, regulatoriska landskap, bakgrund till obekanta ämnen, allt där du annars skulle öppnat tio flikar och börjat anteckna.
+
+## Var du kan använda det
+
+Deep Web Research dyker upp på två ställen, båda drivna av samma motor.
+
+**I chatten.** Öppna menyn **Lägg till källor** i chattens verktygsrad och slå på **Deep Web Research**. Det är en utökning av [webbsökning](/sv/guides/chat/context-and-sources#web-search-and-urls) — när du slår på Deep Web Research slås webbsökning också på, och när du slår av webbsökning stängs Deep Web Research av. Skicka din fråga så startar AI:n en forskningskörning och väver sedan in fynden i sitt svar med hänvisningar i löpande text.
+
+**I ett arbetsflöde.** Lägg till åtgärdsnoden **Deep Web Research** i ett arbetsflöde och peka den mot en sökfråga — antingen hårdkodad i steget eller hämtad från föregående stegs utdata med `@`. Rapporten blir en utdata som du kan skicka vidare till senare steg.
+
+## Forskningsmodeller
+
+Varje körning använder en av tre modeller som växlar djup mot hastighet.
+
+| Modell | Typisk tid | Bäst för |
+|--------|------------|----------|
+| **Mini** | ~30 sekunder | Smala, fokuserade frågor med tydlig avgränsning |
+| **Pro** | 1 till 2 minuter | Bredare ämnen där du vill ha en grundlig syntes |
+| **Auto** | Varierar | Låt Saga välja baserat på din fråga (standard) |
+
+Du kan välja modell när du använder Deep Web Research i ett arbetsflödessteg. I chatten används **Auto**.
+
+## Rapporten
+
+Varje körning producerar en strukturerad rapport med rubriker, länkar och numrerade hänvisningar. Du kan läsa den i Saga och ladda ner den som en fristående HTML-fil. Varje påstående spåras tillbaka till källan det kom från, så att du kan verifiera allt AI:n säger innan du använder det i ditt eget arbete.
+
+## Tid och gränser
+
+Deep Web Research körs på det öppna nätet, inte på din kunskapsbas eller juridiska databaser. Om du vill att de källorna ska ingå i svaret, aktivera dem tillsammans med Deep Web Research i chatten — AI:n väger då samman allt.
+
+En enskild körning är begränsad till trettio minuter. De flesta avslutas långt innan dess, men om du har ställt något ovanligt brett kan sessionen ta längre tid än ett vanligt chattsvar. Du kan fortsätta arbeta i andra flikar under tiden.
+
+<Note>
+Deep Web Research aktiveras av din administratör. Om den inte visas i menyn **Lägg till källor**, be din administratör att slå på den för arbetsytan.
+</Note>

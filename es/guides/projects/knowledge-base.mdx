@@ -2,7 +2,7 @@
 title: Base de conocimiento
 ---
 
-La base de conocimiento es la biblioteca de documentos dentro de un proyecto. Cada archivo que carga es procesado por Saga — el texto se extrae, se divide en pasajes y se almacena para que la IA pueda encontrar las partes más relevantes cuando haga una pregunta. Esto es lo que hace que las respuestas de Saga estén fundamentadas en sus documentos reales en lugar de en conocimiento general.
+La base de conocimiento es la biblioteca de documentos dentro de un proyecto. Cada archivo que carga es procesado por Saga — el texto se extrae, se divide en pasajes y se indexa para que la IA pueda encontrar el material adecuado bajo demanda. Cuando hace una pregunta en un chat de proyecto, la IA busca en toda la base de conocimiento y extrae los pasajes más relevantes para su pregunta, con citas que enlazan a cada fuente. No elige qué documentos consulta la IA — lo decide por pregunta, en función de lo que realmente está preguntando.
 
 ## Agregar documentos
 
@@ -22,12 +22,6 @@ El tamaño máximo de archivo es de 1 GB. Un proyecto puede contener hasta 1.000
 
 Después de la carga, cada archivo pasa por un procesamiento antes de estar disponible para la IA. Puede seguir trabajando mientras esto ocurre — los documentos se vuelven disponibles automáticamente a medida que están listos. Si un archivo no se procesa correctamente, puede reintentarlo desde su menú de acciones.
 
-## Documentos activos e inactivos
-
-Cada documento tiene un interruptor de activo/inactivo. Solo los documentos activos se usan como contexto por la IA. Los documentos inactivos permanecen en la base de conocimiento pero se excluyen del chat y la revisión en cuadrícula.
-
-Esto es útil cuando desea enfocar la atención de la IA en un subconjunto específico de archivos — por ejemplo, durante una fase de un asunto en la que solo ciertos contratos son relevantes.
-
 ## Carpetas y etiquetas
 
 Puede organizar los documentos con carpetas y etiquetas con código de color.
@@ -38,6 +32,6 @@ Las **etiquetas** funcionan a través de las carpetas. Asigne una etiqueta a un 
 
 ## Acciones de documentos
 
-Cada documento tiene un menú de acciones donde puede renombrarlo, moverlo a otra carpeta, gestionar sus etiquetas, descargarlo, reintentar el procesamiento o eliminarlo. También puede seleccionar varios documentos a la vez para descarga o eliminación masiva.
+Cada documento tiene un menú de acciones donde puede renombrarlo, moverlo a otra carpeta, gestionar sus etiquetas, descargarlo, reintentar el procesamiento o eliminarlo.
 
-Al seleccionar documentos, las casillas de verificación de las carpetas muestran un indicador de selección parcial si solo algunos archivos de la carpeta están seleccionados, lo que facilita ver exactamente qué está incluido. Al activar o desactivar un documento individual, el indicador de carga aparece solo en ese elemento, permitiéndole seguir trabajando con el resto de la lista.
+Para actuar sobre varios documentos a la vez, use las casillas de verificación junto a cada documento o carpeta. Con una selección activa, puede **descargar**, **eliminar**, **mover** o **etiquetar** todos los documentos seleccionados en un solo paso. Las casillas de verificación de las carpetas muestran un indicador de selección parcial cuando solo algunos archivos de la carpeta están seleccionados, para que pueda ver exactamente qué está incluido.

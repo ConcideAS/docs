@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research is het grondigste webonderzoeksinstrument van Saga. Je stelt een vraag, en het instrument besteedt ergens tussen de dertig seconden en een paar minuten aan het doorzoeken van het open web via vele bronnen, leest wat het vindt en schrijft een gesynthetiseerd rapport met citaties. Het is gebouwd voor vragen die je met één zoekopdracht niet echt kunt beantwoorden — marktoverzichten, regulatoire landschappen, achtergrond bij onbekende onderwerpen, alles waarvoor je anders tien tabbladen zou openen en aantekeningen zou gaan maken.
+
+## Waar je het kunt gebruiken
+
+Deep Web Research verschijnt op twee plekken, beide aangedreven door dezelfde motor.
+
+**In chat.** Open het menu **Bronnen toevoegen** in de chatwerkbalk en schakel **Deep Web Research** in. Het is een uitbreiding van [zoeken op het web](/nl/guides/chat/context-and-sources#web-search-and-urls) — wanneer je Deep Web Research aanzet, wordt webzoeken ook aangezet, en als je webzoeken uitzet, wordt Deep Web Research ook uitgeschakeld. Stuur je vraag en de AI start een onderzoeksrun en verweeft vervolgens de bevindingen in het antwoord met inline citaties.
+
+**In een workflow.** Voeg de actieknoop **Deep Web Research** toe aan een workflow en koppel deze aan een zoekopdracht — ofwel vast ingesteld in de stap, ofwel opgehaald uit de uitvoer van de vorige stap met `@`. Het rapport wordt een uitvoer die je kunt doorgeven aan latere stappen.
+
+## Onderzoeksmodellen
+
+Elke run gebruikt een van drie modellen, die diepte ruilen voor snelheid.
+
+| Model | Typische tijd | Het beste voor |
+|-------|---------------|----------------|
+| **Mini** | ~30 seconden | Smalle, gerichte vragen met een duidelijke scope |
+| **Pro** | 1 tot 2 minuten | Bredere onderwerpen waarbij je een grondige synthese wilt |
+| **Auto** | Varieert | Laat Saga kiezen op basis van je vraag (standaard) |
+
+Je kunt het model kiezen wanneer je Deep Web Research gebruikt in een workflowstap. In chat wordt **Auto** gebruikt.
+
+## Het rapport
+
+Elke run produceert een gestructureerd rapport met koppen, links en genummerde citaties. Je kunt het in Saga lezen en downloaden als een zelfstandig HTML-bestand. Elke bewering wordt teruggevoerd naar de bron waar ze vandaan komt, zodat je alles wat de AI zegt kunt verifiëren voordat je het in je eigen werk gebruikt.
+
+## Tijd en limieten
+
+Deep Web Research draait op het open web, niet op je kennisbank of juridische databases. Als je die bronnen in het antwoord wilt meenemen, schakel ze dan samen met Deep Web Research in in chat — de AI weegt alles samen af.
+
+Eén run is begrensd op dertig minuten. De meeste zijn ruim daarvoor klaar, maar als je iets ongewoon breeds hebt gevraagd kan de sessie langer duren dan een gewoon chatantwoord. Je kunt intussen in andere tabbladen doorwerken.
+
+<Note>
+Deep Web Research wordt ingeschakeld door je beheerder. Als je het niet in het menu **Bronnen toevoegen** ziet staan, vraag je beheerder dan om het voor de werkruimte in te schakelen.
+</Note>

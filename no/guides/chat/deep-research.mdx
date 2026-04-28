@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research er Sagas grundigste nettforskningsverktøy. Du stiller et spørsmål, og i løpet av alt fra tretti sekunder til et par minutter søker verktøyet på det åpne nettet på tvers av mange kilder, leser det det finner, og skriver en syntetisert rapport med referanser. Det er bygget for spørsmål som et enkelt søk ikke egentlig kan besvare alene — markedsoversikter, regulatoriske landskap, bakgrunn om ukjente temaer, alt der du ellers ville åpnet ti faner og begynt å ta notater.
+
+## Hvor du kan bruke det
+
+Deep Web Research dukker opp på to steder, begge drevet av samme motor.
+
+**I chat.** Åpne **Legg til kilder**-menyen i chattverktøylinjen og slå på **Deep Web Research**. Det er en utvidelse av [nettsøk](/no/guides/chat/context-and-sources#web-search-and-urls) — når du slår på Deep Web Research, slås nettsøk på samtidig, og hvis du slår av nettsøk, slås Deep Web Research av. Send spørsmålet ditt, og AI-en starter et forskningssøk og fletter deretter funnene inn i svaret med referanser.
+
+**I en arbeidsflyt.** Legg til handlingsnoden **Deep Web Research** i en arbeidsflyt og pek den mot en spørring — enten hardkodet i steget eller hentet fra forrige stegs resultat med `@`. Rapporten blir et resultat du kan sende videre til senere steg.
+
+## Forskningsmodeller
+
+Hvert søk bruker én av tre modeller, som bytter dybde mot hastighet.
+
+| Modell | Typisk tid | Best for |
+|--------|------------|----------|
+| **Mini** | ~30 sekunder | Smale, målrettede spørsmål med tydelig omfang |
+| **Pro** | 1 til 2 minutter | Bredere temaer der du vil ha en grundig syntese |
+| **Auto** | Varierer | La Saga velge basert på spørringen din (standard) |
+
+Du kan velge modell når du bruker Deep Web Research i et arbeidsflytsteg. I chat brukes **Auto**.
+
+## Rapporten
+
+Hvert søk produserer en strukturert rapport med overskrifter, lenker og nummererte referanser. Du kan lese den i Saga og laste den ned som en frittstående HTML-fil. Hvert utsagn spores tilbake til kilden det kom fra, slik at du kan verifisere alt AI-en sier før du bruker det i ditt eget arbeid.
+
+## Tid og begrensninger
+
+Deep Web Research kjører på det åpne nettet, ikke på kunnskapsbasen din eller juridiske databaser. Hvis du vil at de kildene skal inkluderes i svaret, aktiver dem sammen med Deep Web Research i chat — AI-en vil vekte alt sammen.
+
+Ett søk er begrenset til tretti minutter. De fleste fullfører lenge før det, men hvis du har stilt noe uvanlig bredt kan økten ta lengre tid enn et vanlig chatsvar. Du kan fortsette å jobbe i andre faner mens det kjører.
+
+<Note>
+Deep Web Research aktiveres av administratoren din. Hvis du ikke ser det i **Legg til kilder**-menyen, be administratoren din om å slå det på for arbeidsområdet.
+</Note>

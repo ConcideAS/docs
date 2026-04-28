@@ -40,6 +40,7 @@ Los pasos se dividen en dos categorías: **entradas** que recopilan información
 | **Tareas** | Ejecuta una tarea integrada como `/summarize`, `/anonymize` o `/proofread` |
 | **Razonamiento lógico** | Aplica razonamiento paso a paso para analizar o evaluar salidas anteriores |
 | **Búsqueda web** | Busca en la web y devuelve información relevante |
+| **Deep Web Research** | Ejecuta un pase exhaustivo de investigación web multi-fuente y devuelve un informe con citas (consulte [Deep web research](/es/guides/chat/deep-research)) |
 | **Intérprete de código** | Ejecuta código Python para procesamiento de datos, cálculos o análisis |
 
 ## Cómo fluyen los datos entre pasos
@@ -47,3 +48,11 @@ Los pasos se dividen en dos categorías: **entradas** que recopilan información
 Cada paso puede hacer referencia a la salida de cualquier paso anterior. Cuando configura las instrucciones de un paso, escriba `@` para mencionar un paso anterior por nombre. En tiempo de ejecución, esa mención se reemplaza con la salida real de ese paso.
 
 Por ejemplo, un paso de "Ejecutar prompt" puede usar `@` para referirse a un paso de "Carga de archivos" y analizar los documentos cargados, y un paso de "Redacción" más adelante puede usar `@` en ambos para producir un informe final. Los datos se enlazan a través del flujo de trabajo automáticamente.
+
+## Flujos de trabajo en el chat
+
+Puede ejecutar flujos de trabajo directamente desde un chat sin abrir el constructor. Pídale a la IA que se encargue de una tarea de varios pasos y revisará su biblioteca en busca de un flujo de trabajo coincidente y lo ejecutará en línea — pausando para recibir entrada de la misma manera que lo haría en el constructor y mostrando cada paso en el hilo del chat a medida que avanza.
+
+Si nada en su biblioteca encaja, la IA puede esbozar un nuevo flujo de trabajo sobre la marcha. Propone un borrador — una secuencia de pasos diseñada para lo que pidió — y lo ejecuta. Tras la ejecución, el borrador queda en su biblioteca en **Borradores**, donde puede conservarlo, editarlo en el constructor o descartarlo.
+
+Esto significa que puede pedir algo como "traduce estos contratos al inglés, resume cada uno y señala cláusulas inusuales" y dejar que Saga construya y ejecute el flujo correcto sin que usted disponga el lienzo por su cuenta.

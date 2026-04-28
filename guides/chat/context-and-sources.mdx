@@ -6,19 +6,19 @@ The AI's answers are only as good as the context it has. Saga gives you several 
 
 ## Knowledge base vs. attached files
 
-There are two ways to give the AI access to documents, and they work differently.
+There are two ways to give the AI access to documents.
 
-**Knowledge base** documents are uploaded to a project and processed in advance. Saga reads and indexes every page so the AI can search across your entire collection and pull out the most relevant passages — even from hundreds of documents. This is the right choice when you're working on a matter over time and want the AI to have deep, persistent access to a body of material.
+**Knowledge base** documents are uploaded to a project ahead of time. Saga indexes every page so the AI can search across the whole collection and pull the right passages into its answer. This is the right choice when you're working on a matter over time — the AI has persistent access to everything you've added, and you can ask hundreds of different questions without re-attaching anything.
 
-**Attached files** are added directly to a single conversation. You can upload a file from your computer or pull one in from any knowledge base available to you. The AI reads the full contents of the attachment as part of that message. This is better for quick, one-off questions — when you want to hand the AI a specific document and ask something about it without setting up a project.
+**Attached files** are added directly to a single conversation. Upload from your computer or pull one in from a knowledge base. Attachments live with that chat only and are best for quick, one-off questions about a specific file.
 
 In practice: if you'll ask multiple questions about a set of documents over days or weeks, upload them to a project's knowledge base. If you just need a fast answer about one file, attach it in chat.
 
-## Working with many files
+## How the AI finds the right passages
 
-When you attach a large number of files to a chat, Saga automatically switches to a smart retrieval mode. Instead of loading every file in full — which would exceed the AI's context window — Saga searches your documents for the passages most relevant to your question and loads those.
+Whether you're working from a knowledge base or a stack of attached files, the AI doesn't see every document at once. When you ask a question, it searches across what's available and pulls only the passages relevant to that specific question — that's how it can work across hundreds of documents without overflowing its context window.
 
-Every uploaded file is guaranteed baseline coverage, so the AI always knows what documents are available and can reference any of them. If the AI can't find the specific section you're asking about, it will ask you for a key term or section heading to help locate the right content. You don't need to re-upload or re-attach the file.
+Every document is guaranteed baseline coverage, so the AI always knows what's available and can reference anything. If it can't find the specific section you're asking about, it will ask you for a key term or section heading to help locate the right content. You don't need to re-upload or re-attach the file.
 
 <Tip>
 If the AI asks you for a key term, try providing the name of a clause, section heading, or a distinctive phrase from the document you want it to focus on.

@@ -2,7 +2,7 @@
 title: Wissensdatenbank
 ---
 
-Die Wissensdatenbank ist die Dokumentenbibliothek innerhalb eines Projekts. Jede hochgeladene Datei wird von Saga verarbeitet — der Text wird extrahiert, in Passagen unterteilt und so gespeichert, dass die KI die relevantesten Abschnitte finden kann, wenn Sie eine Frage stellen. Dadurch basieren die Antworten von Saga auf Ihren tatsächlichen Dokumenten und nicht auf allgemeinem Wissen.
+Die Wissensdatenbank ist die Dokumentenbibliothek innerhalb eines Projekts. Jede hochgeladene Datei wird von Saga verarbeitet — der Text wird extrahiert, in Passagen unterteilt und indiziert, sodass die KI bei Bedarf das passende Material finden kann. Wenn Sie in einem Projekt-Chat eine Frage stellen, durchsucht die KI die gesamte Wissensdatenbank und holt die für Ihre Frage relevantesten Passagen heraus — mit Quellenverweisen, die zu jeder Quelle zurückführen. Sie wählen nicht aus, welche Dokumente die KI ansieht — sie entscheidet das pro Frage, basierend auf dem, was Sie tatsächlich fragen.
 
 ## Dokumente hinzufügen
 
@@ -22,12 +22,6 @@ Die maximale Dateigrösse beträgt 1 GB. Ein Projekt kann bis zu 1.000 Dokumente
 
 Nach dem Hochladen durchläuft jede Datei eine Verarbeitung, bevor sie der KI zur Verfügung steht. Sie können währenddessen weiterarbeiten — Dokumente werden automatisch verfügbar, sobald sie verarbeitet sind. Wenn die Verarbeitung einer Datei fehlschlägt, können Sie sie über das Aktionsmenü erneut versuchen.
 
-## Aktive und inaktive Dokumente
-
-Jedes Dokument hat einen Aktiv-/Inaktiv-Schalter. Nur aktive Dokumente werden von der KI als Kontext verwendet. Inaktive Dokumente bleiben in der Wissensdatenbank, werden aber vom Chat und der Rasterprüfung ausgeschlossen.
-
-Dies ist nützlich, wenn Sie den Fokus der KI auf eine bestimmte Teilmenge von Dateien einschränken möchten — beispielsweise in einer Phase eines Mandats, in der nur bestimmte Verträge relevant sind.
-
 ## Ordner und Tags
 
 Sie können Dokumente mit Ordnern und farbcodierten Tags organisieren.
@@ -38,6 +32,6 @@ Sie können Dokumente mit Ordnern und farbcodierten Tags organisieren.
 
 ## Dokumentaktionen
 
-Jedes Dokument verfügt über ein Aktionsmenü, in dem Sie es umbenennen, in einen anderen Ordner verschieben, Tags verwalten, herunterladen, die Verarbeitung erneut starten oder löschen können. Sie können auch mehrere Dokumente gleichzeitig für den Massen-Download oder die Massenlöschung auswählen.
+Jedes Dokument verfügt über ein Aktionsmenü, in dem Sie es umbenennen, in einen anderen Ordner verschieben, Tags verwalten, herunterladen, die Verarbeitung erneut starten oder löschen können.
 
-Beim Auswählen von Dokumenten zeigen Ordner-Kontrollkästchen einen Teilauswahl-Indikator, wenn nur einige Dateien darin ausgewählt sind, sodass Sie genau sehen können, was enthalten ist. Das Umschalten des Aktivstatus eines einzelnen Dokuments zeigt den Ladeindikator nur bei diesem Element an, sodass Sie mit dem Rest der Liste weiterarbeiten können.
+Um mehrere Dokumente gleichzeitig zu bearbeiten, verwenden Sie die Kontrollkästchen neben jedem Dokument oder Ordner. Mit einer aktiven Auswahl können Sie alle ausgewählten Dokumente in einem Schritt **herunterladen**, **löschen**, **verschieben** oder **taggen**. Ordner-Kontrollkästchen zeigen einen Teilauswahl-Indikator an, wenn nur einige Dateien darin ausgewählt sind, damit Sie genau sehen, was enthalten ist.

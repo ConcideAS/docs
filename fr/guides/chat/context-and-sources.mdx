@@ -6,19 +6,19 @@ Les réponses de l'IA dépendent directement du contexte dont elle dispose. Saga
 
 ## Base de connaissances vs. fichiers joints
 
-Il existe deux façons de donner à l'IA l'accès à des documents, et elles fonctionnent différemment.
+Il existe deux façons de donner à l'IA accès à des documents.
 
-Les documents de la **base de connaissances** sont importés dans un projet et traités en amont. Saga lit et indexe chaque page afin que l'IA puisse effectuer des recherches dans l'ensemble de votre collection et extraire les passages les plus pertinents — même parmi des centaines de documents. C'est le bon choix lorsque vous travaillez sur un dossier dans la durée et souhaitez que l'IA ait un accès approfondi et permanent à un corpus de documents.
+Les documents de la **base de connaissances** sont importés dans un projet en amont. Saga indexe chaque page afin que l'IA puisse effectuer une recherche dans l'ensemble de la collection et faire remonter les bons passages dans sa réponse. C'est le bon choix lorsque vous travaillez sur un dossier dans la durée — l'IA bénéficie d'un accès permanent à tout ce que vous avez ajouté, et vous pouvez poser des centaines de questions différentes sans rien rejoindre.
 
-Les **fichiers joints** sont ajoutés directement à une seule conversation. Vous pouvez importer un fichier depuis votre ordinateur ou en extraire un de n'importe quelle base de connaissances à votre disposition. L'IA lit l'intégralité du contenu de la pièce jointe dans le cadre de ce message. C'est plus adapté pour des questions ponctuelles — lorsque vous souhaitez transmettre un document spécifique à l'IA et lui poser une question sans configurer un projet.
+Les **fichiers joints** sont ajoutés directement à une seule conversation. Importez-les depuis votre ordinateur ou récupérez-en un dans une base de connaissances. Les pièces jointes ne vivent que dans cette conversation et conviennent le mieux à des questions ponctuelles sur un fichier spécifique.
 
 En pratique : si vous allez poser plusieurs questions sur un ensemble de documents pendant des jours ou des semaines, importez-les dans la base de connaissances d'un projet. Si vous avez juste besoin d'une réponse rapide sur un fichier, joignez-le dans le chat.
 
-## Travailler avec de nombreux fichiers
+## Comment l'IA retrouve les bons passages
 
-Lorsque vous joignez un grand nombre de fichiers à un chat, Saga passe automatiquement en mode de récupération intelligent. Au lieu de charger chaque fichier en intégralité — ce qui dépasserait la fenêtre de contexte de l'IA — Saga recherche dans vos documents les passages les plus pertinents pour votre question et les charge.
+Que vous travailliez à partir d'une base de connaissances ou d'un ensemble de fichiers joints, l'IA ne voit pas tous les documents en même temps. Lorsque vous posez une question, elle effectue une recherche dans ce qui est disponible et ne fait remonter que les passages pertinents pour cette question — c'est ainsi qu'elle peut couvrir des centaines de documents sans dépasser sa fenêtre de contexte.
 
-Chaque fichier importé bénéficie d'une couverture de base garantie, de sorte que l'IA sait toujours quels documents sont disponibles et peut faire référence à n'importe lequel d'entre eux. Si l'IA ne trouve pas la section spécifique que vous recherchez, elle vous demandera un terme clé ou un titre de section pour localiser le bon contenu. Vous n'avez pas besoin de réimporter ou de rejoindre le fichier.
+Chaque document bénéficie d'une couverture de base garantie, de sorte que l'IA sait toujours ce qui est disponible et peut faire référence à n'importe quel élément. Si elle ne trouve pas la section spécifique que vous recherchez, elle vous demandera un terme clé ou un titre de section pour localiser le bon contenu. Vous n'avez pas besoin de réimporter ou de rejoindre le fichier.
 
 <Tip>
 Si l'IA vous demande un terme clé, essayez de fournir le nom d'une clause, un titre de section ou une expression distinctive du document sur lequel vous souhaitez qu'elle se concentre.

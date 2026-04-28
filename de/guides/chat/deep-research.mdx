@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research ist Sagas gründlichstes Werkzeug für Webrecherche. Du stellst eine Frage, und in einer Zeitspanne von dreißig Sekunden bis zu ein paar Minuten durchsucht das Werkzeug das offene Web über viele Quellen hinweg, liest, was es findet, und verfasst einen synthetisierten Bericht mit Quellenangaben. Es ist für Fragen gebaut, die eine einzelne Suchanfrage allein nicht wirklich beantworten kann — Marktüberblicke, regulatorische Rahmenbedingungen, Hintergrund zu unvertrauten Themen, alles wofür du sonst zehn Tabs öffnen und anfangen würdest, Notizen zu machen.
+
+## Wo du es einsetzen kannst
+
+Deep Web Research taucht an zwei Stellen auf, die beide von derselben Engine angetrieben werden.
+
+**Im Chat.** Öffne das Menü **Quellen hinzufügen** in der Chat-Symbolleiste und aktiviere **Deep Web Research**. Es ist eine Erweiterung der [Websuche](/de/guides/chat/context-and-sources#web-search-and-urls) — wenn du Deep Web Research einschaltest, wird auch die Websuche aktiviert, und wenn du die Websuche ausschaltest, wird Deep Web Research ebenfalls deaktiviert. Sende deine Frage, und die KI startet einen Recherchelauf und verwebt anschließend die Ergebnisse mit Quellenangaben in ihre Antwort.
+
+**In einem Workflow.** Füge den Aktionsknoten **Deep Web Research** einem Workflow hinzu und richte ihn auf eine Abfrage — entweder fest im Schritt hinterlegt oder aus dem Ergebnis des vorherigen Schritts mit `@` übernommen. Der Bericht wird zu einer Ausgabe, die du an spätere Schritte weitergeben kannst.
+
+## Recherche-Modelle
+
+Jede Ausführung nutzt eines von drei Modellen, die Tiefe gegen Geschwindigkeit eintauschen.
+
+| Modell | Typische Dauer | Am besten für |
+|--------|----------------|---------------|
+| **Mini** | ~30 Sekunden | Enge, zielgerichtete Fragen mit klarem Umfang |
+| **Pro** | 1 bis 2 Minuten | Breitere Themen, bei denen du eine gründliche Synthese willst |
+| **Auto** | Variabel | Saga wählt auf Basis deiner Anfrage (Standard) |
+
+Das Modell kannst du wählen, wenn du Deep Web Research in einem Workflow-Schritt verwendest. Im Chat wird **Auto** verwendet.
+
+## Der Bericht
+
+Jede Ausführung erzeugt einen strukturierten Bericht mit Überschriften, Links und nummerierten Quellenangaben. Du kannst ihn in Saga lesen und als eigenständige HTML-Datei herunterladen. Jede Aussage wird auf die Quelle zurückgeführt, aus der sie stammt, sodass du alles, was die KI sagt, verifizieren kannst, bevor du es in deine eigene Arbeit übernimmst.
+
+## Zeit und Grenzen
+
+Deep Web Research läuft über das offene Web, nicht über deine Wissensdatenbank oder juristische Datenbanken. Wenn diese Quellen in der Antwort enthalten sein sollen, aktiviere sie zusammen mit Deep Web Research im Chat — die KI gewichtet dann alles gemeinsam.
+
+Eine einzelne Ausführung ist auf dreißig Minuten begrenzt. Die meisten sind deutlich früher fertig, aber wenn du etwas ungewöhnlich Breites gefragt hast, kann die Sitzung länger dauern als eine normale Chat-Antwort. Währenddessen kannst du in anderen Tabs weiterarbeiten.
+
+<Note>
+Deep Web Research wird von deinem Administrator aktiviert. Wenn es im Menü **Quellen hinzufügen** nicht erscheint, bitte deinen Administrator, es für den Arbeitsbereich zu aktivieren.
+</Note>

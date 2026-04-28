@@ -6,19 +6,19 @@ Yapay zekanın yanıtları, sahip olduğu bağlam kadar iyidir. Saga, yapay zeka
 
 ## Bilgi tabanı ve ekli dosyalar
 
-Yapay zekaya belge erişimi sağlamanın iki yolu vardır ve farklı çalışırlar.
+Yapay zekaya belge erişimi sağlamanın iki yolu vardır.
 
-**Bilgi tabanı** belgeleri bir projeye yüklenir ve önceden işlenir. Saga her sayfayı okur ve dizinler, böylece yapay zeka tüm koleksiyonunuz arasında arama yapabilir ve en ilgili pasajları çıkarabilir — yüzlerce belgeden bile. Bir konu üzerinde zaman içinde çalışıyorsanız ve yapay zekanın bir materyal bütününe derin, kalıcı erişime sahip olmasını istiyorsanız bu doğru seçimdir.
+**Bilgi tabanı** belgeleri önceden bir projeye yüklenir. Saga her sayfayı dizinler, böylece yapay zeka koleksiyonun tamamında arama yapıp doğru pasajları yanıtının içine alabilir. Bir konu üzerinde zaman içinde çalışıyorsanız bu doğru seçimdir — yapay zeka eklediğiniz her şeye kalıcı olarak erişebilir ve hiçbir şeyi yeniden eklemeden yüzlerce farklı soru sorabilirsiniz.
 
-**Ekli dosyalar** doğrudan tek bir konuşmaya eklenir. Bilgisayarınızdan bir dosya yükleyebilir veya erişiminiz olan herhangi bir bilgi tabanından birini çekebilirsiniz. Yapay zeka, ekin tam içeriğini o mesajın parçası olarak okur. Bu, hızlı, tek seferlik sorular için daha iyidir — bir proje kurmadan yapay zekaya belirli bir belge verip onun hakkında bir şey sormak istediğinizde.
+**Ekli dosyalar** doğrudan tek bir konuşmaya eklenir. Bilgisayarınızdan yükleyin veya bir bilgi tabanından çekin. Ekler yalnızca o sohbet içinde yaşar ve belirli bir dosya hakkındaki hızlı, tek seferlik sorular için en uygun olanıdır.
 
 Pratikte: bir dizi belge hakkında günler veya haftalar boyunca birden fazla soru soracaksanız, bunları bir projenin bilgi tabanına yükleyin. Bir dosya hakkında hızlı bir yanıt istiyorsanız, sohbette ekleyin.
 
-## Çok sayıda dosyayla çalışma
+## Yapay zeka doğru pasajları nasıl buluyor
 
-Bir sohbete çok sayıda dosya eklediğinizde, Saga otomatik olarak akıllı bir alma moduna geçer. Her dosyayı tamamen yüklemek yerine — bu, yapay zekanın bağlam penceresini aşardı — Saga belgelerinizde sorunuzla en ilgili pasajları arar ve bunları yükler.
+İster bir bilgi tabanından, ister bir yığın ekli dosyadan çalışıyor olun, yapay zeka tüm belgeleri bir kerede görmez. Bir soru sorduğunuzda mevcut olanlar arasında arama yapar ve yalnızca o spesifik soru için ilgili pasajları çeker — yüzlerce belgede bağlam penceresini doldurmadan bu şekilde çalışabilir.
 
-Yüklenen her dosya için temel kapsam garanti edilir, böylece yapay zeka her zaman hangi belgelerin mevcut olduğunu bilir ve herhangi birine referans verebilir. Yapay zeka sorduğunuz belirli bölümü bulamazsa, doğru içeriği bulmak için sizden bir anahtar terim veya bölüm başlığı ister. Dosyayı yeniden yüklemeniz veya eklemeniz gerekmez.
+Her belge için temel kapsam garanti edilir, böylece yapay zeka her zaman nelerin mevcut olduğunu bilir ve herhangi birine referans verebilir. Sorduğunuz belirli bölümü bulamazsa, doğru içeriği bulmak için sizden bir anahtar terim veya bölüm başlığı ister. Dosyayı yeniden yüklemeniz veya eklemeniz gerekmez.
 
 <Tip>
 Yapay zeka sizden bir anahtar terim isterse, odaklanmasını istediğiniz belgeden bir madde adı, bölüm başlığı veya ayırt edici bir ifade vermeyi deneyin.

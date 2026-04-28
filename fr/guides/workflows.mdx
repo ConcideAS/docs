@@ -40,6 +40,7 @@ Les étapes se répartissent en deux catégories : les **entrées** qui collecte
 | **Tâches** | Exécute une tâche intégrée comme `/summarize`, `/anonymize` ou `/proofread` |
 | **Raisonnement logique** | Applique un raisonnement étape par étape pour analyser ou évaluer les résultats précédents |
 | **Recherche web** | Effectue une recherche sur le web et renvoie les informations pertinentes |
+| **Deep Web Research** | Lance une recherche web multi-sources approfondie et renvoie un rapport sourcé (voir [Deep web research](/fr/guides/chat/deep-research)) |
 | **Interpréteur de code** | Exécute du code Python pour le traitement de données, les calculs ou l'analyse |
 
 ## Circulation des données entre les étapes
@@ -47,3 +48,11 @@ Les étapes se répartissent en deux catégories : les **entrées** qui collecte
 Chaque étape peut faire référence au résultat de n'importe quelle étape précédente. Lorsque vous configurez les instructions d'une étape, tapez `@` pour mentionner une étape précédente par son nom. À l'exécution, cette mention est remplacée par le résultat réel de cette étape.
 
 Par exemple, une étape « Exécuter un prompt » peut utiliser `@` pour faire référence à une étape « Import de fichiers » afin d'analyser les documents importés, et une étape « Rédaction » plus en aval peut faire `@` sur les deux pour produire un rapport final. Les données s'enchaînent automatiquement dans le workflow.
+
+## Workflows dans le chat
+
+Vous pouvez exécuter des workflows directement depuis un chat sans ouvrir le constructeur. Demandez à l'IA de gérer une tâche en plusieurs étapes : elle parcourt votre bibliothèque à la recherche d'un workflow correspondant et l'exécute en ligne — en mettant en pause pour les entrées de la même manière que dans le constructeur, et en affichant chaque étape dans le fil du chat à mesure de la progression.
+
+Si rien dans votre bibliothèque ne convient, l'IA peut esquisser un nouveau workflow à la volée. Elle propose un brouillon — une séquence d'étapes conçue pour ce que vous avez demandé — et l'exécute. Après l'exécution, le brouillon arrive dans votre bibliothèque sous **Brouillons**, où vous pouvez le conserver, le modifier dans le constructeur ou l'écarter.
+
+Cela signifie que vous pouvez demander quelque chose comme « traduis ces contrats en anglais, résume chacun et signale les clauses inhabituelles » et laisser Saga construire et exécuter le bon flux sans que vous disposiez vous-même le canevas.

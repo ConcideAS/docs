@@ -2,7 +2,7 @@
 title: Base de connaissances
 ---
 
-La base de connaissances est la bibliothèque de documents d'un projet. Chaque fichier que vous importez est traité par Saga — le texte est extrait, découpé en passages et stocké de manière à ce que l'IA puisse trouver les parties les plus pertinentes lorsque vous posez une question. C'est ce qui fait que les réponses de Saga s'appuient sur vos documents réels plutôt que sur des connaissances générales.
+La base de connaissances est la bibliothèque de documents d'un projet. Chaque fichier que vous importez est traité par Saga — le texte est extrait, découpé en passages et indexé pour que l'IA puisse retrouver le bon contenu à la demande. Lorsque vous posez une question dans un chat de projet, l'IA effectue une recherche dans l'ensemble de la base de connaissances et fait remonter les passages les plus pertinents pour votre question, avec des citations qui renvoient à chaque source. Ce n'est pas vous qui choisissez les documents que l'IA consulte — elle décide à chaque question, selon ce que vous demandez réellement.
 
 ## Ajouter des documents
 
@@ -22,12 +22,6 @@ La taille maximale par fichier est de 1 Go. Un projet peut contenir jusqu'à 1 0
 
 Après l'import, chaque fichier passe par un traitement avant d'être disponible pour l'IA. Vous pouvez continuer à travailler pendant ce temps — les documents deviennent disponibles automatiquement dès qu'ils sont prêts. Si le traitement d'un fichier échoue, vous pouvez relancer l'opération depuis son menu d'actions.
 
-## Documents actifs et inactifs
-
-Chaque document dispose d'un interrupteur actif/inactif. Seuls les documents actifs sont utilisés comme contexte par l'IA. Les documents inactifs restent dans la base de connaissances mais sont exclus du chat et de la revue en grille.
-
-C'est utile lorsque vous souhaitez restreindre l'attention de l'IA à un sous-ensemble spécifique de fichiers — par exemple, lors d'une phase d'un dossier où seuls certains contrats sont pertinents.
-
 ## Dossiers et étiquettes
 
 Vous pouvez organiser les documents avec des dossiers et des étiquettes à code couleur.
@@ -38,6 +32,6 @@ Les **étiquettes** fonctionnent indépendamment des dossiers. Attribuez une ét
 
 ## Actions sur les documents
 
-Chaque document dispose d'un menu d'actions permettant de le renommer, de le déplacer vers un autre dossier, de gérer ses étiquettes, de le télécharger, de relancer le traitement ou de le supprimer. Vous pouvez également sélectionner plusieurs documents à la fois pour un téléchargement ou une suppression groupés.
+Chaque document dispose d'un menu d'actions permettant de le renommer, de le déplacer vers un autre dossier, de gérer ses étiquettes, de le télécharger, de relancer le traitement ou de le supprimer.
 
-Lors de la sélection de documents, les cases à cocher des dossiers affichent un indicateur de sélection partielle si seuls certains fichiers du dossier sont sélectionnés, ce qui permet de voir précisément ce qui est inclus. L'activation ou la désactivation d'un document individuel affiche l'indicateur de chargement uniquement sur cet élément, vous permettant de continuer à travailler avec le reste de la liste.
+Pour agir sur plusieurs documents à la fois, utilisez les cases à cocher en regard de chaque document ou dossier. Une sélection active vous permet de **télécharger**, **supprimer**, **déplacer** ou **étiqueter** tous les documents sélectionnés en une seule étape. Les cases à cocher des dossiers affichent un indicateur de sélection partielle lorsque seuls certains fichiers du dossier sont sélectionnés, ce qui permet de voir précisément ce qui est inclus.

@@ -29,7 +29,7 @@ This is how you build up context across the flow. A prompt step can analyze docu
 
 Click **Save** when your workflow is ready. You'll give it a name, an optional description, and a language. You can also tag it with practice areas to make it easier to find later. If you want to make it available to your whole organization, check **Request to make organizational** — an admin will review and approve it.
 
-A workflow must be saved before it can be run.
+A workflow must be saved before it can be run. After the first save, your edits are persisted automatically as you work — there's no separate "save changes" button.
 
 ## Running a workflow
 
@@ -48,6 +48,18 @@ Each step shows its execution time, and the final results appear in a **Final as
 ## Running from chat
 
 You can also start a workflow directly from a chat conversation. The workflow runs inline — step by step in the chat thread — so you can see the results as they come in without leaving the conversation.
+
+## Drafts
+
+Drafts are workflows the AI authors when you ask it to handle a multi-step task in chat without naming an existing workflow. After the AI runs a draft, it lands in **Workflows > Drafts** with the steps preserved.
+
+From there you can:
+
+- **Save** — add it to your personal library so you can run it again
+- **Edit** — open it in the builder to adjust steps before saving
+- **Discard** — remove it if it isn't useful
+
+Drafts are limited to ten steps and use a streamlined set of node types, so they may be simpler than workflows you'd build by hand. Treat them as a starting point — the AI gets you a working flow quickly, and you can refine or extend it from the builder.
 
 ## When something goes wrong
 

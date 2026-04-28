@@ -2,7 +2,7 @@
 title: Kunnskapsbase
 ---
 
-Kunnskapsbasen er dokumentbiblioteket inne i et prosjekt. Hver fil du laster opp blir behandlet av Saga — teksten blir hentet ut, delt opp i passasjer og lagret slik at AI-en kan finne de mest relevante delene når du stiller et spørsmål. Dette er det som gjør at Sagas svar er forankret i dine faktiske dokumenter i stedet for generell kunnskap.
+Kunnskapsbasen er dokumentbiblioteket inne i et prosjekt. Hver fil du laster opp blir behandlet av Saga — teksten blir hentet ut, delt opp i passasjer og indeksert slik at AI-en kan finne det riktige materialet ved behov. Når du stiller et spørsmål i en prosjektchat, søker AI-en gjennom hele kunnskapsbasen og trekker ut de passasjene som er mest relevante for spørsmålet ditt, med referanser som lenker tilbake til hver kilde. Du velger ikke hvilke dokumenter AI-en ser på — den bestemmer per spørsmål, basert på hva du faktisk spør om.
 
 ## Legg til dokumenter
 
@@ -22,12 +22,6 @@ Maksimal filstørrelse er 1 GB. Et prosjekt kan inneholde opptil 1 000 dokumente
 
 Etter opplasting går hver fil gjennom behandling før den er tilgjengelig for AI-en. Du kan fortsette å jobbe mens dette skjer — dokumenter blir tilgjengelige automatisk etter hvert som de er klare. Hvis en fil ikke blir behandlet, kan du prøve på nytt fra handlingsmenyen.
 
-## Aktive og inaktive dokumenter
-
-Hvert dokument har en aktiv/inaktiv-bryter. Bare aktive dokumenter brukes som kontekst av AI-en. Inaktive dokumenter forblir i kunnskapsbasen, men utelukkes fra chat og rutenettgjennomgang.
-
-Dette er nyttig når du vil begrense AI-ens fokus til et bestemt utvalg filer — for eksempel i en fase av en sak der bare visse kontrakter er relevante.
-
 ## Mapper og tagger
 
 Du kan organisere dokumenter med mapper og fargekodede tagger.
@@ -38,6 +32,6 @@ Du kan organisere dokumenter med mapper og fargekodede tagger.
 
 ## Dokumenthandlinger
 
-Hvert dokument har en handlingsmeny der du kan gi det nytt navn, flytte det til en annen mappe, administrere taggene, laste det ned, prøve behandling på nytt eller slette det. Du kan også velge flere dokumenter samtidig for bulknedlasting eller sletting.
+Hvert dokument har en handlingsmeny der du kan gi det nytt navn, flytte det til en annen mappe, administrere taggene, laste det ned, prøve behandling på nytt eller slette det.
 
-Når du velger dokumenter, viser avkrysningsbokser for mapper en delvis valgt-indikator hvis bare noen filer i mappen er valgt, slik at det er enklere å se nøyaktig hva som er inkludert. Når du aktiverer eller deaktiverer et enkelt dokument, vises lasteindikatoren bare på det aktuelle elementet, slik at du kan fortsette å jobbe med resten av listen.
+For å utføre handlinger på flere dokumenter samtidig, bruk avkrysningsboksene ved siden av hvert dokument eller hver mappe. Med et utvalg aktivt kan du **laste ned**, **slette**, **flytte** eller **tagge** alle valgte dokumenter i ett trinn. Avkrysningsbokser for mapper viser en delvis valgt-indikator når bare noen filer inni er valgt, slik at du kan se nøyaktig hva som er inkludert.

@@ -40,6 +40,7 @@ Adımlar iki kategoriye ayrılır: sizden bilgi toplayan **girdiler** ve bu bilg
 | **Görevler** | `/summarize`, `/anonymize` veya `/proofread` gibi yerleşik bir görevi çalıştırır |
 | **Mantıksal düşünme** | Önceki çıktıları analiz etmek veya değerlendirmek için adım adım akıl yürütme uygular |
 | **Web araması** | Webde arama yapar ve ilgili bilgileri döndürür |
+| **Deep Web Research** | Çok kaynaklı kapsamlı bir web araştırma turu çalıştırır ve atıflarla birlikte bir rapor döndürür ([Deep web research](/tr/guides/chat/deep-research) bölümüne bakın) |
 | **Kod yorumlayıcı** | Veri işleme, hesaplama veya analiz için Python kodu çalıştırır |
 
 ## Adımlar arasında veri akışı
@@ -47,3 +48,11 @@ Adımlar iki kategoriye ayrılır: sizden bilgi toplayan **girdiler** ve bu bilg
 Her adım, kendisinden önce gelen herhangi bir adımın çıktısına referans verebilir. Bir adımın talimatlarını yapılandırırken, önceki bir adıma adıyla atıfta bulunmak için `@` yazın. Çalışma zamanında bu atıf, o adımın gerçek çıktısıyla değiştirilir.
 
 Örneğin, bir "İstem çalıştır" adımı yüklenen belgeleri analiz etmek için bir "Dosya yükleme" adımına `@` ile referans verebilir ve aşağıdaki bir "Taslak oluşturma" adımı nihai bir rapor üretmek için her ikisine de `@` ile referans verebilir. Veri, iş akışı boyunca otomatik olarak akar.
+
+## Sohbette iş akışları
+
+Oluşturucuyu açmadan iş akışlarını doğrudan bir sohbetten çalıştırabilirsiniz. Yapay zekadan çok adımlı bir görevi üstlenmesini isteyin; kütüphanenizde eşleşen bir iş akışı arar ve satır içinde çalıştırır — oluşturucudaki gibi giriş için duraklar ve ilerledikçe her adımı sohbet akışında gösterir.
+
+Kütüphanenizde uygun bir şey yoksa, yapay zeka anında yeni bir iş akışı taslağı oluşturabilir. İstediğiniz şey için tasarlanmış bir adım dizisi olan bir taslak önerir ve çalıştırır. Çalıştırma sonrasında taslak, kütüphanenize **Taslaklar** altında düşer; orada saklayabilir, oluşturucuda düzenleyebilir veya atabilirsiniz.
+
+Bu, "bu sözleşmeleri İngilizceye çevir, her birini özetle ve olağandışı maddeleri işaretle" gibi bir şey isteyip Saga'nın doğru akışı kendiniz tuvali oluşturmadan kurup çalıştırmasına izin verebileceğiniz anlamına gelir.
