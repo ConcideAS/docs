@@ -40,6 +40,7 @@ Schritte lassen sich in zwei Kategorien einteilen: **Eingaben**, die Information
 | **Aufgaben** | Führt eine integrierte Aufgabe wie `/summarize`, `/anonymize` oder `/proofread` aus |
 | **Logisches Denken** | Wendet schrittweise Argumentation an, um frühere Ausgaben zu analysieren oder zu bewerten |
 | **Websuche** | Durchsucht das Internet und gibt relevante Informationen zurück |
+| **Deep Web Research** | Führt einen gründlichen Mehrquellen-Recherchedurchgang im Web durch und liefert einen Bericht mit Quellenverweisen (siehe [Deep web research](/de/guides/chat/deep-research)) |
 | **Code-Interpreter** | Führt Python-Code für Datenverarbeitung, Berechnungen oder Analysen aus |
 
 ## Wie Daten zwischen Schritten fliessen
@@ -47,3 +48,11 @@ Schritte lassen sich in zwei Kategorien einteilen: **Eingaben**, die Information
 Jeder Schritt kann auf die Ausgabe jedes früheren Schritts verweisen. Wenn Sie die Anweisungen eines Schritts konfigurieren, geben Sie `@` ein, um einen früheren Schritt namentlich zu erwähnen. Zur Laufzeit wird diese Erwähnung durch die tatsächliche Ausgabe dieses Schritts ersetzt.
 
 Beispielsweise kann ein Schritt „Prompt ausführen" per `@` einen Schritt „Datei-Upload" referenzieren, um die hochgeladenen Dokumente zu analysieren, und ein weiter unten liegender Schritt „Dokumentenerstellung" kann beide per `@` referenzieren, um einen Abschlussbericht zu erstellen. Die Daten fliessen automatisch durch den Workflow.
+
+## Workflows im Chat
+
+Sie können Workflows direkt aus einem Chat ausführen, ohne den Builder zu öffnen. Bitten Sie die KI, eine mehrstufige Aufgabe zu übernehmen, und sie sucht in Ihrer Bibliothek nach einem passenden Workflow und führt ihn inline aus — sie pausiert für Eingaben auf die gleiche Weise wie im Builder und zeigt jeden Schritt im Chat-Thread, während er ausgeführt wird.
+
+Wenn nichts in Ihrer Bibliothek passt, kann die KI spontan einen neuen Workflow skizzieren. Sie schlägt einen Entwurf vor — eine Schrittfolge, die auf Ihre Anfrage zugeschnitten ist — und führt ihn aus. Nach der Ausführung landet der Entwurf in Ihrer Bibliothek unter **Entwürfe**, wo Sie ihn behalten, im Builder bearbeiten oder verwerfen können.
+
+So können Sie etwas wie „übersetze diese Verträge ins Englische, fasse jeden zusammen und kennzeichne ungewöhnliche Klauseln" anfragen und Saga den richtigen Ablauf erstellen und ausführen lassen, ohne dass Sie selbst die Arbeitsfläche aufbauen.

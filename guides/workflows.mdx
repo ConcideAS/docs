@@ -40,6 +40,7 @@ Steps fall into two categories: **inputs** that collect information from you, an
 | **Tasks** | Runs a built-in task like `/summarize`, `/anonymize`, or `/proofread` |
 | **Logical thinking** | Applies step-by-step reasoning to analyze or evaluate earlier outputs |
 | **Web search** | Searches the web and returns relevant information |
+| **Deep Web Research** | Runs a thorough multi-source web research pass and returns a cited report (see [Deep web research](/guides/chat/deep-research)) |
 | **Code interpreter** | Executes Python code for data processing, calculations, or analysis |
 
 ## How data flows between steps
@@ -47,3 +48,11 @@ Steps fall into two categories: **inputs** that collect information from you, an
 Each step can reference the output of any step that came before it. When you're configuring a step's instructions, type `@` to mention a previous step by name. At runtime, that mention is replaced with the actual output from that step.
 
 For example, a "Run prompt" step can `@` a "Files upload" step to analyze the uploaded documents, and a "Drafting" step further down can `@` both to produce a final report. The data threads through the workflow automatically.
+
+## Workflows in chat
+
+You can run workflows directly from a chat without opening the builder. Ask the AI to handle a multi-step task and it looks through your library for a matching workflow and runs it inline — pausing for input the same way it would in the builder, and showing each step in the chat thread as it goes.
+
+If nothing in your library fits, the AI can sketch a new workflow on the fly. It proposes a draft — a sequence of steps designed for what you asked — and runs it. After the run, the draft lands in your library under **Drafts**, where you can keep it, edit it in the builder, or discard it.
+
+This means you can ask for something like "translate these contracts to English, summarize each, and flag any unusual clauses" and let Saga build and run the right flow without you laying out the canvas yourself.

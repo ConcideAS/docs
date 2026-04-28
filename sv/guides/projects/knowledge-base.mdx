@@ -2,7 +2,7 @@
 title: Kunskapsbas
 ---
 
-Kunskapsbasen är dokumentbiblioteket inuti ett projekt. Varje fil du laddar upp bearbetas av Saga — texten extraheras, delas upp i passager och lagras så att AI:n kan hitta de mest relevanta delarna när du ställer en fråga. Det är detta som gör Sagas svar förankrade i dina faktiska dokument snarare än allmän kunskap.
+Kunskapsbasen är dokumentbiblioteket inuti ett projekt. Varje fil du laddar upp bearbetas av Saga — texten extraheras, delas upp i passager och indexeras så att AI:n kan hitta rätt material vid behov. När du ställer en fråga i en projektchatt söker AI:n igenom hela kunskapsbasen och plockar fram de passager som är mest relevanta för din fråga, med källhänvisningar tillbaka till varje källa. Du väljer inte vilka dokument AI:n tittar på — den avgör för varje fråga, baserat på vad du faktiskt frågar om.
 
 ## Lägga till dokument
 
@@ -22,12 +22,6 @@ Maximal filstorlek är 1 GB. Ett projekt kan innehålla upp till 1 000 dokument.
 
 Efter uppladdning går varje fil genom bearbetning innan den är tillgänglig för AI:n. Du kan fortsätta arbeta medan detta sker — dokument blir tillgängliga automatiskt allt eftersom de är klara. Om en fil misslyckas med bearbetningen kan du försöka igen från dess åtgärdsmeny.
 
-## Aktiva och inaktiva dokument
-
-Varje dokument har en aktiv/inaktiv-växling. Endast aktiva dokument används som kontext av AI:n. Inaktiva dokument finns kvar i kunskapsbasen men exkluderas från chatt och tabellgranskning.
-
-Detta är användbart när du vill begränsa AI:ns fokus till en specifik delmängd av filer — till exempel under en fas av ett ärende där bara vissa avtal är relevanta.
-
 ## Mappar och taggar
 
 Du kan organisera dokument med mappar och färgkodade taggar.
@@ -38,6 +32,6 @@ Du kan organisera dokument med mappar och färgkodade taggar.
 
 ## Dokumentåtgärder
 
-Varje dokument har en åtgärdsmeny där du kan byta namn på det, flytta det till en annan mapp, hantera dess taggar, ladda ner det, försöka bearbeta igen eller ta bort det. Du kan även välja flera dokument samtidigt för massnedladdning eller massborttagning.
+Varje dokument har en åtgärdsmeny där du kan byta namn på det, flytta det till en annan mapp, hantera dess taggar, ladda ner det, försöka bearbeta igen eller ta bort det.
 
-När du väljer dokument visar mappkryssrutorna en delvis markering om bara vissa filer i mappen är valda, vilket gör det lättare att se exakt vad som ingår. När du aktiverar eller inaktiverar ett enskilt dokument visas laddningsindikatorn bara på det objektet, så du kan fortsätta arbeta med resten av listan.
+För att agera på flera dokument samtidigt, använd kryssrutorna bredvid varje dokument eller mapp. Med ett aktivt urval kan du **ladda ner**, **ta bort**, **flytta** eller **tagga** alla valda dokument i ett steg. Mappkryssrutorna visar en delvis markering när endast vissa filer i mappen är valda, så att du ser exakt vad som ingår.

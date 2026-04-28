@@ -40,6 +40,7 @@ Steg delas in i två kategorier: **inmatningar** som samlar information från di
 | **Uppgifter** | Kör en inbyggd uppgift som `/summarize`, `/anonymize` eller `/proofread` |
 | **Logiskt tänkande** | Tillämpar steg-för-steg-resonemang för att analysera eller utvärdera tidigare resultat |
 | **Webbsökning** | Söker på webben och returnerar relevant information |
+| **Deep Web Research** | Kör en grundlig flerkällig webbsökningsomgång och returnerar en rapport med källhänvisningar (se [Deep web research](/sv/guides/chat/deep-research)) |
 | **Kodtolk** | Kör Python-kod för databearbetning, beräkningar eller analys |
 
 ## Hur data flödar mellan steg
@@ -47,3 +48,11 @@ Steg delas in i två kategorier: **inmatningar** som samlar information från di
 Varje steg kan referera till resultatet av valfritt steg som kom före det. När du konfigurerar ett stegs instruktioner, skriv `@` för att nämna ett tidigare steg vid namn. Vid körning ersätts den omnämnandet med det faktiska resultatet från det steget.
 
 Till exempel kan ett "Kör prompt"-steg `@`-referera ett "Filuppladdning"-steg för att analysera de uppladdade dokumenten, och ett "Utkast"-steg längre ner kan `@`-referera båda för att producera en slutrapport. Data trådar sig genom arbetsflödet automatiskt.
+
+## Arbetsflöden i chatt
+
+Du kan köra arbetsflöden direkt från en chatt utan att öppna byggaren. Be AI:n att hantera en flerstegsuppgift, så söker den igenom ditt bibliotek efter ett matchande arbetsflöde och kör det inline — pausar för indata på samma sätt som i byggaren och visar varje steg i chatttråden allteftersom det körs.
+
+Om inget i ditt bibliotek passar kan AI:n skissa ett nytt arbetsflöde på plats. Den föreslår ett utkast — en sekvens av steg utformad för det du frågade om — och kör det. Efter körningen landar utkastet i ditt bibliotek under **Utkast**, där du kan behålla det, redigera det i byggaren eller kassera det.
+
+Det betyder att du kan be om något som "översätt dessa avtal till engelska, sammanfatta vart och ett och flagga ovanliga klausuler" och låta Saga bygga och köra rätt flöde utan att du lägger ut arbetsytan själv.

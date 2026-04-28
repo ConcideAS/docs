@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research é a ferramenta de pesquisa na web mais aprofundada do Saga. Você faz uma pergunta e, durante um intervalo que vai de trinta segundos a alguns minutos, ela percorre a web aberta em várias fontes, lê o que encontra e escreve um relatório sintetizado com citações. Foi criada para perguntas que uma única busca não consegue, de fato, responder sozinha — visões gerais de mercado, panoramas regulatórios, contexto sobre temas desconhecidos, tudo aquilo para o qual, de outra forma, você abriria dez abas e começaria a anotar.
+
+## Onde você pode usá-la
+
+Deep Web Research aparece em dois lugares, ambos movidos pelo mesmo motor.
+
+**No chat.** Abra o menu **Adicionar fontes** na barra de ferramentas do chat e ative **Deep Web Research**. É uma extensão da [pesquisa na web](/pt/guides/chat/context-and-sources#web-search-and-urls) — ao ativar Deep Web Research, a pesquisa na web também é ativada, e ao desativar a pesquisa na web, o Deep Web Research também é desligado. Envie sua pergunta e a IA inicia uma execução de pesquisa, em seguida integrando as descobertas à resposta com citações em linha.
+
+**Em um fluxo de trabalho.** Adicione o nó de ação **Deep Web Research** a um fluxo e aponte-o para uma consulta — fixada na etapa ou obtida da saída da etapa anterior com `@`. O relatório se torna uma saída que você pode passar para etapas posteriores.
+
+## Modelos de pesquisa
+
+Cada execução usa um de três modelos, que trocam profundidade por velocidade.
+
+| Modelo | Tempo típico | Melhor para |
+|--------|--------------|-------------|
+| **Mini** | ~30 segundos | Perguntas restritas e direcionadas com escopo claro |
+| **Pro** | 1 a 2 minutos | Temas mais amplos para os quais você quer uma síntese aprofundada |
+| **Auto** | Variável | Deixe o Saga escolher com base na sua consulta (padrão) |
+
+Você pode escolher o modelo quando usar Deep Web Research em uma etapa de fluxo de trabalho. No chat é usado **Auto**.
+
+## O relatório
+
+Cada execução produz um relatório estruturado com títulos, links e citações numeradas. Você pode lê-lo no Saga e baixá-lo como um arquivo HTML independente. Cada afirmação é rastreada até a fonte de onde veio, para que você possa verificar tudo o que a IA diz antes de usar no seu próprio trabalho.
+
+## Tempo e limites
+
+Deep Web Research funciona sobre a web aberta, não sobre sua base de conhecimento ou bases jurídicas. Se você quiser que essas fontes sejam incluídas na resposta, ative-as junto com Deep Web Research no chat — a IA vai pesar tudo em conjunto.
+
+Uma única execução é limitada a trinta minutos. A maioria termina bem antes disso, mas, se você fez uma pergunta incomumente ampla, a sessão pode levar mais tempo do que uma resposta de chat normal. Você pode continuar trabalhando em outras abas enquanto ela é executada.
+
+<Note>
+Deep Web Research é habilitado pelo seu administrador. Se você não o vê no menu **Adicionar fontes**, peça ao seu administrador para ativá-lo para o espaço de trabalho.
+</Note>

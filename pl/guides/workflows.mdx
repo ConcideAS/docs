@@ -40,6 +40,7 @@ Kroki dzielą się na dwie kategorie: **dane wejściowe**, które zbierają od C
 | **Zadania** | Uruchamia wbudowane zadanie, takie jak `/summarize`, `/anonymize` lub `/proofread` |
 | **Logiczne myślenie** | Stosuje rozumowanie krok po kroku do analizy lub oceny wcześniejszych wyników |
 | **Wyszukiwanie internetowe** | Przeszukuje internet i zwraca istotne informacje |
+| **Deep Web Research** | Przeprowadza dogłębną wieloźródłową analizę internetu i zwraca raport z cytowaniami (zob. [Deep web research](/pl/guides/chat/deep-research)) |
 | **Interpreter kodu** | Wykonuje kod Python do przetwarzania danych, obliczeń lub analiz |
 
 ## Jak dane przepływają między krokami
@@ -47,3 +48,11 @@ Kroki dzielą się na dwie kategorie: **dane wejściowe**, które zbierają od C
 Każdy krok może odwoływać się do wyniku dowolnego wcześniejszego kroku. Konfigurując instrukcje kroku, wpisz `@`, aby wspomnieć poprzedni krok po nazwie. W czasie wykonania ta wzmianka jest zastępowana rzeczywistym wynikiem tego kroku.
 
 Na przykład krok „Uruchom prompt" może użyć `@` do kroku „Przesyłanie plików", aby przeanalizować przesłane dokumenty, a krok „Redagowanie" dalej w przepływie może użyć `@` do obu, aby stworzyć końcowy raport. Dane przepływają przez przepływ pracy automatycznie.
+
+## Przepływy pracy w czacie
+
+Możesz uruchamiać przepływy pracy bezpośrednio z czatu bez otwierania konstruktora. Poproś AI o obsłużenie wieloetapowego zadania, a przejrzy Twoją bibliotekę w poszukiwaniu pasującego przepływu pracy i uruchomi go inline — zatrzymując się po dane wejściowe tak samo jak w konstruktorze, pokazując każdy krok w wątku czatu w miarę postępu.
+
+Jeśli nic w Twojej bibliotece nie pasuje, AI może na bieżąco naszkicować nowy przepływ pracy. Proponuje wersję roboczą — sekwencję kroków zaprojektowaną do tego, o co poprosiłeś — i ją uruchamia. Po wykonaniu wersja robocza trafia do Twojej biblioteki w zakładce **Wersje robocze**, gdzie możesz ją zachować, edytować w konstruktorze lub odrzucić.
+
+Oznacza to, że możesz poprosić o coś takiego jak „przetłumacz te umowy na angielski, podsumuj każdą z nich i oznacz nietypowe klauzule" i pozwolić Sadze zbudować oraz uruchomić odpowiedni przepływ bez samodzielnego rozkładania płótna.

@@ -56,6 +56,7 @@
                 "pages": [
                   "guides/chat",
                   "guides/chat/context-and-sources",
+                  "guides/chat/deep-research",
                   "guides/chat/prompt-library"
                 ]
               },
@@ -153,6 +154,7 @@
                 "pages": [
                   "no/guides/chat",
                   "no/guides/chat/context-and-sources",
+                  "no/guides/chat/deep-research",
                   "no/guides/chat/prompt-library"
                 ]
               },
@@ -246,6 +248,7 @@
                 "pages": [
                   "nl/guides/chat",
                   "nl/guides/chat/context-and-sources",
+                  "nl/guides/chat/deep-research",
                   "nl/guides/chat/prompt-library"
                 ]
               },
@@ -339,6 +342,7 @@
                 "pages": [
                   "pl/guides/chat",
                   "pl/guides/chat/context-and-sources",
+                  "pl/guides/chat/deep-research",
                   "pl/guides/chat/prompt-library"
                 ]
               },
@@ -432,6 +436,7 @@
                 "pages": [
                   "es/guides/chat",
                   "es/guides/chat/context-and-sources",
+                  "es/guides/chat/deep-research",
                   "es/guides/chat/prompt-library"
                 ]
               },
@@ -525,6 +530,7 @@
                 "pages": [
                   "de/guides/chat",
                   "de/guides/chat/context-and-sources",
+                  "de/guides/chat/deep-research",
                   "de/guides/chat/prompt-library"
                 ]
               },
@@ -618,6 +624,7 @@
                 "pages": [
                   "it/guides/chat",
                   "it/guides/chat/context-and-sources",
+                  "it/guides/chat/deep-research",
                   "it/guides/chat/prompt-library"
                 ]
               },
@@ -711,6 +718,7 @@
                 "pages": [
                   "pt/guides/chat",
                   "pt/guides/chat/context-and-sources",
+                  "pt/guides/chat/deep-research",
                   "pt/guides/chat/prompt-library"
                 ]
               },
@@ -804,6 +812,7 @@
                 "pages": [
                   "tr/guides/chat",
                   "tr/guides/chat/context-and-sources",
+                  "tr/guides/chat/deep-research",
                   "tr/guides/chat/prompt-library"
                 ]
               },
@@ -897,6 +906,7 @@
                 "pages": [
                   "fr/guides/chat",
                   "fr/guides/chat/context-and-sources",
+                  "fr/guides/chat/deep-research",
                   "fr/guides/chat/prompt-library"
                 ]
               },
@@ -990,6 +1000,7 @@
                 "pages": [
                   "sv/guides/chat",
                   "sv/guides/chat/context-and-sources",
+                  "sv/guides/chat/deep-research",
                   "sv/guides/chat/prompt-library"
                 ]
               },

@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research, Saga'nın en kapsamlı web araştırma aracıdır. Bir soru sorarsınız ve araç otuz saniye ile birkaç dakika arasında değişen bir sürede açık web'i pek çok kaynak üzerinden tarar, bulduklarını okur ve atıflarla birlikte sentezlenmiş bir rapor yazar. Tek bir arama sorgusuyla gerçekten cevaplanamayacak sorular için tasarlanmıştır — pazar özetleri, düzenleyici ortamlar, yabancı olduğunuz konularda arka plan, aksi halde on sekme açıp not almaya başlayacağınız her şey.
+
+## Nerede kullanabilirsiniz
+
+Deep Web Research iki yerde karşınıza çıkar; ikisi de aynı motor tarafından çalıştırılır.
+
+**Sohbette.** Sohbet araç çubuğundaki **Kaynak ekle** menüsünü açın ve **Deep Web Research**'ü açın. Bu, [web araması](/tr/guides/chat/context-and-sources#web-search-and-urls)'nın bir uzantısıdır — Deep Web Research'ü açtığınızda web araması da açılır, web aramasını kapattığınızda ise Deep Web Research de kapanır. Sorunuzu gönderdiğinizde yapay zekâ bir araştırma koşusu başlatır ve ardından bulguları cevabına satır içi atıflarla işler.
+
+**Bir iş akışında.** İş akışına **Deep Web Research** eylem düğümünü ekleyin ve onu bir sorguya yönlendirin — sorguyu adıma sabit olarak girebilir ya da önceki adımın çıktısını `@` ile alabilirsiniz. Rapor, sonraki adımlara aktarabileceğiniz bir çıktıya dönüşür.
+
+## Araştırma modelleri
+
+Her koşu, derinliği hızla takas eden üç modelden birini kullanır.
+
+| Model | Tipik süre | En iyi hangi durumlar için |
+|-------|-----------|----------------------------|
+| **Mini** | ~30 saniye | Kapsamı belirgin, dar ve hedeflenmiş sorular |
+| **Pro** | 1 ila 2 dakika | Kapsamlı bir sentez istediğiniz geniş konular |
+| **Auto** | Değişken | Saga sorgunuza göre seçer (varsayılan) |
+
+Deep Web Research'ü bir iş akışı adımında kullandığınızda modeli seçebilirsiniz. Sohbette **Auto** kullanılır.
+
+## Rapor
+
+Her koşu; başlıkları, bağlantıları ve numaralandırılmış atıfları olan yapılandırılmış bir rapor üretir. Raporu Saga içinde okuyabilir ve müstakil bir HTML dosyası olarak indirebilirsiniz. Her iddia, geldiği kaynağa kadar izlenebilir; böylece yapay zekânın söylediği her şeyi kendi çalışmanızda kullanmadan önce doğrulayabilirsiniz.
+
+## Süre ve sınırlar
+
+Deep Web Research açık web üzerinde çalışır; bilgi tabanınız veya hukuki veritabanları üzerinde çalışmaz. Bu kaynakların cevaba dahil edilmesini istiyorsanız, onları sohbette Deep Web Research'ün yanında etkinleştirin — yapay zekâ her şeyi birlikte değerlendirir.
+
+Tek bir koşu otuz dakika ile sınırlıdır. Çoğu bundan çok önce tamamlanır, ancak alışılmadık biçimde geniş bir şey sorduysanız oturum normal bir sohbet cevabından daha uzun sürebilir. O sırada başka sekmelerde çalışmaya devam edebilirsiniz.
+
+<Note>
+Deep Web Research, yöneticiniz tarafından etkinleştirilir. **Kaynak ekle** menüsünde görmüyorsanız, çalışma alanı için etkinleştirmesini yöneticinizden isteyin.
+</Note>

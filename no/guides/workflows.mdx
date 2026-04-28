@@ -40,6 +40,7 @@ Steg faller i to kategorier: **inndata** som samler informasjon fra deg, og **ha
 | **Oppgaver** | Kjører en innebygd oppgave som `/summarize`, `/anonymize` eller `/proofread` |
 | **Logisk tenkning** | Bruker steg-for-steg-resonnering for å analysere eller evaluere tidligere resultater |
 | **Nettsøk** | Søker på nettet og returnerer relevant informasjon |
+| **Deep Web Research** | Kjører en grundig flerkilders nettsøkomgang og returnerer en rapport med referanser (se [Deep web research](/no/guides/chat/deep-research)) |
 | **Kodetolker** | Kjører Python-kode for databehandling, beregninger eller analyse |
 
 ## Hvordan data flyter mellom steg
@@ -47,3 +48,11 @@ Steg faller i to kategorier: **inndata** som samler informasjon fra deg, og **ha
 Hvert steg kan referere til resultatet fra et hvilket som helst steg som kom før det. Når du konfigurerer et stegs instruksjoner, skriv `@` for å nevne et tidligere steg ved navn. Ved kjøring erstattes den nevnelsen med det faktiske resultatet fra det steget.
 
 For eksempel kan et «Kjør instruksjon»-steg `@`-referere et «Filopplasting»-steg for å analysere de opplastede dokumentene, og et «Utkast»-steg lenger ned kan `@`-referere begge for å produsere en sluttrapport. Dataen trådes gjennom arbeidsflyten automatisk.
+
+## Arbeidsflyter i chat
+
+Du kan kjøre arbeidsflyter direkte fra en chat uten å åpne byggeren. Be AI-en om å håndtere en flerstegsoppgave, og den ser gjennom biblioteket ditt etter en passende arbeidsflyt og kjører den innebygd — pauser for inndata på samme måte som den ville gjort i byggeren, og viser hvert steg i chattråden mens den går.
+
+Hvis ingenting i biblioteket ditt passer, kan AI-en skissere en ny arbeidsflyt i farten. Den foreslår et utkast — en sekvens av steg utformet for det du spurte om — og kjører det. Etter kjøringen havner utkastet i biblioteket ditt under **Utkast**, der du kan beholde det, redigere det i byggeren eller forkaste det.
+
+Dette betyr at du kan be om noe som «oversett disse kontraktene til engelsk, oppsummer hver av dem og marker uvanlige klausuler» og la Saga bygge og kjøre den riktige flyten uten at du legger ut lerretet selv.

@@ -1,0 +1,39 @@
+---
+title: Deep web research
+---
+
+Deep Web Research is Saga's most thorough web research tool. You give it a question, and it spends anywhere from thirty seconds to a couple of minutes searching the open web across many sources, reading what it finds, and writing a synthesized report with citations. It's built for questions that a single search query can't really answer on their own — market overviews, regulatory landscapes, background on unfamiliar topics, anything where you'd otherwise open ten tabs and start taking notes.
+
+## Where you can use it
+
+Deep Web Research shows up in two places, both driven by the same engine.
+
+**In chat.** Open the **Add sources** menu in the chat toolbar and turn on **Deep Web Research**. It's an extension of [web search](/guides/chat/context-and-sources#web-search-and-urls) — turning Deep Web Research on also turns web search on, and turning web search off switches Deep Web Research off. Send your question and the AI kicks off a research run, then weaves the findings into its response with inline citations.
+
+**In a workflow.** Add the **Deep Web Research** action node to a workflow and point it at a query — either hardcoded in the step or pulled from the previous step's output using `@`. The report becomes an output you can pass to later steps.
+
+## Research models
+
+Every run uses one of three models, which trade depth for speed.
+
+| Model | Typical time | Best for |
+|-------|--------------|----------|
+| **Mini** | ~30 seconds | Narrow, targeted questions with a clear scope |
+| **Pro** | 1 to 2 minutes | Broader topics where you want a thorough synthesis |
+| **Auto** | Varies | Let Saga pick based on your query (default) |
+
+You can choose the model when you use Deep Web Research in a workflow step. In chat, **Auto** is used.
+
+## The report
+
+Every run produces a structured report with headings, links, and numbered citations. You can read it in Saga and download it as a standalone HTML file. Every claim is traced back to the source it came from, so you can verify anything the AI says before using it in your own work.
+
+## Time and limits
+
+Deep Web Research runs on the open web, not on your knowledge base or legal databases. If you want those sources included in the answer, enable them alongside Deep Web Research in chat — the AI will weigh everything together.
+
+A single run is capped at thirty minutes. Most finish well before that, but if you've asked something unusually broad the session may take longer than a normal chat response. You can keep working in other tabs while it runs.
+
+<Note>
+Deep Web Research is enabled by your administrator. If you don't see it in the **Add sources** menu, ask your admin to turn it on for the workspace.
+</Note>

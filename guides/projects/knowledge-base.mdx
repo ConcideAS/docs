@@ -2,7 +2,7 @@
 title: Knowledge base
 ---
 
-The knowledge base is the document library inside a project. Every file you upload is processed by Saga — the text is extracted, broken into passages, and stored so the AI can find the most relevant parts when you ask a question. This is what makes Saga's answers grounded in your actual documents rather than general knowledge.
+The knowledge base is the document library inside a project. Every file you upload is processed by Saga — the text is extracted, broken into passages, and indexed so the AI can find the right material on demand. When you ask a question in a project chat, the AI searches across the entire knowledge base and pulls the passages most relevant to your question into the answer, with citations linking back to each source. You don't choose which documents the AI looks at — it decides per question, based on what you're actually asking.
 
 ## Add documents
 
@@ -22,12 +22,6 @@ The maximum file size is 1 GB. A project can hold up to 1,000 documents.
 
 After upload, each file goes through processing before it's available to the AI. You can keep working while this happens — documents become available automatically as they're ready. If a file fails to process, you can retry it from its action menu.
 
-## Active and inactive documents
-
-Every document has an active/inactive toggle. Only active documents are used as context by the AI. Inactive documents stay in the knowledge base but are excluded from chat and grid review.
-
-This is useful when you want to narrow the AI's focus to a specific subset of files — for example, during a phase of a matter where only certain contracts are relevant.
-
 ## Folders and tags
 
 You can organize documents with folders and color-coded tags.
@@ -38,6 +32,6 @@ You can organize documents with folders and color-coded tags.
 
 ## Document actions
 
-Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it. You can also select multiple documents at once for bulk download or deletion.
+Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it.
 
-When selecting documents, folder checkboxes show a partial-selection indicator if only some files inside are selected, making it easier to see exactly what's included. Toggling a single document's active state shows a loading indicator only on that item, so you can continue working with the rest of the list.
+To act on several documents at once, use the checkboxes next to each document or folder. With a selection active, you can **download**, **delete**, **move**, or **tag** all selected documents in one step. Folder checkboxes show a partial-selection indicator when only some files inside are selected, so you can see exactly what's included.
