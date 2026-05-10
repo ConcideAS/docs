@@ -22,6 +22,8 @@ The maximum file size is 1 GB. A project can hold up to 1,000 documents.
 
 After upload, each file goes through processing before it's available to the AI. You can keep working while this happens — documents become available automatically as they're ready. If a file fails to process, you can retry it from its action menu.
 
+While a document is processing, its checkbox and bulk actions are temporarily disabled — actions on already-processed documents remain available. If the document counter ever seems stuck at a higher number than your file list (for example you've deleted files but uploads are still blocked), refresh the page; the counter recalculates from the server on reload. If it's still wrong after refresh, contact support.
+
 ## Folders and tags
 
 You can organize documents with folders and color-coded tags.
@@ -35,3 +37,9 @@ You can organize documents with folders and color-coded tags.
 Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it.
 
 To act on several documents at once, use the checkboxes next to each document or folder. With a selection active, you can **download**, **delete**, **move**, or **tag** all selected documents in one step. Folder checkboxes show a partial-selection indicator when only some files inside are selected, so you can see exactly what's included.
+
+## Duplicate filenames
+
+You can upload several documents with the same filename to a knowledge base — Saga assigns each its own internal identifier. When the knowledge base detects identical files, it automatically applies a **Duplicate** tag so you can spot them via the tag filter.
+
+That said, when the AI fetches documents by name (either from a chat's attachments or from a project knowledge base), identical names are ambiguous: the AI surfaces a follow-up listing each match and asks which one you meant. To avoid that round-trip, give files distinctive names — even adding `(v2)` or a date is enough.
