@@ -2,14 +2,73 @@
 title: FAQ and troubleshooting
 ---
 
-## Documents
+## Documents and the knowledge base
 
 <AccordionGroup>
 
 <Accordion title="My document failed to upload or process">
 Check the file format and size. Saga supports PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG, and common image formats. The maximum file size is 1 GB — and PDFs or images that need text extraction (OCR) are limited to 500 MB.
 
-If the file format and size are fine, click **Retry** on the failed document in the knowledge base. If it still doesn't work, try re-uploading the file. Corrupted files or heavily scanned documents with poor image quality can sometimes cause processing to fail.
+If the file format and size are fine, click **Retry** on the failed document in the knowledge base. If it still doesn't work, try re-uploading the file. Corrupted files, password-protected PDFs, or heavily scanned documents with poor image quality can sometimes cause processing to fail.
+
+For a `.pptx` file that yields little or no text after processing, Saga falls back to converting it through LibreOffice and running OCR on the resulting PDF, so image-heavy decks should still produce searchable text. If it still fails, the file is most often either oversized for the conversion pipeline or corrupted — re-saving with **File > Save As** in modern PowerPoint usually resolves it.
+</Accordion>
+
+<Accordion title='The AI says "Failed to find documents" or "cannot locate files"'>
+Despite how it reads, this message doesn't mean your documents are missing. It's surfaced when Saga's search call to the vector store fails — usually a transient infrastructure blip.
+
+What to do:
+- **Resend the same prompt.** Most of these clear on retry.
+- **If it persists for more than a minute or two**, the underlying service is having a moment. Wait briefly and retry, or refresh the page.
+- **Don't re-upload your documents** — they're still there. The error is on the search path, not the storage path.
+
+If you see this consistently for several minutes across multiple chats, contact support — that's an indicator of a wider issue we'd want to know about.
+</Accordion>
+
+<Accordion title="I added documents to a project but the AI says it can't find them in chat">
+A few specific causes — work through them in order:
+
+1. **The documents are still processing.** Only documents that finished processing successfully are exposed to the AI. Check the knowledge base panel: any file with a spinner or "Processing" label is invisible to the chat until it finishes. Wait or click **Retry** if a file is stuck.
+2. **A file failed processing.** Failed files show a warning icon — they aren't searchable. Retry from the file's action menu, or re-upload.
+3. **The knowledge base scope is narrowed.** The chat-side knowledge base selector can be set to a subset of documents — if it is, the AI is restricted to only those. Open the knowledge base view inside the chat and confirm that the documents you expect are selected (or use "Select all" to remove the narrowing).
+4. **You're in a global chat, not the project chat.** Documents live inside the project's knowledge base and aren't visible to chats started outside the project. Open the project and start a chat from there.
+
+If all four check out and the AI still can't find the documents, ask a specific question that references a distinctive phrase from one of the files — vague questions can cause the AI to skip the document fetch entirely.
+</Accordion>
+
+<Accordion title="My knowledge base is 'locked' while documents are processing">
+While a document is being processed, the checkboxes and bulk actions in the knowledge base are temporarily disabled for that document. Individual actions on already-processed documents stay available, and you can keep working in chat — processed documents become searchable to the AI as soon as each one is ready.
+
+Processing time depends on file size and whether the document needs OCR. A typical 20-page PDF takes under a minute; large scanned PDFs can take several minutes. If a document has been stuck in processing for more than 15 minutes, click **Retry** from its action menu.
+</Accordion>
+
+<Accordion title="The document counter says I've hit the project limit, but I haven't">
+Projects have a per-workspace document cap (configured by your admin). If you've deleted documents to make room and the counter still shows the old number, refresh the page (Ctrl+R / Cmd+R) — the count is fetched from the server on load.
+
+If the count is still wrong after a refresh — for example, the counter says you're at the limit but the file list shows far fewer documents — contact support with the project name. We can reconcile the count on the backend. In the meantime, you can move documents to a new project to keep working.
+</Accordion>
+
+<Accordion title="Two documents with the same name don't work properly">
+When the AI fetches a document by name and finds more than one match — whether in a chat's attachments or in a project's knowledge base — it surfaces an ambiguity prompt asking which one you meant. Most of the time it will ask you to clarify; occasionally a model may pick the wrong file or skip the step.
+
+If you're seeing this frequently, rename one of the files so each has a distinctive name — even adding `(v2)` or a date to the filename is enough. For files already uploaded, rename them inline from the document's action menu in the knowledge base, or detach and re-attach with a new name in chat.
+
+The knowledge base will also auto-tag duplicates with a **Duplicate** tag when it detects identical files, which is a useful way to spot them in bulk.
+</Accordion>
+
+<Accordion title="Documents in the knowledge base aren't showing up in AI answers">
+A few things to check:
+
+- **Confirm the document finished processing.** A spinner or "Processing" label next to the file means it's not yet searchable. Wait or click **Retry** if it's been stuck.
+- **Ask a specific question.** The AI retrieves only the passages relevant to your question. If your question is broad ("what do these documents say?"), the AI may sample rather than read everything. Ask about a specific clause, party, or topic for the best results.
+- **Reference the document by name.** Typing the filename or a distinctive phrase from it nudges the AI to fetch that document specifically.
+- **Check that you're in the right project chat.** A global chat doesn't have access to project documents. Open the project, then start a chat inside it.
+</Accordion>
+
+<Accordion title="I want to move or de-duplicate many documents at once">
+Use the checkboxes next to each document or folder in the knowledge base. With a selection active, the toolbar offers **Download**, **Delete**, **Move**, and **Tag** as bulk actions. You can multi-select across folders.
+
+Saga doesn't yet automatically flag duplicate files within a project. If you suspect duplicates from multiple uploads, sort the file list by name to surface them, then bulk-delete the ones you don't need.
 </Accordion>
 
 </AccordionGroup>
@@ -18,10 +77,15 @@ If the file format and size are fine, click **Retry** on the failed document in 
 
 <AccordionGroup>
 
-<Accordion title="The AI says the chat context is almost full">
-Each AI model has a limit on how much text it can consider at once. When a conversation gets long — many messages, large attachments, or both — you'll see a warning that the context is almost full.
+<Accordion title="My chat history disappeared">
+Chats are persisted per user account. If a chat appears to have vanished:
 
-Start a new conversation to reset the context. If you're working with a large set of documents, consider uploading them to a project's [knowledge base](/guides/projects/knowledge-base) instead of attaching them in chat — the knowledge base indexes your files so the AI can search across them without needing to hold everything in context at once.
+- **Check the right workspace.** If your firm has multiple Saga workspaces (for example a `firm.sagalegal.io` and a `firm-dev.sagalegal.io`), chats are scoped to the workspace they were started in.
+- **Check the right project.** Project chats live inside the project, not in the global chat list. Open the project to see them.
+- **Check whether you're signed in as the same user.** Some firms have personal and shared accounts — chats only show up for the account that created them.
+- **Search by title.** The chat list shows favorites first, then recent activity. An older chat may have scrolled out of view; use the search field at the top of the chat list to find it by title.
+
+If the chat is genuinely missing after those checks, contact support with the approximate date of the conversation and any phrase you remember from it. We retain conversation data on the backend and can investigate.
 </Accordion>
 
 <Accordion title="The AI gave an incorrect or incomplete answer">
@@ -30,11 +94,253 @@ The quality of the AI's response depends on the context it has and the model you
 - **Switch to a more capable model** — a model with higher intelligence may handle your question better. See [Models](/guides/assistants/models) for guidance.
 - **Narrow the context** — if the knowledge base has many documents, toggle inactive the ones that aren't relevant to focus the AI's attention.
 - **Rephrase your question** — more specific questions tend to produce better results. Use **Improve prompt** to let the AI refine your phrasing before sending.
-- **Check citations** — always verify the AI's claims against the cited sources.
+- **Check citations** — always verify the AI's claims against the cited sources. If a citation doesn't support what the AI said, click **Dislike** on the message and add a brief note. Feedback goes directly to the team and helps us tune model behavior.
+
+The AI can occasionally misstate a statute number, paraphrase a provision incorrectly, or attribute a quote to the wrong source. Cited passages are the source of truth — treat the AI's prose as a draft.
+</Accordion>
+
+<Accordion title="The AI cited a case or statute that doesn't exist (or got the facts wrong)">
+This is a hallucination — the model invented a plausible-looking citation that doesn't correspond to a real source. It happens more often when:
+
+- **The relevant legal source isn't enabled in your workspace.** If you're asking about Norwegian case law without Lovdata or Rettsdata switched on, the model has no authoritative source to draw from and may improvise. Check that the source you'd expect to back the answer is listed in the legal-research dropdown and toggled on for the message.
+- **The model is working without an enabled research source.** Even with sources enabled, the model has to *choose* to use them — turning the relevant source on doesn't force a search. For high-stakes citations, enable legal research and ask the question explicitly ("Search Rettsdata for case law on...").
+- **The question is at the edge of the model's knowledge.** Older or more obscure jurisprudence is more likely to be confabulated than well-known principles.
+
+Practical mitigation:
+- **Always click through a citation chip before relying on it.** If the chip points to "—" or an obviously wrong document, the cite is suspect.
+- **Verify case IDs (ECLI, LB-, HR-, etc.) in the source database directly** before quoting them externally.
+- **Use Saga's legal-research databases** rather than free-text answers when you need a binding citation. The legal-research step produces results that link to the actual source records.
+- **Report it.** Click **Dislike** on the response with a brief note. We use these reports to tune model behaviour and to surface coverage gaps.
+
+The AI is a research accelerant, not an authority. Every cite goes through the lawyer.
+</Accordion>
+
+<Accordion title="Voice input transcribes the wrong language (or returns gibberish)">
+Voice transcription is powered by Deepgram. The language it listens for is determined by your Saga interface language — **not** by what you actually speak. If your UI is set to English but you dictate in Polish, Deepgram tries to fit Polish phonemes into English words and the transcript comes out garbled.
+
+To fix it, change your UI language to match the language you want to dictate in: **Settings > Personalization > Default language**, then refresh the page.
+
+Supported transcription languages: English, Norwegian, Dutch, Danish, Polish, Spanish, German, Italian, Portuguese, Turkish, French, and Swedish — the same set as Saga's UI locales. If your UI is set to a language outside this list, transcription falls back to English.
+</Accordion>
+
+<Accordion title="Voice input doesn't open the recorder at all">
+- **Check microphone permissions** in your browser. Click the lock icon in the address bar and make sure microphone access is allowed for `*.sagalegal.io`.
+- **Use Chrome or Edge** for best compatibility. Some browsers don't expose the `MediaRecorder` API the recorder relies on.
+- **Check that your operating system grants the browser microphone access** — on macOS, that's **System Settings > Privacy & Security > Microphone**.
+
+If the recorder opens but never captures audio, your mic may be muted at the OS level or another application is holding it open. Close other meeting apps (Zoom, Teams) and try again.
+</Accordion>
+
+<Accordion title="What happens when a chat gets very long?">
+In the current version of Saga (as of April 2026), there is no fixed "context full" cutoff. The AI fetches document content on demand through tool calls rather than holding everything in its prompt, so long conversations no longer hit a hard percentage threshold.
+
+That said, very long chats can still feel slower because the AI has more history to read. If you're starting a new line of analysis or moving to a different document set, start a fresh chat — it's faster and keeps the focus tight. For ongoing work over days or weeks, upload your documents to a project's [knowledge base](/guides/projects/knowledge-base) instead of re-attaching them in each new chat.
+</Accordion>
+
+<Accordion title="A citation isn't clickable, or doesn't navigate to the right page">
+Citations appear as small numbered chips next to AI claims. Clicking a chip opens the source document in the side panel, scrolled to the cited passage.
+
+If a citation isn't taking you to the right page:
+
+- **The document may be image-only.** Scanned PDFs without an OCR text layer can be cited, but the side panel can't jump to a specific page coordinate inside an image. The citation still tells you which document the AI used — open the file and search for the quoted passage.
+- **The document may have failed processing.** Look for a warning icon next to the file in the knowledge base. Retry processing and the citation will resolve correctly afterward.
+- **The chat is older than the document's last reprocessing.** If you re-uploaded the document, older citations point at the previous version. Ask the question again to get fresh citations.
+
+If clicks do nothing on any citation regardless of document, refresh the page — this clears stale state. If the issue persists across refreshes, contact support.
+</Accordion>
+
+<Accordion title="I want to delete one message in a chat, not the whole conversation">
+Hover over any message and click **Delete** in the action menu. The message and any responses to it are removed from the conversation. The rest of the chat is preserved.
+
+If you don't see a **Delete** option, your role may not permit message edits in a shared project chat — ask the project owner or your admin.
+</Accordion>
+
+</AccordionGroup>
+
+## Workflows
+
+<AccordionGroup>
+
+<Accordion title="The workflow card doesn't appear, or isn't clickable, when I run a workflow from chat">
+When you run a workflow from chat, an inline card appears with a **Start running** button. If the card doesn't appear or doesn't respond to clicks:
+
+- **Refresh the page.** The card depends on the live chat connection, which can drop after a long idle period.
+- **Try Chrome or Edge** in their latest versions if you're on a less-tested browser.
+
+If the card is still missing, you can always run the workflow from the **Workflows** page directly. Find it in your library, click **Run**, and it executes in the dedicated workflow view — the result is the same.
+
+We're aware of intermittent issues with the inline card on some browsers — if you can consistently reproduce a case where the card never appears, send the chat session ID and your browser/version to support.
+</Accordion>
+
+<Accordion title="A workflow draft or template won't open from the Workflow library (blank screen, 401 in console)">
+This usually means your sign-in session has expired in the background while the page was open. The library list still renders from cache, but opening a workflow tries to fetch fresh data and fails authentication.
+
+The fix is straightforward:
+
+1. Sign out of Saga (click your avatar in the sidebar > **Sign out**).
+2. Close the browser tab.
+3. Open a fresh tab, sign in again, and go back to the Workflow library.
+
+If the issue keeps happening, check whether your browser is set to clear cookies on close, or whether an extension (ad blocker, privacy guard) is blocking third-party cookies for `sagalegal.io`. The Workflow library needs a persistent session cookie.
+
+Incognito mode is a useful diagnostic: if workflows open fine in incognito, the issue is in your normal profile (an extension or a cookie setting). If they don't open in incognito either, contact support with a screenshot of the browser DevTools console.
+</Accordion>
+
+<Accordion title="I get 'Invalid assistant selection' or 'Selected model is not enabled' when running a workflow">
+Both errors come from a workflow step pointing at an assistant or model that isn't usable right now:
+
+- **'Invalid assistant selection'** — the custom assistant the step references no longer exists. It was deleted or its ID changed.
+- **'Selected model is not enabled'** — the model exists but has been disabled for your workspace, usually by an admin.
+
+Open the workflow in the builder, click the step with the warning icon, and pick a currently available assistant from the dropdown. Save and re-run.
+
+If you own the workflow but didn't change anything yourself, an admin may have updated the workspace's enabled models — ask them which assistants are currently available, or fall back to a generic model.
+</Accordion>
+
+<Accordion title="A workflow generated an Excel or other file, but the download link doesn't work">
+If the AI references a file with a path like `sandbox:/mnt/data/filename.xlsx`, that's a code-interpreter file that lives in a temporary execution sandbox. The link itself isn't browser-clickable.
+
+To get the file:
+
+- **Look below the AI's message** for a file chip (an icon with the filename). That chip is the real download. Click it to save the file or hover to get a download icon.
+- **Ask the AI to "save the file as a chat attachment."** It will re-package the file as an attachment that appears in the message and can be downloaded normally.
+- **Re-run the workflow step** if the chip never appeared — occasionally a slow render hides it. The file is regenerated each run.
+
+We're working on making `sandbox:/mnt/data` references automatically render as chat attachments. Until that ships, the file chip below the message is the canonical way to retrieve generated files.
+</Accordion>
+
+<Accordion title="A workflow step failed — what now?">
+The failed step shows an error message in its panel. The workflow stops, and any downstream steps don't run.
+
+Common causes:
+- **Model or assistant change** — see "Invalid assistant selection" above.
+- **Empty input from an earlier step** — if a "Run prompt" step produced no output, a downstream step that `@`s it may receive nothing. Check the upstream step's output before re-running.
+- **Document processing not complete** — if a "Files upload" step finished but the documents aren't yet indexed, an immediately following "Run prompt" step might not find content. Wait a few seconds and re-run.
+- **Transient network or model error** — re-run the workflow. Many failures resolve on retry.
+
+You can edit the failing step's configuration without losing the rest of the workflow. Re-run starts from the top — there's no partial resume yet.
+</Accordion>
+
+</AccordionGroup>
+
+## Word add-in
+
+<AccordionGroup>
+
+<Accordion title="The Word add-in doesn't appear in Word">
+This is usually a permissions or licensing issue. Check that your organization allows third-party Office add-ins, that your Office version is up to date, and that you're signed in with your Microsoft account. For detailed steps, see [Word add-in user setup](/guides/integrations/word-add-in/user-setup#troubleshooting).
+</Accordion>
+
+<Accordion title="Sign-in fails — I see a Microsoft 'this account doesn't exist' page">
+This happens when you have multiple Microsoft accounts on the same device (for example a personal Outlook account and a work account, or two different work tenants). Word can hand the add-in a cached account that doesn't match the one your Saga workspace is provisioned for.
+
+Try this sequence — most users are unblocked at step 2 or 3:
+
+1. **Close Word completely** (quit the application, don't just close the document).
+2. **Sign Word out of any extra Microsoft accounts.** In Word: **File > Account > Sign out**. If you see more than one account listed, sign out of all of them, then sign back in with only the account you use with Saga.
+3. **Clear the Office add-in cache.** Microsoft documents this at [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) — the page lists the current cache locations for Windows, Mac, and Word for the Web. Clearing the cache only removes Office add-in state — your documents are unaffected.
+4. **Reopen Word, open the Saga add-in, and sign in.** When the Microsoft prompt appears, pick the right account. If no chooser is shown, click **Use another account** and type the email manually.
+
+If the recovery page still appears after that, take a screenshot of the URL bar on the recovery page (the full URL, including the `client_id=` and `login_hint=` parameters) and send it to support. That URL identifies exactly which account Microsoft is being pointed at.
+
+Sign-in to the add-in needs to match the account your Saga workspace is provisioned for. If Word is currently signed in with a personal `@outlook.com`/`@hotmail.com` account but your workspace is on a work tenant (or vice versa), authentication will fail even if the Microsoft credentials themselves are valid.
+</Accordion>
+
+<Accordion title="Sign-in fails with 'Error during token exchange: failed to fetch'">
+This error means the add-in couldn't reach Saga's authentication endpoint from inside Word. Causes, in rough order of likelihood:
+
+- **Corporate firewall or proxy** is blocking the add-in's web view. The add-in is hosted at `word.sagalegal.io` and calls back to your tenant's Saga host (for example `app.sagalegal.io` or `your-firm.sagalegal.io`). Both need HTTPS reachability from inside the corporate network — ask IT to allowlist them for Office add-ins.
+- **Stale add-in cache.** Clear the Office add-in cache ([Microsoft docs](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) and sign in again.
+- **Office build out of date.** Go to **File > Account > Update Options > Update Now**. Some older builds had a bug in the add-in webview's network stack.
+
+If the error persists after those checks, contact support with your Office version (**File > Account > About Word**) and a screenshot of the error.
+</Accordion>
+
+<Accordion title="The add-in shows a blank pane and never loads">
+The Office add-in pane occasionally fails to load the JavaScript bundle on first open, especially over slow connections.
+
+1. Close the pane (X in the corner) and reopen it from the ribbon.
+2. If it's still blank, restart Word.
+3. If it's still blank after a restart, clear the Office add-in cache ([Microsoft docs](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)).
+4. Reopen Word and the add-in.
+
+Network-side: the add-in is hosted at `word.sagalegal.io` and Office loads its runtime from Microsoft's CDN. Confirm with your IT team that both are reachable from inside the corporate network.
+</Accordion>
+
+<Accordion title='"This clause was modified after the suggestion was generated" — apply fails'>
+The add-in targets each suggestion at the exact paragraph and text content that existed when the AI produced it. If you edit that paragraph in Word between generation and apply — or if your `track changes` accepts/rejects shift the paragraph — the apply step can't find the original anchor and refuses to write, so your earlier edits aren't overwritten.
+
+The fix is to regenerate the suggestion against the current state of the document:
+
+1. Re-send the same prompt to the AI.
+2. The new response will reflect the paragraph as it now reads.
+3. Apply the new suggestion.
+
+If you make several edits in sequence, regenerate once at the end rather than after each one — it saves round-trips.
+</Accordion>
+
+<Accordion title="Suggest mode is disabled — the Apply button doesn't appear">
+If the answering-mode picker shows **Suggest** as greyed out with a tooltip saying "Suggestions are disabled because this chat is linked to another document", the chat in front of you was started with a different Word file open. The add-in scopes suggest mode to the document it was originally bound to — switching documents mid-chat disables suggest-mode UI so you don't write changes into the wrong file.
+
+To use Suggest in the file you have open right now, start a new chat. The new chat binds to the current document and the **Suggest** option becomes available again. Your previous chat history is still in the **History** tab.
+</Accordion>
+
+<Accordion title="Does Zero Data Retention apply to the Word add-in?">
+Yes. When ZDR is enabled for your workspace, the Word add-in honours it: the **History** tab shows "No history available", chats aren't persisted server-side, and the chat stream runs in ZDR mode for each turn. If you don't see retention enforcement in the add-in, make sure you have the latest add-in build — clear the Office add-in cache ([Microsoft docs](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) and reload.
+
+Note: ZDR is a workspace-wide setting configured by your admin. If you're unsure whether your workspace is on ZDR, ask your admin to confirm the retention timeframe in the admin panel.
+</Accordion>
+
+<Accordion title="Track changes don't apply to footnotes when I accept a suggestion">
+Word's track-changes engine treats footnote content as a separate story. Programmatic edits inserted by an add-in — which is how Saga applies suggestions — don't always propagate as tracked changes into the footnote area.
+
+Workaround: when a suggestion targets footnote text, copy the suggestion from the add-in pane and paste it manually inside the footnote with track changes turned on. We're working with Microsoft's add-in API team on a longer-term fix.
+</Accordion>
+
+<Accordion title="Are Word add-in interactions counted in workspace usage metrics?">
+Yes. Messages sent and tasks run from the Word add-in are counted in your workspace's **Usage** dashboard alongside web messages. They share the same per-user activity totals and are visible to admins under the same time-range filters.
+
+The add-in itself doesn't appear as a separate channel in the dashboard — usage is attributed to the user, not to the surface they used to send the message.
+</Accordion>
+
+</AccordionGroup>
+
+## Account and sign-in
+
+<AccordionGroup>
+
+<Accordion title="I get 'Access Denied' when trying to sign in">
+This usually means the account hasn't been provisioned in your Saga workspace, or it's been deactivated.
+
+- **Confirm the email address.** Saga is case-insensitive but unforgiving about typos and aliases — `firstname.lastname@firm.com` and `f.lastname@firm.com` are different accounts to Saga even if both deliver to the same mailbox. Use the exact email your firm registered.
+- **Ask your workspace admin** to check the user list. They can see whether your account exists, what role it has, and whether it's been deactivated. They can also reactivate a previously deleted account if needed.
+- **Check the workspace URL.** If your firm uses several Saga subdomains, the magic link is only valid for the workspace you requested it from.
+
+If the admin confirms you're provisioned and active and you still see Access Denied, contact support with the email address, the workspace URL, and a screenshot of the error.
+</Accordion>
+
+<Accordion title="Can I sign in with SMS?">
+Yes — if your workspace has SMS sign-in enabled, the **Choose how to sign in** page offers a **Get verification SMS** option alongside the magic-link option. Pick it, enter your phone number on the next screen, and Saga sends a one-time code by text.
+
+If you don't see the SMS option, your workspace doesn't have it turned on, or your account doesn't have a phone number on file. Ask your admin to add the number; SMS isn't something you can self-enrol from the profile page.
+
+For firms with SSO configured, single sign-on is usually the fastest path of all — one click in your identity provider and you're in.
+</Accordion>
+
+<Accordion title="I left Saga open overnight and now nothing works">
+If you've had a Saga tab open for many hours and your next action fails — a prompt that won't send, a page that won't load, a SharePoint or Microsoft action that returns "session expired" — refresh the page. The fix is almost always a hard refresh.
+
+What's happening: the page's JavaScript bundle, CSRF tokens, and any Microsoft access tokens were fetched when you first opened the tab. Microsoft's tokens in particular expire on their own schedule (often around 24 hours), and a stale Saga bundle can fall out of sync with the deployed backend. A refresh re-fetches all of them.
+
+Your sign-in itself remains valid for up to 30 days, so you won't have to re-enter credentials — just a Ctrl+R / Cmd+R.
+
+For long-running work, get into the habit of refreshing before submitting a major prompt if the tab has been idle for more than a couple of hours.
 </Accordion>
 
 <Accordion title="I'm getting rate-limited or seeing 'too many requests'">
 Saga limits how frequently certain actions can be performed. If you're seeing this during login or two-factor authentication, wait a few minutes and try again. For chat-related rate limits, wait briefly and resend your message.
+
+If you hit a rate limit repeatedly during normal use (not after rapid repeated clicks), contact support — that usually points at an automation or browser extension making background requests on your behalf.
 </Accordion>
 
 </AccordionGroup>
@@ -51,16 +357,82 @@ These integrations need to be enabled by your admin. Ask them to configure the i
 Organizational sources are created by your admin or content admin. If the toggle doesn't appear in the **Add sources** menu, your organization hasn't set any up yet. Ask your admin to create one from the [admin panel](/guides/admin).
 </Accordion>
 
-<Accordion title="I don't see a legal source I need">
-Your admin controls which legal sources are enabled. If a source isn't showing up, ask your admin to enable it from the workspace settings. For the full catalog of available sources, see [moonlit.ai/coverage](https://moonlit.ai/coverage).
+<Accordion title="A legal source I had access to yesterday is gone from the dropdown">
+Sources disappear from the dropdown only because access has changed at the configuration layer — not because the dropdown is hiding them client-side.
+
+- **On a domain-based workspace** (most firms), a workspace admin can toggle a database on or off in the admin panel. If a database vanished overnight, ask your admin whether they (or anyone with admin access) recently changed the legal-research configuration.
+- **On a shared workspace** that uses per-user licensing (`*.sagalegal.io` Community, or similar), Saga support manages the per-user database flags. A license change — for example after a renewal — can remove a flag. Contact support with the database name to confirm.
+- **Moonlit jurisdiction sources** depend on a jurisdiction allowlist; if your account's jurisdiction list was updated, the related Moonlit caselaw sources will move with it.
+
+There's no client-side "I hid this source" toggle — if you can't see a source, your account doesn't currently have access to it.
 </Accordion>
 
-<Accordion title="I can't access the admin panel">
-The admin panel is only visible to users with the **Admin** or **Content admin** role. If you need access, ask an existing admin to update your role. Content admins can manage libraries and organizational sources; full admins can manage everything including users and settings.
+<Accordion title="I don't see a legal source I need (Lovdata, Rettsdata, Rechtspraak, etc.)">
+Legal sources are enabled per workspace. If the source you need isn't in the **Legal research** dropdown, it hasn't been turned on for your firm.
+
+Two things may be missing:
+
+1. **Your firm has a subscription with the source.** Saga connects to legal databases but doesn't include the underlying subscription for the paid ones — your firm pays the provider directly (for example Lovdata or Rettsdata). Confirm with your admin or accounting team that the subscription is in place.
+2. **The source is configured for your workspace.** Saga's currently integrated sources include Lovdata, Rettsdata, Moonlit, Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl, and EUR-Lex. Public sources are usually available out of the box; paid sources need credentials. Your account team handles enablement — contact them via your admin or directly at [support@sagalegal.io](mailto:support@sagalegal.io).
+
+For the catalog of caselaw and regulatory coverage Saga can reach via Moonlit, see [moonlit.ai/coverage](https://moonlit.ai/coverage).
+
+If you don't know who your admin is, see the next entry.
 </Accordion>
 
-<Accordion title="The Word add-in doesn't appear in Word">
-This is usually a permissions or licensing issue. Check that your organization allows third-party Office add-ins, that your Office version is up to date, and that you're signed in with your Microsoft account. For detailed steps, see [Word add-in troubleshooting](/guides/integrations/word-add-in/user-setup#troubleshooting).
+<Accordion title="How do I add a new user to my workspace?">
+New users are added by an admin from the **Users** section of the admin panel:
+
+1. Open **Admin panel > Users**.
+2. Click **Invite user** (or the equivalent invite control).
+3. Enter the user's work email address and choose a role (User, Content admin, or Admin).
+4. Save.
+
+The new user receives an invitation by email. Until they accept and sign in, they don't appear as active.
+
+Common variants:
+- **A former colleague is returning.** If their account was previously deleted, they don't need a new invite — an admin can reactivate the deleted account from the Users list. Existing chats and projects remain associated with the reactivated account.
+- **A whole team joining at once.** Bulk invites aren't currently a self-serve admin action; contact support or your account team if you need to onboard more than ~10 people in one go.
+- **A user who never received the invite email.** Check their spam folder, then verify the email in the Users list is correct. If both are fine, ask support to re-trigger the invite.
+
+If you're not an admin, see "I don't know who my workspace admin is" below.
+</Accordion>
+
+<Accordion title="I don't know who my workspace admin is">
+Open the **Profile** page from the sidebar. The members list shows everyone in the workspace and their role — anyone marked **Admin** has full workspace control. **Content admin** can manage shared content (prompts, templates, workflows) but not workspace settings, users, or integrations.
+
+If your workspace doesn't have a designated admin (sometimes happens during firm-wide rollouts), contact support — we can identify the original workspace owner and help you re-establish admin coverage.
+</Accordion>
+
+<Accordion title="I can't access the admin panel (or I see only some of it)">
+The admin panel is only visible to users with the **Admin** or **Content admin** role.
+
+- **Content admin** sees the content side: internal sources (firm-wide knowledge bases), libraries (prompts, grid templates, workflows), and custom assistants. They don't see users, integrations, workspace settings, or usage metrics.
+- **Admin** sees everything: the content sections above plus **Users**, **Integrations**, **Theme**, **Workspace settings**, and **Usage**.
+
+If you're a content admin and need to manage users, integrations, or other workspace-level settings, ask an existing Admin to promote your account. They do this from the **Users** section of the admin panel: find your row and change the role to **Admin**.
+
+If you're already an Admin but a section is missing, sign out and back in once — the role can be cached client-side. If the option is still absent, contact support.
+</Accordion>
+
+<Accordion title="A URL extraction (like rechtspraak.nl or another site) isn't returning content">
+Saga's URL extractor uses a third-party fetch service (Tavily) to retrieve public webpages and pass their content to the AI. That introduces a few cases where extraction fails:
+
+- **Paywalled or login-required pages** — Tavily can't authenticate to third-party sites, so the fetch returns the login wall instead of content. Use your firm's subscription view of the same content (e.g., a logged-in PDF export) and upload that instead.
+- **Sites that block server-side fetches** — some publishers block scraping infrastructure via Cloudflare or similar gateways. The site loads fine in your browser but Tavily's request is rejected. For Dutch case law from `rechtspraak.nl`, this is a known pain point — if the integrated Rechtspraak legal source is enabled for your workspace, use that instead (it queries the official API directly). Otherwise, download the PDF of the judgment and attach it.
+- **Pages that require JavaScript to render** — Tavily reads the HTML the server returns. If the content only appears after a browser executes JS, Tavily sees an empty shell. Attach a PDF print of the page instead.
+
+If a site you rely on stopped working recently, send the URL and a sample failed query to support — we can investigate.
+</Accordion>
+
+<Accordion title="I want to set my firm's fonts and styling on generated documents">
+Workspace-wide document styling (firm font, brand colours, header/footer templates) is on the roadmap. Today, Saga generates documents in a default Word template.
+
+Workarounds:
+- **Apply a Word style template after export.** In Word, use **Design > Themes > Browse for Themes** to apply your firm template to the generated document.
+- **Use the [Word add-in](/guides/integrations/word-add-in)** to work inside a document that already uses your firm template — the add-in inserts AI output directly into the active document and inherits its styling.
+
+If your firm has a Word template you'd like Saga to use by default, your account team can register it for early testing — talk to them.
 </Accordion>
 
 </AccordionGroup>
@@ -71,6 +443,24 @@ This is usually a permissions or licensing issue. Check that your organization a
 
 <Accordion title="How do I contact support?">
 Click **Get help** in the sidebar to open the feedback form, or email the support team directly at [support@sagalegal.io](mailto:support@sagalegal.io). Include as much detail as possible — what you were doing, what you expected, and any error messages you saw.
+
+For issues that the AI can help with first (which most "how do I…" questions are), try asking in chat. Saga's support assistant is grounded in this documentation and can often answer immediately. It opens a support ticket on your behalf only when it can't resolve the question itself, so you don't end up waiting on a ticket for something that has a documented answer.
+</Accordion>
+
+<Accordion title="What information helps the support team resolve issues fastest?">
+For any issue:
+
+- **Workspace URL** (e.g., `https://your-firm.sagalegal.io`).
+- **Your email address** (as registered in Saga).
+- **Approximate time** the issue happened, including timezone.
+- **What you were trying to do**, what you expected, and what actually happened.
+- **A screenshot or short screen recording** if there's any visible error or unexpected UI state.
+
+For browser issues, also include browser name and version (e.g., Chrome 148) and whether the issue happens in incognito.
+
+For Word add-in issues, the version info from **File > Account > About Word** (Windows) or **Word > About Microsoft Word** (Mac) helps identify Office-side bugs quickly.
+
+For chat issues, the **Chat Session ID** (visible in the URL when you have the chat open) lets us trace the exact conversation on the backend.
 </Accordion>
 
 </AccordionGroup>

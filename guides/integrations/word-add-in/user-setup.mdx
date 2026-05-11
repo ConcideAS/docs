@@ -43,11 +43,53 @@ When you open the add-in for the first time, enter your **email** and your organ
 
 ## Troubleshooting
 
-If the add-in doesn't appear in search results or fails to install:
+### The add-in doesn't appear in search or fails to install
 
 - **Check with your admin** — On company-managed devices, your IT department may need to allow third-party Office add-ins or explicitly approve the Saga add-in.
 - **Check your Office license** — Some Volume License (LTSC) editions have limited access to the Office Add-in Store. Your admin may need to [deploy the add-in centrally](/guides/integrations/word-add-in/admin-setup) instead.
 - **Check your sign-in** — In Word, go to **File > Account** and make sure you're signed in with your Microsoft account.
 - **Check your Word version** — Go to **File > Account > About Word** and make sure your version is up to date. Outdated builds may have issues loading add-ins.
 
-If the issue persists, contact the Saga support team with a screenshot of your Word version info (**File > Account > About Word**) and any error messages you encountered.
+### Sign-in fails with a Microsoft 'account doesn't exist' page
+
+This happens when Word is signed in with a different Microsoft account than the one your Saga workspace expects — common on machines that have a personal Microsoft account *and* a work account, or two work tenants.
+
+1. **Close Word completely** (quit the application, don't just close the document).
+2. **Sign Word out of any extra Microsoft accounts.** In Word: **File > Account > Sign out**. If you see more than one account listed, sign out of all of them, then sign back in with only the account you use with Saga.
+3. **Clear the Office add-in cache.** Microsoft maintains the current cache locations at [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) for Windows, Mac, and Word for the Web. Only Office add-in state is removed — your documents are unaffected.
+4. **Reopen Word, open the Saga add-in, and sign in.** When the Microsoft prompt appears, pick the account you want. If no chooser is shown, click **Use another account** and type the email manually.
+
+If the recovery page still appears, take a screenshot of the full URL on that page (including the `client_id=` and `login_hint=` parameters) and send it to support — that URL identifies the account Microsoft is being pointed at and lets us pinpoint the mismatch.
+
+<Note>
+Sign-in to the add-in needs to match the Microsoft account your Saga workspace is provisioned for. If Word is currently signed in with a personal `@outlook.com`/`@hotmail.com` account but your workspace lives on a work tenant (or vice versa), authentication will fail even if the credentials themselves are valid.
+</Note>
+
+### Sign-in fails with 'Error during token exchange: failed to fetch'
+
+The add-in couldn't reach Saga's authentication endpoint from inside Word.
+
+- **Corporate firewall or proxy** is the most common cause. The add-in is hosted at `word.sagalegal.io` and calls back to your tenant's Saga host (e.g., `app.sagalegal.io` or `your-firm.sagalegal.io`). Both need HTTPS reachability from inside the corporate network. Ask IT to allowlist them for Office add-ins.
+- **Stale add-in cache.** Follow the cache-clear steps above.
+- **Office build out of date.** Run **File > Account > Update Options > Update Now**.
+
+### The add-in pane is blank and never loads
+
+The pane sometimes fails to load its JavaScript bundle on first open, especially on slow connections.
+
+1. Close the pane and reopen it from the ribbon.
+2. If still blank, restart Word.
+3. If still blank, clear the Office add-in cache ([Microsoft docs](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)), then reopen.
+
+The add-in is hosted at `word.sagalegal.io` and Office itself loads the add-in runtime from Microsoft's CDN. If your firm uses a strict network policy, confirm with IT that both are reachable.
+
+### Track changes don't apply to footnotes
+
+Word treats footnote content as a separate story, and the Office add-in API can't always propagate tracked changes into it. When a suggestion targets footnote text, copy the suggestion from the add-in pane and paste it manually inside the footnote with track changes turned on. We're working with Microsoft on a longer-term fix.
+
+### Still stuck?
+
+Contact the Saga support team with:
+- A screenshot of **File > Account > About Word** so we can see your exact Office version and platform.
+- A screenshot or recording of the error you encountered.
+- Whether the issue reproduces in Word for the Web (a quick way to isolate desktop vs. browser issues).

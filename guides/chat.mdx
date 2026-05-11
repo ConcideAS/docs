@@ -61,6 +61,10 @@ Before sending a message, click the pen icon next to the send button to let the 
 
 Click the microphone icon in the chat input to dictate your message instead of typing. Saga transcribes what you say into the input box, where you can edit it before sending. Recording is capped at thirty minutes per session and requires microphone access in your browser.
 
+Voice transcription is powered by Deepgram. The language Deepgram listens for is tied to your Saga interface language — set it under **Settings > Personalization > Default language**. Supported languages are English, Norwegian, Dutch, Danish, Polish, Spanish, German, Italian, Portuguese, Turkish, French, and Swedish. If the UI is set to a language outside this list, Saga falls back to English transcription.
+
+If you dictate in Polish but Saga's interface is in English, the transcript will be garbled — Deepgram is listening for the wrong language. Switch the UI language to match the language you're speaking.
+
 ## Thinking mode
 
 Some models show their step-by-step reasoning in an expandable section before the final answer. This is useful for complex legal questions where you want to see how the AI arrived at its conclusion. If you don't need the reasoning, click **Skip thinking for a faster answer** to get a direct response.
@@ -77,6 +81,10 @@ When the AI drafts a document — such as a memo, summary, or contract clause �
 
 Your conversations are saved in the chat history, accessible from the sidebar. You can search chats by title, star favorites for quick access, rename conversations, or delete them. Chat history is organized with favorites first, then by most recent activity.
 
-## Context limits
+Chats are scoped to the account and workspace that created them. If a chat seems to be missing, check that you're signed in to the same workspace (firms with multiple Saga subdomains have separate chat lists per subdomain), and remember that chats started inside a project live in the project — not in the global chat list. See [Troubleshooting](/guides/troubleshooting) for more recovery steps.
 
-If a conversation approaches the AI's context limit, a warning appears letting you know the chat is almost full. When this happens, start a new conversation or create a project with a knowledge base to give the AI a broader document context.
+## How long chats are handled
+
+You don't need to manage the AI's context window manually. The AI fetches document content on demand through tool calls rather than holding every document in its prompt, so long conversations no longer hit a hard percentage cutoff and there's no "context full" warning in current versions of Saga.
+
+Very long chats can still feel slower because the AI has more history to read. If you're starting a new line of analysis or moving to a different document set, open a fresh chat — it's faster and keeps the focus tight. For ongoing work over days or weeks, upload your documents to a project's [knowledge base](/guides/projects/knowledge-base) instead of re-attaching them in each new chat.
