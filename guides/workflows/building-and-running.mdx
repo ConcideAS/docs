@@ -25,15 +25,11 @@ When writing instructions for a step, you can reference the output of any earlie
 
 This is how you build up context across the flow. A prompt step can analyze documents from an upload step. A drafting step can pull together the results of a research step and a review step into a final memo.
 
-## Saving
+## Saving and running
 
-Click **Save** when your workflow is ready. You'll give it a name, an optional description, and a language. You can also tag it with practice areas to make it easier to find later. If you want to make it available to your whole organization, check **Request to make organizational** — an admin will review and approve it.
+Click **Save and run** when your workflow is ready. You'll give it a name, an optional description, and a language. You can also tag it with practice areas to make it easier to find later. If you want to make it available to your whole organization, check **Request to make organizational** — an admin will review and approve it.
 
-A workflow must be saved before it can be run. After the first save, your edits are persisted automatically as you work — there's no separate "save changes" button.
-
-## Running a workflow
-
-Click **Run** in the builder to start execution. The sidebar switches to run mode, showing each step's status as it progresses:
+The workflow begins executing as soon as it's saved — there's no separate run button in the builder. The sidebar switches to run mode, showing each step's status as it progresses:
 
 - **Pending** — waiting to start
 - **In progress** — currently running
@@ -45,9 +41,15 @@ When a step needs input — like a prompt input or file upload — the workflow 
 
 Each step shows its execution time, and the final results appear in a **Final assets** section at the bottom — documents to download, text to copy, grid reviews to open, or research results to browse.
 
-## Running from chat
+After the first save, edits to the workflow are persisted automatically as you work.
 
-You can also start a workflow directly from a chat conversation. The workflow runs inline — step by step in the chat thread — so you can see the results as they come in without leaving the conversation.
+## Running an existing workflow
+
+How a workflow starts depends on where it's coming from:
+
+- **From the library.** Open a workflow from the **Workflows** page and it starts running directly — no extra confirmation step.
+- **From chat, when the AI matches an existing workflow.** Saga runs it inline in the chat thread, pausing only when a step needs input from you.
+- **From chat, when the AI drafts a new workflow.** When Saga sketches a new flow on the fly to handle your request, it appears as an inline card with a **Start running** button. The draft waits for you to review the proposed steps and confirm before executing.
 
 ## Drafts
 
@@ -82,7 +84,7 @@ When you ask the AI to run a workflow from chat, an inline card with a **Start r
 - **Refresh the page.** The card depends on the live chat connection, which can drop after a long idle period.
 - **Try Chrome or Edge in the latest version** if you're on a less-tested browser.
 
-If the card is still missing, run the workflow from the **Workflows** page instead — find it in the library, click **Run**, and execute from the dedicated view. The result is the same.
+If the card is still missing, open the workflow from the **Workflows** page instead — it'll start running directly from the library. The result is the same.
 
 ## Workflow library: drafts or templates won't open (blank screen)
 
