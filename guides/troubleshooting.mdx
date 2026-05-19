@@ -231,6 +231,23 @@ You can edit the failing step's configuration without losing the rest of the wor
 This is usually a permissions or licensing issue. Check that your organization allows third-party Office add-ins, that your Office version is up to date, and that you're signed in with your Microsoft account. For detailed steps, see [Word add-in user setup](/guides/integrations/word-add-in/user-setup#troubleshooting).
 </Accordion>
 
+<Accordion title="The add-in shows '404 not found from Microsoft Azure' or freezes after install">
+This is a sign that Word is still loading an old, **sideloaded** version of the Saga add-in. Sideloading was the install path used in earlier Saga onboarding rounds — your admin or account team gave you an `.xml` manifest you registered manually. That manifest points at a URL that's no longer served, so the add-in fails to load or returns a 404 from Microsoft Azure.
+
+Reinstalling the same `.xml` doesn't help — the file still points at the dead URL.
+
+The fix is a one-time switch to the AppSource version:
+
+1. **Remove the old add-in.** In Word, **Insert > My Add-ins**. Find Saga, click the **⋯** menu, choose **Remove**.
+2. **Close Word completely**, then reopen it.
+3. **Install from AppSource.** Either **Insert > Get Add-ins → search "Saga" → Add**, or open [Saga on Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) and click **Get it now**.
+4. Open Saga from the ribbon and sign in.
+
+After this, future updates ship automatically through the Store.
+
+For the full walkthrough, see [Word add-in user setup](/guides/integrations/word-add-in/user-setup#the-add-in-shows-404-not-found-from-microsoft-azure-or-freezes-after-install).
+</Accordion>
+
 <Accordion title="Sign-in fails — I see a Microsoft 'this account doesn't exist' page">
 This happens when you have multiple Microsoft accounts on the same device (for example a personal Outlook account and a work account, or two different work tenants). Word can hand the add-in a cached account that doesn't match the one your Saga workspace is provisioned for.
 
