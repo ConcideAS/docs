@@ -50,6 +50,27 @@ When you open the add-in for the first time, enter your **email** and your organ
 - **Check your sign-in** — In Word, go to **File > Account** and make sure you're signed in with your Microsoft account.
 - **Check your Word version** — Go to **File > Account > About Word** and make sure your version is up to date. Outdated builds may have issues loading add-ins.
 
+### The add-in shows '404 not found from Microsoft Azure' or freezes after install
+
+This happens when Word is loading an old, **sideloaded** version of the Saga add-in. Sideloading was the install path used in earlier Saga onboarding rounds — your admin or account team gave you an `.xml` manifest file that you registered manually in Word. The manifest in that file points at a hosted URL that's no longer served; the current URL is reachable only via [Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415).
+
+Reinstalling the same `.xml` doesn't help — the file still points at the dead URL.
+
+**Fix: remove the sideloaded add-in and reinstall from AppSource.** You only need to do this once; future updates then roll out automatically through the Store.
+
+1. **Remove the old add-in.** In Word, open **Insert > My Add-ins**. Find Saga, click the **⋯** menu next to it, and choose **Remove**.
+2. **Close Word completely** (quit the application, don't just close the document).
+3. **Install from AppSource.** Reopen Word, then either:
+   - Use **Insert > Get Add-ins** and search for **Saga**, then click **Add**, or
+   - Open [Saga on Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) in your browser and click **Get it now**.
+4. Open Saga from the ribbon and sign in.
+
+The same steps apply for everyone on your team — there is no `.xml` file to share anymore.
+
+<Note>
+If you still have the original `.xml` manifest from your initial Saga onboarding, you can discard it. The current install path is AppSource only.
+</Note>
+
 ### Sign-in fails with a Microsoft 'account doesn't exist' page
 
 This happens when Word is signed in with a different Microsoft account than the one your Saga workspace expects — common on machines that have a personal Microsoft account *and* a work account, or two work tenants.
