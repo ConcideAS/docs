@@ -426,13 +426,26 @@ If a site you rely on stopped working recently, send the URL and a sample failed
 </Accordion>
 
 <Accordion title="I want to set my firm's fonts and styling on generated documents">
-Workspace-wide document styling (firm font, brand colours, header/footer templates) is on the roadmap. Today, Saga generates documents in a default Word template.
+Saga supports firm-wide document styling. An admin uploads a reference `.docx` from your firm, and every document Saga generates from then on (both Word and PDF exports) follows your styling automatically.
 
-Workarounds:
-- **Apply a Word style template after export.** In Word, use **Design > Themes > Browse for Themes** to apply your firm template to the generated document.
-- **Use the [Word add-in](/guides/integrations/word-add-in)** to work inside a document that already uses your firm template — the add-in inserts AI output directly into the active document and inherits its styling.
+**Set it up**
 
-If your firm has a Word template you'd like Saga to use by default, your account team can register it for early testing — talk to them.
+Go to **Admin Panel → Document Styling** and upload a `.docx` that uses your firm's styling.
+
+**What Saga extracts from the reference document**
+
+- **Typography** — body font, size, colour and line height (from the document's default/Normal style), plus Heading 1 to Heading 6
+- **Theme colours** — primary and accent
+- **Page setup** — size, orientation and margins
+- **Headers and footers** — text, alignment, page numbers, and any embedded logo
+
+**Permissions**
+
+Only Admin users can upload the reference document. If you don't have admin access, ask a workspace admin to upload it once on behalf of the firm.
+
+**Current limitation**
+
+Saga maps the default (Normal) paragraph style and Heading 1–6. Custom paragraph styles defined separately (for example a firm-named `Body` style that overrides the default) are not yet picked up. The extracted fonts, colours, headings, page setup and header/footer normally cover the bulk of a firm's house style; if a specific custom style isn't being applied after upload, contact support with your reference document and we'll take a look.
 </Accordion>
 
 </AccordionGroup>
