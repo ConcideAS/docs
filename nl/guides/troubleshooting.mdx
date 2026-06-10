@@ -2,14 +2,73 @@
 title: Veelgestelde vragen en probleemoplossing
 ---
 
-## Documenten
+## Documenten en de kennisbank
 
 <AccordionGroup>
 
 <Accordion title="Mijn document is niet geüpload of verwerkt">
 Controleer het bestandsformaat en de grootte. Saga ondersteunt PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG en gangbare afbeeldingsformaten. De maximale bestandsgrootte is 1 GB — en PDF's of afbeeldingen die tekstextractie (OCR) nodig hebben, zijn beperkt tot 500 MB.
 
-Als het bestandsformaat en de grootte in orde zijn, klik op **Opnieuw proberen** bij het mislukte document in de kennisbank. Als het nog steeds niet werkt, probeer het bestand opnieuw te uploaden. Beschadigde bestanden of zwaar gescande documenten met slechte beeldkwaliteit kunnen soms de verwerking laten mislukken.
+Als het bestandsformaat en de grootte in orde zijn, klik op **Opnieuw proberen** bij het mislukte document in de kennisbank. Als het nog steeds niet werkt, probeer het bestand opnieuw te uploaden. Beschadigde bestanden, met een wachtwoord beveiligde PDF's of zwaar gescande documenten met slechte beeldkwaliteit kunnen soms mislukken tijdens de verwerking.
+
+Voor een `.pptx`-bestand dat na verwerking weinig of geen tekst oplevert, valt Saga terug op conversie via LibreOffice en OCR op de resulterende PDF. Daardoor zouden presentaties met veel afbeeldingen nog steeds doorzoekbare tekst moeten opleveren. Als het nog steeds mislukt, is het bestand meestal te groot voor de conversiepijplijn of beschadigd — opnieuw opslaan met **File > Save As** in een moderne versie van PowerPoint lost dit meestal op.
+</Accordion>
+
+<Accordion title='De AI zegt "Failed to find documents" of "cannot locate files"'>
+Ondanks de formulering betekent dit bericht niet dat uw documenten ontbreken. Het verschijnt wanneer Saga's zoekaanroep naar de vectorstore mislukt — meestal door een tijdelijke infrastructuurstoring.
+
+Wat u kunt doen:
+- **Verstuur dezelfde prompt opnieuw.** De meeste van deze fouten verdwijnen na een nieuwe poging.
+- **Als het langer dan een minuut of twee aanhoudt**, heeft de onderliggende service waarschijnlijk tijdelijk problemen. Wacht kort en probeer het opnieuw, of ververs de pagina.
+- **Upload uw documenten niet opnieuw** — ze staan er nog. De fout zit in het zoekpad, niet in de opslag.
+
+Als u dit meerdere minuten achter elkaar in meerdere chats ziet, neem dan contact op met support — dat wijst op een bredere storing waar we van willen weten.
+</Accordion>
+
+<Accordion title="Ik heb documenten aan een project toegevoegd, maar de AI zegt dat ze niet in de chat te vinden zijn">
+Er zijn een paar specifieke oorzaken — loop ze in deze volgorde na:
+
+1. **De documenten worden nog verwerkt.** Alleen documenten die succesvol zijn verwerkt, zijn beschikbaar voor de AI. Controleer het kennisbankpaneel: elk bestand met een spinner of label "Wordt verwerkt" is onzichtbaar voor de chat totdat de verwerking klaar is. Wacht of klik op **Opnieuw proberen** als een bestand vastloopt.
+2. **Een bestand is niet verwerkt.** Mislukte bestanden tonen een waarschuwingspictogram — ze zijn niet doorzoekbaar. Probeer het opnieuw via het actiemenu van het bestand, of upload het opnieuw.
+3. **Het bereik van de kennisbank is beperkt.** De kennisbankselector aan de chatkant kan op een subset van documenten staan — in dat geval mag de AI alleen die documenten gebruiken. Open de kennisbankweergave in de chat en controleer of de verwachte documenten zijn geselecteerd, of gebruik "Alles selecteren" om de beperking te verwijderen.
+4. **U zit in een globale chat, niet in de projectchat.** Documenten staan in de kennisbank van het project en zijn niet zichtbaar voor chats die buiten het project zijn gestart. Open het project en start daar een chat.
+
+Als alle vier punten kloppen en de AI de documenten nog steeds niet kan vinden, stel dan een specifieke vraag met een onderscheidende zin uit een van de bestanden — vage vragen kunnen ervoor zorgen dat de AI het ophalen van documenten overslaat.
+</Accordion>
+
+<Accordion title="Mijn kennisbank is 'vergrendeld' terwijl documenten worden verwerkt">
+Terwijl een document wordt verwerkt, zijn de selectievakjes en bulkacties in de kennisbank tijdelijk uitgeschakeld voor dat document. Individuele acties op al verwerkte documenten blijven beschikbaar, en u kunt blijven werken in de chat — verwerkte documenten worden doorzoekbaar voor de AI zodra ze klaar zijn.
+
+De verwerkingstijd hangt af van de bestandsgrootte en of het document OCR nodig heeft. Een typische PDF van 20 pagina's duurt minder dan een minuut; grote gescande PDF's kunnen meerdere minuten duren. Als een document langer dan 15 minuten vastzit in verwerking, klik dan op **Opnieuw proberen** in het actiemenu.
+</Accordion>
+
+<Accordion title="De documentteller zegt dat ik de projectlimiet heb bereikt, maar dat klopt niet">
+Projecten hebben een documentlimiet per werkruimte die door uw beheerder is ingesteld. Als u documenten hebt verwijderd om ruimte te maken en de teller nog steeds het oude aantal toont, ververs de pagina (Ctrl+R / Cmd+R) — de telling wordt bij het laden van de server opgehaald.
+
+Als de telling na het verversen nog steeds niet klopt — bijvoorbeeld als de teller zegt dat u aan de limiet zit maar de bestandslijst veel minder documenten toont — neem dan contact op met support met de projectnaam. We kunnen de telling in de backend herstellen. Ondertussen kunt u documenten naar een nieuw project verplaatsen om verder te werken.
+</Accordion>
+
+<Accordion title="Twee documenten met dezelfde naam werken niet goed">
+Wanneer de AI een document op naam ophaalt en meer dan één match vindt — in de bijlagen van een chat of in de kennisbank van een project — toont Saga een vraag om te verduidelijken welk document u bedoelt. Meestal vraagt de AI om verduidelijking; soms kiest een model het verkeerde bestand of slaat het die stap over.
+
+Als u dit vaak ziet, hernoem dan een van de bestanden zodat elk bestand een duidelijke naam heeft — zelfs `(v2)` of een datum toevoegen aan de bestandsnaam is genoeg. Voor bestanden die al zijn geüpload, kunt u ze inline hernoemen vanuit het actiemenu van het document in de kennisbank, of ze loskoppelen en opnieuw als chatbijlage toevoegen met een nieuwe naam.
+
+De kennisbank tagt duplicaten ook automatisch met een **Duplicate**-tag wanneer identieke bestanden worden gedetecteerd. Dat is handig om duplicaten in bulk te vinden.
+</Accordion>
+
+<Accordion title="Documenten in de kennisbank verschijnen niet in AI-antwoorden">
+Een paar dingen om te controleren:
+
+- **Controleer of het document klaar is met verwerken.** Een spinner of label "Wordt verwerkt" naast het bestand betekent dat het nog niet doorzoekbaar is. Wacht of klik op **Opnieuw proberen** als het vastzit.
+- **Stel een specifieke vraag.** De AI haalt alleen passages op die relevant zijn voor uw vraag. Als uw vraag breed is ("wat zeggen deze documenten?"), kan de AI een steekproef nemen in plaats van alles te lezen. Vraag naar een specifieke clausule, partij of onderwerp voor het beste resultaat.
+- **Verwijs naar het document op naam.** Door de bestandsnaam of een onderscheidende zin eruit te typen, stuurt u de AI richting dat specifieke document.
+- **Controleer of u in de juiste projectchat zit.** Een globale chat heeft geen toegang tot projectdocumenten. Open het project en start daar een chat.
+</Accordion>
+
+<Accordion title="Ik wil veel documenten tegelijk verplaatsen of ontdubbelen">
+Gebruik de selectievakjes naast elk document of elke map in de kennisbank. Met een actieve selectie biedt de werkbalk **Downloaden**, **Verwijderen**, **Verplaatsen** en **Taggen** als bulkacties. U kunt over mappen heen meerdere items selecteren.
+
+Saga markeert dubbele bestanden binnen een project nog niet automatisch. Als u duplicaten vermoedt door meerdere uploads, sorteer de bestandslijst dan op naam om ze zichtbaar te maken en verwijder de bestanden die u niet nodig hebt in bulk.
 </Accordion>
 
 </AccordionGroup>
@@ -18,10 +77,15 @@ Als het bestandsformaat en de grootte in orde zijn, klik op **Opnieuw proberen**
 
 <AccordionGroup>
 
-<Accordion title="De AI zegt dat de chatcontext bijna vol is">
-Elk AI-model heeft een limiet op hoeveel tekst het tegelijk kan overwegen. Wanneer een gesprek lang wordt — veel berichten, grote bijlagen, of beide — ziet u een waarschuwing dat de context bijna vol is.
+<Accordion title="Mijn chatgeschiedenis is verdwenen">
+Chats worden per gebruikersaccount bewaard. Als een chat verdwenen lijkt:
 
-Start een nieuw gesprek om de context te resetten. Als u met een grote set documenten werkt, overweeg ze te uploaden naar de [kennisbank](/nl/guides/projects/knowledge-base) van een project in plaats van ze bij te voegen in chat — de kennisbank indexeert uw bestanden zodat de AI erdoor kan zoeken zonder alles tegelijk in context te hoeven houden.
+- **Controleer de juiste werkruimte.** Als uw kantoor meerdere Saga-werkruimten heeft, bijvoorbeeld `firm.sagalegal.io` en `firm-dev.sagalegal.io`, zijn chats gekoppeld aan de werkruimte waarin ze zijn gestart.
+- **Controleer het juiste project.** Projectchats staan binnen het project, niet in de globale chatlijst. Open het project om ze te zien.
+- **Controleer of u als dezelfde gebruiker bent aangemeld.** Sommige kantoren hebben persoonlijke en gedeelde accounts — chats verschijnen alleen voor het account dat ze heeft gemaakt.
+- **Zoek op titel.** De chatlijst toont eerst favorieten en daarna recente activiteit. Een oudere chat kan uit beeld zijn verdwenen; gebruik het zoekveld bovenaan de chatlijst om op titel te zoeken.
+
+Als de chat na deze controles echt ontbreekt, neem dan contact op met support met de geschatte datum van het gesprek en een zin die u zich herinnert. We bewaren gespreksdata in de backend en kunnen dit onderzoeken.
 </Accordion>
 
 <Accordion title="De AI gaf een onjuist of onvolledig antwoord">
@@ -30,11 +94,270 @@ De kwaliteit van het antwoord van de AI hangt af van de context die het heeft en
 - **Schakel over naar een capabeler model** — een model met hogere intelligentie kan uw vraag mogelijk beter beantwoorden. Zie [Modellen](/nl/guides/assistants/models) voor richtlijnen.
 - **Beperk de context** — als de kennisbank veel documenten bevat, zet de documenten die niet relevant zijn op inactief om de aandacht van de AI te richten.
 - **Herformuleer uw vraag** — specifiekere vragen leveren meestal betere resultaten op. Gebruik **Prompt verbeteren** om de AI uw formulering te laten verfijnen voordat u verzendt.
-- **Controleer bronverwijzingen** — verifieer de beweringen van de AI altijd aan de hand van de vermelde bronnen.
+- **Controleer bronverwijzingen** — verifieer de beweringen van de AI altijd aan de hand van de aangehaalde bronnen. Als een bronverwijzing niet ondersteunt wat de AI zei, klik op **Dislike** bij het bericht en voeg een korte toelichting toe. Feedback gaat rechtstreeks naar het team en helpt ons modelgedrag te verbeteren.
+
+De AI kan soms een wetsartikelnummer verkeerd weergeven, een bepaling onjuist parafraseren of een citaat aan de verkeerde bron toeschrijven. Aangehaalde passages zijn leidend — behandel de tekst van de AI als een concept.
 </Accordion>
 
-<Accordion title="Ik word beperkt in snelheid of zie 'te veel verzoeken'">
-Saga beperkt hoe vaak bepaalde acties kunnen worden uitgevoerd. Als u dit ziet tijdens het inloggen of tweefactorauthenticatie, wacht een paar minuten en probeer het opnieuw. Voor chatgerelateerde snelheidsbeperkingen wacht even en verstuur uw bericht opnieuw.
+<Accordion title="De AI citeerde een zaak of wet die niet bestaat, of had de feiten verkeerd">
+Dit is een hallucinatie — het model heeft een geloofwaardig ogende verwijzing verzonnen die niet overeenkomt met een echte bron. Dit gebeurt vaker wanneer:
+
+- **De relevante juridische bron niet is ingeschakeld in uw werkruimte.** Als u vraagt naar Noorse rechtspraak zonder dat Lovdata of Rettsdata is ingeschakeld, heeft het model geen gezaghebbende bron om uit te putten en kan het gaan improviseren. Controleer of de bron die u verwacht in de dropdown voor juridisch onderzoek staat en voor het bericht is ingeschakeld.
+- **Het model werkt zonder ingeschakelde onderzoeksbron.** Zelfs met ingeschakelde bronnen moet het model ervoor *kiezen* om ze te gebruiken — een bron inschakelen dwingt geen zoekopdracht af. Schakel voor belangrijke citaten juridisch onderzoek in en stel de vraag expliciet, bijvoorbeeld "Zoek in Rettsdata naar rechtspraak over...".
+- **De vraag ligt aan de rand van de kennis van het model.** Oudere of obscuurdere rechtspraak wordt sneller verzonnen dan bekende rechtsbeginselen.
+
+Praktische beperking van het risico:
+- **Klik altijd door op een citatiechip voordat u erop vertrouwt.** Als de chip naar "—" of een duidelijk verkeerd document wijst, is de verwijzing verdacht.
+- **Controleer zaaknummers (ECLI, LB-, HR-, enzovoort) direct in de brondatabase** voordat u ze extern citeert.
+- **Gebruik Saga's juridische onderzoeksdatabases** in plaats van vrije tekst wanneer u een bindende bronverwijzing nodig hebt. De juridische onderzoeksstap levert resultaten op die naar de echte bronrecords linken.
+- **Meld het.** Klik op **Dislike** bij het antwoord en voeg een korte toelichting toe. We gebruiken deze meldingen om modelgedrag te verbeteren en dekkingsgaten zichtbaar te maken.
+
+De AI is een versneller voor onderzoek, geen autoriteit. Elk citaat gaat langs de jurist.
+</Accordion>
+
+<Accordion title="Spraakinvoer transcribeert de verkeerde taal, of geeft onzin terug">
+Spraaktranscriptie wordt geleverd door Deepgram. De taal waarnaar wordt geluisterd, wordt bepaald door uw Saga-interfacetaal — **niet** door wat u daadwerkelijk spreekt. Als uw UI op Engels staat maar u in het Pools dicteert, probeert Deepgram Poolse fonemen in Engelse woorden te passen en komt de transcriptie er vervormd uit.
+
+Wijzig uw UI-taal naar de taal waarin u wilt dicteren om dit op te lossen: **Instellingen > Personalisatie > Standaardtaal**, en ververs daarna de pagina.
+
+Ondersteunde transcriptietalen: Engels, Noors, Nederlands, Deens, Pools, Spaans, Duits, Italiaans, Portugees, Turks, Frans en Zweeds — dezelfde set als de UI-lokalisaties van Saga. Als uw UI is ingesteld op een taal buiten deze lijst, valt transcriptie terug op Engels.
+</Accordion>
+
+<Accordion title="Spraakinvoer opent de recorder helemaal niet">
+- **Controleer microfoonmachtigingen** in uw browser. Klik op het slotpictogram in de adresbalk en zorg dat microfoontoegang is toegestaan voor `*.sagalegal.io`.
+- **Gebruik Chrome of Edge** voor de beste compatibiliteit. Sommige browsers stellen de `MediaRecorder`-API waar de recorder op vertrouwt niet beschikbaar.
+- **Controleer of uw besturingssysteem de browser microfoontoegang geeft** — op macOS is dat **Systeeminstellingen > Privacy en beveiliging > Microfoon**.
+
+Als de recorder opent maar nooit audio vastlegt, kan uw microfoon op OS-niveau gedempt zijn of door een andere applicatie worden gebruikt. Sluit andere vergaderapps (Zoom, Teams) en probeer het opnieuw.
+</Accordion>
+
+<Accordion title="Wat gebeurt er wanneer een chat erg lang wordt?">
+In de huidige versie van Saga (april 2026) is er geen vaste grens waarop de context "vol" is. De AI haalt documentinhoud op verzoek op via toolaanroepen in plaats van alles in de prompt te houden, waardoor lange gesprekken geen harde procentuele drempel meer raken.
+
+Dat gezegd hebbende kunnen erg lange chats nog steeds trager aanvoelen omdat de AI meer geschiedenis moet lezen. Als u aan een nieuwe analyselijn begint of naar een andere documentenset gaat, start dan een nieuwe chat — dat is sneller en houdt de focus scherp. Voor doorlopend werk over dagen of weken uploadt u uw documenten naar de [kennisbank](/nl/guides/projects/knowledge-base) van een project in plaats van ze bij elke nieuwe chat opnieuw toe te voegen.
+</Accordion>
+
+<Accordion title="Een bronverwijzing is niet klikbaar, of navigeert niet naar de juiste pagina">
+Bronverwijzingen verschijnen als kleine genummerde chips naast claims van de AI. Als u op een chip klikt, opent het brondocument in het zijpaneel, gescrold naar de aangehaalde passage.
+
+Als een bronverwijzing u niet naar de juiste pagina brengt:
+
+- **Het document kan alleen uit afbeeldingen bestaan.** Gescande PDF's zonder OCR-tekstlaag kunnen worden geciteerd, maar het zijpaneel kan niet naar een specifieke paginacoördinaat binnen een afbeelding springen. De bronverwijzing vertelt u nog steeds welk document de AI heeft gebruikt — open het bestand en zoek naar de geciteerde passage.
+- **De documentverwerking kan mislukt zijn.** Zoek naar een waarschuwingspictogram naast het bestand in de kennisbank. Probeer de verwerking opnieuw; daarna zou de bronverwijzing correct moeten werken.
+- **De chat is ouder dan de laatste herverwerking van het document.** Als u het document opnieuw hebt geüpload, wijzen oudere bronverwijzingen naar de vorige versie. Stel de vraag opnieuw om nieuwe bronverwijzingen te krijgen.
+
+Als klikken op geen enkele bronverwijzing iets doet, ongeacht het document, ververs de pagina — dat wist verouderde status. Als het probleem na verversen blijft bestaan, neem dan contact op met support.
+</Accordion>
+
+<Accordion title="Ik wil één bericht in een chat verwijderen, niet het hele gesprek">
+Beweeg over een bericht en klik op **Verwijderen** in het actiemenu. Het bericht en alle reacties erop worden uit het gesprek verwijderd. De rest van de chat blijft behouden.
+
+Als u geen optie **Verwijderen** ziet, staat uw rol mogelijk geen berichtbewerkingen toe in een gedeelde projectchat — vraag de projecteigenaar of uw beheerder.
+</Accordion>
+
+</AccordionGroup>
+
+## Workflows
+
+<AccordionGroup>
+
+<Accordion title="De workflowkaart verschijnt niet, of is niet klikbaar, wanneer ik een workflow vanuit chat uitvoer">
+Wanneer u een workflow vanuit chat uitvoert, verschijnt er een inline kaart met een knop **Start running**. Als de kaart niet verschijnt of niet reageert op klikken:
+
+- **Ververs de pagina.** De kaart is afhankelijk van de live chatverbinding, die na een lange periode van inactiviteit kan wegvallen.
+- **Probeer Chrome of Edge** in de nieuwste versie als u een minder geteste browser gebruikt.
+
+Als de kaart nog steeds ontbreekt, kunt u de workflow altijd rechtstreeks openen via de pagina **Workflows**. Workflows die vanuit de bibliotheek worden gestart, lopen meteen — zonder extra bevestiging — en het resultaat is hetzelfde.
+
+We weten dat de inline kaart in sommige browsers af en toe problemen geeft. Als u een geval consequent kunt reproduceren waarin de kaart nooit verschijnt, stuur dan de chatsessie-ID en uw browser/versie naar support.
+</Accordion>
+
+<Accordion title="Een workflowconcept of -sjabloon opent niet vanuit de Workflow library (leeg scherm, 401 in console)">
+Dit betekent meestal dat uw aanmeldsessie op de achtergrond is verlopen terwijl de pagina openstond. De bibliotheeklijst wordt nog uit cache weergegeven, maar bij het openen van een workflow worden nieuwe gegevens opgehaald en mislukt de authenticatie.
+
+De oplossing is eenvoudig:
+
+1. Meld u af bij Saga (klik op uw avatar in de zijbalk > **Afmelden**).
+2. Sluit het browsertabblad.
+3. Open een nieuw tabblad, meld u opnieuw aan en ga terug naar de Workflow library.
+
+Als dit blijft gebeuren, controleer dan of uw browser cookies wist bij afsluiten, of dat een extensie (adblocker, privacytool) cookies van derden blokkeert voor `sagalegal.io`. De Workflow library heeft een blijvende sessiecookie nodig.
+
+Incognitomodus is een nuttige diagnose: als workflows in incognito wel openen, zit het probleem in uw normale profiel (een extensie of cookie-instelling). Als ze ook in incognito niet openen, neem dan contact op met support met een screenshot van de browserconsole in DevTools.
+</Accordion>
+
+<Accordion title="Ik krijg 'Invalid assistant selection' of 'Selected model is not enabled' bij het uitvoeren van een workflow">
+Beide fouten komen door een workflowstap die verwijst naar een assistent of model dat nu niet bruikbaar is:
+
+- **'Invalid assistant selection'** — de aangepaste assistent waarnaar de stap verwijst bestaat niet meer. Deze is verwijderd of het ID is gewijzigd.
+- **'Selected model is not enabled'** — het model bestaat, maar is uitgeschakeld voor uw werkruimte, meestal door een beheerder.
+
+Open de workflow in de builder, klik op de stap met het waarschuwingspictogram en kies een momenteel beschikbare assistent uit de dropdown. Sla op en voer opnieuw uit.
+
+Als u eigenaar bent van de workflow maar zelf niets hebt gewijzigd, kan een beheerder de ingeschakelde modellen van de werkruimte hebben aangepast — vraag welke assistenten momenteel beschikbaar zijn, of val terug op een generiek model.
+</Accordion>
+
+<Accordion title="Een workflow heeft een Excel- of ander bestand gegenereerd, maar de downloadlink werkt niet">
+Als de AI naar een bestand verwijst met een pad zoals `sandbox:/mnt/data/filename.xlsx`, is dat een code-interpreterbestand in een tijdelijke uitvoeringssandbox. De link zelf is niet klikbaar in de browser.
+
+Zo krijgt u het bestand:
+
+- **Kijk onder het AI-bericht** naar een bestandschip (een pictogram met de bestandsnaam). Die chip is de echte download. Klik erop om het bestand op te slaan of beweeg erover om een downloadpictogram te zien.
+- **Vraag de AI om "het bestand als chatbijlage op te slaan."** De AI verpakt het bestand opnieuw als bijlage die in het bericht verschijnt en normaal kan worden gedownload.
+- **Voer de workflowstap opnieuw uit** als de chip nooit verscheen — soms verbergt een trage render deze. Het bestand wordt bij elke run opnieuw gegenereerd.
+
+We werken eraan om verwijzingen naar `sandbox:/mnt/data` automatisch als chatbijlagen weer te geven. Totdat dat beschikbaar is, is de bestandschip onder het bericht de juiste manier om gegenereerde bestanden op te halen.
+</Accordion>
+
+<Accordion title="Een workflowstap is mislukt — wat nu?">
+De mislukte stap toont een foutmelding in het paneel. De workflow stopt en downstream stappen worden niet uitgevoerd.
+
+Veelvoorkomende oorzaken:
+- **Wijziging in model of assistent** — zie "Invalid assistant selection" hierboven.
+- **Lege invoer uit een eerdere stap** — als een "Run prompt"-stap geen output produceerde, kan een downstream stap die ernaar `@`-verwijst niets ontvangen. Controleer de output van de upstream stap voordat u opnieuw uitvoert.
+- **Documentverwerking is nog niet klaar** — als een "Files upload"-stap is afgerond maar de documenten nog niet zijn geïndexeerd, kan een direct volgende "Run prompt"-stap de inhoud mogelijk niet vinden. Wacht een paar seconden en voer opnieuw uit.
+- **Tijdelijke netwerk- of modelfout** — voer de workflow opnieuw uit. Veel fouten lossen op bij een nieuwe poging.
+
+U kunt de configuratie van de mislukte stap aanpassen zonder de rest van de workflow kwijt te raken. Opnieuw uitvoeren begint vanaf het begin — gedeeltelijk hervatten kan nog niet.
+</Accordion>
+
+</AccordionGroup>
+
+## Word-invoegtoepassing
+
+<AccordionGroup>
+
+<Accordion title="De Word-invoegtoepassing verschijnt niet in Word">
+Dit is meestal een machtigings- of licentieprobleem. Controleer of uw organisatie Office-invoegtoepassingen van derden toestaat, of uw Office-versie up-to-date is en of u bent aangemeld met uw Microsoft-account. Zie [Word-invoegtoepassing instellen voor gebruikers](/nl/guides/integrations/word-add-in/user-setup#probleemoplossing) voor gedetailleerde stappen.
+</Accordion>
+
+<Accordion title="De invoegtoepassing toont '404 not found from Microsoft Azure' of loopt vast na installatie">
+Dit is een teken dat Word nog een oude, **sideloaded** versie van de Saga-invoegtoepassing laadt. Sideloading was de installatiemethode die in eerdere Saga-onboardingrondes werd gebruikt — uw beheerder of accountteam gaf u een `.xml`-manifest dat u handmatig registreerde. Dat manifest wijst naar een URL die niet meer wordt aangeboden, waardoor de invoegtoepassing niet laadt of een 404 van Microsoft Azure teruggeeft.
+
+Dezelfde `.xml` opnieuw installeren helpt niet — het bestand verwijst nog steeds naar de dode URL.
+
+De oplossing is een eenmalige overstap naar de AppSource-versie:
+
+1. **Verwijder de oude invoegtoepassing.** Ga in Word naar **Insert > My Add-ins**. Zoek Saga, klik op het menu **⋯** en kies **Remove**.
+2. **Sluit Word volledig** en open het opnieuw.
+3. **Installeer vanuit AppSource.** Gebruik **Insert > Get Add-ins → zoek "Saga" → Add**, of open [Saga op Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) en klik op **Get it now**.
+4. Open Saga vanuit het lint en meld u aan.
+
+Daarna worden toekomstige updates automatisch via de Store geleverd.
+
+Voor de volledige walkthrough, zie [Word-invoegtoepassing instellen voor gebruikers](/nl/guides/integrations/word-add-in/user-setup#probleemoplossing).
+</Accordion>
+
+<Accordion title="Aanmelden mislukt — ik zie een Microsoft-pagina 'this account doesn't exist'">
+Dit gebeurt wanneer u meerdere Microsoft-accounts op hetzelfde apparaat hebt, bijvoorbeeld een persoonlijk Outlook-account en een werkaccount, of twee verschillende werktenants. Word kan de invoegtoepassing een gecachet account doorgeven dat niet overeenkomt met het account waarvoor uw Saga-werkruimte is ingericht.
+
+Probeer deze stappen — de meeste gebruikers zijn bij stap 2 of 3 geholpen:
+
+1. **Sluit Word volledig** (stop de applicatie, sluit niet alleen het document).
+2. **Meld Word af bij extra Microsoft-accounts.** In Word: **File > Account > Sign out**. Als u meer dan één account ziet, meld u dan bij alle accounts af en meld u opnieuw aan met alleen het account dat u met Saga gebruikt.
+3. **Wis de Office-invoegtoepassingscache.** Microsoft documenteert dit op [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) — de pagina vermeldt de huidige cachelocaties voor Windows, Mac en Word voor het web. Het wissen van de cache verwijdert alleen Office-invoegtoepassingsstatus — uw documenten blijven ongemoeid.
+4. **Open Word opnieuw, open de Saga-invoegtoepassing en meld u aan.** Wanneer de Microsoft-prompt verschijnt, kiest u het juiste account. Als er geen keuzescherm wordt getoond, klik op **Use another account** en typ het e-mailadres handmatig.
+
+Als de herstelpagina daarna nog steeds verschijnt, maak dan een screenshot van de adresbalk op de herstelpagina (de volledige URL, inclusief de parameters `client_id=` en `login_hint=`) en stuur die naar support. Die URL laat precies zien naar welk account Microsoft wordt gestuurd.
+
+Aanmelden bij de invoegtoepassing moet overeenkomen met het account waarvoor uw Saga-werkruimte is ingericht. Als Word momenteel is aangemeld met een persoonlijk `@outlook.com`/`@hotmail.com`-account maar uw werkruimte op een werktenant staat, of andersom, mislukt authenticatie zelfs als de Microsoft-inloggegevens zelf geldig zijn.
+</Accordion>
+
+<Accordion title="Aanmelden mislukt met 'Error during token exchange: failed to fetch'">
+Deze fout betekent dat de invoegtoepassing Saga's authenticatie-eindpunt niet kon bereiken vanuit Word. Oorzaken, grofweg in volgorde van waarschijnlijkheid:
+
+- **Een zakelijke firewall of proxy** blokkeert de webview van de invoegtoepassing. De invoegtoepassing wordt gehost op `word.sagalegal.io` en roept terug naar de Saga-host van uw tenant, bijvoorbeeld `app.sagalegal.io` of `your-firm.sagalegal.io`. Beide moeten via HTTPS bereikbaar zijn vanuit het bedrijfsnetwerk — vraag IT om ze toe te staan voor Office-invoegtoepassingen.
+- **Verouderde invoegtoepassingscache.** Wis de Office-invoegtoepassingscache ([Microsoft-documentatie](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) en meld u opnieuw aan.
+- **Office-build is verouderd.** Ga naar **File > Account > Update Options > Update Now**. Sommige oudere builds hadden een bug in de netwerkstack van de webview van de invoegtoepassing.
+
+Als de fout na deze controles blijft bestaan, neem dan contact op met support met uw Office-versie (**File > Account > About Word**) en een screenshot van de fout.
+</Accordion>
+
+<Accordion title="De invoegtoepassing toont een leeg paneel en laadt nooit">
+Het Office-invoegtoepassingspaneel kan de JavaScript-bundel soms bij de eerste keer openen niet laden, vooral bij trage verbindingen.
+
+1. Sluit het paneel (X in de hoek) en open het opnieuw vanuit het lint.
+2. Als het nog steeds leeg is, herstart Word.
+3. Als het na een herstart nog steeds leeg is, wis de Office-invoegtoepassingscache ([Microsoft-documentatie](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)).
+4. Open Word en de invoegtoepassing opnieuw.
+
+Netwerkkant: de invoegtoepassing wordt gehost op `word.sagalegal.io` en Office laadt de runtime vanuit Microsofts CDN. Bevestig met uw IT-team dat beide bereikbaar zijn vanuit het bedrijfsnetwerk.
+</Accordion>
+
+<Accordion title='"This clause was modified after the suggestion was generated" — toepassen mislukt'>
+De invoegtoepassing richt elke suggestie op de exacte alinea en tekstinhoud die bestond toen de AI de suggestie maakte. Als u die alinea in Word bewerkt tussen genereren en toepassen — of als uw `track changes` door accepteren/weigeren de alinea verschuift — kan de toepasstap het oorspronkelijke anker niet vinden en weigert deze te schrijven, zodat uw eerdere wijzigingen niet worden overschreven.
+
+De oplossing is de suggestie opnieuw genereren tegen de huidige staat van het document:
+
+1. Verstuur dezelfde prompt opnieuw naar de AI.
+2. Het nieuwe antwoord weerspiegelt de alinea zoals die nu is.
+3. Pas de nieuwe suggestie toe.
+
+Als u meerdere bewerkingen achter elkaar doet, genereer dan één keer opnieuw aan het einde in plaats van na elke bewerking — dat scheelt rondes.
+</Accordion>
+
+<Accordion title="Suggest mode is uitgeschakeld — de Apply-knop verschijnt niet">
+Als de antwoordmoduskeuze **Suggest** grijs toont met een tooltip "Suggestions are disabled because this chat is linked to another document", is de chat voor u gestart met een ander Word-bestand open. De invoegtoepassing koppelt suggest mode aan het document waaraan de chat oorspronkelijk was gebonden — wisselen van document halverwege de chat schakelt de UI voor suggest mode uit, zodat u geen wijzigingen in het verkeerde bestand schrijft.
+
+Om Suggest te gebruiken in het bestand dat u nu open hebt, start u een nieuwe chat. De nieuwe chat bindt aan het huidige document en de optie **Suggest** wordt weer beschikbaar. Uw vorige chatgeschiedenis blijft in het tabblad **History** staan.
+</Accordion>
+
+<Accordion title="Geldt Zero Data Retention voor de Word-invoegtoepassing?">
+Ja. Wanneer ZDR is ingeschakeld voor uw werkruimte, respecteert de Word-invoegtoepassing dit: het tabblad **History** toont "No history available", chats worden niet server-side bewaard en de chatstream draait per beurt in ZDR-modus. Als u de retentiehandhaving niet ziet in de invoegtoepassing, controleer dan of u de nieuwste build hebt — wis de Office-invoegtoepassingscache ([Microsoft-documentatie](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) en laad opnieuw.
+
+Let op: ZDR is een werkruimtebrede instelling die door uw beheerder wordt geconfigureerd. Als u niet zeker weet of uw werkruimte ZDR gebruikt, vraag uw beheerder dan om de retentieperiode in het beheerpaneel te bevestigen.
+</Accordion>
+
+<Accordion title="Track changes worden niet toegepast op voetnoten wanneer ik een suggestie accepteer">
+Word behandelt voetnootinhoud in de engine voor track changes als een apart verhaal. Programmatische bewerkingen die door een invoegtoepassing worden ingevoegd — zo past Saga suggesties toe — worden niet altijd als bijgehouden wijzigingen doorgezet naar het voetnootgebied.
+
+Workaround: wanneer een suggestie voetnoottekst raakt, kopieer de suggestie uit het invoegtoepassingspaneel en plak deze handmatig in de voetnoot terwijl track changes is ingeschakeld. We werken met Microsofts add-in API-team aan een oplossing voor de langere termijn.
+</Accordion>
+
+<Accordion title="Tellen interacties met de Word-invoegtoepassing mee in gebruiksstatistieken van de werkruimte?">
+Ja. Berichten die vanuit de Word-invoegtoepassing worden verzonden en taken die daar worden uitgevoerd, tellen mee in het **Usage**-dashboard van uw werkruimte naast webberichten. Ze delen dezelfde activiteittotalen per gebruiker en zijn voor beheerders zichtbaar onder dezelfde tijdsfilters.
+
+De invoegtoepassing zelf verschijnt niet als apart kanaal in het dashboard — gebruik wordt toegeschreven aan de gebruiker, niet aan het oppervlak waarmee het bericht is verzonden.
+</Accordion>
+
+</AccordionGroup>
+
+## Account en aanmelden
+
+<AccordionGroup>
+
+<Accordion title="Ik krijg 'Access Denied' wanneer ik probeer aan te melden">
+Dit betekent meestal dat het account niet is ingericht in uw Saga-werkruimte, of dat het is gedeactiveerd.
+
+- **Controleer het e-mailadres.** Saga is niet hoofdlettergevoelig, maar is streng met typefouten en aliassen — `firstname.lastname@firm.com` en `f.lastname@firm.com` zijn voor Saga verschillende accounts, ook als beide bij dezelfde mailbox uitkomen. Gebruik exact het e-mailadres dat uw kantoor heeft geregistreerd.
+- **Vraag uw werkruimtebeheerder** om de gebruikerslijst te controleren. Die kan zien of uw account bestaat, welke rol het heeft en of het is gedeactiveerd. Een eerder verwijderd account kan indien nodig ook opnieuw worden geactiveerd.
+- **Controleer de werkruimte-URL.** Als uw kantoor meerdere Saga-subdomeinen gebruikt, is de magic link alleen geldig voor de werkruimte waaruit u deze hebt aangevraagd.
+
+Als de beheerder bevestigt dat u bent ingericht en actief bent, maar u nog steeds Access Denied ziet, neem dan contact op met support met het e-mailadres, de werkruimte-URL en een screenshot van de fout.
+</Accordion>
+
+<Accordion title="Kan ik aanmelden met SMS?">
+Ja — als uw werkruimte SMS-aanmelding heeft ingeschakeld, biedt de pagina **Choose how to sign in** naast de magic-linkoptie ook **Get verification SMS**. Kies die optie, voer op het volgende scherm uw telefoonnummer in, en Saga stuurt een eenmalige code per SMS.
+
+Als u de SMS-optie niet ziet, is deze niet ingeschakeld voor uw werkruimte of heeft uw account geen telefoonnummer opgeslagen. Vraag uw beheerder om het nummer toe te voegen; SMS is niet iets dat u zelf via de profielpagina kunt activeren.
+
+Voor kantoren met SSO is single sign-on meestal de snelste route — één klik in uw identiteitsprovider en u bent binnen.
+</Accordion>
+
+<Accordion title="Ik heb Saga 's nachts open laten staan en nu werkt niets meer">
+Als u een Saga-tabblad vele uren open hebt gehad en uw volgende actie mislukt — een prompt die niet verzendt, een pagina die niet laadt, of een SharePoint- of Microsoft-actie die "session expired" teruggeeft — ververs de pagina. De oplossing is bijna altijd een harde refresh.
+
+Wat er gebeurt: de JavaScript-bundel van de pagina, CSRF-tokens en eventuele Microsoft-toegangstokens zijn opgehaald toen u het tabblad voor het eerst opende. Vooral Microsoft-tokens verlopen volgens hun eigen schema (vaak rond 24 uur), en een oude Saga-bundel kan uit sync raken met de gedeployde backend. Een refresh haalt alles opnieuw op.
+
+Uw aanmelding zelf blijft tot 30 dagen geldig, dus u hoeft uw gegevens niet opnieuw in te voeren — alleen Ctrl+R / Cmd+R.
+
+Maak er bij langlopend werk een gewoonte van om te verversen voordat u een belangrijke prompt verstuurt als het tabblad langer dan een paar uur idle is geweest.
+</Accordion>
+
+<Accordion title="Ik word beperkt in snelheid of zie 'too many requests'">
+Saga beperkt hoe vaak bepaalde acties kunnen worden uitgevoerd. Als u dit ziet tijdens inloggen of tweefactorauthenticatie, wacht een paar minuten en probeer het opnieuw. Voor chatgerelateerde rate limits wacht u kort en verstuurt u uw bericht opnieuw.
+
+Als u bij normaal gebruik herhaaldelijk een rate limit raakt, en niet na snel herhaald klikken, neem dan contact op met support — dat wijst meestal op automatisering of een browserextensie die namens u achtergrondverzoeken doet.
 </Accordion>
 
 </AccordionGroup>
@@ -44,23 +367,102 @@ Saga beperkt hoe vaak bepaalde acties kunnen worden uitgevoerd. Als u dit ziet t
 <AccordionGroup>
 
 <Accordion title="Ik zie SharePoint of Epona365 niet bij het uploaden van documenten">
-Deze integraties moeten door uw beheerder worden ingeschakeld. Vraag hem of haar om de integratie te configureren vanuit het [beheerpaneel](/nl/guides/admin) onder **Instellingen > Integraties**. Zodra het is ingesteld, verschijnt de optie voor iedereen in de organisatie.
+Deze integraties moeten door uw beheerder worden ingeschakeld. Vraag hen om de integratie te configureren vanuit het [beheerpaneel](/nl/guides/admin) onder **Instellingen > Integraties**. Zodra dit is ingesteld, verschijnt de optie voor iedereen in de organisatie.
 </Accordion>
 
 <Accordion title="Ik zie geen organisatiebronnen in de chatwerkbalk">
 Organisatiebronnen worden aangemaakt door uw beheerder of contentbeheerder. Als de schakelaar niet verschijnt in het menu **Bronnen toevoegen**, heeft uw organisatie er nog geen ingesteld. Vraag uw beheerder om er een aan te maken vanuit het [beheerpaneel](/nl/guides/admin).
 </Accordion>
 
-<Accordion title="Ik zie een juridische bron die ik nodig heb niet">
-Uw beheerder bepaalt welke juridische bronnen zijn ingeschakeld. Als een bron niet wordt weergegeven, vraag uw beheerder om deze in te schakelen vanuit de werkruimte-instellingen. Zie [moonlit.ai/coverage](https://moonlit.ai/coverage) voor de volledige catalogus van beschikbare bronnen.
+<Accordion title="Een juridische bron waar ik gisteren toegang toe had, is uit de dropdown verdwenen">
+Bronnen verdwijnen alleen uit de dropdown omdat toegang is gewijzigd in de configuratielaag — niet omdat de dropdown ze client-side verbergt.
+
+- **In een domeingebaseerde werkruimte** (de meeste kantoren) kan een werkruimtebeheerder een database in- of uitschakelen in het beheerpaneel. Als een database van de ene op de andere dag is verdwenen, vraag uw beheerder dan of zij, of iemand anders met beheerdersrechten, onlangs de configuratie voor juridisch onderzoek hebben aangepast.
+- **In een gedeelde werkruimte** die licenties per gebruiker gebruikt (`*.sagalegal.io` Community of vergelijkbaar), beheert Saga support de databasevlaggen per gebruiker. Een licentiewijziging, bijvoorbeeld na een verlenging, kan een vlag verwijderen. Neem contact op met support met de databasenaam om dit te bevestigen.
+- **Moonlit-jurisdictiebronnen** hangen af van een jurisdictie-allowlist; als de jurisdictielijst van uw account is bijgewerkt, bewegen de bijbehorende Moonlit-rechtspraakbronnen mee.
+
+Er is geen client-side optie "ik heb deze bron verborgen" — als u een bron niet ziet, heeft uw account er momenteel geen toegang toe.
 </Accordion>
 
-<Accordion title="Ik heb geen toegang tot het beheerpaneel">
-Het beheerpaneel is alleen zichtbaar voor gebruikers met de rol **Beheerder** of **Contentbeheerder**. Als u toegang nodig hebt, vraag een bestaande beheerder om uw rol bij te werken. Contentbeheerders kunnen bibliotheken en organisatiebronnen beheren; volledige beheerders kunnen alles beheren, inclusief gebruikers en instellingen.
+<Accordion title="Ik zie een juridische bron die ik nodig heb niet (Lovdata, Rettsdata, Rechtspraak, enzovoort)">
+Juridische bronnen worden per werkruimte ingeschakeld. Als de bron die u nodig hebt niet in de dropdown **Juridisch onderzoek** staat, is deze niet voor uw kantoor ingeschakeld.
+
+Er kunnen twee dingen ontbreken:
+
+1. **Uw kantoor heeft een abonnement bij de bron.** Saga koppelt met juridische databases, maar bevat niet het onderliggende abonnement voor betaalde bronnen — uw kantoor betaalt de aanbieder rechtstreeks, bijvoorbeeld Lovdata of Rettsdata. Controleer met uw beheerder of financiële team of het abonnement actief is.
+2. **De bron is geconfigureerd voor uw werkruimte.** Saga's huidige geïntegreerde bronnen omvatten Lovdata, Rettsdata, Moonlit, Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl en EUR-Lex. Publieke bronnen zijn meestal standaard beschikbaar; betaalde bronnen hebben credentials nodig. Uw accountteam verzorgt de inschakeling — neem contact met hen op via uw beheerder of rechtstreeks via [support@sagalegal.io](mailto:support@sagalegal.io).
+
+Zie [moonlit.ai/coverage](https://moonlit.ai/coverage) voor de catalogus van rechtspraak- en regelgevingsdekking die Saga via Moonlit kan bereiken.
+
+Als u niet weet wie uw beheerder is, zie de volgende vraag.
 </Accordion>
 
-<Accordion title="De Word-invoegtoepassing verschijnt niet in Word">
-Dit is meestal een machtigings- of licentieprobleem. Controleer of uw organisatie invoegtoepassingen van derden voor Office toestaat, of uw Office-versie up-to-date is en of u bent aangemeld met uw Microsoft-account. Zie [probleemoplossing voor de Word-invoegtoepassing](/nl/guides/integrations/word-add-in/user-setup#probleemoplossing) voor gedetailleerde stappen.
+<Accordion title="Hoe voeg ik een nieuwe gebruiker toe aan mijn werkruimte?">
+Enterprise-accounts gebruiken automatische gebruikersprovisioning, dus gebruikers worden automatisch toegevoegd en bijgewerkt. Op Solo- en Demo-accounts worden nieuwe gebruikers handmatig door een beheerder toegevoegd vanuit de sectie **Licensed Users** van het beheerpaneel.
+
+1. Open **Admin panel > Licensed Users**.
+2. Klik op **Add Licensed User**.
+3. Voer het zakelijke e-mailadres en de Saga ID van de gebruiker in.
+4. Sla op.
+
+De nieuwe gebruiker ontvangt een uitnodiging per e-mail. Totdat die wordt geaccepteerd en de gebruiker zich aanmeldt, verschijnt de gebruiker niet als actief.
+
+Veelvoorkomende varianten:
+- **Een voormalige collega keert terug.** Als het account eerder is verwijderd, is geen nieuwe uitnodiging nodig — een beheerder kan het verwijderde account opnieuw activeren vanuit de gebruikerslijst. Bestaande chats en projecten blijven gekoppeld aan het opnieuw geactiveerde account.
+- **Een heel team start tegelijk.** Bulkuitnodigingen zijn momenteel geen selfservice-beheerdersactie; neem contact op met support of uw accountteam als u meer dan ongeveer 10 mensen tegelijk moet onboarden.
+- **Een gebruiker heeft de uitnodigingsmail nooit ontvangen.** Controleer de spammap en verifieer daarna of het e-mailadres in de gebruikerslijst klopt. Als beide in orde zijn, vraag support om de uitnodiging opnieuw te activeren.
+
+Als u geen beheerder bent, zie "Ik weet niet wie mijn werkruimtebeheerder is" hieronder.
+</Accordion>
+
+<Accordion title="Ik weet niet wie mijn werkruimtebeheerder is">
+Open de pagina **Profiel** vanuit de zijbalk. De ledenlijst toont iedereen in de werkruimte en hun rol — iedereen met **Admin** heeft volledige controle over de werkruimte. **Content admin** kan gedeelde content beheren (prompts, sjablonen, workflows), maar geen werkruimte-instellingen, gebruikers of integraties.
+
+Als uw werkruimte geen aangewezen beheerder heeft, wat soms voorkomt bij kantoorbrede uitrol, neem dan contact op met support — we kunnen de oorspronkelijke eigenaar van de werkruimte identificeren en helpen om beheerdersdekking te herstellen.
+</Accordion>
+
+<Accordion title="Ik heb geen toegang tot het beheerpaneel, of ik zie er maar een deel van">
+Het beheerpaneel is alleen zichtbaar voor gebruikers met de rol **Admin** of **Content admin**.
+
+- **Content admin** ziet de contentkant: interne bronnen (kantoorbrede kennisbanken), bibliotheken (prompts, gridsjablonen, workflows) en aangepaste assistenten. Zij zien geen gebruikers, integraties, werkruimte-instellingen of gebruiksstatistieken.
+- **Admin** ziet alles: de contentsecties hierboven plus **Users**, **Integrations**, **Theme**, **Workspace settings** en **Usage**.
+
+Als u content admin bent en gebruikers, integraties of andere werkruimtebrede instellingen moet beheren, vraag dan een bestaande Admin om uw account te promoveren. Die doet dit vanuit de sectie **Users** van het beheerpaneel: zoek uw rij en wijzig de rol naar **Admin**.
+
+Als u al Admin bent maar een sectie ontbreekt, meld u één keer af en opnieuw aan — de rol kan client-side gecachet zijn. Als de optie nog steeds ontbreekt, neem dan contact op met support.
+</Accordion>
+
+<Accordion title="URL-extractie (zoals rechtspraak.nl of een andere site) geeft geen content terug">
+Saga's URL-extractor gebruikt een externe fetch-service (Tavily) om publieke webpagina's op te halen en hun content door te geven aan de AI. Daardoor zijn er een paar situaties waarin extractie mislukt:
+
+- **Pagina's achter een betaalmuur of login** — Tavily kan niet authenticeren bij sites van derden, dus de fetch geeft de loginmuur terug in plaats van de content. Gebruik de abonnementsweergave van uw kantoor voor dezelfde content, bijvoorbeeld een ingelogde PDF-export, en upload die.
+- **Sites die server-side fetches blokkeren** — sommige uitgevers blokkeren scrapinginfrastructuur via Cloudflare of vergelijkbare gateways. De site laadt prima in uw browser, maar Tavily's verzoek wordt geweigerd. Voor Nederlandse rechtspraak van `rechtspraak.nl` is dit een bekend pijnpunt — als de geïntegreerde juridische bron Rechtspraak voor uw werkruimte is ingeschakeld, gebruik die dan in plaats daarvan (die bevraagt rechtstreeks de officiële API). Anders downloadt u de PDF van de uitspraak en voegt u die toe.
+- **Pagina's die JavaScript nodig hebben om te renderen** — Tavily leest de HTML die de server teruggeeft. Als de content pas verschijnt nadat een browser JavaScript uitvoert, ziet Tavily een lege shell. Voeg in plaats daarvan een PDF-afdruk van de pagina toe.
+
+Als een site waarop u vertrouwt onlangs is gestopt met werken, stuur dan de URL en een voorbeeld van een mislukte query naar support — dan kunnen we het onderzoeken.
+</Accordion>
+
+<Accordion title="Ik wil de lettertypen en styling van mijn kantoor instellen op gegenereerde documenten">
+Saga ondersteunt kantoorbrede documentstyling. Een beheerder uploadt een referentie-`.docx` van uw kantoor, en elk document dat Saga daarna genereert (zowel Word- als PDF-exports) volgt automatisch die styling.
+
+**Instellen**
+
+Ga naar **Admin Panel → Document Styling** en upload een `.docx` die de styling van uw kantoor gebruikt.
+
+**Wat Saga uit het referentiedocument haalt**
+
+- **Typografie** — hoofdlettertype, grootte, kleur en regelhoogte (uit de standaard-/Normal-stijl van het document), plus Heading 1 tot en met Heading 6
+- **Themakleuren** — primair en accent
+- **Pagina-instelling** — grootte, oriëntatie en marges
+- **Kop- en voetteksten** — tekst, uitlijning, paginanummers en een eventueel ingesloten logo
+
+**Machtigingen**
+
+Alleen Admin-gebruikers kunnen het referentiedocument uploaden. Als u geen beheerdersrechten hebt, vraag dan een werkruimtebeheerder om dit eenmaal namens het kantoor te uploaden.
+
+**Huidige beperking**
+
+Saga mapt de standaardalinea-/Normal-stijl en Heading 1–6. Aangepaste alineastijlen die apart zijn gedefinieerd, bijvoorbeeld een kantoorspecifieke `Body`-stijl die de standaard overschrijft, worden nog niet opgepikt. De opgehaalde lettertypen, kleuren, koppen, pagina-instelling en kop-/voetteksten dekken normaal gesproken het grootste deel van de huisstijl van een kantoor. Als een specifieke aangepaste stijl na upload niet wordt toegepast, neem dan contact op met support met uw referentiedocument en we kijken ernaar.
 </Accordion>
 
 </AccordionGroup>
@@ -69,8 +471,26 @@ Dit is meestal een machtigings- of licentieprobleem. Controleer of uw organisati
 
 <AccordionGroup>
 
-<Accordion title="Hoe neem ik contact op met ondersteuning?">
-Klik op **Hulp vragen** in de zijbalk om het feedbackformulier te openen, of mail het ondersteuningsteam rechtstreeks op [support@sagalegal.io](mailto:support@sagalegal.io). Vermeld zoveel mogelijk details — wat u aan het doen was, wat u verwachtte en eventuele foutmeldingen die u zag.
+<Accordion title="Hoe neem ik contact op met support?">
+Klik op **Get help** in de zijbalk om het feedbackformulier te openen, of mail het supportteam rechtstreeks op [support@sagalegal.io](mailto:support@sagalegal.io). Vermeld zoveel mogelijk details — wat u aan het doen was, wat u verwachtte en eventuele foutmeldingen die u zag.
+
+Voor problemen waarbij de AI eerst kan helpen, en dat geldt voor de meeste "hoe doe ik..."-vragen, kunt u het in de chat vragen. Saga's supportassistent is gebaseerd op deze documentatie en kan vaak direct antwoorden. Hij opent alleen namens u een supportticket als hij de vraag niet zelf kan oplossen, zodat u niet op een ticket wacht voor iets dat al gedocumenteerd is.
+</Accordion>
+
+<Accordion title="Welke informatie helpt het supportteam om problemen het snelst op te lossen?">
+Voor elk probleem:
+
+- **Werkruimte-URL** (bijvoorbeeld `https://your-firm.sagalegal.io`).
+- **Uw e-mailadres** (zoals geregistreerd in Saga).
+- **Geschatte tijd** waarop het probleem optrad, inclusief tijdzone.
+- **Wat u probeerde te doen**, wat u verwachtte en wat er daadwerkelijk gebeurde.
+- **Een screenshot of korte schermopname** als er een zichtbare fout of onverwachte UI-status is.
+
+Voor browserproblemen vermeldt u ook browsernaam en -versie (bijvoorbeeld Chrome 148) en of het probleem ook in incognito optreedt.
+
+Voor problemen met de Word-invoegtoepassing helpt de versie-informatie uit **File > Account > About Word** (Windows) of **Word > About Microsoft Word** (Mac) om Office-gerelateerde bugs snel te herkennen.
+
+Voor chatproblemen laat de **Chat Session ID** (zichtbaar in de URL wanneer de chat openstaat) ons het exacte gesprek in de backend traceren.
 </Accordion>
 
 </AccordionGroup>

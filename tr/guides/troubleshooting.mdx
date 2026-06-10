@@ -2,14 +2,73 @@
 title: SSS ve sorun giderme
 ---
 
-## Belgeler
+## Belgeler ve bilgi tabanı
 
 <AccordionGroup>
 
 <Accordion title="Belgem yüklenemedi veya işlenemedi">
-Dosya formatını ve boyutunu kontrol edin. Saga; PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG ve yaygın görsel formatlarını destekler. Maksimum dosya boyutu 1 GB'tır — ve metin çıkarma (OCR) gerektiren PDF'ler veya görseller 500 MB ile sınırlıdır.
+Dosya formatını ve boyutunu kontrol edin. Saga; PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG ve yaygın görsel formatlarını destekler. Maksimum dosya boyutu 1 GB'tır — metin çıkarma (OCR) gerektiren PDF'ler veya görseller ise 500 MB ile sınırlıdır.
 
-Dosya formatı ve boyutu uygunsa, bilgi tabanındaki başarısız belgede **Yeniden dene**'ye tıklayın. Hâlâ çalışmıyorsa, dosyayı yeniden yüklemeyi deneyin. Bozuk dosyalar veya düşük görüntü kalitesine sahip yoğun taranmış belgeler bazen işlemenin başarısız olmasına neden olabilir.
+Dosya formatı ve boyutu uygunsa, bilgi tabanındaki başarısız belgede **Yeniden dene**'ye tıklayın. Hâlâ çalışmıyorsa, dosyayı yeniden yüklemeyi deneyin. Bozuk dosyalar, parola korumalı PDF'ler veya görüntü kalitesi düşük yoğun taranmış belgeler bazen işlemenin başarısız olmasına neden olabilir.
+
+İşlendikten sonra çok az metin üreten veya hiç metin üretmeyen bir `.pptx` dosyası için Saga, dosyayı LibreOffice üzerinden dönüştürmeye ve oluşan PDF üzerinde OCR çalıştırmaya geri döner. Bu nedenle görsel ağırlıklı sunumlar yine de aranabilir metin üretmelidir. Hâlâ başarısız olursa dosya çoğunlukla dönüştürme hattı için fazla büyüktür veya bozuktur — modern PowerPoint'te **File > Save As** ile yeniden kaydetmek genellikle sorunu çözer.
+</Accordion>
+
+<Accordion title='Yapay zeka "Failed to find documents" veya "cannot locate files" diyor'>
+Mesaj böyle görünse de bu, belgelerinizin kayıp olduğu anlamına gelmez. Saga'nın vektör deposuna yaptığı arama çağrısı başarısız olduğunda gösterilir — genellikle geçici bir altyapı aksaklığıdır.
+
+Ne yapmalısınız:
+- **Aynı promptu yeniden gönderin.** Bu hataların çoğu yeniden denemede düzelir.
+- **Bir veya iki dakikadan uzun sürerse**, alttaki hizmet geçici bir sorun yaşıyordur. Kısa süre bekleyip yeniden deneyin veya sayfayı yenileyin.
+- **Belgelerinizi yeniden yüklemeyin** — hâlâ oradalar. Hata depolama yolunda değil, arama yolundadır.
+
+Bunu birkaç dakika boyunca birden fazla sohbette sürekli görüyorsanız destekle iletişime geçin — bu, bilmek isteyeceğimiz daha geniş bir sorunun işaretidir.
+</Accordion>
+
+<Accordion title="Bir projeye belge ekledim ama yapay zeka sohbette onları bulamadığını söylüyor">
+Birkaç belirli neden olabilir — sırayla kontrol edin:
+
+1. **Belgeler hâlâ işleniyor.** Yalnızca başarıyla işlenmiş belgeler yapay zekaya sunulur. Bilgi tabanı panelini kontrol edin: yanında dönen simge veya "İşleniyor" etiketi olan dosyalar bitene kadar sohbet tarafından görünmez. Bekleyin veya bir dosya takıldıysa **Yeniden dene**'ye tıklayın.
+2. **Bir dosya işlenemedi.** Başarısız dosyalarda uyarı simgesi görünür — bunlar aranabilir değildir. Dosyanın işlem menüsünden yeniden deneyin veya yeniden yükleyin.
+3. **Bilgi tabanı kapsamı daraltılmış.** Sohbet tarafındaki bilgi tabanı seçici, belgelerin bir alt kümesine ayarlanmış olabilir — bu durumda yapay zeka yalnızca onlarla sınırlıdır. Sohbet içindeki bilgi tabanı görünümünü açın ve beklediğiniz belgelerin seçili olduğunu doğrulayın (veya daraltmayı kaldırmak için "Tümünü seç"i kullanın).
+4. **Proje sohbetinde değil, global sohbette olabilirsiniz.** Belgeler projenin bilgi tabanında yaşar ve proje dışında başlatılan sohbetler tarafından görünmez. Projeyi açın ve sohbeti oradan başlatın.
+
+Dört nokta da doğruysa ve yapay zeka hâlâ belgeleri bulamıyorsa, dosyalardan birindeki ayırt edici bir ifadeye atıf yapan spesifik bir soru sorun — belirsiz sorular yapay zekanın belge getirme adımını tamamen atlamasına neden olabilir.
+</Accordion>
+
+<Accordion title="Belgeler işlenirken bilgi tabanım 'kilitli'">
+Bir belge işlenirken bilgi tabanındaki onay kutuları ve toplu işlemler o belge için geçici olarak devre dışı bırakılır. Zaten işlenmiş belgelerdeki bireysel işlemler kullanılmaya devam eder ve sohbette çalışmayı sürdürebilirsiniz — işlenen belgeler hazır olur olmaz yapay zeka tarafından aranabilir hâle gelir.
+
+İşleme süresi dosya boyutuna ve belgenin OCR gerektirip gerektirmediğine bağlıdır. Tipik 20 sayfalık bir PDF bir dakikadan kısa sürer; büyük taranmış PDF'ler birkaç dakika sürebilir. Bir belge 15 dakikadan uzun süredir işlemde takılı kaldıysa işlem menüsünden **Yeniden dene**'ye tıklayın.
+</Accordion>
+
+<Accordion title="Belge sayacı proje limitine ulaştığımı söylüyor ama ulaşmadım">
+Projelerde çalışma alanı başına bir belge sınırı vardır (yöneticiniz tarafından yapılandırılır). Yer açmak için belgeleri sildiyseniz ve sayaç hâlâ eski sayıyı gösteriyorsa sayfayı yenileyin (Ctrl+R / Cmd+R) — sayı sayfa yüklenirken sunucudan alınır.
+
+Yenilemeden sonra sayı hâlâ yanlışsa — örneğin sayaç limitte olduğunuzu söylüyor ama dosya listesi çok daha az belge gösteriyorsa — proje adıyla destekle iletişime geçin. Sayıyı backend'de uzlaştırabiliriz. Bu sırada çalışmaya devam etmek için belgeleri yeni bir projeye taşıyabilirsiniz.
+</Accordion>
+
+<Accordion title="Aynı ada sahip iki belge düzgün çalışmıyor">
+Yapay zeka bir belgeyi ada göre getirirken birden fazla eşleşme bulursa — ister sohbet eklerinde ister projenin bilgi tabanında olsun — hangisini kastettiğinizi soran bir belirsizlik istemi gösterir. Çoğu zaman açıklama ister; bazen bir model yanlış dosyayı seçebilir veya adımı atlayabilir.
+
+Bunu sık görüyorsanız, dosyalardan birini her birinin ayırt edici bir adı olacak şekilde yeniden adlandırın — dosya adına `(v2)` veya bir tarih eklemek bile yeterlidir. Zaten yüklenmiş dosyalar için bilgi tabanındaki belgenin işlem menüsünden adı yerinde değiştirebilir veya sohbette çıkarıp yeni adla yeniden ekleyebilirsiniz.
+
+Bilgi tabanı, aynı dosyaları tespit ettiğinde dublikeleri **Dublike** etiketiyle otomatik olarak da etiketler; bu, onları topluca bulmanın yararlı bir yoludur.
+</Accordion>
+
+<Accordion title="Bilgi tabanındaki belgeler yapay zeka yanıtlarında görünmüyor">
+Kontrol edilecek birkaç şey:
+
+- **Belgenin işlenmeyi tamamladığını doğrulayın.** Dosyanın yanında dönen simge veya "İşleniyor" etiketi varsa henüz aranabilir değildir. Bekleyin veya takıldıysa **Yeniden dene**'ye tıklayın.
+- **Spesifik bir soru sorun.** Yapay zeka yalnızca sorunuzla ilgili pasajları getirir. Sorunuz genişse ("bu belgeler ne diyor?"), yapay zeka her şeyi okumak yerine örnekleme yapabilir. En iyi sonuç için belirli bir madde, taraf veya konu hakkında sorun.
+- **Belgeye adıyla atıf yapın.** Dosya adını veya içinden ayırt edici bir ifadeyi yazmak, yapay zekayı özellikle o belgeyi getirmeye yönlendirir.
+- **Doğru proje sohbetinde olduğunuzu kontrol edin.** Global sohbet proje belgelerine erişemez. Projeyi açın, ardından içinde sohbet başlatın.
+</Accordion>
+
+<Accordion title="Birçok belgeyi aynı anda taşımak veya dublikeleri temizlemek istiyorum">
+Bilgi tabanında her belge veya klasörün yanındaki onay kutularını kullanın. Bir seçim etkin olduğunda araç çubuğunda toplu işlem olarak **İndir**, **Sil**, **Taşı** ve **Etiketle** sunulur. Klasörler arasında çoklu seçim yapabilirsiniz.
+
+Saga henüz bir proje içindeki dublike dosyaları otomatik olarak işaretlemez. Birden fazla yüklemeden dolayı dublikelerden şüpheleniyorsanız, dosya listesini ada göre sıralayarak görünür hâle getirin ve ihtiyacınız olmayanları topluca silin.
 </Accordion>
 
 </AccordionGroup>
@@ -18,10 +77,15 @@ Dosya formatı ve boyutu uygunsa, bilgi tabanındaki başarısız belgede **Yeni
 
 <AccordionGroup>
 
-<Accordion title="Yapay zeka sohbet bağlamının neredeyse dolduğunu söylüyor">
-Her yapay zeka modelinin aynı anda ne kadar metin değerlendirebileceği konusunda bir sınırı vardır. Bir konuşma uzadığında — çok sayıda mesaj, büyük ekler veya her ikisi — bağlamın neredeyse dolduğuna dair bir uyarı görürsünüz.
+<Accordion title="Sohbet geçmişim kayboldu">
+Sohbetler kullanıcı hesabı başına saklanır. Bir sohbet kaybolmuş gibi görünüyorsa:
 
-Bağlamı sıfırlamak için yeni bir konuşma başlatın. Büyük bir belge setiyle çalışıyorsanız, bunları sohbette eklemek yerine bir projenin [bilgi tabanına](/tr/guides/projects/knowledge-base) yüklemeyi düşünün — bilgi tabanı dosyalarınızı dizinler, böylece yapay zeka her şeyi aynı anda bağlamda tutmak zorunda kalmadan arama yapabilir.
+- **Doğru çalışma alanını kontrol edin.** Firmanızın birden fazla Saga çalışma alanı varsa (örneğin `firma.sagalegal.io` ve `firma-dev.sagalegal.io`), sohbetler başlatıldıkları çalışma alanına bağlıdır.
+- **Doğru projeyi kontrol edin.** Proje sohbetleri global sohbet listesinde değil, projenin içinde yaşar. Onları görmek için projeyi açın.
+- **Aynı kullanıcı olarak oturum açtığınızı kontrol edin.** Bazı firmalarda kişisel ve paylaşılan hesaplar vardır — sohbetler yalnızca onları oluşturan hesapta görünür.
+- **Başlığa göre arayın.** Sohbet listesi önce favorileri, sonra son etkinliği gösterir. Daha eski bir sohbet görünümden çıkmış olabilir; başlığa göre bulmak için sohbet listesinin üstündeki arama alanını kullanın.
+
+Bu kontrollerden sonra sohbet gerçekten eksikse, konuşmanın yaklaşık tarihi ve hatırladığınız herhangi bir ifadeyle destekle iletişime geçin. Konuşma verilerini backend'de tutarız ve inceleyebiliriz.
 </Accordion>
 
 <Accordion title="Yapay zeka yanlış veya eksik bir yanıt verdi">
@@ -30,11 +94,270 @@ Yapay zekanın yanıtının kalitesi, sahip olduğu bağlama ve kullandığını
 - **Daha yetenekli bir modele geçin** — daha yüksek zekaya sahip bir model sorunuzu daha iyi ele alabilir. Rehberlik için [Modeller](/tr/guides/assistants/models) bölümüne bakın.
 - **Bağlamı daraltın** — bilgi tabanında çok sayıda belge varsa, yapay zekanın dikkatini odaklamak için ilgili olmayanları pasif yapın.
 - **Sorunuzu yeniden ifade edin** — daha spesifik sorular genellikle daha iyi sonuçlar üretir. Göndermeden önce yapay zekanın ifadenizi iyileştirmesine izin vermek için **İstemi iyileştir**'i kullanın.
-- **Atıfları kontrol edin** — yapay zekanın iddialarını her zaman belirtilen kaynaklara karşı doğrulayın.
+- **Atıfları kontrol edin** — yapay zekanın iddialarını her zaman atıf yapılan kaynaklarla doğrulayın. Bir atıf yapay zekanın söylediğini desteklemiyorsa mesajda **Beğenmedim**'e tıklayın ve kısa bir not ekleyin. Geri bildirim doğrudan ekibe gider ve model davranışını ayarlamamıza yardımcı olur.
+
+Yapay zeka bazen bir kanun numarasını yanlış belirtebilir, bir hükmü yanlış yorumlayabilir veya bir alıntıyı yanlış kaynağa atfedebilir. Atıf yapılan pasajlar doğruluk kaynağıdır — yapay zekanın metnini taslak olarak değerlendirin.
 </Accordion>
 
-<Accordion title="Hız sınırına takılıyorum veya 'çok fazla istek' görüyorum">
+<Accordion title="Yapay zeka var olmayan bir dava veya kanuna atıf yaptı (veya olguları yanlış verdi)">
+Bu bir halüsinasyondur — model gerçek bir kaynağa karşılık gelmeyen, makul görünen bir atıf uydurmuştur. Şu durumlarda daha sık olur:
+
+- **İlgili hukuki kaynak çalışma alanınızda etkin değildir.** Lovdata veya Rettsdata açık değilken Norveç içtihadı hakkında soru soruyorsanız modelin dayanacağı yetkili bir kaynak yoktur ve doğaçlama yapabilir. Cevabı desteklemesini beklediğiniz kaynağın hukuki araştırma açılır menüsünde listelendiğini ve mesaj için açık olduğunu kontrol edin.
+- **Model etkin bir araştırma kaynağı olmadan çalışıyordur.** Kaynaklar etkin olsa bile modelin onları *kullanmayı seçmesi* gerekir — ilgili kaynağı açmak aramayı zorunlu kılmaz. Kritik atıflar için hukuki araştırmayı etkinleştirin ve soruyu açıkça sorun ("Rettsdata'da ... hakkındaki içtihadı ara").
+- **Soru modelin bilgisinin sınırındadır.** Daha eski veya daha belirsiz içtihatlar, iyi bilinen ilkelerden daha fazla uydurulma riski taşır.
+
+Pratik azaltma:
+- **Bir atıfa güvenmeden önce her zaman atıf çipine tıklayın.** Çip "—" değerine veya açıkça yanlış bir belgeye gidiyorsa atıf şüphelidir.
+- **Dışarıda alıntılamadan önce dava kimliklerini (ECLI, LB-, HR- vb.) doğrudan kaynak veritabanında doğrulayın.**
+- **Bağlayıcı bir atıf gerektiğinde serbest metin yanıtları yerine Saga'nın hukuki araştırma veritabanlarını kullanın.** Hukuki araştırma adımı, gerçek kaynak kayıtlarına bağlantı veren sonuçlar üretir.
+- **Bildirin.** Yanıtta **Beğenmedim**'e tıklayın ve kısa bir not ekleyin. Bu raporları model davranışını ayarlamak ve kapsam boşluklarını görmek için kullanırız.
+
+Yapay zeka bir araştırma hızlandırıcısıdır, otorite değildir. Her atıf avukattan geçer.
+</Accordion>
+
+<Accordion title="Ses girişi yanlış dili yazıya döküyor (veya anlamsız metin döndürüyor)">
+Ses transkripsiyonu Deepgram tarafından sağlanır. Dinlediği dil, Saga arayüz diliniz tarafından belirlenir — gerçekte konuştuğunuz dil tarafından **değil**. Arayüzünüz İngilizceyken Lehçe dikte ederseniz Deepgram Lehçe sesleri İngilizce kelimelere uydurmaya çalışır ve transkript bozulur.
+
+Bunu düzeltmek için arayüz dilinizi dikte etmek istediğiniz dille eşleştirin: **Ayarlar > Kişiselleştirme > Varsayılan dil**, ardından sayfayı yenileyin.
+
+Desteklenen transkripsiyon dilleri: İngilizce, Norveççe, Felemenkçe, Danca, Lehçe, İspanyolca, Almanca, İtalyanca, Portekizce, Türkçe, Fransızca ve İsveççe — Saga'nın arayüz yerelleriyle aynı küme. Arayüzünüz bu listenin dışındaki bir dile ayarlıysa transkripsiyon İngilizceye geri döner.
+</Accordion>
+
+<Accordion title="Ses girişi kaydediciyi hiç açmıyor">
+- **Tarayıcınızda mikrofon izinlerini kontrol edin.** Adres çubuğundaki kilit simgesine tıklayın ve `*.sagalegal.io` için mikrofon erişimine izin verildiğinden emin olun.
+- **En iyi uyumluluk için Chrome veya Edge kullanın.** Bazı tarayıcılar kaydedicinin dayandığı `MediaRecorder` API'sini sunmaz.
+- **İşletim sisteminizin tarayıcıya mikrofon erişimi verdiğini kontrol edin** — macOS'te bu **Sistem Ayarları > Gizlilik ve Güvenlik > Mikrofon** altındadır.
+
+Kaydedici açılıyor ama hiç ses yakalamıyorsa mikrofonunuz işletim sistemi düzeyinde sessize alınmış olabilir veya başka bir uygulama onu açık tutuyor olabilir. Diğer toplantı uygulamalarını (Zoom, Teams) kapatın ve tekrar deneyin.
+</Accordion>
+
+<Accordion title="Bir sohbet çok uzadığında ne olur?">
+Saga'nın mevcut sürümünde (Nisan 2026 itibarıyla) sabit bir "bağlam doldu" kesme noktası yoktur. Yapay zeka, her şeyi prompt içinde tutmak yerine gerektiğinde araç çağrılarıyla belge içeriğini getirir; bu nedenle uzun konuşmalar artık sert bir yüzde eşiğine takılmaz.
+
+Buna rağmen çok uzun sohbetler daha yavaş hissedilebilir çünkü yapay zekanın okuyacağı daha fazla geçmiş vardır. Yeni bir analiz hattına başlıyorsanız veya farklı bir belge setine geçiyorsanız yeni bir sohbet başlatın — daha hızlıdır ve odağı korur. Günler veya haftalar süren işler için belgelerinizi her yeni sohbete yeniden eklemek yerine bir projenin [bilgi tabanına](/tr/guides/projects/knowledge-base) yükleyin.
+</Accordion>
+
+<Accordion title="Bir atıf tıklanamıyor veya doğru sayfaya gitmiyor">
+Atıflar, yapay zeka iddialarının yanında küçük numaralı çipler olarak görünür. Bir çipe tıkladığınızda kaynak belge yan panelde, atıf yapılan pasaja kaydırılmış şekilde açılır.
+
+Bir atıf doğru sayfaya götürmüyorsa:
+
+- **Belge yalnızca görüntü olabilir.** OCR metin katmanı olmayan taranmış PDF'lerden atıf yapılabilir, ancak yan panel bir görüntü içinde belirli bir sayfa koordinatına atlayamaz. Atıf yine de yapay zekanın hangi belgeyi kullandığını söyler — dosyayı açıp alıntılanan pasajı arayın.
+- **Belge işlenememiş olabilir.** Bilgi tabanında dosyanın yanında uyarı simgesi arayın. İşlemeyi yeniden deneyin; atıf sonrasında doğru çözümlenir.
+- **Sohbet, belgenin son yeniden işlenmesinden daha eskidir.** Belgeyi yeniden yüklediyseniz eski atıflar önceki sürüme işaret eder. Taze atıflar almak için soruyu tekrar sorun.
+
+Herhangi bir belgede hiçbir atıfa tıklamak bir şey yapmıyorsa sayfayı yenileyin — bu, eski durumu temizler. Sorun yenilemelerden sonra devam ederse destekle iletişime geçin.
+</Accordion>
+
+<Accordion title="Bir sohbette tüm konuşmayı değil, tek bir mesajı silmek istiyorum">
+Herhangi bir mesajın üzerine gelin ve işlem menüsünde **Sil**'e tıklayın. Mesaj ve ona verilen yanıtlar konuşmadan kaldırılır. Sohbetin geri kalanı korunur.
+
+**Sil** seçeneğini görmüyorsanız rolünüz paylaşılan bir proje sohbetinde mesaj düzenlemeye izin vermiyor olabilir — proje sahibine veya yöneticinize sorun.
+</Accordion>
+
+</AccordionGroup>
+
+## İş akışları
+
+<AccordionGroup>
+
+<Accordion title="Sohbetten bir iş akışı çalıştırdığımda iş akışı kartı görünmüyor veya tıklanamıyor">
+Sohbetten bir iş akışı çalıştırdığınızda **Start running** düğmesi olan satır içi bir kart görünür. Kart görünmüyorsa veya tıklamalara yanıt vermiyorsa:
+
+- **Sayfayı yenileyin.** Kart canlı sohbet bağlantısına bağlıdır; uzun bir boşta kalma süresinden sonra bu bağlantı düşebilir.
+- Daha az test edilmiş bir tarayıcı kullanıyorsanız **Chrome veya Edge'in** en güncel sürümünü deneyin.
+
+Kart hâlâ yoksa iş akışını her zaman doğrudan **İş Akışları** sayfasından açabilirsiniz. Kütüphaneden başlatılan iş akışları hemen çalışır — ek onay adımı yoktur — ve sonuç aynıdır.
+
+Bazı tarayıcılarda satır içi kartla ilgili aralıklı sorunların farkındayız — kartın hiç görünmediği bir durumu tutarlı şekilde yeniden üretebiliyorsanız sohbet oturumu kimliğini ve tarayıcı/sürüm bilginizi desteğe gönderin.
+</Accordion>
+
+<Accordion title="Bir iş akışı taslağı veya şablonu İş Akışı kütüphanesinden açılmıyor (boş ekran, konsolda 401)">
+Bu genellikle sayfa açıkken oturum açma oturumunuzun arka planda süresinin dolduğu anlamına gelir. Kütüphane listesi önbellekten görüntülenmeye devam eder, ancak bir iş akışı açmak taze veri getirmeye çalışır ve kimlik doğrulama başarısız olur.
+
+Çözüm basittir:
+
+1. Saga'dan çıkış yapın (kenar çubuğunda avatarınıza tıklayın > **Çıkış yap**).
+2. Tarayıcı sekmesini kapatın.
+3. Yeni bir sekme açın, tekrar oturum açın ve İş Akışı kütüphanesine dönün.
+
+Sorun devam ederse tarayıcınızın kapanışta çerezleri temizlemeye ayarlı olup olmadığını veya bir uzantının (reklam engelleyici, gizlilik aracı) `sagalegal.io` için üçüncü taraf çerezlerini engelleyip engellemediğini kontrol edin. İş Akışı kütüphanesinin kalıcı bir oturum çerezine ihtiyacı vardır.
+
+Gizli mod iyi bir tanılama aracıdır: iş akışları gizli modda açılıyorsa sorun normal profilinizdedir (bir uzantı veya çerez ayarı). Gizli modda da açılmıyorsa tarayıcı DevTools konsolunun ekran görüntüsüyle destekle iletişime geçin.
+</Accordion>
+
+<Accordion title="Bir iş akışı çalıştırırken 'Invalid assistant selection' veya 'Selected model is not enabled' alıyorum">
+Her iki hata da bir iş akışı adımının şu anda kullanılamayan bir asistana veya modele işaret etmesinden kaynaklanır:
+
+- **'Invalid assistant selection'** — adımın referans verdiği özel asistan artık yoktur. Silinmiştir veya kimliği değişmiştir.
+- **'Selected model is not enabled'** — model vardır, ancak genellikle bir yönetici tarafından çalışma alanınızda devre dışı bırakılmıştır.
+
+İş akışını oluşturucuda açın, uyarı simgesi olan adıma tıklayın ve açılır menüden şu anda kullanılabilir bir asistan seçin. Kaydedin ve yeniden çalıştırın.
+
+İş akışının sahibiyseniz ama kendiniz bir şey değiştirmediyseniz, bir yönetici çalışma alanının etkin modellerini güncellemiş olabilir — hangi asistanların şu anda kullanılabilir olduğunu sorun veya genel bir modele geri dönün.
+</Accordion>
+
+<Accordion title="Bir iş akışı Excel veya başka bir dosya oluşturdu ama indirme bağlantısı çalışmıyor">
+Yapay zeka `sandbox:/mnt/data/filename.xlsx` gibi bir yola sahip bir dosyaya atıf yapıyorsa bu, geçici bir yürütme sandbox'ında yaşayan bir kod yorumlayıcı dosyasıdır. Bağlantının kendisi tarayıcıda tıklanabilir değildir.
+
+Dosyayı almak için:
+
+- **Yapay zekanın mesajının altına bakın** ve dosya çipini (dosya adı olan bir simge) bulun. Gerçek indirme budur. Dosyayı kaydetmek için tıklayın veya indirme simgesini görmek için üzerine gelin.
+- **Yapay zekadan "dosyayı sohbet eki olarak kaydetmesini" isteyin.** Dosyayı mesajda görünen ve normal şekilde indirilebilen bir ek olarak yeniden paketler.
+- Çip hiç görünmediyse **iş akışı adımını yeniden çalıştırın** — bazen yavaş render çipi gizler. Dosya her çalıştırmada yeniden oluşturulur.
+
+`sandbox:/mnt/data` referanslarının otomatik olarak sohbet eki olarak render edilmesi üzerinde çalışıyoruz. Bu yayınlanana kadar, mesajın altındaki dosya çipi oluşturulan dosyaları almanın doğru yoludur.
+</Accordion>
+
+<Accordion title="Bir iş akışı adımı başarısız oldu — şimdi ne olacak?">
+Başarısız adım panelinde bir hata mesajı gösterir. İş akışı durur ve sonraki adımlar çalışmaz.
+
+Yaygın nedenler:
+- **Model veya asistan değişikliği** — yukarıdaki "Invalid assistant selection" bölümüne bakın.
+- **Önceki adımdan boş girdi** — bir "Prompt çalıştır" adımı çıktı üretmediyse, onu `@` ile referanslayan sonraki bir adım hiçbir şey alamayabilir. Yeniden çalıştırmadan önce önceki adımın çıktısını kontrol edin.
+- **Belge işleme tamamlanmadı** — bir "Dosya yükleme" adımı bitmiş ama belgeler henüz dizine eklenmemişse, hemen ardından gelen bir "Prompt çalıştır" adımı içerik bulamayabilir. Birkaç saniye bekleyip yeniden çalıştırın.
+- **Geçici ağ veya model hatası** — iş akışını yeniden çalıştırın. Birçok hata yeniden denemede çözülür.
+
+İş akışının geri kalanını kaybetmeden başarısız adımın yapılandırmasını düzenleyebilirsiniz. Yeniden çalıştırma baştan başlar — henüz kısmi devam yoktur.
+</Accordion>
+
+</AccordionGroup>
+
+## Word eklentisi
+
+<AccordionGroup>
+
+<Accordion title="Word eklentisi Word'de görünmüyor">
+Bu genellikle bir izin veya lisans sorunudur. Kuruluşunuzun üçüncü taraf Office eklentilerine izin verdiğinden, Office sürümünüzün güncel olduğundan ve Microsoft hesabınızla oturum açtığınızdan emin olun. Ayrıntılı adımlar için [Word eklentisi kullanıcı kurulumu](/tr/guides/integrations/word-add-in/user-setup#sorun-giderme) bölümüne bakın.
+</Accordion>
+
+<Accordion title="Eklenti '404 not found from Microsoft Azure' gösteriyor veya kurulumdan sonra donuyor">
+Bu, Word'ün hâlâ Saga eklentisinin eski, **sideloaded** bir sürümünü yüklediğinin işaretidir. Sideloading, önceki Saga onboarding dönemlerinde kullanılan kurulum yoluydu — yöneticiniz veya hesap ekibiniz size elle kaydettiğiniz bir `.xml` manifesti vermişti. Bu manifest artık sunulmayan bir URL'ye işaret eder; bu nedenle eklenti yüklenemez veya Microsoft Azure'dan 404 döndürür.
+
+Aynı `.xml` dosyasını yeniden yüklemek yardımcı olmaz — dosya hâlâ ölü URL'ye işaret eder.
+
+Çözüm, AppSource sürümüne tek seferlik geçiştir:
+
+1. **Eski eklentiyi kaldırın.** Word'de **Insert > My Add-ins**. Saga'yı bulun, **⋯** menüsüne tıklayın ve **Remove**'u seçin.
+2. **Word'ü tamamen kapatın**, sonra yeniden açın.
+3. **AppSource'tan yükleyin.** Ya **Insert > Get Add-ins → "Saga" ara → Add** yolunu izleyin ya da [Microsoft AppSource'ta Saga](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) sayfasını açıp **Get it now**'a tıklayın.
+4. Şeritten Saga'yı açın ve oturum açın.
+
+Bundan sonra gelecekteki güncellemeler Store üzerinden otomatik gelir.
+
+Tam anlatım için [Word eklentisi kullanıcı kurulumu](/tr/guides/integrations/word-add-in/user-setup#sorun-giderme) bölümüne bakın.
+</Accordion>
+
+<Accordion title="Oturum açma başarısız — Microsoft'ta 'this account doesn't exist' sayfasını görüyorum">
+Bu, aynı cihazda birden fazla Microsoft hesabınız olduğunda olur (örneğin kişisel Outlook hesabı ve iş hesabı ya da iki farklı iş tenant'ı). Word, eklentiye Saga çalışma alanınız için provision edilmiş hesapla eşleşmeyen önbelleğe alınmış bir hesap verebilir.
+
+Bu sırayı deneyin — çoğu kullanıcı 2. veya 3. adımda açılır:
+
+1. **Word'ü tamamen kapatın** (uygulamadan çıkın, yalnızca belgeyi kapatmayın).
+2. **Word'deki ekstra Microsoft hesaplarından çıkış yapın.** Word'de: **File > Account > Sign out**. Birden fazla hesap görüyorsanız hepsinden çıkış yapın, sonra yalnızca Saga ile kullandığınız hesapla tekrar oturum açın.
+3. **Office eklenti önbelleğini temizleyin.** Microsoft bunu [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) sayfasında açıklar — sayfa Windows, Mac ve Web için Word'deki güncel önbellek konumlarını listeler. Önbelleği temizlemek yalnızca Office eklenti durumunu kaldırır — belgeleriniz etkilenmez.
+4. **Word'ü yeniden açın, Saga eklentisini açın ve oturum açın.** Microsoft istemi göründüğünde doğru hesabı seçin. Seçici görünmüyorsa **Use another account**'a tıklayın ve e-postayı elle yazın.
+
+Bundan sonra kurtarma sayfası hâlâ görünüyorsa, kurtarma sayfasındaki URL çubuğunun ekran görüntüsünü alın (tam URL, `client_id=` ve `login_hint=` parametreleri dahil) ve desteğe gönderin. Bu URL, Microsoft'un tam olarak hangi hesaba yönlendirildiğini gösterir.
+
+Eklentiye oturum açma, Saga çalışma alanınızın provision edildiği hesapla eşleşmelidir. Word şu anda kişisel bir `@outlook.com`/`@hotmail.com` hesabıyla oturum açmışsa ama çalışma alanınız bir iş tenant'ındaysa (veya tersi), Microsoft kimlik bilgileri geçerli olsa bile kimlik doğrulama başarısız olur.
+</Accordion>
+
+<Accordion title="Oturum açma 'Error during token exchange: failed to fetch' hatasıyla başarısız oluyor">
+Bu hata, eklentinin Word içinden Saga'nın kimlik doğrulama endpoint'ine ulaşamadığı anlamına gelir. Olasılık sırasına göre nedenler:
+
+- **Kurumsal güvenlik duvarı veya proxy**, eklentinin web görünümünü engelliyordur. Eklenti `word.sagalegal.io` üzerinde barındırılır ve tenant'ınızın Saga host'una (örneğin `app.sagalegal.io` veya `firmaniz.sagalegal.io`) geri çağrı yapar. Her ikisinin de kurumsal ağ içinden HTTPS erişimine ihtiyacı vardır — BT'den Office eklentileri için bunları izin listesine almasını isteyin.
+- **Eski eklenti önbelleği.** Office eklenti önbelleğini temizleyin ([Microsoft belgeleri](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) ve yeniden oturum açın.
+- **Office derlemesi güncel değil.** **File > Account > Update Options > Update Now** yoluna gidin. Bazı eski derlemelerde eklenti webview'ının ağ yığınında bir hata vardı.
+
+Bu kontrollerden sonra hata devam ederse Office sürümünüz (**File > Account > About Word**) ve hatanın ekran görüntüsüyle destekle iletişime geçin.
+</Accordion>
+
+<Accordion title="Eklenti boş bir panel gösteriyor ve hiç yüklenmiyor">
+Office eklenti paneli, özellikle yavaş bağlantılarda ilk açılışta JavaScript bundle'ını yükleyemeyebilir.
+
+1. Paneli kapatın (köşedeki X) ve şeritten yeniden açın.
+2. Hâlâ boşsa Word'ü yeniden başlatın.
+3. Yeniden başlatmadan sonra hâlâ boşsa Office eklenti önbelleğini temizleyin ([Microsoft belgeleri](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)).
+4. Word'ü ve eklentiyi yeniden açın.
+
+Ağ tarafında: eklenti `word.sagalegal.io` üzerinde barındırılır ve Office çalışma zamanını Microsoft'un CDN'inden yükler. Kurumsal ağ içinden her ikisine de erişilebildiğini BT ekibinizle doğrulayın.
+</Accordion>
+
+<Accordion title='"This clause was modified after the suggestion was generated" — uygulama başarısız oluyor'>
+Eklenti, her öneriyi yapay zekanın ürettiği anda var olan tam paragraf ve metin içeriğine hedefler. Üretim ile uygulama arasında Word'de o paragrafı düzenlerseniz — veya `track changes` kabul/ret işlemleri paragrafı kaydırırsa — uygulama adımı özgün bağlantı noktasını bulamaz ve yazmayı reddeder; böylece önceki düzenlemelerinizin üzerine yazılmaz.
+
+Çözüm, öneriyi belgenin mevcut durumuna göre yeniden oluşturmaktır:
+
+1. Aynı promptu yapay zekaya yeniden gönderin.
+2. Yeni yanıt, paragrafın artık nasıl göründüğünü yansıtır.
+3. Yeni öneriyi uygulayın.
+
+Arka arkaya birkaç düzenleme yapıyorsanız her birinden sonra değil, sonunda bir kez yeniden üretin — bu, tur sayısını azaltır.
+</Accordion>
+
+<Accordion title="Suggest modu devre dışı — Apply düğmesi görünmüyor">
+Yanıtlama modu seçicisinde **Suggest** gri görünüyorsa ve tooltip "Suggestions are disabled because this chat is linked to another document" diyorsa, önünüzdeki sohbet farklı bir Word dosyası açıkken başlatılmıştır. Eklenti suggest modunu ilk bağlandığı belgeye kapsamlar — sohbet sırasında belge değiştirirseniz yanlış dosyaya değişiklik yazmamanız için suggest modu arayüzü devre dışı bırakılır.
+
+Şu anda açık olan dosyada Suggest kullanmak için yeni bir sohbet başlatın. Yeni sohbet mevcut belgeye bağlanır ve **Suggest** seçeneği yeniden kullanılabilir olur. Önceki sohbet geçmişiniz **History** sekmesinde kalır.
+</Accordion>
+
+<Accordion title="Zero Data Retention Word eklentisi için geçerli mi?">
+Evet. Çalışma alanınızda ZDR etkinse Word eklentisi buna uyar: **History** sekmesi "No history available" gösterir, sohbetler sunucu tarafında saklanmaz ve sohbet akışı her turda ZDR modunda çalışır. Eklentide saklama zorlamasını görmüyorsanız en son eklenti derlemesine sahip olduğunuzdan emin olun — Office eklenti önbelleğini temizleyin ([Microsoft belgeleri](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) ve yeniden yükleyin.
+
+Not: ZDR, yöneticiniz tarafından yapılandırılan çalışma alanı genelinde bir ayardır. Çalışma alanınızın ZDR'de olup olmadığından emin değilseniz, yöneticinizden admin panelindeki saklama süresini doğrulamasını isteyin.
+</Accordion>
+
+<Accordion title="Bir öneriyi kabul ettiğimde değişiklik izleme dipnotlara uygulanmıyor">
+Word'ün değişiklik izleme motoru dipnot içeriğini ayrı bir alan olarak ele alır. Bir eklenti tarafından programatik olarak eklenen düzenlemeler — Saga'nın önerileri uygulama şekli budur — her zaman dipnot alanına izlenen değişiklik olarak yayılmaz.
+
+Geçici çözüm: bir öneri dipnot metnini hedeflediğinde, öneriyi eklenti panelinden kopyalayın ve değişiklik izleme açıkken dipnotun içine elle yapıştırın. Daha uzun vadeli bir çözüm için Microsoft'un eklenti API ekibiyle çalışıyoruz.
+</Accordion>
+
+<Accordion title="Word eklentisi etkileşimleri çalışma alanı kullanım metriklerine sayılır mı?">
+Evet. Word eklentisinden gönderilen mesajlar ve çalıştırılan görevler, web mesajlarıyla birlikte çalışma alanınızın **Kullanım** panosunda sayılır. Aynı kullanıcı başına etkinlik toplamlarını paylaşırlar ve yöneticilere aynı tarih aralığı filtreleri altında görünürler.
+
+Eklentinin kendisi panoda ayrı bir kanal olarak görünmez — kullanım, mesajın gönderildiği yüzeye değil kullanıcıya atfedilir.
+</Accordion>
+
+</AccordionGroup>
+
+## Hesap ve oturum açma
+
+<AccordionGroup>
+
+<Accordion title="Oturum açmaya çalışırken 'Access Denied' alıyorum">
+Bu genellikle hesabın Saga çalışma alanınızda provision edilmediği veya devre dışı bırakıldığı anlamına gelir.
+
+- **E-posta adresini doğrulayın.** Saga büyük/küçük harfe duyarlı değildir ancak yazım hataları ve alias'lar konusunda katıdır — `ad.soyad@firma.com` ve `a.soyad@firma.com`, ikisi de aynı posta kutusuna teslim edilse bile Saga için farklı hesaplardır. Firmanızın kaydettiği tam e-postayı kullanın.
+- **Çalışma alanı yöneticinizden** kullanıcı listesini kontrol etmesini isteyin. Hesabınızın var olup olmadığını, hangi role sahip olduğunu ve devre dışı bırakılıp bırakılmadığını görebilirler. Gerekirse daha önce silinmiş bir hesabı da yeniden etkinleştirebilirler.
+- **Çalışma alanı URL'sini kontrol edin.** Firmanız birden fazla Saga alt alan adı kullanıyorsa magic link yalnızca talep edildiği çalışma alanı için geçerlidir.
+
+Yönetici provision edildiğinizi ve aktif olduğunuzu onaylıyorsa ama hâlâ Access Denied görüyorsanız, e-posta adresi, çalışma alanı URL'si ve hatanın ekran görüntüsüyle destekle iletişime geçin.
+</Accordion>
+
+<Accordion title="SMS ile oturum açabilir miyim?">
+Evet — çalışma alanınızda SMS oturum açma etkinse, **Oturum açma yöntemini seçin** sayfası magic link seçeneğinin yanında **Doğrulama SMS'i al** seçeneğini sunar. Onu seçin, sonraki ekranda telefon numaranızı girin ve Saga size tek kullanımlık kodu SMS ile gönderir.
+
+SMS seçeneğini görmüyorsanız çalışma alanınızda açılmamıştır veya hesabınızda telefon numarası kayıtlı değildir. Yöneticinizden numarayı eklemesini isteyin; SMS, profil sayfasından kendi kendinize kaydolabileceğiniz bir şey değildir.
+
+SSO yapılandırılmış firmalarda tek oturum açma genellikle en hızlı yoldur — kimlik sağlayıcınızda tek tıklama ve içeri girersiniz.
+</Accordion>
+
+<Accordion title="Saga'yı gece açık bıraktım ve şimdi hiçbir şey çalışmıyor">
+Bir Saga sekmesini saatlerce açık bıraktıysanız ve sonraki işleminiz başarısız oluyorsa — gönderilemeyen bir prompt, yüklenmeyen bir sayfa veya "session expired" döndüren bir SharePoint ya da Microsoft işlemi — sayfayı yenileyin. Çözüm neredeyse her zaman sert yenilemedir.
+
+Olan şu: sayfanın JavaScript bundle'ı, CSRF token'ları ve varsa Microsoft erişim token'ları sekmeyi ilk açtığınızda alınmıştır. Özellikle Microsoft token'ları kendi takvimlerine göre süresi dolar (çoğu zaman 24 saat civarı) ve eski bir Saga bundle'ı dağıtılmış backend ile senkron dışına çıkabilir. Yenileme hepsini yeniden alır.
+
+Oturum açmanız 30 güne kadar geçerli kalır, bu nedenle kimlik bilgilerini yeniden girmeniz gerekmez — yalnızca Ctrl+R / Cmd+R.
+
+Uzun süren işlerde, sekme birkaç saatten uzun süre boşta kaldıysa önemli bir prompt göndermeden önce yenilemeyi alışkanlık hâline getirin.
+</Accordion>
+
+<Accordion title="Hız sınırına takılıyorum veya 'too many requests' görüyorum">
 Saga, belirli işlemlerin ne sıklıkta gerçekleştirilebileceğini sınırlar. Oturum açma veya iki faktörlü kimlik doğrulama sırasında bunu görüyorsanız, birkaç dakika bekleyin ve tekrar deneyin. Sohbetle ilgili hız sınırları için kısa bir süre bekleyin ve mesajınızı yeniden gönderin.
+
+Normal kullanım sırasında (hızlı tekrarlı tıklamalardan sonra değil) tekrar tekrar hız sınırına takılıyorsanız destekle iletişime geçin — bu genellikle sizin adınıza arka plan istekleri yapan bir otomasyona veya tarayıcı uzantısına işaret eder.
 </Accordion>
 
 </AccordionGroup>
@@ -44,23 +367,102 @@ Saga, belirli işlemlerin ne sıklıkta gerçekleştirilebileceğini sınırlar.
 <AccordionGroup>
 
 <Accordion title="Belge yüklerken SharePoint veya Epona365'i göremiyorum">
-Bu entegrasyonların yöneticiniz tarafından etkinleştirilmesi gerekir. **Ayarlar > Entegrasyonlar** altında [yönetim paneli](/tr/guides/admin)nden entegrasyonu yapılandırmasını isteyin. Kurulduktan sonra seçenek kuruluştaki herkes için görünür.
+Bu entegrasyonların yöneticiniz tarafından etkinleştirilmesi gerekir. **Ayarlar > Entegrasyonlar** altında [yönetim panelinden](/tr/guides/admin) entegrasyonu yapılandırmasını isteyin. Kurulduktan sonra seçenek kuruluştaki herkes için görünür.
 </Accordion>
 
 <Accordion title="Sohbet araç çubuğunda kuruluş kaynaklarını göremiyorum">
-Kuruluş kaynakları, yöneticiniz veya içerik yöneticiniz tarafından oluşturulur. **Kaynak ekle** menüsünde geçiş düğmesi görünmüyorsa, kuruluşunuz henüz hiçbirini oluşturmamıştır. Yöneticinizden [yönetim paneli](/tr/guides/admin)nden bir tane oluşturmasını isteyin.
+Kuruluş kaynakları yöneticiniz veya içerik yöneticiniz tarafından oluşturulur. **Kaynak ekle** menüsünde anahtar görünmüyorsa kuruluşunuz henüz hiç kaynak oluşturmamıştır. Yöneticinizden [yönetim panelinden](/tr/guides/admin) bir tane oluşturmasını isteyin.
 </Accordion>
 
-<Accordion title="İhtiyacım olan bir hukuki kaynağı göremiyorum">
-Yöneticiniz hangi hukuki kaynakların etkin olduğunu kontrol eder. Bir kaynak görünmüyorsa, yöneticinizden çalışma alanı ayarlarından etkinleştirmesini isteyin. Mevcut kaynakların tam kataloğu için [moonlit.ai/coverage](https://moonlit.ai/coverage) adresine bakın.
+<Accordion title="Dün erişebildiğim bir hukuki kaynak açılır menüden kayboldu">
+Kaynaklar açılır menüden yalnızca erişim yapılandırma katmanında değiştiği için kaybolur — açılır menü onları istemci tarafında gizlediği için değil.
+
+- **Alan adına bağlı bir çalışma alanında** (çoğu firma), çalışma alanı yöneticisi admin panelinde bir veritabanını açıp kapatabilir. Bir veritabanı bir gecede kaybolduysa yöneticinize kendisinin (veya admin erişimi olan birinin) yakın zamanda hukuki araştırma yapılandırmasını değiştirip değiştirmediğini sorun.
+- **Kullanıcı başına lisanslama kullanan paylaşılan bir çalışma alanında** (`*.sagalegal.io` Community veya benzeri), Saga support kullanıcı başına veritabanı bayraklarını yönetir. Örneğin yenileme sonrası bir lisans değişikliği bayrağı kaldırabilir. Doğrulamak için veritabanı adıyla destekle iletişime geçin.
+- **Moonlit yargı bölgesi kaynakları** bir yargı bölgesi izin listesine bağlıdır; hesabınızın yargı bölgesi listesi güncellendiyse ilgili Moonlit içtihat kaynakları da onunla birlikte değişir.
+
+İstemci tarafında "bu kaynağı gizledim" anahtarı yoktur — bir kaynağı göremiyorsanız hesabınızın şu anda ona erişimi yoktur.
 </Accordion>
 
-<Accordion title="Yönetim paneline erişemiyorum">
-Yönetim paneli yalnızca **Yönetici** veya **İçerik yöneticisi** rolüne sahip kullanıcılara görünür. Erişime ihtiyacınız varsa, mevcut bir yöneticiden rolünüzü güncellemesini isteyin. İçerik yöneticileri kütüphaneleri ve kuruluş kaynaklarını yönetebilir; tam yöneticiler kullanıcılar ve ayarlar dahil her şeyi yönetebilir.
+<Accordion title="İhtiyacım olan bir hukuki kaynağı göremiyorum (Lovdata, Rettsdata, Rechtspraak vb.)">
+Hukuki kaynaklar çalışma alanı başına etkinleştirilir. İhtiyacınız olan kaynak **Hukuki araştırma** açılır menüsünde değilse firmanız için açılmamıştır.
+
+İki şey eksik olabilir:
+
+1. **Firmanızın kaynakla aboneliği vardır.** Saga hukuki veritabanlarına bağlanır ancak ücretli olanlar için alttaki aboneliği içermez — firmanız sağlayıcıya doğrudan ödeme yapar (örneğin Lovdata veya Rettsdata). Aboneliğin yerinde olduğunu yöneticinizle veya muhasebe ekibinizle doğrulayın.
+2. **Kaynak çalışma alanınız için yapılandırılmıştır.** Saga'nın şu anda entegre kaynakları arasında Lovdata, Rettsdata, Moonlit, Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl ve EUR-Lex bulunur. Genel kaynaklar çoğunlukla kutudan çıktığı gibi kullanılabilir; ücretli kaynaklar kimlik bilgileri gerektirir. Etkinleştirmeyi hesap ekibiniz yönetir — onlara yöneticiniz üzerinden veya doğrudan [support@sagalegal.io](mailto:support@sagalegal.io) adresinden ulaşın.
+
+Saga'nın Moonlit üzerinden erişebildiği içtihat ve düzenleyici kapsam kataloğu için [moonlit.ai/coverage](https://moonlit.ai/coverage) adresine bakın.
+
+Yöneticinizin kim olduğunu bilmiyorsanız bir sonraki maddeye bakın.
 </Accordion>
 
-<Accordion title="Word eklentisi Word'de görünmüyor">
-Bu genellikle bir izin veya lisans sorunudur. Kuruluşunuzun üçüncü taraf Office eklentilerine izin verdiğinden, Office sürümünüzün güncel olduğundan ve Microsoft hesabınızla oturum açtığınızdan emin olun. Ayrıntılı adımlar için [Word eklentisi sorun giderme](/tr/guides/integrations/word-add-in/user-setup#sorun-giderme) bölümüne bakın.
+<Accordion title="Çalışma alanıma yeni kullanıcıyı nasıl eklerim?">
+Enterprise hesapları otomatik kullanıcı provision kullanır; bu nedenle kullanıcılar otomatik eklenir ve güncellenir. Solo ve Demo hesaplarda yeni kullanıcılar, admin panelinin **Licensed Users** bölümünden bir yönetici tarafından elle eklenir.
+
+1. **Admin panel > Licensed Users**'ı açın.
+2. **Add Licensed User**'a tıklayın.
+3. Kullanıcının iş e-posta adresini ve Saga ID'sini girin.
+4. Kaydedin.
+
+Yeni kullanıcı e-postayla davet alır. Kabul edip oturum açana kadar aktif olarak görünmez.
+
+Yaygın varyasyonlar:
+- **Eski bir çalışma arkadaşı geri dönüyor.** Hesap daha önce silindiyse yeni davete gerek yoktur — bir yönetici silinmiş hesabı Kullanıcılar listesinden yeniden etkinleştirebilir. Mevcut sohbetler ve projeler yeniden etkinleştirilen hesapla ilişkili kalır.
+- **Bir ekip aynı anda katılıyor.** Toplu davetler şu anda self-servis bir admin işlemi değildir; tek seferde yaklaşık 10'dan fazla kişiyi onboard etmeniz gerekiyorsa destekle veya hesap ekibinizle iletişime geçin.
+- **Davet e-postasını hiç almayan kullanıcı.** Spam klasörünü kontrol edin, sonra Kullanıcılar listesindeki e-postanın doğru olduğunu doğrulayın. İkisi de doğruysa destekten daveti yeniden tetiklemesini isteyin.
+
+Yönetici değilseniz aşağıdaki "Çalışma alanı yöneticimin kim olduğunu bilmiyorum" bölümüne bakın.
+</Accordion>
+
+<Accordion title="Çalışma alanı yöneticimin kim olduğunu bilmiyorum">
+Kenar çubuğundan **Profil** sayfasını açın. Üye listesi çalışma alanındaki herkesi ve rollerini gösterir — **Admin** olarak işaretlenen herkes çalışma alanı üzerinde tam kontrole sahiptir. **İçerik yöneticisi** paylaşılan içerikleri (promptlar, şablonlar, iş akışları) yönetebilir ancak çalışma alanı ayarlarını, kullanıcıları veya entegrasyonları yönetemez.
+
+Çalışma alanınızda atanmış bir yönetici yoksa (firma geneli dağıtımlarda bazen olur), destekle iletişime geçin — özgün çalışma alanı sahibini belirleyebilir ve admin kapsamını yeniden kurmanıza yardımcı olabiliriz.
+</Accordion>
+
+<Accordion title="Yönetim paneline erişemiyorum (veya yalnızca bir kısmını görüyorum)">
+Admin paneli yalnızca **Admin** veya **İçerik yöneticisi** rolüne sahip kullanıcılara görünür.
+
+- **İçerik yöneticisi** içerik tarafını görür: dahili kaynaklar (firma geneli bilgi tabanları), kütüphaneler (promptlar, grid şablonları, iş akışları) ve özel asistanlar. Kullanıcıları, entegrasyonları, çalışma alanı ayarlarını veya kullanım metriklerini görmez.
+- **Admin** her şeyi görür: yukarıdaki içerik bölümlerine ek olarak **Kullanıcılar**, **Entegrasyonlar**, **Tema**, **Çalışma alanı ayarları** ve **Kullanım**.
+
+İçerik yöneticisiyseniz ve kullanıcıları, entegrasyonları veya diğer çalışma alanı düzeyi ayarları yönetmeniz gerekiyorsa mevcut bir Admin'den hesabınızı yükseltmesini isteyin. Bunu admin panelindeki **Kullanıcılar** bölümünden yapar: satırınızı bulur ve rolü **Admin** olarak değiştirir.
+
+Zaten Admin'seniz ama bir bölüm eksikse bir kez çıkış yapıp tekrar giriş yapın — rol istemci tarafında önbelleğe alınmış olabilir. Seçenek hâlâ yoksa destekle iletişime geçin.
+</Accordion>
+
+<Accordion title="Bir URL çıkarma işlemi (rechtspraak.nl veya başka bir site gibi) içerik döndürmüyor">
+Saga'nın URL çıkarıcısı, herkese açık web sayfalarını almak ve içeriğini yapay zekaya geçirmek için üçüncü taraf bir getirme hizmeti (Tavily) kullanır. Bu, çıkarma işleminin başarısız olduğu birkaç durum yaratır:
+
+- **Ücretli duvar veya oturum gerektiren sayfalar** — Tavily üçüncü taraf sitelere kimlik doğrulaması yapamaz, bu yüzden getirme içerik yerine giriş duvarını döndürür. Aynı içeriğin firmanızın abonelik görünümünü (örneğin oturum açılmış PDF dışa aktarımı) kullanın ve onu yükleyin.
+- **Sunucu tarafı getirmeleri engelleyen siteler** — bazı yayıncılar Cloudflare veya benzeri ağ geçitleriyle scraping altyapısını engeller. Site tarayıcınızda sorunsuz yüklenir ama Tavily'nin isteği reddedilir. `rechtspraak.nl` üzerinden Hollanda içtihadı için bu bilinen bir sorundur — entegre Rechtspraak hukuki kaynağı çalışma alanınızda etkinse onu kullanın (resmi API'yi doğrudan sorgular). Aksi halde kararın PDF'ini indirin ve ekleyin.
+- **Render için JavaScript gerektiren sayfalar** — Tavily sunucunun döndürdüğü HTML'i okur. İçerik yalnızca tarayıcı JS çalıştırdıktan sonra görünüyorsa Tavily boş bir kabuk görür. Bunun yerine sayfanın PDF çıktısını ekleyin.
+
+Güvendiğiniz bir site yakın zamanda çalışmayı bıraktıysa URL'yi ve başarısız bir örnek sorguyu desteğe gönderin — inceleyebiliriz.
+</Accordion>
+
+<Accordion title="Oluşturulan belgelerde firmamın yazı tiplerini ve stilini ayarlamak istiyorum">
+Saga firma geneli belge stilini destekler. Bir yönetici firmanızdan bir referans `.docx` yükler ve bundan sonra Saga'nın oluşturduğu her belge (hem Word hem PDF dışa aktarımları) stilinizi otomatik olarak izler.
+
+**Kurulum**
+
+**Admin Panel → Document Styling** bölümüne gidin ve firmanızın stilini kullanan bir `.docx` yükleyin.
+
+**Saga'nın referans belgeden çıkardıkları**
+
+- **Tipografi** — gövde yazı tipi, boyutu, rengi ve satır yüksekliği (belgenin varsayılan/Normal stilinden), ayrıca Başlık 1'den Başlık 6'ya kadar
+- **Tema renkleri** — birincil ve vurgu
+- **Sayfa ayarı** — boyut, yönlendirme ve kenar boşlukları
+- **Üstbilgiler ve altbilgiler** — metin, hizalama, sayfa numaraları ve gömülü logo varsa
+
+**İzinler**
+
+Yalnızca Admin kullanıcılar referans belgeyi yükleyebilir. Admin erişiminiz yoksa, bir çalışma alanı yöneticisinden bunu firma adına bir kez yüklemesini isteyin.
+
+**Mevcut sınırlama**
+
+Saga varsayılan (Normal) paragraf stilini ve Başlık 1–6'yı eşler. Ayrı tanımlanmış özel paragraf stilleri (örneğin varsayılanı geçersiz kılan firmaya özgü `Body` stili) henüz alınmaz. Çıkarılan yazı tipleri, renkler, başlıklar, sayfa ayarı ve üstbilgi/altbilgi genellikle bir firmanın kurumsal stilinin büyük kısmını kapsar; belirli bir özel stil yüklemeden sonra uygulanmıyorsa referans belgenizle destekle iletişime geçin, inceleyelim.
 </Accordion>
 
 </AccordionGroup>
@@ -71,6 +473,24 @@ Bu genellikle bir izin veya lisans sorunudur. Kuruluşunuzun üçüncü taraf Of
 
 <Accordion title="Destekle nasıl iletişime geçebilirim?">
 Geri bildirim formunu açmak için kenar çubuğunda **Yardım al**'a tıklayın veya destek ekibine doğrudan [support@sagalegal.io](mailto:support@sagalegal.io) adresinden e-posta gönderin. Mümkün olduğunca fazla ayrıntı ekleyin — ne yapıyordunuz, ne bekliyordunuz ve gördüğünüz hata mesajları.
+
+Yapay zekanın önce yardımcı olabileceği sorunlar için (çoğu "nasıl yaparım..." sorusu buna girer) sohbette sormayı deneyin. Saga'nın destek asistanı bu dokümantasyona dayanır ve çoğu zaman hemen yanıt verebilir. Soruyu kendi çözemediğinde sizin adınıza destek talebi açar; böylece belgelenmiş bir yanıtı olan bir şey için talep beklemezsiniz.
+</Accordion>
+
+<Accordion title="Hangi bilgiler destek ekibinin sorunları en hızlı çözmesine yardımcı olur?">
+Her sorun için:
+
+- **Çalışma alanı URL'si** (örn. `https://firmaniz.sagalegal.io`).
+- **E-posta adresiniz** (Saga'da kayıtlı olduğu şekliyle).
+- **Sorunun yaşandığı yaklaşık zaman**, saat dilimi dahil.
+- **Ne yapmaya çalıştığınız**, ne beklediğiniz ve gerçekte ne olduğu.
+- Görünür bir hata veya beklenmeyen arayüz durumu varsa **ekran görüntüsü veya kısa ekran kaydı**.
+
+Tarayıcı sorunları için tarayıcı adını ve sürümünü de ekleyin (örn. Chrome 148) ve sorunun gizli modda olup olmadığını belirtin.
+
+Word eklentisi sorunları için **File > Account > About Word** (Windows) veya **Word > About Microsoft Word** (Mac) altındaki sürüm bilgisi Office taraflı hataları hızlıca belirlemeye yardımcı olur.
+
+Sohbet sorunları için **Chat Session ID** (sohbet açıkken URL'de görünür), backend'de tam konuşmayı izlememizi sağlar.
 </Accordion>
 
 </AccordionGroup>
