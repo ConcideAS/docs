@@ -2,14 +2,73 @@
 title: Preguntas frecuentes y solución de problemas
 ---
 
-## Documentos
+## Documentos y base de conocimiento
 
 <AccordionGroup>
 
 <Accordion title="Mi documento no se cargó o no se procesó">
-Verifique el formato y el tamaño del archivo. Saga admite PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG y formatos de imagen comunes. El tamaño máximo de archivo es de 1 GB — y los PDF o imágenes que necesitan extracción de texto (OCR) están limitados a 500 MB.
+Compruebe el formato y el tamaño del archivo. Saga admite PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG y formatos de imagen comunes. El tamaño máximo de archivo es de 1 GB — y los PDF o las imágenes que necesitan extracción de texto (OCR) están limitados a 500 MB.
 
-Si el formato y el tamaño del archivo son correctos, haga clic en **Reintentar** en el documento fallido en la base de conocimiento. Si aún no funciona, intente volver a cargar el archivo. Los archivos corruptos o documentos escaneados con mala calidad de imagen pueden causar que el procesamiento falle en ocasiones.
+Si el formato y el tamaño son correctos, haga clic en **Retry** en el documento fallido dentro de la base de conocimiento. Si sigue sin funcionar, intente volver a cargar el archivo. Los archivos dañados, los PDF protegidos con contraseña o los documentos muy escaneados con mala calidad de imagen pueden hacer que el procesamiento falle.
+
+En el caso de un archivo `.pptx` que genera poco o ningún texto después del procesamiento, Saga recurre a convertirlo mediante LibreOffice y ejecutar OCR sobre el PDF resultante. Por eso, las presentaciones con muchas imágenes deberían generar texto buscable. Si aun así falla, lo más habitual es que el archivo sea demasiado grande para la canalización de conversión o que esté dañado — volver a guardarlo con **File > Save As** en una versión moderna de PowerPoint suele resolverlo.
+</Accordion>
+
+<Accordion title='La IA dice "Failed to find documents" o "cannot locate files"'>
+Aunque el mensaje suene así, no significa que sus documentos hayan desaparecido. Aparece cuando falla la llamada de búsqueda de Saga al almacén vectorial — normalmente por un problema transitorio de infraestructura.
+
+Qué hacer:
+- **Reenvíe el mismo prompt.** La mayoría de estos casos se resuelven al reintentar.
+- **Si persiste durante más de uno o dos minutos**, el servicio subyacente está teniendo un problema. Espere brevemente y vuelva a intentarlo, o actualice la página.
+- **No vuelva a cargar sus documentos** — siguen ahí. El error está en la ruta de búsqueda, no en la ruta de almacenamiento.
+
+Si lo ve de forma constante durante varios minutos en varios chats, contacte con soporte — eso indica un problema más amplio que nos conviene conocer.
+</Accordion>
+
+<Accordion title="Agregué documentos a un proyecto, pero la IA dice en el chat que no puede encontrarlos">
+Hay varias causas concretas — revíselas en orden:
+
+1. **Los documentos siguen procesándose.** Solo los documentos que terminaron de procesarse correctamente están disponibles para la IA. Revise el panel de la base de conocimiento: cualquier archivo con un indicador giratorio o la etiqueta "Processing" es invisible para el chat hasta que termine. Espere o haga clic en **Retry** si un archivo está atascado.
+2. **Un archivo falló durante el procesamiento.** Los archivos fallidos muestran un icono de advertencia — no se pueden buscar. Reintente desde el menú de acciones del archivo o vuelva a cargarlo.
+3. **El alcance de la base de conocimiento está reducido.** El selector de base de conocimiento del chat puede estar configurado en un subconjunto de documentos — si es así, la IA queda limitada a esos documentos. Abra la vista de base de conocimiento dentro del chat y confirme que los documentos esperados están seleccionados, o use "Select all" para quitar la restricción.
+4. **Está en un chat global, no en el chat del proyecto.** Los documentos viven en la base de conocimiento del proyecto y no son visibles para chats iniciados fuera del proyecto. Abra el proyecto e inicie un chat desde allí.
+
+Si los cuatro puntos están correctos y la IA sigue sin encontrar los documentos, haga una pregunta específica que mencione una frase distintiva de uno de los archivos — las preguntas vagas pueden hacer que la IA omita por completo la recuperación de documentos.
+</Accordion>
+
+<Accordion title="Mi base de conocimiento está 'bloqueada' mientras se procesan documentos">
+Mientras se procesa un documento, las casillas y las acciones masivas de la base de conocimiento quedan deshabilitadas temporalmente para ese documento. Las acciones individuales sobre documentos ya procesados siguen disponibles, y puede seguir trabajando en el chat — los documentos procesados se vuelven buscables para la IA en cuanto cada uno está listo.
+
+El tiempo de procesamiento depende del tamaño del archivo y de si el documento necesita OCR. Un PDF típico de 20 páginas tarda menos de un minuto; los PDF escaneados grandes pueden tardar varios minutos. Si un documento lleva más de 15 minutos atascado en procesamiento, haga clic en **Retry** desde su menú de acciones.
+</Accordion>
+
+<Accordion title="El contador de documentos dice que alcancé el límite del proyecto, pero no es así">
+Los proyectos tienen un límite de documentos por workspace, configurado por su administrador. Si eliminó documentos para liberar espacio y el contador sigue mostrando el número anterior, actualice la página (Ctrl+R / Cmd+R) — el conteo se obtiene del servidor al cargar.
+
+Si el conteo sigue siendo incorrecto después de actualizar — por ejemplo, el contador dice que está en el límite, pero la lista de archivos muestra muchos menos documentos — contacte con soporte e incluya el nombre del proyecto. Podemos conciliar el conteo en el backend. Mientras tanto, puede mover documentos a un proyecto nuevo para seguir trabajando.
+</Accordion>
+
+<Accordion title="Dos documentos con el mismo nombre no funcionan correctamente">
+Cuando la IA busca un documento por nombre y encuentra más de una coincidencia — ya sea en los adjuntos de un chat o en la base de conocimiento de un proyecto — muestra una pregunta de desambiguación para confirmar a cuál se refiere. La mayoría de las veces le pedirá que aclare; ocasionalmente, un modelo puede elegir el archivo equivocado u omitir el paso.
+
+Si esto ocurre con frecuencia, cambie el nombre de uno de los archivos para que cada uno tenga un nombre distintivo — incluso agregar `(v2)` o una fecha al nombre basta. Para archivos ya cargados, cambie el nombre en línea desde el menú de acciones del documento en la base de conocimiento, o quite y vuelva a adjuntar el archivo con un nombre nuevo en el chat.
+
+La base de conocimiento también etiqueta automáticamente los duplicados con la etiqueta **Duplicate** cuando detecta archivos idénticos, lo que ayuda a encontrarlos en bloque.
+</Accordion>
+
+<Accordion title="Los documentos de la base de conocimiento no aparecen en las respuestas de la IA">
+Revise lo siguiente:
+
+- **Confirme que el documento terminó de procesarse.** Un indicador giratorio o la etiqueta "Processing" junto al archivo significa que todavía no es buscable. Espere o haga clic en **Retry** si está atascado.
+- **Haga una pregunta específica.** La IA recupera solo los pasajes relevantes para su pregunta. Si la pregunta es amplia ("¿qué dicen estos documentos?"), la IA puede muestrear en lugar de leerlo todo. Pregunte por una cláusula, parte o tema específico para obtener mejores resultados.
+- **Mencione el documento por nombre.** Escribir el nombre del archivo o una frase distintiva ayuda a que la IA recupere ese documento en concreto.
+- **Compruebe que está en el chat del proyecto correcto.** Un chat global no tiene acceso a los documentos del proyecto. Abra el proyecto y luego inicie un chat dentro de él.
+</Accordion>
+
+<Accordion title="Quiero mover o eliminar duplicados de muchos documentos a la vez">
+Use las casillas junto a cada documento o carpeta en la base de conocimiento. Con una selección activa, la barra de herramientas ofrece **Download**, **Delete**, **Move** y **Tag** como acciones masivas. Puede seleccionar elementos en varias carpetas.
+
+Saga todavía no marca automáticamente los archivos duplicados dentro de un proyecto. Si sospecha que hay duplicados por varias cargas, ordene la lista de archivos por nombre para encontrarlos y luego elimine en bloque los que no necesite.
 </Accordion>
 
 </AccordionGroup>
@@ -18,23 +77,287 @@ Si el formato y el tamaño del archivo son correctos, haga clic en **Reintentar*
 
 <AccordionGroup>
 
-<Accordion title="La IA dice que el contexto del chat está casi lleno">
-Cada modelo de IA tiene un límite de cuánto texto puede considerar a la vez. Cuando una conversación se vuelve larga — muchos mensajes, archivos adjuntos grandes, o ambos — verá una advertencia de que el contexto está casi lleno.
+<Accordion title="Mi historial de chat desapareció">
+Los chats se conservan por cuenta de usuario. Si un chat parece haber desaparecido:
 
-Inicie una nueva conversación para restablecer el contexto. Si está trabajando con un gran conjunto de documentos, considere cargarlos en la [base de conocimiento](/es/guides/projects/knowledge-base) de un proyecto en lugar de adjuntarlos en el chat — la base de conocimiento indexa sus archivos para que la IA pueda buscar en ellos sin necesidad de mantener todo en contexto a la vez.
+- **Revise el workspace correcto.** Si su firma tiene varios workspaces de Saga, por ejemplo `firm.sagalegal.io` y `firm-dev.sagalegal.io`, los chats pertenecen al workspace donde se iniciaron.
+- **Revise el proyecto correcto.** Los chats de proyecto viven dentro del proyecto, no en la lista global de chats. Abra el proyecto para verlos.
+- **Compruebe que inició sesión como el mismo usuario.** Algunas firmas tienen cuentas personales y compartidas — los chats solo aparecen para la cuenta que los creó.
+- **Busque por título.** La lista de chats muestra primero los favoritos y luego la actividad reciente. Un chat antiguo puede haber quedado fuera de la vista; use el campo de búsqueda en la parte superior de la lista de chats para encontrarlo por título.
+
+Si el chat realmente falta después de esas comprobaciones, contacte con soporte con la fecha aproximada de la conversación y cualquier frase que recuerde. Conservamos datos de conversación en el backend y podemos investigar.
 </Accordion>
 
 <Accordion title="La IA dio una respuesta incorrecta o incompleta">
-La calidad de la respuesta de la IA depende del contexto que tiene y del modelo que está usando. Algunas cosas que puede intentar:
+La calidad de la respuesta de la IA depende del contexto que tenga y del modelo que esté usando. Pruebe lo siguiente:
 
 - **Cambie a un modelo más capaz** — un modelo con mayor inteligencia puede manejar mejor su pregunta. Consulte [Modelos](/es/guides/assistants/models) para orientación.
 - **Reduzca el contexto** — si la base de conocimiento tiene muchos documentos, desactive los que no sean relevantes para enfocar la atención de la IA.
-- **Reformule su pregunta** — las preguntas más específicas tienden a producir mejores resultados. Use **Mejorar prompt** para que la IA refine su formulación antes de enviar.
-- **Verifique las citas** — siempre compruebe las afirmaciones de la IA contra las fuentes citadas.
+- **Reformule su pregunta** — las preguntas más específicas suelen producir mejores resultados. Use **Improve prompt** para que la IA refine su redacción antes de enviarla.
+- **Revise las citas** — verifique siempre las afirmaciones de la IA contra las fuentes citadas. Si una cita no respalda lo que dijo la IA, haga clic en **Dislike** en el mensaje y agregue una nota breve. Los comentarios llegan directamente al equipo y nos ayudan a ajustar el comportamiento del modelo.
+
+La IA puede, en ocasiones, indicar mal un número de ley, parafrasear incorrectamente una disposición o atribuir una cita a la fuente equivocada. Los pasajes citados son la fuente de verdad — trate la redacción de la IA como un borrador.
 </Accordion>
 
-<Accordion title="Estoy siendo limitado o veo 'demasiadas solicitudes'">
-Saga limita la frecuencia con la que se pueden realizar ciertas acciones. Si ve esto durante el inicio de sesión o la autenticación de dos factores, espere unos minutos e intente de nuevo. Para límites de frecuencia relacionados con el chat, espere brevemente y reenvíe su mensaje.
+<Accordion title="La IA citó un caso o una norma que no existe, o se equivocó con los hechos">
+Esto es una alucinación — el modelo inventó una cita plausible que no corresponde a una fuente real. Ocurre con más frecuencia cuando:
+
+- **La fuente jurídica relevante no está habilitada en su workspace.** Si pregunta sobre jurisprudencia noruega sin Lovdata o Rettsdata activados, el modelo no tiene una fuente autorizada de la que extraer información y puede improvisar. Compruebe que la fuente esperada aparece en el desplegable de investigación jurídica y está activada para el mensaje.
+- **El modelo trabaja sin una fuente de investigación activada.** Incluso con fuentes habilitadas, el modelo debe *elegir* usarlas — activar la fuente relevante no fuerza una búsqueda. Para citas importantes, active la investigación jurídica y formule la pregunta de forma explícita, por ejemplo "Search Rettsdata for case law on...".
+- **La pregunta está en el límite del conocimiento del modelo.** La jurisprudencia más antigua o más oscura tiene más probabilidades de ser inventada que los principios conocidos.
+
+Mitigación práctica:
+- **Haga clic siempre en un chip de cita antes de confiar en él.** Si el chip apunta a "—" o a un documento obviamente incorrecto, la cita es sospechosa.
+- **Verifique los identificadores de casos (ECLI, LB-, HR-, etc.) directamente en la base de datos fuente** antes de citarlos externamente.
+- **Use las bases de datos de investigación jurídica de Saga** en lugar de respuestas de texto libre cuando necesite una cita vinculante. El paso de investigación jurídica produce resultados que enlazan con los registros fuente reales.
+- **Repórtelo.** Haga clic en **Dislike** en la respuesta con una nota breve. Usamos estos reportes para ajustar el comportamiento del modelo y detectar lagunas de cobertura.
+
+La IA es un acelerador de investigación, no una autoridad. Toda cita pasa por el abogado.
+</Accordion>
+
+<Accordion title="La entrada de voz transcribe el idioma equivocado o devuelve texto incoherente">
+La transcripción de voz funciona con Deepgram. El idioma que escucha se determina por el idioma de la interfaz de Saga — **no** por lo que usted habla realmente. Si su UI está configurada en inglés pero dicta en polaco, Deepgram intenta ajustar fonemas polacos a palabras inglesas y la transcripción sale confusa.
+
+Para corregirlo, cambie el idioma de la UI para que coincida con el idioma en el que quiere dictar: **Settings > Personalization > Default language**, y luego actualice la página.
+
+Idiomas de transcripción admitidos: inglés, noruego, neerlandés, danés, polaco, español, alemán, italiano, portugués, turco, francés y sueco — el mismo conjunto que los idiomas de la UI de Saga. Si su UI está configurada en un idioma fuera de esta lista, la transcripción vuelve al inglés.
+</Accordion>
+
+<Accordion title="La entrada de voz no abre el grabador">
+- **Revise los permisos del micrófono** en su navegador. Haga clic en el icono de candado en la barra de direcciones y asegúrese de que el acceso al micrófono esté permitido para `*.sagalegal.io`.
+- **Use Chrome o Edge** para una mejor compatibilidad. Algunos navegadores no exponen la API `MediaRecorder` de la que depende el grabador.
+- **Compruebe que su sistema operativo concede acceso al micrófono al navegador** — en macOS, está en **System Settings > Privacy & Security > Microphone**.
+
+Si el grabador se abre pero nunca captura audio, quizá el micrófono esté silenciado a nivel del sistema operativo o otra aplicación lo mantenga abierto. Cierre otras aplicaciones de reuniones, como Zoom o Teams, e inténtelo de nuevo.
+</Accordion>
+
+<Accordion title="¿Qué ocurre cuando un chat se vuelve muy largo?">
+En la versión actual de Saga (abril de 2026), no hay un límite fijo de "contexto lleno". La IA recupera contenido de documentos bajo demanda mediante llamadas a herramientas en lugar de mantener todo en su prompt, por lo que las conversaciones largas ya no alcanzan un umbral porcentual rígido.
+
+Dicho esto, los chats muy largos pueden sentirse más lentos porque la IA tiene más historial que leer. Si va a iniciar una nueva línea de análisis o cambiar a otro conjunto de documentos, inicie un chat nuevo — es más rápido y mantiene el enfoque. Para trabajo continuo durante días o semanas, cargue sus documentos en la [base de conocimiento](/es/guides/projects/knowledge-base) de un proyecto en lugar de volver a adjuntarlos en cada chat nuevo.
+</Accordion>
+
+<Accordion title="Una cita no es clicable o no navega a la página correcta">
+Las citas aparecen como pequeños chips numerados junto a las afirmaciones de la IA. Al hacer clic en un chip, se abre el documento fuente en el panel lateral, desplazado al pasaje citado.
+
+Si una cita no lo lleva a la página correcta:
+
+- **El documento puede ser solo imagen.** Los PDF escaneados sin una capa de texto OCR pueden citarse, pero el panel lateral no puede saltar a una coordenada de página específica dentro de una imagen. La cita sigue indicando qué documento usó la IA — abra el archivo y busque el pasaje citado.
+- **El documento puede haber fallado al procesarse.** Busque un icono de advertencia junto al archivo en la base de conocimiento. Reintente el procesamiento y la cita se resolverá correctamente después.
+- **El chat es anterior al último reprocesamiento del documento.** Si volvió a cargar el documento, las citas antiguas apuntan a la versión anterior. Haga la pregunta de nuevo para obtener citas actualizadas.
+
+Si los clics no hacen nada en ninguna cita, actualice la página — esto limpia el estado obsoleto. Si el problema persiste después de actualizar, contacte con soporte.
+</Accordion>
+
+<Accordion title="Quiero eliminar un mensaje en un chat, no toda la conversación">
+Pase el cursor sobre cualquier mensaje y haga clic en **Delete** en el menú de acciones. El mensaje y todas las respuestas a él se eliminan de la conversación. El resto del chat se conserva.
+
+Si no ve la opción **Delete**, es posible que su rol no permita editar mensajes en un chat de proyecto compartido — pregunte al propietario del proyecto o a su administrador.
+</Accordion>
+
+</AccordionGroup>
+
+## Workflows
+
+<AccordionGroup>
+
+<Accordion title="La tarjeta de workflow no aparece o no se puede hacer clic cuando ejecuto un workflow desde el chat">
+Cuando ejecuta un workflow desde el chat, aparece una tarjeta en línea con un botón **Start running**. Si la tarjeta no aparece o no responde a los clics:
+
+- **Actualice la página.** La tarjeta depende de la conexión de chat en vivo, que puede perderse después de un periodo largo de inactividad.
+- **Pruebe Chrome o Edge** en sus versiones más recientes si está usando un navegador menos probado.
+
+Si la tarjeta sigue faltando, siempre puede abrir el workflow directamente desde la página **Workflows**. Los workflows iniciados desde la biblioteca se ejecutan de inmediato — sin paso adicional de confirmación — y el resultado es el mismo.
+
+Somos conscientes de problemas intermitentes con la tarjeta en línea en algunos navegadores. Si puede reproducir de forma constante un caso en el que la tarjeta nunca aparece, envíe el ID de la sesión de chat y su navegador/versión a soporte.
+</Accordion>
+
+<Accordion title="Un borrador o plantilla de workflow no se abre desde la biblioteca de workflows (pantalla en blanco, 401 en consola)">
+Esto suele significar que su sesión de inicio de sesión caducó en segundo plano mientras la página estaba abierta. La lista de la biblioteca sigue renderizándose desde caché, pero abrir un workflow intenta obtener datos nuevos y falla la autenticación.
+
+La solución es sencilla:
+
+1. Cierre sesión en Saga (haga clic en su avatar en la barra lateral > **Sign out**).
+2. Cierre la pestaña del navegador.
+3. Abra una pestaña nueva, vuelva a iniciar sesión y regrese a la biblioteca de workflows.
+
+Si el problema sigue ocurriendo, revise si su navegador está configurado para borrar cookies al cerrar o si una extensión, como un bloqueador de anuncios o una herramienta de privacidad, bloquea cookies de terceros para `sagalegal.io`. La biblioteca de workflows necesita una cookie de sesión persistente.
+
+El modo incógnito es un diagnóstico útil: si los workflows se abren bien en incógnito, el problema está en su perfil normal, como una extensión o configuración de cookies. Si tampoco se abren en incógnito, contacte con soporte e incluya una captura de la consola de DevTools del navegador.
+</Accordion>
+
+<Accordion title="Recibo 'Invalid assistant selection' o 'Selected model is not enabled' al ejecutar un workflow">
+Ambos errores provienen de un paso de workflow que apunta a un asistente o modelo que no se puede usar ahora:
+
+- **'Invalid assistant selection'** — el asistente personalizado al que hace referencia el paso ya no existe. Fue eliminado o cambió su ID.
+- **'Selected model is not enabled'** — el modelo existe, pero fue deshabilitado para su workspace, normalmente por un administrador.
+
+Abra el workflow en el builder, haga clic en el paso con el icono de advertencia y elija un asistente disponible actualmente en el desplegable. Guarde y vuelva a ejecutar.
+
+Si usted es propietario del workflow pero no cambió nada, puede que un administrador haya actualizado los modelos habilitados del workspace — pregúntele qué asistentes están disponibles actualmente o use un modelo genérico.
+</Accordion>
+
+<Accordion title="Un workflow generó un archivo de Excel u otro archivo, pero el enlace de descarga no funciona">
+Si la IA referencia un archivo con una ruta como `sandbox:/mnt/data/filename.xlsx`, es un archivo del intérprete de código que vive en un sandbox temporal de ejecución. El enlace en sí no es clicable en el navegador.
+
+Para obtener el archivo:
+
+- **Busque debajo del mensaje de la IA** un chip de archivo, es decir, un icono con el nombre del archivo. Ese chip es la descarga real. Haga clic para guardar el archivo o pase el cursor para obtener un icono de descarga.
+- **Pida a la IA que "save the file as a chat attachment."** Volverá a empaquetar el archivo como un adjunto que aparece en el mensaje y se puede descargar normalmente.
+- **Vuelva a ejecutar el paso del workflow** si el chip nunca apareció — en ocasiones, un renderizado lento lo oculta. El archivo se regenera en cada ejecución.
+
+Estamos trabajando para que las referencias `sandbox:/mnt/data` se representen automáticamente como adjuntos de chat. Hasta que eso se publique, el chip de archivo debajo del mensaje es la forma canónica de recuperar archivos generados.
+</Accordion>
+
+<Accordion title="Un paso de workflow falló — ¿qué hago ahora?">
+El paso fallido muestra un mensaje de error en su panel. El workflow se detiene, y los pasos posteriores no se ejecutan.
+
+Causas comunes:
+- **Cambio de modelo o asistente** — consulte "Invalid assistant selection" más arriba.
+- **Entrada vacía de un paso anterior** — si un paso "Run prompt" no produjo salida, un paso posterior que lo menciona con `@` puede no recibir nada. Revise la salida del paso anterior antes de volver a ejecutar.
+- **Procesamiento de documentos no completado** — si un paso "Files upload" terminó, pero los documentos todavía no están indexados, un paso "Run prompt" inmediatamente posterior puede no encontrar contenido. Espere unos segundos y vuelva a ejecutar.
+- **Error transitorio de red o modelo** — vuelva a ejecutar el workflow. Muchos fallos se resuelven al reintentar.
+
+Puede editar la configuración del paso fallido sin perder el resto del workflow. Volver a ejecutar empieza desde el principio — todavía no hay reanudación parcial.
+</Accordion>
+
+</AccordionGroup>
+
+## Complemento de Word
+
+<AccordionGroup>
+
+<Accordion title="El complemento de Word no aparece en Word">
+Esto suele ser un problema de permisos o licencias. Compruebe que su organización permite complementos de Office de terceros, que su versión de Office está actualizada y que inició sesión con su cuenta de Microsoft. Para pasos detallados, consulte [configuración del complemento de Word para usuarios](/es/guides/integrations/word-add-in/user-setup#troubleshooting).
+</Accordion>
+
+<Accordion title="El complemento muestra '404 not found from Microsoft Azure' o se congela después de instalarlo">
+Esto indica que Word sigue cargando una versión antigua, **sideloaded**, del complemento de Saga. La instalación por sideloading era el método usado en rondas anteriores de onboarding de Saga — su administrador o equipo de cuenta le dio un manifiesto `.xml` que registró manualmente. Ese manifiesto apunta a una URL que ya no se sirve, por lo que el complemento no carga o devuelve un 404 desde Microsoft Azure.
+
+Reinstalar el mismo `.xml` no ayuda — el archivo sigue apuntando a la URL muerta.
+
+La solución es cambiar una vez a la versión de AppSource:
+
+1. **Quite el complemento antiguo.** En Word, **Insert > My Add-ins**. Busque Saga, haga clic en el menú **⋯** y elija **Remove**.
+2. **Cierre Word por completo** y vuelva a abrirlo.
+3. **Instale desde AppSource.** Use **Insert > Get Add-ins → busque "Saga" → Add**, o abra [Saga en Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) y haga clic en **Get it now**.
+4. Abra Saga desde la cinta y inicie sesión.
+
+Después de esto, las futuras actualizaciones se entregan automáticamente a través de la Store.
+
+Para la guía completa, consulte [configuración del complemento de Word para usuarios](/es/guides/integrations/word-add-in/user-setup#the-add-in-shows-404-not-found-from-microsoft-azure-or-freezes-after-install).
+</Accordion>
+
+<Accordion title="El inicio de sesión falla — veo una página de Microsoft que dice 'this account doesn't exist'">
+Esto ocurre cuando tiene varias cuentas de Microsoft en el mismo dispositivo, por ejemplo una cuenta personal de Outlook y una cuenta de trabajo, o dos tenants de trabajo distintos. Word puede entregar al complemento una cuenta en caché que no coincide con la cuenta provisionada para su workspace de Saga.
+
+Pruebe esta secuencia — la mayoría de los usuarios se desbloquean en el paso 2 o 3:
+
+1. **Cierre Word por completo** (salga de la aplicación, no solo cierre el documento).
+2. **Cierre sesión en Word de cualquier cuenta de Microsoft adicional.** En Word: **File > Account > Sign out**. Si ve más de una cuenta en la lista, cierre sesión en todas y vuelva a iniciar sesión solo con la cuenta que usa con Saga.
+3. **Borre la caché de complementos de Office.** Microsoft lo documenta en [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) — la página enumera las ubicaciones actuales de caché para Windows, Mac y Word para la Web. Borrar la caché solo elimina el estado de complementos de Office — sus documentos no se ven afectados.
+4. **Vuelva a abrir Word, abra el complemento de Saga e inicie sesión.** Cuando aparezca el prompt de Microsoft, elija la cuenta correcta. Si no aparece selector, haga clic en **Use another account** y escriba el correo manualmente.
+
+Si la página de recuperación sigue apareciendo después de eso, haga una captura de la barra de URL en esa página (la URL completa, incluidos los parámetros `client_id=` y `login_hint=`) y envíela a soporte. Esa URL identifica exactamente a qué cuenta está apuntando Microsoft.
+
+El inicio de sesión en el complemento debe coincidir con la cuenta provisionada para su workspace de Saga. Si Word está iniciado con una cuenta personal `@outlook.com`/`@hotmail.com`, pero su workspace está en un tenant de trabajo, o viceversa, la autenticación fallará aunque las credenciales de Microsoft sean válidas.
+</Accordion>
+
+<Accordion title="El inicio de sesión falla con 'Error during token exchange: failed to fetch'">
+Este error significa que el complemento no pudo alcanzar el endpoint de autenticación de Saga desde Word. Causas, en orden aproximado de probabilidad:
+
+- **Firewall o proxy corporativo** bloquea la vista web del complemento. El complemento está alojado en `word.sagalegal.io` y llama al host Saga de su tenant, por ejemplo `app.sagalegal.io` o `your-firm.sagalegal.io`. Ambos necesitan conectividad HTTPS desde la red corporativa — pida a IT que los incluya en la lista permitida para complementos de Office.
+- **Caché de complemento obsoleta.** Borre la caché de complementos de Office ([documentación de Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) e inicie sesión de nuevo.
+- **Build de Office desactualizado.** Vaya a **File > Account > Update Options > Update Now**. Algunas builds antiguas tenían un bug en la pila de red de la webview del complemento.
+
+Si el error persiste después de esas comprobaciones, contacte con soporte con su versión de Office (**File > Account > About Word**) y una captura del error.
+</Accordion>
+
+<Accordion title="El complemento muestra un panel en blanco y nunca carga">
+El panel del complemento de Office a veces no carga el bundle de JavaScript al abrirse por primera vez, especialmente con conexiones lentas.
+
+1. Cierre el panel (X en la esquina) y vuelva a abrirlo desde la cinta.
+2. Si sigue en blanco, reinicie Word.
+3. Si sigue en blanco después de reiniciar, borre la caché de complementos de Office ([documentación de Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)).
+4. Vuelva a abrir Word y el complemento.
+
+En cuanto a red: el complemento está alojado en `word.sagalegal.io` y Office carga su runtime desde el CDN de Microsoft. Confirme con su equipo de IT que ambos son accesibles desde la red corporativa.
+</Accordion>
+
+<Accordion title='"This clause was modified after the suggestion was generated" — falla al aplicar'>
+El complemento dirige cada sugerencia al párrafo exacto y al contenido de texto que existían cuando la IA la generó. Si edita ese párrafo en Word entre la generación y la aplicación — o si sus `track changes` aceptan/rechazan y desplazan el párrafo — el paso de aplicar no puede encontrar el ancla original y se niega a escribir, para no sobrescribir sus ediciones previas.
+
+La solución es regenerar la sugerencia contra el estado actual del documento:
+
+1. Vuelva a enviar el mismo prompt a la IA.
+2. La nueva respuesta reflejará el párrafo tal como está ahora.
+3. Aplique la nueva sugerencia.
+
+Si hace varias ediciones en secuencia, regenere una vez al final en lugar de hacerlo después de cada cambio — ahorra idas y vueltas.
+</Accordion>
+
+<Accordion title="El modo Suggest está deshabilitado — no aparece el botón Apply">
+Si el selector de modo de respuesta muestra **Suggest** en gris con un tooltip que dice "Suggestions are disabled because this chat is linked to another document", el chat que tiene delante se inició con otro archivo de Word abierto. El complemento vincula el modo Suggest al documento al que se asoció originalmente — cambiar de documento a mitad de chat deshabilita la UI de Suggest para que no escriba cambios en el archivo equivocado.
+
+Para usar Suggest en el archivo que tiene abierto ahora, inicie un chat nuevo. El nuevo chat se vincula al documento actual y la opción **Suggest** vuelve a estar disponible. Su historial de chat anterior sigue en la pestaña **History**.
+</Accordion>
+
+<Accordion title="¿Zero Data Retention se aplica al complemento de Word?">
+Sí. Cuando ZDR está habilitado para su workspace, el complemento de Word lo respeta: la pestaña **History** muestra "No history available", los chats no se conservan en el servidor y el stream del chat se ejecuta en modo ZDR en cada turno. Si no ve la aplicación de la retención en el complemento, asegúrese de tener la build más reciente — borre la caché de complementos de Office ([documentación de Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) y vuelva a cargar.
+
+Nota: ZDR es una configuración de todo el workspace configurada por su administrador. Si no sabe si su workspace está en ZDR, pida a su administrador que confirme el periodo de retención en el panel de administración.
+</Accordion>
+
+<Accordion title="El control de cambios no se aplica a las notas al pie cuando acepto una sugerencia">
+El motor de control de cambios de Word trata el contenido de las notas al pie como una historia separada. Las ediciones programáticas insertadas por un complemento — que es la forma en que Saga aplica sugerencias — no siempre se propagan como cambios controlados al área de notas al pie.
+
+Solución temporal: cuando una sugerencia apunta a texto de una nota al pie, copie la sugerencia desde el panel del complemento y péguela manualmente dentro de la nota al pie con el control de cambios activado. Estamos trabajando con el equipo de API de complementos de Microsoft en una solución a más largo plazo.
+</Accordion>
+
+<Accordion title="¿Las interacciones del complemento de Word se cuentan en las métricas de uso del workspace?">
+Sí. Los mensajes enviados y las tareas ejecutadas desde el complemento de Word se cuentan en el dashboard de **Usage** de su workspace junto con los mensajes web. Comparten los mismos totales de actividad por usuario y son visibles para los administradores con los mismos filtros de intervalo de tiempo.
+
+El complemento no aparece como un canal separado en el dashboard — el uso se atribuye al usuario, no a la superficie desde la que envió el mensaje.
+</Accordion>
+
+</AccordionGroup>
+
+## Cuenta e inicio de sesión
+
+<AccordionGroup>
+
+<Accordion title="Recibo 'Access Denied' al intentar iniciar sesión">
+Esto suele significar que la cuenta no se ha provisionado en su workspace de Saga o que fue desactivada.
+
+- **Confirme la dirección de correo.** Saga no distingue mayúsculas y minúsculas, pero no perdona errores tipográficos ni alias — `firstname.lastname@firm.com` y `f.lastname@firm.com` son cuentas distintas para Saga, aunque ambas lleguen al mismo buzón. Use el correo exacto que registró su firma.
+- **Pida a su administrador de workspace** que revise la lista de usuarios. Puede ver si su cuenta existe, qué rol tiene y si fue desactivada. También puede reactivar una cuenta eliminada previamente si hace falta.
+- **Revise la URL del workspace.** Si su firma usa varios subdominios de Saga, el magic link solo es válido para el workspace desde el que lo solicitó.
+
+Si el administrador confirma que está provisionado y activo, pero sigue viendo Access Denied, contacte con soporte con la dirección de correo, la URL del workspace y una captura del error.
+</Accordion>
+
+<Accordion title="¿Puedo iniciar sesión con SMS?">
+Sí — si su workspace tiene habilitado el inicio de sesión por SMS, la página **Choose how to sign in** ofrece una opción **Get verification SMS** junto a la opción de magic link. Elíjala, escriba su número de teléfono en la siguiente pantalla y Saga le envía un código de un solo uso por SMS.
+
+Si no ve la opción SMS, su workspace no la tiene activada o su cuenta no tiene un número de teléfono registrado. Pida a su administrador que agregue el número; el SMS no es algo que pueda autoinscribir desde la página de perfil.
+
+Para firmas con SSO configurado, el inicio de sesión único suele ser el camino más rápido — un clic en su proveedor de identidad y ya está dentro.
+</Accordion>
+
+<Accordion title="Dejé Saga abierto toda la noche y ahora nada funciona">
+Si ha tenido una pestaña de Saga abierta durante muchas horas y su siguiente acción falla — un prompt que no se envía, una página que no carga, o una acción de SharePoint o Microsoft que devuelve "session expired" — actualice la página. La solución casi siempre es una actualización completa.
+
+Qué ocurre: el bundle de JavaScript de la página, los tokens CSRF y cualquier token de acceso de Microsoft se obtuvieron cuando abrió la pestaña por primera vez. Los tokens de Microsoft caducan según su propio calendario, a menudo alrededor de 24 horas, y un bundle antiguo de Saga puede quedar desincronizado con el backend desplegado. Actualizar vuelve a obtenerlos todos.
+
+Su inicio de sesión sigue siendo válido hasta 30 días, por lo que no tendrá que volver a introducir credenciales — solo Ctrl+R / Cmd+R.
+
+Para trabajos largos, acostúmbrese a actualizar antes de enviar un prompt importante si la pestaña estuvo inactiva durante más de un par de horas.
+</Accordion>
+
+<Accordion title="Me están limitando la frecuencia o veo 'too many requests'">
+Saga limita la frecuencia con la que pueden realizarse ciertas acciones. Si ve esto durante el inicio de sesión o la autenticación de dos factores, espere unos minutos y vuelva a intentarlo. Para límites relacionados con el chat, espere brevemente y reenvíe su mensaje.
+
+Si alcanza un límite repetidamente durante un uso normal, no después de clics rápidos y repetidos, contacte con soporte — eso suele indicar que una automatización o extensión del navegador está haciendo solicitudes en segundo plano en su nombre.
 </Accordion>
 
 </AccordionGroup>
@@ -44,23 +367,102 @@ Saga limita la frecuencia con la que se pueden realizar ciertas acciones. Si ve 
 <AccordionGroup>
 
 <Accordion title="No veo SharePoint o Epona365 al cargar documentos">
-Estas integraciones deben ser habilitadas por su administrador. Pídales que configuren la integración desde el [panel de administración](/es/guides/admin) en **Configuración > Integraciones**. Una vez configurada, la opción aparece para todos en la organización.
+Estas integraciones deben estar habilitadas por su administrador. Pídale que configure la integración desde el [panel de administración](/es/guides/admin) en **Settings > Integrations**. Una vez configurada, la opción aparece para todos en la organización.
 </Accordion>
 
 <Accordion title="No veo fuentes organizacionales en la barra de herramientas del chat">
-Las fuentes organizacionales son creadas por su administrador o administrador de contenido. Si el interruptor no aparece en el menú **Agregar fuentes**, su organización aún no ha configurado ninguna. Pida a su administrador que cree una desde el [panel de administración](/es/guides/admin).
+Las fuentes organizacionales las crea su administrador o administrador de contenido. Si el interruptor no aparece en el menú **Add sources**, su organización aún no ha configurado ninguna. Pida a su administrador que cree una desde el [panel de administración](/es/guides/admin).
 </Accordion>
 
-<Accordion title="No veo una fuente jurídica que necesito">
-Su administrador controla qué fuentes jurídicas están habilitadas. Si una fuente no aparece, pida a su administrador que la habilite desde la configuración del espacio de trabajo. Para el catálogo completo de fuentes disponibles, consulte [moonlit.ai/coverage](https://moonlit.ai/coverage).
+<Accordion title="Una fuente jurídica a la que tenía acceso ayer desapareció del desplegable">
+Las fuentes desaparecen del desplegable solo porque cambió el acceso en la capa de configuración — no porque el desplegable las oculte en el cliente.
+
+- **En un workspace basado en dominio** (la mayoría de las firmas), un administrador de workspace puede activar o desactivar una base de datos en el panel de administración. Si una base de datos desapareció de un día para otro, pregunte a su administrador si él, o alguien con acceso de administrador, cambió recientemente la configuración de investigación jurídica.
+- **En un workspace compartido** que usa licenciamiento por usuario (`*.sagalegal.io` Community, o similar), el soporte de Saga gestiona los flags de base de datos por usuario. Un cambio de licencia, por ejemplo después de una renovación, puede quitar un flag. Contacte con soporte con el nombre de la base de datos para confirmarlo.
+- **Las fuentes jurisdiccionales de Moonlit** dependen de una lista permitida de jurisdicciones; si se actualizó la lista de jurisdicciones de su cuenta, las fuentes relacionadas de jurisprudencia de Moonlit se moverán con ella.
+
+No hay un interruptor del lado del cliente de "oculté esta fuente" — si no puede ver una fuente, su cuenta no tiene acceso actualmente.
 </Accordion>
 
-<Accordion title="No puedo acceder al panel de administración">
-El panel de administración solo es visible para usuarios con el rol de **Administrador** o **Administrador de contenido**. Si necesita acceso, pida a un administrador existente que actualice su rol. Los administradores de contenido pueden gestionar bibliotecas y fuentes organizacionales; los administradores completos pueden gestionar todo, incluyendo usuarios y configuración.
+<Accordion title="No veo una fuente jurídica que necesito (Lovdata, Rettsdata, Rechtspraak, etc.)">
+Las fuentes jurídicas se habilitan por workspace. Si la fuente que necesita no está en el desplegable **Legal research**, no se ha activado para su firma.
+
+Pueden faltar dos cosas:
+
+1. **Su firma tiene una suscripción con la fuente.** Saga se conecta a bases de datos jurídicas, pero no incluye la suscripción subyacente de las fuentes de pago — su firma paga directamente al proveedor, por ejemplo Lovdata o Rettsdata. Confirme con su administrador o equipo de contabilidad que la suscripción está activa.
+2. **La fuente está configurada para su workspace.** Las fuentes integradas actualmente en Saga incluyen Lovdata, Rettsdata, Moonlit, Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl y EUR-Lex. Las fuentes públicas suelen estar disponibles de inmediato; las fuentes de pago necesitan credenciales. Su equipo de cuenta gestiona la habilitación — contacte con ellos a través de su administrador o directamente en [support@sagalegal.io](mailto:support@sagalegal.io).
+
+Para ver el catálogo de cobertura de jurisprudencia y normativa al que Saga puede acceder mediante Moonlit, consulte [moonlit.ai/coverage](https://moonlit.ai/coverage).
+
+Si no sabe quién es su administrador, consulte la siguiente entrada.
 </Accordion>
 
-<Accordion title="El complemento de Word no aparece en Word">
-Esto generalmente es un problema de permisos o licencia. Verifique que su organización permite complementos de Office de terceros, que su versión de Office esté actualizada y que haya iniciado sesión con su cuenta de Microsoft. Para pasos detallados, consulte [Solución de problemas del complemento de Word](/es/guides/integrations/word-add-in/user-setup#solución-de-problemas).
+<Accordion title="¿Cómo agrego un usuario nuevo a mi workspace?">
+Las cuentas Enterprise usan provisionamiento automático de usuarios, por lo que los usuarios se agregan y actualizan automáticamente. En cuentas Solo y Demo, los usuarios nuevos los agrega manualmente un administrador desde la sección **Licensed Users** del panel de administración.
+
+1. Abra **Admin panel > Licensed Users**.
+2. Haga clic en **Add Licensed User**.
+3. Introduzca el correo de trabajo del usuario y su Saga ID.
+4. Guarde.
+
+El usuario nuevo recibe una invitación por correo electrónico. Hasta que la acepte e inicie sesión, no aparece como activo.
+
+Variantes comunes:
+- **Un antiguo colega regresa.** Si su cuenta se eliminó anteriormente, no necesita una invitación nueva — un administrador puede reactivar la cuenta eliminada desde la lista de Users. Los chats y proyectos existentes siguen asociados a la cuenta reactivada.
+- **Un equipo completo se incorpora a la vez.** Las invitaciones masivas no son actualmente una acción de autoservicio para administradores; contacte con soporte o con su equipo de cuenta si necesita incorporar a más de unas 10 personas de una vez.
+- **Un usuario nunca recibió el correo de invitación.** Revise su carpeta de spam y luego verifique que el correo en la lista de Users sea correcto. Si ambas cosas están bien, pida a soporte que vuelva a activar la invitación.
+
+Si no es administrador, consulte "No sé quién es mi administrador de workspace" más abajo.
+</Accordion>
+
+<Accordion title="No sé quién es mi administrador de workspace">
+Abra la página **Profile** desde la barra lateral. La lista de miembros muestra a todas las personas del workspace y su rol — cualquiera marcado como **Admin** tiene control completo del workspace. **Content admin** puede gestionar contenido compartido, como prompts, plantillas y workflows, pero no configuración del workspace, usuarios ni integraciones.
+
+Si su workspace no tiene un administrador designado, algo que a veces ocurre durante despliegues para toda la firma, contacte con soporte — podemos identificar al propietario original del workspace y ayudar a restablecer la cobertura administrativa.
+</Accordion>
+
+<Accordion title="No puedo acceder al panel de administración o solo veo parte de él">
+El panel de administración solo es visible para usuarios con el rol **Admin** o **Content admin**.
+
+- **Content admin** ve el lado de contenido: fuentes internas, es decir, bases de conocimiento de toda la firma, bibliotecas como prompts, plantillas de grid y workflows, y asistentes personalizados. No ve usuarios, integraciones, configuración del workspace ni métricas de uso.
+- **Admin** ve todo: las secciones de contenido anteriores más **Users**, **Integrations**, **Theme**, **Workspace settings** y **Usage**.
+
+Si es Content admin y necesita gestionar usuarios, integraciones u otros ajustes a nivel de workspace, pida a un Admin existente que promueva su cuenta. Lo hacen desde la sección **Users** del panel de administración: buscar su fila y cambiar el rol a **Admin**.
+
+Si ya es Admin pero falta una sección, cierre sesión y vuelva a iniciarla una vez — el rol puede estar en caché del lado del cliente. Si la opción sigue ausente, contacte con soporte.
+</Accordion>
+
+<Accordion title="Una extracción de URL (como rechtspraak.nl u otro sitio) no devuelve contenido">
+El extractor de URL de Saga usa un servicio de recuperación de terceros (Tavily) para obtener páginas web públicas y pasar su contenido a la IA. Eso introduce algunos casos en los que la extracción falla:
+
+- **Páginas con paywall o que requieren inicio de sesión** — Tavily no puede autenticarse en sitios de terceros, por lo que la recuperación devuelve la pantalla de inicio de sesión en lugar del contenido. Use la vista con suscripción de su firma del mismo contenido, por ejemplo una exportación PDF con sesión iniciada, y cárguela.
+- **Sitios que bloquean recuperaciones del lado del servidor** — algunos editores bloquean infraestructura de scraping mediante Cloudflare o puertas similares. El sitio carga bien en su navegador, pero la solicitud de Tavily se rechaza. Para jurisprudencia neerlandesa de `rechtspraak.nl`, esto es un problema conocido — si la fuente jurídica integrada de Rechtspraak está habilitada para su workspace, úsela en su lugar, ya que consulta directamente la API oficial. Si no, descargue el PDF de la sentencia y adjúntelo.
+- **Páginas que requieren JavaScript para renderizarse** — Tavily lee el HTML que devuelve el servidor. Si el contenido solo aparece después de que el navegador ejecuta JS, Tavily ve una carcasa vacía. Adjunte en su lugar una impresión en PDF de la página.
+
+Si un sitio del que depende dejó de funcionar recientemente, envíe la URL y una consulta fallida de ejemplo a soporte — podemos investigarlo.
+</Accordion>
+
+<Accordion title="Quiero definir las fuentes y el estilo de mi firma en documentos generados">
+Saga admite estilo documental para toda la firma. Un administrador carga un `.docx` de referencia de la firma, y todos los documentos que Saga genera a partir de entonces, tanto exportaciones de Word como PDF, siguen automáticamente ese estilo.
+
+**Configurarlo**
+
+Vaya a **Admin Panel → Document Styling** y cargue un `.docx` que use el estilo de su firma.
+
+**Qué extrae Saga del documento de referencia**
+
+- **Tipografía** — fuente, tamaño, color y altura de línea del texto del cuerpo, a partir del estilo predeterminado/Normal del documento, además de Heading 1 a Heading 6
+- **Colores del tema** — primario y de acento
+- **Configuración de página** — tamaño, orientación y márgenes
+- **Encabezados y pies de página** — texto, alineación, números de página y cualquier logo incrustado
+
+**Permisos**
+
+Solo los usuarios Admin pueden cargar el documento de referencia. Si no tiene acceso de administrador, pida a un administrador del workspace que lo cargue una vez en nombre de la firma.
+
+**Limitación actual**
+
+Saga mapea el estilo de párrafo predeterminado (Normal) y Heading 1–6. Los estilos de párrafo personalizados definidos por separado, por ejemplo un estilo `Body` con nombre de la firma que reemplaza el predeterminado, todavía no se detectan. Las fuentes, colores, encabezados, configuración de página y encabezados/pies extraídos normalmente cubren la mayor parte del estilo de una firma. Si un estilo personalizado específico no se aplica después de cargarlo, contacte con soporte con su documento de referencia y lo revisaremos.
 </Accordion>
 
 </AccordionGroup>
@@ -69,8 +471,26 @@ Esto generalmente es un problema de permisos o licencia. Verifique que su organi
 
 <AccordionGroup>
 
-<Accordion title="¿Cómo contacto al soporte?">
-Haga clic en **Obtener ayuda** en la barra lateral para abrir el formulario de comentarios, o envíe un correo electrónico directamente al equipo de soporte a [support@sagalegal.io](mailto:support@sagalegal.io). Incluya tantos detalles como sea posible — qué estaba haciendo, qué esperaba y cualquier mensaje de error que haya visto.
+<Accordion title="¿Cómo contacto con soporte?">
+Haga clic en **Get help** en la barra lateral para abrir el formulario de comentarios, o escriba directamente al equipo de soporte a [support@sagalegal.io](mailto:support@sagalegal.io). Incluya tantos detalles como sea posible — qué estaba haciendo, qué esperaba y cualquier mensaje de error que vio.
+
+Para problemas en los que la IA puede ayudar primero, que son la mayoría de las preguntas de tipo "cómo hago...", pruebe a preguntar en el chat. El asistente de soporte de Saga se basa en esta documentación y a menudo puede responder de inmediato. Solo abre un ticket de soporte en su nombre cuando no puede resolver la pregunta por sí mismo, así no espera por un ticket para algo que tiene una respuesta documentada.
+</Accordion>
+
+<Accordion title="¿Qué información ayuda al equipo de soporte a resolver problemas más rápido?">
+Para cualquier problema:
+
+- **URL del workspace** (por ejemplo, `https://your-firm.sagalegal.io`).
+- **Su dirección de correo electrónico** (tal como está registrada en Saga).
+- **Hora aproximada** en que ocurrió el problema, incluida la zona horaria.
+- **Qué intentaba hacer**, qué esperaba y qué ocurrió realmente.
+- **Una captura de pantalla o una breve grabación de pantalla** si hay algún error visible o estado inesperado de la UI.
+
+Para problemas del navegador, incluya también el nombre y la versión del navegador, por ejemplo Chrome 148, y si el problema ocurre en modo incógnito.
+
+Para problemas con el complemento de Word, la información de versión de **File > Account > About Word** (Windows) o **Word > About Microsoft Word** (Mac) ayuda a identificar rápidamente bugs del lado de Office.
+
+Para problemas de chat, el **Chat Session ID** (visible en la URL cuando tiene el chat abierto) nos permite rastrear la conversación exacta en el backend.
 </Accordion>
 
 </AccordionGroup>

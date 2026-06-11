@@ -2,14 +2,73 @@
 title: Vanliga frågor och felsökning
 ---
 
-## Dokument
+## Dokument och kunskapsbasen
 
 <AccordionGroup>
 
 <Accordion title="Mitt dokument kunde inte laddas upp eller bearbetas">
 Kontrollera filformat och storlek. Saga stöder PDF, DOC, DOCX, XLS, XLSX, PPTX, TXT, HTML, CSV, ODT, ODS, EML, MSG och vanliga bildformat. Maximal filstorlek är 1 GB — och PDF:er eller bilder som behöver textextrahering (OCR) är begränsade till 500 MB.
 
-Om filformatet och storleken är korrekta, klicka på **Försök igen** på det misslyckade dokumentet i kunskapsbasen. Om det fortfarande inte fungerar, prova att ladda upp filen igen. Korrupta filer eller kraftigt skannade dokument med dålig bildkvalitet kan ibland orsaka att bearbetningen misslyckas.
+Om filformatet och storleken är korrekta klickar du på **Försök igen** på det misslyckade dokumentet i kunskapsbasen. Om det fortfarande inte fungerar kan du prova att ladda upp filen igen. Korrupta filer, lösenordsskyddade PDF:er eller hårt skannade dokument med dålig bildkvalitet kan ibland göra att bearbetningen misslyckas.
+
+För en `.pptx`-fil som ger lite eller ingen text efter bearbetning faller Saga tillbaka till att konvertera den via LibreOffice och köra OCR på den resulterande PDF:en, så bildtunga presentationer bör ändå ge sökbar text. Om det fortfarande misslyckas är filen oftast för stor för konverteringsflödet eller korrupt — att spara om den med **File > Save As** i en modern version av PowerPoint löser det vanligtvis.
+</Accordion>
+
+<Accordion title='AI:n säger "Failed to find documents" eller "cannot locate files"'>
+Trots hur meddelandet låter betyder det inte att dina dokument saknas. Det visas när Sagas sökanrop till vektordatabasen misslyckas — oftast på grund av ett tillfälligt infrastrukturproblem.
+
+Vad du kan göra:
+- **Skicka samma prompt igen.** De flesta sådana fel försvinner vid ett nytt försök.
+- **Om det kvarstår i mer än någon minut eller två** har den underliggande tjänsten problem. Vänta en kort stund och försök igen, eller uppdatera sidan.
+- **Ladda inte upp dokumenten igen** — de finns fortfarande kvar. Felet ligger i sökvägen, inte i lagringen.
+
+Om du ser detta konsekvent i flera minuter i flera chattar bör du kontakta supporten — det är ett tecken på ett större problem som vi vill känna till.
+</Accordion>
+
+<Accordion title="Jag lade till dokument i ett projekt, men AI:n säger att den inte hittar dem i chatten">
+Det finns några specifika orsaker — gå igenom dem i ordning:
+
+1. **Dokumenten bearbetas fortfarande.** Bara dokument som har bearbetats färdigt exponeras för AI:n. Kontrollera kunskapsbaspanelen: filer med en spinner eller etiketten "Bearbetas" är osynliga för chatten tills de är klara. Vänta eller klicka på **Försök igen** om en fil har fastnat.
+2. **En fil kunde inte bearbetas.** Misslyckade filer visas med en varningsikon — de är inte sökbara. Försök igen från filens åtgärdsmeny, eller ladda upp den på nytt.
+3. **Kunskapsbasens omfång är avgränsat.** Kunskapsbasväljaren i chatten kan vara inställd på en delmängd av dokumenten — då är AI:n begränsad till bara dem. Öppna kunskapsbasvyn i chatten och kontrollera att dokumenten du förväntar dig är valda (eller använd "Välj alla" för att ta bort avgränsningen).
+4. **Du är i en global chatt, inte i projektchatten.** Dokument finns i projektets kunskapsbas och är inte synliga för chattar som startas utanför projektet. Öppna projektet och starta en chatt därifrån.
+
+Om alla fyra punkter stämmer och AI:n fortfarande inte hittar dokumenten kan du ställa en specifik fråga som hänvisar till en tydlig fras från en av filerna — vaga frågor kan göra att AI:n hoppar över dokumenthämtningen helt.
+</Accordion>
+
+<Accordion title="Min kunskapsbas är 'låst' medan dokument bearbetas">
+Medan ett dokument bearbetas är kryssrutorna och massåtgärderna i kunskapsbasen tillfälligt inaktiverade för det dokumentet. Enskilda åtgärder på redan bearbetade dokument är fortfarande tillgängliga, och du kan fortsätta arbeta i chatten — bearbetade dokument blir sökbara för AI:n så snart varje dokument är klart.
+
+Bearbetningstiden beror på filstorlek och om dokumentet behöver OCR. En typisk PDF på 20 sidor tar mindre än en minut; stora skannade PDF:er kan ta flera minuter. Om ett dokument har fastnat i bearbetning i mer än 15 minuter klickar du på **Försök igen** i dess åtgärdsmeny.
+</Accordion>
+
+<Accordion title="Dokumenträknaren säger att jag har nått projektgränsen, men det har jag inte">
+Projekt har ett dokumenttak per arbetsyta (konfigurerat av din admin). Om du har tagit bort dokument för att göra plats och räknaren fortfarande visar det gamla antalet, uppdatera sidan (Ctrl+R / Cmd+R) — antalet hämtas från servern när sidan laddas.
+
+Om antalet fortfarande är fel efter en uppdatering — till exempel om räknaren säger att du är vid gränsen men fillistan visar mycket färre dokument — kontakta supporten med projektnamnet. Vi kan stämma av antalet i backend. Under tiden kan du flytta dokument till ett nytt projekt för att fortsätta arbeta.
+</Accordion>
+
+<Accordion title="Två dokument med samma namn fungerar inte korrekt">
+När AI:n hämtar ett dokument efter namn och hittar fler än en träff — antingen i en chatts bilagor eller i ett projekts kunskapsbas — visar den en fråga om vilket dokument du menar. Oftast ber den dig förtydliga; ibland kan en modell välja fel fil eller hoppa över steget.
+
+Om du ofta ser detta kan du byta namn på en av filerna så att varje fil har ett tydligt namn — det räcker ofta att lägga till `(v2)` eller ett datum i filnamnet. För filer som redan har laddats upp kan du byta namn på dem direkt från dokumentets åtgärdsmeny i kunskapsbasen, eller ta bort bilagan och bifoga den igen med ett nytt namn i chatten.
+
+Kunskapsbasen taggar också automatiskt dubbletter med taggen **Dubblett** när den hittar identiska filer, vilket är ett bra sätt att hitta dem i större mängder.
+</Accordion>
+
+<Accordion title="Dokument i kunskapsbasen visas inte i AI-svar">
+Några saker att kontrollera:
+
+- **Bekräfta att dokumentet har bearbetats klart.** En spinner eller etiketten "Bearbetas" bredvid filen betyder att den ännu inte är sökbar. Vänta eller klicka på **Försök igen** om den har fastnat.
+- **Ställ en specifik fråga.** AI:n hämtar bara de avsnitt som är relevanta för din fråga. Om frågan är bred ("vad säger de här dokumenten?") kan AI:n göra ett urval i stället för att läsa allt. Fråga om en viss klausul, part eller ett visst ämne för bäst resultat.
+- **Hänvisa till dokumentet med namn.** Om du skriver filnamnet eller en tydlig fras från dokumentet ökar chansen att AI:n hämtar just det dokumentet.
+- **Kontrollera att du är i rätt projektchatt.** En global chatt har inte åtkomst till projektdokument. Öppna projektet och starta sedan en chatt där.
+</Accordion>
+
+<Accordion title="Jag vill flytta eller rensa dubbletter av många dokument på en gång">
+Använd kryssrutorna bredvid varje dokument eller mapp i kunskapsbasen. När du har en aktiv markering visar verktygsfältet **Ladda ner**, **Ta bort**, **Flytta** och **Tagga** som massåtgärder. Du kan markera filer i flera mappar.
+
+Saga flaggar ännu inte automatiskt dubblettfiler inom ett projekt. Om du misstänker dubbletter från flera uppladdningar kan du sortera fillistan efter namn för att hitta dem och sedan massradera de du inte behöver.
 </Accordion>
 
 </AccordionGroup>
@@ -18,23 +77,287 @@ Om filformatet och storleken är korrekta, klicka på **Försök igen** på det 
 
 <AccordionGroup>
 
-<Accordion title="AI:n säger att chattkontexten nästan är full">
-Varje AI-modell har en gräns för hur mycket text den kan beakta samtidigt. När en konversation blir lång — många meddelanden, stora bilagor, eller båda — ser du en varning om att kontexten nästan är full.
+<Accordion title="Min chatthistorik försvann">
+Chattar sparas per användarkonto. Om en chatt verkar ha försvunnit:
 
-Starta en ny konversation för att nollställa kontexten. Om du arbetar med en stor uppsättning dokument, överväg att ladda upp dem till ett projekts [kunskapsbas](/sv/guides/projects/knowledge-base) istället för att bifoga dem i chatten — kunskapsbasen indexerar dina filer så att AI:n kan söka igenom dem utan att behöva hålla allt i kontexten samtidigt.
+- **Kontrollera rätt arbetsyta.** Om din firma har flera Saga-arbetsytor (till exempel `firma.sagalegal.io` och `firma-dev.sagalegal.io`) är chattar knutna till arbetsytan där de startades.
+- **Kontrollera rätt projekt.** Projektchattar finns i projektet, inte i den globala chattlistan. Öppna projektet för att se dem.
+- **Kontrollera att du är inloggad som samma användare.** Vissa firmor har personliga och delade konton — chattar visas bara för kontot som skapade dem.
+- **Sök på titel.** Chattlistan visar favoriter först och sedan senaste aktivitet. En äldre chatt kan ha hamnat längre ner; använd sökfältet överst i chattlistan för att hitta den efter titel.
+
+Om chatten verkligen saknas efter dessa kontroller, kontakta supporten med ungefärligt datum för konversationen och någon fras du minns från den. Vi behåller konversationsdata i backend och kan undersöka.
 </Accordion>
 
 <Accordion title="AI:n gav ett felaktigt eller ofullständigt svar">
 Kvaliteten på AI:ns svar beror på vilken kontext den har och vilken modell du använder. Några saker att prova:
 
 - **Byt till en mer kapabel modell** — en modell med högre intelligens kan hantera din fråga bättre. Se [Modeller](/sv/guides/assistants/models) för vägledning.
-- **Avgränsa kontexten** — om kunskapsbasen har många dokument, inaktivera de som inte är relevanta för att fokusera AI:ns uppmärksamhet.
-- **Omformulera din fråga** — mer specifika frågor tenderar att ge bättre resultat. Använd **Förbättra prompt** för att låta AI:n förfina din formulering innan du skickar.
-- **Kontrollera källhänvisningarna** — verifiera alltid AI:ns påståenden mot de angivna källorna.
+- **Avgränsa kontexten** — om kunskapsbasen har många dokument kan du inaktivera dem som inte är relevanta för att fokusera AI:ns uppmärksamhet.
+- **Omformulera din fråga** — mer specifika frågor ger ofta bättre resultat. Använd **Förbättra prompt** för att låta AI:n förbättra formuleringen innan du skickar.
+- **Kontrollera källhänvisningarna** — verifiera alltid AI:ns påståenden mot de citerade källorna. Om en källhänvisning inte stöder det AI:n säger klickar du på **Ogilla** på meddelandet och lägger till en kort kommentar. Feedbacken går direkt till teamet och hjälper oss att justera modellbeteendet.
+
+AI:n kan ibland ange fel paragrafnummer, parafrasera en bestämmelse fel eller koppla ett citat till fel källa. De citerade avsnitten är källan till sanningen — behandla AI:ns text som ett utkast.
 </Accordion>
 
-<Accordion title="Jag blir hastighetsbegränsad eller ser 'för många förfrågningar'">
+<Accordion title="AI:n hänvisade till ett rättsfall eller en lagregel som inte finns (eller fick fakta fel)">
+Detta är en hallucination — modellen hittade på en trovärdig källhänvisning som inte motsvarar en verklig källa. Det händer oftare när:
+
+- **Den relevanta juridiska källan inte är aktiverad i din arbetsyta.** Om du frågar om norsk rättspraxis utan att Lovdata eller Rettsdata är påslaget har modellen ingen auktoritativ källa att utgå från och kan improvisera. Kontrollera att den källa du förväntar dig ska stödja svaret finns i rullgardinsmenyn för juridisk research och är aktiverad för meddelandet.
+- **Modellen arbetar utan en aktiverad researchkälla.** Även med källor aktiverade måste modellen *välja* att använda dem — att slå på relevant källa tvingar inte fram en sökning. För viktiga hänvisningar bör du aktivera juridisk research och fråga uttryckligen ("Sök i Rettsdata efter rättspraxis om...").
+- **Frågan ligger vid gränsen för modellens kunskap.** Äldre eller mer okänd praxis är mer benägen att hittas på än välkända principer.
+
+Praktisk riskminskning:
+- **Klicka alltid igenom en källchip innan du förlitar dig på den.** Om chippen pekar på "—" eller ett uppenbart fel dokument är hänvisningen misstänkt.
+- **Verifiera målnummer (ECLI, LB-, HR- osv.) direkt i källdatabasen** innan du citerar dem externt.
+- **Använd Sagas juridiska researchdatabaser** i stället för fritextsvar när du behöver en bindande hänvisning. Steget för juridisk research ger resultat som länkar till de faktiska källposterna.
+- **Rapportera det.** Klicka på **Ogilla** på svaret och lägg till en kort kommentar. Vi använder rapporterna för att justera modellbeteende och hitta täckningsluckor.
+
+AI:n är ett hjälpmedel för research, inte en auktoritet. Varje hänvisning går via juristen.
+</Accordion>
+
+<Accordion title="Röstinmatning transkriberar fel språk (eller ger nonsens)">
+Rösttranskribering drivs av Deepgram. Språket den lyssnar efter bestäms av ditt Saga-gränssnittsspråk — **inte** av vad du faktiskt talar. Om ditt gränssnitt är inställt på engelska men du dikterar på polska försöker Deepgram passa in polska fonem i engelska ord, och transkriptionen blir förvrängd.
+
+Åtgärda det genom att ändra gränssnittsspråket så att det matchar språket du vill diktera på: **Inställningar > Personanpassning > Standardspråk**, och uppdatera sedan sidan.
+
+Språk som stöds för transkribering: engelska, norska, nederländska, danska, polska, spanska, tyska, italienska, portugisiska, turkiska, franska och svenska — samma uppsättning som Sagas gränssnittsspråk. Om ditt gränssnitt är inställt på ett språk utanför listan faller transkriberingen tillbaka till engelska.
+</Accordion>
+
+<Accordion title="Röstinmatning öppnar inte inspelaren alls">
+- **Kontrollera mikrofonbehörigheter** i webbläsaren. Klicka på låsikonen i adressfältet och kontrollera att mikrofonåtkomst är tillåten för `*.sagalegal.io`.
+- **Använd Chrome eller Edge** för bästa kompatibilitet. Vissa webbläsare exponerar inte det `MediaRecorder`-API som inspelaren använder.
+- **Kontrollera att operativsystemet ger webbläsaren mikrofonåtkomst** — på macOS finns det under **Systeminställningar > Integritet och säkerhet > Mikrofon**.
+
+Om inspelaren öppnas men aldrig fångar ljud kan mikrofonen vara avstängd på OS-nivå eller låst av ett annat program. Stäng andra mötesappar (Zoom, Teams) och försök igen.
+</Accordion>
+
+<Accordion title="Vad händer när en chatt blir väldigt lång?">
+I den nuvarande versionen av Saga (per april 2026) finns ingen fast gräns där kontexten blir "full". AI:n hämtar dokumentinnehåll vid behov via verktygsanrop i stället för att hålla allt i prompten, så långa konversationer når inte längre en hård procentgräns.
+
+Väldigt långa chattar kan ändå kännas långsammare eftersom AI:n har mer historik att läsa. Om du påbörjar en ny analys eller byter till en annan dokumentuppsättning, starta en ny chatt — det är snabbare och håller fokus. För pågående arbete över dagar eller veckor kan du ladda upp dokumenten till ett projekts [kunskapsbas](/sv/guides/projects/knowledge-base) i stället för att bifoga dem i varje ny chatt.
+</Accordion>
+
+<Accordion title="En källhänvisning är inte klickbar eller går inte till rätt sida">
+Källhänvisningar visas som små numrerade chippar bredvid AI-påståenden. När du klickar på en chipp öppnas källdokumentet i sidopanelen, skrollat till det citerade avsnittet.
+
+Om en källhänvisning inte tar dig till rätt sida:
+
+- **Dokumentet kan vara enbart bildbaserat.** Skannade PDF:er utan OCR-textlager kan citeras, men sidopanelen kan inte hoppa till en specifik sidkoordinat i en bild. Källhänvisningen visar ändå vilket dokument AI:n använde — öppna filen och sök efter det citerade avsnittet.
+- **Dokumentet kan ha misslyckats i bearbetningen.** Leta efter en varningsikon bredvid filen i kunskapsbasen. Försök bearbeta igen så fungerar hänvisningen korrekt efteråt.
+- **Chatten är äldre än dokumentets senaste ombearbetning.** Om du har laddat upp dokumentet igen pekar äldre källhänvisningar på den tidigare versionen. Ställ frågan igen för att få färska hänvisningar.
+
+Om klick inte fungerar på någon källhänvisning oavsett dokument, uppdatera sidan — det rensar inaktuellt tillstånd. Om problemet kvarstår efter uppdateringar, kontakta supporten.
+</Accordion>
+
+<Accordion title="Jag vill ta bort ett meddelande i en chatt, inte hela konversationen">
+Hovra över ett meddelande och klicka på **Ta bort** i åtgärdsmenyn. Meddelandet och alla svar på det tas bort från konversationen. Resten av chatten bevaras.
+
+Om du inte ser alternativet **Ta bort** kan din roll sakna behörighet att redigera meddelanden i en delad projektchatt — fråga projektägaren eller din admin.
+</Accordion>
+
+</AccordionGroup>
+
+## Arbetsflöden
+
+<AccordionGroup>
+
+<Accordion title="Arbetsflödeskortet visas inte, eller går inte att klicka på, när jag kör ett arbetsflöde från chatten">
+När du kör ett arbetsflöde från chatten visas ett inbäddat kort med knappen **Start running**. Om kortet inte visas eller inte reagerar på klick:
+
+- **Uppdatera sidan.** Kortet är beroende av den aktiva chattanslutningen, som kan tappas efter en lång inaktiv period.
+- **Prova Chrome eller Edge** i senaste version om du använder en mindre testad webbläsare.
+
+Om kortet fortfarande saknas kan du alltid öppna arbetsflödet direkt från sidan **Arbetsflöden**. Arbetsflöden som startas från biblioteket körs direkt — utan extra bekräftelsesteg — och resultatet blir detsamma.
+
+Vi känner till återkommande problem med det inbäddade kortet i vissa webbläsare — om du konsekvent kan återskapa ett fall där kortet aldrig visas, skicka chattens sessions-ID och din webbläsare/version till supporten.
+</Accordion>
+
+<Accordion title="Ett arbetsflödesutkast eller en mall öppnas inte från arbetsflödesbiblioteket (tom skärm, 401 i konsolen)">
+Det betyder vanligtvis att din inloggningssession har löpt ut i bakgrunden medan sidan var öppen. Bibliotekslistan visas fortfarande från cache, men när du öppnar ett arbetsflöde försöker Saga hämta ny data och autentiseringen misslyckas.
+
+Lösningen är enkel:
+
+1. Logga ut från Saga (klicka på din avatar i sidofältet > **Logga ut**).
+2. Stäng webbläsarfliken.
+3. Öppna en ny flik, logga in igen och gå tillbaka till arbetsflödesbiblioteket.
+
+Om problemet återkommer, kontrollera om webbläsaren är inställd på att rensa cookies när den stängs, eller om ett tillägg (annonsblockerare, integritetsskydd) blockerar tredjepartscookies för `sagalegal.io`. Arbetsflödesbiblioteket behöver en beständig sessionscookie.
+
+Inkognitoläge är ett bra diagnostiskt test: om arbetsflöden öppnas i inkognito ligger problemet i din vanliga profil (ett tillägg eller en cookieinställning). Om de inte öppnas i inkognito heller, kontakta supporten med en skärmbild av webbläsarens DevTools-konsol.
+</Accordion>
+
+<Accordion title="Jag får 'Invalid assistant selection' eller 'Selected model is not enabled' när jag kör ett arbetsflöde">
+Båda felen kommer från ett arbetsflödessteg som pekar på en assistent eller modell som inte kan användas just nu:
+
+- **'Invalid assistant selection'** — den anpassade assistenten som steget refererar till finns inte längre. Den har tagits bort eller fått ändrat ID.
+- **'Selected model is not enabled'** — modellen finns, men har inaktiverats för din arbetsyta, oftast av en admin.
+
+Öppna arbetsflödet i byggaren, klicka på steget med varningsikonen och välj en assistent som är tillgänglig just nu i rullgardinsmenyn. Spara och kör igen.
+
+Om du äger arbetsflödet men inte själv har ändrat något kan en admin ha uppdaterat arbetsytans aktiverade modeller — fråga vilka assistenter som är tillgängliga nu, eller fall tillbaka till en generisk modell.
+</Accordion>
+
+<Accordion title="Ett arbetsflöde genererade en Excel-fil eller annan fil, men nedladdningslänken fungerar inte">
+Om AI:n hänvisar till en fil med en sökväg som `sandbox:/mnt/data/filename.xlsx` är det en kodtolkarfil som finns i en tillfällig körningssandlåda. Själva länken går inte att klicka på i webbläsaren.
+
+Så hämtar du filen:
+
+- **Titta under AI:ns meddelande** efter en filchipp (en ikon med filnamnet). Den chippen är den riktiga nedladdningen. Klicka på den för att spara filen eller hovra för att få en nedladdningsikon.
+- **Be AI:n att "spara filen som en chattbilaga."** Den paketerar om filen som en bilaga som visas i meddelandet och kan laddas ner normalt.
+- **Kör arbetsflödessteget igen** om chippen aldrig visades — ibland döljs den av långsam rendering. Filen genereras på nytt varje körning.
+
+Vi arbetar på att få `sandbox:/mnt/data`-referenser att automatiskt visas som chattbilagor. Tills det är på plats är filchippen under meddelandet det rätta sättet att hämta genererade filer.
+</Accordion>
+
+<Accordion title="Ett arbetsflödessteg misslyckades — vad gör jag nu?">
+Det misslyckade steget visar ett felmeddelande i sin panel. Arbetsflödet stoppas, och efterföljande steg körs inte.
+
+Vanliga orsaker:
+- **Ändring av modell eller assistent** — se "Invalid assistant selection" ovan.
+- **Tom indata från ett tidigare steg** — om ett "Kör prompt"-steg inte gav något resultat kan ett senare steg som `@`-refererar till det få tomt innehåll. Kontrollera det tidigare stegets utdata innan du kör igen.
+- **Dokumentbearbetning är inte klar** — om ett "Ladda upp filer"-steg är klart men dokumenten ännu inte är indexerade kanske ett direkt efterföljande "Kör prompt"-steg inte hittar innehåll. Vänta några sekunder och kör igen.
+- **Tillfälligt nätverks- eller modellfel** — kör arbetsflödet igen. Många fel löser sig vid nytt försök.
+
+Du kan redigera konfigurationen för det misslyckade steget utan att förlora resten av arbetsflödet. En ny körning startar från början — det finns ingen partiell återupptagning ännu.
+</Accordion>
+
+</AccordionGroup>
+
+## Word-tillägg
+
+<AccordionGroup>
+
+<Accordion title="Word-tillägget visas inte i Word">
+Detta beror vanligtvis på behörigheter eller licensiering. Kontrollera att din organisation tillåter Office-tillägg från tredje part, att din Office-version är uppdaterad och att du är inloggad med ditt Microsoft-konto. För detaljerade steg, se [Användarinstallation av Word-tillägget](/sv/guides/integrations/word-add-in/user-setup#felsökning).
+</Accordion>
+
+<Accordion title="Tillägget visar '404 not found from Microsoft Azure' eller fryser efter installation">
+Det är ett tecken på att Word fortfarande laddar en gammal, **sideloaded** version av Saga-tillägget. Sideloading var installationsvägen i tidigare Saga-onboarding — din admin eller ditt kontoteam gav dig ett `.xml`-manifest som du registrerade manuellt. Manifestet pekar på en URL som inte längre serveras, så tillägget kan inte laddas eller returnerar 404 från Microsoft Azure.
+
+Att installera om samma `.xml` hjälper inte — filen pekar fortfarande på den döda URL:en.
+
+Lösningen är ett engångsbyte till AppSource-versionen:
+
+1. **Ta bort det gamla tillägget.** I Word: **Insert > My Add-ins**. Leta upp Saga, klicka på menyn **⋯** och välj **Remove**.
+2. **Stäng Word helt** och öppna det igen.
+3. **Installera från AppSource.** Antingen **Insert > Get Add-ins → sök efter "Saga" → Add**, eller öppna [Saga på Microsoft AppSource](https://marketplace.microsoft.com/en-us/product/saas/wa200009415) och klicka på **Get it now**.
+4. Öppna Saga från menyfliksområdet och logga in.
+
+Efter detta levereras framtida uppdateringar automatiskt via Store.
+
+För hela genomgången, se [Användarinstallation av Word-tillägget](/sv/guides/integrations/word-add-in/user-setup#felsökning).
+</Accordion>
+
+<Accordion title="Inloggning misslyckas — jag ser en Microsoft-sida med 'this account doesn't exist'">
+Det händer när du har flera Microsoft-konton på samma enhet (till exempel ett personligt Outlook-konto och ett arbetskonto, eller två olika arbetstenants). Word kan ge tillägget ett cachat konto som inte matchar det som din Saga-arbetsyta är provisionerad för.
+
+Prova den här ordningen — de flesta kommer vidare vid steg 2 eller 3:
+
+1. **Stäng Word helt** (avsluta programmet, stäng inte bara dokumentet).
+2. **Logga ut ur extra Microsoft-konton i Word.** I Word: **File > Account > Sign out**. Om du ser fler än ett konto, logga ut från alla och logga sedan in igen med bara kontot du använder med Saga.
+3. **Rensa Office-tilläggets cache.** Microsoft beskriver detta på [Clear the Office cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) — sidan listar aktuella cacheplatser för Windows, Mac och Word för webben. Att rensa cache tar bara bort Office-tilläggstillstånd — dina dokument påverkas inte.
+4. **Öppna Word igen, öppna Saga-tillägget och logga in.** När Microsoft-prompten visas väljer du rätt konto. Om ingen väljare visas klickar du på **Use another account** och skriver e-postadressen manuellt.
+
+Om återställningssidan fortfarande visas efter det, ta en skärmbild av URL-fältet på återställningssidan (hela URL:en, inklusive parametrarna `client_id=` och `login_hint=`) och skicka den till supporten. URL:en visar exakt vilket konto Microsoft pekas mot.
+
+Inloggningen i tillägget måste matcha kontot som din Saga-arbetsyta är provisionerad för. Om Word just nu är inloggat med ett personligt `@outlook.com`/`@hotmail.com`-konto men din arbetsyta ligger på en arbetstenant (eller tvärtom), misslyckas autentiseringen även om Microsoft-uppgifterna är giltiga.
+</Accordion>
+
+<Accordion title="Inloggning misslyckas med 'Error during token exchange: failed to fetch'">
+Det här felet betyder att tillägget inte kunde nå Sagas autentiseringsendpoint inifrån Word. Orsaker, i ungefärlig sannolikhetsordning:
+
+- **Företagets brandvägg eller proxy** blockerar tilläggets webbvy. Tillägget finns på `word.sagalegal.io` och anropar din tenants Saga-värd (till exempel `app.sagalegal.io` eller `din-firma.sagalegal.io`). Båda behöver HTTPS-åtkomst från företagets nätverk — be IT att tillåta dem för Office-tillägg.
+- **Inaktuell tilläggscache.** Rensa Office-tilläggets cache ([Microsofts dokumentation](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) och logga in igen.
+- **Office-versionen är för gammal.** Gå till **File > Account > Update Options > Update Now**. Vissa äldre versioner hade en bugg i tilläggets webview-nätverksstack.
+
+Om felet kvarstår efter dessa kontroller, kontakta supporten med din Office-version (**File > Account > About Word**) och en skärmbild av felet.
+</Accordion>
+
+<Accordion title="Tillägget visar en tom panel och laddas aldrig">
+Office-tilläggspanelen kan ibland misslyckas med att ladda JavaScript-bundlen första gången den öppnas, särskilt över långsamma anslutningar.
+
+1. Stäng panelen (X i hörnet) och öppna den igen från menyfliksområdet.
+2. Om den fortfarande är tom, starta om Word.
+3. Om den fortfarande är tom efter omstart, rensa Office-tilläggets cache ([Microsofts dokumentation](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)).
+4. Öppna Word och tillägget igen.
+
+Nätverksmässigt finns tillägget på `word.sagalegal.io`, och Office laddar sin runtime från Microsofts CDN. Bekräfta med IT-teamet att båda kan nås från företagets nätverk.
+</Accordion>
+
+<Accordion title='"This clause was modified after the suggestion was generated" — tillämpning misslyckas'>
+Tillägget riktar varje förslag mot exakt det stycke och textinnehåll som fanns när AI:n skapade förslaget. Om du redigerar stycket i Word mellan generering och tillämpning — eller om dina `track changes`-godkännanden/avslag flyttar stycket — kan tillämpningssteget inte hitta den ursprungliga ankaren och vägrar skriva, så dina tidigare ändringar skrivs inte över.
+
+Lösningen är att generera förslaget igen mot dokumentets aktuella läge:
+
+1. Skicka samma prompt till AI:n igen.
+2. Det nya svaret speglar stycket som det ser ut nu.
+3. Tillämpa det nya förslaget.
+
+Om du gör flera ändringar i följd, generera om en gång i slutet i stället för efter varje ändring — det sparar rundor.
+</Accordion>
+
+<Accordion title="Suggest-läget är inaktiverat — knappen Apply visas inte">
+Om väljaren för svarsläge visar **Suggest** som gråmarkerat med en tooltip som säger "Suggestions are disabled because this chat is linked to another document", startades chatten framför dig med en annan Word-fil öppen. Tillägget kopplar suggest-läget till dokumentet det ursprungligen bands till — om du byter dokument mitt i chatten inaktiveras suggest-lägets UI så att du inte skriver ändringar i fel fil.
+
+För att använda Suggest i filen du har öppen just nu, starta en ny chatt. Den nya chatten binds till det aktuella dokumentet och alternativet **Suggest** blir tillgängligt igen. Din tidigare chatthistorik finns kvar på fliken **History**.
+</Accordion>
+
+<Accordion title="Gäller Zero Data Retention för Word-tillägget?">
+Ja. När ZDR är aktiverat för din arbetsyta följer Word-tillägget det: fliken **History** visar "No history available", chattar sparas inte på serversidan och chattströmmen körs i ZDR-läge för varje tur. Om du inte ser att lagringsreglerna gäller i tillägget, kontrollera att du har den senaste tilläggsversionen — rensa Office-tilläggets cache ([Microsofts dokumentation](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache)) och ladda om.
+
+Obs! ZDR är en arbetsyteomfattande inställning som konfigureras av din admin. Om du är osäker på om din arbetsyta använder ZDR, be din admin bekräfta lagringstiden i adminpanelen.
+</Accordion>
+
+<Accordion title="Spåra ändringar tillämpas inte på fotnoter när jag accepterar ett förslag">
+Words motor för spårade ändringar behandlar fotnotstext som en separat berättelse. Programmässiga ändringar som läggs in av ett tillägg — vilket är hur Saga tillämpar förslag — sprids inte alltid som spårade ändringar till fotnotsområdet.
+
+Lösning: när ett förslag gäller fotnotstext, kopiera förslaget från tilläggspanelen och klistra in det manuellt i fotnoten med spårade ändringar aktiverat. Vi arbetar med Microsofts tilläggs-API-team på en långsiktig lösning.
+</Accordion>
+
+<Accordion title="Räknas interaktioner i Word-tillägget i arbetsytans användningsstatistik?">
+Ja. Meddelanden som skickas och uppgifter som körs från Word-tillägget räknas i arbetsytans **Användning**-dashboard tillsammans med webbmeddelanden. De delar samma aktivitetsmått per användare och syns för admins under samma tidsintervallfilter.
+
+Själva tillägget visas inte som en separat kanal i dashboarden — användningen tillskrivs användaren, inte ytan som användes för att skicka meddelandet.
+</Accordion>
+
+</AccordionGroup>
+
+## Konto och inloggning
+
+<AccordionGroup>
+
+<Accordion title="Jag får 'Access Denied' när jag försöker logga in">
+Det betyder vanligtvis att kontot inte har provisionerats i din Saga-arbetsyta, eller att det har inaktiverats.
+
+- **Bekräfta e-postadressen.** Saga är skiftlägesokänsligt men känsligt för stavfel och alias — `fornamn.efternamn@firma.se` och `f.efternamn@firma.se` är olika konton i Saga även om båda levererar till samma inkorg. Använd exakt den e-postadress som din firma registrerade.
+- **Be din arbetsyteadmin** kontrollera användarlistan. De kan se om kontot finns, vilken roll det har och om det har inaktiverats. De kan också återaktivera ett tidigare borttaget konto vid behov.
+- **Kontrollera arbetsytans URL.** Om din firma använder flera Saga-subdomäner är magic link bara giltig för arbetsytan du begärde den från.
+
+Om admin bekräftar att du är provisionerad och aktiv men du fortfarande ser Access Denied, kontakta supporten med e-postadressen, arbetsytans URL och en skärmbild av felet.
+</Accordion>
+
+<Accordion title="Kan jag logga in med SMS?">
+Ja — om din arbetsyta har SMS-inloggning aktiverad visar sidan **Välj hur du vill logga in** alternativet **Få verifierings-SMS** bredvid magic link-alternativet. Välj det, ange ditt telefonnummer på nästa sida, så skickar Saga en engångskod via SMS.
+
+Om du inte ser SMS-alternativet är det inte aktiverat för din arbetsyta, eller så saknar ditt konto ett telefonnummer. Be din admin lägga till numret; SMS är inte något du kan registrera själv från profilsidan.
+
+För firmor med SSO konfigurerat är single sign-on oftast den snabbaste vägen — ett klick hos din identitetsleverantör och du är inne.
+</Accordion>
+
+<Accordion title="Jag lämnade Saga öppet över natten och nu fungerar inget">
+Om du har haft en Saga-flik öppen i många timmar och nästa åtgärd misslyckas — en prompt som inte går att skicka, en sida som inte laddas, eller en SharePoint- eller Microsoft-åtgärd som returnerar "session expired" — uppdatera sidan. Lösningen är nästan alltid en hård uppdatering.
+
+Det som händer: sidans JavaScript-bundle, CSRF-token och eventuella Microsoft-åtkomsttoken hämtades när du först öppnade fliken. Microsofts token löper ut enligt sitt eget schema (ofta runt 24 timmar), och en inaktuell Saga-bundle kan hamna ur synk med den deployade backendversionen. En uppdatering hämtar allt på nytt.
+
+Din inloggning är fortfarande giltig i upp till 30 dagar, så du behöver inte ange uppgifter igen — bara Ctrl+R / Cmd+R.
+
+För långvarigt arbete bör du göra det till en vana att uppdatera innan du skickar en viktig prompt om fliken har varit inaktiv i mer än ett par timmar.
+</Accordion>
+
+<Accordion title="Jag blir hastighetsbegränsad eller ser 'too many requests'">
 Saga begränsar hur ofta vissa åtgärder kan utföras. Om du ser detta vid inloggning eller tvåfaktorsautentisering, vänta några minuter och försök igen. För chattrelaterade hastighetsbegränsningar, vänta kort och skicka om ditt meddelande.
+
+Om du upprepade gånger når en hastighetsgräns under normal användning (inte efter snabba upprepade klick), kontakta supporten — det brukar tyda på en automatisering eller ett webbläsartillägg som gör bakgrundsanrop åt dig.
 </Accordion>
 
 </AccordionGroup>
@@ -48,19 +371,98 @@ Dessa integrationer behöver aktiveras av din admin. Be dem konfigurera integrat
 </Accordion>
 
 <Accordion title="Jag ser inte organisationskällor i chattverktygsfältet">
-Organisationskällor skapas av din admin eller innehållsadmin. Om växlingen inte visas i menyn **Lägg till källor** har din organisation inte satt upp några ännu. Be din admin att skapa en från [adminpanelen](/sv/guides/admin).
+Organisationskällor skapas av din admin eller innehållsadmin. Om växlingen inte visas i menyn **Lägg till källor** har din organisation inte skapat några ännu. Be din admin att skapa en från [adminpanelen](/sv/guides/admin).
 </Accordion>
 
-<Accordion title="Jag ser inte en juridisk källa jag behöver">
-Din admin styr vilka juridiska källor som är aktiverade. Om en källa inte visas, be din admin att aktivera den från arbetsytans inställningar. För hela katalogen av tillgängliga källor, se [moonlit.ai/coverage](https://moonlit.ai/coverage).
+<Accordion title="En juridisk källa jag hade åtkomst till igår är borta från rullgardinsmenyn">
+Källor försvinner från rullgardinsmenyn bara för att åtkomsten har ändrats i konfigurationen — inte för att rullgardinsmenyn döljer dem på klientsidan.
+
+- **På en domänbaserad arbetsyta** (de flesta firmor) kan en arbetsyteadmin slå på eller av en databas i adminpanelen. Om en databas försvann över natten, fråga din admin om de (eller någon annan med adminåtkomst) nyligen ändrade konfigurationen för juridisk research.
+- **På en delad arbetsyta** som använder licensiering per användare (`*.sagalegal.io` Community eller liknande) hanterar Saga support databasflaggorna per användare. En licensändring — till exempel efter en förnyelse — kan ta bort en flagga. Kontakta supporten med databasnamnet för att bekräfta.
+- **Moonlit-jurisdiktionskällor** beror på en jurisdiktionslista; om ditt kontos jurisdiktionslista uppdaterades flyttas relaterade Moonlit-rättsfallskällor med den.
+
+Det finns ingen "jag dolde den här källan"-växel på klientsidan — om du inte ser en källa har ditt konto inte åtkomst till den just nu.
 </Accordion>
 
-<Accordion title="Jag kan inte komma åt adminpanelen">
-Adminpanelen är bara synlig för användare med rollen **Admin** eller **Innehållsadmin**. Om du behöver åtkomst, be en befintlig admin att uppdatera din roll. Innehållsadmins kan hantera bibliotek och organisationskällor; fullständiga admins kan hantera allt inklusive användare och inställningar.
+<Accordion title="Jag ser inte en juridisk källa jag behöver (Lovdata, Rettsdata, Rechtspraak osv.)">
+Juridiska källor aktiveras per arbetsyta. Om källan du behöver inte finns i rullgardinsmenyn **Juridisk research** har den inte slagits på för din firma.
+
+Två saker kan saknas:
+
+1. **Din firma har en prenumeration hos källan.** Saga ansluter till juridiska databaser men inkluderar inte den underliggande prenumerationen för de betalda källorna — din firma betalar leverantören direkt (till exempel Lovdata eller Rettsdata). Bekräfta med din admin eller ekonomiavdelning att prenumerationen finns.
+2. **Källan är konfigurerad för din arbetsyta.** Sagas nuvarande integrerade källor inkluderar Lovdata, Rettsdata, Moonlit, Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl och EUR-Lex. Publika källor är vanligtvis tillgängliga direkt; betalda källor kräver inloggningsuppgifter. Ditt kontoteam hanterar aktivering — kontakta dem via din admin eller direkt på [support@sagalegal.io](mailto:support@sagalegal.io).
+
+För katalogen över rättspraxis och regulatorisk täckning som Saga kan nå via Moonlit, se [moonlit.ai/coverage](https://moonlit.ai/coverage).
+
+Om du inte vet vem din admin är, se nästa punkt.
 </Accordion>
 
-<Accordion title="Word-tillägget visas inte i Word">
-Detta beror vanligtvis på behörigheter eller licensiering. Kontrollera att din organisation tillåter Office-tillägg från tredje part, att din Office-version är uppdaterad och att du är inloggad med ditt Microsoft-konto. För detaljerade steg, se [Felsökning av Word-tillägg](/sv/guides/integrations/word-add-in/user-setup#felsökning).
+<Accordion title="Hur lägger jag till en ny användare i min arbetsyta?">
+Enterprise-konton använder automatisk användarprovisionering, så användare läggs till och uppdateras automatiskt. På Solo- och Demo-konton läggs nya användare till manuellt av en admin från avsnittet **Licensed Users** i adminpanelen.
+
+1. Öppna **Admin panel > Licensed Users**.
+2. Klicka på **Add Licensed User**.
+3. Ange användarens arbetsmejladress och Saga ID.
+4. Spara.
+
+Den nya användaren får en inbjudan via e-post. Tills de accepterar och loggar in visas de inte som aktiva.
+
+Vanliga varianter:
+- **En tidigare kollega kommer tillbaka.** Om kontot tidigare har tagits bort behöver de ingen ny inbjudan — en admin kan återaktivera det borttagna kontot från användarlistan. Befintliga chattar och projekt är fortfarande kopplade till det återaktiverade kontot.
+- **Ett helt team börjar samtidigt.** Massinbjudningar är för närvarande inte en självbetjäningsåtgärd för admins; kontakta supporten eller ditt kontoteam om du behöver onboarda fler än ungefär 10 personer på en gång.
+- **En användare fick aldrig inbjudningsmejlet.** Kontrollera skräpposten och verifiera sedan att e-postadressen i användarlistan är korrekt. Om båda är i ordning, be supporten skicka inbjudan igen.
+
+Om du inte är admin, se "Jag vet inte vem min arbetsyteadmin är" nedan.
+</Accordion>
+
+<Accordion title="Jag vet inte vem min arbetsyteadmin är">
+Öppna sidan **Profil** från sidofältet. Medlemslistan visar alla i arbetsytan och deras roll — alla markerade som **Admin** har full kontroll över arbetsytan. **Innehållsadmin** kan hantera delat innehåll (prompter, mallar, arbetsflöden) men inte arbetsyteinställningar, användare eller integrationer.
+
+Om din arbetsyta inte har en utsedd admin (vilket ibland händer vid firmabreda utrullningar), kontakta supporten — vi kan identifiera den ursprungliga arbetsyteägaren och hjälpa er återställa adminansvaret.
+</Accordion>
+
+<Accordion title="Jag kan inte komma åt adminpanelen (eller ser bara delar av den)">
+Adminpanelen är bara synlig för användare med rollen **Admin** eller **Innehållsadmin**.
+
+- **Innehållsadmin** ser innehållssidan: interna källor (firmabreda kunskapsbaser), bibliotek (prompter, rutnätsmallar, arbetsflöden) och anpassade assistenter. De ser inte användare, integrationer, arbetsyteinställningar eller användningsstatistik.
+- **Admin** ser allt: innehållsavsnitten ovan plus **Användare**, **Integrationer**, **Tema**, **Arbetsyteinställningar** och **Användning**.
+
+Om du är innehållsadmin och behöver hantera användare, integrationer eller andra arbetsyteinställningar, be en befintlig Admin att uppgradera ditt konto. De gör detta från avsnittet **Användare** i adminpanelen: hitta din rad och ändra rollen till **Admin**.
+
+Om du redan är Admin men ett avsnitt saknas, logga ut och in igen en gång — rollen kan vara cachad på klientsidan. Om alternativet fortfarande saknas, kontakta supporten.
+</Accordion>
+
+<Accordion title="En URL-extrahering (som rechtspraak.nl eller en annan webbplats) returnerar inget innehåll">
+Sagas URL-extraherare använder en tredjepartstjänst för hämtning (Tavily) för att hämta publika webbsidor och skicka innehållet till AI:n. Det innebär några fall där extraheringen misslyckas:
+
+- **Sidor bakom betalvägg eller inloggning** — Tavily kan inte autentisera mot tredjepartswebbplatser, så hämtningen returnerar inloggningsväggen i stället för innehållet. Använd firmans prenumerationsvy av samma innehåll (till exempel en inloggad PDF-export) och ladda upp den i stället.
+- **Webbplatser som blockerar serverhämtningar** — vissa utgivare blockerar scrapinginfrastruktur via Cloudflare eller liknande gateways. Sidan laddas i din webbläsare men Tavilys begäran avvisas. För nederländsk rättspraxis från `rechtspraak.nl` är detta ett känt problem — om den integrerade Rechtspraak-källan är aktiverad för din arbetsyta, använd den i stället (den frågar det officiella API:et direkt). Annars kan du ladda ner PDF:en av avgörandet och bifoga den.
+- **Sidor som kräver JavaScript för rendering** — Tavily läser den HTML som servern returnerar. Om innehållet bara visas efter att en webbläsare kör JS ser Tavily ett tomt skal. Bifoga en PDF-utskrift av sidan i stället.
+
+Om en webbplats du använder slutade fungera nyligen, skicka URL:en och ett exempel på en misslyckad fråga till supporten — vi kan undersöka.
+</Accordion>
+
+<Accordion title="Jag vill ställa in firmans typsnitt och styling på genererade dokument">
+Saga stöder firmabred dokumentstyling. En admin laddar upp en referens-`.docx` från din firma, och alla dokument som Saga genererar därefter (både Word- och PDF-exporter) följer automatiskt er styling.
+
+**Konfigurera**
+
+Gå till **Admin Panel → Document Styling** och ladda upp en `.docx` som använder firmans styling.
+
+**Vad Saga extraherar från referensdokumentet**
+
+- **Typografi** — brödtextens typsnitt, storlek, färg och radavstånd (från dokumentets standard-/Normal-formatmall), plus Rubrik 1 till Rubrik 6
+- **Temafärger** — primär och accent
+- **Sidinställningar** — storlek, orientering och marginaler
+- **Sidhuvuden och sidfötter** — text, justering, sidnummer och eventuell inbäddad logotyp
+
+**Behörigheter**
+
+Endast Admin-användare kan ladda upp referensdokumentet. Om du inte har adminåtkomst, be en arbetsyteadmin att ladda upp det en gång för firmans räkning.
+
+**Nuvarande begränsning**
+
+Saga mappar standardformatet (Normal) och Rubrik 1–6. Anpassade styckeformat som definieras separat (till exempel ett firmamärkt `Body`-format som skriver över standardformatet) fångas ännu inte upp. De extraherade typsnitten, färgerna, rubrikerna, sidinställningarna och sidhuvud/sidfot täcker normalt huvuddelen av en firmas dokumentstil; om ett visst anpassat format inte används efter uppladdning, kontakta supporten med referensdokumentet så tittar vi på det.
 </Accordion>
 
 </AccordionGroup>
@@ -71,6 +473,24 @@ Detta beror vanligtvis på behörigheter eller licensiering. Kontrollera att din
 
 <Accordion title="Hur kontaktar jag support?">
 Klicka på **Få hjälp** i sidofältet för att öppna feedbackformuläret, eller mejla supportteamet direkt på [support@sagalegal.io](mailto:support@sagalegal.io). Inkludera så mycket detaljer som möjligt — vad du gjorde, vad du förväntade dig och eventuella felmeddelanden du såg.
+
+För problem som AI:n kan hjälpa till med först (vilket de flesta "hur gör jag..."-frågor är), prova att fråga i chatten. Sagas supportassistent är grundad i den här dokumentationen och kan ofta svara direkt. Den öppnar bara ett supportärende åt dig när den inte kan lösa frågan själv, så du slipper vänta på ett ärende för något som redan har ett dokumenterat svar.
+</Accordion>
+
+<Accordion title="Vilken information hjälper supportteamet att lösa problem snabbast?">
+För alla problem:
+
+- **Arbetsytans URL** (t.ex. `https://din-firma.sagalegal.io`).
+- **Din e-postadress** (som registrerad i Saga).
+- **Ungefärlig tid** när problemet uppstod, inklusive tidszon.
+- **Vad du försökte göra**, vad du förväntade dig och vad som faktiskt hände.
+- **En skärmbild eller kort skärminspelning** om det finns ett synligt fel eller oväntat UI-tillstånd.
+
+För webbläsarproblem, inkludera även webbläsarnamn och version (t.ex. Chrome 148) och om problemet uppstår i inkognitoläge.
+
+För problem med Word-tillägget hjälper versionsinformationen från **File > Account > About Word** (Windows) eller **Word > About Microsoft Word** (Mac) oss att snabbt identifiera Office-relaterade buggar.
+
+För chattproblem låter **Chat Session ID** (synligt i URL:en när du har chatten öppen) oss spåra den exakta konversationen i backend.
 </Accordion>
 
 </AccordionGroup>
