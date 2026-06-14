@@ -114,7 +114,8 @@
                   "guides/integrations/word-add-in/user-setup",
                   "guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "guides/integrations/mcp-server"
             ]
           },
           {
@@ -212,7 +213,8 @@
                   "no/guides/integrations/word-add-in/user-setup",
                   "no/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "no/guides/integrations/mcp-server"
             ]
           },
           {
@@ -306,7 +308,8 @@
                   "nl/guides/integrations/word-add-in/user-setup",
                   "nl/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "nl/guides/integrations/mcp-server"
             ]
           },
           {
@@ -400,7 +403,8 @@
                   "pl/guides/integrations/word-add-in/user-setup",
                   "pl/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "pl/guides/integrations/mcp-server"
             ]
           },
           {
@@ -494,7 +498,8 @@
                   "es/guides/integrations/word-add-in/user-setup",
                   "es/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "es/guides/integrations/mcp-server"
             ]
           },
           {
@@ -588,7 +593,8 @@
                   "de/guides/integrations/word-add-in/user-setup",
                   "de/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "de/guides/integrations/mcp-server"
             ]
           },
           {
@@ -682,7 +688,8 @@
                   "it/guides/integrations/word-add-in/user-setup",
                   "it/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "it/guides/integrations/mcp-server"
             ]
           },
           {
@@ -776,7 +783,8 @@
                   "pt/guides/integrations/word-add-in/user-setup",
                   "pt/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "pt/guides/integrations/mcp-server"
             ]
           },
           {
@@ -870,7 +878,8 @@
                   "tr/guides/integrations/word-add-in/user-setup",
                   "tr/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "tr/guides/integrations/mcp-server"
             ]
           },
           {
@@ -964,7 +973,8 @@
                   "fr/guides/integrations/word-add-in/user-setup",
                   "fr/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "fr/guides/integrations/mcp-server"
             ]
           },
           {
@@ -1058,7 +1068,8 @@
                   "sv/guides/integrations/word-add-in/user-setup",
                   "sv/guides/integrations/word-add-in/admin-setup"
                 ]
-              }
+              },
+              "sv/guides/integrations/mcp-server"
             ]
           },
           {
