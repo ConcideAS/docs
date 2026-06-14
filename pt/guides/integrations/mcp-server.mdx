@@ -1,0 +1,72 @@
+---
+title: Servidor MCP
+---
+
+Saga está disponível como servidor [MCP](https://modelcontextprotocol.io), para que agentes e assistentes de IA — Claude, ChatGPT, Cursor e agentes personalizados — possam usar o seu espaço de trabalho do Saga como uma ferramenta. O agente pode fazer perguntas ao Saga, pesquisar e ler documentos de projetos e executar os seus fluxos de trabalho, tudo utilizando o seu próprio acesso.
+
+Isto é o inverso de ligar servidores MCP externos ao Saga. Aqui, o seu espaço de trabalho do Saga *é* o servidor ao qual as outras ferramentas se ligam.
+
+## Antes de começar
+
+Precisa de:
+
+- A sua **URL da plataforma** e uma **chave API**. Ambas provêm de **Configurações > Gestão de chaves API** dentro do Saga. Abra a página, crie uma chave se não tiver uma e copie ambos os valores.
+- Um cliente MCP que suporte o transporte HTTP por streaming (Claude Desktop, Claude Code, Cursor ou qualquer agente personalizado criado sobre o SDK MCP).
+
+<Note>
+Cada cliente tem o seu próprio domínio Saga, por isso o seu endpoint MCP é a sua própria URL da plataforma com `/api/mcp` adicionado. Use a URL da plataforma apresentada em **Configurações > Gestão de chaves API** — não adivinhe o domínio.
+</Note>
+
+## Ligar um cliente
+
+A maioria dos clientes só precisa da URL do endpoint e de um cabeçalho `Authorization`.
+
+- **Endpoint:** `https://<your-domain>.sagalegal.io/api/mcp`
+- **Cabeçalho:** `Authorization: Api-Key <your-api-key>`
+
+Para um cliente que lê um ficheiro `.mcp.json` (por exemplo, o Claude Code), adicione:
+
+```json
+{
+  "mcpServers": {
+    "saga": {
+      "type": "http",
+      "url": "https://<your-domain>.sagalegal.io/api/mcp",
+      "headers": { "Authorization": "Api-Key <your-api-key>" }
+    }
+  }
+}
+```
+
+Substitua `<your-domain>` pela sua URL da plataforma e `<your-api-key>` pela chave de **Configurações > Gestão de chaves API**.
+
+<Note>
+Alguns clientes só lhe permitem colar um token bearer. Nesse caso, use `Authorization: Bearer <your-api-key>` em vez disso — o Saga aceita a sua chave API em qualquer um dos formatos.
+</Note>
+
+## O que o agente pode fazer
+
+Uma vez ligado, o agente dispõe destas ferramentas:
+
+| Ferramenta | O que faz |
+|------|--------------|
+| `ask_saga` | Faz uma pergunta ao Saga e devolve a resposta, tal como ao conversar na aplicação. |
+| `list_projects` | Lista os seus projetos, incluindo os que foram partilhados consigo. |
+| `list_project_documents` | Lista os documentos de um projeto. |
+| `search_project_documents` | Pesquisa na base de conhecimento de um projeto e devolve as secções mais relevantes. |
+| `fetch_project_document` | Devolve o texto completo de um documento. |
+| `list_workflows` | Lista os seus fluxos de trabalho e os inputs que cada um espera. |
+| `execute_workflow` | Executa um fluxo de trabalho com inputs de texto e devolve o resultado. |
+
+Cada ferramenta é executada em seu nome. O agente vê apenas os projetos, documentos e fluxos de trabalho a que a sua conta já pode aceder — as mesmas permissões que tem na aplicação web.
+
+## Segurança
+
+- Trate a sua chave API como uma palavra-passe. Qualquer pessoa com a chave e a sua URL da plataforma pode agir em seu nome através do Saga.
+- Renove ou revogue a chave a qualquer momento em **Configurações > Gestão de chaves API**. Revogá-la interrompe imediatamente qualquer agente ligado.
+- Se uma chave possa ter sido divulgada, revogue-a e crie uma nova, depois atualize a configuração do seu cliente.
+
+## Resolução de problemas
+
+- **O cliente não consegue ligar-se ou devolve 401 Unauthorized** — verifique se o endpoint termina em `/api/mcp`, se o cabeçalho é `Authorization: Api-Key <your-api-key>` e se a chave não expirou nem foi revogada. Crie uma nova chave em **Configurações > Gestão de chaves API** se necessário.
+- **Um fluxo de trabalho aparece como pausado** — os fluxos de trabalho que aguardam input a meio do processo não podem ser retomados via MCP, e os inputs de ficheiros não são suportados. Execute-os a partir da aplicação Saga em vez disso.
