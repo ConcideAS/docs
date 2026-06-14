@@ -1,72 +1,28 @@
 ---
-title: MCP-server
+title: AI-assistenten (MCP)
 ---
 
-Saga is beschikbaar als een [MCP](https://modelcontextprotocol.io)-server, zodat AI-agenten en -assistenten — Claude, ChatGPT, Cursor en aangepaste agenten — uw Saga-werkruimte als hulpmiddel kunnen gebruiken. De agent kan Saga vragen stellen, projectdocumenten doorzoeken en lezen, en uw workflows uitvoeren, allemaal met uw eigen toegang.
+Saga werkt met het Model Context Protocol (MCP) — een open standaard waarmee AI-assistenten en hulpmiddelen met elkaar kunnen praten. U hoeft de technologie niet te begrijpen om hem te gebruiken. Wat telt is dat Saga in twee richtingen verbindt, en u kunt de ene of beide gebruiken.
 
-Dit is het omgekeerde van het verbinden van externe MCP-servers met Saga. Hier *is* uw Saga-werkruimte de server waarmee andere hulpmiddelen verbinding maken.
+## De twee richtingen
 
-## Voordat u begint
+**Gebruik Saga vanuit een andere AI-assistent.** Verbind een assistent die u al gebruikt — zoals Claude of ChatGPT — met uw Saga-werkruimte. U kunt die assistent vervolgens vragen stellen en hij antwoordt met behulp van uw Saga-projecten, documenten en workflows. Hier is Saga de bron waaruit de assistent put.
 
-U hebt nodig:
+**Breng externe hulpmiddelen in Saga.** Verbind externe hulpmiddelen en gegevensbronnen met Saga, zodat de AI binnen Saga ze kan gebruiken terwijl u chat. Uw kantoor kan bijvoorbeeld een onderzoeksdatabase of een intern systeem verbinden. Hier is Saga degene die naar die hulpmiddelen reikt.
 
-- Uw **platform-URL** en een **API-sleutel**. Beide vindt u in Saga onder **Instellingen > API-sleutelbeheer**. Open de pagina, maak een sleutel aan als u er nog geen hebt, en kopieer beide waarden.
-- Een MCP-client die de streambare HTTP-transport ondersteunt (Claude Desktop, Claude Code, Cursor of een aangepaste agent gebouwd op de MCP-SDK).
+Een eenvoudige manier om het te onthouden:
 
-<Note>
-Elke klant heeft zijn eigen Saga-domein, dus uw MCP-eindpunt is uw eigen platform-URL met `/api/mcp` toegevoegd. Gebruik de platform-URL die wordt getoond onder **Instellingen > API-sleutelbeheer** — raad het domein niet.
-</Note>
-
-## Een client verbinden
-
-De meeste clients hebben alleen de eindpunt-URL en een `Authorization`-header nodig.
-
-- **Eindpunt:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Header:** `Authorization: Api-Key <your-api-key>`
-
-Voor een client die een `.mcp.json`-bestand leest (bijvoorbeeld Claude Code), voegt u toe:
-
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Vervang `<your-domain>` door uw platform-URL en `<your-api-key>` door de sleutel uit **Instellingen > API-sleutelbeheer**.
+| U wilt … | Gebruik dit | In gewone taal |
+|--------------|----------|----------------|
+| Werken met uw Saga-inhoud vanuit Claude, ChatGPT enz. | [Verbind uw assistent met Saga](/guides/integrations/mcp-server/connect-assistants) | Saga is de bron |
+| Saga's AI externe hulpmiddelen en gegevens laten gebruiken | [Verbind hulpmiddelen met Saga](/guides/integrations/mcp-server/connect-tools) | Saga is de gebruiker |
 
 <Note>
-Sommige clients laten u alleen een bearer-token plakken. Gebruik in dat geval `Authorization: Bearer <your-api-key>` — Saga accepteert uw API-sleutel in beide vormen.
+Deze staan los van elkaar — het instellen van de ene vereist niet de andere. Kies welke past bij wat u probeert te doen, of stel ze allebei in.
 </Note>
 
-## Wat de agent kan doen
+## Welke moet ik instellen?
 
-Eenmaal verbonden beschikt de agent over deze hulpmiddelen:
-
-| Hulpmiddel | Wat het doet |
-|------|--------------|
-| `ask_saga` | Stelt Saga een vraag en geeft het antwoord terug, net als chatten in de app. |
-| `list_projects` | Geeft een lijst van uw projecten, inclusief de projecten die met u zijn gedeeld. |
-| `list_project_documents` | Geeft een lijst van de documenten in een project. |
-| `search_project_documents` | Doorzoekt de kennisbank van een project en geeft de meest relevante secties terug. |
-| `fetch_project_document` | Geeft de volledige tekst van een document terug. |
-| `list_workflows` | Geeft een lijst van uw workflows en de invoer die elke workflow verwacht. |
-| `execute_workflow` | Voert een workflow uit met tekstinvoer en geeft het resultaat terug. |
-
-Elk hulpmiddel wordt als u uitgevoerd. De agent ziet alleen de projecten, documenten en workflows waartoe uw account al toegang heeft — dezelfde rechten die u in de webapp hebt.
-
-## Beveiliging
-
-- Behandel uw API-sleutel als een wachtwoord. Iedereen met de sleutel en uw platform-URL kan via Saga als u handelen.
-- Roteer of trek de sleutel op elk moment in via **Instellingen > API-sleutelbeheer**. Intrekken stopt elke verbonden agent onmiddellijk.
-- Als een sleutel mogelijk is gelekt, trek deze dan in en maak een nieuwe aan, en werk vervolgens uw clientconfiguratie bij.
-
-## Problemen oplossen
-
-- **De client kan geen verbinding maken of geeft 401 Unauthorized terug** — controleer of het eindpunt eindigt op `/api/mcp`, of de header `Authorization: Api-Key <your-api-key>` is en of de sleutel niet is verlopen of ingetrokken. Maak indien nodig een nieuwe sleutel aan in **Instellingen > API-sleutelbeheer**.
-- **Een workflow wordt als gepauzeerd gerapporteerd** — workflows die halverwege op invoer wachten kunnen niet via MCP worden hervat, en bestandsinvoer wordt niet ondersteund. Voer deze in plaats daarvan uit vanuit de Saga-app.
+- Als u in Claude of ChatGPT leeft en wilt dat ze putten uit uw zaken, begin dan met [Verbind uw assistent met Saga](/guides/integrations/mcp-server/connect-assistants).
+- Als uw kantoor wil dat Saga's AI tijdens chats een extern systeem of database bereikt, is dat [Verbind hulpmiddelen met Saga](/guides/integrations/mcp-server/connect-tools), en dat wordt meestal ingesteld door een beheerder.
+- Bouwt u zelf een aangepaste integratie? Zie [Ontwikkelaarsconfiguratie](/guides/integrations/mcp-server/developer-setup) voor de technische details.

@@ -115,7 +115,15 @@
                   "guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "guides/integrations/mcp-server"
+              {
+                "group": "AI assistants",
+                "pages": [
+                  "guides/integrations/mcp-server",
+                  "guides/integrations/mcp-server/connect-assistants",
+                  "guides/integrations/mcp-server/connect-tools",
+                  "guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -214,7 +222,15 @@
                   "no/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "no/guides/integrations/mcp-server"
+              {
+                "group": "AI-assistenter",
+                "pages": [
+                  "no/guides/integrations/mcp-server",
+                  "no/guides/integrations/mcp-server/connect-assistants",
+                  "no/guides/integrations/mcp-server/connect-tools",
+                  "no/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -309,7 +325,15 @@
                   "nl/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "nl/guides/integrations/mcp-server"
+              {
+                "group": "AI-assistenten",
+                "pages": [
+                  "nl/guides/integrations/mcp-server",
+                  "nl/guides/integrations/mcp-server/connect-assistants",
+                  "nl/guides/integrations/mcp-server/connect-tools",
+                  "nl/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -404,7 +428,15 @@
                   "pl/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "pl/guides/integrations/mcp-server"
+              {
+                "group": "Asystenci AI",
+                "pages": [
+                  "pl/guides/integrations/mcp-server",
+                  "pl/guides/integrations/mcp-server/connect-assistants",
+                  "pl/guides/integrations/mcp-server/connect-tools",
+                  "pl/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -499,7 +531,15 @@
                   "es/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "es/guides/integrations/mcp-server"
+              {
+                "group": "Asistentes de IA",
+                "pages": [
+                  "es/guides/integrations/mcp-server",
+                  "es/guides/integrations/mcp-server/connect-assistants",
+                  "es/guides/integrations/mcp-server/connect-tools",
+                  "es/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -594,7 +634,15 @@
                   "de/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "de/guides/integrations/mcp-server"
+              {
+                "group": "KI-Assistenten",
+                "pages": [
+                  "de/guides/integrations/mcp-server",
+                  "de/guides/integrations/mcp-server/connect-assistants",
+                  "de/guides/integrations/mcp-server/connect-tools",
+                  "de/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -689,7 +737,15 @@
                   "it/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "it/guides/integrations/mcp-server"
+              {
+                "group": "Assistenti IA",
+                "pages": [
+                  "it/guides/integrations/mcp-server",
+                  "it/guides/integrations/mcp-server/connect-assistants",
+                  "it/guides/integrations/mcp-server/connect-tools",
+                  "it/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -784,7 +840,15 @@
                   "pt/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "pt/guides/integrations/mcp-server"
+              {
+                "group": "Assistentes de IA",
+                "pages": [
+                  "pt/guides/integrations/mcp-server",
+                  "pt/guides/integrations/mcp-server/connect-assistants",
+                  "pt/guides/integrations/mcp-server/connect-tools",
+                  "pt/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -879,7 +943,15 @@
                   "tr/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "tr/guides/integrations/mcp-server"
+              {
+                "group": "Yapay zekâ asistanları",
+                "pages": [
+                  "tr/guides/integrations/mcp-server",
+                  "tr/guides/integrations/mcp-server/connect-assistants",
+                  "tr/guides/integrations/mcp-server/connect-tools",
+                  "tr/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -974,7 +1046,15 @@
                   "fr/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "fr/guides/integrations/mcp-server"
+              {
+                "group": "Assistants IA",
+                "pages": [
+                  "fr/guides/integrations/mcp-server",
+                  "fr/guides/integrations/mcp-server/connect-assistants",
+                  "fr/guides/integrations/mcp-server/connect-tools",
+                  "fr/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {
@@ -1069,7 +1149,15 @@
                   "sv/guides/integrations/word-add-in/admin-setup"
                 ]
               },
-              "sv/guides/integrations/mcp-server"
+              {
+                "group": "AI-assistenter",
+                "pages": [
+                  "sv/guides/integrations/mcp-server",
+                  "sv/guides/integrations/mcp-server/connect-assistants",
+                  "sv/guides/integrations/mcp-server/connect-tools",
+                  "sv/guides/integrations/mcp-server/developer-setup"
+                ]
+              }
             ]
           },
           {

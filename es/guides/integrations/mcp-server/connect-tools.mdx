@@ -1,0 +1,42 @@
+---
+title: Conectar herramientas a Saga
+---
+
+Puede conectar herramientas y fuentes de datos externas a Saga para que la IA pueda usarlas mientras chatea. Una vez conectada una herramienta, la IA puede invocarla durante una conversación — por ejemplo, para buscar algo en un sistema conectado — sin que usted salga de Saga.
+
+Esto lo configura un administrador para toda la organización. La mayoría de las personas solo necesitarán el [paso de usuario](#if-a-tool-asks-for-your-personal-token) al final, y solo para ciertas herramientas.
+
+## Para qué sirve
+
+Conectar una herramienta le da a la IA de Saga una nueva capacidad que utiliza en su nombre durante los chats. El proveedor de la herramienta le da una dirección web (y a veces una credencial), y Saga se encarga del resto. Algunos ejemplos son bases de datos de investigación, sistemas internos del despacho o cualquier servicio que admita el Model Context Protocol.
+
+## Configurar una herramienta (administradores)
+
+Abra el **Panel de administración** y vaya a la sección **MCP Servers**.
+
+1. **Agregue la herramienta.** Haga clic en **Add Server**, asígnele un nombre y pegue la dirección web de la herramienta (su URL de endpoint). El proveedor de la herramienta le facilita esta dirección.
+2. **Defina cómo inicia sesión Saga.** Elija la autenticación que requiere la herramienta:
+   - **None** — la herramienta no necesita credenciales.
+   - **API Key** o **Bearer Token** — pegue la clave o el token que le dio el proveedor. Se almacena de forma segura y no se vuelve a mostrar.
+   - **Basic Auth** — una combinación de nombre de usuario y contraseña, introducida en la forma codificada que especifique el proveedor.
+   - **OAuth 2.1** — para herramientas que usan un flujo de inicio de sesión. Guarde primero la herramienta y luego haga clic en **Connect** para iniciar sesión.
+   - **Per-User API Token** — cada persona introduce su propio token personal en lugar de una credencial compartida del despacho (vea más abajo).
+3. **Pruebe y actívela.** Use **Test Connection** para confirmar que Saga puede acceder a la herramienta — una prueba exitosa muestra las capacidades que encontró. Active **Available in Chat** para que las personas de su organización puedan usarla.
+
+<Note>
+Las credenciales que introduce aquí se almacenan de forma segura y no se vuelven a mostrar. Si necesita cambiar una, introduzca un nuevo valor.
+</Note>
+
+## Si una herramienta pide su token personal
+
+Algunas herramientas están configuradas para que cada persona inicie sesión con su propio token en lugar de una credencial compartida del despacho. Si su administrador eligió **Per-User API Token** para una herramienta, deberá agregar el suyo:
+
+1. Vaya a **Configuración > Integraciones**.
+2. Encuentre la herramienta en la lista y pegue su token personal.
+3. Guarde. La herramienta ya está disponible para usted en el chat.
+
+Hasta que agregue su token, esa herramienta no estará disponible en sus conversaciones, aunque su administrador la haya configurado.
+
+<Note>
+¿Prefiere que Saga sea la herramienta a la que se conectan *otros* asistentes? Esa es la otra dirección — consulte [Conectar su asistente a Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

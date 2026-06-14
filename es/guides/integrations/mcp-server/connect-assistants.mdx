@@ -1,0 +1,38 @@
+---
+title: Conectar tu asistente a Saga
+---
+
+Puede conectar Saga a los asistentes de IA que ya utiliza, como Claude y ChatGPT. Una vez conectado, puede hacerle una pregunta al asistente y este recurrirá a su espacio de trabajo de Saga para responder — revisando sus proyectos, buscando en sus documentos y ejecutando sus workflows, sin que tenga que cambiar de pestaña ni copiar nada de un lado a otro.
+
+Piénselo como darle a su asistente de IA habitual acceso a todo lo que tiene en Saga, para que sus respuestas se basen en sus asuntos en lugar de en conocimientos generales.
+
+## Qué puede hacer
+
+Una vez conectado, puede pedirle a su asistente que:
+
+- **Responda preguntas usando Saga** — las mismas respuestas que obtendría al chatear dentro de Saga, ahora disponibles desde su asistente.
+- **Encuentre documentos** — buscar en los archivos de un proyecto y mostrar los pasajes relevantes.
+- **Lea un documento** — obtener el texto completo de un archivo de un proyecto.
+- **Liste sus proyectos** — ver los asuntos a los que tiene acceso.
+- **Ejecute un workflow** — iniciar uno de sus workflows guardados y obtener el resultado.
+
+## Qué puede y qué no puede ver
+
+La conexión actúa en su nombre. Su asistente solo puede acceder a los proyectos, documentos y workflows a los que su propia cuenta ya tiene acceso — exactamente igual que cuando usted mismo inicia sesión en Saga. No puede ver nada que usted no pueda ver, ni puede ver el trabajo de otras personas.
+
+## Cómo conectar
+
+Necesitará dos cosas de Saga, ambas en la página **Configuración > Gestión de claves API**:
+
+1. Su **URL de la plataforma** — la dirección web de Saga de su despacho.
+2. Una **clave API** — su clave de acceso personal. Cree una en esa página si aún no la tiene.
+
+Luego abra la configuración de su asistente de IA, agregue una nueva conexión y pegue la dirección y la clave. Saga muestra la dirección exacta que debe usar en esa misma página, junto a **MCP Server Endpoint**.
+
+<Note>
+Su clave API es como una contraseña — permite que su asistente actúe en su nombre en Saga. No la comparta. Si alguna vez lo necesita, puede reemplazarla o eliminarla desde **Configuración > Gestión de claves API** en cualquier momento, lo que desconecta de inmediato cualquier asistente que la esté usando.
+</Note>
+
+<Note>
+¿Está configurando un asistente personalizado o interno? Consulte [Configuración para desarrolladores](/guides/integrations/mcp-server/developer-setup) para conocer los detalles técnicos, incluidos el punto de conexión, la autenticación y la lista completa de herramientas.
+</Note>

@@ -1,72 +1,28 @@
 ---
-title: MCP-server
+title: AI-assistenter (MCP)
 ---
 
-Saga er tilgjengelig som en [MCP](https://modelcontextprotocol.io)-server, slik at AI-agenter og -assistenter — Claude, ChatGPT, Cursor og egendefinerte agenter — kan bruke Saga-arbeidsområdet ditt som et verktøy. Agenten kan stille Saga spørsmål, søke i og lese prosjektdokumenter og kjøre arbeidsflytene dine, alt med din egen tilgang.
+Saga fungerer med Model Context Protocol (MCP) — en åpen standard som lar AI-assistenter og verktøy snakke sammen. Du trenger ikke å forstå teknologien for å bruke den. Det som betyr noe, er at Saga kobler til i to retninger, og du kan bruke den ene eller begge.
 
-Dette er det motsatte av å koble eksterne MCP-servere til Saga. Her *er* Saga-arbeidsområdet ditt serveren som andre verktøy kobler seg til.
+## De to retningene
 
-## Før du starter
+**Bruk Saga fra en annen AI-assistent.** Koble til en assistent du allerede bruker — som Claude eller ChatGPT — til Saga-arbeidsområdet ditt. Du kan deretter stille assistenten spørsmål, og den svarer ved hjelp av Saga-prosjektene, dokumentene og arbeidsflytene dine. Her er Saga kilden assistenten henter fra.
 
-Du trenger:
+**Hent eksterne verktøy inn i Saga.** Koble eksterne verktøy og datakilder til Saga, slik at AI-en inne i Saga kan bruke dem mens du chatter. Firmaet ditt kan for eksempel koble til en forskningsdatabase eller et internt system. Her er det Saga som strekker seg ut til disse verktøyene.
 
-- **Plattform-URLen** din og en **API-nøkkel**. Begge er tilgjengelige i Saga under **Innstillinger > API-nøkkelhåndtering**. Åpne siden, opprett en nøkkel hvis du ikke har en, og kopier begge verdiene.
-- En MCP-klient som støtter den strømmbare HTTP-transporten (Claude Desktop, Claude Code, Cursor eller en egendefinert agent bygget på MCP-SDK-en).
+En enkel måte å huske det på:
 
-<Note>
-Hver kunde har sitt eget Saga-domene, så MCP-endepunktet ditt er din egen plattform-URL med `/api/mcp` lagt til. Bruk plattform-URLen som vises under **Innstillinger > API-nøkkelhåndtering** — ikke gjett på domenet.
-</Note>
-
-## Koble til en klient
-
-De fleste klienter trenger bare endepunkt-URLen og en `Authorization`-header.
-
-- **Endepunkt:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Header:** `Authorization: Api-Key <your-api-key>`
-
-For en klient som leser en `.mcp.json`-fil (for eksempel Claude Code), legg til:
-
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Erstatt `<your-domain>` med plattform-URLen din og `<your-api-key>` med nøkkelen fra **Innstillinger > API-nøkkelhåndtering**.
+| Du vil … | Bruk dette | Med enkle ord |
+|--------------|----------|----------------|
+| Jobbe med Saga-innholdet ditt fra Claude, ChatGPT osv. | [Koble assistenten din til Saga](/guides/integrations/mcp-server/connect-assistants) | Saga er kilden |
+| La Saga-AI-en bruke eksterne verktøy og data | [Koble verktøy til Saga](/guides/integrations/mcp-server/connect-tools) | Saga er brukeren |
 
 <Note>
-Noen klienter lar deg bare lime inn et bearer-token. I så fall bruk `Authorization: Bearer <your-api-key>` i stedet — Saga godtar API-nøkkelen din i begge formene.
+Disse er uavhengige — å sette opp den ene krever ikke den andre. Velg den som passer det du prøver å gjøre, eller sett opp begge.
 </Note>
 
-## Hva agenten kan gjøre
+## Hvilken skal jeg sette opp?
 
-Når den er tilkoblet, har agenten disse verktøyene:
-
-| Verktøy | Hva det gjør |
-|------|--------------|
-| `ask_saga` | Stiller Saga et spørsmål og returnerer svaret, på samme måte som å chatte i appen. |
-| `list_projects` | Lister opp prosjektene dine, inkludert de som er delt med deg. |
-| `list_project_documents` | Lister opp dokumentene i et prosjekt. |
-| `search_project_documents` | Søker i et prosjekts kunnskapsbase og returnerer de mest relevante delene. |
-| `fetch_project_document` | Returnerer hele teksten i et dokument. |
-| `list_workflows` | Lister opp arbeidsflytene dine og inndataene hver enkelt forventer. |
-| `execute_workflow` | Kjører en arbeidsflyt med tekstinndata og returnerer resultatet. |
-
-Hvert verktøy kjører som deg. Agenten ser bare prosjektene, dokumentene og arbeidsflytene kontoen din allerede har tilgang til — de samme tillatelsene du har i nettappen.
-
-## Sikkerhet
-
-- Behandle API-nøkkelen din som et passord. Alle med nøkkelen og plattform-URLen din kan opptre som deg gjennom Saga.
-- Rotér eller tilbakekall nøkkelen når som helst fra **Innstillinger > API-nøkkelhåndtering**. Å tilbakekalle den stopper umiddelbart enhver tilkoblet agent.
-- Hvis en nøkkel kan ha lekket, tilbakekall den og opprett en ny, og oppdater deretter klientkonfigurasjonen din.
-
-## Feilsøking
-
-- **Klienten kan ikke koble til eller returnerer 401 Unauthorized** — sjekk at endepunktet slutter på `/api/mcp`, at headeren er `Authorization: Api-Key <your-api-key>`, og at nøkkelen ikke er utløpt eller tilbakekalt. Opprett en ny nøkkel under **Innstillinger > API-nøkkelhåndtering** om nødvendig.
-- **En arbeidsflyt rapporteres som satt på pause** — arbeidsflyter som venter på inndata underveis kan ikke gjenopptas over MCP, og filinndata støttes ikke. Kjør disse fra Saga-appen i stedet.
+- Hvis du lever i Claude eller ChatGPT og vil at de skal trekke på sakene dine, start med [Koble assistenten din til Saga](/guides/integrations/mcp-server/connect-assistants).
+- Hvis firmaet ditt vil at Saga-AI-en skal nå et eksternt system eller en database under chatter, er det [Koble verktøy til Saga](/guides/integrations/mcp-server/connect-tools), og det settes vanligvis opp av en administrator.
+- Bygger du en egendefinert integrasjon selv? Se [Utvikleroppsett](/guides/integrations/mcp-server/developer-setup) for de tekniske detaljene.

@@ -1,0 +1,72 @@
+---
+title: Configurazione per sviluppatori
+---
+
+Saga è disponibile come server [MCP](https://modelcontextprotocol.io), così agenti e assistenti IA — Claude, ChatGPT, Cursor e agenti personalizzati — possono usare il tuo spazio di lavoro Saga come strumento. L'agente può porre domande a Saga, cercare e leggere i documenti di un progetto ed eseguire i tuoi flussi di lavoro, il tutto utilizzando il tuo accesso.
+
+Questo è l'inverso della connessione di server MCP esterni a Saga. Qui, il tuo spazio di lavoro Saga *è* il server a cui si connettono gli altri strumenti.
+
+## Prima di iniziare
+
+Hai bisogno di:
+
+- Il tuo **URL della piattaforma** e una **chiave API**. Entrambi provengono da **Impostazioni > Gestione delle chiavi API** all'interno di Saga. Apri la pagina, crea una chiave se non ne hai una e copia entrambi i valori.
+- Un client MCP che supporta il trasporto HTTP in streaming (Claude Desktop, Claude Code, Cursor o qualsiasi agente personalizzato basato sull'SDK MCP).
+
+<Note>
+Ogni cliente ha il proprio dominio Saga, quindi il tuo endpoint MCP è il tuo URL della piattaforma con `/api/mcp` aggiunto. Usa l'URL della piattaforma mostrato in **Impostazioni > Gestione delle chiavi API** — non indovinare il dominio.
+</Note>
+
+## Connettere un client
+
+La maggior parte dei client necessita solo dell'URL dell'endpoint e di un'intestazione `Authorization`.
+
+- **Endpoint:** `https://<your-domain>.sagalegal.io/api/mcp`
+- **Intestazione:** `Authorization: Api-Key <your-api-key>`
+
+Per un client che legge un file `.mcp.json` (ad esempio Claude Code), aggiungi:
+
+```json
+{
+  "mcpServers": {
+    "saga": {
+      "type": "http",
+      "url": "https://<your-domain>.sagalegal.io/api/mcp",
+      "headers": { "Authorization": "Api-Key <your-api-key>" }
+    }
+  }
+}
+```
+
+Sostituisci `<your-domain>` con il tuo URL della piattaforma e `<your-api-key>` con la chiave da **Impostazioni > Gestione delle chiavi API**.
+
+<Note>
+Alcuni client ti consentono di incollare solo un token bearer. In tal caso usa invece `Authorization: Bearer <your-api-key>` — Saga accetta la tua chiave API in entrambi i formati.
+</Note>
+
+## Cosa può fare l'agente
+
+Una volta connesso, l'agente dispone di questi strumenti:
+
+| Strumento | Cosa fa |
+|------|--------------|
+| `ask_saga` | Pone una domanda a Saga e restituisce la risposta, come quando chatti nell'app. |
+| `list_projects` | Elenca i tuoi progetti, inclusi quelli condivisi con te. |
+| `list_project_documents` | Elenca i documenti di un progetto. |
+| `search_project_documents` | Cerca nella knowledge base di un progetto e restituisce le sezioni più pertinenti. |
+| `fetch_project_document` | Restituisce il testo completo di un documento. |
+| `list_workflows` | Elenca i tuoi flussi di lavoro e gli input che ciascuno si aspetta. |
+| `execute_workflow` | Esegue un flusso di lavoro con input testuali e restituisce il risultato. |
+
+Ogni strumento viene eseguito a tuo nome. L'agente vede solo i progetti, i documenti e i flussi di lavoro a cui il tuo account può già accedere — gli stessi permessi che hai nell'app web.
+
+## Sicurezza
+
+- Tratta la tua chiave API come una password. Chiunque disponga della chiave e del tuo URL della piattaforma può agire a tuo nome tramite Saga.
+- Rigenera o revoca la chiave in qualsiasi momento da **Impostazioni > Gestione delle chiavi API**. La revoca interrompe immediatamente qualsiasi agente connesso.
+- Se una chiave potrebbe essere stata divulgata, revocala e creane una nuova, poi aggiorna la configurazione del tuo client.
+
+## Risoluzione dei problemi
+
+- **Il client non riesce a connettersi o restituisce 401 Unauthorized** — verifica che l'endpoint termini con `/api/mcp`, che l'intestazione sia `Authorization: Api-Key <your-api-key>` e che la chiave non sia scaduta o stata revocata. Crea una nuova chiave in **Impostazioni > Gestione delle chiavi API** se necessario.
+- **Un flusso di lavoro risulta in pausa** — i flussi di lavoro che attendono un input a metà esecuzione non possono essere ripresi tramite MCP, e gli input di file non sono supportati. Eseguili invece dall'app Saga.

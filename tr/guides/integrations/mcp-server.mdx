@@ -1,72 +1,28 @@
 ---
-title: MCP sunucusu
+title: Yapay zekâ asistanları (MCP)
 ---
 
-Saga, bir [MCP](https://modelcontextprotocol.io) sunucusu olarak kullanılabilir; böylece yapay zeka aracıları ve asistanları — Claude, ChatGPT, Cursor ve özel aracılar — Saga çalışma alanınızı bir araç olarak kullanabilir. Aracı, Saga'ya sorular sorabilir, proje belgelerini arayıp okuyabilir ve iş akışlarınızı çalıştırabilir; bunların tümünü kendi erişiminizle yapar.
+Saga, Model Context Protocol (MCP) ile çalışır — yapay zekâ asistanlarının ve araçlarının birbiriyle iletişim kurmasını sağlayan açık bir standart. Kullanmak için teknolojiyi anlamanıza gerek yok. Önemli olan, Saga'nın iki yönde bağlanması ve ikisinden birini ya da her ikisini de kullanabilmenizdir.
 
-Bu, harici MCP sunucularını Saga'ya bağlamanın tersidir. Burada Saga çalışma alanınız, diğer araçların bağlandığı sunucunun *kendisidir*.
+## İki yön
 
-## Başlamadan önce
+**Saga'yı başka bir yapay zekâ asistanından kullanın.** Halihazırda kullandığınız bir asistanı — Claude veya ChatGPT gibi — Saga çalışma alanınıza bağlayın. Ardından o asistana sorular sorabilirsiniz; o da Saga projeleriniz, belgeleriniz ve iş akışlarınızı kullanarak yanıt verir. Burada Saga, asistanın yararlandığı kaynaktır.
 
-Şunlara ihtiyacınız var:
+**Dış araçları Saga'ya getirin.** Harici araçları ve veri kaynaklarını Saga'ya bağlayın; böylece Saga içindeki yapay zekâ, siz sohbet ederken bunları kullanabilir. Örneğin firmanız bir araştırma veritabanı veya kurum içi bir sistem bağlayabilir. Burada bu araçlara ulaşan taraf Saga'dır.
 
-- **Platform URL'niz** ve bir **API anahtarı**. Her ikisi de Saga içindeki **Ayarlar > API Anahtarı Yönetimi** bölümünden gelir. Sayfayı açın, yoksa bir anahtar oluşturun ve her iki değeri de kopyalayın.
-- Streamable HTTP taşımasını destekleyen bir MCP istemcisi (Claude Desktop, Claude Code, Cursor veya MCP SDK üzerine kurulu herhangi bir özel aracı).
+Bunu hatırlamanın basit bir yolu:
 
-<Note>
-Her müşterinin kendi Saga alan adı vardır, bu nedenle MCP uç noktanız, sonuna `/api/mcp` eklenmiş kendi platform URL'nizdir. **Ayarlar > API Anahtarı Yönetimi** bölümünde gösterilen platform URL'sini kullanın — alan adını tahmin etmeyin.
-</Note>
-
-## Bir istemci bağlama
-
-Çoğu istemci yalnızca uç nokta URL'sine ve bir `Authorization` başlığına ihtiyaç duyar.
-
-- **Uç nokta:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Başlık:** `Authorization: Api-Key <your-api-key>`
-
-`.mcp.json` dosyası okuyan bir istemci için (örneğin Claude Code) şunu ekleyin:
-
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-`<your-domain>` yerine platform URL'nizi ve `<your-api-key>` yerine **Ayarlar > API Anahtarı Yönetimi** bölümündeki anahtarı yazın.
+| Şunu yapmak istiyorsanız… | Bunu kullanın | Sade ifadeyle |
+|--------------|----------|----------------|
+| Saga içeriğinizle Claude, ChatGPT vb. üzerinden çalışmak | [Asistanınızı Saga'ya bağlayın](/guides/integrations/mcp-server/connect-assistants) | Saga kaynaktır |
+| Saga'nın yapay zekâsının dış araçları ve verileri kullanmasını sağlamak | [Araçları Saga'ya bağlayın](/guides/integrations/mcp-server/connect-tools) | Saga kullanıcıdır |
 
 <Note>
-Bazı istemciler yalnızca bir bearer token yapıştırmanıza izin verir. Bu durumda bunun yerine `Authorization: Bearer <your-api-key>` kullanın — Saga, API anahtarınızı her iki biçimde de kabul eder.
+Bunlar birbirinden bağımsızdır — birini kurmak diğerini gerektirmez. Yapmak istediğinize uygun olanı seçin veya her ikisini de kurun.
 </Note>
 
-## Aracı neler yapabilir
+## Hangisini kurmalıyım?
 
-Bağlandıktan sonra aracı şu araçlara sahip olur:
-
-| Araç | Ne yapar |
-|------|--------------|
-| `ask_saga` | Saga'ya bir soru sorar ve uygulamada sohbet etmekle aynı şekilde yanıtı döndürür. |
-| `list_projects` | Sizinle paylaşılanlar dahil projelerinizi listeler. |
-| `list_project_documents` | Bir projedeki belgeleri listeler. |
-| `search_project_documents` | Bir projenin bilgi tabanını arar ve en alakalı bölümleri döndürür. |
-| `fetch_project_document` | Bir belgenin tam metnini döndürür. |
-| `list_workflows` | İş akışlarınızı ve her birinin beklediği girdileri listeler. |
-| `execute_workflow` | Bir iş akışını metin girdileriyle çalıştırır ve sonucu döndürür. |
-
-Her araç sizin adınıza çalışır. Aracı yalnızca hesabınızın halihazırda erişebildiği projeleri, belgeleri ve iş akışlarını görür — web uygulamasında sahip olduğunuz izinlerin aynısı.
-
-## Güvenlik
-
-- API anahtarınıza bir parola gibi davranın. Anahtara ve platform URL'nize sahip olan herkes, Saga aracılığıyla sizin gibi hareket edebilir.
-- Anahtarı istediğiniz zaman **Ayarlar > API Anahtarı Yönetimi** bölümünden değiştirin veya iptal edin. İptal etmek, bağlı tüm aracıları anında durdurur.
-- Bir anahtar sızmış olabilirse, onu iptal edin ve yeni bir tane oluşturun, ardından istemci yapılandırmanızı güncelleyin.
-
-## Sorun giderme
-
-- **İstemci bağlanamıyor veya 401 Unauthorized döndürüyor** — uç noktanın `/api/mcp` ile bittiğini, başlığın `Authorization: Api-Key <your-api-key>` olduğunu ve anahtarın süresinin dolmadığını veya iptal edilmediğini kontrol edin. Gerekirse **Ayarlar > API Anahtarı Yönetimi** bölümünde yeni bir anahtar oluşturun.
-- **Bir iş akışı duraklatıldı olarak bildiriliyor** — ortada girdi bekleyen iş akışları MCP üzerinden devam ettirilemez ve dosya girdileri desteklenmez. Bunları bunun yerine Saga uygulamasından çalıştırın.
+- Çoğunlukla Claude veya ChatGPT içinde çalışıyor ve bunların dosyalarınızdan yararlanmasını istiyorsanız, [Asistanınızı Saga'ya bağlayın](/guides/integrations/mcp-server/connect-assistants) ile başlayın.
+- Firmanız, sohbetler sırasında Saga'nın yapay zekâsının harici bir sisteme veya veritabanına ulaşmasını istiyorsa, bu [Araçları Saga'ya bağlayın](/guides/integrations/mcp-server/connect-tools) konusudur ve genellikle bir yönetici tarafından kurulur.
+- Kendi özel entegrasyonunuzu mu geliştiriyorsunuz? Teknik ayrıntılar için [Geliştirici kurulumu](/guides/integrations/mcp-server/developer-setup) bölümüne bakın.

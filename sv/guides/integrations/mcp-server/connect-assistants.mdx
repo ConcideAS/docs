@@ -1,0 +1,38 @@
+---
+title: Anslut din assistent till Saga
+---
+
+Du kan ansluta Saga till AI-assistenter du redan använder, som Claude och ChatGPT. När anslutningen är på plats kan du ställa en fråga till assistenten, och den hämtar svaret från din Saga-arbetsyta — den går igenom dina projekt, söker i dina dokument och kör dina arbetsflöden, utan att du behöver byta flik eller kopiera något fram och tillbaka.
+
+Tänk på det som att ge din dagliga AI-assistent tillgång till allt du har i Saga, så att svaren bygger på dina ärenden i stället för allmän kunskap.
+
+## Vad du kan göra
+
+När du har anslutit kan du be assistenten att:
+
+- **Svara på frågor med hjälp av Saga** — samma svar som du skulle få genom att chatta inne i Saga, nu tillgängliga från din assistent.
+- **Hitta dokument** — söka i filerna i ett projekt och ta fram de relevanta avsnitten.
+- **Läsa ett dokument** — hämta hela texten i en fil i ett projekt.
+- **Lista dina projekt** — se de ärenden du har tillgång till.
+- **Köra ett arbetsflöde** — starta ett av dina sparade arbetsflöden och få resultatet tillbaka.
+
+## Vad den kan och inte kan se
+
+Anslutningen agerar som dig. Din assistent når bara de projekt, dokument och arbetsflöden som ditt eget konto redan har tillgång till — exakt detsamma som när du själv loggar in i Saga. Den kan inte se något du inte kan se, och den kan inte se andras arbete.
+
+## Så här ansluter du
+
+Du behöver två saker från Saga, båda på sidan **Inställningar > API-nyckelhantering**:
+
+1. Din **plattforms-URL** — företagets webbadress till Saga.
+2. En **API-nyckel** — din personliga åtkomstnyckel. Skapa en på den sidan om du inte redan har en.
+
+Öppna sedan inställningarna för din AI-assistent, lägg till en ny anslutning och klistra in adressen och nyckeln. Saga visar den exakta adressen du ska använda på samma sida, bredvid **MCP Server Endpoint**.
+
+<Note>
+Din API-nyckel är som ett lösenord — den låter din assistent agera som dig i Saga. Dela den inte. Om du någonsin behöver kan du när som helst byta ut eller ta bort den från **Inställningar > API-nyckelhantering**, vilket omedelbart kopplar från alla assistenter som använder den.
+</Note>
+
+<Note>
+Ska du konfigurera en anpassad eller intern assistent? Se [Utvecklarkonfiguration](/guides/integrations/mcp-server/developer-setup) för de tekniska detaljerna, inklusive slutpunkten, autentisering och den fullständiga listan över verktyg.
+</Note>

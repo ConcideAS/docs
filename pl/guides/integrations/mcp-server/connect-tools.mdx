@@ -1,0 +1,42 @@
+---
+title: Połącz narzędzia z Saga
+---
+
+Możesz połączyć zewnętrzne narzędzia i źródła danych z Saga, aby AI mogło z nich korzystać podczas czatu. Gdy narzędzie jest już połączone, AI może je wywołać w trakcie rozmowy — na przykład, aby sprawdzić coś w połączonym systemie — bez konieczności opuszczania Saga.
+
+Konfiguruje to administrator dla całej organizacji. Większość osób będzie potrzebować jedynie [kroku użytkownika](#if-a-tool-asks-for-your-personal-token) na końcu, i to tylko w przypadku niektórych narzędzi.
+
+## Do czego to służy
+
+Połączenie narzędzia daje AI Saga nową możliwość, z której korzysta w Twoim imieniu podczas czatów. Dostawca narzędzia podaje Ci adres internetowy (a czasem dane uwierzytelniające), a Saga zajmuje się resztą. Przykłady to bazy danych badawcze, wewnętrzne systemy kancelarii lub dowolna usługa obsługująca Model Context Protocol.
+
+## Konfigurowanie narzędzia (administratorzy)
+
+Otwórz **Admin Panel** i przejdź do sekcji **MCP Servers**.
+
+1. **Dodaj narzędzie.** Kliknij **Add Server**, nadaj mu nazwę i wklej adres internetowy narzędzia (jego adres URL punktu końcowego). Ten adres podaje dostawca narzędzia.
+2. **Ustaw sposób logowania Saga.** Wybierz uwierzytelnianie wymagane przez narzędzie:
+   - **None** — narzędzie nie wymaga żadnych danych uwierzytelniających.
+   - **API Key** lub **Bearer Token** — wklej klucz lub token podany przez dostawcę. Jest przechowywany bezpiecznie i nigdy więcej nie jest wyświetlany.
+   - **Basic Auth** — kombinacja nazwy użytkownika i hasła, wprowadzona w zakodowanej formie określonej przez dostawcę.
+   - **OAuth 2.1** — dla narzędzi korzystających z procesu logowania. Najpierw zapisz narzędzie, a następnie kliknij **Connect**, aby się zalogować.
+   - **Per-User API Token** — każda osoba wprowadza własny osobisty token zamiast jednego wspólnego klucza kancelarii (zobacz poniżej).
+3. **Przetestuj i włącz.** Użyj **Test Connection**, aby potwierdzić, że Saga może połączyć się z narzędziem — udany test wyświetla listę znalezionych możliwości. Włącz **Available in Chat**, aby osoby w Twojej organizacji mogły z niego korzystać.
+
+<Note>
+Dane uwierzytelniające wprowadzone tutaj są przechowywane bezpiecznie i nigdy więcej nie są wyświetlane. Jeśli musisz je zmienić, wprowadź nową wartość.
+</Note>
+
+## Jeśli narzędzie prosi o Twój osobisty token
+
+Niektóre narzędzia są skonfigurowane tak, że każda osoba loguje się własnym tokenem, a nie jednym wspólnym kluczem kancelarii. Jeśli Twój administrator wybrał dla narzędzia **Per-User API Token**, musisz dodać swój:
+
+1. Przejdź do **Ustawienia > Integracje**.
+2. Znajdź narzędzie na liście i wklej swój osobisty token.
+3. Zapisz. Narzędzie jest teraz dostępne dla Ciebie w czacie.
+
+Dopóki nie dodasz swojego tokenu, to narzędzie nie będzie dostępne w Twoich rozmowach, nawet jeśli administrator je skonfigurował.
+
+<Note>
+Chcesz, aby to Saga była narzędziem, z którym łączą się *inni* asystenci? To drugi kierunek — zobacz [Połącz swojego asystenta z Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

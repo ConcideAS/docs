@@ -1,72 +1,28 @@
 ---
-title: Serwer MCP
+title: Asystenci AI (MCP)
 ---
 
-Saga jest dostępna jako serwer [MCP](https://modelcontextprotocol.io), dzięki czemu agenci i asystenci AI — Claude, ChatGPT, Cursor oraz niestandardowi agenci — mogą używać Twojej przestrzeni roboczej Saga jako narzędzia. Agent może zadawać Sadze pytania, przeszukiwać i odczytywać dokumenty projektu oraz uruchamiać Twoje przepływy pracy, korzystając z Twojego własnego dostępu.
+Saga współpracuje z Model Context Protocol (MCP) — otwartym standardem, który pozwala asystentom i narzędziom AI komunikować się ze sobą. Nie musisz rozumieć tej technologii, aby z niej korzystać. Liczy się to, że Saga łączy się w dwóch kierunkach, a Ty możesz korzystać z jednego z nich lub z obu.
 
-To odwrotność podłączania zewnętrznych serwerów MCP do Saga. Tutaj Twoja przestrzeń robocza Saga *jest* serwerem, do którego łączą się inne narzędzia.
+## Dwa kierunki
 
-## Zanim zaczniesz
+**Korzystaj z Saga z poziomu innego asystenta AI.** Połącz asystenta, którego już używasz — takiego jak Claude lub ChatGPT — ze swoją przestrzenią roboczą Saga. Możesz wtedy zadawać temu asystentowi pytania, a on odpowie, korzystając z Twoich projektów, dokumentów i przepływów pracy w Saga. Tutaj Saga jest źródłem, z którego asystent czerpie.
 
-Potrzebujesz:
+**Wprowadź zewnętrzne narzędzia do Saga.** Połącz zewnętrzne narzędzia i źródła danych z Saga, aby AI wewnątrz Saga mogło z nich korzystać podczas czatu. Na przykład Twoja kancelaria może połączyć bazę danych badawczą lub system wewnętrzny. Tutaj to Saga sięga po te narzędzia.
 
-- **adresu URL platformy** oraz **klucza API**. Oba pochodzą z sekcji **Ustawienia > Zarządzanie kluczami API** w Saga. Otwórz tę stronę, utwórz klucz, jeśli go nie masz, i skopiuj obie wartości.
-- Klienta MCP obsługującego transport streamable HTTP (Claude Desktop, Claude Code, Cursor lub dowolnego niestandardowego agenta zbudowanego na MCP SDK).
+Prosty sposób, aby to zapamiętać:
 
-<Note>
-Każdy klient ma własną domenę Saga, więc Twój punkt końcowy MCP to Twój własny adres URL platformy z dodanym `/api/mcp`. Użyj adresu URL platformy wyświetlanego w sekcji **Ustawienia > Zarządzanie kluczami API** — nie zgaduj domeny.
-</Note>
-
-## Podłączanie klienta
-
-Większość klientów potrzebuje jedynie adresu URL punktu końcowego oraz nagłówka `Authorization`.
-
-- **Punkt końcowy:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Nagłówek:** `Authorization: Api-Key <your-api-key>`
-
-W przypadku klienta, który odczytuje plik `.mcp.json` (na przykład Claude Code), dodaj:
-
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Zastąp `<your-domain>` swoim adresem URL platformy, a `<your-api-key>` kluczem z sekcji **Ustawienia > Zarządzanie kluczami API**.
+| Chcesz… | Użyj tego | W prostych słowach |
+|--------------|----------|----------------|
+| Pracować z treściami Saga z poziomu Claude, ChatGPT itp. | [Połącz swojego asystenta z Saga](/guides/integrations/mcp-server/connect-assistants) | Saga jest źródłem |
+| Pozwolić AI Saga korzystać z zewnętrznych narzędzi i danych | [Połącz narzędzia z Saga](/guides/integrations/mcp-server/connect-tools) | Saga jest użytkownikiem |
 
 <Note>
-Niektórzy klienci pozwalają jedynie wkleić token bearer. W takim przypadku użyj `Authorization: Bearer <your-api-key>` zamiast tego — Saga akceptuje Twój klucz API w obu formach.
+Są one niezależne — skonfigurowanie jednego nie wymaga drugiego. Wybierz to, co odpowiada Twoim potrzebom, albo skonfiguruj oba.
 </Note>
 
-## Co może robić agent
+## Który z nich skonfigurować?
 
-Po połączeniu agent ma dostęp do następujących narzędzi:
-
-| Narzędzie | Co robi |
-|------|--------------|
-| `ask_saga` | Zadaje Sadze pytanie i zwraca odpowiedź, tak samo jak podczas czatu w aplikacji. |
-| `list_projects` | Wyświetla Twoje projekty, w tym te udostępnione Tobie. |
-| `list_project_documents` | Wyświetla dokumenty w projekcie. |
-| `search_project_documents` | Przeszukuje bazę wiedzy projektu i zwraca najbardziej odpowiednie sekcje. |
-| `fetch_project_document` | Zwraca pełny tekst dokumentu. |
-| `list_workflows` | Wyświetla Twoje przepływy pracy oraz dane wejściowe oczekiwane przez każdy z nich. |
-| `execute_workflow` | Uruchamia przepływ pracy z wejściami tekstowymi i zwraca wynik. |
-
-Każde narzędzie działa w Twoim imieniu. Agent widzi tylko projekty, dokumenty i przepływy pracy, do których Twoje konto ma już dostęp — z tymi samymi uprawnieniami, które masz w aplikacji internetowej.
-
-## Bezpieczeństwo
-
-- Traktuj swój klucz API jak hasło. Każdy, kto ma klucz i Twój adres URL platformy, może działać jako Ty za pośrednictwem Saga.
-- Rotuj lub odwołuj klucz w dowolnym momencie w sekcji **Ustawienia > Zarządzanie kluczami API**. Odwołanie natychmiast zatrzymuje każdego połączonego agenta.
-- Jeśli klucz mógł wyciec, odwołaj go i utwórz nowy, a następnie zaktualizuj konfigurację klienta.
-
-## Rozwiązywanie problemów
-
-- **Klient nie może się połączyć lub zwraca błąd 401 Unauthorized** — sprawdź, czy punkt końcowy kończy się na `/api/mcp`, czy nagłówek to `Authorization: Api-Key <your-api-key>` oraz czy klucz nie wygasł i nie został odwołany. W razie potrzeby utwórz nowy klucz w sekcji **Ustawienia > Zarządzanie kluczami API**.
-- **Przepływ pracy zgłaszany jest jako wstrzymany** — przepływy pracy, które w trakcie czekają na dane wejściowe, nie mogą być wznawiane przez MCP, a wejścia plikowe nie są obsługiwane. Uruchamiaj je zamiast tego z aplikacji Saga.
+- Jeśli pracujesz głównie w Claude lub ChatGPT i chcesz, aby korzystały z Twoich spraw, zacznij od [Połącz swojego asystenta z Saga](/guides/integrations/mcp-server/connect-assistants).
+- Jeśli Twoja kancelaria chce, aby AI Saga sięgało do zewnętrznego systemu lub bazy danych podczas czatów, to [Połącz narzędzia z Saga](/guides/integrations/mcp-server/connect-tools) — zwykle konfiguruje to administrator.
+- Budujesz własną integrację? Zobacz [Konfiguracja dla programistów](/guides/integrations/mcp-server/developer-setup), aby poznać szczegóły techniczne.
