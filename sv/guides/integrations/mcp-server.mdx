@@ -1,72 +1,38 @@
 ---
-title: MCP-server
+title: AI-assistentanslutningar
 ---
 
-Saga är tillgänglig som en [MCP](https://modelcontextprotocol.io)-server, så att AI-agenter och -assistenter — Claude, ChatGPT, Cursor och anpassade agenter — kan använda din Saga-arbetsyta som ett verktyg. Agenten kan ställa frågor till Saga, söka i och läsa projektdokument samt köra dina arbetsflöden, allt med din egen åtkomst.
+Du kan ansluta Saga till AI-assistenter du redan använder, som Claude och ChatGPT. När anslutningen är på plats kan du ställa en fråga till assistenten, och den hämtar svaret från din Saga-arbetsyta — den går igenom dina projekt, söker i dina dokument och kör dina arbetsflöden, utan att du behöver byta flik eller kopiera något fram och tillbaka.
 
-Detta är det omvända av att ansluta externa MCP-servrar till Saga. Här *är* din Saga-arbetsyta servern som andra verktyg ansluter till.
+Tänk på det som att ge din dagliga AI-assistent tillgång till allt du har i Saga, så att svaren bygger på dina ärenden i stället för allmän kunskap.
 
-## Innan du börjar
+## Vad du kan göra
 
-Du behöver:
+När du har anslutit kan du be assistenten att:
 
-- Din **plattforms-URL** och en **API-nyckel**. Båda finns i Saga under **Inställningar > API-nyckelhantering**. Öppna sidan, skapa en nyckel om du inte har någon och kopiera båda värdena.
-- En MCP-klient som stöder den strömmande HTTP-transporten (Claude Desktop, Claude Code, Cursor eller någon anpassad agent byggd på MCP-SDK:n).
+- **Svara på frågor med hjälp av Saga** — samma svar som du skulle få genom att chatta inne i Saga, nu tillgängliga från din assistent.
+- **Hitta dokument** — söka i filerna i ett projekt och ta fram de relevanta avsnitten.
+- **Läsa ett dokument** — hämta hela texten i en fil i ett projekt.
+- **Lista dina projekt** — se de ärenden du har tillgång till.
+- **Köra ett arbetsflöde** — starta ett av dina sparade arbetsflöden och få resultatet tillbaka.
 
-<Note>
-Varje kund har sin egen Saga-domän, så din MCP-slutpunkt är din egen plattforms-URL med `/api/mcp` tillagt. Använd plattforms-URL:en som visas under **Inställningar > API-nyckelhantering** — gissa inte domänen.
-</Note>
+## Vad den kan och inte kan se
 
-## Anslut en klient
+Anslutningen agerar som dig. Din assistent når bara de projekt, dokument och arbetsflöden som ditt eget konto redan har tillgång till — exakt detsamma som när du själv loggar in i Saga. Den kan inte se något du inte kan se, och den kan inte se andras arbete.
 
-De flesta klienter behöver bara slutpunktens URL och en `Authorization`-header.
+## Så här ansluter du
 
-- **Slutpunkt:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Header:** `Authorization: Api-Key <your-api-key>`
+Du behöver två saker från Saga, båda på sidan **Inställningar > API-nyckelhantering**:
 
-För en klient som läser en `.mcp.json`-fil (till exempel Claude Code), lägg till:
+1. Din **plattforms-URL** — företagets webbadress till Saga.
+2. En **API-nyckel** — din personliga åtkomstnyckel. Skapa en på den sidan om du inte redan har en.
 
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Ersätt `<your-domain>` med din plattforms-URL och `<your-api-key>` med nyckeln från **Inställningar > API-nyckelhantering**.
+Öppna sedan inställningarna för din AI-assistent, lägg till en ny anslutning och klistra in adressen och nyckeln. Saga visar den exakta adressen du ska använda på samma sida, bredvid **MCP Server Endpoint**.
 
 <Note>
-Vissa klienter låter dig bara klistra in en bearer-token. I så fall använder du `Authorization: Bearer <your-api-key>` istället — Saga accepterar din API-nyckel i båda formerna.
+Din API-nyckel är som ett lösenord — den låter din assistent agera som dig i Saga. Dela den inte. Om du någonsin behöver kan du när som helst byta ut eller ta bort den från **Inställningar > API-nyckelhantering**, vilket omedelbart kopplar från alla assistenter som använder den.
 </Note>
 
-## Vad agenten kan göra
-
-När den är ansluten har agenten dessa verktyg:
-
-| Verktyg | Vad det gör |
-|------|--------------|
-| `ask_saga` | Ställer en fråga till Saga och returnerar svaret, precis som att chatta i appen. |
-| `list_projects` | Listar dina projekt, inklusive de som delats med dig. |
-| `list_project_documents` | Listar dokumenten i ett projekt. |
-| `search_project_documents` | Söker i ett projekts kunskapsbas och returnerar de mest relevanta avsnitten. |
-| `fetch_project_document` | Returnerar hela texten i ett dokument. |
-| `list_workflows` | Listar dina arbetsflöden och de indata vart och ett förväntar sig. |
-| `execute_workflow` | Kör ett arbetsflöde med textindata och returnerar resultatet. |
-
-Varje verktyg körs som dig. Agenten ser bara de projekt, dokument och arbetsflöden som ditt konto redan har åtkomst till — samma behörigheter som du har i webbappen.
-
-## Säkerhet
-
-- Behandla din API-nyckel som ett lösenord. Vem som helst med nyckeln och din plattforms-URL kan agera som dig genom Saga.
-- Rotera eller återkalla nyckeln när som helst från **Inställningar > API-nyckelhantering**. Att återkalla den stoppar omedelbart alla anslutna agenter.
-- Om en nyckel kan ha läckt, återkalla den och skapa en ny, och uppdatera sedan din klientkonfiguration.
-
-## Felsökning
-
-- **Klienten kan inte ansluta eller returnerar 401 Unauthorized** — kontrollera att slutpunkten slutar på `/api/mcp`, att headern är `Authorization: Api-Key <your-api-key>` och att nyckeln inte har gått ut eller återkallats. Skapa en ny nyckel under **Inställningar > API-nyckelhantering** vid behov.
-- **Ett arbetsflöde rapporteras som pausat** — arbetsflöden som väntar på indata längs vägen kan inte återupptas över MCP, och filindata stöds inte. Kör dessa från Saga-appen istället.
+<Note>
+Ska du konfigurera en anpassad eller intern assistent? Se [Utvecklarkonfiguration](/guides/integrations/mcp-server/developer-setup) för de tekniska detaljerna, inklusive slutpunkten, autentisering och den fullständiga listan över verktyg.
+</Note>

@@ -1,72 +1,38 @@
 ---
-title: MCP server
+title: AI assistant connections
 ---
 
-Saga is available as an [MCP](https://modelcontextprotocol.io) server, so AI agents and assistants — Claude, ChatGPT, Cursor, and custom agents — can use your Saga workspace as a tool. The agent can ask Saga questions, search and read project documents, and run your workflows, all using your own access.
+You can connect Saga to AI assistants you already use, such as Claude and ChatGPT. Once connected, you can ask the assistant a question and it will draw on your Saga workspace to answer — looking through your projects, searching your documents, and running your workflows, without you switching tabs or copying anything across.
 
-This is the reverse of connecting external MCP servers to Saga. Here, your Saga workspace *is* the server that other tools connect to.
+Think of it as giving your everyday AI assistant access to everything you have in Saga, so its answers are grounded in your matters instead of general knowledge.
 
-## Before you start
+## What you can do
 
-You need:
+After connecting, you can ask your assistant to:
 
-- Your **platform URL** and an **API key**. Both come from **Settings > API Key Management** inside Saga. Open the page, create a key if you don't have one, and copy both values.
-- An MCP client that supports the streamable HTTP transport (Claude Desktop, Claude Code, Cursor, or any custom agent built on the MCP SDK).
+- **Answer questions using Saga** — the same answers you'd get chatting inside Saga, now available from your assistant.
+- **Find documents** — search a project's files and pull up the relevant passages.
+- **Read a document** — get the full text of a file in a project.
+- **List your projects** — see the matters you have access to.
+- **Run a workflow** — start one of your saved workflows and get the result back.
 
-<Note>
-Each customer has their own Saga domain, so your MCP endpoint is your own platform URL with `/api/mcp` added. Use the platform URL shown in **Settings > API Key Management** — don't guess the domain.
-</Note>
+## What it can and can't see
 
-## Connect a client
+The connection acts as you. Your assistant can only reach the projects, documents, and workflows your own account already has access to — exactly the same as when you sign in to Saga yourself. It can't see anything you can't, and it can't see other people's work.
 
-Most clients only need the endpoint URL and an `Authorization` header.
+## How to connect
 
-- **Endpoint:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Header:** `Authorization: Api-Key <your-api-key>`
+You'll need two things from Saga, both on the **Settings > API Key Management** page:
 
-For a client that reads an `.mcp.json` file (for example Claude Code), add:
+1. Your **platform URL** — your firm's Saga web address.
+2. An **API key** — your personal access key. Create one on that page if you don't have it yet.
 
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Replace `<your-domain>` with your platform URL and `<your-api-key>` with the key from **Settings > API Key Management**.
+Then open your AI assistant's settings, add a new connection, and paste in the address and key. Saga shows the exact address to use on the same page, next to **MCP Server Endpoint**.
 
 <Note>
-Some clients only let you paste a bearer token. In that case use `Authorization: Bearer <your-api-key>` instead — Saga accepts your API key in either form.
+Your API key is like a password — it lets your assistant act as you in Saga. Don't share it. If you ever need to, you can replace or remove it from **Settings > API Key Management** at any time, which immediately disconnects any assistant using it.
 </Note>
 
-## What the agent can do
-
-Once connected, the agent has these tools:
-
-| Tool | What it does |
-|------|--------------|
-| `ask_saga` | Asks Saga a question and returns the answer, the same as chatting in the app. |
-| `list_projects` | Lists your projects, including ones shared with you. |
-| `list_project_documents` | Lists the documents in a project. |
-| `search_project_documents` | Searches a project's knowledge base and returns the most relevant sections. |
-| `fetch_project_document` | Returns the full text of a document. |
-| `list_workflows` | Lists your workflows and the inputs each one expects. |
-| `execute_workflow` | Runs a workflow with text inputs and returns the result. |
-
-Every tool runs as you. The agent sees only the projects, documents, and workflows your account can already access — the same permissions you have in the web app.
-
-## Security
-
-- Treat your API key like a password. Anyone with the key and your platform URL can act as you through Saga.
-- Rotate or revoke the key at any time from **Settings > API Key Management**. Revoking it immediately stops any connected agent.
-- If a key may have leaked, revoke it and create a new one, then update your client configuration.
-
-## Troubleshooting
-
-- **The client can't connect or returns 401 Unauthorized** — check that the endpoint ends in `/api/mcp`, that the header is `Authorization: Api-Key <your-api-key>`, and that the key hasn't expired or been revoked. Create a fresh key in **Settings > API Key Management** if needed.
-- **A workflow reports as paused** — workflows that wait for input partway through can't be resumed over MCP, and file inputs aren't supported. Run those from the Saga app instead.
+<Note>
+Setting up a custom or in-house assistant? See [Developer setup](/guides/integrations/mcp-server/developer-setup) for the technical details, including the endpoint, authentication, and the full list of tools.
+</Note>

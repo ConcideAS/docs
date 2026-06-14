@@ -1,72 +1,38 @@
 ---
-title: MCP-server
+title: AI-assistentverbindingen
 ---
 
-Saga is beschikbaar als een [MCP](https://modelcontextprotocol.io)-server, zodat AI-agenten en -assistenten — Claude, ChatGPT, Cursor en aangepaste agenten — uw Saga-werkruimte als hulpmiddel kunnen gebruiken. De agent kan Saga vragen stellen, projectdocumenten doorzoeken en lezen, en uw workflows uitvoeren, allemaal met uw eigen toegang.
+U kunt Saga verbinden met AI-assistenten die u al gebruikt, zoals Claude en ChatGPT. Zodra de verbinding tot stand is gebracht, kunt u de assistent een vraag stellen en put hij uit uw Saga-werkruimte om te antwoorden — hij doorzoekt uw projecten, zoekt in uw documenten en voert uw workflows uit, zonder dat u van tabblad hoeft te wisselen of iets hoeft over te kopiëren.
 
-Dit is het omgekeerde van het verbinden van externe MCP-servers met Saga. Hier *is* uw Saga-werkruimte de server waarmee andere hulpmiddelen verbinding maken.
+Zie het als het geven van toegang tot alles wat u in Saga hebt aan uw dagelijkse AI-assistent, zodat de antwoorden gebaseerd zijn op uw zaken in plaats van op algemene kennis.
 
-## Voordat u begint
+## Wat u kunt doen
 
-U hebt nodig:
+Zodra u verbonden bent, kunt u uw assistent vragen om:
 
-- Uw **platform-URL** en een **API-sleutel**. Beide vindt u in Saga onder **Instellingen > API-sleutelbeheer**. Open de pagina, maak een sleutel aan als u er nog geen hebt, en kopieer beide waarden.
-- Een MCP-client die de streambare HTTP-transport ondersteunt (Claude Desktop, Claude Code, Cursor of een aangepaste agent gebouwd op de MCP-SDK).
+- **Vragen beantwoorden met behulp van Saga** — dezelfde antwoorden die u zou krijgen door binnen Saga te chatten, nu beschikbaar vanuit uw assistent.
+- **Documenten vinden** — de bestanden van een project doorzoeken en de relevante passages ophalen.
+- **Een document lezen** — de volledige tekst van een bestand in een project ophalen.
+- **Uw projecten weergeven** — de zaken zien waartoe u toegang hebt.
+- **Een workflow uitvoeren** — een van uw opgeslagen workflows starten en het resultaat terugkrijgen.
 
-<Note>
-Elke klant heeft zijn eigen Saga-domein, dus uw MCP-eindpunt is uw eigen platform-URL met `/api/mcp` toegevoegd. Gebruik de platform-URL die wordt getoond onder **Instellingen > API-sleutelbeheer** — raad het domein niet.
-</Note>
+## Wat het wel en niet kan zien
 
-## Een client verbinden
+De verbinding handelt als u. Uw assistent kan alleen de projecten, documenten en workflows bereiken waartoe uw eigen account al toegang heeft — precies hetzelfde als wanneer u zelf bij Saga inlogt. Hij kan niets zien wat u niet kunt zien, en hij kan het werk van anderen niet zien.
 
-De meeste clients hebben alleen de eindpunt-URL en een `Authorization`-header nodig.
+## Hoe u verbinding maakt
 
-- **Eindpunt:** `https://<your-domain>.sagalegal.io/api/mcp`
-- **Header:** `Authorization: Api-Key <your-api-key>`
+U hebt twee dingen van Saga nodig, beide op de pagina **Instellingen > API-sleutelbeheer**:
 
-Voor een client die een `.mcp.json`-bestand leest (bijvoorbeeld Claude Code), voegt u toe:
+1. Uw **platform-URL** — het Saga-webadres van uw kantoor.
+2. Een **API-sleutel** — uw persoonlijke toegangssleutel. Maak er een aan op die pagina als u er nog geen hebt.
 
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Vervang `<your-domain>` door uw platform-URL en `<your-api-key>` door de sleutel uit **Instellingen > API-sleutelbeheer**.
+Open vervolgens de instellingen van uw AI-assistent, voeg een nieuwe verbinding toe en plak het adres en de sleutel. Saga toont het exacte adres dat u moet gebruiken op dezelfde pagina, naast **MCP Server Endpoint**.
 
 <Note>
-Sommige clients laten u alleen een bearer-token plakken. Gebruik in dat geval `Authorization: Bearer <your-api-key>` — Saga accepteert uw API-sleutel in beide vormen.
+Uw API-sleutel is als een wachtwoord — hiermee kan uw assistent als u handelen in Saga. Deel hem niet. Mocht het ooit nodig zijn, dan kunt u hem op elk moment vervangen of verwijderen via **Instellingen > API-sleutelbeheer**, waardoor elke assistent die hem gebruikt onmiddellijk wordt losgekoppeld.
 </Note>
 
-## Wat de agent kan doen
-
-Eenmaal verbonden beschikt de agent over deze hulpmiddelen:
-
-| Hulpmiddel | Wat het doet |
-|------|--------------|
-| `ask_saga` | Stelt Saga een vraag en geeft het antwoord terug, net als chatten in de app. |
-| `list_projects` | Geeft een lijst van uw projecten, inclusief de projecten die met u zijn gedeeld. |
-| `list_project_documents` | Geeft een lijst van de documenten in een project. |
-| `search_project_documents` | Doorzoekt de kennisbank van een project en geeft de meest relevante secties terug. |
-| `fetch_project_document` | Geeft de volledige tekst van een document terug. |
-| `list_workflows` | Geeft een lijst van uw workflows en de invoer die elke workflow verwacht. |
-| `execute_workflow` | Voert een workflow uit met tekstinvoer en geeft het resultaat terug. |
-
-Elk hulpmiddel wordt als u uitgevoerd. De agent ziet alleen de projecten, documenten en workflows waartoe uw account al toegang heeft — dezelfde rechten die u in de webapp hebt.
-
-## Beveiliging
-
-- Behandel uw API-sleutel als een wachtwoord. Iedereen met de sleutel en uw platform-URL kan via Saga als u handelen.
-- Roteer of trek de sleutel op elk moment in via **Instellingen > API-sleutelbeheer**. Intrekken stopt elke verbonden agent onmiddellijk.
-- Als een sleutel mogelijk is gelekt, trek deze dan in en maak een nieuwe aan, en werk vervolgens uw clientconfiguratie bij.
-
-## Problemen oplossen
-
-- **De client kan geen verbinding maken of geeft 401 Unauthorized terug** — controleer of het eindpunt eindigt op `/api/mcp`, of de header `Authorization: Api-Key <your-api-key>` is en of de sleutel niet is verlopen of ingetrokken. Maak indien nodig een nieuwe sleutel aan in **Instellingen > API-sleutelbeheer**.
-- **Een workflow wordt als gepauzeerd gerapporteerd** — workflows die halverwege op invoer wachten kunnen niet via MCP worden hervat, en bestandsinvoer wordt niet ondersteund. Voer deze in plaats daarvan uit vanuit de Saga-app.
+<Note>
+Stelt u een aangepaste of interne assistent in? Zie [Ontwikkelaarsconfiguratie](/guides/integrations/mcp-server/developer-setup) voor de technische details, waaronder het eindpunt, authenticatie en de volledige lijst met hulpmiddelen.
+</Note>

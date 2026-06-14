@@ -1,72 +1,38 @@
 ---
-title: Serveur MCP
+title: Connexions aux assistants IA
 ---
 
-Saga est disponible en tant que serveur [MCP](https://modelcontextprotocol.io), afin que les agents et assistants IA — Claude, ChatGPT, Cursor et les agents personnalisés — puissent utiliser votre espace de travail Saga comme un outil. L'agent peut poser des questions à Saga, rechercher et lire les documents d'un projet, et exécuter vos workflows, le tout en utilisant votre propre accès.
+Vous pouvez connecter Saga aux assistants IA que vous utilisez déjà, comme Claude et ChatGPT. Une fois la connexion établie, vous pouvez poser une question à l'assistant et il s'appuiera sur votre espace de travail Saga pour y répondre — en parcourant vos projets, en cherchant dans vos documents et en exécutant vos workflows, sans que vous ayez à changer d'onglet ni à copier quoi que ce soit d'un endroit à l'autre.
 
-C'est l'inverse de la connexion de serveurs MCP externes à Saga. Ici, votre espace de travail Saga *est* le serveur auquel les autres outils se connectent.
+Voyez cela comme le fait de donner à votre assistant IA habituel accès à tout ce que vous avez dans Saga, afin que ses réponses s'appuient sur vos dossiers plutôt que sur des connaissances générales.
 
-## Avant de commencer
+## Ce que vous pouvez faire
 
-Vous avez besoin de :
+Une fois la connexion établie, vous pouvez demander à votre assistant de :
 
-- Votre **URL de la plateforme** et une **clé API**. Les deux proviennent de **Paramètres > Gestion des clés API** dans Saga. Ouvrez la page, créez une clé si vous n'en avez pas, et copiez les deux valeurs.
-- Un client MCP prenant en charge le transport HTTP en streaming (Claude Desktop, Claude Code, Cursor ou tout agent personnalisé construit sur le SDK MCP).
+- **Répondre à des questions à partir de Saga** — les mêmes réponses que vous obtiendriez en discutant dans Saga, désormais disponibles depuis votre assistant.
+- **Trouver des documents** — chercher dans les fichiers d'un projet et faire ressortir les passages pertinents.
+- **Lire un document** — obtenir le texte intégral d'un fichier dans un projet.
+- **Lister vos projets** — voir les dossiers auxquels vous avez accès.
+- **Exécuter un workflow** — lancer l'un de vos workflows enregistrés et en récupérer le résultat.
 
-<Note>
-Chaque client dispose de son propre domaine Saga, votre point de terminaison MCP est donc votre propre URL de la plateforme avec `/api/mcp` ajouté. Utilisez l'URL de la plateforme affichée dans **Paramètres > Gestion des clés API** — ne devinez pas le domaine.
-</Note>
+## Ce qu'il peut et ne peut pas voir
 
-## Connecter un client
+La connexion agit en votre nom. Votre assistant ne peut atteindre que les projets, documents et workflows auxquels votre propre compte a déjà accès — exactement comme lorsque vous vous connectez vous-même à Saga. Il ne peut rien voir que vous ne pouvez pas voir, et il ne peut pas voir le travail des autres.
 
-La plupart des clients n'ont besoin que de l'URL du point de terminaison et d'un en-tête `Authorization`.
+## Comment se connecter
 
-- **Point de terminaison :** `https://<your-domain>.sagalegal.io/api/mcp`
-- **En-tête :** `Authorization: Api-Key <your-api-key>`
+Vous aurez besoin de deux éléments fournis par Saga, tous deux sur la page **Paramètres > Gestion des clés API** :
 
-Pour un client qui lit un fichier `.mcp.json` (par exemple Claude Code), ajoutez :
+1. Votre **URL de la plateforme** — l'adresse web Saga de votre cabinet.
+2. Une **clé API** — votre clé d'accès personnelle. Créez-en une sur cette page si vous n'en avez pas encore.
 
-```json
-{
-  "mcpServers": {
-    "saga": {
-      "type": "http",
-      "url": "https://<your-domain>.sagalegal.io/api/mcp",
-      "headers": { "Authorization": "Api-Key <your-api-key>" }
-    }
-  }
-}
-```
-
-Remplacez `<your-domain>` par votre URL de la plateforme et `<your-api-key>` par la clé issue de **Paramètres > Gestion des clés API**.
+Ouvrez ensuite les paramètres de votre assistant IA, ajoutez une nouvelle connexion, et collez-y l'adresse et la clé. Saga affiche l'adresse exacte à utiliser sur cette même page, à côté de **MCP Server Endpoint**.
 
 <Note>
-Certains clients ne vous permettent de coller qu'un jeton bearer. Dans ce cas, utilisez plutôt `Authorization: Bearer <your-api-key>` — Saga accepte votre clé API dans l'un ou l'autre format.
+Votre clé API est comme un mot de passe — elle permet à votre assistant d'agir en votre nom dans Saga. Ne la partagez pas. Si besoin, vous pouvez la remplacer ou la supprimer depuis **Paramètres > Gestion des clés API** à tout moment, ce qui déconnecte immédiatement tout assistant qui l'utilise.
 </Note>
 
-## Ce que l'agent peut faire
-
-Une fois connecté, l'agent dispose de ces outils :
-
-| Outil | Ce qu'il fait |
-|------|--------------|
-| `ask_saga` | Pose une question à Saga et renvoie la réponse, comme dans le chat de l'application. |
-| `list_projects` | Liste vos projets, y compris ceux qui sont partagés avec vous. |
-| `list_project_documents` | Liste les documents d'un projet. |
-| `search_project_documents` | Recherche dans la base de connaissances d'un projet et renvoie les sections les plus pertinentes. |
-| `fetch_project_document` | Renvoie le texte intégral d'un document. |
-| `list_workflows` | Liste vos workflows et les entrées attendues par chacun. |
-| `execute_workflow` | Exécute un workflow avec des entrées textuelles et renvoie le résultat. |
-
-Chaque outil s'exécute en votre nom. L'agent ne voit que les projets, documents et workflows auxquels votre compte a déjà accès — les mêmes autorisations que celles dont vous disposez dans l'application web.
-
-## Sécurité
-
-- Traitez votre clé API comme un mot de passe. Toute personne disposant de la clé et de votre URL de la plateforme peut agir en votre nom via Saga.
-- Renouvelez ou révoquez la clé à tout moment depuis **Paramètres > Gestion des clés API**. La révocation arrête immédiatement tout agent connecté.
-- Si une clé a pu être divulguée, révoquez-la et créez-en une nouvelle, puis mettez à jour la configuration de votre client.
-
-## Dépannage
-
-- **Le client ne parvient pas à se connecter ou renvoie une erreur 401 Unauthorized** — vérifiez que le point de terminaison se termine par `/api/mcp`, que l'en-tête est `Authorization: Api-Key <your-api-key>`, et que la clé n'a pas expiré ni été révoquée. Créez une nouvelle clé dans **Paramètres > Gestion des clés API** si nécessaire.
-- **Un workflow est signalé comme en pause** — les workflows qui attendent une saisie en cours d'exécution ne peuvent pas être repris via MCP, et les entrées de fichiers ne sont pas prises en charge. Exécutez-les plutôt depuis l'application Saga.
+<Note>
+Vous configurez un assistant personnalisé ou interne ? Consultez [Configuration pour développeurs](/guides/integrations/mcp-server/developer-setup) pour les détails techniques, notamment le point de terminaison, l'authentification et la liste complète des outils.
+</Note>
