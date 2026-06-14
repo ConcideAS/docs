@@ -1,0 +1,42 @@
+---
+title: Connecter des outils à Saga
+---
+
+Vous pouvez connecter des outils et des sources de données externes à Saga afin que l'IA puisse les utiliser pendant que vous discutez. Une fois un outil connecté, l'IA peut l'appeler au cours d'une conversation — par exemple pour rechercher une information dans un système connecté — sans que vous quittiez Saga.
+
+Cette configuration est réalisée par un administrateur pour toute l'organisation. La plupart des utilisateurs n'auront besoin que de l'[étape utilisateur](#if-a-tool-asks-for-your-personal-token) à la fin, et uniquement pour certains outils.
+
+## À quoi cela sert
+
+Connecter un outil donne à l'IA de Saga une nouvelle capacité qu'elle utilise en votre nom pendant les conversations. Le fournisseur de l'outil vous donne une adresse web (et parfois un identifiant), et Saga s'occupe du reste. Cela peut être des bases de données de recherche, des systèmes internes du cabinet, ou tout service qui prend en charge le Model Context Protocol.
+
+## Configurer un outil (administrateurs)
+
+Ouvrez le **Panneau d'administration** et accédez à la section **MCP Servers**.
+
+1. **Ajoutez l'outil.** Cliquez sur **Add Server**, donnez-lui un nom et collez l'adresse web de l'outil (son URL de point de terminaison). Le fournisseur de l'outil vous communique cette adresse.
+2. **Définissez comment Saga s'authentifie.** Choisissez l'authentification requise par l'outil :
+   - **None** — l'outil ne nécessite aucun identifiant.
+   - **API Key** ou **Bearer Token** — collez la clé ou le jeton fourni par le fournisseur. Il est stocké de manière sécurisée et n'est plus jamais affiché.
+   - **Basic Auth** — une combinaison nom d'utilisateur et mot de passe, saisie sous la forme encodée indiquée par le fournisseur.
+   - **OAuth 2.1** — pour les outils qui utilisent un processus de connexion. Enregistrez d'abord l'outil, puis cliquez sur **Connect** pour vous connecter.
+   - **Per-User API Token** — chaque personne saisit son propre jeton personnel au lieu d'un identifiant partagé du cabinet (voir ci-dessous).
+3. **Testez et activez-le.** Utilisez **Test Connection** pour confirmer que Saga peut atteindre l'outil — un test réussi affiche la liste des capacités détectées. Activez **Available in Chat** pour que les membres de votre organisation puissent l'utiliser.
+
+<Note>
+Les identifiants que vous saisissez ici sont stockés de manière sécurisée et ne sont plus jamais affichés. Si vous devez en modifier un, saisissez une nouvelle valeur.
+</Note>
+
+## Si un outil demande votre jeton personnel
+
+Certains outils sont configurés de sorte que chaque personne se connecte avec son propre jeton plutôt qu'avec un identifiant partagé du cabinet. Si votre administrateur a choisi **Per-User API Token** pour un outil, vous devrez ajouter le vôtre :
+
+1. Accédez à **Paramètres > Intégrations**.
+2. Trouvez l'outil dans la liste et collez votre jeton personnel.
+3. Enregistrez. L'outil est désormais disponible pour vous dans le chat.
+
+Tant que vous n'avez pas ajouté votre jeton, cet outil ne sera pas disponible dans vos conversations, même si votre administrateur l'a configuré.
+
+<Note>
+Vous souhaitez plutôt que Saga soit l'outil auquel *d'autres* assistants se connectent ? C'est l'autre direction — consultez [Connecter votre assistant à Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

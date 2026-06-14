@@ -1,0 +1,38 @@
+---
+title: Conectar o seu assistente ao Saga
+---
+
+Pode ligar o Saga aos assistentes de IA que já utiliza, como o Claude e o ChatGPT. Uma vez ligado, pode fazer uma pergunta ao assistente e este recorrerá ao seu espaço de trabalho do Saga para responder — percorrendo os seus projetos, pesquisando nos seus documentos e executando os seus workflows, sem que tenha de mudar de separador nem copiar o que quer que seja de um lado para o outro.
+
+Pense nisto como dar ao seu assistente de IA do dia a dia acesso a tudo o que tem no Saga, para que as suas respostas se baseiem nos seus dossiês em vez de conhecimentos gerais.
+
+## O que pode fazer
+
+Uma vez ligado, pode pedir ao seu assistente para:
+
+- **Responder a perguntas usando o Saga** — as mesmas respostas que obteria ao conversar dentro do Saga, agora disponíveis a partir do seu assistente.
+- **Encontrar documentos** — pesquisar nos ficheiros de um projeto e mostrar as passagens relevantes.
+- **Ler um documento** — obter o texto completo de um ficheiro num projeto.
+- **Listar os seus projetos** — ver os dossiês a que tem acesso.
+- **Executar um workflow** — iniciar um dos seus workflows guardados e obter o resultado.
+
+## O que pode e não pode ver
+
+A conexão age em seu nome. O seu assistente só consegue aceder aos projetos, documentos e workflows a que a sua própria conta já tem acesso — exatamente como quando inicia sessão você mesmo no Saga. Não consegue ver nada que você não possa ver, nem consegue ver o trabalho de outras pessoas.
+
+## Como ligar
+
+Vai precisar de dois elementos fornecidos pelo Saga, ambos na página **Configurações > Gestão de chaves API**:
+
+1. A sua **URL da plataforma** — o endereço web do Saga do seu escritório.
+2. Uma **chave API** — a sua chave de acesso pessoal. Crie uma nesta página se ainda não a tiver.
+
+Em seguida, abra as definições do seu assistente de IA, adicione uma nova conexão e cole o endereço e a chave. O Saga apresenta o endereço exato a utilizar nessa mesma página, junto a **MCP Server Endpoint**.
+
+<Note>
+A sua chave API é como uma palavra-passe — permite que o seu assistente aja em seu nome no Saga. Não a partilhe. Se alguma vez precisar, pode substituí-la ou removê-la em **Configurações > Gestão de chaves API** a qualquer momento, o que desliga de imediato qualquer assistente que a esteja a utilizar.
+</Note>
+
+<Note>
+Está a configurar um assistente personalizado ou interno? Consulte [Configuração para programadores](/guides/integrations/mcp-server/developer-setup) para os detalhes técnicos, incluindo o endpoint, a autenticação e a lista completa de ferramentas.
+</Note>

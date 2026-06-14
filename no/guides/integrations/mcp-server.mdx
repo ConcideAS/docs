@@ -1,38 +1,28 @@
 ---
-title: AI-assistenttilkoblinger
+title: AI-assistenter (MCP)
 ---
 
-Du kan koble Saga til AI-assistenter du allerede bruker, som Claude og ChatGPT. Når tilkoblingen er på plass, kan du stille assistenten et spørsmål, og den henter svaret fra Saga-arbeidsområdet ditt — den ser gjennom prosjektene dine, søker i dokumentene dine og kjører arbeidsflytene dine, uten at du må bytte faner eller kopiere noe fra ett sted til et annet.
+Saga fungerer med Model Context Protocol (MCP) — en åpen standard som lar AI-assistenter og verktøy snakke sammen. Du trenger ikke å forstå teknologien for å bruke den. Det som betyr noe, er at Saga kobler til i to retninger, og du kan bruke den ene eller begge.
 
-Tenk på det som å gi den daglige AI-assistenten din tilgang til alt du har i Saga, slik at svarene bygger på sakene dine i stedet for generell kunnskap.
+## De to retningene
 
-## Hva du kan gjøre
+**Bruk Saga fra en annen AI-assistent.** Koble til en assistent du allerede bruker — som Claude eller ChatGPT — til Saga-arbeidsområdet ditt. Du kan deretter stille assistenten spørsmål, og den svarer ved hjelp av Saga-prosjektene, dokumentene og arbeidsflytene dine. Her er Saga kilden assistenten henter fra.
 
-Når du har koblet til, kan du be assistenten om å:
+**Hent eksterne verktøy inn i Saga.** Koble eksterne verktøy og datakilder til Saga, slik at AI-en inne i Saga kan bruke dem mens du chatter. Firmaet ditt kan for eksempel koble til en forskningsdatabase eller et internt system. Her er det Saga som strekker seg ut til disse verktøyene.
 
-- **Svare på spørsmål ved hjelp av Saga** — de samme svarene du ville fått ved å chatte inne i Saga, nå tilgjengelig fra assistenten din.
-- **Finne dokumenter** — søke i filene i et prosjekt og hente fram de relevante avsnittene.
-- **Lese et dokument** — hente hele teksten i en fil i et prosjekt.
-- **Liste opp prosjektene dine** — se sakene du har tilgang til.
-- **Kjøre en arbeidsflyt** — starte en av de lagrede arbeidsflytene dine og få resultatet tilbake.
+En enkel måte å huske det på:
 
-## Hva den kan og ikke kan se
-
-Tilkoblingen opptrer som deg. Assistenten din får bare tilgang til prosjektene, dokumentene og arbeidsflytene kontoen din allerede har tilgang til — akkurat det samme som når du selv logger inn i Saga. Den kan ikke se noe du ikke kan se, og den kan ikke se andres arbeid.
-
-## Slik kobler du til
-
-Du trenger to ting fra Saga, begge på siden **Innstillinger > API-nøkkelhåndtering**:
-
-1. **Plattform-URLen** din — firmaets nettadresse til Saga.
-2. En **API-nøkkel** — din personlige tilgangsnøkkel. Opprett en på den siden hvis du ikke har en ennå.
-
-Åpne deretter innstillingene til AI-assistenten din, legg til en ny tilkobling og lim inn adressen og nøkkelen. Saga viser den nøyaktige adressen du skal bruke på samme side, ved siden av **MCP Server Endpoint**.
+| Du vil … | Bruk dette | Med enkle ord |
+|--------------|----------|----------------|
+| Jobbe med Saga-innholdet ditt fra Claude, ChatGPT osv. | [Koble assistenten din til Saga](/guides/integrations/mcp-server/connect-assistants) | Saga er kilden |
+| La Saga-AI-en bruke eksterne verktøy og data | [Koble verktøy til Saga](/guides/integrations/mcp-server/connect-tools) | Saga er brukeren |
 
 <Note>
-API-nøkkelen din er som et passord — den lar assistenten din opptre som deg i Saga. Ikke del den. Hvis du noen gang trenger det, kan du erstatte eller fjerne den fra **Innstillinger > API-nøkkelhåndtering** når som helst, noe som umiddelbart kobler fra enhver assistent som bruker den.
+Disse er uavhengige — å sette opp den ene krever ikke den andre. Velg den som passer det du prøver å gjøre, eller sett opp begge.
 </Note>
 
-<Note>
-Skal du sette opp en egendefinert eller intern assistent? Se [Utvikleroppsett](/guides/integrations/mcp-server/developer-setup) for de tekniske detaljene, inkludert endepunktet, autentisering og den fullstendige listen over verktøy.
-</Note>
+## Hvilken skal jeg sette opp?
+
+- Hvis du lever i Claude eller ChatGPT og vil at de skal trekke på sakene dine, start med [Koble assistenten din til Saga](/guides/integrations/mcp-server/connect-assistants).
+- Hvis firmaet ditt vil at Saga-AI-en skal nå et eksternt system eller en database under chatter, er det [Koble verktøy til Saga](/guides/integrations/mcp-server/connect-tools), og det settes vanligvis opp av en administrator.
+- Bygger du en egendefinert integrasjon selv? Se [Utvikleroppsett](/guides/integrations/mcp-server/developer-setup) for de tekniske detaljene.

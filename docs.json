@@ -119,6 +119,8 @@
                 "group": "AI assistants",
                 "pages": [
                   "guides/integrations/mcp-server",
+                  "guides/integrations/mcp-server/connect-assistants",
+                  "guides/integrations/mcp-server/connect-tools",
                   "guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -224,6 +226,8 @@
                 "group": "AI-assistenter",
                 "pages": [
                   "no/guides/integrations/mcp-server",
+                  "no/guides/integrations/mcp-server/connect-assistants",
+                  "no/guides/integrations/mcp-server/connect-tools",
                   "no/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -325,6 +329,8 @@
                 "group": "AI-assistenten",
                 "pages": [
                   "nl/guides/integrations/mcp-server",
+                  "nl/guides/integrations/mcp-server/connect-assistants",
+                  "nl/guides/integrations/mcp-server/connect-tools",
                   "nl/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -426,6 +432,8 @@
                 "group": "Asystenci AI",
                 "pages": [
                   "pl/guides/integrations/mcp-server",
+                  "pl/guides/integrations/mcp-server/connect-assistants",
+                  "pl/guides/integrations/mcp-server/connect-tools",
                   "pl/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -527,6 +535,8 @@
                 "group": "Asistentes de IA",
                 "pages": [
                   "es/guides/integrations/mcp-server",
+                  "es/guides/integrations/mcp-server/connect-assistants",
+                  "es/guides/integrations/mcp-server/connect-tools",
                   "es/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -628,6 +638,8 @@
                 "group": "KI-Assistenten",
                 "pages": [
                   "de/guides/integrations/mcp-server",
+                  "de/guides/integrations/mcp-server/connect-assistants",
+                  "de/guides/integrations/mcp-server/connect-tools",
                   "de/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -729,6 +741,8 @@
                 "group": "Assistenti IA",
                 "pages": [
                   "it/guides/integrations/mcp-server",
+                  "it/guides/integrations/mcp-server/connect-assistants",
+                  "it/guides/integrations/mcp-server/connect-tools",
                   "it/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -830,6 +844,8 @@
                 "group": "Assistentes de IA",
                 "pages": [
                   "pt/guides/integrations/mcp-server",
+                  "pt/guides/integrations/mcp-server/connect-assistants",
+                  "pt/guides/integrations/mcp-server/connect-tools",
                   "pt/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -931,6 +947,8 @@
                 "group": "Yapay zekâ asistanları",
                 "pages": [
                   "tr/guides/integrations/mcp-server",
+                  "tr/guides/integrations/mcp-server/connect-assistants",
+                  "tr/guides/integrations/mcp-server/connect-tools",
                   "tr/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -1032,6 +1050,8 @@
                 "group": "Assistants IA",
                 "pages": [
                   "fr/guides/integrations/mcp-server",
+                  "fr/guides/integrations/mcp-server/connect-assistants",
+                  "fr/guides/integrations/mcp-server/connect-tools",
                   "fr/guides/integrations/mcp-server/developer-setup"
                 ]
               }
@@ -1133,6 +1153,8 @@
                 "group": "AI-assistenter",
                 "pages": [
                   "sv/guides/integrations/mcp-server",
+                  "sv/guides/integrations/mcp-server/connect-assistants",
+                  "sv/guides/integrations/mcp-server/connect-tools",
                   "sv/guides/integrations/mcp-server/developer-setup"
                 ]
               }

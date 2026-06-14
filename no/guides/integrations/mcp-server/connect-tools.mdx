@@ -1,0 +1,42 @@
+---
+title: Koble verktøy til Saga
+---
+
+Du kan koble eksterne verktøy og datakilder til Saga, slik at AI-en kan bruke dem mens du chatter. Når et verktøy er koblet til, kan AI-en kalle på det under en samtale — for eksempel for å slå opp noe i et tilkoblet system — uten at du forlater Saga.
+
+Dette settes opp av en administrator for hele organisasjonen. De fleste trenger bare [brukersteget](#if-a-tool-asks-for-your-personal-token) til slutt, og bare for visse verktøy.
+
+## Hva dette er til for
+
+Å koble til et verktøy gir Saga-AI-en en ny evne som den bruker på dine vegne under chatter. Verktøyleverandøren gir deg en nettadresse (og noen ganger en legitimasjon), og Saga håndterer resten. Eksempler er forskningsdatabaser, interne firmasystemer eller enhver tjeneste som støtter Model Context Protocol.
+
+## Sette opp et verktøy (administratorer)
+
+Åpne **Administrasjonspanel** og gå til **MCP-servere**-delen.
+
+1. **Legg til verktøyet.** Klikk **Legg til server**, gi det et navn og lim inn verktøyets nettadresse (endepunkt-URL-en). Leverandøren av verktøyet gir deg denne adressen.
+2. **Angi hvordan Saga logger inn.** Velg autentiseringen verktøyet krever:
+   - **Ingen** — verktøyet trenger ingen legitimasjon.
+   - **API Key** eller **Bearer Token** — lim inn nøkkelen eller token-en leverandøren ga deg. Den lagres sikkert og vises aldri igjen.
+   - **Basic Auth** — en kombinasjon av brukernavn og passord, oppgitt i den kodede formen leverandøren angir.
+   - **OAuth 2.1** — for verktøy som bruker en innloggingsflyt. Lagre verktøyet først, klikk deretter **Koble til** for å logge inn.
+   - **Per-User API Token** — hver person oppgir sin egen personlige token i stedet for én delt firmalegitimasjon (se nedenfor).
+3. **Test og slå det på.** Bruk **Test tilkobling** for å bekrefte at Saga kan nå verktøyet — en vellykket test viser evnene den fant. Slå på **Tilgjengelig i chat** slik at folk i organisasjonen din kan bruke det.
+
+<Note>
+Legitimasjon du oppgir her, lagres sikkert og vises aldri igjen. Hvis du trenger å endre en, oppgi en ny verdi.
+</Note>
+
+## Hvis et verktøy ber om din personlige token
+
+Noen verktøy er satt opp slik at hver person logger inn med sin egen token i stedet for én delt firmalegitimasjon. Hvis administratoren din valgte **Per-User API Token** for et verktøy, må du legge til din:
+
+1. Gå til **Innstillinger > Integrasjoner**.
+2. Finn verktøyet i listen og lim inn din personlige token.
+3. Lagre. Verktøyet er nå tilgjengelig for deg i chat.
+
+Inntil du legger til token-en din, vil ikke det verktøyet være tilgjengelig i samtalene dine, selv om administratoren din har satt det opp.
+
+<Note>
+Vil du heller at Saga skal være verktøyet som *andre* assistenter kobler seg til? Det er den andre retningen — se [Koble assistenten din til Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

@@ -1,38 +1,28 @@
 ---
-title: Yapay zekâ asistanı bağlantıları
+title: Yapay zekâ asistanları (MCP)
 ---
 
-Saga'yı, halihazırda kullandığınız Claude ve ChatGPT gibi yapay zekâ asistanlarına bağlayabilirsiniz. Bağlandıktan sonra asistana bir soru sorabilirsiniz; o da yanıtlamak için Saga çalışma alanınızdan yararlanır — projelerinizi gözden geçirir, belgelerinizi arar ve iş akışlarınızı çalıştırır; üstelik sekmeler arasında geçiş yapmanıza veya bir şeyi kopyalayıp yapıştırmanıza gerek kalmadan.
+Saga, Model Context Protocol (MCP) ile çalışır — yapay zekâ asistanlarının ve araçlarının birbiriyle iletişim kurmasını sağlayan açık bir standart. Kullanmak için teknolojiyi anlamanıza gerek yok. Önemli olan, Saga'nın iki yönde bağlanması ve ikisinden birini ya da her ikisini de kullanabilmenizdir.
 
-Bunu, her gün kullandığınız yapay zekâ asistanına Saga'daki her şeye erişim vermek olarak düşünün; böylece yanıtları genel bilgilere değil, kendi dosyalarınıza dayanır.
+## İki yön
 
-## Neler yapabilirsiniz
+**Saga'yı başka bir yapay zekâ asistanından kullanın.** Halihazırda kullandığınız bir asistanı — Claude veya ChatGPT gibi — Saga çalışma alanınıza bağlayın. Ardından o asistana sorular sorabilirsiniz; o da Saga projeleriniz, belgeleriniz ve iş akışlarınızı kullanarak yanıt verir. Burada Saga, asistanın yararlandığı kaynaktır.
 
-Bağlandıktan sonra asistanınızdan şunları isteyebilirsiniz:
+**Dış araçları Saga'ya getirin.** Harici araçları ve veri kaynaklarını Saga'ya bağlayın; böylece Saga içindeki yapay zekâ, siz sohbet ederken bunları kullanabilir. Örneğin firmanız bir araştırma veritabanı veya kurum içi bir sistem bağlayabilir. Burada bu araçlara ulaşan taraf Saga'dır.
 
-- **Saga'yı kullanarak soruları yanıtlamak** — Saga içinde sohbet ederken alacağınız yanıtların aynısı, artık asistanınızdan da erişilebilir.
-- **Belge bulmak** — bir projenin dosyalarını arar ve ilgili bölümleri getirir.
-- **Bir belgeyi okumak** — bir projedeki dosyanın tam metnini alır.
-- **Projelerinizi listelemek** — erişiminiz olan dosyaları görürsünüz.
-- **Bir iş akışı çalıştırmak** — kayıtlı iş akışlarınızdan birini başlatır ve sonucu geri getirir.
+Bunu hatırlamanın basit bir yolu:
 
-## Neyi görebilir, neyi göremez
-
-Bağlantı sizin adınıza hareket eder. Asistanınız yalnızca kendi hesabınızın halihazırda erişebildiği projelere, belgelere ve iş akışlarına ulaşabilir — tıpkı Saga'ya kendiniz giriş yaptığınızdaki gibi. Sizin göremediğiniz hiçbir şeyi göremez ve başkalarının çalışmalarını göremez.
-
-## Nasıl bağlanılır
-
-Saga'dan, ikisi de **Ayarlar > API Anahtarı Yönetimi** sayfasında bulunan iki şeye ihtiyacınız olacak:
-
-1. **Platform URL'niz** — firmanızın Saga web adresi.
-2. Bir **API anahtarı** — kişisel erişim anahtarınız. Henüz yoksa o sayfada bir tane oluşturun.
-
-Ardından yapay zekâ asistanınızın ayarlarını açın, yeni bir bağlantı ekleyin ve adres ile anahtarı yapıştırın. Saga, kullanılacak tam adresi aynı sayfada, **MCP Server Endpoint** ifadesinin yanında gösterir.
+| Şunu yapmak istiyorsanız… | Bunu kullanın | Sade ifadeyle |
+|--------------|----------|----------------|
+| Saga içeriğinizle Claude, ChatGPT vb. üzerinden çalışmak | [Asistanınızı Saga'ya bağlayın](/guides/integrations/mcp-server/connect-assistants) | Saga kaynaktır |
+| Saga'nın yapay zekâsının dış araçları ve verileri kullanmasını sağlamak | [Araçları Saga'ya bağlayın](/guides/integrations/mcp-server/connect-tools) | Saga kullanıcıdır |
 
 <Note>
-API anahtarınız bir parola gibidir — asistanınızın Saga'da sizin gibi hareket etmesine olanak tanır. Onu paylaşmayın. Gerekirse, istediğiniz zaman **Ayarlar > API Anahtarı Yönetimi** bölümünden değiştirebilir veya kaldırabilirsiniz; bu, anahtarı kullanan tüm asistanların bağlantısını anında keser.
+Bunlar birbirinden bağımsızdır — birini kurmak diğerini gerektirmez. Yapmak istediğinize uygun olanı seçin veya her ikisini de kurun.
 </Note>
 
-<Note>
-Özel veya kurum içi bir asistan mı kuruyorsunuz? Uç nokta, kimlik doğrulama ve araçların tam listesi dahil teknik ayrıntılar için [Geliştirici kurulumu](/guides/integrations/mcp-server/developer-setup) bölümüne bakın.
-</Note>
+## Hangisini kurmalıyım?
+
+- Çoğunlukla Claude veya ChatGPT içinde çalışıyor ve bunların dosyalarınızdan yararlanmasını istiyorsanız, [Asistanınızı Saga'ya bağlayın](/guides/integrations/mcp-server/connect-assistants) ile başlayın.
+- Firmanız, sohbetler sırasında Saga'nın yapay zekâsının harici bir sisteme veya veritabanına ulaşmasını istiyorsa, bu [Araçları Saga'ya bağlayın](/guides/integrations/mcp-server/connect-tools) konusudur ve genellikle bir yönetici tarafından kurulur.
+- Kendi özel entegrasyonunuzu mu geliştiriyorsunuz? Teknik ayrıntılar için [Geliştirici kurulumu](/guides/integrations/mcp-server/developer-setup) bölümüne bakın.

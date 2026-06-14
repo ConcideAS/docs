@@ -1,38 +1,28 @@
 ---
-title: KI-Assistenten-Verbindungen
+title: KI-Assistenten (MCP)
 ---
 
-Sie können Saga mit KI-Assistenten verbinden, die Sie bereits nutzen, etwa Claude und ChatGPT. Sobald die Verbindung besteht, können Sie dem Assistenten eine Frage stellen, und er greift zur Beantwortung auf Ihren Saga-Arbeitsbereich zu — er durchsucht Ihre Projekte, durchforstet Ihre Dokumente und führt Ihre Workflows aus, ohne dass Sie den Tab wechseln oder etwas hin- und herkopieren müssen.
+Saga arbeitet mit dem Model Context Protocol (MCP) — einem offenen Standard, der es KI-Assistenten und Werkzeugen ermöglicht, miteinander zu kommunizieren. Sie müssen die Technologie nicht verstehen, um sie zu nutzen. Wichtig ist, dass Saga in zwei Richtungen verbindet, und Sie können die eine oder beide nutzen.
 
-Stellen Sie es sich so vor, dass Sie Ihrem alltäglichen KI-Assistenten Zugriff auf alles geben, was Sie in Saga haben, damit seine Antworten auf Ihren Mandaten beruhen und nicht auf allgemeinem Wissen.
+## Die zwei Richtungen
 
-## Was Sie tun können
+**Saga aus einem anderen KI-Assistenten nutzen.** Verbinden Sie einen Assistenten, den Sie bereits nutzen — etwa Claude oder ChatGPT — mit Ihrem Saga-Arbeitsbereich. Sie können diesem Assistenten dann Fragen stellen, und er antwortet mithilfe Ihrer Saga-Projekte, -Dokumente und -Workflows. Hier ist Saga die Quelle, aus der der Assistent schöpft.
 
-Nach dem Verbinden können Sie Ihren Assistenten bitten:
+**Externe Werkzeuge in Saga einbinden.** Verbinden Sie externe Werkzeuge und Datenquellen mit Saga, damit die KI in Saga sie nutzen kann, während Sie chatten. Ihre Kanzlei könnte zum Beispiel eine Recherchedatenbank oder ein internes System verbinden. Hier ist es Saga, das auf diese Werkzeuge zugreift.
 
-- **Fragen mithilfe von Saga beantworten** — dieselben Antworten, die Sie beim Chatten in Saga erhalten würden, jetzt über Ihren Assistenten verfügbar.
-- **Dokumente finden** — die Dateien eines Projekts durchsuchen und die relevanten Passagen aufrufen.
-- **Ein Dokument lesen** — den vollständigen Text einer Datei in einem Projekt abrufen.
-- **Ihre Projekte auflisten** — die Mandate sehen, auf die Sie Zugriff haben.
-- **Einen Workflow ausführen** — einen Ihrer gespeicherten Workflows starten und das Ergebnis zurückerhalten.
+Eine einfache Eselsbrücke:
 
-## Was er sehen kann und was nicht
-
-Die Verbindung agiert als Sie. Ihr Assistent kann nur auf die Projekte, Dokumente und Workflows zugreifen, auf die Ihr eigenes Konto bereits Zugriff hat — genau wie wenn Sie sich selbst bei Saga anmelden. Er kann nichts sehen, was Sie nicht sehen können, und er kann die Arbeit anderer Personen nicht sehen.
-
-## So stellen Sie die Verbindung her
-
-Sie benötigen zwei Dinge von Saga, beide auf der Seite **Einstellungen > API-Schlüsselverwaltung**:
-
-1. Ihre **Plattform-URL** — die Saga-Webadresse Ihrer Kanzlei.
-2. Einen **API-Schlüssel** — Ihren persönlichen Zugriffsschlüssel. Erstellen Sie auf dieser Seite einen, falls Sie noch keinen haben.
-
-Öffnen Sie anschließend die Einstellungen Ihres KI-Assistenten, fügen Sie eine neue Verbindung hinzu und fügen Sie die Adresse und den Schlüssel ein. Saga zeigt die genaue zu verwendende Adresse auf derselben Seite neben **MCP Server Endpoint** an.
+| Sie möchten … | Verwenden Sie dies | Einfach gesagt |
+|--------------|----------|----------------|
+| Mit Ihren Saga-Inhalten aus Claude, ChatGPT usw. arbeiten | [Ihren Assistenten mit Saga verbinden](/guides/integrations/mcp-server/connect-assistants) | Saga ist die Quelle |
+| Sagas KI externe Werkzeuge und Daten nutzen lassen | [Werkzeuge mit Saga verbinden](/guides/integrations/mcp-server/connect-tools) | Saga ist der Nutzer |
 
 <Note>
-Ihr API-Schlüssel ist wie ein Passwort — er erlaubt Ihrem Assistenten, in Saga als Sie zu agieren. Geben Sie ihn nicht weiter. Falls nötig, können Sie ihn jederzeit unter **Einstellungen > API-Schlüsselverwaltung** ersetzen oder entfernen, wodurch jeder Assistent, der ihn verwendet, sofort getrennt wird.
+Diese sind unabhängig voneinander — die Einrichtung der einen erfordert nicht die andere. Wählen Sie diejenige, die zu Ihrem Vorhaben passt, oder richten Sie beide ein.
 </Note>
 
-<Note>
-Richten Sie einen benutzerdefinierten oder internen Assistenten ein? Im [Entwickler-Setup](/guides/integrations/mcp-server/developer-setup) finden Sie die technischen Details, einschließlich des Endpunkts, der Authentifizierung und der vollständigen Liste der Werkzeuge.
-</Note>
+## Welche soll ich einrichten?
+
+- Wenn Sie in Claude oder ChatGPT leben und möchten, dass diese auf Ihre Mandate zurückgreifen, beginnen Sie mit [Ihren Assistenten mit Saga verbinden](/guides/integrations/mcp-server/connect-assistants).
+- Wenn Ihre Kanzlei möchte, dass Sagas KI während Chats ein externes System oder eine Datenbank erreicht, ist das [Werkzeuge mit Saga verbinden](/guides/integrations/mcp-server/connect-tools), und das wird üblicherweise von einem Administrator eingerichtet.
+- Erstellen Sie selbst eine benutzerdefinierte Integration? Im [Entwickler-Setup](/guides/integrations/mcp-server/developer-setup) finden Sie die technischen Details.

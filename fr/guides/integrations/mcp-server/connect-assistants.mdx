@@ -1,0 +1,38 @@
+---
+title: Connecter votre assistant à Saga
+---
+
+Vous pouvez connecter Saga aux assistants IA que vous utilisez déjà, comme Claude et ChatGPT. Une fois la connexion établie, vous pouvez poser une question à l'assistant et il s'appuiera sur votre espace de travail Saga pour y répondre — en parcourant vos projets, en cherchant dans vos documents et en exécutant vos workflows, sans que vous ayez à changer d'onglet ni à copier quoi que ce soit d'un endroit à l'autre.
+
+Voyez cela comme le fait de donner à votre assistant IA habituel accès à tout ce que vous avez dans Saga, afin que ses réponses s'appuient sur vos dossiers plutôt que sur des connaissances générales.
+
+## Ce que vous pouvez faire
+
+Une fois la connexion établie, vous pouvez demander à votre assistant de :
+
+- **Répondre à des questions à partir de Saga** — les mêmes réponses que vous obtiendriez en discutant dans Saga, désormais disponibles depuis votre assistant.
+- **Trouver des documents** — chercher dans les fichiers d'un projet et faire ressortir les passages pertinents.
+- **Lire un document** — obtenir le texte intégral d'un fichier dans un projet.
+- **Lister vos projets** — voir les dossiers auxquels vous avez accès.
+- **Exécuter un workflow** — lancer l'un de vos workflows enregistrés et en récupérer le résultat.
+
+## Ce qu'il peut et ne peut pas voir
+
+La connexion agit en votre nom. Votre assistant ne peut atteindre que les projets, documents et workflows auxquels votre propre compte a déjà accès — exactement comme lorsque vous vous connectez vous-même à Saga. Il ne peut rien voir que vous ne pouvez pas voir, et il ne peut pas voir le travail des autres.
+
+## Comment se connecter
+
+Vous aurez besoin de deux éléments fournis par Saga, tous deux sur la page **Paramètres > Gestion des clés API** :
+
+1. Votre **URL de la plateforme** — l'adresse web Saga de votre cabinet.
+2. Une **clé API** — votre clé d'accès personnelle. Créez-en une sur cette page si vous n'en avez pas encore.
+
+Ouvrez ensuite les paramètres de votre assistant IA, ajoutez une nouvelle connexion, et collez-y l'adresse et la clé. Saga affiche l'adresse exacte à utiliser sur cette même page, à côté de **MCP Server Endpoint**.
+
+<Note>
+Votre clé API est comme un mot de passe — elle permet à votre assistant d'agir en votre nom dans Saga. Ne la partagez pas. Si besoin, vous pouvez la remplacer ou la supprimer depuis **Paramètres > Gestion des clés API** à tout moment, ce qui déconnecte immédiatement tout assistant qui l'utilise.
+</Note>
+
+<Note>
+Vous configurez un assistant personnalisé ou interne ? Consultez [Configuration pour développeurs](/guides/integrations/mcp-server/developer-setup) pour les détails techniques, notamment le point de terminaison, l'authentification et la liste complète des outils.
+</Note>

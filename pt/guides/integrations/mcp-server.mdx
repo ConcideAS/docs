@@ -1,38 +1,28 @@
 ---
-title: Conexões com assistentes de IA
+title: Assistentes de IA (MCP)
 ---
 
-Pode ligar o Saga aos assistentes de IA que já utiliza, como o Claude e o ChatGPT. Uma vez ligado, pode fazer uma pergunta ao assistente e este recorrerá ao seu espaço de trabalho do Saga para responder — percorrendo os seus projetos, pesquisando nos seus documentos e executando os seus workflows, sem que tenha de mudar de separador nem copiar o que quer que seja de um lado para o outro.
+O Saga funciona com o Model Context Protocol (MCP) — uma norma aberta que permite que assistentes de IA e ferramentas comuniquem entre si. Não precisa de compreender a tecnologia para a utilizar. O que importa é que o Saga se liga em duas direções, e pode usar uma, a outra ou ambas.
 
-Pense nisto como dar ao seu assistente de IA do dia a dia acesso a tudo o que tem no Saga, para que as suas respostas se baseiem nos seus dossiês em vez de conhecimentos gerais.
+## As duas direções
 
-## O que pode fazer
+**Usar o Saga a partir de outro assistente de IA.** Ligue um assistente que já utiliza — como o Claude ou o ChatGPT — ao seu espaço de trabalho do Saga. Pode então fazer perguntas a esse assistente e ele responderá usando os seus projetos, documentos e workflows do Saga. Aqui, o Saga é a fonte de onde o assistente recolhe informação.
 
-Uma vez ligado, pode pedir ao seu assistente para:
+**Trazer ferramentas externas para o Saga.** Ligue ferramentas e fontes de dados externas ao Saga, para que a IA dentro do Saga possa usá-las enquanto conversa. Por exemplo, o seu escritório poderia ligar uma base de dados de investigação ou um sistema interno. Aqui, é o Saga que recorre a essas ferramentas.
 
-- **Responder a perguntas usando o Saga** — as mesmas respostas que obteria ao conversar dentro do Saga, agora disponíveis a partir do seu assistente.
-- **Encontrar documentos** — pesquisar nos ficheiros de um projeto e mostrar as passagens relevantes.
-- **Ler um documento** — obter o texto completo de um ficheiro num projeto.
-- **Listar os seus projetos** — ver os dossiês a que tem acesso.
-- **Executar um workflow** — iniciar um dos seus workflows guardados e obter o resultado.
+Uma forma simples de o recordar:
 
-## O que pode e não pode ver
-
-A conexão age em seu nome. O seu assistente só consegue aceder aos projetos, documentos e workflows a que a sua própria conta já tem acesso — exatamente como quando inicia sessão você mesmo no Saga. Não consegue ver nada que você não possa ver, nem consegue ver o trabalho de outras pessoas.
-
-## Como ligar
-
-Vai precisar de dois elementos fornecidos pelo Saga, ambos na página **Configurações > Gestão de chaves API**:
-
-1. A sua **URL da plataforma** — o endereço web do Saga do seu escritório.
-2. Uma **chave API** — a sua chave de acesso pessoal. Crie uma nesta página se ainda não a tiver.
-
-Em seguida, abra as definições do seu assistente de IA, adicione uma nova conexão e cole o endereço e a chave. O Saga apresenta o endereço exato a utilizar nessa mesma página, junto a **MCP Server Endpoint**.
+| Quer… | Use isto | Em termos simples |
+|--------------|----------|----------------|
+| Trabalhar com os seus conteúdos do Saga a partir do Claude, ChatGPT, etc. | [Ligar o seu assistente ao Saga](/guides/integrations/mcp-server/connect-assistants) | O Saga é a fonte |
+| Permitir que a IA do Saga use ferramentas e dados externos | [Ligar ferramentas ao Saga](/guides/integrations/mcp-server/connect-tools) | O Saga é o utilizador |
 
 <Note>
-A sua chave API é como uma palavra-passe — permite que o seu assistente aja em seu nome no Saga. Não a partilhe. Se alguma vez precisar, pode substituí-la ou removê-la em **Configurações > Gestão de chaves API** a qualquer momento, o que desliga de imediato qualquer assistente que a esteja a utilizar.
+Estas duas direções são independentes — configurar uma não exige a outra. Escolha a que se adequa ao que pretende fazer, ou configure ambas.
 </Note>
 
-<Note>
-Está a configurar um assistente personalizado ou interno? Consulte [Configuração para programadores](/guides/integrations/mcp-server/developer-setup) para os detalhes técnicos, incluindo o endpoint, a autenticação e a lista completa de ferramentas.
-</Note>
+## Qual devo configurar?
+
+- Se trabalha sobretudo no Claude ou no ChatGPT e quer que se apoiem nos seus dossiês, comece por [Ligar o seu assistente ao Saga](/guides/integrations/mcp-server/connect-assistants).
+- Se o seu escritório quer que a IA do Saga aceda a um sistema ou base de dados externos durante as conversas, isso é [Ligar ferramentas ao Saga](/guides/integrations/mcp-server/connect-tools), e normalmente é configurado por um administrador.
+- Está a criar uma integração personalizada por conta própria? Consulte [Configuração para programadores](/guides/integrations/mcp-server/developer-setup) para os detalhes técnicos.

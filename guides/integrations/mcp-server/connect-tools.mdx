@@ -1,0 +1,42 @@
+---
+title: Connect tools to Saga
+---
+
+You can connect external tools and data sources to Saga so the AI can use them while you chat. Once a tool is connected, the AI can call it during a conversation — for example to look something up in a connected system — without you leaving Saga.
+
+This is set up by an administrator for the whole organization. Most people will only need the [user step](#if-a-tool-asks-for-your-personal-token) at the end, and only for certain tools.
+
+## What this is for
+
+Connecting a tool gives Saga's AI a new capability that it uses on your behalf during chats. The tool provider gives you a web address (and sometimes a credential), and Saga handles the rest. Examples include research databases, internal firm systems, or any service that supports the Model Context Protocol.
+
+## Setting up a tool (administrators)
+
+Open the **Admin Panel** and go to the **MCP Servers** section.
+
+1. **Add the tool.** Click **Add Server**, give it a name, and paste the tool's web address (its endpoint URL). The provider of the tool gives you this address.
+2. **Set how Saga signs in.** Choose the authentication the tool requires:
+   - **None** — the tool needs no credentials.
+   - **API Key** or **Bearer Token** — paste the key or token the provider gave you. It's stored securely and never shown again.
+   - **Basic Auth** — a username and password combination, entered in the encoded form the provider specifies.
+   - **OAuth 2.1** — for tools that use a sign-in flow. Save the tool first, then click **Connect** to sign in.
+   - **Per-User API Token** — each person enters their own personal token instead of one shared firm credential (see below).
+3. **Test and turn it on.** Use **Test Connection** to confirm Saga can reach the tool — a successful test lists the capabilities it found. Turn on **Available in Chat** so people in your organization can use it.
+
+<Note>
+Credentials you enter here are stored securely and never displayed again. If you need to change one, enter a new value.
+</Note>
+
+## If a tool asks for your personal token
+
+Some tools are set up so that each person signs in with their own token rather than one shared firm credential. If your administrator chose **Per-User API Token** for a tool, you'll need to add yours:
+
+1. Go to **Settings > Integrations**.
+2. Find the tool in the list and paste in your personal token.
+3. Save. The tool is now available to you in chat.
+
+Until you add your token, that tool won't be available in your conversations, even though your administrator has set it up.
+
+<Note>
+Want Saga to be the tool that *other* assistants connect to instead? That's the other direction — see [Connect your assistant to Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

@@ -1,0 +1,42 @@
+---
+title: Anslut verktyg till Saga
+---
+
+Du kan ansluta externa verktyg och datakällor till Saga så att AI:n kan använda dem medan du chattar. När ett verktyg är anslutet kan AI:n anropa det under ett samtal — till exempel för att slå upp något i ett anslutet system — utan att du lämnar Saga.
+
+Detta konfigureras av en administratör för hela organisationen. De flesta behöver bara [användarsteget](#if-a-tool-asks-for-your-personal-token) i slutet, och endast för vissa verktyg.
+
+## Vad det är till för
+
+Att ansluta ett verktyg ger Sagas AI en ny förmåga som den använder för din räkning under chattar. Verktygsleverantören ger dig en webbadress (och ibland en autentiseringsuppgift), och Saga sköter resten. Exempel är forskningsdatabaser, interna byråsystem eller vilken tjänst som helst som stöder Model Context Protocol.
+
+## Konfigurera ett verktyg (administratörer)
+
+Öppna **Adminpanel** och gå till avsnittet **MCP-servrar**.
+
+1. **Lägg till verktyget.** Klicka på **Lägg till server**, ge det ett namn och klistra in verktygets webbadress (dess slutpunkts-URL). Verktygets leverantör ger dig denna adress.
+2. **Ange hur Saga loggar in.** Välj den autentisering som verktyget kräver:
+   - **Ingen** — verktyget behöver inga autentiseringsuppgifter.
+   - **API Key** eller **Bearer Token** — klistra in nyckeln eller token som leverantören gav dig. Den lagras säkert och visas aldrig igen.
+   - **Basic Auth** — en kombination av användarnamn och lösenord, angiven i den kodade form som leverantören anger.
+   - **OAuth 2.1** — för verktyg som använder ett inloggningsflöde. Spara verktyget först, klicka sedan på **Anslut** för att logga in.
+   - **Per-User API Token** — varje person anger sin egen personliga token i stället för en delad byråautentisering (se nedan).
+3. **Testa och slå på det.** Använd **Testa anslutning** för att bekräfta att Saga kan nå verktyget — ett lyckat test listar de förmågor det hittade. Slå på **Tillgänglig i chatt** så att personer i din organisation kan använda det.
+
+<Note>
+Autentiseringsuppgifter du anger här lagras säkert och visas aldrig igen. Om du behöver ändra en, ange ett nytt värde.
+</Note>
+
+## Om ett verktyg ber om din personliga token
+
+Vissa verktyg är konfigurerade så att varje person loggar in med sin egen token i stället för en delad byråautentisering. Om din administratör valde **Per-User API Token** för ett verktyg behöver du lägga till din:
+
+1. Gå till **Inställningar > Integrationer**.
+2. Hitta verktyget i listan och klistra in din personliga token.
+3. Spara. Verktyget är nu tillgängligt för dig i chatten.
+
+Tills du lägger till din token är det verktyget inte tillgängligt i dina samtal, även om din administratör har konfigurerat det.
+
+<Note>
+Vill du hellre att Saga ska vara verktyget som *andra* assistenter ansluter till? Det är den andra riktningen — se [Anslut din assistent till Saga](/guides/integrations/mcp-server/connect-assistants).
+</Note>

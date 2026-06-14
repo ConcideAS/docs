@@ -1,38 +1,28 @@
 ---
-title: AI assistant connections
+title: AI assistants (MCP)
 ---
 
-You can connect Saga to AI assistants you already use, such as Claude and ChatGPT. Once connected, you can ask the assistant a question and it will draw on your Saga workspace to answer — looking through your projects, searching your documents, and running your workflows, without you switching tabs or copying anything across.
+Saga works with the Model Context Protocol (MCP) — an open standard that lets AI assistants and tools talk to each other. You don't need to understand the technology to use it. What matters is that Saga connects in two directions, and you can use either or both.
 
-Think of it as giving your everyday AI assistant access to everything you have in Saga, so its answers are grounded in your matters instead of general knowledge.
+## The two directions
 
-## What you can do
+**Use Saga from another AI assistant.** Connect an assistant you already use — like Claude or ChatGPT — to your Saga workspace. You can then ask that assistant questions and it will answer using your Saga projects, documents, and workflows. Here, Saga is the source the assistant pulls from.
 
-After connecting, you can ask your assistant to:
+**Bring outside tools into Saga.** Connect external tools and data sources to Saga, so the AI inside Saga can use them while you chat. For example, your firm might connect a research database or an internal system. Here, Saga is the one reaching out to those tools.
 
-- **Answer questions using Saga** — the same answers you'd get chatting inside Saga, now available from your assistant.
-- **Find documents** — search a project's files and pull up the relevant passages.
-- **Read a document** — get the full text of a file in a project.
-- **List your projects** — see the matters you have access to.
-- **Run a workflow** — start one of your saved workflows and get the result back.
+A simple way to remember it:
 
-## What it can and can't see
-
-The connection acts as you. Your assistant can only reach the projects, documents, and workflows your own account already has access to — exactly the same as when you sign in to Saga yourself. It can't see anything you can't, and it can't see other people's work.
-
-## How to connect
-
-You'll need two things from Saga, both on the **Settings > API Key Management** page:
-
-1. Your **platform URL** — your firm's Saga web address.
-2. An **API key** — your personal access key. Create one on that page if you don't have it yet.
-
-Then open your AI assistant's settings, add a new connection, and paste in the address and key. Saga shows the exact address to use on the same page, next to **MCP Server Endpoint**.
+| You want to… | Use this | In plain terms |
+|--------------|----------|----------------|
+| Work with your Saga content from Claude, ChatGPT, etc. | [Connect your assistant to Saga](/guides/integrations/mcp-server/connect-assistants) | Saga is the source |
+| Let Saga's AI use outside tools and data | [Connect tools to Saga](/guides/integrations/mcp-server/connect-tools) | Saga is the user |
 
 <Note>
-Your API key is like a password — it lets your assistant act as you in Saga. Don't share it. If you ever need to, you can replace or remove it from **Settings > API Key Management** at any time, which immediately disconnects any assistant using it.
+These are independent — setting up one doesn't require the other. Pick whichever fits what you're trying to do, or set up both.
 </Note>
 
-<Note>
-Setting up a custom or in-house assistant? See [Developer setup](/guides/integrations/mcp-server/developer-setup) for the technical details, including the endpoint, authentication, and the full list of tools.
-</Note>
+## Which one do I set up?
+
+- If you live in Claude or ChatGPT and want them to draw on your matters, start with [Connect your assistant to Saga](/guides/integrations/mcp-server/connect-assistants).
+- If your firm wants Saga's AI to reach an external system or database during chats, that's [Connect tools to Saga](/guides/integrations/mcp-server/connect-tools), and it's usually set up by an administrator.
+- Building a custom integration yourself? See [Developer setup](/guides/integrations/mcp-server/developer-setup) for the technical details.
