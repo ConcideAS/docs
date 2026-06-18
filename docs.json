@@ -129,7 +129,9 @@
           {
             "group": "Administration",
             "pages": [
-              "guides/admin"
+              "guides/administration/admin-panel",
+              "guides/administration/solo",
+              "guides/administration/enterprise"
             ]
           },
           {

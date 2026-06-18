@@ -1,0 +1,79 @@
+---
+title: Admin panel
+---
+
+The admin panel is where your organization's settings, users, and shared content are managed. Access it by clicking **Admin panel** in the sidebar. What you see depends on your role.
+
+## Roles
+
+Everyone in your Saga workspace has one of three roles:
+
+**Admin** — Full control over the workspace. Admins manage users, configure settings, set up integrations, customize branding, and oversee everything in the admin panel. Typically this is someone in legal ops or IT.
+
+**Content admin** — Manages the content side of things: [organizational sources](#organizational-sources), [custom assistants](/guides/assistants/custom-assistants), and shared [libraries](#libraries) (prompts, grid review templates, workflows). Content admins can't manage users, workspace settings, or integrations. This role is designed for people who shape how the firm uses Saga day to day — and organizations often grant it to Saga's legal engineers so they can help set up and maintain the workspace.
+
+**User** — The standard role. Users can access all of Saga's features but don't have access to the admin panel.
+
+## Workspace settings
+
+Admins configure the workspace defaults that apply across the organization:
+
+- **Default assistant** — the AI assistant that's pre-selected for new conversations
+- **Default language** — the workspace locale
+- **Enabled models** — which AI models are available in the [assistant selector](/guides/assistants)
+- **Project types** — custom labels for categorizing projects
+- **Prompt library settings** — available languages and custom tagging for prompts
+
+## Users
+
+Admins can view everyone in the workspace, change roles, remove users, reactivate deleted accounts, and disable two-factor authentication for users who've lost access. You can also export the user list to Excel with usage metrics.
+
+### Promoting a Content admin to Admin
+
+If a colleague needs to manage workspace settings, integrations, or users — not just shared content — promote them from Content admin to Admin:
+
+1. Open the **Users** section of the admin panel.
+2. Find the colleague in the list and open their row.
+3. Change the role from **Content admin** to **Admin**.
+4. Save.
+
+The new role takes effect immediately, though the affected user may need to sign out and back in for the admin-only sections to appear in their admin panel. Content admins promoted to Admin keep all their existing access — promotion is additive.
+
+## Legal sources
+
+Saga integrates with public and subscription legal-research databases. The currently integrated sources include Lovdata, Rettsdata, Moonlit (caselaw search), Rechtspraak.nl, NL fiscale rechtspraak, wetten.overheid.nl, and EUR-Lex. Public sources are typically available out of the box; subscription sources need credentials your firm holds with the provider.
+
+Enablement and credential configuration are handled by your account team — if the source you need isn't appearing in users' Legal research dropdown, contact your account team or [support@sagalegal.io](mailto:support@sagalegal.io). Note that subscription sources require an active firm subscription with the provider; Saga doesn't include the underlying access.
+
+For the catalog of caselaw and regulatory coverage available via Moonlit, see [moonlit.ai/coverage](https://moonlit.ai/coverage).
+
+## Integrations
+
+Admins configure the connections to external tools:
+
+- **[SharePoint](/guides/integrations/sharepoint)** — enable and provide your tenant URL
+- **[Epona365](/guides/integrations/epona)** — enable and provide your instance URL
+- **Translation** — enable or disable [DeepL translation](/guides/translate)
+
+## Theme and branding
+
+Admins can customize the workspace appearance: upload your firm's logo and favicon, set an AI avatar, and update the workspace title and description. This makes Saga feel like your own tool rather than a generic platform.
+
+## Organizational sources
+
+Both admins and content admins can create and manage organizational sources — firm-wide [knowledge bases](/guides/quickstart#organizational-sources) that are accessible across all conversations. Upload documents to a source, and the AI can draw on them alongside project-specific context. These are ideal for standard clause libraries, internal guidelines, regulatory handbooks, or any reference material that applies across matters.
+
+## Libraries
+
+Both admins and content admins manage the shared content that appears in everyone's **Organization** tab:
+
+- **[Prompts](/guides/chat/prompt-library)** — organization-wide prompt templates for standardizing common tasks
+- **[Grid review templates](/guides/grid-review/templates)** — reusable question sets for structured document review
+- **[Workflows](/guides/workflows/library)** — shared automation flows
+- **[Custom assistants](/guides/assistants/custom-assistants)** — AI assistants configured for specific firm workflows
+
+When a user creates a personal prompt, template, or workflow and requests to make it organizational, it appears here for review. Approve it and it becomes available to everyone.
+
+## Usage
+
+Admins can view workspace-wide usage metrics — total messages, projects, chats, and documents — filtered by time range. This helps track adoption and understand how the team is using Saga.
