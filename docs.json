@@ -116,6 +116,12 @@
                 ]
               },
               {
+                "group": "Outlook add-in",
+                "pages": [
+                  "guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "AI assistants",
                 "pages": [
                   "guides/integrations/mcp-server",
