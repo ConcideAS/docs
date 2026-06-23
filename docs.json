@@ -229,6 +229,12 @@
                 ]
               },
               {
+                "group": "Outlook-tillegg",
+                "pages": [
+                  "no/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "AI-assistenter",
                 "pages": [
                   "no/guides/integrations/mcp-server",
@@ -329,6 +335,12 @@
                   "nl/guides/integrations/word-add-in",
                   "nl/guides/integrations/word-add-in/user-setup",
                   "nl/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook-invoegtoepassing",
+                "pages": [
+                  "nl/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -435,6 +447,12 @@
                 ]
               },
               {
+                "group": "Dodatek Outlook",
+                "pages": [
+                  "pl/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Asystenci AI",
                 "pages": [
                   "pl/guides/integrations/mcp-server",
@@ -535,6 +553,12 @@
                   "es/guides/integrations/word-add-in",
                   "es/guides/integrations/word-add-in/user-setup",
                   "es/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Complemento de Outlook",
+                "pages": [
+                  "es/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -641,6 +665,12 @@
                 ]
               },
               {
+                "group": "Outlook-Add-in",
+                "pages": [
+                  "de/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "KI-Assistenten",
                 "pages": [
                   "de/guides/integrations/mcp-server",
@@ -741,6 +771,12 @@
                   "it/guides/integrations/word-add-in",
                   "it/guides/integrations/word-add-in/user-setup",
                   "it/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Componente aggiuntivo Outlook",
+                "pages": [
+                  "it/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -847,6 +883,12 @@
                 ]
               },
               {
+                "group": "Suplemento do Outlook",
+                "pages": [
+                  "pt/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Assistentes de IA",
                 "pages": [
                   "pt/guides/integrations/mcp-server",
@@ -947,6 +989,12 @@
                   "tr/guides/integrations/word-add-in",
                   "tr/guides/integrations/word-add-in/user-setup",
                   "tr/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook eklentisi",
+                "pages": [
+                  "tr/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -1053,6 +1101,12 @@
                 ]
               },
               {
+                "group": "Complément Outlook",
+                "pages": [
+                  "fr/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Assistants IA",
                 "pages": [
                   "fr/guides/integrations/mcp-server",
@@ -1153,6 +1207,12 @@
                   "sv/guides/integrations/word-add-in",
                   "sv/guides/integrations/word-add-in/user-setup",
                   "sv/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook-tillägg",
+                "pages": [
+                  "sv/guides/integrations/outlook-add-in"
                 ]
               },
               {
