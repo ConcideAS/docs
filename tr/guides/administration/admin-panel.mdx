@@ -1,0 +1,60 @@
+---
+title: Yönetim paneli
+---
+
+Yönetim paneli, kuruluşunuzun ayarlarının, kullanıcılarının ve paylaşılan içeriğinin yönetildiği yerdir. Kenar çubuğunda **Yönetim paneli**'ne tıklayarak erişin. Gördükleriniz rolünüze bağlıdır.
+
+## Roller
+
+Saga çalışma alanınızdaki herkesin üç rolden biri vardır:
+
+**Yönetici** — Çalışma alanı üzerinde tam kontrol. Yöneticiler kullanıcıları yönetir, ayarları yapılandırır, entegrasyonları kurar, markayı özelleştirir ve yönetim panelindeki her şeyi denetler. Genellikle bu, hukuki operasyonlar veya BT'den bir kişidir.
+
+**İçerik yöneticisi** — İşlerin içerik tarafını yönetir: [kuruluş kaynakları](#kuruluş-kaynakları), [özel asistanlar](/tr/guides/assistants/custom-assistants) ve paylaşılan [kütüphaneler](#kütüphaneler) (istemler, tablo incelemesi şablonları, iş akışları). İçerik yöneticileri kullanıcıları, çalışma alanı ayarlarını veya entegrasyonları yönetemez. Bu rol, firmanın Saga'yı günlük olarak nasıl kullandığını şekillendiren kişiler için tasarlanmıştır — ve kuruluşlar genellikle bunu Saga'nın hukuk mühendislerine çalışma alanını kurmaya ve sürdürmeye yardımcı olmaları için verir.
+
+**Kullanıcı** — Standart rol. Kullanıcılar Saga'nın tüm özelliklerine erişebilir ancak yönetim paneline erişemez.
+
+## Çalışma alanı ayarları
+
+Yöneticiler, kuruluş genelinde geçerli olan çalışma alanı varsayılanlarını yapılandırır:
+
+- **Varsayılan asistan** — yeni konuşmalar için önceden seçilen yapay zeka asistanı
+- **Varsayılan dil** — çalışma alanı dili
+- **Etkinleştirilmiş modeller** — [asistan seçicide](/tr/guides/assistants) hangi yapay zeka modellerinin mevcut olduğu
+- **Proje türleri** — projeleri kategorilendirmek için özel etiketler
+- **İstem kütüphanesi ayarları** — istemler için mevcut diller ve özel etiketleme
+
+## Kullanıcılar
+
+Yöneticiler çalışma alanındaki herkesi görüntüleyebilir, rolleri değiştirebilir, kullanıcıları kaldırabilir, silinen hesapları yeniden etkinleştirebilir ve erişimini kaybeden kullanıcılar için iki faktörlü kimlik doğrulamayı devre dışı bırakabilir. Kullanım metrikleriyle birlikte kullanıcı listesini Excel'e de aktarabilirsiniz.
+
+## Entegrasyonlar
+
+Yöneticiler harici araçlara bağlantıları yapılandırır:
+
+- **[SharePoint](/tr/guides/integrations/sharepoint)** — etkinleştirin ve kiracı URL'nizi sağlayın
+- **[Epona365](/tr/guides/integrations/epona)** — etkinleştirin ve örnek URL'nizi sağlayın
+- **Çeviri** — [DeepL çevirisini](/tr/guides/translate) etkinleştirin veya devre dışı bırakın
+
+## Tema ve marka
+
+Yöneticiler çalışma alanı görünümünü özelleştirebilir: firmanızın logosunu ve favicon'unu yükleyin, bir yapay zeka avatarı ayarlayın ve çalışma alanı başlığını ve açıklamasını güncelleyin. Bu, Saga'nın genel bir platform yerine kendi aracınız gibi hissettirmesini sağlar.
+
+## Kuruluş kaynakları
+
+Hem yöneticiler hem de içerik yöneticileri kuruluş kaynakları oluşturabilir ve yönetebilir — tüm konuşmalarda erişilebilen firma genelindeki [bilgi tabanları](/tr/guides/quickstart#kuruluş-kaynakları). Bir kaynağa belge yükleyin ve yapay zeka bunları projeye özel bağlamla birlikte kullanabilir. Bunlar; standart madde kütüphaneleri, dahili kılavuzlar, mevzuat el kitapları veya konular arasında geçerli olan herhangi bir referans materyali için idealdir.
+
+## Kütüphaneler
+
+Hem yöneticiler hem de içerik yöneticileri, herkesin **Kuruluş** sekmesinde görünen paylaşılan içeriği yönetir:
+
+- **[İstemler](/tr/guides/chat/prompt-library)** — yaygın görevleri standartlaştırmak için kuruluş genelinde istem şablonları
+- **[Tablo incelemesi şablonları](/tr/guides/grid-review/templates)** — yapılandırılmış belge incelemesi için yeniden kullanılabilir soru setleri
+- **[İş akışları](/tr/guides/workflows/library)** — paylaşılan otomasyon akışları
+- **[Özel asistanlar](/tr/guides/assistants/custom-assistants)** — belirli firma iş akışları için yapılandırılmış yapay zeka asistanları
+
+Bir kullanıcı kişisel bir istem, şablon veya iş akışı oluşturup kuruluş genelinde yayınlanmasını talep ettiğinde, burada inceleme için görünür. Onaylayın ve herkesin kullanımına sunulur.
+
+## Kullanım
+
+Yöneticiler çalışma alanı genelindeki kullanım metriklerini görüntüleyebilir — toplam mesajlar, projeler, sohbetler ve belgeler — zaman aralığına göre filtrelenmiş. Bu, benimsemeyi izlemeye ve ekibin Saga'yı nasıl kullandığını anlamaya yardımcı olur.

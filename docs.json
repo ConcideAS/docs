@@ -237,7 +237,11 @@
           },
           {
             "group": "Administrasjon",
-            "pages": ["no/guides/admin"]
+            "pages": [
+              "no/guides/administration/admin-panel",
+              "no/guides/administration/solo",
+              "no/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Feilsøking",
@@ -340,7 +344,11 @@
           },
           {
             "group": "Beheer",
-            "pages": ["nl/guides/admin"]
+            "pages": [
+              "nl/guides/administration/admin-panel",
+              "nl/guides/administration/solo",
+              "nl/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Probleemoplossing",
@@ -443,7 +451,11 @@
           },
           {
             "group": "Administracja",
-            "pages": ["pl/guides/admin"]
+            "pages": [
+              "pl/guides/administration/admin-panel",
+              "pl/guides/administration/solo",
+              "pl/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Rozwiązywanie problemów",
@@ -546,7 +558,11 @@
           },
           {
             "group": "Administración",
-            "pages": ["es/guides/admin"]
+            "pages": [
+              "es/guides/administration/admin-panel",
+              "es/guides/administration/solo",
+              "es/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Solución de problemas",
@@ -649,7 +665,11 @@
           },
           {
             "group": "Administration",
-            "pages": ["de/guides/admin"]
+            "pages": [
+              "de/guides/administration/admin-panel",
+              "de/guides/administration/solo",
+              "de/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Fehlerbehebung",
@@ -752,7 +772,11 @@
           },
           {
             "group": "Amministrazione",
-            "pages": ["it/guides/admin"]
+            "pages": [
+              "it/guides/administration/admin-panel",
+              "it/guides/administration/solo",
+              "it/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Risoluzione dei problemi",
@@ -855,7 +879,11 @@
           },
           {
             "group": "Administração",
-            "pages": ["pt/guides/admin"]
+            "pages": [
+              "pt/guides/administration/admin-panel",
+              "pt/guides/administration/solo",
+              "pt/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Solução de problemas",
@@ -958,7 +986,11 @@
           },
           {
             "group": "Yönetim",
-            "pages": ["tr/guides/admin"]
+            "pages": [
+              "tr/guides/administration/admin-panel",
+              "tr/guides/administration/solo",
+              "tr/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Sorun giderme",
@@ -1061,7 +1093,11 @@
           },
           {
             "group": "Administration",
-            "pages": ["fr/guides/admin"]
+            "pages": [
+              "fr/guides/administration/admin-panel",
+              "fr/guides/administration/solo",
+              "fr/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Dépannage",
@@ -1164,7 +1200,11 @@
           },
           {
             "group": "Administration",
-            "pages": ["sv/guides/admin"]
+            "pages": [
+              "sv/guides/administration/admin-panel",
+              "sv/guides/administration/solo",
+              "sv/guides/administration/enterprise"
+            ]
           },
           {
             "group": "Felsökning",

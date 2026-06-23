@@ -1,0 +1,60 @@
+---
+title: Adminpanel
+---
+
+Adminpanelen är där din organisations inställningar, användare och delat innehåll hanteras. Nå den genom att klicka på **Adminpanel** i sidofältet. Vad du ser beror på din roll.
+
+## Roller
+
+Alla i din Saga-arbetsyta har en av tre roller:
+
+**Admin** — Full kontroll över arbetsytan. Admins hanterar användare, konfigurerar inställningar, sätter upp integrationer, anpassar varumärkesprofil och övervakar allt i adminpanelen. Vanligtvis är detta någon inom legal ops eller IT.
+
+**Innehållsadmin** — Hanterar innehållssidan: [organisationskällor](#organisationskällor), [anpassade assistenter](/sv/guides/assistants/custom-assistants) och delade [bibliotek](#bibliotek) (prompter, tabellgranskningsmallar, arbetsflöden). Innehållsadmins kan inte hantera användare, arbetsyteinställningar eller integrationer. Denna roll är utformad för personer som formar hur byrån använder Saga i vardagen — och organisationer ger den ofta till Sagas juridiska ingenjörer så att de kan hjälpa till att sätta upp och underhålla arbetsytan.
+
+**Användare** — Standardrollen. Användare kan nå alla Sagas funktioner men har inte tillgång till adminpanelen.
+
+## Arbetsyteinställningar
+
+Admins konfigurerar arbetsytans standardvärden som gäller för hela organisationen:
+
+- **Standardassistent** — den AI-assistent som är förvald för nya konversationer
+- **Standardspråk** — arbetsytans språk
+- **Aktiverade modeller** — vilka AI-modeller som är tillgängliga i [assistentväljaren](/sv/guides/assistants)
+- **Projekttyper** — anpassade etiketter för att kategorisera projekt
+- **Promptbiblioteksinställningar** — tillgängliga språk och anpassad taggning för prompter
+
+## Användare
+
+Admins kan se alla i arbetsytan, ändra roller, ta bort användare, återaktivera borttagna konton och inaktivera tvåfaktorsautentisering för användare som förlorat åtkomst. Du kan även exportera användarlistan till Excel med användningsstatistik.
+
+## Integrationer
+
+Admins konfigurerar anslutningarna till externa verktyg:
+
+- **[SharePoint](/sv/guides/integrations/sharepoint)** — aktivera och ange din klientorganisations-URL
+- **[Epona365](/sv/guides/integrations/epona)** — aktivera och ange din instans-URL
+- **Översättning** — aktivera eller inaktivera [DeepL-översättning](/sv/guides/translate)
+
+## Tema och varumärke
+
+Admins kan anpassa arbetsytans utseende: ladda upp din byrås logotyp och favikon, ställ in en AI-avatar och uppdatera arbetsytans titel och beskrivning. Det gör att Saga känns som ert eget verktyg snarare än en generisk plattform.
+
+## Organisationskällor
+
+Både admins och innehållsadmins kan skapa och hantera organisationskällor — byråövergripande [kunskapsbaser](/sv/guides/quickstart#organisationskällor) som är tillgängliga i alla konversationer. Ladda upp dokument till en källa, och AI:n kan använda dem tillsammans med projektspecifik kontext. Dessa är idealiska för standardklausulbibliotek, interna riktlinjer, regulatoriska handböcker eller annat referensmaterial som gäller för flera ärenden.
+
+## Bibliotek
+
+Både admins och innehållsadmins hanterar det delade innehåll som visas i allas **Organisation**-flik:
+
+- **[Prompter](/sv/guides/chat/prompt-library)** — organisationsövergripande promptmallar för att standardisera vanliga uppgifter
+- **[Tabellgranskningsmallar](/sv/guides/grid-review/templates)** — återanvändbara frågeuppsättningar för strukturerad dokumentgranskning
+- **[Arbetsflöden](/sv/guides/workflows/library)** — delade automatiseringsflöden
+- **[Anpassade assistenter](/sv/guides/assistants/custom-assistants)** — AI-assistenter konfigurerade för specifika byråarbetsflöden
+
+När en användare skapar en personlig prompt, mall eller arbetsflöde och begär att göra det organisationsövergripande visas det här för granskning. Godkänn det så blir det tillgängligt för alla.
+
+## Användning
+
+Admins kan se arbetsyteövergripande användningsstatistik — totalt antal meddelanden, projekt, chattar och dokument — filtrerat efter tidsperiod. Det hjälper till att följa adoption och förstå hur teamet använder Saga.
