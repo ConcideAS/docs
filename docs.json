@@ -116,6 +116,12 @@
                 ]
               },
               {
+                "group": "Outlook add-in",
+                "pages": [
+                  "guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "AI assistants",
                 "pages": [
                   "guides/integrations/mcp-server",
@@ -222,6 +228,12 @@
                   "no/guides/integrations/word-add-in",
                   "no/guides/integrations/word-add-in/user-setup",
                   "no/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook-tillegg",
+                "pages": [
+                  "no/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -332,6 +344,12 @@
                 ]
               },
               {
+                "group": "Outlook-invoegtoepassing",
+                "pages": [
+                  "nl/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "AI-assistenten",
                 "pages": [
                   "nl/guides/integrations/mcp-server",
@@ -436,6 +454,12 @@
                   "pl/guides/integrations/word-add-in",
                   "pl/guides/integrations/word-add-in/user-setup",
                   "pl/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Dodatek Outlook",
+                "pages": [
+                  "pl/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -546,6 +570,12 @@
                 ]
               },
               {
+                "group": "Complemento de Outlook",
+                "pages": [
+                  "es/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Asistentes de IA",
                 "pages": [
                   "es/guides/integrations/mcp-server",
@@ -650,6 +680,12 @@
                   "de/guides/integrations/word-add-in",
                   "de/guides/integrations/word-add-in/user-setup",
                   "de/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook-Add-in",
+                "pages": [
+                  "de/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -760,6 +796,12 @@
                 ]
               },
               {
+                "group": "Componente aggiuntivo Outlook",
+                "pages": [
+                  "it/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Assistenti IA",
                 "pages": [
                   "it/guides/integrations/mcp-server",
@@ -864,6 +906,12 @@
                   "pt/guides/integrations/word-add-in",
                   "pt/guides/integrations/word-add-in/user-setup",
                   "pt/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Suplemento do Outlook",
+                "pages": [
+                  "pt/guides/integrations/outlook-add-in"
                 ]
               },
               {
@@ -974,6 +1022,12 @@
                 ]
               },
               {
+                "group": "Outlook eklentisi",
+                "pages": [
+                  "tr/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Yapay zekâ asistanları",
                 "pages": [
                   "tr/guides/integrations/mcp-server",
@@ -1081,6 +1135,12 @@
                 ]
               },
               {
+                "group": "Complément Outlook",
+                "pages": [
+                  "fr/guides/integrations/outlook-add-in"
+                ]
+              },
+              {
                 "group": "Assistants IA",
                 "pages": [
                   "fr/guides/integrations/mcp-server",
@@ -1185,6 +1245,12 @@
                   "sv/guides/integrations/word-add-in",
                   "sv/guides/integrations/word-add-in/user-setup",
                   "sv/guides/integrations/word-add-in/admin-setup"
+                ]
+              },
+              {
+                "group": "Outlook-tillägg",
+                "pages": [
+                  "sv/guides/integrations/outlook-add-in"
                 ]
               },
               {
