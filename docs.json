@@ -115,6 +115,7 @@
                   "guides/integrations/word-add-in/admin-setup"
                 ]
               },
+              "guides/integrations/outlook-add-in",
               {
                 "group": "AI assistants",
                 "pages": [

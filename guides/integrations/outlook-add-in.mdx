@@ -1,0 +1,71 @@
+---
+title: Outlook add-in
+---
+
+The Saga Outlook add-in brings Saga's AI into Microsoft Outlook. You can work with email threads, draft replies, save important email material into Saga, and use the same assistants and sources you use in the Saga web app without leaving Outlook.
+
+This is a dedicated Microsoft Outlook add-in. It is separate from uploading `.msg` files through Advisor, and separate from the [Word add-in](/guides/integrations/word-add-in).
+
+## What you can do
+
+The add-in opens as a task pane inside Outlook. From there you can:
+
+**Chat about an email thread** — Ask Saga to summarize, analyze, or answer questions about the currently open conversation. Saga uses the active Outlook conversation as context when the add-in can access it.
+
+**Draft replies** — Ask Saga to draft a reply based on the email thread and your instructions, then review the draft before inserting or sending anything.
+
+**Use quick actions** — Start common email workflows such as saving a thread to Saga, saving attachments, summarizing the thread, or drafting a reply.
+
+**Work with Saga projects and documents** — Attach documents from your Saga projects or upload files so the assistant can use them in the answer.
+
+**Use prompts, assistants, and sources** — Access prompt-library workflows, choose assistants/models, and use supported Saga sources such as legal research or web search when they are enabled for your workspace.
+
+## Install the add-in
+
+You can install the Outlook add-in from [Microsoft Marketplace](https://marketplace.microsoft.com/en-us/product/saas/wa200011138?tab=overview). Search for **Saga add-in for Microsoft Outlook** if you install from inside Outlook.
+
+If your organization manages Office add-ins centrally, your Microsoft 365 administrator can deploy the add-in from the Microsoft 365 Admin Center under **Settings > Integrated apps**.
+
+<Note>
+The Outlook add-in requires an active Saga platform license. If the add-in is installed but you cannot sign in, ask your Saga workspace administrator or Saga support to confirm that your account is licensed.
+</Note>
+
+## Sign in
+
+When you open the add-in, enter your Saga workspace URL, for example `https://your-firm.sagalegal.io`, and sign in with the Microsoft account you use for Saga.
+
+Use the same Saga workspace you use in the browser. If you are a Saga Solo user, your workspace URL is `https://app.sagalegal.io`.
+
+## Supported Outlook hosts
+
+The add-in is designed for Microsoft Outlook on Microsoft 365, including desktop Outlook on Windows and Mac and Outlook on the web. Keep Outlook updated, because older Office builds can have limited Office add-in support.
+
+## Data access
+
+The add-in works with the active message or conversation you open it from. Microsoft may show a permission notice because Office add-ins can access message details such as body, subject, sender, recipients, and attachment metadata for the active email.
+
+The add-in sends the relevant active-thread context and selected documents to Saga so the assistant can respond. It does not automatically scan unrelated mailbox items from the add-in UI.
+
+## Troubleshooting
+
+### The add-in does not appear
+
+- Confirm that you are signed in to Outlook with your work Microsoft account.
+- Search Microsoft Marketplace for **Saga add-in for Microsoft Outlook**.
+- If your organization blocks individual Office add-in installation, ask your Microsoft 365 administrator to deploy it centrally.
+
+### Sign-in fails
+
+- Confirm that the Saga workspace URL is correct.
+- Close and reopen the add-in pane.
+- Restart Outlook.
+- If the problem persists, clear the Office add-in cache using Microsoft's instructions for your platform.
+
+### A task fails or shows a network error
+
+Try the same action once more after reopening the pane. If it keeps failing, send support:
+
+- the task you clicked or prompt you sent,
+- whether you use Outlook on the web, new Outlook, classic Outlook, desktop Mac, or desktop Windows,
+- a screenshot or short recording of the error, and
+- the approximate time it happened.
