@@ -1,0 +1,47 @@
+---
+title: Beheerdersinstallatie
+---
+
+Als je organisatie Office-invoegtoepassingen centraal beheert, kun je de Saga Outlook-invoegtoepassing implementeren via het Microsoft 365-beheercentrum. Zo wordt Saga beschikbaar in Outlook zonder dat elke gebruiker deze handmatig hoeft te installeren.
+
+## Implementeren via Microsoft 365-beheercentrum
+
+1. Ga naar het [Microsoft 365-beheercentrum](https://admin.microsoft.com).
+2. Ga naar **Instellingen > Geïntegreerde apps**.
+3. Klik op **Apps ophalen** of **Aangepaste apps uploaden**.
+4. Als Saga in AppSource voor je tenant verschijnt, selecteer je deze daar.
+5. Als Saga niet verschijnt, gebruik je de aangepaste app of manifestmethode die Saga heeft verstrekt.
+6. Kies de doelgebruikers of groepen.
+7. Bevestig de implementatie.
+
+Na implementatie verschijnt de invoegtoepassing in Outlook voor de geselecteerde gebruikers. De uitrol door Microsoft kan enkele uren duren, en in sommige tenants tot 24 uur.
+
+## Toegangsbeheer
+
+De Saga Outlook-invoegtoepassing gebruikt dezelfde toegangscontrole als het Saga-webplatform. Gebruikers moeten zijn uitgenodigd voor de juiste Saga-werkruimte voordat ze kunnen aanmelden.
+
+Als een gebruiker de invoegtoepassing kan openen maar niet kan aanmelden, controleer dan of:
+
+- De gebruiker het juiste Microsoft-werkaccount gebruikt.
+- De gebruiker de juiste Saga-instantie heeft ingevoerd.
+- Het Saga-account van de gebruiker gelicentieerd en actief is.
+
+## Netwerktoegang
+
+De invoegtoepassing wordt gehost op `outlook.sagalegal.io` en meldt gebruikers aan via Microsoft. Als je organisatie netwerktoegang beperkt, sta dan HTTPS-toegang toe tot:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- De Saga-werkruimte van je organisatie, zoals `your-firm.sagalegal.io`
+
+## Wanneer centrale implementatie gebruiken
+
+Centrale implementatie is nuttig wanneer:
+
+- Je organisatie individuele installatie van Office-invoegtoepassingen beperkt.
+- Je Saga standaard beschikbaar wilt maken voor alle gebruikers.
+- Je de invoegtoepassing wilt implementeren voor specifieke teams of beveiligingsgroepen.
+- Je wilt dat gebruikers de juiste Outlook-invoegtoepassing krijgen zonder installatiebestanden handmatig te delen.
+
+Zie [Gebruikersinstallatie](/nl/guides/integrations/outlook-add-in/user-setup) voor individuele installatie-instructies.

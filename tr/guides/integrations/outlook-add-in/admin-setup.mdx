@@ -1,0 +1,47 @@
+---
+title: Yönetici kurulumu
+---
+
+Kuruluşunuz Office eklentilerini merkezi olarak yönetiyorsa Saga Outlook eklentisini Microsoft 365 Yönetim Merkezi üzerinden kullanıcılara dağıtabilirsiniz. Bu, her kullanıcının manuel kurulum yapmasına gerek kalmadan Saga'nın Outlook'ta kullanılabilir olmasını sağlar.
+
+## Microsoft 365 Yönetim Merkezi üzerinden dağıtma
+
+1. [Microsoft 365 Yönetim Merkezi](https://admin.microsoft.com)'ne gidin.
+2. **Ayarlar > Tümleşik uygulamalar** bölümüne gidin.
+3. **Uygulamaları al** veya **Özel uygulamaları yükle**'ye tıklayın.
+4. Saga tenant'ınız için AppSource'ta görünüyorsa oradan seçin.
+5. Saga görünmüyorsa Saga tarafından sağlanan özel uygulama veya manifest dağıtım yöntemini kullanın.
+6. Hedef kullanıcıları veya grupları seçin.
+7. Dağıtımı onaylayın.
+
+Dağıtıldıktan sonra eklenti seçilen kullanıcılar için Outlook'ta görünür. Microsoft dağıtımı birkaç saat sürebilir; bazı tenant'larda bu süre 24 saate kadar çıkabilir.
+
+## Erişim kontrolü
+
+Saga Outlook eklentisi, Saga web platformuyla aynı erişim kontrolünü kullanır. Kullanıcıların oturum açmadan önce doğru Saga çalışma alanına davet edilmiş olması gerekir.
+
+Bir kullanıcı eklentiyi açabiliyor ancak oturum açamıyorsa şunları doğrulayın:
+
+- Doğru Microsoft iş hesabını kullanıyor.
+- Doğru Saga örneğini girdi.
+- Saga hesabı lisanslı ve aktif.
+
+## Ağ erişimi
+
+Eklenti `outlook.sagalegal.io` adresinde barındırılır ve kullanıcıları Microsoft üzerinden oturum açtırır. Kuruluşunuz ağ erişimini kısıtlıyorsa şu adreslere HTTPS erişimine izin verin:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Kuruluşunuzun Saga çalışma alanı, örneğin `your-firm.sagalegal.io`
+
+## Merkezi dağıtım ne zaman kullanılır
+
+Merkezi dağıtım şu durumlarda kullanışlıdır:
+
+- Kuruluşunuz Office eklentilerinin bireysel kurulumunu kısıtlar.
+- Saga'nın tüm kullanıcılar için varsayılan olarak kullanılabilir olmasını istersiniz.
+- Eklentiyi belirli ekiplere veya güvenlik gruplarına dağıtmanız gerekir.
+- Kullanıcıların kurulum dosyalarını manuel paylaşmadan doğru Outlook eklentisini almasını istersiniz.
+
+Bireysel kurulum yönergeleri için [Kullanıcı kurulumu](/tr/guides/integrations/outlook-add-in/user-setup) bölümüne bakın.

@@ -1,0 +1,65 @@
+---
+title: User setup
+---
+
+Installing the Saga Outlook add-in depends on how your organization manages Office add-ins. If your admin has deployed it centrally, it may already be available in Outlook. If not, your admin can provide the installation method or deploy it for your team. See [Admin setup](/guides/integrations/outlook-add-in/admin-setup).
+
+## Open the add-in
+
+1. Open Outlook.
+2. Select an email message or open a draft.
+3. Click **Saga** from the Outlook ribbon or apps menu.
+4. The Saga task panel opens inside Outlook.
+
+<Note>
+Saga needs an email message or draft to provide context. If no message is selected, Outlook may show the add-in but Saga cannot start a useful conversation.
+</Note>
+
+## If Saga is not visible
+
+If the Saga add-in does not appear in Outlook:
+
+1. Open **Apps** or **Get add-ins** from Outlook.
+2. Search for **Saga**.
+3. If it appears, click **Add**.
+4. If it does not appear, contact your admin.
+
+Some organizations restrict individual Office add-in installation. In that case, your admin needs to deploy Saga centrally.
+
+## Signing in
+
+When you open the add-in for the first time, enter your organization's Saga instance.
+
+For example, if your Saga URL is `https://your-firm.sagalegal.io`, enter `your-firm`.
+
+Then click **Sign in with Microsoft** and use the Microsoft work account invited to that Saga workspace. You only need to do this once.
+
+## Troubleshooting
+
+### The add-in doesn't appear in Outlook
+
+- **Check with your admin** — On company-managed devices, your IT department may need to allow third-party Office add-ins or deploy Saga centrally.
+- **Check your Outlook account** — Make sure Outlook is signed in with the Microsoft work account you use with Saga.
+- **Check your Outlook version** — Outdated Outlook builds can have issues loading add-ins. Update Outlook and try again.
+
+### Saga asks me to select an email
+
+Saga needs an Outlook email message or draft to provide context. Select an email, then open the add-in again.
+
+### Sign-in fails
+
+Confirm that:
+
+- You entered the correct Saga instance.
+- Your Microsoft account has been invited to that Saga workspace.
+- You are using your work account, not a personal Microsoft account.
+
+If you are still blocked, contact your Saga admin or Saga support.
+
+### The add-in panel is blank
+
+1. Close the Saga task panel and reopen it.
+2. Restart Outlook.
+3. If it still does not load, clear the Office add-in cache using Microsoft's guidance for your platform.
+
+The Outlook add-in is hosted at `outlook.sagalegal.io`. If your organization uses a strict firewall or proxy, ask IT to allow access to that domain.

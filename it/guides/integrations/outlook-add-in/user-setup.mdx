@@ -1,0 +1,65 @@
+---
+title: Configurazione utente
+---
+
+L'installazione del componente aggiuntivo Saga per Outlook dipende da come la tua organizzazione gestisce i componenti aggiuntivi di Office. Se l'amministratore lo ha distribuito centralmente, potrebbe essere già disponibile in Outlook. In caso contrario, l'amministratore può fornire il metodo di installazione o distribuirlo al tuo team. Vedi [Configurazione amministratore](/it/guides/integrations/outlook-add-in/admin-setup).
+
+## Aprire il componente aggiuntivo
+
+1. Apri Outlook.
+2. Seleziona un messaggio email o apri una bozza.
+3. Clicca su **Saga** dalla barra multifunzione di Outlook o dal menu delle app.
+4. Il riquadro attività di Saga si apre dentro Outlook.
+
+<Note>
+Saga ha bisogno di un messaggio email o di una bozza per fornire contesto. Se non è selezionato alcun messaggio, Outlook può mostrare il componente aggiuntivo, ma Saga non può avviare una conversazione utile.
+</Note>
+
+## Se Saga non è visibile
+
+Se il componente aggiuntivo Saga non appare in Outlook:
+
+1. Apri **App** o **Ottieni componenti aggiuntivi** da Outlook.
+2. Cerca **Saga**.
+3. Se appare, clicca su **Aggiungi**.
+4. Se non appare, contatta l'amministratore.
+
+Alcune organizzazioni limitano l'installazione individuale dei componenti aggiuntivi di Office. In quel caso, l'amministratore deve distribuire Saga centralmente.
+
+## Accesso
+
+Quando apri il componente aggiuntivo per la prima volta, inserisci l'istanza Saga della tua organizzazione.
+
+Per esempio, se l'URL di Saga è `https://your-firm.sagalegal.io`, inserisci `your-firm`.
+
+Poi clicca su **Accedi con Microsoft** e usa l'account Microsoft aziendale invitato a quell'area di lavoro Saga. Devi farlo solo una volta.
+
+## Risoluzione dei problemi
+
+### Il componente aggiuntivo non appare in Outlook
+
+- **Verifica con l'amministratore** — Sui dispositivi gestiti, l'IT potrebbe dover consentire componenti aggiuntivi Office di terze parti o distribuire Saga centralmente.
+- **Controlla l'account Outlook** — Assicurati che Outlook abbia effettuato l'accesso con l'account Microsoft aziendale che usi con Saga.
+- **Controlla la versione di Outlook** — Versioni obsolete di Outlook possono avere problemi nel caricare i componenti aggiuntivi. Aggiorna Outlook e riprova.
+
+### Saga mi chiede di selezionare un'email
+
+Saga ha bisogno di un messaggio email o di una bozza di Outlook per fornire contesto. Seleziona un'email e riapri il componente aggiuntivo.
+
+### L'accesso non riesce
+
+Conferma che:
+
+- Hai inserito l'istanza Saga corretta.
+- Il tuo account Microsoft è stato invitato a quell'area di lavoro Saga.
+- Stai usando l'account aziendale, non un account Microsoft personale.
+
+Se sei ancora bloccato, contatta l'amministratore Saga o il supporto Saga.
+
+### Il riquadro del componente aggiuntivo è vuoto
+
+1. Chiudi il riquadro attività di Saga e riaprilo.
+2. Riavvia Outlook.
+3. Se ancora non si carica, cancella la cache dei componenti aggiuntivi di Office seguendo le istruzioni Microsoft per la tua piattaforma.
+
+Il componente aggiuntivo di Outlook è ospitato su `outlook.sagalegal.io`. Se la tua organizzazione usa un firewall o proxy restrittivo, chiedi all'IT di consentire l'accesso a questo dominio.

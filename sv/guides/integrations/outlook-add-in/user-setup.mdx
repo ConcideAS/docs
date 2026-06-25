@@ -1,0 +1,65 @@
+---
+title: Användarinställning
+---
+
+Installationen av Saga Outlook-tillägget beror på hur din organisation hanterar Office-tillägg. Om administratören har distribuerat det centralt kan det redan vara tillgängligt i Outlook. Annars kan administratören ge dig installationsmetoden eller distribuera det för ditt team. Se [Administratörsinställning](/sv/guides/integrations/outlook-add-in/admin-setup).
+
+## Öppna tillägget
+
+1. Öppna Outlook.
+2. Välj ett e-postmeddelande eller öppna ett utkast.
+3. Klicka på **Saga** i Outlooks menyfliksområde eller appmeny.
+4. Sagas aktivitetsfönster öppnas i Outlook.
+
+<Note>
+Saga behöver ett e-postmeddelande eller ett utkast för att ge kontext. Om inget meddelande är valt kan Outlook visa tillägget, men Saga kan inte starta en användbar konversation.
+</Note>
+
+## Om Saga inte syns
+
+Om Saga-tillägget inte visas i Outlook:
+
+1. Öppna **Appar** eller **Hämta tillägg** i Outlook.
+2. Sök efter **Saga**.
+3. Om det visas klickar du på **Lägg till**.
+4. Om det inte visas kontaktar du administratören.
+
+Vissa organisationer begränsar individuell installation av Office-tillägg. I så fall måste administratören distribuera Saga centralt.
+
+## Logga in
+
+När du öppnar tillägget första gången anger du organisationens Saga-instans.
+
+Om din Saga-URL till exempel är `https://your-firm.sagalegal.io`, anger du `your-firm`.
+
+Klicka sedan på **Logga in med Microsoft** och använd det Microsoft-arbetskonto som är inbjudet till den Saga-arbetsytan. Du behöver bara göra detta en gång.
+
+## Felsökning
+
+### Tillägget visas inte i Outlook
+
+- **Kontrollera med administratören** — På hanterade enheter kan IT behöva tillåta Office-tillägg från tredje part eller distribuera Saga centralt.
+- **Kontrollera ditt Outlook-konto** — Se till att Outlook är inloggat med det Microsoft-arbetskonto du använder med Saga.
+- **Kontrollera din Outlook-version** — Äldre Outlook-versioner kan ha problem med att läsa in tillägg. Uppdatera Outlook och försök igen.
+
+### Saga ber mig välja ett e-postmeddelande
+
+Saga behöver ett Outlook-meddelande eller ett utkast för att ge kontext. Välj ett e-postmeddelande och öppna tillägget igen.
+
+### Inloggningen misslyckas
+
+Bekräfta att:
+
+- Du angav rätt Saga-instans.
+- Ditt Microsoft-konto har bjudits in till den Saga-arbetsytan.
+- Du använder ditt arbetskonto, inte ett personligt Microsoft-konto.
+
+Om du fortfarande är blockerad kontaktar du din Saga-administratör eller Saga-support.
+
+### Tilläggsfönstret är tomt
+
+1. Stäng Sagas aktivitetsfönster och öppna det igen.
+2. Starta om Outlook.
+3. Om det fortfarande inte läses in, rensa cacheminnet för Office-tillägg enligt Microsofts vägledning för din plattform.
+
+Outlook-tillägget finns på `outlook.sagalegal.io`. Om din organisation använder en strikt brandvägg eller proxy ber du IT att tillåta åtkomst till den domänen.

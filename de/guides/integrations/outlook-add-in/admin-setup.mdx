@@ -1,0 +1,47 @@
+---
+title: Admin-Einrichtung
+---
+
+Wenn Ihre Organisation Office-Add-ins zentral verwaltet, können Sie das Saga Outlook-Add-in über das Microsoft 365 Admin Center für Benutzer bereitstellen. Dadurch ist Saga in Outlook verfügbar, ohne dass jeder Benutzer es manuell installieren muss.
+
+## Bereitstellung über das Microsoft 365 Admin Center
+
+1. Öffnen Sie das [Microsoft 365 Admin Center](https://admin.microsoft.com).
+2. Navigieren Sie zu **Einstellungen > Integrierte Apps**.
+3. Klicken Sie auf **Apps abrufen** oder **Benutzerdefinierte Apps hochladen**.
+4. Wenn Saga in AppSource für Ihren Tenant erscheint, wählen Sie es dort aus.
+5. Wenn Saga nicht erscheint, verwenden Sie die von Saga bereitgestellte benutzerdefinierte App oder Manifest-Bereitstellungsmethode.
+6. Wählen Sie die Zielbenutzer oder -gruppen aus.
+7. Bestätigen Sie die Bereitstellung.
+
+Nach der Bereitstellung erscheint das Add-in in Outlook für die ausgewählten Benutzer. Die Microsoft-Bereitstellung kann einige Stunden dauern, in manchen Tenants bis zu 24 Stunden.
+
+## Zugriffskontrolle
+
+Das Saga Outlook-Add-in verwendet dieselbe Zugriffskontrolle wie die Saga-Webplattform. Benutzer müssen zum richtigen Saga-Arbeitsbereich eingeladen sein, bevor sie sich anmelden können.
+
+Wenn ein Benutzer das Add-in öffnen, sich aber nicht anmelden kann, prüfen Sie, ob:
+
+- Er das richtige Microsoft-Geschäftskonto verwendet.
+- Er die richtige Saga-Instanz eingegeben hat.
+- Sein Saga-Konto lizenziert und aktiv ist.
+
+## Netzwerkzugriff
+
+Das Add-in wird unter `outlook.sagalegal.io` gehostet und meldet Benutzer über Microsoft an. Wenn Ihre Organisation den Netzwerkzugriff beschränkt, erlauben Sie HTTPS-Zugriff auf:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Den Saga-Arbeitsbereich Ihrer Organisation, z. B. `your-firm.sagalegal.io`
+
+## Wann zentrale Bereitstellung sinnvoll ist
+
+Zentrale Bereitstellung ist hilfreich, wenn:
+
+- Ihre Organisation die individuelle Installation von Office-Add-ins beschränkt.
+- Saga standardmäßig für alle Benutzer verfügbar sein soll.
+- Sie das Add-in für bestimmte Teams oder Sicherheitsgruppen bereitstellen müssen.
+- Benutzer das richtige Outlook-Add-in erhalten sollen, ohne Installationsdateien manuell zu teilen.
+
+Für individuelle Einrichtungsschritte siehe [Benutzereinrichtung](/de/guides/integrations/outlook-add-in/user-setup).

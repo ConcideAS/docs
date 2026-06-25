@@ -1,0 +1,47 @@
+---
+title: Configurazione amministratore
+---
+
+Se la tua organizzazione gestisce centralmente i componenti aggiuntivi di Office, puoi distribuire il componente aggiuntivo Saga per Outlook agli utenti tramite Microsoft 365 Admin Center. In questo modo Saga è disponibile in Outlook senza richiedere l'installazione manuale a ogni utente.
+
+## Distribuire tramite Microsoft 365 Admin Center
+
+1. Vai al [Microsoft 365 Admin Center](https://admin.microsoft.com).
+2. Apri **Impostazioni > App integrate**.
+3. Clicca su **Ottieni app** o **Carica app personalizzate**.
+4. Se Saga appare in AppSource per il tuo tenant, selezionalo lì.
+5. Se Saga non appare, usa l'app personalizzata o il metodo di distribuzione tramite manifest fornito da Saga.
+6. Scegli utenti o gruppi di destinazione.
+7. Conferma la distribuzione.
+
+Una volta distribuito, il componente aggiuntivo appare in Outlook per gli utenti selezionati. La distribuzione Microsoft può richiedere alcune ore e, in alcuni tenant, fino a 24 ore.
+
+## Controllo degli accessi
+
+Il componente aggiuntivo Saga per Outlook usa lo stesso controllo degli accessi della piattaforma web Saga. Gli utenti devono essere invitati all'area di lavoro Saga corretta prima di poter accedere.
+
+Se un utente può aprire il componente aggiuntivo ma non riesce ad accedere, verifica che:
+
+- Usi l'account Microsoft aziendale corretto.
+- Abbia inserito l'istanza Saga corretta.
+- Il suo account Saga sia licenziato e attivo.
+
+## Accesso di rete
+
+Il componente aggiuntivo è ospitato su `outlook.sagalegal.io` e autentica gli utenti tramite Microsoft. Se la tua organizzazione limita l'accesso di rete, consenti l'accesso HTTPS a:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- L'area di lavoro Saga della tua organizzazione, ad esempio `your-firm.sagalegal.io`
+
+## Quando usare la distribuzione centralizzata
+
+La distribuzione centralizzata è utile quando:
+
+- La tua organizzazione limita l'installazione individuale dei componenti aggiuntivi di Office.
+- Vuoi rendere Saga disponibile per tutti gli utenti per impostazione predefinita.
+- Devi distribuire il componente aggiuntivo a team o gruppi di sicurezza specifici.
+- Vuoi che gli utenti ricevano il componente aggiuntivo Outlook corretto senza condividere manualmente file di installazione.
+
+Per le istruzioni di configurazione individuale, vedi [Configurazione utente](/it/guides/integrations/outlook-add-in/user-setup).

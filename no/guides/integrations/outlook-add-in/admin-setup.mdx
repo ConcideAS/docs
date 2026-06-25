@@ -1,0 +1,47 @@
+---
+title: Admin-oppsett
+---
+
+Hvis organisasjonen administrerer Office-tillegg sentralt, kan du distribuere Saga Outlook-tillegget til brukere via Microsoft 365 Admin Center. Da blir Saga tilgjengelig i Outlook uten at hver bruker må installere det manuelt.
+
+## Distribuer via Microsoft 365 Admin Center
+
+1. Gå til [Microsoft 365 Admin Center](https://admin.microsoft.com).
+2. Gå til **Innstillinger > Integrerte apper**.
+3. Klikk på **Hent apper** eller **Last opp egendefinerte apper**.
+4. Hvis Saga vises i AppSource for tenant-en din, velger du det der.
+5. Hvis Saga ikke vises, bruker du den egendefinerte appen eller manifestmetoden du har fått fra Saga.
+6. Velg målbrukere eller grupper.
+7. Bekreft distribusjonen.
+
+Når det er distribuert, vises tillegget i Outlook for de valgte brukerne. Microsofts utrulling kan ta noen timer, og i enkelte tenant-er opptil 24 timer.
+
+## Tilgangskontroll
+
+Saga Outlook-tillegget bruker samme tilgangskontroll som Saga-nettplattformen. Brukere må være invitert til riktig Saga-arbeidsområde før de kan logge på.
+
+Hvis en bruker kan åpne tillegget, men ikke logge på, kontroller at:
+
+- De bruker riktig Microsoft-jobbkonto.
+- De skrev inn riktig Saga-instans.
+- Saga-kontoen deres er lisensiert og aktiv.
+
+## Nettverkstilgang
+
+Tillegget ligger på `outlook.sagalegal.io` og logger brukere på via Microsoft. Hvis organisasjonen begrenser nettverkstilgang, tillat HTTPS-tilgang til:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Organisasjonens Saga-arbeidsområde, for eksempel `your-firm.sagalegal.io`
+
+## Når sentral distribusjon bør brukes
+
+Sentral distribusjon er nyttig når:
+
+- Organisasjonen begrenser individuell installasjon av Office-tillegg.
+- Du vil at Saga skal være tilgjengelig for alle brukere som standard.
+- Du må distribuere tillegget til bestemte team eller sikkerhetsgrupper.
+- Du vil at brukerne skal få riktig Outlook-tillegg uten å dele installasjonsfiler manuelt.
+
+For individuelt oppsett, se [Brukeroppsett](/no/guides/integrations/outlook-add-in/user-setup).

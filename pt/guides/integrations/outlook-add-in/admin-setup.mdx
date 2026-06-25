@@ -1,0 +1,47 @@
+---
+title: Configuração de administrador
+---
+
+Se sua organização gerencia suplementos do Office centralmente, você pode implantar o suplemento Saga para Outlook aos usuários pelo Centro de administração do Microsoft 365. Isso torna o Saga disponível no Outlook sem exigir que cada usuário instale manualmente.
+
+## Implantar pelo Centro de administração do Microsoft 365
+
+1. Acesse o [Centro de administração do Microsoft 365](https://admin.microsoft.com).
+2. Navegue até **Configurações > Aplicativos integrados**.
+3. Clique em **Obter aplicativos** ou **Carregar aplicativos personalizados**.
+4. Se o Saga aparecer no AppSource para seu tenant, selecione-o ali.
+5. Se o Saga não aparecer, use o aplicativo personalizado ou o método de implantação por manifesto fornecido pelo Saga.
+6. Escolha os usuários ou grupos de destino.
+7. Confirme a implantação.
+
+Depois de implantado, o suplemento aparece no Outlook para os usuários selecionados. A implantação da Microsoft pode levar algumas horas e, em alguns tenants, até 24 horas.
+
+## Controle de acesso
+
+O suplemento Saga para Outlook usa o mesmo controle de acesso da plataforma web do Saga. Os usuários precisam ser convidados para o workspace correto do Saga antes de poderem entrar.
+
+Se um usuário consegue abrir o suplemento, mas não consegue entrar, confirme que:
+
+- Ele está usando a conta Microsoft corporativa correta.
+- Ele informou a instância Saga correta.
+- A conta Saga dele está licenciada e ativa.
+
+## Acesso de rede
+
+O suplemento é hospedado em `outlook.sagalegal.io` e autentica usuários pela Microsoft. Se sua organização restringe acesso de rede, permita acesso HTTPS a:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- O workspace Saga da sua organização, como `your-firm.sagalegal.io`
+
+## Quando usar implantação centralizada
+
+A implantação centralizada é útil quando:
+
+- Sua organização restringe a instalação individual de suplementos do Office.
+- Você quer que o Saga esteja disponível para todos os usuários por padrão.
+- Você precisa implantar o suplemento para equipes ou grupos de segurança específicos.
+- Você quer que os usuários recebam o suplemento correto do Outlook sem compartilhar arquivos de instalação manualmente.
+
+Para instruções de configuração individual, veja [Configuração do usuário](/pt/guides/integrations/outlook-add-in/user-setup).

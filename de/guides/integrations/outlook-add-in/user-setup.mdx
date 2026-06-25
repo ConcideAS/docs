@@ -1,0 +1,65 @@
+---
+title: Benutzereinrichtung
+---
+
+Die Installation des Saga Outlook-Add-ins hängt davon ab, wie Ihre Organisation Office-Add-ins verwaltet. Wenn Ihr Administrator es zentral bereitgestellt hat, ist es möglicherweise bereits in Outlook verfügbar. Wenn nicht, kann Ihr Administrator Ihnen die Installationsmethode nennen oder es für Ihr Team bereitstellen. Siehe [Admin-Einrichtung](/de/guides/integrations/outlook-add-in/admin-setup).
+
+## Add-in öffnen
+
+1. Öffnen Sie Outlook.
+2. Wählen Sie eine E-Mail-Nachricht aus oder öffnen Sie einen Entwurf.
+3. Klicken Sie im Outlook-Menüband oder im App-Menü auf **Saga**.
+4. Der Saga-Aufgabenbereich wird in Outlook geöffnet.
+
+<Note>
+Saga benötigt eine E-Mail-Nachricht oder einen Entwurf, um Kontext bereitzustellen. Wenn keine Nachricht ausgewählt ist, kann Outlook das Add-in anzeigen, aber Saga kann keine sinnvolle Unterhaltung starten.
+</Note>
+
+## Wenn Saga nicht sichtbar ist
+
+Wenn das Saga-Add-in in Outlook nicht angezeigt wird:
+
+1. Öffnen Sie **Apps** oder **Add-ins abrufen** in Outlook.
+2. Suchen Sie nach **Saga**.
+3. Wenn es angezeigt wird, klicken Sie auf **Hinzufügen**.
+4. Wenn es nicht angezeigt wird, wenden Sie sich an Ihren Administrator.
+
+Einige Organisationen beschränken die individuelle Installation von Office-Add-ins. In diesem Fall muss Ihr Administrator Saga zentral bereitstellen.
+
+## Anmeldung
+
+Wenn Sie das Add-in zum ersten Mal öffnen, geben Sie die Saga-Instanz Ihrer Organisation ein.
+
+Wenn Ihre Saga-URL beispielsweise `https://your-firm.sagalegal.io` lautet, geben Sie `your-firm` ein.
+
+Klicken Sie dann auf **Mit Microsoft anmelden** und verwenden Sie das Microsoft-Geschäftskonto, das zu diesem Saga-Arbeitsbereich eingeladen wurde. Sie müssen dies nur einmal tun.
+
+## Fehlerbehebung
+
+### Das Add-in erscheint nicht in Outlook
+
+- **Fragen Sie Ihren Administrator** — Auf verwalteten Geräten muss die IT-Abteilung möglicherweise Office-Add-ins von Drittanbietern zulassen oder Saga zentral bereitstellen.
+- **Prüfen Sie Ihr Outlook-Konto** — Stellen Sie sicher, dass Outlook mit dem Microsoft-Geschäftskonto angemeldet ist, das Sie mit Saga verwenden.
+- **Prüfen Sie Ihre Outlook-Version** — Veraltete Outlook-Versionen können Probleme beim Laden von Add-ins haben. Aktualisieren Sie Outlook und versuchen Sie es erneut.
+
+### Saga fordert mich auf, eine E-Mail auszuwählen
+
+Saga benötigt eine Outlook-E-Mail-Nachricht oder einen Entwurf, um Kontext bereitzustellen. Wählen Sie eine E-Mail aus und öffnen Sie das Add-in erneut.
+
+### Die Anmeldung schlägt fehl
+
+Prüfen Sie Folgendes:
+
+- Sie haben die richtige Saga-Instanz eingegeben.
+- Ihr Microsoft-Konto wurde zu diesem Saga-Arbeitsbereich eingeladen.
+- Sie verwenden Ihr Geschäftskonto, nicht ein persönliches Microsoft-Konto.
+
+Wenn Sie weiterhin blockiert sind, wenden Sie sich an Ihren Saga-Administrator oder den Saga-Support.
+
+### Der Add-in-Bereich ist leer
+
+1. Schließen Sie den Saga-Aufgabenbereich und öffnen Sie ihn erneut.
+2. Starten Sie Outlook neu.
+3. Wenn er weiterhin nicht geladen wird, leeren Sie den Office-Add-in-Cache gemäß der Microsoft-Anleitung für Ihre Plattform.
+
+Das Outlook-Add-in wird unter `outlook.sagalegal.io` gehostet. Wenn Ihre Organisation eine strenge Firewall oder einen Proxy verwendet, bitten Sie die IT, den Zugriff auf diese Domain zu erlauben.

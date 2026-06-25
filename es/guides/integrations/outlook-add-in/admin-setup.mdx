@@ -1,0 +1,47 @@
+---
+title: Configuración de administrador
+---
+
+Si tu organización gestiona los complementos de Office de forma centralizada, puedes desplegar el complemento de Saga para Outlook a los usuarios desde el Centro de administración de Microsoft 365. Esto hace que Saga esté disponible en Outlook sin que cada usuario tenga que instalarlo manualmente.
+
+## Desplegar desde el Centro de administración de Microsoft 365
+
+1. Ve al [Centro de administración de Microsoft 365](https://admin.microsoft.com).
+2. Navega a **Configuración > Aplicaciones integradas**.
+3. Haz clic en **Obtener aplicaciones** o **Cargar aplicaciones personalizadas**.
+4. Si Saga aparece en AppSource para tu tenant, selecciónalo allí.
+5. Si Saga no aparece, usa la aplicación personalizada o el método de despliegue con manifiesto proporcionado por Saga.
+6. Elige los usuarios o grupos de destino.
+7. Confirma el despliegue.
+
+Una vez desplegado, el complemento aparece en Outlook para los usuarios seleccionados. El despliegue de Microsoft puede tardar unas horas y, en algunos tenants, hasta 24 horas.
+
+## Control de acceso
+
+El complemento de Saga para Outlook usa el mismo control de acceso que la plataforma web de Saga. Los usuarios deben estar invitados al espacio de trabajo correcto de Saga antes de poder iniciar sesión.
+
+Si un usuario puede abrir el complemento pero no puede iniciar sesión, confirma que:
+
+- Usa la cuenta de trabajo de Microsoft correcta.
+- Introdujo la instancia de Saga correcta.
+- Su cuenta de Saga tiene licencia y está activa.
+
+## Acceso de red
+
+El complemento está alojado en `outlook.sagalegal.io` e inicia sesión a través de Microsoft. Si tu organización restringe el acceso de red, permite el acceso HTTPS a:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- El espacio de trabajo de Saga de tu organización, como `your-firm.sagalegal.io`
+
+## Cuándo usar el despliegue centralizado
+
+El despliegue centralizado es útil cuando:
+
+- Tu organización restringe la instalación individual de complementos de Office.
+- Quieres que Saga esté disponible para todos los usuarios de forma predeterminada.
+- Necesitas desplegar el complemento a equipos o grupos de seguridad específicos.
+- Quieres que los usuarios reciban el complemento correcto de Outlook sin compartir archivos de instalación manualmente.
+
+Para instrucciones de configuración individual, consulta [Configuración de usuario](/es/guides/integrations/outlook-add-in/user-setup).

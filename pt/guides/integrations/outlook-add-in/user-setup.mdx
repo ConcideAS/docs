@@ -1,0 +1,65 @@
+---
+title: Configuração do usuário
+---
+
+A instalação do suplemento Saga para Outlook depende de como sua organização gerencia suplementos do Office. Se o administrador o implantou centralmente, ele pode já estar disponível no Outlook. Caso contrário, o administrador pode fornecer o método de instalação ou implantá-lo para sua equipe. Veja [Configuração de administrador](/pt/guides/integrations/outlook-add-in/admin-setup).
+
+## Abrir o suplemento
+
+1. Abra o Outlook.
+2. Selecione uma mensagem de email ou abra um rascunho.
+3. Clique em **Saga** na faixa de opções do Outlook ou no menu de aplicativos.
+4. O painel de tarefas do Saga é aberto dentro do Outlook.
+
+<Note>
+O Saga precisa de uma mensagem de email ou rascunho para fornecer contexto. Se nenhuma mensagem estiver selecionada, o Outlook pode mostrar o suplemento, mas o Saga não consegue iniciar uma conversa útil.
+</Note>
+
+## Se o Saga não estiver visível
+
+Se o suplemento Saga não aparecer no Outlook:
+
+1. Abra **Aplicativos** ou **Obter suplementos** no Outlook.
+2. Pesquise por **Saga**.
+3. Se ele aparecer, clique em **Adicionar**.
+4. Se não aparecer, entre em contato com seu administrador.
+
+Algumas organizações restringem a instalação individual de suplementos do Office. Nesse caso, seu administrador precisa implantar o Saga centralmente.
+
+## Entrar
+
+Ao abrir o suplemento pela primeira vez, informe a instância Saga da sua organização.
+
+Por exemplo, se a URL do Saga for `https://your-firm.sagalegal.io`, informe `your-firm`.
+
+Depois clique em **Entrar com Microsoft** e use a conta Microsoft corporativa convidada para esse workspace do Saga. Você só precisa fazer isso uma vez.
+
+## Solução de problemas
+
+### O suplemento não aparece no Outlook
+
+- **Verifique com seu administrador** — Em dispositivos gerenciados, a equipe de TI pode precisar permitir suplementos do Office de terceiros ou implantar o Saga centralmente.
+- **Verifique sua conta do Outlook** — Confirme que o Outlook está conectado com a conta Microsoft corporativa que você usa com o Saga.
+- **Verifique sua versão do Outlook** — Versões desatualizadas do Outlook podem ter problemas para carregar suplementos. Atualize o Outlook e tente novamente.
+
+### O Saga pede para eu selecionar um email
+
+O Saga precisa de uma mensagem de email ou rascunho do Outlook para fornecer contexto. Selecione um email e abra o suplemento novamente.
+
+### A entrada falha
+
+Confirme que:
+
+- Você informou a instância Saga correta.
+- Sua conta Microsoft foi convidada para esse workspace do Saga.
+- Você está usando sua conta corporativa, não uma conta Microsoft pessoal.
+
+Se ainda estiver bloqueado, entre em contato com o administrador do Saga ou com o suporte do Saga.
+
+### O painel do suplemento está em branco
+
+1. Feche o painel de tarefas do Saga e abra-o novamente.
+2. Reinicie o Outlook.
+3. Se ainda não carregar, limpe o cache de suplementos do Office seguindo a orientação da Microsoft para sua plataforma.
+
+O suplemento do Outlook é hospedado em `outlook.sagalegal.io`. Se sua organização usa firewall ou proxy restritivo, peça à TI para permitir acesso a esse domínio.

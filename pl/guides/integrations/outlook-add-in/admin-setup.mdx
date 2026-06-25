@@ -1,0 +1,47 @@
+---
+title: Konfiguracja administratora
+---
+
+Jeśli organizacja zarządza dodatkami Office centralnie, możesz wdrożyć dodatek Saga Outlook dla użytkowników przez Centrum administracyjne Microsoft 365. Dzięki temu Saga będzie dostępna w Outlooku bez ręcznej instalacji przez każdego użytkownika.
+
+## Wdrożenie przez Centrum administracyjne Microsoft 365
+
+1. Przejdź do [Centrum administracyjnego Microsoft 365](https://admin.microsoft.com).
+2. Przejdź do **Ustawienia > Zintegrowane aplikacje**.
+3. Kliknij **Pobierz aplikacje** lub **Przekaż aplikacje niestandardowe**.
+4. Jeśli Saga pojawi się w AppSource dla Twojego tenanta, wybierz ją tam.
+5. Jeśli Saga się nie pojawi, użyj aplikacji niestandardowej albo metody wdrożenia manifestu przekazanej przez Saga.
+6. Wybierz docelowych użytkowników lub grupy.
+7. Potwierdź wdrożenie.
+
+Po wdrożeniu dodatek pojawi się w Outlooku dla wybranych użytkowników. Wdrożenie po stronie Microsoft może potrwać kilka godzin, a w niektórych tenantach do 24 godzin.
+
+## Kontrola dostępu
+
+Dodatek Saga Outlook używa tej samej kontroli dostępu co platforma webowa Saga. Użytkownicy muszą być zaproszeni do właściwego obszaru roboczego Saga, zanim będą mogli się zalogować.
+
+Jeśli użytkownik może otworzyć dodatek, ale nie może się zalogować, sprawdź, czy:
+
+- Używa właściwego służbowego konta Microsoft.
+- Wpisał właściwą instancję Saga.
+- Jego konto Saga jest licencjonowane i aktywne.
+
+## Dostęp sieciowy
+
+Dodatek jest hostowany pod adresem `outlook.sagalegal.io` i loguje użytkowników przez Microsoft. Jeśli organizacja ogranicza dostęp sieciowy, zezwól na dostęp HTTPS do:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Obszaru roboczego Saga organizacji, na przykład `your-firm.sagalegal.io`
+
+## Kiedy używać centralnego wdrożenia
+
+Centralne wdrożenie jest przydatne, gdy:
+
+- Organizacja ogranicza samodzielną instalację dodatków Office.
+- Chcesz, aby Saga była domyślnie dostępna dla wszystkich użytkowników.
+- Musisz wdrożyć dodatek dla konkretnych zespołów lub grup zabezpieczeń.
+- Chcesz, aby użytkownicy otrzymali właściwy dodatek Outlook bez ręcznego udostępniania plików instalacyjnych.
+
+Instrukcje dla pojedynczych użytkowników znajdziesz w [Konfiguracji użytkownika](/pl/guides/integrations/outlook-add-in/user-setup).
