@@ -118,7 +118,9 @@
               {
                 "group": "Outlook add-in",
                 "pages": [
-                  "guides/integrations/outlook-add-in"
+                  "guides/integrations/outlook-add-in",
+                  "guides/integrations/outlook-add-in/user-setup",
+                  "guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -233,7 +235,9 @@
               {
                 "group": "Outlook-tillegg",
                 "pages": [
-                  "no/guides/integrations/outlook-add-in"
+                  "no/guides/integrations/outlook-add-in",
+                  "no/guides/integrations/outlook-add-in/user-setup",
+                  "no/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -346,7 +350,9 @@
               {
                 "group": "Outlook-invoegtoepassing",
                 "pages": [
-                  "nl/guides/integrations/outlook-add-in"
+                  "nl/guides/integrations/outlook-add-in",
+                  "nl/guides/integrations/outlook-add-in/user-setup",
+                  "nl/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -459,7 +465,9 @@
               {
                 "group": "Dodatek Outlook",
                 "pages": [
-                  "pl/guides/integrations/outlook-add-in"
+                  "pl/guides/integrations/outlook-add-in",
+                  "pl/guides/integrations/outlook-add-in/user-setup",
+                  "pl/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -572,7 +580,9 @@
               {
                 "group": "Complemento de Outlook",
                 "pages": [
-                  "es/guides/integrations/outlook-add-in"
+                  "es/guides/integrations/outlook-add-in",
+                  "es/guides/integrations/outlook-add-in/user-setup",
+                  "es/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -685,7 +695,9 @@
               {
                 "group": "Outlook-Add-in",
                 "pages": [
-                  "de/guides/integrations/outlook-add-in"
+                  "de/guides/integrations/outlook-add-in",
+                  "de/guides/integrations/outlook-add-in/user-setup",
+                  "de/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -798,7 +810,9 @@
               {
                 "group": "Componente aggiuntivo Outlook",
                 "pages": [
-                  "it/guides/integrations/outlook-add-in"
+                  "it/guides/integrations/outlook-add-in",
+                  "it/guides/integrations/outlook-add-in/user-setup",
+                  "it/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -911,7 +925,9 @@
               {
                 "group": "Suplemento do Outlook",
                 "pages": [
-                  "pt/guides/integrations/outlook-add-in"
+                  "pt/guides/integrations/outlook-add-in",
+                  "pt/guides/integrations/outlook-add-in/user-setup",
+                  "pt/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -1024,7 +1040,9 @@
               {
                 "group": "Outlook eklentisi",
                 "pages": [
-                  "tr/guides/integrations/outlook-add-in"
+                  "tr/guides/integrations/outlook-add-in",
+                  "tr/guides/integrations/outlook-add-in/user-setup",
+                  "tr/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -1137,7 +1155,9 @@
               {
                 "group": "Complément Outlook",
                 "pages": [
-                  "fr/guides/integrations/outlook-add-in"
+                  "fr/guides/integrations/outlook-add-in",
+                  "fr/guides/integrations/outlook-add-in/user-setup",
+                  "fr/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {
@@ -1250,7 +1270,9 @@
               {
                 "group": "Outlook-tillägg",
                 "pages": [
-                  "sv/guides/integrations/outlook-add-in"
+                  "sv/guides/integrations/outlook-add-in",
+                  "sv/guides/integrations/outlook-add-in/user-setup",
+                  "sv/guides/integrations/outlook-add-in/admin-setup"
                 ]
               },
               {

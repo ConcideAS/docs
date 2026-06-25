@@ -1,0 +1,47 @@
+---
+title: Administratörsinställning
+---
+
+Om din organisation hanterar Office-tillägg centralt kan du distribuera Saga Outlook-tillägget till användare via Microsoft 365 Admin Center. Det gör Saga tillgängligt i Outlook utan att varje användare behöver installera det manuellt.
+
+## Distribuera via Microsoft 365 Admin Center
+
+1. Gå till [Microsoft 365 Admin Center](https://admin.microsoft.com).
+2. Navigera till **Inställningar > Integrerade appar**.
+3. Klicka på **Hämta appar** eller **Ladda upp anpassade appar**.
+4. Om Saga visas i AppSource för din tenant väljer du det där.
+5. Om Saga inte visas använder du den anpassade appen eller manifestmetoden som Saga har tillhandahållit.
+6. Välj mål användare eller grupper.
+7. Bekräfta distributionen.
+
+När tillägget har distribuerats visas det i Outlook för de valda användarna. Microsofts distribution kan ta några timmar och i vissa tenant-er upp till 24 timmar.
+
+## Åtkomstkontroll
+
+Saga Outlook-tillägget använder samma åtkomstkontroll som Sagas webbplattform. Användare måste vara inbjudna till rätt Saga-arbetsyta innan de kan logga in.
+
+Om en användare kan öppna tillägget men inte logga in, kontrollera att:
+
+- Användaren använder rätt Microsoft-arbetskonto.
+- Användaren angav rätt Saga-instans.
+- Användarens Saga-konto är licensierat och aktivt.
+
+## Nätverksåtkomst
+
+Tillägget finns på `outlook.sagalegal.io` och loggar in användare via Microsoft. Om din organisation begränsar nätverksåtkomst, tillåt HTTPS-åtkomst till:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Organisationens Saga-arbetsyta, till exempel `your-firm.sagalegal.io`
+
+## När central distribution ska användas
+
+Central distribution är användbart när:
+
+- Din organisation begränsar individuell installation av Office-tillägg.
+- Du vill att Saga ska vara tillgängligt för alla användare som standard.
+- Du behöver distribuera tillägget till specifika team eller säkerhetsgrupper.
+- Du vill att användare ska få rätt Outlook-tillägg utan att installationsfiler delas manuellt.
+
+För individuella installationsinstruktioner, se [Användarinställning](/sv/guides/integrations/outlook-add-in/user-setup).

@@ -1,0 +1,47 @@
+---
+title: Configuration administrateur
+---
+
+Si votre organisation gère les compléments Office de manière centralisée, vous pouvez déployer le complément Saga Outlook auprès des utilisateurs via le Centre d'administration Microsoft 365. Saga devient ainsi disponible dans Outlook sans installation manuelle par chaque utilisateur.
+
+## Déployer via le Centre d'administration Microsoft 365
+
+1. Accédez au [Centre d'administration Microsoft 365](https://admin.microsoft.com).
+2. Allez dans **Paramètres > Applications intégrées**.
+3. Cliquez sur **Obtenir des applications** ou **Charger des applications personnalisées**.
+4. Si Saga apparaît dans AppSource pour votre tenant, sélectionnez-le à cet endroit.
+5. Si Saga n'apparaît pas, utilisez l'application personnalisée ou la méthode de déploiement par manifeste fournie par Saga.
+6. Choisissez les utilisateurs ou groupes cibles.
+7. Confirmez le déploiement.
+
+Une fois déployé, le complément apparaît dans Outlook pour les utilisateurs sélectionnés. Le déploiement Microsoft peut prendre quelques heures, et jusqu'à 24 heures dans certains tenants.
+
+## Contrôle d'accès
+
+Le complément Saga Outlook utilise le même contrôle d'accès que la plateforme web Saga. Les utilisateurs doivent être invités dans le bon espace de travail Saga avant de pouvoir se connecter.
+
+Si un utilisateur peut ouvrir le complément mais ne peut pas se connecter, vérifiez que :
+
+- Il utilise le bon compte professionnel Microsoft.
+- Il a saisi la bonne instance Saga.
+- Son compte Saga est licencié et actif.
+
+## Accès réseau
+
+Le complément est hébergé sur `outlook.sagalegal.io` et connecte les utilisateurs via Microsoft. Si votre organisation restreint l'accès réseau, autorisez l'accès HTTPS à :
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- L'espace de travail Saga de votre organisation, par exemple `your-firm.sagalegal.io`
+
+## Quand utiliser le déploiement centralisé
+
+Le déploiement centralisé est utile lorsque :
+
+- Votre organisation limite l'installation individuelle des compléments Office.
+- Vous voulez que Saga soit disponible par défaut pour tous les utilisateurs.
+- Vous devez déployer le complément à des équipes ou groupes de sécurité spécifiques.
+- Vous voulez que les utilisateurs obtiennent le bon complément Outlook sans partager manuellement des fichiers d'installation.
+
+Pour les instructions de configuration individuelle, voir [Configuration utilisateur](/fr/guides/integrations/outlook-add-in/user-setup).

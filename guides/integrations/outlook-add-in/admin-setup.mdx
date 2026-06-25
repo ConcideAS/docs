@@ -1,0 +1,47 @@
+---
+title: Admin setup
+---
+
+If your organization manages Office add-ins centrally, you can deploy the Saga Outlook add-in to users through the Microsoft 365 Admin Center. This makes Saga available in Outlook without requiring each user to install it manually.
+
+## Deploy via Microsoft 365 Admin Center
+
+1. Go to the [Microsoft 365 Admin Center](https://admin.microsoft.com).
+2. Navigate to **Settings > Integrated apps**.
+3. Click **Get apps** or **Upload custom apps**.
+4. If Saga appears in AppSource for your tenant, select it there.
+5. If Saga does not appear, use the custom app or manifest deployment method provided by Saga.
+6. Choose the target users or groups.
+7. Confirm the deployment.
+
+Once deployed, the add-in appears in Outlook for the selected users. Microsoft rollout can take a few hours, and in some tenants up to 24 hours.
+
+## Access control
+
+The Saga Outlook add-in uses the same access control as the Saga web platform. Users must be invited to the correct Saga workspace before they can sign in.
+
+If a user can open the add-in but cannot sign in, confirm that:
+
+- They are using the correct Microsoft work account.
+- They entered the correct Saga instance.
+- Their Saga account is licensed and active.
+
+## Network access
+
+The add-in is hosted at `outlook.sagalegal.io` and signs users in through Microsoft. If your organization restricts network access, allow HTTPS access to:
+
+- `outlook.sagalegal.io`
+- `login.microsoftonline.com`
+- `login.live.com`
+- Your organization's Saga workspace, such as `your-firm.sagalegal.io`
+
+## When to use central deployment
+
+Central deployment is useful when:
+
+- Your organization restricts individual installation of Office add-ins.
+- You want Saga available to all users by default.
+- You need to deploy the add-in to specific teams or security groups.
+- You want users to get the correct Outlook add-in without sharing installation files manually.
+
+For individual setup instructions, see [User setup](/guides/integrations/outlook-add-in/user-setup).

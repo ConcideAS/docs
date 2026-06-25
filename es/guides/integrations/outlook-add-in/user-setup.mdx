@@ -1,0 +1,65 @@
+---
+title: Configuración de usuario
+---
+
+La instalación del complemento de Saga para Outlook depende de cómo tu organización gestione los complementos de Office. Si tu administrador lo desplegó de forma centralizada, puede que ya esté disponible en Outlook. Si no, tu administrador puede darte el método de instalación o desplegarlo para tu equipo. Consulta [Configuración de administrador](/es/guides/integrations/outlook-add-in/admin-setup).
+
+## Abrir el complemento
+
+1. Abre Outlook.
+2. Selecciona un correo electrónico o abre un borrador.
+3. Haz clic en **Saga** desde la cinta de Outlook o el menú de aplicaciones.
+4. El panel de tareas de Saga se abre dentro de Outlook.
+
+<Note>
+Saga necesita un correo electrónico o un borrador para proporcionar contexto. Si no hay ningún mensaje seleccionado, Outlook puede mostrar el complemento, pero Saga no puede iniciar una conversación útil.
+</Note>
+
+## Si Saga no está visible
+
+Si el complemento de Saga no aparece en Outlook:
+
+1. Abre **Aplicaciones** u **Obtener complementos** desde Outlook.
+2. Busca **Saga**.
+3. Si aparece, haz clic en **Agregar**.
+4. Si no aparece, contacta con tu administrador.
+
+Algunas organizaciones restringen la instalación individual de complementos de Office. En ese caso, tu administrador debe desplegar Saga de forma centralizada.
+
+## Inicio de sesión
+
+Cuando abras el complemento por primera vez, introduce la instancia de Saga de tu organización.
+
+Por ejemplo, si tu URL de Saga es `https://your-firm.sagalegal.io`, introduce `your-firm`.
+
+Después haz clic en **Iniciar sesión con Microsoft** y usa la cuenta de trabajo de Microsoft invitada a ese espacio de trabajo de Saga. Solo tienes que hacerlo una vez.
+
+## Solución de problemas
+
+### El complemento no aparece en Outlook
+
+- **Consulta con tu administrador** — En dispositivos gestionados, el departamento de TI puede tener que permitir complementos de Office de terceros o desplegar Saga de forma centralizada.
+- **Comprueba tu cuenta de Outlook** — Asegúrate de que Outlook ha iniciado sesión con la cuenta de trabajo de Microsoft que usas con Saga.
+- **Comprueba tu versión de Outlook** — Las versiones antiguas de Outlook pueden tener problemas al cargar complementos. Actualiza Outlook e inténtalo de nuevo.
+
+### Saga me pide seleccionar un correo
+
+Saga necesita un correo electrónico o borrador de Outlook para proporcionar contexto. Selecciona un correo y vuelve a abrir el complemento.
+
+### El inicio de sesión falla
+
+Confirma que:
+
+- Introdujiste la instancia de Saga correcta.
+- Tu cuenta de Microsoft está invitada a ese espacio de trabajo de Saga.
+- Estás usando tu cuenta de trabajo, no una cuenta personal de Microsoft.
+
+Si sigues bloqueado, contacta con tu administrador de Saga o con soporte de Saga.
+
+### El panel del complemento está en blanco
+
+1. Cierra el panel de tareas de Saga y vuelve a abrirlo.
+2. Reinicia Outlook.
+3. Si sigue sin cargarse, borra la caché de complementos de Office siguiendo la guía de Microsoft para tu plataforma.
+
+El complemento de Outlook está alojado en `outlook.sagalegal.io`. Si tu organización usa un firewall o proxy estricto, pide a TI que permita el acceso a ese dominio.

@@ -1,0 +1,65 @@
+---
+title: Gebruikersinstallatie
+---
+
+De installatie van de Saga Outlook-invoegtoepassing hangt af van hoe je organisatie Office-invoegtoepassingen beheert. Als je beheerder deze centraal heeft geïmplementeerd, is deze mogelijk al beschikbaar in Outlook. Zo niet, dan kan je beheerder de installatiemethode geven of de invoegtoepassing voor je team implementeren. Zie [Beheerdersinstallatie](/nl/guides/integrations/outlook-add-in/admin-setup).
+
+## De invoegtoepassing openen
+
+1. Open Outlook.
+2. Selecteer een e-mailbericht of open een concept.
+3. Klik op **Saga** in het Outlook-lint of het appmenu.
+4. Het Saga-taakvenster wordt geopend in Outlook.
+
+<Note>
+Saga heeft een e-mailbericht of concept nodig om context te bieden. Als er geen bericht is geselecteerd, kan Outlook de invoegtoepassing tonen, maar kan Saga geen nuttig gesprek starten.
+</Note>
+
+## Als Saga niet zichtbaar is
+
+Als de Saga-invoegtoepassing niet in Outlook verschijnt:
+
+1. Open **Apps** of **Invoegtoepassingen ophalen** in Outlook.
+2. Zoek naar **Saga**.
+3. Als deze verschijnt, klik je op **Toevoegen**.
+4. Als deze niet verschijnt, neem je contact op met je beheerder.
+
+Sommige organisaties beperken individuele installatie van Office-invoegtoepassingen. In dat geval moet je beheerder Saga centraal implementeren.
+
+## Aanmelden
+
+Wanneer je de invoegtoepassing voor het eerst opent, voer je de Saga-instantie van je organisatie in.
+
+Als je Saga-URL bijvoorbeeld `https://your-firm.sagalegal.io` is, voer je `your-firm` in.
+
+Klik daarna op **Aanmelden met Microsoft** en gebruik het Microsoft-werkaccount dat is uitgenodigd voor die Saga-werkruimte. Je hoeft dit maar één keer te doen.
+
+## Problemen oplossen
+
+### De invoegtoepassing verschijnt niet in Outlook
+
+- **Vraag je beheerder** — Op beheerde apparaten moet IT mogelijk Office-invoegtoepassingen van derden toestaan of Saga centraal implementeren.
+- **Controleer je Outlook-account** — Zorg dat Outlook is aangemeld met het Microsoft-werkaccount dat je met Saga gebruikt.
+- **Controleer je Outlook-versie** — Verouderde Outlook-versies kunnen problemen hebben met het laden van invoegtoepassingen. Werk Outlook bij en probeer het opnieuw.
+
+### Saga vraagt mij een e-mail te selecteren
+
+Saga heeft een Outlook-e-mailbericht of concept nodig om context te bieden. Selecteer een e-mail en open de invoegtoepassing opnieuw.
+
+### Aanmelden mislukt
+
+Controleer het volgende:
+
+- Je hebt de juiste Saga-instantie ingevoerd.
+- Je Microsoft-account is uitgenodigd voor die Saga-werkruimte.
+- Je gebruikt je werkaccount, niet een persoonlijk Microsoft-account.
+
+Als je nog steeds vastloopt, neem dan contact op met je Saga-beheerder of Saga Support.
+
+### Het invoegtoepassingsvenster is leeg
+
+1. Sluit het Saga-taakvenster en open het opnieuw.
+2. Start Outlook opnieuw.
+3. Als het nog steeds niet laadt, wis dan de cache van Office-invoegtoepassingen volgens de Microsoft-instructies voor je platform.
+
+De Outlook-invoegtoepassing wordt gehost op `outlook.sagalegal.io`. Als je organisatie een strikte firewall of proxy gebruikt, vraag IT dan om toegang tot dit domein toe te staan.

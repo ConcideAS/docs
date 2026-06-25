@@ -1,0 +1,65 @@
+---
+title: Configuration utilisateur
+---
+
+L'installation du complément Saga Outlook dépend de la manière dont votre organisation gère les compléments Office. Si votre administrateur l'a déployé de manière centralisée, il peut déjà être disponible dans Outlook. Sinon, votre administrateur peut vous fournir la méthode d'installation ou le déployer pour votre équipe. Voir [Configuration administrateur](/fr/guides/integrations/outlook-add-in/admin-setup).
+
+## Ouvrir le complément
+
+1. Ouvrez Outlook.
+2. Sélectionnez un email ou ouvrez un brouillon.
+3. Cliquez sur **Saga** dans le ruban Outlook ou le menu des applications.
+4. Le volet des tâches Saga s'ouvre dans Outlook.
+
+<Note>
+Saga a besoin d'un email ou d'un brouillon pour fournir du contexte. Si aucun message n'est sélectionné, Outlook peut afficher le complément, mais Saga ne peut pas démarrer une conversation utile.
+</Note>
+
+## Si Saga n'est pas visible
+
+Si le complément Saga n'apparaît pas dans Outlook :
+
+1. Ouvrez **Applications** ou **Obtenir des compléments** dans Outlook.
+2. Recherchez **Saga**.
+3. S'il apparaît, cliquez sur **Ajouter**.
+4. S'il n'apparaît pas, contactez votre administrateur.
+
+Certaines organisations limitent l'installation individuelle des compléments Office. Dans ce cas, votre administrateur doit déployer Saga de manière centralisée.
+
+## Connexion
+
+Lorsque vous ouvrez le complément pour la première fois, saisissez l'instance Saga de votre organisation.
+
+Par exemple, si votre URL Saga est `https://your-firm.sagalegal.io`, saisissez `your-firm`.
+
+Cliquez ensuite sur **Se connecter avec Microsoft** et utilisez le compte professionnel Microsoft invité dans cet espace de travail Saga. Vous n'avez besoin de le faire qu'une fois.
+
+## Dépannage
+
+### Le complément n'apparaît pas dans Outlook
+
+- **Vérifiez auprès de votre administrateur** — Sur les appareils gérés, le service informatique peut devoir autoriser les compléments Office tiers ou déployer Saga de manière centralisée.
+- **Vérifiez votre compte Outlook** — Assurez-vous qu'Outlook est connecté avec le compte professionnel Microsoft que vous utilisez avec Saga.
+- **Vérifiez votre version d'Outlook** — Les versions obsolètes d'Outlook peuvent avoir des problèmes de chargement des compléments. Mettez Outlook à jour et réessayez.
+
+### Saga me demande de sélectionner un email
+
+Saga a besoin d'un email Outlook ou d'un brouillon pour fournir du contexte. Sélectionnez un email, puis rouvrez le complément.
+
+### La connexion échoue
+
+Vérifiez que :
+
+- Vous avez saisi la bonne instance Saga.
+- Votre compte Microsoft a été invité dans cet espace de travail Saga.
+- Vous utilisez votre compte professionnel, et non un compte Microsoft personnel.
+
+Si vous êtes toujours bloqué, contactez votre administrateur Saga ou le support Saga.
+
+### Le volet du complément est vide
+
+1. Fermez le volet des tâches Saga et rouvrez-le.
+2. Redémarrez Outlook.
+3. S'il ne se charge toujours pas, videz le cache des compléments Office en suivant les instructions Microsoft pour votre plateforme.
+
+Le complément Outlook est hébergé sur `outlook.sagalegal.io`. Si votre organisation utilise un pare-feu ou un proxy strict, demandez au service informatique d'autoriser l'accès à ce domaine.

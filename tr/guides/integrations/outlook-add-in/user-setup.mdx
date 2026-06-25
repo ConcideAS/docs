@@ -1,0 +1,65 @@
+---
+title: Kullanıcı kurulumu
+---
+
+Saga Outlook eklentisinin kurulumu, kuruluşunuzun Office eklentilerini nasıl yönettiğine bağlıdır. Yöneticiniz merkezi olarak dağıttıysa Outlook'ta zaten kullanılabilir olabilir. Değilse yöneticiniz kurulum yöntemini sağlayabilir veya ekibiniz için dağıtabilir. Bkz. [Yönetici kurulumu](/tr/guides/integrations/outlook-add-in/admin-setup).
+
+## Eklentiyi açma
+
+1. Outlook'u açın.
+2. Bir e-posta iletisi seçin veya bir taslak açın.
+3. Outlook şeridinden veya uygulamalar menüsünden **Saga**'ya tıklayın.
+4. Saga görev bölmesi Outlook içinde açılır.
+
+<Note>
+Saga'nın bağlam sağlayabilmesi için bir e-posta iletisine veya taslağa ihtiyacı vardır. Hiçbir ileti seçilmemişse Outlook eklentiyi gösterebilir, ancak Saga faydalı bir sohbet başlatamaz.
+</Note>
+
+## Saga görünmüyorsa
+
+Saga eklentisi Outlook'ta görünmüyorsa:
+
+1. Outlook'tan **Uygulamalar** veya **Eklentileri al** bölümünü açın.
+2. **Saga** araması yapın.
+3. Görünürse **Ekle**'ye tıklayın.
+4. Görünmezse yöneticinizle iletişime geçin.
+
+Bazı kuruluşlar Office eklentilerinin bireysel kurulumunu kısıtlar. Bu durumda yöneticinizin Saga'yı merkezi olarak dağıtması gerekir.
+
+## Oturum açma
+
+Eklentiyi ilk kez açtığınızda kuruluşunuzun Saga örneğini girin.
+
+Örneğin Saga URL'niz `https://your-firm.sagalegal.io` ise `your-firm` girin.
+
+Ardından **Microsoft ile oturum aç**'a tıklayın ve bu Saga çalışma alanına davet edilen Microsoft iş hesabını kullanın. Bunu yalnızca bir kez yapmanız gerekir.
+
+## Sorun giderme
+
+### Eklenti Outlook'ta görünmüyor
+
+- **Yöneticinizle kontrol edin** — Yönetilen cihazlarda BT ekibinin üçüncü taraf Office eklentilerine izin vermesi veya Saga'yı merkezi olarak dağıtması gerekebilir.
+- **Outlook hesabınızı kontrol edin** — Outlook'un Saga ile kullandığınız Microsoft iş hesabıyla oturum açtığından emin olun.
+- **Outlook sürümünüzü kontrol edin** — Eski Outlook sürümleri eklentileri yüklerken sorun yaşayabilir. Outlook'u güncelleyin ve tekrar deneyin.
+
+### Saga benden bir e-posta seçmemi istiyor
+
+Saga'nın bağlam sağlayabilmesi için bir Outlook e-posta iletisine veya taslağa ihtiyacı vardır. Bir e-posta seçin ve eklentiyi tekrar açın.
+
+### Oturum açma başarısız oluyor
+
+Şunları doğrulayın:
+
+- Doğru Saga örneğini girdiniz.
+- Microsoft hesabınız bu Saga çalışma alanına davet edildi.
+- Kişisel Microsoft hesabı değil, iş hesabınızı kullanıyorsunuz.
+
+Hâlâ engelleniyorsanız Saga yöneticinizle veya Saga destek ekibiyle iletişime geçin.
+
+### Eklenti bölmesi boş
+
+1. Saga görev bölmesini kapatıp tekrar açın.
+2. Outlook'u yeniden başlatın.
+3. Hâlâ yüklenmiyorsa platformunuz için Microsoft yönergelerini izleyerek Office eklenti önbelleğini temizleyin.
+
+Outlook eklentisi `outlook.sagalegal.io` adresinde barındırılır. Kuruluşunuz sıkı bir güvenlik duvarı veya proxy kullanıyorsa BT'den bu etki alanına erişime izin vermesini isteyin.
