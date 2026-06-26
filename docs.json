@@ -138,6 +138,7 @@
             "group": "Administration",
             "pages": [
               "guides/administration/admin-panel",
+              "guides/administration/document-styling",
               "guides/administration/solo",
               "guides/administration/enterprise"
             ]
