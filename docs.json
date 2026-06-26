@@ -256,6 +256,7 @@
             "group": "Administrasjon",
             "pages": [
               "no/guides/administration/admin-panel",
+              "no/guides/administration/document-styling",
               "no/guides/administration/solo",
               "no/guides/administration/enterprise"
             ]
@@ -371,6 +372,7 @@
             "group": "Beheer",
             "pages": [
               "nl/guides/administration/admin-panel",
+              "nl/guides/administration/document-styling",
               "nl/guides/administration/solo",
               "nl/guides/administration/enterprise"
             ]
@@ -486,6 +488,7 @@
             "group": "Administracja",
             "pages": [
               "pl/guides/administration/admin-panel",
+              "pl/guides/administration/document-styling",
               "pl/guides/administration/solo",
               "pl/guides/administration/enterprise"
             ]
@@ -601,6 +604,7 @@
             "group": "Administración",
             "pages": [
               "es/guides/administration/admin-panel",
+              "es/guides/administration/document-styling",
               "es/guides/administration/solo",
               "es/guides/administration/enterprise"
             ]
@@ -716,6 +720,7 @@
             "group": "Administration",
             "pages": [
               "de/guides/administration/admin-panel",
+              "de/guides/administration/document-styling",
               "de/guides/administration/solo",
               "de/guides/administration/enterprise"
             ]
@@ -831,6 +836,7 @@
             "group": "Amministrazione",
             "pages": [
               "it/guides/administration/admin-panel",
+              "it/guides/administration/document-styling",
               "it/guides/administration/solo",
               "it/guides/administration/enterprise"
             ]
@@ -946,6 +952,7 @@
             "group": "Administração",
             "pages": [
               "pt/guides/administration/admin-panel",
+              "pt/guides/administration/document-styling",
               "pt/guides/administration/solo",
               "pt/guides/administration/enterprise"
             ]
@@ -1061,6 +1068,7 @@
             "group": "Yönetim",
             "pages": [
               "tr/guides/administration/admin-panel",
+              "tr/guides/administration/document-styling",
               "tr/guides/administration/solo",
               "tr/guides/administration/enterprise"
             ]
@@ -1176,6 +1184,7 @@
             "group": "Administration",
             "pages": [
               "fr/guides/administration/admin-panel",
+              "fr/guides/administration/document-styling",
               "fr/guides/administration/solo",
               "fr/guides/administration/enterprise"
             ]
@@ -1291,6 +1300,7 @@
             "group": "Administration",
             "pages": [
               "sv/guides/administration/admin-panel",
+              "sv/guides/administration/document-styling",
               "sv/guides/administration/solo",
               "sv/guides/administration/enterprise"
             ]
@@ -1313,12 +1323,12 @@
         "label": "Support",
         "href": "mailto:support@sagalegal.io"
       }
-    ] 
+    ]
   },
   "contextual": {
     "options": [
-     "copy"
-   ]
+      "copy"
+    ]
   },
   "footer": {
     "socials": {
