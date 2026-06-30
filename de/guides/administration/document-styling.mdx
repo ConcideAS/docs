@@ -1,0 +1,50 @@
+---
+title: Dokumentstil
+description: Konfigurieren Sie, wie von Saga generierte Word-Exporte dem Dokumentstil Ihrer Kanzlei folgen.
+---
+
+Dokumentstil ist eine Admin-Einstellung für von Saga generierte Word-Exporte. Nutzen Sie sie, wenn Ihre Kanzlei möchte, dass Entwürfe, Zusammenfassungen, Memos oder andere KI-generierte Dokumente dieselben Schriftarten, dasselbe Seitenlayout, Kopf- und Fußzeilen sowie dieselbe Seitennummerierung verwenden.
+
+Nur Administratoren können den Dokumentstil konfigurieren. Benutzer sehen das Ergebnis, wenn sie generierte Inhalte exportieren, nachdem die Einstellungen gespeichert wurden.
+
+## Was der Dokumentstil steuert
+
+Der Dokumentstil kann Folgendes steuern:
+
+- Schriftart, Größe, Farbe und Zeilenabstand des Fließtexts
+- Schriftarten, Größen, Farben und Gewichtung von Überschriften
+- Seitengröße, Ausrichtung, Ränder, Einzüge und Abstände
+- Text in Kopf- und Fußzeile
+- Platzierung und Ausrichtung von Seitenzahlen
+- Logos in Kopf- und Fußzeile
+
+Diese Einstellungen gelten für neue Exporte. Sie ändern keine bereits heruntergeladenen Dateien und keine Dokumente, die Benutzer in ein Projekt oder eine Wissensdatenbank hochladen.
+
+## Unterstützte Dokumenttypen
+
+Dokumentstil unterstützt derzeit Word-Referenzdokumente. Unterstützung für PowerPoint und Excel ist in Vorbereitung.
+
+| Dokumenttyp | Status | Hinweise |
+| --- | --- | --- |
+| Word-Dokumente `.docx` | Unterstützt | Verwenden Sie derzeit ein Word-Dokument als Referenzdatei. |
+| PowerPoint-Dateien `.pptx` | In Vorbereitung | Unterstützung ist für zukünftige Dokumentstil-Updates geplant. |
+| Excel-Arbeitsmappen `.xlsx` | In Vorbereitung | Unterstützung ist für zukünftige Dokumentstil-Updates geplant. |
+
+## Referenzdokument hochladen
+
+Verwenden Sie ein Referenzdokument, wenn Sie bereits eine Word-Datei haben, die den Stil Ihrer Kanzlei darstellt.
+
+1. Öffnen Sie den **Admin-Bereich**.
+2. Gehen Sie zu **Dokumentstil**.
+3. Laden Sie ein `.docx`-Referenzdokument hoch.
+4. Prüfen Sie den extrahierten Stil in der Vorschau.
+5. Passen Sie bei Bedarf Felder manuell an.
+6. Klicken Sie auf **Änderungen speichern**.
+
+<Tip>
+Verwenden Sie ein sauberes Referenzdokument mit den Stilen, die Saga übernehmen soll. Vermeiden Sie Dokumente mit nachverfolgten Änderungen, uneinheitlichen Überschriften oder ungewöhnlicher Einzelformatierung.
+</Tip>
+
+## Stil anpassen und testen
+
+Sie können den extrahierten Stil vor dem Speichern verfeinern oder den Stil manuell konfigurieren. Änderungen gelten für neue Exporte, nachdem Sie sie gespeichert haben. Exportieren Sie ein kurzes Testdokument aus dem Chat und prüfen Sie Fließtext, Überschriften, Ränder, Kopf- und Fußzeilen, Seitenzahlen und Logos in Word.

@@ -1,0 +1,50 @@
+---
+title: Dokumentstil
+description: Konfigurera hur Word-exporter som genereras av Saga följer byråns dokumentstil.
+---
+
+Dokumentstil är en admininställning för Word-exporter som genereras av Saga. Använd den när byrån vill att utkast, sammanfattningar, PM eller andra AI-genererade dokument ska följa samma typsnitt, sidlayout, sidhuvuden, sidfötter och sidnumrering.
+
+Endast admins kan konfigurera dokumentstil. Användare ser resultatet när de exporterar genererat innehåll efter att inställningarna har sparats.
+
+## Vad dokumentstil styr
+
+Dokumentstil kan styra:
+
+- Typsnitt, storlek, färg och radavstånd för brödtext
+- Typsnitt, storlekar, färger och vikt för rubriker
+- Sidstorlek, orientering, marginaler, indrag och avstånd
+- Text i sidhuvud och sidfot
+- Placering och justering av sidnummer
+- Logotyper i sidhuvud och sidfot
+
+Dessa inställningar gäller nya exporter. De ändrar inte filer som redan har laddats ned och de ändrar inte dokument som användare laddar upp till ett projekt eller en kunskapsbas.
+
+## Dokumenttyper som stöds
+
+Dokumentstil stöder för närvarande Word-referensdokument. Stöd för PowerPoint och Excel är på väg.
+
+| Dokumenttyp | Status | Anteckningar |
+| --- | --- | --- |
+| Word-dokument `.docx` | Stöds | Använd ett Word-dokument som referensfil i dag. |
+| PowerPoint-filer `.pptx` | På väg | Stöd är planerat för framtida uppdateringar av dokumentstil. |
+| Excel-arbetsböcker `.xlsx` | På väg | Stöd är planerat för framtida uppdateringar av dokumentstil. |
+
+## Ladda upp ett referensdokument
+
+Använd ett referensdokument när du redan har en Word-fil som representerar byråns stil.
+
+1. Öppna **Adminpanel**.
+2. Gå till **Dokumentstil**.
+3. Ladda upp ett `.docx`-referensdokument.
+4. Granska den extraherade stilen i förhandsvisningen.
+5. Justera fält manuellt vid behov.
+6. Klicka på **Spara ändringar**.
+
+<Tip>
+Använd ett rent referensdokument med de stilar du vill att Saga ska kopiera. Undvik dokument med spårade ändringar, inkonsekventa rubriker eller ovanlig engångsformatering.
+</Tip>
+
+## Justera och testa stilen
+
+Du kan finjustera den extraherade stilen innan du sparar eller konfigurera stilen manuellt. Ändringar gäller nya exporter efter att du sparar dem. Exportera ett kort testdokument från chatten och granska brödtext, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper i Word.
