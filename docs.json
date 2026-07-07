@@ -48,7 +48,8 @@
                 "pages": [
                   "guides/projects",
                   "guides/projects/knowledge-base",
-                  "guides/projects/sharing"
+                  "guides/projects/sharing",
+                  "guides/projects/project-memory"
                 ]
               },
               {
@@ -166,7 +167,8 @@
                 "pages": [
                   "no/guides/projects",
                   "no/guides/projects/knowledge-base",
-                  "no/guides/projects/sharing"
+                  "no/guides/projects/sharing",
+                  "no/guides/projects/project-memory"
                 ]
               },
               {
@@ -282,7 +284,8 @@
                 "pages": [
                   "nl/guides/projects",
                   "nl/guides/projects/knowledge-base",
-                  "nl/guides/projects/sharing"
+                  "nl/guides/projects/sharing",
+                  "nl/guides/projects/project-memory"
                 ]
               },
               {
@@ -398,7 +401,8 @@
                 "pages": [
                   "pl/guides/projects",
                   "pl/guides/projects/knowledge-base",
-                  "pl/guides/projects/sharing"
+                  "pl/guides/projects/sharing",
+                  "pl/guides/projects/project-memory"
                 ]
               },
               {
@@ -514,7 +518,8 @@
                 "pages": [
                   "es/guides/projects",
                   "es/guides/projects/knowledge-base",
-                  "es/guides/projects/sharing"
+                  "es/guides/projects/sharing",
+                  "es/guides/projects/project-memory"
                 ]
               },
               {
@@ -630,7 +635,8 @@
                 "pages": [
                   "de/guides/projects",
                   "de/guides/projects/knowledge-base",
-                  "de/guides/projects/sharing"
+                  "de/guides/projects/sharing",
+                  "de/guides/projects/project-memory"
                 ]
               },
               {
@@ -746,7 +752,8 @@
                 "pages": [
                   "it/guides/projects",
                   "it/guides/projects/knowledge-base",
-                  "it/guides/projects/sharing"
+                  "it/guides/projects/sharing",
+                  "it/guides/projects/project-memory"
                 ]
               },
               {
@@ -862,7 +869,8 @@
                 "pages": [
                   "pt/guides/projects",
                   "pt/guides/projects/knowledge-base",
-                  "pt/guides/projects/sharing"
+                  "pt/guides/projects/sharing",
+                  "pt/guides/projects/project-memory"
                 ]
               },
               {
@@ -978,7 +986,8 @@
                 "pages": [
                   "tr/guides/projects",
                   "tr/guides/projects/knowledge-base",
-                  "tr/guides/projects/sharing"
+                  "tr/guides/projects/sharing",
+                  "tr/guides/projects/project-memory"
                 ]
               },
               {
@@ -1094,7 +1103,8 @@
                 "pages": [
                   "fr/guides/projects",
                   "fr/guides/projects/knowledge-base",
-                  "fr/guides/projects/sharing"
+                  "fr/guides/projects/sharing",
+                  "fr/guides/projects/project-memory"
                 ]
               },
               {
@@ -1210,7 +1220,8 @@
                 "pages": [
                   "sv/guides/projects",
                   "sv/guides/projects/knowledge-base",
-                  "sv/guides/projects/sharing"
+                  "sv/guides/projects/sharing",
+                  "sv/guides/projects/project-memory"
                 ]
               },
               {
