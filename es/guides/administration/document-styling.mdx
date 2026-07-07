@@ -45,6 +45,51 @@ Use un documento de referencia cuando ya tenga un archivo de Word que represente
 Use un documento de referencia limpio con los estilos que quiere que Saga copie. Evite documentos con control de cambios, encabezados incoherentes o formato inusual aplicado una sola vez.
 </Tip>
 
-## Ajustar y probar el estilo
+## Ajustar los estilos manualmente
 
-Puede afinar el estilo extraído antes de guardar o configurar el estilo manualmente. Los cambios se aplican a nuevas exportaciones después de guardarlos. Exporte un documento de prueba breve desde el chat y revise en Word el texto principal, encabezados, márgenes, pies de página, números de página y logotipos.
+Puede afinar el estilo extraído del documento de referencia o configurar cada campo manualmente. El editor usa un flujo de **preparar y guardar**: sus ediciones (incluidas las cargas de un documento de referencia y las cargas de logotipos para encabezado o pie) se preparan en un borrador y solo se aplican cuando hace clic en **Guardar cambios**.
+
+Mientras trabaja, la **vista previa en vivo** se actualiza de inmediato con cada cambio, para que pueda comprobar el resultado antes de confirmarlo. Si sale de la página sin guardar, el borrador se descarta y la configuración activa no se modifica.
+
+## Encabezado y pie: logo o texto
+
+El encabezado y el pie de página tienen cada uno un selector **Tipo** con dos opciones:
+
+- **Logo**: usa la imagen que haya cargado como logotipo de encabezado o de pie.
+- **Texto**: usa el texto que haya escrito en el campo correspondiente.
+
+El tipo seleccionado se respeta de forma coherente en todos los lugares donde aparece el documento:
+
+- La vista previa del panel de administración.
+- La vista previa del documento dentro del chat.
+- Las exportaciones a Word y PDF.
+
+Configure ambos selectores explícitamente si quiere que el encabezado y el pie de página se comporten de forma distinta (por ejemplo, logotipo en el encabezado y texto en el pie).
+
+## Restablecer a valores por defecto o al documento de referencia
+
+En la cabecera de la vista previa dispone de dos controles de restablecimiento. Ambos actúan sobre el **borrador preparado** (no sobre la configuración guardada) y requieren confirmación antes de aplicarse:
+
+- **Restablecer a los valores por defecto de Saga**: limpia todos los campos del borrador y los devuelve a los valores por defecto de Saga.
+- **Restablecer al documento de referencia**: descarta los ajustes manuales del borrador y restaura el estilo extraído del documento de referencia que haya cargado.
+
+Después de restablecer, revise la vista previa y haga clic en **Guardar cambios** para aplicar el nuevo estado, o siga editando antes de guardar.
+
+## Cuándo se aplican los cambios
+
+Los cambios de estilo se aplican a **nuevas exportaciones** una vez que hace clic en **Guardar cambios**. No modifican archivos ya descargados ni documentos que los usuarios han subido a un proyecto o base de conocimiento.
+
+Las vistas previas dentro del chat de los documentos generados por Saga ahora usan el estilo guardado (tipografía, márgenes, encabezado y pie de página, y números de página), de modo que coinciden con lo que verá al exportar a Word o PDF. Esto le permite validar el resultado sin salir del chat.
+
+## Probar el estilo
+
+Antes de comunicar los cambios a su despacho, exporte un documento de prueba breve desde el chat y revise en Word:
+
+- Fuente, tamaño, color e interlineado del **texto principal**.
+- Fuentes, tamaños y peso de los **encabezados**.
+- **Márgenes**, orientación y tamaño de página.
+- Contenido y alineación del **encabezado** y del **pie de página**.
+- Ubicación y formato de los **números de página**.
+- **Logotipos** en encabezado o pie, cuando el tipo esté configurado como **Logo**.
+
+Si algo no coincide con la vista previa, vuelva al panel de administración, ajuste los campos correspondientes en el borrador y haga clic de nuevo en **Guardar cambios**.

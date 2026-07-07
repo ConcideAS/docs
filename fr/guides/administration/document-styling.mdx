@@ -45,6 +45,50 @@ Utilisez un document de référence lorsque vous disposez déjà d'un fichier Wo
 Utilisez un document de référence propre avec les styles que vous souhaitez que Saga copie. Évitez les documents avec suivi des modifications, titres incohérents ou mise en forme inhabituelle ponctuelle.
 </Tip>
 
-## Ajuster et tester le style
+## Ajuster les styles manuellement
 
-Vous pouvez affiner le style extrait avant de l'enregistrer ou configurer le style manuellement. Les modifications s'appliquent aux nouveaux exports après leur enregistrement. Exportez un court document de test depuis le chat et vérifiez dans Word le corps de texte, les titres, les marges, les en-têtes, les pieds de page, les numéros de page et les logos.
+Vous pouvez affiner le style extrait avant de l'enregistrer, ou configurer entièrement le style à la main. L'éditeur fonctionne selon un flux « préparer puis enregistrer » : chaque modification que vous apportez, y compris l'import d'un document de référence et l'import d'un logo, est mise en attente dans un brouillon. L'aperçu en direct se met à jour immédiatement afin que vous puissiez juger du rendu, mais les paramètres réels du cabinet ne changent pas tant que vous n'avez pas cliqué sur **Enregistrer les modifications**.
+
+Tant que vous n'avez pas enregistré :
+
+- Les nouveaux exports Word et PDF continuent d'utiliser le style précédemment enregistré.
+- Les aperçus de documents dans le chat continuent également d'utiliser le style précédemment enregistré.
+- Vous pouvez quitter la page sans conserver les modifications en attente.
+
+## En-tête et pied de page : logo ou texte
+
+L'en-tête et le pied de page disposent chacun d'un sélecteur **Type** qui vous permet de choisir entre **Logo** et **Texte** :
+
+- **Logo** : importez une image (par exemple le logo du cabinet). Elle est mise en attente dans le brouillon comme les autres modifications et n'est appliquée qu'à l'enregistrement.
+- **Texte** : saisissez le contenu textuel à afficher dans l'en-tête ou le pied de page.
+
+Le type sélectionné est respecté partout où le document apparaît : dans l'aperçu de l'administrateur, dans l'aperçu du document affiché dans le chat, ainsi que dans les exports Word et PDF. Vous pouvez donc configurer, par exemple, un logo en en-tête et un texte en pied de page, ou l'inverse.
+
+## Réinitialiser aux valeurs par défaut ou au document de référence
+
+L'en-tête de l'aperçu propose deux commandes de réinitialisation. Chacune agit sur le brouillon en cours d'édition et demande une confirmation avant d'être appliquée. Comme pour toute autre modification, la réinitialisation ne devient définitive qu'après avoir cliqué sur **Enregistrer les modifications**.
+
+- **Réinitialiser aux valeurs par défaut de Saga** : efface l'ensemble du style personnalisé et rétablit les valeurs par défaut de Saga pour la typographie, les marges, les en-têtes, les pieds de page, les numéros de page et les logos.
+- **Réinitialiser au document de référence** : restaure le style extrait du dernier document de référence importé. Utile lorsque vous avez expérimenté des ajustements manuels et que vous souhaitez revenir au point de départ fourni par votre modèle Word.
+
+Si vous changez d'avis avant d'enregistrer, quittez simplement la page ou appliquez à nouveau la réinitialisation souhaitée.
+
+## Quand les modifications prennent effet
+
+Une fois que vous cliquez sur **Enregistrer les modifications**, le style enregistré est utilisé pour :
+
+- Les nouveaux exports Word et PDF des documents générés par Saga.
+- Les aperçus dans le chat des documents générés par Saga, qui reprennent désormais le style enregistré (typographie, marges, en-tête, pied de page et numéros de page) afin de correspondre à ce que les utilisateurs obtiendront dans Word et PDF.
+
+Les fichiers déjà téléchargés et les documents importés par les utilisateurs dans un projet ou une base de connaissances ne sont pas modifiés.
+
+## Tester le style
+
+Après l'enregistrement, validez le résultat de bout en bout :
+
+1. Ouvrez une conversation et demandez à Saga de générer un court document de test (par exemple un bref mémo ou un résumé).
+2. Vérifiez l'aperçu du document dans le chat : la typographie, les marges, l'en-tête, le pied de page et les numéros de page doivent refléter le style enregistré.
+3. Exportez le document au format Word et ouvrez-le.
+4. Dans Word, contrôlez le corps de texte, les titres, les marges, les en-têtes, les pieds de page, les numéros de page et les logos.
+
+Si un élément ne correspond pas à vos attentes, revenez au **Panneau d'administration** > **Style des documents**, ajustez le brouillon, puis cliquez à nouveau sur **Enregistrer les modifications**.

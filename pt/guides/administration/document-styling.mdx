@@ -45,6 +45,34 @@ Use um documento de referência quando já tiver um ficheiro Word que representa
 Use um documento de referência limpo com os estilos que quer que a Saga copie. Evite documentos com controlo de alterações, títulos inconsistentes ou formatação incomum aplicada apenas uma vez.
 </Tip>
 
-## Ajustar e testar o estilo
+## Ajustar o estilo no editor manual
 
-Pode afinar o estilo extraído antes de guardar ou configurar o estilo manualmente. As alterações aplicam-se a novas exportações depois de serem guardadas. Exporte um documento de teste curto a partir do chat e reveja no Word o corpo do texto, títulos, margens, cabeçalhos, rodapés, números de página e logótipos.
+Pode afinar o estilo extraído antes de guardar ou configurar o estilo manualmente. O editor usa um fluxo de **preparar e guardar**: todas as alterações que faz no painel — incluindo o carregamento de um documento de referência e o carregamento de logótipos para cabeçalho ou rodapé — são preparadas num rascunho e só são aplicadas quando clica em **Guardar alterações**.
+
+A pré-visualização à direita é atualizada de imediato à medida que edita, para que possa avaliar o resultado antes de confirmar. Enquanto não guardar, as exportações Word e PDF e as pré-visualizações dentro do chat continuam a usar o estilo anteriormente guardado.
+
+## Escolher entre logótipo ou texto no cabeçalho e rodapé
+
+O cabeçalho e o rodapé têm, cada um, um seletor **Tipo** que permite escolher entre **Logótipo** e **Texto**:
+
+- **Logótipo** — usa a imagem carregada para o cabeçalho ou rodapé.
+- **Texto** — usa o texto que definir nos campos correspondentes.
+
+O tipo escolhido é respeitado de forma consistente na pré-visualização de administração, na pré-visualização dos documentos gerados pela Saga dentro do chat e nas exportações para Word e PDF.
+
+## Repor o estilo a partir da pré-visualização
+
+O cabeçalho da pré-visualização inclui dois controlos de reposição, ambos protegidos por uma caixa de confirmação e ambos a atuar apenas sobre o rascunho preparado — nada é aplicado até que clique em **Guardar alterações**:
+
+- **Repor predefinições da Saga** — descarta as personalizações preparadas e volta ao estilo de fábrica da Saga.
+- **Repor para o documento de referência** — descarta as alterações manuais preparadas e volta ao estilo extraído do último documento de referência carregado.
+
+Use estas opções para experimentar ajustes sem receio: pode sempre voltar a um ponto de partida conhecido antes de guardar.
+
+## Pré-visualizações no chat com o estilo guardado
+
+As pré-visualizações dentro do chat dos documentos gerados pela Saga usam agora o estilo guardado — tipografia, margens, cabeçalho, rodapé e numeração de página — pelo que correspondem ao que os utilizadores obtêm nas exportações Word e PDF. Isto permite validar o estilo diretamente no chat, sem ter de transferir o ficheiro a cada iteração.
+
+## Testar o estilo
+
+Depois de guardar, exporte um documento de teste curto a partir do chat e reveja no Word ou PDF o corpo do texto, títulos, margens, cabeçalhos, rodapés, números de página e logótipos. Confirme também a pré-visualização no chat para garantir que o resultado corresponde ao esperado antes de partilhar o estilo com os utilizadores da sociedade.

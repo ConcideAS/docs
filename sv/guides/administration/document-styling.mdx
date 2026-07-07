@@ -45,6 +45,38 @@ Använd ett referensdokument när du redan har en Word-fil som representerar byr
 Använd ett rent referensdokument med de stilar du vill att Saga ska kopiera. Undvik dokument med spårade ändringar, inkonsekventa rubriker eller ovanlig engångsformatering.
 </Tip>
 
-## Justera och testa stilen
+## Justera stilen manuellt
 
-Du kan finjustera den extraherade stilen innan du sparar eller konfigurera stilen manuellt. Ändringar gäller nya exporter efter att du sparar dem. Exportera ett kort testdokument från chatten och granska brödtext, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper i Word.
+Du kan finjustera den extraherade stilen innan du sparar, eller konfigurera stilen helt manuellt. Redigeraren använder ett arbetsflöde där ändringar först skapar ett utkast och tillämpas först när du sparar:
+
+- Alla ändringar i editorn – inklusive uppladdning av **referensdokument** och uppladdning av **logotyper** för sidhuvud och sidfot – samlas i ett utkast.
+- Utkastet påverkar inte exporter eller förhandsvisningar i chatten förrän du klickar på **Spara ändringar**.
+- Förhandsvisningen i adminpanelen uppdateras däremot direkt medan du redigerar, så att du kan se hur varje justering påverkar layouten innan du sparar.
+
+Om du navigerar bort utan att spara kastas utkastet och den sparade stilen behålls som den var.
+
+## Sidhuvud och sidfot
+
+Både sidhuvud och sidfot har en **Typ**-väljare där du väljer mellan **Logotyp** och **Text**:
+
+- Väljer du **Logotyp** används den logotyp du har laddat upp för det området.
+- Väljer du **Text** används den text du har angett för det området.
+
+Det valda typet respekteras överallt där stilen visas: i förhandsvisningen i adminpanelen, i förhandsvisningar av Saga-genererade dokument i chatten, och i exporter till Word och PDF.
+
+## Återställ stilen
+
+Överst i förhandsvisningen finns två återställningskontroller. Båda är bekräftelsestyrda och verkar på det aktuella utkastet – inget skrivs över förrän du klickar på **Spara ändringar**:
+
+- **Återställ till Sagas standard** – återställer utkastet till Sagas inbyggda standardstil.
+- **Återställ till referensdokument** – återställer utkastet till den stil som extraherades från det uppladdade referensdokumentet.
+
+Eftersom återställningarna endast påverkar utkastet kan du ångra dem genom att lämna sidan utan att spara.
+
+## Förhandsvisningar i chatten
+
+Förhandsvisningar av Saga-genererade dokument i chatten använder den sparade dokumentstilen. Det innebär att typografi, marginaler, sidhuvud, sidfot och sidnumrering visas på samma sätt i chatten som i exporterade Word- och PDF-filer. Du och användarna får därmed en korrekt bild av det slutliga resultatet redan innan dokumentet exporteras.
+
+## Testa stilen
+
+Ändringar gäller nya exporter efter att du har sparat dem. Exportera ett kort testdokument från chatten och granska brödtext, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper i Word. Jämför gärna med förhandsvisningen i chatten för att bekräfta att stilen ser likadan ut på båda ställena.

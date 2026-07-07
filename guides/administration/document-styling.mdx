@@ -53,17 +53,35 @@ You can fine-tune the extracted style before saving. You can also configure the 
 
 Use the manual editor when you need to change details such as margins, heading sizes, page numbers, header text, or footer text without preparing a new Word file.
 
+Edits are staged into a draft as you make them. The live preview on the right updates immediately so you can see the result, but nothing is applied to exports until you click **Save changes**.
+
 ## Add header and footer logos
 
 You can upload logos for the header or footer. Use this for firm branding, letterheads, or other standard export layouts.
 
-If an exported document does not show the logo you expected, check that the logo was saved in the correct header or footer slot, then export the document again.
+Each header and footer has a **Type** selector with two options:
+
+- **Logo** — displays the uploaded image in that slot.
+- **Text** — displays the text you enter in that slot.
+
+The selected type is honored consistently across the admin preview, the in-chat document preview, and Word and PDF exports.
+
+Uploading a logo stages it into the draft alongside your other changes. Click **Save changes** to apply the upload; the logo is not saved until you do. If an exported document does not show the logo you expected, check that the correct **Type** is selected for that slot and that the logo was uploaded to the matching header or footer slot, then export the document again.
+
+## Reset to defaults or your reference
+
+Two reset controls are available on the preview header. Both prompt for confirmation before making any change and act on the staged draft, so you still click **Save changes** to apply the result.
+
+- **Reset to Saga defaults** — clears all styling, including any uploaded reference document, and restores Saga's default document style.
+- **Reset to reference document** — restores the styling extracted from the reference document you uploaded and discards manual changes on top of it. This option is available when a reference document has been uploaded.
 
 ## When changes take effect
 
-Changes apply to new exports after you save them. Existing exported files are not updated.
+The manual editor uses a stage-then-save flow. Uploading a reference document, uploading a logo, and any manual edits are staged into a draft and applied together when you click **Save changes**. Nothing changes for users until you save.
 
-If a user downloaded a document before the settings changed, they need to export it again to get the updated styling.
+Chat previews of Saga-generated documents use your saved styling — including typography, margins, header and footer content, and page numbers — so users see the same layout in the in-chat preview and in the downloaded Word or PDF file.
+
+Changes apply to new exports and previews after you save them. Existing exported files are not updated. If a user downloaded a document before the settings changed, they need to export it again to get the updated styling.
 
 ## Test the style
 

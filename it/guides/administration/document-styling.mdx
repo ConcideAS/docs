@@ -45,6 +45,34 @@ Usa un documento di riferimento quando hai già un file Word che rappresenta lo 
 Usa un documento di riferimento pulito con gli stili che vuoi far copiare a Saga. Evita documenti con revisioni, titoli incoerenti o formattazioni insolite applicate una sola volta.
 </Tip>
 
-## Regolare e testare lo stile
+## Regolare lo stile manualmente
 
-Puoi perfezionare lo stile estratto prima di salvarlo o configurare lo stile manualmente. Le modifiche si applicano alle nuove esportazioni dopo il salvataggio. Esporta un breve documento di prova dalla chat e controlla in Word corpo del testo, titoli, margini, intestazioni, piè di pagina, numeri di pagina e loghi.
+Puoi perfezionare lo stile estratto o configurare tutto da zero direttamente nell'editor manuale. L'editor usa un flusso **modifica poi salva**: tutte le tue modifiche — inclusi il caricamento di un nuovo documento di riferimento e il caricamento dei loghi per intestazione e piè di pagina — vengono raccolte in una bozza. Nulla viene applicato alle esportazioni finché non fai clic su **Salva modifiche**.
+
+L'anteprima a destra si aggiorna immediatamente man mano che modifichi i campi, così puoi vedere l'effetto di ogni scelta senza rischiare di alterare lo stile attivo per il resto dello studio. Se cambi idea, puoi abbandonare la bozza senza salvarla.
+
+## Scegliere il tipo di intestazione e piè di pagina
+
+Sia l'intestazione sia il piè di pagina hanno un selettore **Tipo** che ti permette di scegliere tra:
+
+- **Logo** — carica un'immagine da mostrare nell'intestazione o nel piè di pagina.
+- **Testo** — inserisci un testo libero (per esempio il nome dello studio, un riferimento normativo o un disclaimer).
+
+Il tipo selezionato viene rispettato ovunque il documento venga visualizzato: nell'anteprima del pannello di amministrazione, nelle anteprime dei documenti mostrate all'interno della chat e nelle esportazioni Word e PDF. In questo modo ciò che vedi in fase di configurazione corrisponde a ciò che ricevono gli utenti finali.
+
+## Ripristinare lo stile
+
+Nell'intestazione dell'anteprima trovi due controlli di ripristino, entrambi protetti da una conferma prima di essere applicati e ognuno agisce sulla bozza in corso (non sullo stile salvato) finché non fai clic su **Salva modifiche**:
+
+- **Ripristina impostazioni predefinite di Saga** — riporta tutti i campi ai valori predefiniti forniti da Saga. Utile se vuoi ripartire da una base pulita.
+- **Ripristina al documento di riferimento** — riporta i campi ai valori estratti dall'ultimo documento di riferimento caricato. Utile se hai fatto molte modifiche manuali e vuoi tornare a quanto suggerito dal file di riferimento.
+
+Poiché entrambi i ripristini agiscono sulla bozza, puoi valutarne l'effetto nell'anteprima e decidere se confermare con **Salva modifiche** oppure abbandonare.
+
+## Anteprime in chat allineate alle esportazioni
+
+Le anteprime in chat dei documenti generati da Saga usano lo stile salvato: tipografia, margini, intestazione e piè di pagina (con il tipo Logo o Testo scelto) e numerazione delle pagine. Questo significa che l'anteprima che gli utenti vedono direttamente nella conversazione corrisponde a ciò che otterranno esportando il documento in Word o PDF, senza sorprese al momento del download.
+
+## Testare lo stile
+
+Le modifiche si applicano alle nuove esportazioni dopo il salvataggio. Per verificare il risultato, esporta un breve documento di prova dalla chat e controlla in Word corpo del testo, titoli, margini, intestazioni, piè di pagina, numeri di pagina e loghi. Confronta l'esportazione con l'anteprima in chat: devono coincidere.

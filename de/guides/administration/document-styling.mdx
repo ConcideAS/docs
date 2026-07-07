@@ -45,6 +45,43 @@ Verwenden Sie ein Referenzdokument, wenn Sie bereits eine Word-Datei haben, die 
 Verwenden Sie ein sauberes Referenzdokument mit den Stilen, die Saga übernehmen soll. Vermeiden Sie Dokumente mit nachverfolgten Änderungen, uneinheitlichen Überschriften oder ungewöhnlicher Einzelformatierung.
 </Tip>
 
-## Stil anpassen und testen
+## Stil manuell anpassen
 
-Sie können den extrahierten Stil vor dem Speichern verfeinern oder den Stil manuell konfigurieren. Änderungen gelten für neue Exporte, nachdem Sie sie gespeichert haben. Exportieren Sie ein kurzes Testdokument aus dem Chat und prüfen Sie Fließtext, Überschriften, Ränder, Kopf- und Fußzeilen, Seitenzahlen und Logos in Word.
+Sie können den extrahierten Stil vor dem Speichern verfeinern oder den Stil vollständig manuell konfigurieren. Der manuelle Editor arbeitet nach dem Prinzip **Entwurf erstellen, dann speichern**: Alle Änderungen – einschließlich des Hochladens eines Referenzdokuments und des Hochladens von Logos – werden zunächst in einem Entwurf gesammelt. Erst wenn Sie auf **Änderungen speichern** klicken, werden sie auf neue Exporte angewendet.
+
+Die Live-Vorschau im Admin-Bereich aktualisiert sich sofort, sobald Sie ein Feld ändern, damit Sie das Ergebnis unmittelbar prüfen können. Verlassen Sie die Seite, ohne zu speichern, werden die noch nicht gespeicherten Änderungen verworfen.
+
+## Kopf- und Fußzeilen mit Logo oder Text
+
+Kopf- und Fußzeile verfügen jeweils über einen **Typ**-Selektor mit den Optionen **Logo** oder **Text**. Der ausgewählte Typ bestimmt, was in der jeweiligen Zeile erscheint:
+
+- **Logo**: Zeigt das hochgeladene Logo für Kopf- bzw. Fußzeile.
+- **Text**: Zeigt den konfigurierten Text.
+
+Die Auswahl wird konsistent an allen Stellen berücksichtigt, an denen ein Dokument dargestellt wird – in der Admin-Vorschau, in der Dokumentvorschau im Chat sowie in Word- und PDF-Exporten.
+
+## Auf Standard oder Referenz zurücksetzen
+
+Oben in der Vorschau finden Sie zwei Zurücksetzen-Aktionen. Beide erfordern eine Bestätigung und wirken auf den aktuellen Entwurf – wirksam werden sie erst, nachdem Sie anschließend auf **Änderungen speichern** klicken.
+
+- **Auf Saga-Standard zurücksetzen**: Setzt alle Stilfelder auf die Saga-Standardwerte zurück und entfernt hochgeladene Logos sowie Kopf- und Fußzeileninhalte.
+- **Auf Referenzdokument zurücksetzen**: Stellt den Stil wieder her, der aus dem zuletzt hochgeladenen Referenzdokument extrahiert wurde. Nützlich, wenn Sie manuelle Anpassungen verwerfen und zum Ausgangspunkt der Referenzdatei zurückkehren möchten.
+
+## Vorschau im Chat
+
+Vorschauen von Saga-generierten Dokumenten im Chat verwenden nun den gespeicherten Dokumentstil – einschließlich Typografie, Ränder, Kopf- und Fußzeilen sowie Seitenzahlen. Die Chat-Vorschau entspricht damit dem, was Benutzer beim Word- oder PDF-Export erhalten.
+
+## Wann Änderungen wirksam werden
+
+Änderungen gelten für neue Exporte und neue Chat-Vorschauen, sobald Sie sie mit **Änderungen speichern** übernommen haben. Bereits heruntergeladene Dateien sowie von Benutzern in Projekte oder Wissensdatenbanken hochgeladene Dokumente werden nicht verändert.
+
+## Stil testen
+
+Exportieren Sie nach dem Speichern ein kurzes Testdokument aus dem Chat und prüfen Sie in Word:
+
+- Fließtext (Schriftart, Größe, Farbe, Zeilenabstand)
+- Überschriften (Schriftart, Größe, Farbe, Gewichtung)
+- Ränder und Seitenlayout
+- Kopf- und Fußzeile (Typ **Logo** oder **Text** wie konfiguriert)
+- Seitenzahlen (Platzierung und Ausrichtung)
+- Logos in Kopf- und Fußzeile

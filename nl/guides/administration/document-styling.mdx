@@ -45,8 +45,52 @@ Gebruik een referentiedocument wanneer u al een Word-bestand hebt dat de stijl v
 Gebruik een schoon referentiedocument met de stijlen die Saga moet overnemen. Vermijd documenten met bijgehouden wijzigingen, inconsistente koppen of ongebruikelijke eenmalige opmaak.
 </Tip>
 
-## Stijl aanpassen en testen
+## Stijlen handmatig aanpassen
 
-U kunt de geëxtraheerde stijl verfijnen voordat u opslaat. U kunt de stijl ook handmatig configureren zonder een referentiedocument te uploaden.
+U kunt de geëxtraheerde stijl verfijnen voordat u opslaat. U kunt de stijl ook volledig handmatig configureren zonder een referentiedocument te uploaden.
 
-Wijzigingen gelden voor nieuwe exports nadat u ze opslaat. Exporteer een kort testdocument vanuit chat en controleer hoofdtekst, koppen, marges, kopteksten, voetteksten, paginanummers en logo's in Word.
+De handmatige editor werkt volgens een **stage-then-save**-principe. Alle aanpassingen die u maakt, worden verzameld in een concept:
+
+- Wijzigingen aan lettertypen, groottes, kleuren, marges en andere velden worden in het concept opgenomen.
+- Het uploaden van een nieuw **referentiedocument** wordt eveneens naar het concept gestaged, niet direct toegepast.
+- Het uploaden van een **logo** voor de koptekst of voettekst wordt op dezelfde manier gestaged.
+
+De voorbeeldweergave rechts wordt onmiddellijk bijgewerkt zodat u het effect van elke wijziging live kunt zien. De wijzigingen worden pas daadwerkelijk actief nadat u op **Wijzigingen opslaan** klikt. Zolang u niet opslaat, blijven de eerder opgeslagen instellingen gelden voor nieuwe exports en in-chat voorbeelden.
+
+## Koptekst en voettekst: logo of tekst
+
+Zowel de koptekst als de voettekst hebben een **Type**-selector met twee opties:
+
+- **Logo** — toont een geüpload afbeeldingsbestand in de koptekst of voettekst.
+- **Tekst** — toont een door u ingevoerde tekstregel.
+
+Het gekozen type wordt consistent gerespecteerd op elke plek waar de documentstijl zichtbaar is:
+
+- In het beheerdersvoorbeeld op de pagina **Documentstijl**.
+- In het voorbeeld van een door Saga gegenereerd document binnen de chat.
+- In de uiteindelijke **Word-** en **PDF-exports**.
+
+Wanneer u bijvoorbeeld voor de koptekst **Logo** kiest en voor de voettekst **Tekst**, ziet u die combinatie zowel in het beheerdersvoorbeeld, in het chatvoorbeeld als in het geëxporteerde bestand.
+
+## Terugzetten naar standaard of referentie
+
+Boven de voorbeeldweergave vindt u twee resetknoppen. Beide zijn beveiligd met een bevestigingsdialoog en werken uitsluitend op het concept — de opgeslagen stijl verandert pas nadat u vervolgens op **Wijzigingen opslaan** klikt.
+
+- **Terugzetten naar Saga-standaardinstellingen** — herstelt alle velden in het concept naar de standaardstijl van Saga. Gebruik dit als startpunt wanneer u opnieuw wilt beginnen.
+- **Terugzetten naar referentiedocument** — herstelt alle velden in het concept naar de stijl die uit het laatst geüploade referentiedocument is geëxtraheerd. Gebruik dit om handmatige aanpassingen ongedaan te maken en terug te keren naar wat het referentiebestand voorschrijft.
+
+Omdat beide acties alleen op het concept werken, kunt u het resultaat eerst in de voorbeeldweergave beoordelen en zo nodig verder verfijnen voordat u opslaat.
+
+## Wanneer wijzigingen ingaan
+
+Opgeslagen documentstijl is van toepassing op:
+
+- **Word-exports** van door Saga gegenereerde documenten.
+- **PDF-exports** van door Saga gegenereerde documenten.
+- **In-chat voorbeelden** van door Saga gegenereerde documenten. Deze voorbeelden gebruiken nu dezelfde opgeslagen stijl — typografie, marges, koptekst, voettekst en paginanummering — zodat wat u in de chat ziet overeenkomt met wat gebruikers na export ontvangen.
+
+Reeds gedownloade bestanden en documenten die gebruikers zelf uploaden naar een project of kennisbank blijven ongewijzigd.
+
+## De stijl testen
+
+Wijzigingen gelden voor nieuwe exports en in-chat voorbeelden nadat u ze opslaat. Exporteer een kort testdocument vanuit chat en controleer hoofdtekst, koppen, marges, kopteksten, voetteksten, paginanummers en logo's in Word. Vergelijk het resultaat met het in-chat voorbeeld om te bevestigen dat beide overeenkomen.

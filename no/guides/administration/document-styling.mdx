@@ -45,8 +45,52 @@ Bruk et referansedokument når du allerede har en Word-fil som viser firmaets st
 Bruk et rent referansedokument med stilene du vil at Saga skal kopiere. Unngå dokumenter med spor endringer, inkonsekvente overskrifter eller uvanlig engangsformatering.
 </Tip>
 
-## Juster og test stilen
+## Juster stiler manuelt
 
-Du kan finjustere den hentede stilen før du lagrer. Du kan også konfigurere stilen manuelt uten å laste opp et referansedokument.
+Du kan finjustere den hentede stilen før du lagrer, eller konfigurere stilen manuelt uten å laste opp et referansedokument.
 
-Endringer gjelder for nye eksporter etter at du lagrer dem. Eksporter et kort testdokument fra chatten og se gjennom brødtekst, overskrifter, marger, topptekster, bunntekster, sidetall og logoer i Word.
+Den manuelle editoren bruker en **stage-og-lagre**-flyt. Alle endringer du gjør – inkludert opplasting av et nytt referansedokument og opplasting av logoer for topptekst eller bunntekst – legges i et **utkast** som ikke tas i bruk før du klikker **Lagre endringer**. Så lenge du ikke har lagret, kan du fortsette å justere eller forkaste utkastet uten at det påvirker eksporter for andre brukere.
+
+Forhåndsvisningen ved siden av editoren oppdateres derimot umiddelbart etter hvert som du endrer felter i utkastet, slik at du raskt kan se hvordan valgene ser ut før du lagrer.
+
+## Topptekst og bunntekst: logo eller tekst
+
+Både topptekst og bunntekst har en egen **Type**-velger med to alternativer:
+
+- **Logo** – bruker den opplastede logoen for henholdsvis topptekst eller bunntekst.
+- **Tekst** – bruker den konfigurerte teksten for henholdsvis topptekst eller bunntekst.
+
+Valget du gjør i **Type**-velgeren respekteres konsekvent på tvers av:
+
+- Forhåndsvisningen i administrasjonspanelet
+- Forhåndsvisningen av Saga-genererte dokumenter i chatten
+- Eksporter til Word og PDF
+
+Slik kan du for eksempel vise en logo øverst på siden og en tekstlinje med firmanavn eller sidetall nederst, uten at de to områdene påvirker hverandre.
+
+## Tilbakestill til standard eller referanse
+
+Øverst i forhåndsvisningen finner du to tilbakestillingsknapper. Begge virker på det **utkastet** du redigerer, ikke på den lagrede stilen, og begge krever en bekreftelse før de utføres:
+
+- **Tilbakestill til Saga-standard** – setter alle felter i utkastet tilbake til Sagas standardstil.
+- **Tilbakestill til referansedokument** – setter alle felter i utkastet tilbake til den stilen som ble hentet fra det opplastede referansedokumentet.
+
+Fordi begge kontrollene bare endrer utkastet, må du fortsatt klikke **Lagre endringer** for at tilbakestillingen skal gjelde for nye eksporter. Om du ombestemmer deg før du lagrer, kan du gjøre nye endringer eller kjøre den andre tilbakestillingen i stedet.
+
+## Når endringer trer i kraft
+
+Endringer i dokumentstil trer i kraft først når du klikker **Lagre endringer**. Etter lagring gjelder de nye innstillingene for:
+
+- **Forhåndsvisning av Saga-genererte dokumenter i chatten** – forhåndsvisninger av dokumenter Saga lager i chatten, bruker nå den lagrede stilen (typografi, marger, topptekst, bunntekst og sidetall) slik at de samsvarer med Word- og PDF-eksporter.
+- **Word- og PDF-eksporter** – nye eksporter fra chatten følger den lagrede stilen.
+
+Allerede nedlastede filer og dokumenter som brukere selv har lastet opp, endres ikke.
+
+## Test stilen
+
+Etter at du har lagret endringene, bør du verifisere resultatet før du ruller stilen ut bredt:
+
+1. Åpne en chat og be Saga generere et kort testdokument.
+2. Se gjennom forhåndsvisningen i chatten og kontroller brødtekst, overskrifter, marger, topptekst, bunntekst, sidetall og logoer.
+3. Eksporter dokumentet til **Word** og **PDF**, og se gjennom de samme elementene i de nedlastede filene.
+4. Juster feltene i editoren ved behov, og klikk **Lagre endringer** på nytt.

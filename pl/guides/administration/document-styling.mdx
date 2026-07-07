@@ -45,6 +45,34 @@ Użyj dokumentu referencyjnego, gdy masz już plik Word odzwierciedlający styl 
 Użyj czystego dokumentu referencyjnego ze stylami, które Saga ma skopiować. Unikaj dokumentów ze śledzeniem zmian, niespójnymi nagłówkami lub nietypowym jednorazowym formatowaniem.
 </Tip>
 
-## Dostosuj i przetestuj styl
+## Dostosuj styl w edytorze ręcznym
 
-Możesz dopracować wyodrębniony styl przed zapisaniem lub skonfigurować styl ręcznie. Zmiany dotyczą nowych eksportów po ich zapisaniu. Wyeksportuj krótki dokument testowy z czatu i sprawdź w Wordzie tekst główny, nagłówki, marginesy, nagłówki i stopki, numery stron oraz logo.
+Możesz dopracować wyodrębniony styl przed zapisaniem lub skonfigurować styl w całości ręcznie. Edytor ręczny działa w trybie „staged then save” — wszystkie zmiany, które wprowadzasz w polach, w tym przesłanie nowego dokumentu referencyjnego oraz przesłanie plików logo do nagłówka i stopki, trafiają najpierw do wersji roboczej. Wersja robocza zostaje zastosowana jako obowiązujący styl kancelarii dopiero po kliknięciu **Zapisz zmiany**.
+
+Podgląd na żywo po prawej stronie aktualizuje się natychmiast po każdej zmianie w wersji roboczej, dzięki czemu widzisz efekt, zanim cokolwiek zapiszesz. Jeśli opuścisz stronę bez zapisu, wersja robocza zostanie odrzucona i obowiązujący styl pozostanie niezmieniony.
+
+## Wybierz typ nagłówka i stopki
+
+Zarówno nagłówek, jak i stopka mają selektor **Typ** z dwiema opcjami:
+
+- **Logo** — Saga umieszcza w nagłówku lub stopce przesłany plik graficzny.
+- **Tekst** — Saga umieszcza w nagłówku lub stopce skonfigurowany tekst.
+
+Wybrany typ jest respektowany wszędzie tam, gdzie Saga renderuje dokument: w podglądzie administracyjnym, w podglądzie dokumentu w oknie czatu oraz w eksportach do formatów Word i PDF. Nagłówek i stopkę możesz konfigurować niezależnie — na przykład logo u góry i tekst na dole.
+
+## Zresetuj wersję roboczą
+
+W nagłówku podglądu znajdują się dwie kontrolki resetu. Obie działają na aktualnej wersji roboczej i są zabezpieczone potwierdzeniem, aby uniknąć przypadkowej utraty zmian:
+
+- **Przywróć domyślne ustawienia Saga** — odrzuca bieżącą wersję roboczą i wypełnia pola domyślnymi wartościami Saga.
+- **Przywróć do dokumentu referencyjnego** — odrzuca bieżącą wersję roboczą i wypełnia pola wartościami wyodrębnionymi z ostatnio przesłanego dokumentu referencyjnego.
+
+Po zresetowaniu pola nadal znajdują się w stanie wersji roboczej — aby zastosować je jako obowiązujący styl, kliknij **Zapisz zmiany**.
+
+## Spójny podgląd w czacie i w eksportach
+
+Podglądy dokumentów generowanych przez Saga w oknie czatu korzystają teraz z zapisanego stylu kancelarii — z tej samej typografii, marginesów, nagłówka i stopki oraz numeracji stron, co eksporty Word i PDF. Dzięki temu to, co użytkownicy widzą podczas rozmowy z Sagą, odpowiada temu, co otrzymają po pobraniu pliku.
+
+## Przetestuj styl
+
+Po zapisaniu zmian wyeksportuj krótki dokument testowy z czatu i sprawdź w Wordzie oraz w podglądzie w czacie tekst główny, nagłówki, marginesy, nagłówki i stopki, numery stron oraz logo. Jeżeli coś wymaga poprawki, wróć do **Styl dokumentów**, dopracuj wersję roboczą i ponownie kliknij **Zapisz zmiany**.
