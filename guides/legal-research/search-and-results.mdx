@@ -6,28 +6,30 @@ The legal research page is where you go when you want to search legal sources di
 
 ## How search works
 
-Pick a source, type your query, and search. What happens next depends on the source you selected, because different sources interpret your query differently. A badge in the search box tells you which mode is active.
+Build a set of sources, type your query, and search across all of them at once. Use **Add Source** above the search box to pick which legal sources to include — they appear as chips under **Selected sources**. Remove a chip to drop that source, or add more to widen the search. A single query runs across every selected source in parallel, and the results come back merged into one relevance-ranked list with a badge on each card showing which source it came from.
 
-**Prompt search** lets you describe what you're looking for in plain language — something like "recent Dutch case law on unfair dismissal during probation." The source matches on meaning, not just keywords. This is how GenIA-L, Kennisbank, and some Moonlit portals work.
+A badge in the search box tells you which search mode is active for the current selection.
 
-**Keyword search** is the traditional approach: specific terms, boolean operators (`AND`, `OR`, `NOT`), and exact phrases in quotes. Some Moonlit portals use this mode.
+**Prompt search** lets you describe what you're looking for in plain language — something like "recent Dutch case law on unfair dismissal during probation." The source matches on meaning, not just keywords. The hint reads *Selected sources work best with prompt search*.
 
-**Hybrid search** combines both — it matches on meaning and specific terms at the same time. This is how Rettsdata, Lovdata, Rechtspraak.nl, and GenIA-L handle queries.
+**Keyword search** is the traditional approach: specific terms, boolean operators (`AND`, `OR`, `NOT`), and exact phrases in quotes. The hint reads *Selected sources work best with keyword search*.
 
-If you're not sure how to phrase what you're looking for, click **Improve prompt** before searching. The AI refines your query to help surface more targeted results.
+**Hybrid search** combines both — it matches on meaning and specific terms at the same time. The hint reads *Selected sources work with both prompt and keyword search*.
+
+When your selection mixes sources that prefer different modes, the badge reflects the mode that fits the group. If you're not sure how to phrase what you're looking for, click **Improve prompt** before searching. The AI refines your query to help surface more targeted results.
 
 ## Narrowing results with filters
 
-Every source has its own set of filters that appear in the sidebar. Date range is available for most sources. Beyond that, the options depend on where you're searching — institutions and document types for Rettsdata, fields of law for Moonlit and Rechtspraak.nl, tax type for Kennisbank, and so on.
+Filters appear in the sidebar and stack across every source in your selection. Date range is available for most sources. Beyond that, the options depend on what you're searching — institutions and document types for Rettsdata, fields of law for Moonlit and Rechtspraak.nl, tax type for Kennisbank, and so on. When a filter only applies to some of the selected sources, it narrows those results and leaves the others untouched.
 
 When you apply a filter, it appears as a chip above the results so you can see what's active at a glance. You can stack multiple filters or clear them all to go back to the full set.
 
 ## Working with results
 
-Each result shows what you need to evaluate it quickly: title, jurisdiction, date, reference number, document type, and a summary. Results come sorted by relevance, though you can switch to newest or oldest first.
+Each result shows what you need to evaluate it quickly: title, jurisdiction, date, reference number, document type, a summary, and a source badge so you can tell at a glance where it came from. Results are merged from every selected source and ordered by relevance, though you can switch to newest or oldest first.
 
 Click a result to read the full document. For Rettsdata and Lovdata, the document opens right inside Saga in the side panel — no context switching. Other sources open the original document in a new tab.
 
-If a result isn't relevant, dismiss it. If it is, you have two ways to put it to work. **Add to chat** drops the document straight into a new or existing conversation as an attachment, ready for follow-up questions. **Add to project** sends it to the [knowledge base](/guides/projects/knowledge-base) of a project you choose, where it becomes long-term context the AI can draw on in [chat](/guides/chat) and [grid review](/guides/grid-review). When an entire set of results is useful, **Add all results to project** saves the full batch at once.
+If a result isn't relevant, dismiss it. If it is, you have two ways to put it to work. **Add to chat** drops the document straight into a new or existing conversation as an attachment, ready for follow-up questions. **Add to project** sends it to the [knowledge base](/guides/projects/knowledge-base) of a project you choose, where it becomes long-term context the AI can draw on in [chat](/guides/chat) and [grid review](/guides/grid-review). When an entire set of results is useful, **Add all results to project** saves the full batch at once. These actions work the same way regardless of which source each result came from, so you can add a mix of documents to the same project in one pass.
 
 You can also use legal sources directly inside a conversation without visiting this page — see [Research in chat](/guides/legal-research/in-chat).
