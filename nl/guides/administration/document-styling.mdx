@@ -1,56 +1,93 @@
 ---
 title: Documentstijl
-description: Configureer hoe door Saga gegenereerde Word-exports de documentstijl van uw kantoor volgen.
+description: Configureer hoe de door Saga gegenereerde Word- en Excel-exports de documentstijl van uw bedrijf volgen.
 ---
 
 <Note>
-Documentstijl is een [Enterprise](/nl/guides/administration/enterprise)-functie. Elk kantoor heeft een eigen instantie (bijvoorbeeld `uwkantoor.sagalegal.io`), en documentstijl wordt geconfigureerd in het beheerpaneel van die instantie.
+Documentstijl is een functie van [Enterprise](/nl/guides/administration/enterprise). Elk bedrijf beheert zijn eigen exemplaar (bijvoorbeeld `yourfirm.sagalegal.io`) en de documentstijl wordt geconfigureerd in het beheerderspaneel van dat exemplaar.
 </Note>
 
-Documentstijl is een beheerdersinstelling voor Word-exports die door Saga worden gegenereerd. Gebruik dit wanneer uw kantoor wil dat concepten, samenvattingen, memo's of andere door AI gegenereerde documenten dezelfde lettertypen, pagina-indeling, kopteksten, voetteksten en paginanummering gebruiken.
+Documentstijl is een beheerdersinstelling voor Word- en Excel-exports gegenereerd door Saga. Gebruik het wanneer uw bedrijf wil dat concepten, samenvattingen, memo's en gedownloade tabellen dezelfde documentstijl volgen.
 
-Alleen beheerders kunnen documentstijl configureren. Gebruikers zien het resultaat wanneer ze gegenereerde inhoud exporteren nadat de instellingen zijn opgeslagen.
+Alleen beheerders kunnen de documentstijl configureren. Gebruikers zien het resultaat wanneer ze gegenereerde inhoud exporteren nadat de instellingen zijn opgeslagen.
 
-## Wat documentstijl bepaalt
+## Word exportstijl
 
-Documentstijl kan het volgende bepalen:
+Word exportstijl kan het volgende regelen:
 
-- Lettertype, grootte, kleur en regelafstand van hoofdtekst
-- Lettertypen, groottes, kleuren en gewicht van koppen
-- Paginaformaat, oriëntatie, marges, inspringing en afstand
-- Tekst in koptekst en voettekst
+- Lettertype, grootte, kleur en regelafstand van het hoofdgedeelte
+- Koplettertypen, maten, kleuren en gewicht
+- Paginagrootte, richting, marges, inspringing en afstand
+- Kop- en voettekst
 - Plaatsing en uitlijning van paginanummers
-- Logo's in koptekst en voettekst
+- Kop- en voettekstlogo's
 
-Deze instellingen gelden voor nieuwe exports. Ze wijzigen geen bestanden die al zijn gedownload en wijzigen geen documenten die gebruikers uploaden naar een project of kennisbank.
+Deze instellingen zijn van toepassing op nieuwe exports. Ze wijzigen geen bestanden die al zijn gedownload, en ze wijzigen geen documenten die gebruikers uploaden naar een project of kennisbank.
 
-## Ondersteunde documenttypen
+### Upload een Word-referentiedocument
 
-Documentstijl ondersteunt momenteel Word-referentiedocumenten. Ondersteuning voor PowerPoint en Excel is onderweg.
+Gebruik een referentiedocument als u al over een Word-bestand beschikt dat de stijl van uw bedrijf weergeeft.
 
-| Documenttype | Status | Opmerkingen |
-| --- | --- | --- |
-| Word-documenten `.docx` | Ondersteund | Gebruik nu een Word-document als referentiebestand. |
-| PowerPoint-bestanden `.pptx` | Onderweg | Ondersteuning is gepland voor toekomstige updates van documentstijl. |
-| Excel-werkmappen `.xlsx` | Onderweg | Ondersteuning is gepland voor toekomstige updates van documentstijl. |
-
-## Een referentiedocument uploaden
-
-Gebruik een referentiedocument wanneer u al een Word-bestand hebt dat de stijl van uw kantoor weergeeft.
-
-1. Open **Beheer**.
-2. Ga naar **Documentstijl**.
+1. Open **Beheerdersdashboard**.
+2. Ga naar **Documentopmaak > Word exporteren**.
 3. Upload een `.docx`-referentiedocument.
-4. Bekijk de geëxtraheerde stijl in de voorbeeldweergave.
-5. Pas velden handmatig aan indien nodig.
+4. Bekijk de geëxtraheerde stijl in het voorbeeld.
+5. Pas eventuele velden indien nodig handmatig aan.
 6. Klik op **Wijzigingen opslaan**.
 
+Saga leest de stijl uit het referentiedocument en gebruikt deze als uitgangspunt voor toekomstige Word-exports.
+
 <Tip>
-Gebruik een schoon referentiedocument met de stijlen die Saga moet overnemen. Vermijd documenten met bijgehouden wijzigingen, inconsistente koppen of ongebruikelijke eenmalige opmaak.
+Gebruik een schoon referentiedocument met de stijlen die u door Saga wilt kopiëren. Vermijd documenten met bijgehouden wijzigingen, inconsistente koppen of ongebruikelijke eenmalige opmaak.
 </Tip>
 
-## Stijl aanpassen en testen
+### Pas de Word-stijlen handmatig aan
 
-U kunt de geëxtraheerde stijl verfijnen voordat u opslaat. U kunt de stijl ook handmatig configureren zonder een referentiedocument te uploaden.
+U kunt de geëxtraheerde stijl verfijnen voordat u deze opslaat. U kunt de stijl ook handmatig configureren zonder een referentiedocument te uploaden.
 
-Wijzigingen gelden voor nieuwe exports nadat u ze opslaat. Exporteer een kort testdocument vanuit chat en controleer hoofdtekst, koppen, marges, kopteksten, voetteksten, paginanummers en logo's in Word.
+Gebruik de handmatige editor als u details zoals marges, kopgroottes, paginanummers, koptekst of voettekst moet wijzigen zonder een nieuw Word-bestand voor te bereiden.
+
+### Voeg kop- en voettekstlogo's toe
+
+U kunt logo's uploaden voor de kop- of voettekst. Gebruik dit voor bedrijfsbranding, briefhoofden of andere standaard exportlay-outs.
+
+Als een geëxporteerd document niet het verwachte logo toont, controleer dan of het logo in de juiste kop- of voettekst is opgeslagen en exporteer het document vervolgens opnieuw.
+
+## Excel exportstijl
+
+De exportstijl van Excel bepaalt de weergave van tabellen die gebruikers downloaden van Saga. U kunt lettertypen, tekst- en opvulkleuren, zebrastrepen, rijhoogte, kolombreedte, uitlijning, tekstomloop en randen configureren.
+
+### Upload een Excel-referentiewerkmap
+
+Gebruik een referentiewerkmap als u al een Excel-bestand hebt dat de tabelstijl van uw bedrijf vertegenwoordigt.
+
+1. Open **Beheerdersdashboard**.
+2. Ga naar **Documentopmaak > Excel exporteren**.
+3. Klik op **Een referentiewerkmap uploaden** en selecteer een `.xlsx`-bestand tot 25 MB.
+4. Bekijk de uitgepakte instellingen en een voorbeeld ervan.
+5. Pas eventuele velden indien nodig handmatig aan.
+6. Klik op **Wijzigingen opslaan**.
+
+Saga extraheert lettertypen, kleuren, afmetingen, uitlijning en randen uit de werkmap. Nieuwe tabeldownloads gebruiken de opgeslagen bedrijfsbrede stijl.
+
+### Pas de Excel-stijlen handmatig aan
+
+U kunt de stijl van Excel configureren zonder referentiewerkmap, of de geëxtraheerde waarden aanpassen voordat u deze opslaat. Gebruik de handmatige editor om kopcellen en gegevenscellen afzonderlijk op te maken en bekijk het resultaat vervolgens in de live preview.
+
+Als u handmatige wijzigingen wilt negeren, selecteert u **Reset naar referentiedocument**. Om de referentiewerkmap te verwijderen en terug te keren naar de standaardstijl van Saga, selecteert u **Reset naar standaardwaarden Saga**.
+
+## Wanneer veranderingen van kracht worden
+
+Wijzigingen zijn van toepassing op nieuwe exports nadat u deze hebt opgeslagen. Bestaande geëxporteerde bestanden worden niet bijgewerkt.
+
+Als een gebruiker een document of tabel heeft gedownload voordat de instellingen zijn gewijzigd, moet hij dit opnieuw exporteren om de bijgewerkte stijl te krijgen.
+
+## Test de stijl
+
+Voordat u vertrouwt op de stijl voor klantgericht werk, test u elk exporttype dat u heeft geconfigureerd.
+
+Voor Word-stijl exporteert u een kort document uit de chat en bekijkt u de hoofdtekst, kopteksten, marges, kopteksten, voetteksten, paginanummers en logo's in Word.
+
+Voor Excel-stijl downloadt u een door AI gegenereerde tabel en bekijkt u de kopcellen, gegevenscellen, afmetingen, uitlijning, omloop, zebrastrepen en randen in Excel.
+
+Als er iets mis lijkt te zijn, ga dan terug naar **Beheerdersdashboard > Documentopmaak**, open het relevante exporttabblad, werk de instelling bij, sla op en exporteer opnieuw.

@@ -1,54 +1,93 @@
 ---
-title: Estilo de documentos
-description: Configure cómo las exportaciones de Word generadas por Saga siguen el estilo documental de su despacho.
+title: Estilo del documento
+description: Configure cómo las exportaciones Word y Excel generadas por Saga siguen el estilo de documento de su empresa.
 ---
 
 <Note>
-El estilo de documentos es una función de [Enterprise](/es/guides/administration/enterprise). Cada despacho tiene su propia instancia (por ejemplo, `sudespacho.sagalegal.io`), y el estilo de documentos se configura en el panel de administración de esa instancia.
+El estilo del documento es una característica [Enterprise](/es/guides/administration/enterprise). Cada empresa ejecuta su propia instancia (por ejemplo, `yourfirm.sagalegal.io`) y el estilo del documento se configura en el panel de administración de esa instancia.
 </Note>
 
-El estilo de documentos es una configuración de administración para las exportaciones de Word generadas por Saga. Úselo cuando su despacho quiera que borradores, resúmenes, memorandos u otros documentos generados por IA sigan las mismas fuentes, diseño de página, encabezados, pies de página y numeración.
+El estilo del documento es una configuración de administración para las exportaciones Word y Excel generadas por Saga. Úselo cuando su empresa quiera que borradores, resúmenes, memorandos y tablas descargadas sigan el mismo estilo de documento.
 
-Solo los administradores pueden configurar el estilo de documentos. Los usuarios ven el resultado cuando exportan contenido generado después de guardar la configuración.
+Sólo los administradores pueden configurar el estilo del documento. Los usuarios ven el resultado cuando exportan el contenido generado después de guardar la configuración.
 
-## Qué controla el estilo de documentos
+## Estilo de exportación Word
 
-El estilo de documentos puede controlar:
+El estilo de exportación Word puede controlar:
 
-- Fuente, tamaño, color e interlineado del texto principal
+- Fuente del cuerpo, tamaño, color y espacio entre líneas.
 - Fuentes, tamaños, colores y peso de los encabezados
 - Tamaño de página, orientación, márgenes, sangría y espaciado
 - Texto de encabezado y pie de página
-- Ubicación y alineación de los números de página
-- Logotipos en encabezado y pie de página
+- Ubicación y alineación del número de página
+- Logotipos de encabezado y pie de página
 
-Esta configuración se aplica a nuevas exportaciones. No cambia archivos ya descargados ni documentos que los usuarios suben a un proyecto o base de conocimiento.
+Esta configuración se aplica a nuevas exportaciones. No cambian los archivos que ya se descargaron ni los documentos que los usuarios cargan en un proyecto o base de conocimientos.
 
-## Tipos de documento compatibles
+### Cargar un documento de referencia Word
 
-El estilo de documentos admite actualmente documentos de referencia de Word. La compatibilidad con PowerPoint y Excel está en camino.
-
-| Tipo de documento | Estado | Notas |
-| --- | --- | --- |
-| Documentos Word `.docx` | Compatible | Use hoy un documento de Word como archivo de referencia. |
-| Archivos PowerPoint `.pptx` | En camino | La compatibilidad está prevista para futuras actualizaciones de estilo de documentos. |
-| Libros Excel `.xlsx` | En camino | La compatibilidad está prevista para futuras actualizaciones de estilo de documentos. |
-
-## Cargar un documento de referencia
-
-Use un documento de referencia cuando ya tenga un archivo de Word que represente el estilo de su despacho.
+Utilice un documento de referencia cuando ya tenga un archivo Word que represente el estilo de su empresa.
 
 1. Abra **Panel de administración**.
-2. Vaya a **Estilo de documentos**.
+2. Vaya a **Estilo del documento > Exportación Word**.
 3. Cargue un documento de referencia `.docx`.
 4. Revise el estilo extraído en la vista previa.
 5. Ajuste los campos manualmente si es necesario.
 6. Haga clic en **Guardar cambios**.
 
+Saga lee el estilo del documento de referencia y lo utiliza como punto de partida para futuras exportaciones de Word.
+
 <Tip>
-Use un documento de referencia limpio con los estilos que quiere que Saga copie. Evite documentos con control de cambios, encabezados incoherentes o formato inusual aplicado una sola vez.
+Utilice un documento de referencia limpio con los estilos que desea que copie Saga. Evite documentos con seguimiento de cambios, títulos inconsistentes o formatos inusuales y únicos.
 </Tip>
 
-## Ajustar y probar el estilo
+### Ajustar los estilos Word manualmente
 
-Puede afinar el estilo extraído antes de guardar o configurar el estilo manualmente. Los cambios se aplican a nuevas exportaciones después de guardarlos. Exporte un documento de prueba breve desde el chat y revise en Word el texto principal, encabezados, márgenes, pies de página, números de página y logotipos.
+Puede ajustar el estilo extraído antes de guardarlo. También puedes configurar el estilo manualmente sin cargar un documento de referencia.
+
+Utilice el editor manual cuando necesite cambiar detalles como márgenes, tamaños de encabezado, números de página, texto de encabezado o texto de pie de página sin preparar un nuevo archivo Word.
+
+### Agregar logotipos de encabezado y pie de página
+
+Puede cargar logotipos para el encabezado o pie de página. Úselo para marcas de empresas, membretes u otros diseños de exportación estándar.
+
+Si un documento exportado no muestra el logotipo que esperaba, verifique que el logotipo se guardó en la ranura de encabezado o pie de página correcto y luego exporte el documento nuevamente.
+
+## Estilo de exportación Excel
+
+El estilo de exportación Excel controla la apariencia de las tablas que los usuarios descargan desde Saga. Puede configurar fuentes, colores de texto y relleno, rayas de cebra, altura de fila, ancho de columna, alineación, ajuste de texto y bordes.
+
+### Cargue un libro de referencia Excel
+
+Utilice un libro de referencia cuando ya tenga un archivo Excel que represente el estilo de tabla de su empresa.
+
+1. Abra **Panel de administración**.
+2. Vaya a **Estilo del documento > Exportación Excel**.
+3. Haga clic en **Cargar un libro de referencia** y seleccione un archivo `.xlsx` hasta 25 MB.
+4. Revise la configuración extraída y la vista previa.
+5. Ajuste los campos manualmente si es necesario.
+6. Haga clic en **Guardar cambios**.
+
+Saga extrae fuentes, colores, dimensiones, alineación y bordes del libro. Las descargas de nuevas tablas utilizan el estilo guardado para toda la empresa.
+
+### Ajustar los estilos Excel manualmente
+
+Puede configurar el estilo Excel sin un libro de referencia o ajustar los valores extraídos antes de guardarlos. Utilice el editor manual para diseñar celdas de encabezado y celdas de datos por separado y luego revise el resultado en la vista previa en vivo.
+
+Si desea descartar los cambios manuales, seleccione **Restablecer al documento de referencia**. Para eliminar el libro de referencia y volver al estilo predeterminado de Saga, seleccione **Restablecer los valores predeterminados de Saga**.
+
+## Cuando los cambios entran en vigor
+
+Los cambios se aplican a las nuevas exportaciones después de guardarlas. Los archivos exportados existentes no se actualizan.
+
+Si un usuario descargó un documento o una tabla antes de que cambiara la configuración, debe exportarlo nuevamente para obtener el estilo actualizado.
+
+## Prueba el estilo
+
+Antes de confiar en el estilo para el trabajo de cara al cliente, pruebe cada tipo de exportación que haya configurado.
+
+Para el estilo Word, exporte un documento breve desde el chat y revise el texto del cuerpo, los encabezados, los márgenes, los encabezados, los pies de página, los números de página y los logotipos en Word.
+
+Para el estilo Excel, descargue una tabla generada por IA y revise las celdas de encabezado, las celdas de datos, las dimensiones, la alineación, el ajuste, las rayas de cebra y los bordes en Excel.
+
+Si algo parece incorrecto, regrese al **Panel de administración > Estilo del documento**, abra la pestaña de exportación correspondiente, actualice la configuración, guarde y exporte nuevamente.

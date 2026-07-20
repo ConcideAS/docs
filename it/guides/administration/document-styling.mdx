@@ -1,54 +1,93 @@
 ---
-title: Stile dei documenti
-description: Configura come le esportazioni Word generate da Saga seguono lo stile documentale del tuo studio.
+title: Stile del documento
+description: Configura il modo in cui le esportazioni Word e Excel generate da Saga seguono lo stile del documento della tua azienda.
 ---
 
 <Note>
-Lo stile dei documenti è una funzionalità [Enterprise](/it/guides/administration/enterprise). Ogni studio ha una propria istanza (ad esempio `tuostudio.sagalegal.io`) e lo stile dei documenti si configura nel pannello di amministrazione di quella istanza.
+Lo stile dei documenti è una funzionalità [Enterprise](/it/guides/administration/enterprise). Ogni azienda esegue la propria istanza (ad esempio `yourfirm.sagalegal.io`) e lo stile del documento è configurato nel pannello di amministrazione di tale istanza.
 </Note>
 
-Lo stile dei documenti è un'impostazione amministrativa per le esportazioni Word generate da Saga. Usalo quando il tuo studio vuole che bozze, riepiloghi, memo o altri documenti generati dall'IA seguano gli stessi caratteri, layout di pagina, intestazioni, piè di pagina e numerazione.
+Lo stile del documento è un'impostazione di amministrazione per le esportazioni Word e Excel generate da Saga. Usalo quando la tua azienda desidera che bozze, riassunti, promemoria e tabelle scaricate seguano lo stesso stile di documento.
 
-Solo gli amministratori possono configurare lo stile dei documenti. Gli utenti vedono il risultato quando esportano contenuti generati dopo il salvataggio delle impostazioni.
+Solo gli amministratori possono configurare lo stile del documento. Gli utenti vedono il risultato quando esportano il contenuto generato dopo il salvataggio delle impostazioni.
 
-## Cosa controlla lo stile dei documenti
+## Stile di esportazione Word
 
-Lo stile dei documenti può controllare:
+Lo stile di esportazione Word può controllare:
 
-- Carattere, dimensione, colore e interlinea del corpo del testo
-- Caratteri, dimensioni, colori e peso dei titoli
-- Dimensione pagina, orientamento, margini, rientri e spaziatura
-- Testo di intestazione e piè di pagina
-- Posizione e allineamento dei numeri di pagina
-- Loghi in intestazione e piè di pagina
+- Carattere del corpo, dimensione, colore e interlinea
+- Caratteri, dimensioni, colori e peso dell'intestazione
+- Dimensioni della pagina, orientamento, margini, rientro e spaziatura
+- Testo dell'intestazione e del piè di pagina
+- Posizionamento e allineamento del numero di pagina
+- Loghi di intestazione e piè di pagina
 
-Queste impostazioni si applicano alle nuove esportazioni. Non modificano i file già scaricati né i documenti che gli utenti caricano in un progetto o in una knowledge base.
+Queste impostazioni si applicano alle nuove esportazioni. Non modificano i file già scaricati e non modificano i documenti caricati dagli utenti in un progetto o in una knowledge base.
 
-## Tipi di documento supportati
+### Carica un documento di riferimento Word
 
-Lo stile dei documenti supporta attualmente documenti di riferimento Word. Il supporto per PowerPoint ed Excel è in arrivo.
-
-| Tipo di documento | Stato | Note |
-| --- | --- | --- |
-| Documenti Word `.docx` | Supportato | Usa oggi un documento Word come file di riferimento. |
-| File PowerPoint `.pptx` | In arrivo | Il supporto è previsto per futuri aggiornamenti dello stile dei documenti. |
-| Cartelle di lavoro Excel `.xlsx` | In arrivo | Il supporto è previsto per futuri aggiornamenti dello stile dei documenti. |
-
-## Caricare un documento di riferimento
-
-Usa un documento di riferimento quando hai già un file Word che rappresenta lo stile del tuo studio.
+Utilizza un documento di riferimento quando disponi già di un file Word che rappresenta lo stile della tua azienda.
 
 1. Apri **Pannello di amministrazione**.
-2. Vai a **Stile dei documenti**.
+2. Vai a **Stile documento > Esporta Word**.
 3. Carica un documento di riferimento `.docx`.
 4. Controlla lo stile estratto nell'anteprima.
-5. Modifica manualmente i campi se necessario.
+5. Se necessario, modifica manualmente i campi.
 6. Fai clic su **Salva modifiche**.
 
+Saga legge lo stile dal documento di riferimento e lo utilizza come punto di partenza per le future esportazioni Word.
+
 <Tip>
-Usa un documento di riferimento pulito con gli stili che vuoi far copiare a Saga. Evita documenti con revisioni, titoli incoerenti o formattazioni insolite applicate una sola volta.
+Utilizza un documento di riferimento pulito con gli stili che desideri copiare da Saga. Evita documenti con modifiche rilevate, titoli incoerenti o formattazione insolita e una tantum.
 </Tip>
 
-## Regolare e testare lo stile
+### Regola manualmente gli stili Word
 
-Puoi perfezionare lo stile estratto prima di salvarlo o configurare lo stile manualmente. Le modifiche si applicano alle nuove esportazioni dopo il salvataggio. Esporta un breve documento di prova dalla chat e controlla in Word corpo del testo, titoli, margini, intestazioni, piè di pagina, numeri di pagina e loghi.
+È possibile ottimizzare lo stile estratto prima di salvare. Puoi anche configurare lo stile manualmente senza caricare un documento di riferimento.
+
+Utilizza l'editor manuale quando è necessario modificare dettagli quali margini, dimensioni dell'intestazione, numeri di pagina, testo dell'intestazione o testo del piè di pagina senza preparare un nuovo file Word.
+
+### Aggiungi loghi di intestazione e piè di pagina
+
+Puoi caricare loghi per l'intestazione o il piè di pagina. Utilizzalo per il marchio dell'azienda, la carta intestata o altri layout di esportazione standard.
+
+Se un documento esportato non mostra il logo previsto, controlla che il logo sia stato salvato nello slot corretto dell'intestazione o del piè di pagina, quindi esporta nuovamente il documento.
+
+## Stile di esportazione Excel
+
+Lo stile di esportazione Excel controlla l'aspetto delle tabelle che gli utenti scaricano da Saga. È possibile configurare caratteri, colori del testo e di riempimento, strisce zebrate, altezza della riga, larghezza della colonna, allineamento, disposizione del testo e bordi.
+
+### Carica una cartella di lavoro di riferimento Excel
+
+Utilizza una cartella di lavoro di riferimento quando disponi già di un file Excel che rappresenta lo stile di tabella della tua azienda.
+
+1. Apri **Pannello di amministrazione**.
+2. Vai a **Stile documento > Esporta Excel**.
+3. Fai clic su **Carica una cartella di lavoro di riferimento** e seleziona un file `.xlsx` fino a 25 MB.
+4. Rivedi le impostazioni estratte e visualizza l'anteprima.
+5. Se necessario, modifica manualmente i campi.
+6. Fai clic su **Salva modifiche**.
+
+Saga estrae caratteri, colori, dimensioni, allineamento e bordi dalla cartella di lavoro. I nuovi download di tabelle utilizzano lo stile salvato a livello aziendale.
+
+### Regola manualmente gli stili Excel
+
+È possibile configurare lo stile Excel senza una cartella di lavoro di riferimento o regolare i valori estratti prima di salvare. Utilizza l'editor manuale per definire lo stile delle celle di intestazione e delle celle di dati separatamente, quindi rivedi il risultato nell'anteprima dal vivo.
+
+Se desideri annullare le modifiche manuali, seleziona **Ripristina documento di riferimento**. Per rimuovere la cartella di lavoro di riferimento e tornare allo stile predefinito di Saga, selezionare **Ripristina impostazioni predefinite Saga**.
+
+## Quando le modifiche diventano effettive
+
+Le modifiche si applicano alle nuove esportazioni dopo averle salvate. I file esportati esistenti non vengono aggiornati.
+
+Se un utente ha scaricato un documento o una tabella prima che le impostazioni venissero modificate, dovrà esportarlo nuovamente per ottenere lo stile aggiornato.
+
+## Prova lo stile
+
+Prima di fare affidamento sullo stile per il lavoro rivolto al cliente, testa ogni tipo di esportazione configurato.
+
+Per lo stile Word, esporta un breve documento dalla chat e rivedi il corpo del testo, le intestazioni, i margini, le intestazioni, i piè di pagina, i numeri di pagina e i loghi in Word.
+
+Per lo stile Excel, scarica una tabella generata dall'intelligenza artificiale e rivedi le celle di intestazione, le celle di dati, le dimensioni, l'allineamento, la disposizione, lo zebrato e i bordi in Excel.
+
+Se qualcosa sembra sbagliato, torna al **Pannello di amministrazione > Stile documento**, apri la scheda di esportazione pertinente, aggiorna l'impostazione, salva ed esporta di nuovo.

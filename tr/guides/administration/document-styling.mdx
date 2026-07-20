@@ -1,54 +1,93 @@
 ---
 title: Belge stili
-description: Saga tarafından oluşturulan Word dışa aktarımlarının firmanızın belge stilini nasıl izleyeceğini yapılandırın.
+description: Saga tarafından oluşturulan Word ve Excel dışa aktarmalarının firmanızın belge stiline nasıl uyacağını yapılandırın.
 ---
 
 <Note>
-Belge stili bir [Enterprise](/tr/guides/administration/enterprise) özelliğidir. Her büronun kendi örneği vardır (örneğin `buronuz.sagalegal.io`) ve belge stili o örneğin yönetim panelinden yapılandırılır.
+Belge stili bir [Kurumsal](/tr/guides/administration/enterprise) özelliğidir. Her firma kendi örneğini çalıştırır (örneğin `yourfirm.sagalegal.io`) ve belge stili bu örneğin yönetici panelinde yapılandırılır.
 </Note>
 
-Belge stili, Saga tarafından oluşturulan Word dışa aktarımları için bir yönetici ayarıdır. Firmanız taslakların, özetlerin, notların veya diğer AI tarafından oluşturulan belgelerin aynı yazı tiplerini, sayfa düzenini, üstbilgileri, altbilgileri ve sayfa numaralandırmasını kullanmasını istediğinde bunu kullanın.
+Belge stili, Saga tarafından oluşturulan Word ve Excel dışa aktarımlarına yönelik bir yönetici ayarıdır. Firmanız taslakların, özetlerin, notların ve indirilen tabloların aynı belge stilini takip etmesini istediğinde bunu kullanın.
 
-Belge stilini yalnızca yöneticiler yapılandırabilir. Kullanıcılar, ayarlar kaydedildikten sonra oluşturulan içeriği dışa aktardıklarında sonucu görür.
+Belge stilini yalnızca yöneticiler yapılandırabilir. Kullanıcılar, ayarlar kaydedildikten sonra oluşturulan içeriği dışa aktardıklarında sonucu görürler.
 
-## Belge stilinin kontrol ettiği ayarlar
+## Word dışa aktarma stili
 
-Belge stili şunları kontrol edebilir:
+Word dışa aktarma stili şunları kontrol edebilir:
 
-- Gövde metni yazı tipi, boyutu, rengi ve satır aralığı
-- Başlık yazı tipleri, boyutları, renkleri ve kalınlığı
-- Sayfa boyutu, yönü, kenar boşlukları, girintiler ve aralık
+- Gövde yazı tipi, boyutu, rengi ve satır aralığı
+- Başlık yazı tipleri, boyutları, renkleri ve ağırlığı
+- Sayfa boyutu, yönlendirme, kenar boşlukları, girinti ve aralık
 - Üstbilgi ve altbilgi metni
-- Sayfa numarası konumu ve hizalaması
+- Sayfa numarası yerleştirme ve hizalama
 - Üstbilgi ve altbilgi logoları
 
-Bu ayarlar yeni dışa aktarımlar için geçerlidir. Daha önce indirilen dosyaları veya kullanıcıların bir projeye ya da bilgi tabanına yüklediği belgeleri değiştirmez.
+Bu ayarlar yeni dışa aktarmalar için geçerlidir. Zaten indirilmiş olan dosyaları değiştirmezler ve kullanıcıların bir projeye veya bilgi tabanına yükledikleri belgeleri değiştirmezler.
 
-## Desteklenen belge türleri
+### Word referans belgesi yükleyin
 
-Belge stili şu anda Word referans belgelerini destekler. PowerPoint ve Excel desteği yolda.
+Firmanızın tarzını temsil eden bir Word dosyanız zaten varsa bir referans belgesi kullanın.
 
-| Belge türü | Durum | Notlar |
-| --- | --- | --- |
-| Word belgeleri `.docx` | Destekleniyor | Bugün referans dosyası olarak bir Word belgesi kullanın. |
-| PowerPoint dosyaları `.pptx` | Yolda | Destek, gelecekteki belge stili güncellemeleri için planlanıyor. |
-| Excel çalışma kitapları `.xlsx` | Yolda | Destek, gelecekteki belge stili güncellemeleri için planlanıyor. |
-
-## Referans belge yükleyin
-
-Firmanızın stilini temsil eden bir Word dosyanız varsa referans belge kullanın.
-
-1. **Yönetim** panelini açın.
-2. **Belge stili** bölümüne gidin.
+1. **Yönetici panelini** açın.
+2. **Belge Şekillendirme > Word Dışa Aktarma**'ya gidin.
 3. Bir `.docx` referans belgesi yükleyin.
-4. Çıkarılan stili önizlemede kontrol edin.
-5. Gerekirse alanları elle ayarlayın.
-6. **Değişiklikleri kaydet** seçeneğine tıklayın.
+4. Çıkarılan stili önizlemede inceleyin.
+5. Gerekirse herhangi bir alanı manuel olarak ayarlayın.
+6. **Değişiklikleri kaydet**'i tıklayın.
+
+Saga, stili referans belgeden okur ve bunu gelecekteki Word dışa aktarımları için başlangıç ​​noktası olarak kullanır.
 
 <Tip>
-Saga'nın kopyalamasını istediğiniz stilleri içeren temiz bir referans belge kullanın. Değişiklik izleme, tutarsız başlıklar veya olağandışı tek seferlik biçimlendirme içeren belgelerden kaçının.
+Saga'nin kopyalamasını istediğiniz stilleri içeren temiz bir referans belgesi kullanın. İzlenen değişikliklere, tutarsız başlıklara veya olağandışı tek seferlik biçimlendirmeye sahip belgelerden kaçının.
 </Tip>
 
-## Stili ayarlayın ve test edin
+### Word stillerini manuel olarak ayarlayın
 
-Kaydetmeden önce çıkarılan stili ince ayar yapabilir veya stili elle yapılandırabilirsiniz. Değişiklikler kaydedildikten sonra yeni dışa aktarımlar için geçerlidir. Sohbetten kısa bir test belgesi dışa aktarın ve Word'de gövde metnini, başlıkları, kenar boşluklarını, üstbilgileri, altbilgileri, sayfa numaralarını ve logoları kontrol edin.
+Kaydetmeden önce çıkarılan stile ince ayar yapabilirsiniz. Stili, bir referans belgesi yüklemeden manuel olarak da yapılandırabilirsiniz.
+
+Yeni bir Word dosyası hazırlamadan kenar boşlukları, başlık boyutları, sayfa numaraları, üst bilgi metni veya alt bilgi metni gibi ayrıntıları değiştirmeniz gerektiğinde manuel düzenleyiciyi kullanın.
+
+### Üstbilgi ve altbilgi logoları ekleme
+
+Üstbilgi veya altbilgi için logolar yükleyebilirsiniz. Bunu firma markalama, antetli kağıtlar veya diğer standart dışa aktarma düzenleri için kullanın.
+
+Dışa aktarılan bir belge beklediğiniz logoyu göstermiyorsa logonun doğru üstbilgi veya altbilgi yuvasına kaydedilip kaydedilmediğini kontrol edin ve ardından belgeyi yeniden dışa aktarın.
+
+## Excel dışa aktarma stili
+
+Excel dışa aktarma stili, kullanıcıların Saga'den indirdiği tabloların görünümünü kontrol eder. Yazı tiplerini, metin ve dolgu renklerini, zebra çizgilerini, satır yüksekliğini, sütun genişliğini, hizalamayı, metin kaydırmayı ve kenarlıkları yapılandırabilirsiniz.
+
+### Excel referans çalışma kitabını karşıya yükleyin
+
+Firmanızın tablo stilini temsil eden bir Excel dosyanız zaten varsa bir referans çalışma kitabı kullanın.
+
+1. **Yönetici panelini** açın.
+2. **Belge Şekillendirme > Excel Dışa Aktarma**'ya gidin.
+3. **Referans çalışma kitabı yükle**'yi tıklayın ve 25 MB'ye kadar bir `.xlsx` dosyası seçin.
+4. Çıkarılan ayarları gözden geçirin ve önizleyin.
+5. Gerekirse herhangi bir alanı manuel olarak ayarlayın.
+6. **Değişiklikleri kaydet**'i tıklayın.
+
+Saga çalışma kitabından yazı tiplerini, renkleri, boyutları, hizalamayı ve kenarlıkları çıkarır. Yeni tablo indirmeleri, kaydedilen firma çapındaki stili kullanır.
+
+### Excel stillerini manuel olarak ayarlayın
+
+Excel stilini referans çalışma kitabı olmadan yapılandırabilir veya kaydetmeden önce çıkarılan değerleri ayarlayabilirsiniz. Başlık hücrelerine ve veri hücrelerine ayrı ayrı stil vermek için manuel düzenleyiciyi kullanın, ardından sonucu canlı önizlemede inceleyin.
+
+Manuel değişiklikleri iptal etmek istiyorsanız **Referans Belgeye Sıfırla** seçeneğini seçin. Referans çalışma kitabını kaldırmak ve Saga'nin varsayılan stiline dönmek için **Saga Varsayılanlarına Sıfırla**'yı seçin.
+
+## Değişiklikler ne zaman yürürlüğe girer
+
+Değişiklikler, yeni dışa aktarılanları kaydettikten sonra bunlara uygulanır. Mevcut dışa aktarılan dosyalar güncellenmez.
+
+Kullanıcı, ayarlar değişmeden önce bir belgeyi veya tabloyu indirdiyse, güncellenen stili elde etmek için onu yeniden dışa aktarması gerekir.
+
+## Stili test edin
+
+Müşteriye dönük işlerde stile güvenmeden önce, yapılandırdığınız her dışa aktarma türünü test edin.
+
+Word stili için sohbetten kısa bir belgeyi dışa aktarın ve Word'deki gövde metnini, başlıkları, kenar boşluklarını, üst bilgileri, alt bilgileri, sayfa numaralarını ve logoları inceleyin.
+
+Excel stili için yapay zeka tarafından oluşturulan bir tablo indirin ve Excel'deki başlık hücrelerini, veri hücrelerini, boyutları, hizalamayı, sarmayı, zebra çizgilerini ve kenarlıkları inceleyin.
+
+Herhangi bir sorun varsa **Yönetici paneli > Belge Stili**'ne dönün, ilgili dışa aktarma sekmesini açın, ayarı güncelleyin, kaydedin ve yeniden dışa aktarın.

@@ -1,54 +1,93 @@
 ---
-title: Dokumentstil
-description: Konfigurieren Sie, wie von Saga generierte Word-Exporte dem Dokumentstil Ihrer Kanzlei folgen.
+title: Dokumentenstil
+description: Konfigurieren Sie, wie die von Saga generierten Word- und Excel-Exporte dem Dokumentstil Ihres Unternehmens folgen.
 ---
 
 <Note>
-Dokumentstil ist eine [Enterprise](/de/guides/administration/enterprise)-Funktion. Jede Kanzlei nutzt ihre eigene Instanz (zum Beispiel `ihrekanzlei.sagalegal.io`), und der Dokumentstil wird im Admin-Panel dieser Instanz konfiguriert.
+Die Dokumentgestaltung ist eine [Enterprise](/de/guides/administration/enterprise)-Funktion. Jedes Unternehmen betreibt seine eigene Instanz (z. B. `yourfirm.sagalegal.io`) und das Dokumentdesign wird im Admin-Panel dieser Instanz konfiguriert.
 </Note>
 
-Dokumentstil ist eine Admin-Einstellung für von Saga generierte Word-Exporte. Nutzen Sie sie, wenn Ihre Kanzlei möchte, dass Entwürfe, Zusammenfassungen, Memos oder andere KI-generierte Dokumente dieselben Schriftarten, dasselbe Seitenlayout, Kopf- und Fußzeilen sowie dieselbe Seitennummerierung verwenden.
+Der Dokumentstil ist eine Administratoreinstellung für die von Saga generierten Word- und Excel-Exporte. Verwenden Sie es, wenn Ihr Unternehmen möchte, dass Entwürfe, Zusammenfassungen, Memos und heruntergeladene Tabellen demselben Dokumentstil folgen.
 
 Nur Administratoren können den Dokumentstil konfigurieren. Benutzer sehen das Ergebnis, wenn sie generierte Inhalte exportieren, nachdem die Einstellungen gespeichert wurden.
 
-## Was der Dokumentstil steuert
+## Word-Exportstil
 
-Der Dokumentstil kann Folgendes steuern:
+Der Word-Exportstil kann Folgendes steuern:
 
-- Schriftart, Größe, Farbe und Zeilenabstand des Fließtexts
-- Schriftarten, Größen, Farben und Gewichtung von Überschriften
-- Seitengröße, Ausrichtung, Ränder, Einzüge und Abstände
-- Text in Kopf- und Fußzeile
-- Platzierung und Ausrichtung von Seitenzahlen
-- Logos in Kopf- und Fußzeile
+- Schriftart, Größe, Farbe und Zeilenabstand des Hauptteils
+- Schriftarten, Größen, Farben und Stärke der Überschriften
+- Seitengröße, Ausrichtung, Ränder, Einzug und Abstand
+- Kopf- und Fußzeilentext
+- Platzierung und Ausrichtung der Seitenzahlen
+- Kopf- und Fußzeilenlogos
 
-Diese Einstellungen gelten für neue Exporte. Sie ändern keine bereits heruntergeladenen Dateien und keine Dokumente, die Benutzer in ein Projekt oder eine Wissensdatenbank hochladen.
+Diese Einstellungen gelten für neue Exporte. Sie ändern keine Dateien, die bereits heruntergeladen wurden, und sie ändern keine Dokumente, die Benutzer in ein Projekt oder eine Wissensdatenbank hochladen.
 
-## Unterstützte Dokumenttypen
+### Laden Sie ein Word-Referenzdokument hoch
 
-Dokumentstil unterstützt derzeit Word-Referenzdokumente. Unterstützung für PowerPoint und Excel ist in Vorbereitung.
+Verwenden Sie ein Referenzdokument, wenn Sie bereits über eine Word-Datei verfügen, die den Stil Ihres Unternehmens widerspiegelt.
 
-| Dokumenttyp | Status | Hinweise |
-| --- | --- | --- |
-| Word-Dokumente `.docx` | Unterstützt | Verwenden Sie derzeit ein Word-Dokument als Referenzdatei. |
-| PowerPoint-Dateien `.pptx` | In Vorbereitung | Unterstützung ist für zukünftige Dokumentstil-Updates geplant. |
-| Excel-Arbeitsmappen `.xlsx` | In Vorbereitung | Unterstützung ist für zukünftige Dokumentstil-Updates geplant. |
-
-## Referenzdokument hochladen
-
-Verwenden Sie ein Referenzdokument, wenn Sie bereits eine Word-Datei haben, die den Stil Ihrer Kanzlei darstellt.
-
-1. Öffnen Sie den **Admin-Bereich**.
-2. Gehen Sie zu **Dokumentstil**.
+1. Öffnen Sie das **Admin-Panel**.
+2. Gehen Sie zu **Dokumentstil > Word-Export**.
 3. Laden Sie ein `.docx`-Referenzdokument hoch.
-4. Prüfen Sie den extrahierten Stil in der Vorschau.
-5. Passen Sie bei Bedarf Felder manuell an.
+4. Überprüfen Sie den extrahierten Stil in der Vorschau.
+5. Passen Sie alle Felder bei Bedarf manuell an.
 6. Klicken Sie auf **Änderungen speichern**.
 
+Saga liest den Stil aus dem Referenzdokument und verwendet ihn als Ausgangspunkt für zukünftige Word-Exporte.
+
 <Tip>
-Verwenden Sie ein sauberes Referenzdokument mit den Stilen, die Saga übernehmen soll. Vermeiden Sie Dokumente mit nachverfolgten Änderungen, uneinheitlichen Überschriften oder ungewöhnlicher Einzelformatierung.
+Verwenden Sie ein sauberes Referenzdokument mit den Stilen, die Saga kopieren soll. Vermeiden Sie Dokumente mit nachverfolgten Änderungen, inkonsistenten Überschriften oder ungewöhnlichen einmaligen Formatierungen.
 </Tip>
 
-## Stil anpassen und testen
+### Passen Sie die Word-Stile manuell an
 
-Sie können den extrahierten Stil vor dem Speichern verfeinern oder den Stil manuell konfigurieren. Änderungen gelten für neue Exporte, nachdem Sie sie gespeichert haben. Exportieren Sie ein kurzes Testdokument aus dem Chat und prüfen Sie Fließtext, Überschriften, Ränder, Kopf- und Fußzeilen, Seitenzahlen und Logos in Word.
+Sie können den extrahierten Stil vor dem Speichern optimieren. Sie können den Stil auch manuell konfigurieren, ohne ein Referenzdokument hochzuladen.
+
+Verwenden Sie den manuellen Editor, wenn Sie Details wie Ränder, Überschriftengrößen, Seitenzahlen, Kopf- oder Fußzeilentext ändern müssen, ohne eine neue Word-Datei vorzubereiten.
+
+### Fügen Sie Kopf- und Fußzeilenlogos hinzu
+
+Sie können Logos für die Kopf- oder Fußzeile hochladen. Verwenden Sie dies für Firmenbranding, Briefköpfe oder andere Standard-Exportlayouts.
+
+Wenn ein exportiertes Dokument nicht das erwartete Logo zeigt, überprüfen Sie, ob das Logo im richtigen Kopf- oder Fußzeilenbereich gespeichert wurde, und exportieren Sie das Dokument dann erneut.
+
+## Excel-Exportstil
+
+Der Exportstil von Excel steuert das Erscheinungsbild von Tabellen, die Benutzer von Saga herunterladen. Sie können Schriftarten, Text- und Füllfarben, Zebrastreifen, Zeilenhöhe, Spaltenbreite, Ausrichtung, Textumbruch und Ränder konfigurieren.
+
+### Laden Sie eine Excel-Referenzarbeitsmappe hoch
+
+Verwenden Sie eine Referenzarbeitsmappe, wenn Sie bereits über eine Excel-Datei verfügen, die den Tabellenstil Ihres Unternehmens darstellt.
+
+1. Öffnen Sie das **Admin-Panel**.
+2. Gehen Sie zu **Dokumentstil > Excel-Export**.
+3. Klicken Sie auf **Referenzarbeitsmappe hochladen** und wählen Sie eine `.xlsx`-Datei bis 25 MB aus.
+4. Überprüfen Sie die extrahierten Einstellungen und zeigen Sie eine Vorschau an.
+5. Passen Sie alle Felder bei Bedarf manuell an.
+6. Klicken Sie auf **Änderungen speichern**.
+
+Saga extrahiert Schriftarten, Farben, Abmessungen, Ausrichtung und Rahmen aus der Arbeitsmappe. Neue Tabellen-Downloads verwenden den gespeicherten unternehmensweiten Stil.
+
+### Passen Sie die Excel-Stile manuell an
+
+Sie können den Excel-Stil ohne Referenzarbeitsmappe konfigurieren oder die extrahierten Werte vor dem Speichern anpassen. Verwenden Sie den manuellen Editor, um Überschriftenzellen und Datenzellen separat zu formatieren, und überprüfen Sie dann das Ergebnis in der Live-Vorschau.
+
+Wenn Sie manuelle Änderungen verwerfen möchten, wählen Sie **Auf Referenzdokument zurücksetzen**. Um die Referenzarbeitsmappe zu entfernen und zum Standardstil von Saga zurückzukehren, wählen Sie **Auf Saga-Standards zurücksetzen** aus.
+
+## Wann Änderungen wirksam werden
+
+Änderungen gelten für neue Exporte, nachdem Sie sie gespeichert haben. Vorhandene exportierte Dateien werden nicht aktualisiert.
+
+Wenn ein Benutzer ein Dokument oder eine Tabelle heruntergeladen hat, bevor sich die Einstellungen geändert haben, muss er es erneut exportieren, um den aktualisierten Stil zu erhalten.
+
+## Testen Sie den Stil
+
+Bevor Sie sich für die Arbeit mit Kunden auf den Stil verlassen, testen Sie jeden von Ihnen konfigurierten Exporttyp.
+
+Exportieren Sie für das Word-Styling ein kurzes Dokument aus dem Chat und überprüfen Sie den Haupttext, die Überschriften, Ränder, Kopfzeilen, Fußzeilen, Seitenzahlen und Logos in Word.
+
+Laden Sie für das Excel-Styling eine KI-generierte Tabelle herunter und überprüfen Sie die Überschriftenzellen, Datenzellen, Abmessungen, Ausrichtung, Umbruch, Zebrastreifen und Ränder in Excel.
+
+Wenn etwas nicht stimmt, kehren Sie zum **Admin-Bereich > Dokumentstil** zurück, öffnen Sie die entsprechende Export-Registerkarte, aktualisieren Sie die Einstellung, speichern Sie und exportieren Sie erneut.

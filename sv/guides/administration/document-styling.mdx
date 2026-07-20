@@ -1,54 +1,93 @@
 ---
-title: Dokumentstil
-description: Konfigurera hur Word-exporter som genereras av Saga följer byråns dokumentstil.
+title: Dokumentstyling
+description: Konfigurera hur Saga-genererade Word- och Excel-exporter följer ditt företags dokumentstil.
 ---
 
 <Note>
-Dokumentstil är en [Enterprise](/sv/guides/administration/enterprise)-funktion. Varje byrå har sin egen instans (till exempel `dinbyra.sagalegal.io`), och dokumentstil konfigureras i administrationspanelen för den instansen.
+Dokumentstil är en [Enterprise](/sv/guides/administration/enterprise)-funktion. Varje företag kör sin egen instans (till exempel `yourfirm.sagalegal.io`), och dokumentstilen konfigureras i den instansens adminpanel.
 </Note>
 
-Dokumentstil är en admininställning för Word-exporter som genereras av Saga. Använd den när byrån vill att utkast, sammanfattningar, PM eller andra AI-genererade dokument ska följa samma typsnitt, sidlayout, sidhuvuden, sidfötter och sidnumrering.
+Dokumentstil är en administratörsinställning för Word- och Excel-exporter som genereras av Saga. Använd det när ditt företag vill att utkast, sammanfattningar, PM och nedladdade tabeller ska följa samma dokumentstil.
 
-Endast admins kan konfigurera dokumentstil. Användare ser resultatet när de exporterar genererat innehåll efter att inställningarna har sparats.
+Endast administratörer kan konfigurera dokumentstil. Användare ser resultatet när de exporterar genererat innehåll efter att inställningarna har sparats.
 
-## Vad dokumentstil styr
+## Word export styling
 
-Dokumentstil kan styra:
+Word exportstyling kan styra:
 
-- Typsnitt, storlek, färg och radavstånd för brödtext
-- Typsnitt, storlekar, färger och vikt för rubriker
+- Texttypsnitt, storlek, färg och radavstånd
+- Rubriktypsnitt, storlekar, färger och vikt
 - Sidstorlek, orientering, marginaler, indrag och avstånd
-- Text i sidhuvud och sidfot
-- Placering och justering av sidnummer
-- Logotyper i sidhuvud och sidfot
+- Sidhuvud och sidfotstext
+- Sidnummerplacering och justering
+- Logotyper för sidhuvud och sidfot
 
-Dessa inställningar gäller nya exporter. De ändrar inte filer som redan har laddats ned och de ändrar inte dokument som användare laddar upp till ett projekt eller en kunskapsbas.
+Dessa inställningar gäller för nya exporter. De ändrar inte filer som redan laddats ner, och de ändrar inte dokument som användare laddar upp till ett projekt eller en kunskapsbas.
 
-## Dokumenttyper som stöds
+### Ladda upp ett Word referensdokument
 
-Dokumentstil stöder för närvarande Word-referensdokument. Stöd för PowerPoint och Excel är på väg.
-
-| Dokumenttyp | Status | Anteckningar |
-| --- | --- | --- |
-| Word-dokument `.docx` | Stöds | Använd ett Word-dokument som referensfil i dag. |
-| PowerPoint-filer `.pptx` | På väg | Stöd är planerat för framtida uppdateringar av dokumentstil. |
-| Excel-arbetsböcker `.xlsx` | På väg | Stöd är planerat för framtida uppdateringar av dokumentstil. |
-
-## Ladda upp ett referensdokument
-
-Använd ett referensdokument när du redan har en Word-fil som representerar byråns stil.
+Använd ett referensdokument när du redan har en Word-fil som representerar ditt företags stil.
 
 1. Öppna **Adminpanel**.
-2. Gå till **Dokumentstil**.
-3. Ladda upp ett `.docx`-referensdokument.
-4. Granska den extraherade stilen i förhandsvisningen.
-5. Justera fält manuellt vid behov.
+2. Gå till **Dokumentstil > Word Export**.
+3. Ladda upp ett `.docx` referensdokument.
+4. Granska den extraherade stilen i förhandsgranskningen.
+5. Justera eventuella fält manuellt om det behövs.
 6. Klicka på **Spara ändringar**.
+
+Saga läser stilen från referensdokumentet och använder den som utgångspunkt för framtida Word-exporter.
 
 <Tip>
 Använd ett rent referensdokument med de stilar du vill att Saga ska kopiera. Undvik dokument med spårade ändringar, inkonsekventa rubriker eller ovanlig engångsformatering.
 </Tip>
 
-## Justera och testa stilen
+### Justera Word-stilar manuellt
 
-Du kan finjustera den extraherade stilen innan du sparar eller konfigurera stilen manuellt. Ändringar gäller nya exporter efter att du sparar dem. Exportera ett kort testdokument från chatten och granska brödtext, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper i Word.
+Du kan finjustera den extraherade stilen innan du sparar. Du kan också konfigurera stilen manuellt utan att ladda upp ett referensdokument.
+
+Använd den manuella redigeraren när du behöver ändra detaljer som marginaler, rubrikstorlekar, sidnummer, sidhuvudstext eller sidfotstext utan att förbereda en ny Word-fil.
+
+### Lägg till logotyper för sidhuvud och sidfot
+
+Du kan ladda upp logotyper för sidhuvudet eller sidfoten. Använd detta för fast varumärke, brevhuvuden eller andra vanliga exportlayouter.
+
+Om ett exporterat dokument inte visar den logotyp du förväntade dig, kontrollera att logotypen har sparats i rätt sidhuvud eller sidfot, exportera sedan dokumentet igen.
+
+## Excel export styling
+
+Excel exportstil styr utseendet på tabeller som användare laddar ner från Saga. Du kan konfigurera teckensnitt, text- och fyllningsfärger, zebrastränder, radhöjd, kolumnbredd, justering, textbrytning och kanter.
+
+### Ladda upp en Excel referensarbetsbok
+
+Använd en referensarbetsbok när du redan har en Excel-fil som representerar ditt företags tabellstil.
+
+1. Öppna **Adminpanel**.
+2. Gå till **Dokumentstil > Excel Export**.
+3. Klicka på **Ladda upp en referensarbetsbok** och välj en `.xlsx`-fil upp till 25 MB.
+4. Granska de extraherade inställningarna och förhandsgranska.
+5. Justera eventuella fält manuellt om det behövs.
+6. Klicka på **Spara ändringar**.
+
+Saga extraherar typsnitt, färger, dimensioner, justering och ramar från arbetsboken. Nya tabellnedladdningar använder den sparade stilen för hela företaget.
+
+### Justera Excel-stilar manuellt
+
+Du kan konfigurera Excel-stil utan en referensarbetsbok eller justera de extraherade värdena innan du sparar. Använd den manuella redigeraren för att utforma rubrikceller och dataceller separat och granska sedan resultatet i liveförhandsvisningen.
+
+Om du vill ignorera manuella ändringar, välj **Återställ till referensdokument**. För att ta bort referensarbetsboken och återgå till Sagas standardutformning, välj **Återställ till Saga Defaults**.
+
+## När ändringar träder i kraft
+
+Ändringar gäller för nya exporter efter att du har sparat dem. Befintliga exporterade filer uppdateras inte.
+
+Om en användare laddade ner ett dokument eller en tabell innan inställningarna ändrades måste de exportera det igen för att få den uppdaterade stilen.
+
+## Testa stilen
+
+Innan du litar på stilen för klientinriktad arbete, testa varje exporttyp du konfigurerat.
+
+För Word-stil, exportera ett kort dokument från chatten och granska brödtexten, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper i Word.
+
+För Excel-styling, ladda ner en AI-genererad tabell och granska rubrikcellerna, datacellerna, dimensionerna, justeringen, lindningen, zebrastränderna och gränserna i Excel.
+
+Om något ser fel ut, gå tillbaka till **Adminpanel > Dokumentstil**, öppna relevant exportflik, uppdatera inställningen, spara och exportera igen.
