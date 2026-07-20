@@ -1,54 +1,93 @@
 ---
-title: Styl dokumentów
-description: Skonfiguruj, jak eksporty Word generowane przez Saga mają stosować styl dokumentów Twojej kancelarii.
+title: Stylizacja dokumentu
+description: Skonfiguruj, w jaki sposób eksporty Word i Excel wygenerowane przez Saga dostosowują się do stylu dokumentu Twojej firmy.
 ---
 
 <Note>
-Stylizacja dokumentów to funkcja planu [Enterprise](/pl/guides/administration/enterprise). Każda kancelaria ma własną instancję (na przykład `twojakancelaria.sagalegal.io`), a stylizację dokumentów konfiguruje się w panelu administracyjnym tej instancji.
+Stylowanie dokumentów to funkcja [Enterprise](/pl/guides/administration/enterprise). Każda firma posiada własną instancję (np. `yourfirm.sagalegal.io`), a styl dokumentów konfiguruje się w panelu administracyjnym tej instancji.
 </Note>
 
-Styl dokumentów to ustawienie administracyjne dla eksportów Word generowanych przez Saga. Użyj go, gdy kancelaria chce, aby projekty, podsumowania, notatki lub inne dokumenty generowane przez AI stosowały te same czcionki, układ strony, nagłówki, stopki i numerację stron.
+Stylowanie dokumentów to ustawienie administratora dla eksportów Word i Excel generowanych przez Saga. Użyj go, gdy Twoja firma chce, aby wersje robocze, podsumowania, notatki i pobrane tabele miały ten sam styl dokumentu.
 
-Tylko administratorzy mogą konfigurować styl dokumentów. Użytkownicy widzą rezultat, gdy eksportują wygenerowaną treść po zapisaniu ustawień.
+Tylko administratorzy mogą konfigurować styl dokumentu. Użytkownicy widzą wynik, gdy eksportują wygenerowaną treść po zapisaniu ustawień.
 
-## Co kontroluje styl dokumentów
+## Stylizacja eksportowa Word
 
-Styl dokumentów może kontrolować:
+Stylizacja eksportowa Word może kontrolować:
 
-- Czcionkę, rozmiar, kolor i interlinię tekstu głównego
-- Czcionki, rozmiary, kolory i grubość nagłówków
-- Rozmiar strony, orientację, marginesy, wcięcia i odstępy
-- Tekst w nagłówku i stopce
-- Położenie i wyrównanie numerów stron
-- Logo w nagłówku i stopce
+- Czcionka główna, rozmiar, kolor i odstępy między wierszami
+- Czcionki nagłówków, rozmiary, kolory i waga
+- Rozmiar strony, orientacja, marginesy, wcięcia i odstępy
+- Tekst nagłówka i stopki
+- Umieszczenie i wyrównanie numerów stron
+- Logo nagłówka i stopki
 
-Te ustawienia dotyczą nowych eksportów. Nie zmieniają plików już pobranych ani dokumentów przesłanych przez użytkowników do projektu lub bazy wiedzy.
+Te ustawienia dotyczą nowych eksportów. Nie zmieniają plików, które zostały już pobrane, ani nie zmieniają dokumentów, które użytkownicy przesyłają do projektu lub bazy wiedzy.
 
-## Obsługiwane typy dokumentów
+### Prześlij dokument referencyjny Word
 
-Styl dokumentów obsługuje obecnie dokumenty referencyjne Word. Obsługa PowerPoint i Excel jest w drodze.
-
-| Typ dokumentu | Status | Uwagi |
-| --- | --- | --- |
-| Dokumenty Word `.docx` | Obsługiwane | Użyj dziś dokumentu Word jako pliku referencyjnego. |
-| Pliki PowerPoint `.pptx` | W drodze | Obsługa jest planowana w przyszłych aktualizacjach stylu dokumentów. |
-| Skoroszyty Excel `.xlsx` | W drodze | Obsługa jest planowana w przyszłych aktualizacjach stylu dokumentów. |
-
-## Prześlij dokument referencyjny
-
-Użyj dokumentu referencyjnego, gdy masz już plik Word odzwierciedlający styl kancelarii.
+Skorzystaj z dokumentu referencyjnego, jeśli masz już plik Word reprezentujący styl Twojej firmy.
 
 1. Otwórz **Panel administracyjny**.
-2. Przejdź do **Styl dokumentów**.
+2. Przejdź do **Styl dokumentu > Eksport Word**.
 3. Prześlij dokument referencyjny `.docx`.
-4. Sprawdź wyodrębniony styl w podglądzie.
-5. W razie potrzeby dostosuj pola ręcznie.
+4. Przejrzyj wyodrębniony styl w podglądzie.
+5. W razie potrzeby dostosuj ręcznie dowolne pola.
 6. Kliknij **Zapisz zmiany**.
 
+Saga odczytuje styl z dokumentu referencyjnego i wykorzystuje go jako punkt wyjścia dla przyszłego eksportu Word.
+
 <Tip>
-Użyj czystego dokumentu referencyjnego ze stylami, które Saga ma skopiować. Unikaj dokumentów ze śledzeniem zmian, niespójnymi nagłówkami lub nietypowym jednorazowym formatowaniem.
+Użyj czystego dokumentu referencyjnego ze stylami, które chcesz skopiować Saga. Unikaj dokumentów ze śledzonymi zmianami, niespójnymi nagłówkami lub nietypowym jednorazowym formatowaniem.
 </Tip>
 
-## Dostosuj i przetestuj styl
+### Dostosuj style Word ręcznie
 
-Możesz dopracować wyodrębniony styl przed zapisaniem lub skonfigurować styl ręcznie. Zmiany dotyczą nowych eksportów po ich zapisaniu. Wyeksportuj krótki dokument testowy z czatu i sprawdź w Wordzie tekst główny, nagłówki, marginesy, nagłówki i stopki, numery stron oraz logo.
+Przed zapisaniem możesz dostosować wyodrębniony styl. Możesz także skonfigurować styl ręcznie, bez przesyłania dokumentu referencyjnego.
+
+Użyj edytora ręcznego, jeśli chcesz zmienić szczegóły, takie jak marginesy, rozmiary nagłówków, numery stron, tekst nagłówka lub tekst stopki bez konieczności przygotowywania nowego pliku Word.
+
+### Dodaj logo nagłówka i stopki
+
+Możesz przesłać logo do nagłówka lub stopki. Użyj tego do oznakowania marki firmy, papieru firmowego lub innych standardowych układów eksportowych.
+
+Jeśli wyeksportowany dokument nie zawiera oczekiwanego logo, sprawdź, czy logo zostało zapisane w odpowiednim miejscu nagłówka lub stopki, a następnie wyeksportuj dokument ponownie.
+
+## Stylizacja eksportowa Excel
+
+Styl eksportu Excel steruje wyglądem tabel pobieranych przez użytkowników z Saga. Możesz skonfigurować czcionki, kolory tekstu i wypełnienia, paski zebry, wysokość wiersza, szerokość kolumny, wyrównanie, zawijanie tekstu i obramowania.
+
+### Prześlij skoroszyt referencyjny Excel
+
+Jeśli masz już plik Excel reprezentujący styl stołu Twojej firmy, użyj skoroszytu referencyjnego.
+
+1. Otwórz **Panel administracyjny**.
+2. Przejdź do **Styl dokumentu > Eksport Excel**.
+3. Kliknij **Prześlij skoroszyt referencyjny** i wybierz plik `.xlsx` do 25 MB.
+4. Przejrzyj wyodrębnione ustawienia i podgląd.
+5. W razie potrzeby dostosuj ręcznie dowolne pola.
+6. Kliknij **Zapisz zmiany**.
+
+Saga wyodrębnia czcionki, kolory, wymiary, wyrównanie i obramowania ze skoroszytu. Nowe tabele do pobrania korzystają z zapisanego stylu całej firmy.
+
+### Dostosuj style Excel ręcznie
+
+Możesz skonfigurować styl Excel bez skoroszytu referencyjnego lub dostosować wyodrębnione wartości przed zapisaniem. Użyj edytora ręcznego, aby oddzielnie stylizować komórki nagłówków i komórki danych, a następnie przejrzyj wynik w podglądzie na żywo.
+
+Jeśli chcesz odrzucić ręczne zmiany, wybierz **Przywróć do dokumentu referencyjnego**. Aby usunąć skoroszyt referencyjny i powrócić do domyślnego stylu Saga, wybierz **Przywróć domyślne ustawienia Saga**.
+
+## Kiedy zmiany zaczną obowiązywać
+
+Zmiany dotyczą nowych eksportów po ich zapisaniu. Istniejące wyeksportowane pliki nie są aktualizowane.
+
+Jeśli użytkownik pobrał dokument lub tabelę przed zmianą ustawień, musi go wyeksportować ponownie, aby uzyskać zaktualizowany styl.
+
+## Przetestuj styl
+
+Zanim zaczniesz polegać na stylu pracy z klientem, przetestuj każdy skonfigurowany typ eksportu.
+
+Aby uzyskać styl Word, wyeksportuj krótki dokument z czatu i przejrzyj tekst główny, nagłówki, marginesy, nagłówki, stopki, numery stron i logo w Word.
+
+Aby uzyskać styl Excel, pobierz tabelę wygenerowaną przez sztuczną inteligencję i przejrzyj komórki nagłówków, komórki danych, wymiary, wyrównanie, zawijanie, paski zebry i obramowania w Excel.
+
+Jeżeli coś wygląda nie tak, wróć do **Panel administracyjny > Styl dokumentu**, otwórz odpowiednią zakładkę eksportu, zaktualizuj ustawienia, zapisz i wyeksportuj ponownie.

@@ -1,56 +1,93 @@
 ---
-title: Dokumentstil
-description: Konfigurer hvordan Word-eksporter generert av Saga følger firmaets dokumentstil.
+title: Dokumentstyling
+description: Konfigurer hvordan Saga-generert Word- og Excel-eksport følger firmaets dokumentstil.
 ---
 
 <Note>
-Dokumentstil er en [Enterprise](/no/guides/administration/enterprise)-funksjon. Hvert firma har sin egen instans (for eksempel `dittfirma.sagalegal.io`), og dokumentstil konfigureres i administrasjonspanelet for den instansen.
+Dokumentstil er en [Enterprise](/no/guides/administration/enterprise)-funksjon. Hvert firma kjører sin egen instans (for eksempel `yourfirm.sagalegal.io`), og dokumentstil konfigureres i den instansens administrasjonspanel.
 </Note>
 
-Dokumentstil er en administratorinnstilling for Word-eksporter generert av Saga. Bruk den når firmaet vil at utkast, sammendrag, notater eller andre AI-genererte dokumenter skal følge de samme skrifttypene, sideoppsettet, topptekstene, bunntekstene og sidetallene.
+Dokumentstil er en administratorinnstilling for Word- og Excel-eksporter generert av Saga. Bruk den når firmaet ditt vil at utkast, sammendrag, notater og nedlastede tabeller skal følge samme dokumentstil.
 
 Bare administratorer kan konfigurere dokumentstil. Brukere ser resultatet når de eksporterer generert innhold etter at innstillingene er lagret.
 
-## Hva dokumentstil styrer
+## Word eksportstyling
 
-Dokumentstil kan styre:
+Word eksportstyling kan kontrollere:
 
-- Skrifttype, størrelse, farge og linjeavstand for brødtekst
-- Skrifttyper, størrelser, farger og vekt for overskrifter
+- Brødtekstskrift, størrelse, farge og linjeavstand
+- Overskriftsfonter, størrelser, farger og vekt
 - Sidestørrelse, retning, marger, innrykk og avstand
-- Tekst i topptekst og bunntekst
-- Plassering og justering av sidetall
-- Logoer i topptekst og bunntekst
+- Topptekst og bunntekst
+- Plassering og justering av sidenummer
+- Topp- og bunntekstlogoer
 
 Disse innstillingene gjelder for nye eksporter. De endrer ikke filer som allerede er lastet ned, og de endrer ikke dokumenter som brukere laster opp til et prosjekt eller en kunnskapsbase.
 
-## Støttede dokumenttyper
+### Last opp et Word referansedokument
 
-Dokumentstil støtter foreløpig Word-referansedokumenter. Støtte for PowerPoint og Excel er på vei.
-
-| Dokumenttype | Status | Merknader |
-| --- | --- | --- |
-| Word-dokumenter `.docx` | Støttet | Bruk et Word-dokument som referansefil i dag. |
-| PowerPoint-filer `.pptx` | På vei | Støtte er planlagt i fremtidige oppdateringer av dokumentstil. |
-| Excel-arbeidsbøker `.xlsx` | På vei | Støtte er planlagt i fremtidige oppdateringer av dokumentstil. |
-
-## Last opp et referansedokument
-
-Bruk et referansedokument når du allerede har en Word-fil som viser firmaets stil.
+Bruk et referansedokument når du allerede har en Word-fil som representerer firmaets stil.
 
 1. Åpne **Administrasjonspanel**.
-2. Gå til **Dokumentstil**.
-3. Last opp et `.docx`-referansedokument.
-4. Se gjennom den hentede stilen i forhåndsvisningen.
-5. Juster feltene manuelt ved behov.
-6. Klikk **Lagre endringer**.
+2. Gå til **Dokumentstiling > Word eksport**.
+3. Last opp et `.docx` referansedokument.
+4. Se gjennom den utpakkede stilen i forhåndsvisningen.
+5. Juster eventuelle felt manuelt om nødvendig.
+6. Klikk på **Lagre endringer**.
+
+Saga leser stilen fra referansedokumentet og bruker den som utgangspunkt for fremtidig Word-eksport.
 
 <Tip>
-Bruk et rent referansedokument med stilene du vil at Saga skal kopiere. Unngå dokumenter med spor endringer, inkonsekvente overskrifter eller uvanlig engangsformatering.
+Bruk et rent referansedokument med stilene du vil at Saga skal kopiere. Unngå dokumenter med sporede endringer, inkonsekvente overskrifter eller uvanlig engangsformatering.
 </Tip>
 
-## Juster og test stilen
+### Juster Word-stiler manuelt
 
-Du kan finjustere den hentede stilen før du lagrer. Du kan også konfigurere stilen manuelt uten å laste opp et referansedokument.
+Du kan finjustere den utpakkede stilen før du lagrer. Du kan også konfigurere stilen manuelt uten å laste opp et referansedokument.
 
-Endringer gjelder for nye eksporter etter at du lagrer dem. Eksporter et kort testdokument fra chatten og se gjennom brødtekst, overskrifter, marger, topptekster, bunntekster, sidetall og logoer i Word.
+Bruk den manuelle editoren når du trenger å endre detaljer som marger, overskriftsstørrelser, sidetall, topptekst eller bunntekst uten å forberede en ny Word-fil.
+
+### Legg til logoer for topptekst og bunntekst
+
+Du kan laste opp logoer for topp- eller bunnteksten. Bruk dette for fast merkevarebygging, brevhoder eller andre standard eksportoppsett.
+
+Hvis et eksportert dokument ikke viser logoen du forventet, kontroller at logoen ble lagret i riktig topp- eller bunntekstspor, og eksporter deretter dokumentet på nytt.
+
+## Excel eksportstyling
+
+Excel eksportstil kontrollerer utseendet til tabeller som brukere laster ned fra Saga. Du kan konfigurere fonter, tekst- og fyllfarger, sebrastriper, radhøyde, kolonnebredde, justering, tekstbryting og kanter.
+
+### Last opp en Excel referansearbeidsbok
+
+Bruk en referansearbeidsbok når du allerede har en Excel-fil som representerer firmaets tabellstil.
+
+1. Åpne **Administrasjonspanel**.
+2. Gå til **Dokumentstiling > Excel eksport**.
+3. Klikk på **Last opp en referansearbeidsbok** og velg en `.xlsx`-fil opptil 25 MB.
+4. Se gjennom de utpakkede innstillingene og forhåndsvis.
+5. Juster eventuelle felt manuelt om nødvendig.
+6. Klikk på **Lagre endringer**.
+
+Saga trekker ut fonter, farger, dimensjoner, justering og kantlinjer fra arbeidsboken. Nye tabellnedlastinger bruker den lagrede stilen for hele firmaet.
+
+### Juster Excel-stiler manuelt
+
+Du kan konfigurere Excel-stil uten en referansearbeidsbok, eller justere de utpakkede verdiene før du lagrer. Bruk den manuelle editoren til å style overskriftsceller og dataceller separat, og se deretter resultatet i live-forhåndsvisningen.
+
+Hvis du vil forkaste manuelle endringer, velg **Tilbakestill til referansedokument**. For å fjerne referansearbeidsboken og gå tilbake til Sagas standardstil, velg **Reset to Saga Defaults**.
+
+## Når endringer trer i kraft
+
+Endringer gjelder for nye eksporter etter at du har lagret dem. Eksisterende eksporterte filer er ikke oppdatert.
+
+Hvis en bruker lastet ned et dokument eller en tabell før innstillingene ble endret, må de eksportere den på nytt for å få den oppdaterte stilen.
+
+## Test stilen
+
+Før du stoler på stilen for klientrettet arbeid, test hver eksporttype du konfigurerte.
+
+For Word-styling, eksporter et kort dokument fra chat og se gjennom brødteksten, overskrifter, marger, topptekster, bunntekster, sidetall og logoer i Word.
+
+For Excel-styling, last ned en AI-generert tabell og gjennomgå overskriftscellene, datacellene, dimensjonene, justeringen, innpakningen, sebrastripen og kantene i Excel.
+
+Hvis noe ser galt ut, går du tilbake til **Administrasjonspanel > Dokumentstil**, åpner den relevante eksportfanen, oppdaterer innstillingen, lagrer og eksporterer igjen.

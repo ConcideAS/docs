@@ -1,54 +1,93 @@
 ---
-title: Estilo dos documentos
-description: Configure como as exportações Word geradas pela Saga seguem o estilo documental da sua sociedade.
+title: Estilo do documento
+description: Configure como as exportações Word e Excel geradas por Saga seguem o estilo de documento da sua empresa.
 ---
 
 <Note>
-O estilo de documentos é uma funcionalidade [Enterprise](/pt/guides/administration/enterprise). Cada escritório tem a sua própria instância (por exemplo, `seuescritorio.sagalegal.io`), e o estilo de documentos é configurado no painel de administração dessa instância.
+O estilo do documento é um recurso [Enterprise](/pt/guides/administration/enterprise). Cada empresa executa sua própria instância (por exemplo, `yourfirm.sagalegal.io`) e o estilo do documento é configurado no painel de administração dessa instância.
 </Note>
 
-O estilo dos documentos é uma configuração de administração para exportações Word geradas pela Saga. Use quando a sua sociedade quiser que minutas, resumos, memorandos ou outros documentos gerados por IA sigam as mesmas fontes, layout de página, cabeçalhos, rodapés e numeração.
+O estilo do documento é uma configuração administrativa para exportações Word e Excel geradas por Saga. Use-o quando sua empresa desejar que rascunhos, resumos, memorandos e tabelas baixadas sigam o mesmo estilo de documento.
 
-Apenas administradores podem configurar o estilo dos documentos. Os utilizadores veem o resultado quando exportam conteúdo gerado depois de as configurações serem guardadas.
+Somente administradores podem configurar o estilo do documento. Os usuários veem o resultado quando exportam o conteúdo gerado após as configurações serem salvas.
 
-## O que o estilo dos documentos controla
+## Estilo de exportação Word
 
-O estilo dos documentos pode controlar:
+O estilo de exportação Word pode controlar:
 
-- Fonte, tamanho, cor e espaçamento do corpo do texto
-- Fontes, tamanhos, cores e peso dos títulos
-- Tamanho da página, orientação, margens, recuos e espaçamento
+- Fonte do corpo, tamanho, cor e espaçamento entre linhas
+- Fontes, tamanhos, cores e peso do título
+- Tamanho da página, orientação, margens, recuo e espaçamento
 - Texto de cabeçalho e rodapé
-- Posição e alinhamento dos números de página
-- Logótipos em cabeçalho e rodapé
+- Posicionamento e alinhamento do número de página
+- Logotipos de cabeçalho e rodapé
 
-Estas configurações aplicam-se a novas exportações. Não alteram ficheiros já transferidos nem documentos que os utilizadores carregam para um projeto ou base de conhecimento.
+Estas configurações se aplicam a novas exportações. Eles não alteram arquivos que já foram baixados e não alteram documentos que os usuários carregam em um projeto ou base de conhecimento.
 
-## Tipos de documento suportados
+### Carregar um documento de referência Word
 
-O estilo dos documentos suporta atualmente documentos de referência Word. O suporte para PowerPoint e Excel está a caminho.
+Use um documento de referência quando você já possui um arquivo Word que representa o estilo da sua empresa.
 
-| Tipo de documento | Estado | Notas |
-| --- | --- | --- |
-| Documentos Word `.docx` | Suportado | Use hoje um documento Word como ficheiro de referência. |
-| Ficheiros PowerPoint `.pptx` | A caminho | O suporte está planeado para futuras atualizações do estilo dos documentos. |
-| Livros Excel `.xlsx` | A caminho | O suporte está planeado para futuras atualizações do estilo dos documentos. |
-
-## Carregar um documento de referência
-
-Use um documento de referência quando já tiver um ficheiro Word que representa o estilo da sua sociedade.
-
-1. Abra **Painel de administração**.
-2. Vá a **Estilo dos documentos**.
+1. Abra o **Painel de administração**.
+2. Vá para **Estilo de documento > Exportação Word**.
 3. Carregue um documento de referência `.docx`.
-4. Reveja o estilo extraído na pré-visualização.
-5. Ajuste manualmente os campos se necessário.
-6. Clique em **Guardar alterações**.
+4. Revise o estilo extraído na visualização.
+5. Ajuste quaisquer campos manualmente, se necessário.
+6. Clique em **Salvar alterações**.
+
+Saga lê o estilo do documento de referência e o utiliza como ponto de partida para futuras exportações de Word.
 
 <Tip>
-Use um documento de referência limpo com os estilos que quer que a Saga copie. Evite documentos com controlo de alterações, títulos inconsistentes ou formatação incomum aplicada apenas uma vez.
+Use um documento de referência limpo com os estilos que você deseja que o Saga copie. Evite documentos com alterações controladas, títulos inconsistentes ou formatação única incomum.
 </Tip>
 
-## Ajustar e testar o estilo
+### Ajuste os estilos Word manualmente
 
-Pode afinar o estilo extraído antes de guardar ou configurar o estilo manualmente. As alterações aplicam-se a novas exportações depois de serem guardadas. Exporte um documento de teste curto a partir do chat e reveja no Word o corpo do texto, títulos, margens, cabeçalhos, rodapés, números de página e logótipos.
+Você pode ajustar o estilo extraído antes de salvar. Você também pode configurar o estilo manualmente sem carregar um documento de referência.
+
+Use o editor manual quando precisar alterar detalhes como margens, tamanhos de cabeçalho, números de página, texto de cabeçalho ou texto de rodapé sem preparar um novo arquivo Word.
+
+### Adicione logotipos de cabeçalho e rodapé
+
+Você pode fazer upload de logotipos para o cabeçalho ou rodapé. Use-o para marcas de empresas, papéis timbrados ou outros layouts de exportação padrão.
+
+Se um documento exportado não mostrar o logotipo esperado, verifique se o logotipo foi salvo no slot correto do cabeçalho ou rodapé e exporte o documento novamente.
+
+## Estilo de exportação Excel
+
+O estilo de exportação Excel controla a aparência das tabelas que os usuários baixam do Saga. Você pode configurar fontes, texto e cores de preenchimento, listras de zebra, altura da linha, largura da coluna, alinhamento, quebra automática de texto e bordas.
+
+### Carregar uma pasta de trabalho de referência Excel
+
+Use uma pasta de trabalho de referência quando já tiver um arquivo Excel que represente o estilo de tabela da sua empresa.
+
+1. Abra o **Painel de administração**.
+2. Vá para **Estilo de documento > Exportação Excel**.
+3. Clique em **Carregar uma pasta de trabalho de referência** e selecione um arquivo `.xlsx` até 25 MB.
+4. Revise as configurações extraídas e visualize.
+5. Ajuste quaisquer campos manualmente, se necessário.
+6. Clique em **Salvar alterações**.
+
+Saga extrai fontes, cores, dimensões, alinhamento e bordas da pasta de trabalho. Os novos downloads de tabelas usam o estilo salvo para toda a empresa.
+
+### Ajuste os estilos Excel manualmente
+
+Você pode configurar o estilo Excel sem uma pasta de trabalho de referência ou ajustar os valores extraídos antes de salvar. Use o editor manual para estilizar células de título e células de dados separadamente e, em seguida, revise o resultado na visualização ao vivo.
+
+Se quiser descartar alterações manuais, selecione **Redefinir para documento de referência**. Para remover a pasta de trabalho de referência e retornar ao estilo padrão de Saga, selecione **Redefinir para padrões de Saga**.
+
+## Quando as alterações entram em vigor
+
+As alterações se aplicam a novas exportações depois de salvá-las. Os arquivos exportados existentes não são atualizados.
+
+Se um usuário baixou um documento ou tabela antes da alteração das configurações, ele precisará exportá-lo novamente para obter o estilo atualizado.
+
+## Teste o estilo
+
+Antes de confiar no estilo para trabalho voltado ao cliente, teste cada tipo de exportação configurado.
+
+Para estilizar Word, exporte um pequeno documento do bate-papo e revise o corpo do texto, títulos, margens, cabeçalhos, rodapés, números de página e logotipos em Word.
+
+Para o estilo Excel, baixe uma tabela gerada por IA e revise as células de título, células de dados, dimensões, alinhamento, quebra automática, listras de zebra e bordas em Excel.
+
+Se algo parecer errado, retorne ao **Painel de administração > Estilo do documento**, abra a guia de exportação relevante, atualize a configuração, salve e exporte novamente.

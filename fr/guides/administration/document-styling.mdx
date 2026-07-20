@@ -1,54 +1,93 @@
 ---
-title: Style des documents
-description: Configurez la manière dont les exports Word générés par Saga suivent le style documentaire de votre cabinet.
+title: Style de document
+description: Configurez la manière dont les exportations Word et Excel générées par Saga suivent le style de document de votre entreprise.
 ---
 
 <Note>
-Le style de document est une fonctionnalité [Enterprise](/fr/guides/administration/enterprise). Chaque cabinet dispose de sa propre instance (par exemple `votrecabinet.sagalegal.io`), et le style de document se configure dans le panneau d'administration de cette instance.
+Le style des documents est une fonctionnalité de [Enterprise](/fr/guides/administration/enterprise). Chaque entreprise exécute sa propre instance (par exemple `yourfirm.sagalegal.io`) et le style des documents est configuré dans le panneau d'administration de cette instance.
 </Note>
 
-Le style des documents est un paramètre administrateur pour les exports Word générés par Saga. Utilisez-le lorsque votre cabinet souhaite que les brouillons, résumés, notes ou autres documents générés par l'IA suivent les mêmes polices, mises en page, en-têtes, pieds de page et numérotation.
+Le style de document est un paramètre d'administration pour les exportations Word et Excel générées par Saga. Utilisez-le lorsque votre entreprise souhaite que les brouillons, les résumés, les mémos et les tableaux téléchargés suivent le même style de document.
 
-Seuls les administrateurs peuvent configurer le style des documents. Les utilisateurs voient le résultat lorsqu'ils exportent du contenu généré après l'enregistrement des paramètres.
+Seuls les administrateurs peuvent configurer le style des documents. Les utilisateurs voient le résultat lorsqu'ils exportent le contenu généré une fois les paramètres enregistrés.
 
-## Ce que contrôle le style des documents
+## Style d'exportation Word
 
-Le style des documents peut contrôler :
+Le style d'exportation Word peut contrôler :
 
-- Police, taille, couleur et interligne du corps de texte
-- Polices, tailles, couleurs et graisse des titres
-- Format de page, orientation, marges, retraits et espacements
+- Police du corps, taille, couleur et espacement des lignes
+- Polices, tailles, couleurs et poids des titres
+- Taille de la page, orientation, marges, indentation et espacement
 - Texte d'en-tête et de pied de page
-- Position et alignement des numéros de page
-- Logos dans les en-têtes et pieds de page
+- Placement et alignement des numéros de page
+- Logos d'en-tête et de pied de page
 
-Ces paramètres s'appliquent aux nouveaux exports. Ils ne modifient pas les fichiers déjà téléchargés ni les documents que les utilisateurs importent dans un projet ou une base de connaissances.
+Ces paramètres s'appliquent aux nouvelles exportations. Ils ne modifient pas les fichiers déjà téléchargés ni les documents que les utilisateurs téléchargent dans un projet ou une base de connaissances.
 
-## Types de documents pris en charge
+### Télécharger un document de référence Word
 
-Le style des documents prend actuellement en charge les documents de référence Word. La prise en charge de PowerPoint et Excel est en préparation.
-
-| Type de document | Statut | Notes |
-| --- | --- | --- |
-| Documents Word `.docx` | Pris en charge | Utilisez aujourd'hui un document Word comme fichier de référence. |
-| Fichiers PowerPoint `.pptx` | En préparation | La prise en charge est prévue dans de futures mises à jour du style des documents. |
-| Classeurs Excel `.xlsx` | En préparation | La prise en charge est prévue dans de futures mises à jour du style des documents. |
-
-## Importer un document de référence
-
-Utilisez un document de référence lorsque vous disposez déjà d'un fichier Word qui représente le style de votre cabinet.
+Utilisez un document de référence lorsque vous disposez déjà d'un fichier Word qui représente le style de votre entreprise.
 
 1. Ouvrez le **Panneau d'administration**.
-2. Accédez à **Style des documents**.
-3. Importez un document de référence `.docx`.
-4. Vérifiez le style extrait dans l'aperçu.
+2. Accédez à **Style de document > Exportation Word**.
+3. Téléchargez un document de référence `.docx`.
+4. Vérifiez le style extrait dans l’aperçu.
 5. Ajustez les champs manuellement si nécessaire.
 6. Cliquez sur **Enregistrer les modifications**.
 
+Saga lit le style du document de référence et l'utilise comme point de départ pour les futures exportations Word.
+
 <Tip>
-Utilisez un document de référence propre avec les styles que vous souhaitez que Saga copie. Évitez les documents avec suivi des modifications, titres incohérents ou mise en forme inhabituelle ponctuelle.
+Utilisez un document de référence propre avec les styles que vous souhaitez que Saga copie. Évitez les documents comportant des modifications suivies, des titres incohérents ou un formatage unique inhabituel.
 </Tip>
 
-## Ajuster et tester le style
+### Ajuster manuellement les styles Word
 
-Vous pouvez affiner le style extrait avant de l'enregistrer ou configurer le style manuellement. Les modifications s'appliquent aux nouveaux exports après leur enregistrement. Exportez un court document de test depuis le chat et vérifiez dans Word le corps de texte, les titres, les marges, les en-têtes, les pieds de page, les numéros de page et les logos.
+Vous pouvez affiner le style extrait avant de l’enregistrer. Vous pouvez également configurer le style manuellement sans télécharger de document de référence.
+
+Utilisez l'éditeur manuel lorsque vous devez modifier des détails tels que les marges, la taille des titres, les numéros de page, le texte d'en-tête ou le texte de pied de page sans préparer un nouveau fichier Word.
+
+### Ajouter des logos d'en-tête et de pied de page
+
+Vous pouvez télécharger des logos pour l'en-tête ou le pied de page. Utilisez-le pour l'image de marque de l'entreprise, les en-têtes ou d'autres mises en page d'exportation standard.
+
+Si un document exporté n'affiche pas le logo attendu, vérifiez que le logo a été enregistré dans le bon emplacement d'en-tête ou de pied de page, puis exportez à nouveau le document.
+
+## Style d'exportation Excel
+
+Le style d'exportation Excel contrôle l'apparence des tableaux que les utilisateurs téléchargent à partir de Saga. Vous pouvez configurer les polices, les couleurs du texte et de remplissage, les rayures zébrées, la hauteur des lignes, la largeur des colonnes, l'alignement, l'habillage du texte et les bordures.
+
+### Téléchargez un classeur de référence Excel
+
+Utilisez un classeur de référence lorsque vous disposez déjà d'un fichier Excel qui représente le style de tableau de votre entreprise.
+
+1. Ouvrez le **Panneau d'administration**.
+2. Accédez à **Style de document > Exportation Excel**.
+3. Cliquez sur **Télécharger un classeur de référence** et sélectionnez un fichier `.xlsx` jusqu'à 25 MB.
+4. Passez en revue les paramètres extraits et prévisualisez.
+5. Ajustez les champs manuellement si nécessaire.
+6. Cliquez sur **Enregistrer les modifications**.
+
+Saga extrait les polices, les couleurs, les dimensions, l'alignement et les bordures du classeur. Les nouveaux téléchargements de tableaux utilisent le style enregistré à l’échelle de l’entreprise.
+
+### Ajuster manuellement les styles Excel
+
+Vous pouvez configurer le style Excel sans classeur de référence ou ajuster les valeurs extraites avant de les enregistrer. Utilisez l'éditeur manuel pour styliser séparément les cellules de titre et les cellules de données, puis examinez le résultat dans l'aperçu en direct.
+
+Si vous souhaitez annuler les modifications manuelles, sélectionnez **Réinitialiser au document de référence**. Pour supprimer le classeur de référence et revenir au style par défaut de Saga, sélectionnez **Réinitialiser les valeurs par défaut de Saga**.
+
+## Quand les changements entrent en vigueur
+
+Les modifications s'appliquent aux nouvelles exportations après les avoir enregistrées. Les fichiers exportés existants ne sont pas mis à jour.
+
+Si un utilisateur a téléchargé un document ou un tableau avant que les paramètres ne soient modifiés, il doit l'exporter à nouveau pour obtenir le style mis à jour.
+
+## Testez le style
+
+Avant de vous fier à ce style pour le travail orienté client, testez chaque type d'exportation que vous avez configuré.
+
+Pour le style Word, exportez un court document à partir du chat et examinez le corps du texte, les titres, les marges, les en-têtes, les pieds de page, les numéros de page et les logos dans Word.
+
+Pour le style Excel, téléchargez un tableau généré par l'IA et examinez les cellules d'en-tête, les cellules de données, les dimensions, l'alignement, l'habillage, les rayures zébrées et les bordures dans Excel.
+
+Si quelque chose ne va pas, revenez au **Panneau d'administration > Style de document**, ouvrez l'onglet d'exportation approprié, mettez à jour le paramètre, enregistrez et exportez à nouveau.
