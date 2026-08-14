@@ -6,11 +6,13 @@ Het beheerpaneel is waar de instellingen, gebruikers en gedeelde content van uw 
 
 ## Rollen
 
-Iedereen in uw Saga-werkruimte heeft een van drie rollen:
+Iedereen in uw Saga-werkruimte heeft een van deze rollen:
 
 **Beheerder** — Volledige controle over de werkruimte. Beheerders beheren gebruikers, configureren instellingen, stellen integraties in, passen branding aan en houden toezicht op alles in het beheerpaneel. Meestal is dit iemand van legal ops of IT.
 
 **Contentbeheerder** — Beheert de contentzijde: [organisatiebronnen](#organisatiebronnen), [aangepaste assistenten](/nl/guides/assistants/custom-assistants) en gedeelde [bibliotheken](#bibliotheken) (prompts, rasterbeoordeling-templates, workflows). Contentbeheerders kunnen geen gebruikers, werkruimte-instellingen of integraties beheren. Deze rol is ontworpen voor mensen die vormgeven hoe het kantoor Saga dagelijks gebruikt — en organisaties kennen het vaak toe aan de juridische engineers van Saga zodat zij kunnen helpen bij het opzetten en onderhouden van de werkruimte.
+
+**Billing Admin** — Beheert het abonnement via **Facturatie** in het beheerpaneel. In Solo krijgt de koper van het abonnement deze rol automatisch en kan daar betaalmethoden bijwerken, facturen downloaden, en teamleden uitnodigen of verwijderen. De rol kan ook in andere werkruimten worden toegewezen, maar opent alleen Facturatie, niet Gebruikers, werkruimte-instellingen, integraties of bibliotheken. Zie [Solo](/nl/guides/administration/solo).
 
 **Gebruiker** — De standaardrol. Gebruikers hebben toegang tot alle functies van Saga maar hebben geen toegang tot het beheerpaneel.
 
@@ -20,6 +22,7 @@ Beheerders configureren de werkruimtestandaarden die voor de hele organisatie ge
 
 - **Standaardassistent** — de AI-assistent die voorgeselecteerd is voor nieuwe gesprekken
 - **Standaardtaal** — de taalinstelling van de werkruimte
+- **Datumnotatie** — hoe datums in de werkruimte worden weergegeven (`dd-mm-yyyy`, `mm-dd-yyyy` of `yyyy-mm-dd`)
 - **Ingeschakelde modellen** — welke AI-modellen beschikbaar zijn in de [assistentselector](/nl/guides/assistants)
 - **Projecttypen** — aangepaste labels voor het categoriseren van projecten
 - **Promptbibliotheek-instellingen** — beschikbare talen en aangepaste tagging voor prompts
@@ -34,6 +37,9 @@ Beheerders configureren de verbindingen met externe hulpmiddelen:
 
 - **[SharePoint](/nl/guides/integrations/sharepoint)** — inschakelen en uw tenant-URL invoeren
 - **[Epona365](/nl/guides/integrations/epona)** — inschakelen en uw instantie-URL invoeren
+- **[NetDocuments](/nl/guides/integrations/netdocuments)** — schakel in met de vendor access key en de regio van uw kantoor
+- **[Dillien](/nl/guides/integrations/dillien)** — schakel in zodat documenten uit Dillien-datarooms kunnen worden geïmporteerd
+- **[MCP-hulpmiddelen](/nl/guides/integrations/mcp-server/connect-tools)** — verbind externe hulpmiddelen die de AI in de chat kan gebruiken
 - **Vertaling** — [DeepL-vertaling](/nl/guides/translate) in- of uitschakelen
 
 ## Thema en branding
@@ -43,6 +49,18 @@ Beheerders kunnen het uiterlijk van de werkruimte aanpassen: upload het logo en 
 ## Documentstijl
 
 Beheerders kunnen configureren hoe door Saga gegenereerde Word-exports eruitzien. Gebruik [Documentstijl](/nl/guides/administration/document-styling) om kantoorbrede lettertypen, koppen, marges, kopteksten, voetteksten, paginanummers en logo's in te stellen.
+
+## AI-beleid
+
+Beheerders kunnen per taal een document **AI-beleid** uploaden. Saga toont dat beleid als de disclaimer in de chat. Als een taal geen eigen bestand heeft, gebruikt Saga het beleid van de standaardtaal van de werkruimte.
+
+## Gegevensbewaring
+
+Beheerders bepalen hoe lang Saga chatgeschiedenis, projectchats en rasterbeoordelingen bewaart. Open **Gegevensbewaring**, kies een termijn en bekijk het **Effectoverzicht** voordat u opslaat. Het overzicht toont hoeveel chats en beoordelingen per gebruiker worden verwijderd.
+
+Wijzigingen gaan in op de datum in het beheerpaneel. Items ouder dan de gekozen termijn worden na een respijtperiode van 24 uur verwijderd. Kies **Onbeperkt** als de werkruimte chats of beoordelingen niet automatisch mag verwijderen.
+
+Gegevensbewaring verwijdert geen andere projectgegevens, zoals documenten.
 
 ## Organisatiebronnen
 

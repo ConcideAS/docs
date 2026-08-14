@@ -6,11 +6,13 @@ Administrasjonspanelet er der organisasjonens innstillinger, brukere og delt inn
 
 ## Roller
 
-Alle i Saga-arbeidsområdet ditt har en av tre roller:
+Alle i Saga-arbeidsområdet ditt har en av disse rollene:
 
 **Administrator** — Full kontroll over arbeidsområdet. Administratorer administrerer brukere, konfigurerer innstillinger, setter opp integrasjoner, tilpasser merkevarebygging og har oversikt over alt i administrasjonspanelet. Vanligvis er dette noen i juridisk drift eller IT.
 
 **Innholdsadministrator** — Administrerer innholdssiden: [organisasjonskilder](#organisasjonskilder), [egendefinerte assistenter](/no/guides/assistants/custom-assistants) og delte [biblioteker](#biblioteker) (instruksjoner, rutenettgjennomgangsmaler, arbeidsflyter). Innholdsadministratorer kan ikke administrere brukere, arbeidsområdeinnstillinger eller integrasjoner. Denne rollen er designet for personer som former hvordan firmaet bruker Saga i det daglige — og organisasjoner gir den ofte til Sagas juridiske ingeniører slik at de kan hjelpe med å sette opp og vedlikeholde arbeidsområdet.
+
+**Billing Admin** — Administrerer abonnementet fra **Fakturering** i administrasjonspanelet. I Solo får personen som kjøper abonnementet denne rollen automatisk og kan oppdatere betalingsmåter, laste ned fakturaer og invitere eller fjerne teammedlemmer derfra. Rollen kan også tildeles i andre arbeidsområder, men åpner bare Fakturering, ikke Brukere, innstillinger, integrasjoner eller biblioteker. Se [Solo](/no/guides/administration/solo).
 
 **Bruker** — Standardrollen. Brukere har tilgang til alle Sagas funksjoner, men har ikke tilgang til administrasjonspanelet.
 
@@ -20,6 +22,7 @@ Administratorer konfigurerer standardinnstillingene for arbeidsområdet som gjel
 
 - **Standardassistent** — AI-assistenten som er forhåndsvalgt for nye samtaler
 - **Standardspråk** — arbeidsområdets språkinnstilling
+- **Datoformat** — hvordan datoer vises i arbeidsområdet (`dd-mm-yyyy`, `mm-dd-yyyy` eller `yyyy-mm-dd`)
 - **Aktiverte modeller** — hvilke AI-modeller som er tilgjengelige i [assistentvelgeren](/no/guides/assistants)
 - **Prosjekttyper** — egendefinerte etiketter for kategorisering av prosjekter
 - **Instruksjonsbibliotekinnstillinger** — tilgjengelige språk og egendefinert tagging for instruksjoner
@@ -34,6 +37,9 @@ Administratorer konfigurerer tilkoblingene til eksterne verktøy:
 
 - **[SharePoint](/no/guides/integrations/sharepoint)** — aktiver og oppgi leietaker-URL-en din
 - **[Epona365](/no/guides/integrations/epona)** — aktiver og oppgi instans-URL-en din
+- **[NetDocuments](/no/guides/integrations/netdocuments)** — aktiver med firmaets leverandørnøkkel og region
+- **[Dillien](/no/guides/integrations/dillien)** — aktiver slik at dokumenter kan importeres fra Dillien-datarom
+- **[MCP-verktøy](/no/guides/integrations/mcp-server/connect-tools)** — koble til eksterne verktøy som KI-en kan bruke i chatten
 - **Oversettelse** — aktiver eller deaktiver [DeepL-oversettelse](/no/guides/translate)
 
 ## Tema og merkevarebygging
@@ -43,6 +49,18 @@ Administratorer kan tilpasse arbeidsområdets utseende: last opp firmaets logo o
 ## Dokumentstil
 
 Administratorer kan konfigurere hvordan Word-eksporter generert av Saga ser ut. Bruk [Dokumentstil](/no/guides/administration/document-styling) til å angi firmaets skrifttyper, overskrifter, marger, topptekster, bunntekster, sidetall og logoer.
+
+## KI-retningslinje
+
+Administratorer kan laste opp et **KI-retningslinje**-dokument per språk. Saga viser den retningslinjen som merknad i chatten. Hvis et språk ikke har en egen fil, bruker Saga retningslinjen for arbeidsområdets standardspråk.
+
+## Datalagring
+
+Administratorer angir hvor lenge Saga beholder chatloggen, prosjektsamtaler og rutenettgjennomganger. Åpne **Datalagring**, velg en tidsramme og se gjennom **Effekt­oversikten** før du lagrer. Forhåndsvisningen viser hvor mange chatter og gjennomganger som slettes per bruker.
+
+Endringer trer i kraft på datoen som vises i administrasjonspanelet. Elementer eldre enn den valgte tidsrammen slettes etter en 24-timers henstandsperiode. Velg **Ubegrenset** hvis arbeidsområdet ikke skal slette chatter eller gjennomganger automatisk.
+
+Datalagring sletter ikke andre prosjektdata, for eksempel dokumenter.
 
 ## Organisasjonskilder
 

@@ -6,11 +6,13 @@ Yönetim paneli, kuruluşunuzun ayarlarının, kullanıcılarının ve paylaşı
 
 ## Roller
 
-Saga çalışma alanınızdaki herkesin üç rolden biri vardır:
+Saga çalışma alanınızdaki herkesin şu rollerden biri vardır:
 
 **Yönetici** — Çalışma alanı üzerinde tam kontrol. Yöneticiler kullanıcıları yönetir, ayarları yapılandırır, entegrasyonları kurar, markayı özelleştirir ve yönetim panelindeki her şeyi denetler. Genellikle bu, hukuki operasyonlar veya BT'den bir kişidir.
 
 **İçerik yöneticisi** — İşlerin içerik tarafını yönetir: [kuruluş kaynakları](#kuruluş-kaynakları), [özel asistanlar](/tr/guides/assistants/custom-assistants) ve paylaşılan [kütüphaneler](#kütüphaneler) (istemler, tablo incelemesi şablonları, iş akışları). İçerik yöneticileri kullanıcıları, çalışma alanı ayarlarını veya entegrasyonları yönetemez. Bu rol, firmanın Saga'yı günlük olarak nasıl kullandığını şekillendiren kişiler için tasarlanmıştır — ve kuruluşlar genellikle bunu Saga'nın hukuk mühendislerine çalışma alanını kurmaya ve sürdürmeye yardımcı olmaları için verir.
+
+**Billing Admin** — Yönetim panelindeki **Faturalandırma** bölümünden aboneliği yönetir. Solo'da aboneliği satın alan kişi bu rolü otomatik alır; ödeme yöntemlerini güncelleyebilir, fatura indirebilir ve ekip üyesi davet edip çıkarabilir. Rol diğer çalışma alanlarında da atanabilir, ancak yalnızca Faturalandırma'yı açar; Kullanıcılar, çalışma alanı ayarları, entegrasyonlar veya kütüphaneler değil. [Solo](/tr/guides/administration/solo)'ya bakın.
 
 **Kullanıcı** — Standart rol. Kullanıcılar Saga'nın tüm özelliklerine erişebilir ancak yönetim paneline erişemez.
 
@@ -20,6 +22,7 @@ Yöneticiler, kuruluş genelinde geçerli olan çalışma alanı varsayılanlar�
 
 - **Varsayılan asistan** — yeni konuşmalar için önceden seçilen yapay zeka asistanı
 - **Varsayılan dil** — çalışma alanı dili
+- **Tarih biçimi** — çalışma alanında tarihlerin nasıl göründüğü (`dd-mm-yyyy`, `mm-dd-yyyy` veya `yyyy-mm-dd`)
 - **Etkinleştirilmiş modeller** — [asistan seçicide](/tr/guides/assistants) hangi yapay zeka modellerinin mevcut olduğu
 - **Proje türleri** — projeleri kategorilendirmek için özel etiketler
 - **İstem kütüphanesi ayarları** — istemler için mevcut diller ve özel etiketleme
@@ -34,6 +37,9 @@ Yöneticiler harici araçlara bağlantıları yapılandırır:
 
 - **[SharePoint](/tr/guides/integrations/sharepoint)** — etkinleştirin ve kiracı URL'nizi sağlayın
 - **[Epona365](/tr/guides/integrations/epona)** — etkinleştirin ve örnek URL'nizi sağlayın
+- **[NetDocuments](/tr/guides/integrations/netdocuments)** — firmanızın satıcı erişim anahtarı ve bölgesiyle etkinleştirin
+- **[Dillien](/tr/guides/integrations/dillien)** — Dillien veri odalarından belge aktarmak için etkinleştirin
+- **[MCP araçları](/tr/guides/integrations/mcp-server/connect-tools)** — yapay zekanın sohbette kullanabileceği dış araçları bağlayın
 - **Çeviri** — [DeepL çevirisini](/tr/guides/translate) etkinleştirin veya devre dışı bırakın
 
 ## Tema ve marka
@@ -43,6 +49,18 @@ Yöneticiler çalışma alanı görünümünü özelleştirebilir: firmanızın 
 ## Belge stili
 
 Yöneticiler, Saga tarafından oluşturulan Word dışa aktarımlarının nasıl görüneceğini yapılandırabilir. Firma genelindeki yazı tiplerini, başlıkları, kenar boşluklarını, üstbilgileri, altbilgileri, sayfa numaralarını ve logoları ayarlamak için [Belge stili](/tr/guides/administration/document-styling) bölümünü kullanın.
+
+## Yapay zeka politikası
+
+Yöneticiler her dil için bir **Yapay Zekâ Politikası** belgesi yükleyebilir. Saga bu politikayı sohbetteki uyarı olarak gösterir. Bir dilin kendi dosyası yoksa Saga, çalışma alanının varsayılan dili için yüklenen politikayı kullanır.
+
+## Veri saklama
+
+Yöneticiler Saga'nın sohbet geçmişini, proje sohbetlerini ve ızgara incelemelerini ne kadar süre tutacağını ayarlar. **Veri saklama**yı açın, bir süre seçin ve kaydetmeden önce **Etki özetini** inceleyin. Önizleme, kullanıcı başına kaç sohbet ve incelemenin silineceğini gösterir.
+
+Değişiklikler yönetim panelinde görünen tarihte yürürlüğe girer. Seçilen süreden eski öğeler 24 saatlik bir ek süreden sonra silinir. Çalışma alanı sohbetleri veya incelemeleri otomatik silmemeliyse **Sınırsız**ı seçin.
+
+Veri saklama, belgeler gibi diğer proje verilerini silmez.
 
 ## Kuruluş kaynakları
 

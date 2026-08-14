@@ -6,11 +6,13 @@ Le panneau d'administration est l'endroit où sont gérés les paramètres, les 
 
 ## Rôles
 
-Chaque personne dans votre espace de travail Saga possède l'un des trois rôles suivants :
+Chaque personne de votre espace de travail Saga a l'un des rôles suivants :
 
 **Administrateur** — Contrôle total sur l'espace de travail. Les administrateurs gèrent les utilisateurs, configurent les paramètres, mettent en place les intégrations, personnalisent l'apparence et supervisent tout dans le panneau d'administration. Il s'agit généralement de quelqu'un des opérations juridiques ou de l'informatique.
 
 **Administrateur de contenu** — Gère le volet contenu : [sources organisationnelles](#sources-organisationnelles), [assistants personnalisés](/fr/guides/assistants/custom-assistants) et [bibliothèques](#bibliothèques) partagées (prompts, modèles de revue en grille, workflows). Les administrateurs de contenu ne peuvent pas gérer les utilisateurs, les paramètres de l'espace de travail ni les intégrations. Ce rôle est conçu pour les personnes qui façonnent la manière dont le cabinet utilise Saga au quotidien — et les organisations l'attribuent souvent aux ingénieurs juridiques de Saga pour qu'ils puissent aider à configurer et maintenir l'espace de travail.
+
+**Billing Admin** — Gère l'abonnement depuis **Facturation** dans le panneau d'administration. En Solo, la personne qui achète l'abonnement reçoit ce rôle automatiquement et peut y mettre à jour les moyens de paiement, télécharger les factures, et inviter ou retirer des membres. Le rôle peut aussi être attribué dans d'autres espaces de travail, mais il n'ouvre que Facturation, pas Utilisateurs, les paramètres, les intégrations ni les bibliothèques. Voir [Solo](/fr/guides/administration/solo).
 
 **Utilisateur** — Le rôle standard. Les utilisateurs peuvent accéder à toutes les fonctionnalités de Saga mais n'ont pas accès au panneau d'administration.
 
@@ -20,6 +22,7 @@ Les administrateurs configurent les valeurs par défaut de l'espace de travail q
 
 - **Assistant par défaut** — l'assistant IA présélectionné pour les nouvelles conversations
 - **Langue par défaut** — la langue de l'espace de travail
+- **Format de date** — comment les dates s'affichent dans l'espace de travail (`dd-mm-yyyy`, `mm-dd-yyyy` ou `yyyy-mm-dd`)
 - **Modèles activés** — les modèles IA disponibles dans le [sélecteur d'assistant](/fr/guides/assistants)
 - **Types de projets** — des libellés personnalisés pour catégoriser les projets
 - **Paramètres de la bibliothèque de prompts** — langues disponibles et étiquetage personnalisé des prompts
@@ -34,11 +37,30 @@ Les administrateurs configurent les connexions aux outils externes :
 
 - **[SharePoint](/fr/guides/integrations/sharepoint)** — activer et fournir l'URL de votre tenant
 - **[Epona365](/fr/guides/integrations/epona)** — activer et fournir l'URL de votre instance
+- **[NetDocuments](/fr/guides/integrations/netdocuments)** — activez-le avec la clé d'accès fournisseur et la région de votre cabinet
+- **[Dillien](/fr/guides/integrations/dillien)** — activez-le pour importer des documents depuis les data rooms Dillien
+- **[Outils MCP](/fr/guides/integrations/mcp-server/connect-tools)** — connectez des outils externes que l'IA peut utiliser dans le chat
 - **Traduction** — activer ou désactiver la [traduction DeepL](/fr/guides/translate)
 
 ## Thème et personnalisation visuelle
 
 Les administrateurs peuvent personnaliser l'apparence de l'espace de travail : télécharger le logo et le favicon de votre cabinet, définir un avatar pour l'IA et mettre à jour le titre et la description de l'espace de travail. Cela permet à Saga de ressembler à votre propre outil plutôt qu'à une plateforme générique.
+
+## Style des documents
+
+Les administrateurs peuvent configurer l’apparence des exports Word générés par Saga. Utilisez [Style des documents](/fr/guides/administration/document-styling) pour définir les polices, titres, marges, en-têtes, pieds de page, numéros de page et logos du cabinet.
+
+## Politique d'IA
+
+Les administrateurs peuvent importer un document de **Politique d'IA** par langue. Saga affiche cette politique comme avertissement dans le chat. Si une langue n'a pas de fichier, Saga utilise la politique de la langue par défaut de l'espace de travail.
+
+## Conservation des données
+
+Les administrateurs définissent la durée pendant laquelle Saga conserve l'historique des chats, les chats de projet et les revues en grille. Ouvrez **Conservation des données**, choisissez une période et consultez l'**aperçu des effets** avant d'enregistrer. L'aperçu indique combien de chats et de revues seront supprimés par utilisateur.
+
+Les modifications prennent effet à la date indiquée dans le panneau. Les éléments plus anciens que la période choisie sont supprimés après un délai de grâce de 24 heures. Sélectionnez **Illimité** si l'espace de travail ne doit pas supprimer automatiquement les chats ou les revues.
+
+La conservation des données ne supprime pas les autres données de projet, telles que les documents.
 
 ## Sources organisationnelles
 
