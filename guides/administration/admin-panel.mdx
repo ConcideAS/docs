@@ -6,11 +6,13 @@ The admin panel is where your organization's settings, users, and shared content
 
 ## Roles
 
-Everyone in your Saga workspace has one of three roles:
+Everyone in your Saga workspace has one of these roles:
 
 **Admin** — Full control over the workspace. Admins manage users, configure settings, set up integrations, customize branding, and oversee everything in the admin panel. Typically this is someone in legal ops or IT.
 
 **Content admin** — Manages the content side of things: [organizational sources](#organizational-sources), [custom assistants](/guides/assistants/custom-assistants), and shared [libraries](#libraries) (prompts, grid review templates, workflows). Content admins can't manage users, workspace settings, or integrations. This role is designed for people who shape how the firm uses Saga day to day — and organizations often grant it to Saga's legal engineers so they can help set up and maintain the workspace.
+
+**Account admin** — Manages billing and users only. Account admins can reach the admin panel for those tasks, but they cannot use product features such as chat, projects, grid review, legal research, workflows, or the Word and Outlook add-ins. This role does not consume a paid product seat, so it is the right choice for a finance or IT colleague who should administer the workspace without working in Saga.
 
 **User** — The standard role. Users can access all of Saga's features but don't have access to the admin panel.
 
@@ -18,8 +20,9 @@ Everyone in your Saga workspace has one of three roles:
 
 Admins configure the workspace defaults that apply across the organization:
 
-- **Default assistant** — the AI assistant that's pre-selected for new conversations
 - **Default language** — the workspace locale
+- **Date Format** — how dates appear across the workspace (`dd-mm-yyyy`, `mm-dd-yyyy`, or `yyyy-mm-dd`)
+- **Default assistant** — the AI assistant that's pre-selected for new conversations
 - **Enabled models** — which AI models are available in the [assistant selector](/guides/assistants)
 - **Project types** — custom labels for categorizing projects
 - **Prompt library settings** — available languages and custom tagging for prompts
@@ -53,6 +56,9 @@ Admins configure the connections to external tools:
 
 - **[SharePoint](/guides/integrations/sharepoint)** — enable and provide your tenant URL
 - **[Epona365](/guides/integrations/epona)** — enable and provide your instance URL
+- **[NetDocuments](/guides/integrations/netdocuments)** — enable with your firm's vendor access key and region
+- **[Dillien](/guides/integrations/dillien)** — enable so people can import documents from Dillien data rooms
+- **[MCP tools](/guides/integrations/mcp-server/connect-tools)** — connect external tools the AI can use in chat
 - **Translation** — enable or disable [DeepL translation](/guides/translate)
 
 ## Theme and branding
@@ -61,7 +67,19 @@ Admins can customize the workspace appearance: upload your firm's logo and favic
 
 ## Document styling
 
-Admins can configure how Saga-generated Word exports look. Use [Document styling](/guides/administration/document-styling) to set firm-wide fonts, headings, margins, headers, footers, page numbers, and logos.
+Admins can configure how Saga-generated Word documents and Excel table downloads look. Use [Document styling](/guides/administration/document-styling) to set firm-wide export styles or import a `.docx` or `.xlsx` reference file.
+
+## AI Policy
+
+Admins can upload an **AI Policy** document for each language. Saga shows that policy as the disclaimer in chat. If a language does not have its own file, Saga uses the policy uploaded for the workspace default language.
+
+## Data Retention
+
+Admins can set how long Saga keeps chat history, project chats, and grid reviews. Open **Data Retention**, choose a time frame, and review the **Effect Overview** before saving. The preview shows how many chats and grid reviews will be deleted for each user.
+
+Changes take effect on the date shown in the admin panel. Items older than the selected time frame are deleted after a 24-hour grace period. Select **Unlimited** if your workspace should not delete chats or grid reviews automatically.
+
+Data retention does not delete other project data, such as documents.
 
 ## Organizational sources
 

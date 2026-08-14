@@ -6,11 +6,13 @@ Il pannello di amministrazione è dove vengono gestite le impostazioni, gli uten
 
 ## Ruoli
 
-Tutti nel tuo spazio di lavoro Saga hanno uno di tre ruoli:
+Tutti nello spazio di lavoro Saga hanno uno di questi ruoli:
 
 **Amministratore** — Controllo completo sullo spazio di lavoro. Gli amministratori gestiscono gli utenti, configurano le impostazioni, impostano le integrazioni, personalizzano il branding e supervisionano tutto nel pannello di amministrazione. Tipicamente si tratta di qualcuno nelle operazioni legali o nell'IT.
 
 **Amministratore dei contenuti** — Gestisce il lato dei contenuti: [fonti organizzative](#fonti-organizzative), [assistenti personalizzati](/it/guides/assistants/custom-assistants) e [librerie](#librerie) condivise (prompt, modelli di revisione a griglia, flussi di lavoro). Gli amministratori dei contenuti non possono gestire utenti, impostazioni dello spazio di lavoro o integrazioni. Questo ruolo è progettato per le persone che modellano il modo in cui lo studio utilizza Saga quotidianamente — e le organizzazioni spesso lo concedono agli ingegneri legali di Saga così possono aiutare a configurare e mantenere lo spazio di lavoro.
+
+**Admin account** — Gestisce solo fatturazione e utenti. Gli admin account possono aprire il pannello di amministrazione per questi compiti, ma non possono usare le funzioni di prodotto come chat, progetti, revisione a griglia, ricerca giuridica, workflow o i componenti aggiuntivi di Word e Outlook. Questo ruolo non consuma un posto prodotto a pagamento.
 
 **Utente** — Il ruolo standard. Gli utenti possono accedere a tutte le funzionalità di Saga ma non hanno accesso al pannello di amministrazione.
 
@@ -20,6 +22,7 @@ Gli amministratori configurano le impostazioni predefinite dello spazio di lavor
 
 - **Assistente predefinito** — l'assistente IA preselezionato per le nuove conversazioni
 - **Lingua predefinita** — la lingua locale dello spazio di lavoro
+- **Formato data** — come appaiono le date nello spazio di lavoro (`dd-mm-yyyy`, `mm-dd-yyyy` o `yyyy-mm-dd`)
 - **Modelli abilitati** — quali modelli IA sono disponibili nel [selettore dell'assistente](/it/guides/assistants)
 - **Tipi di progetto** — etichette personalizzate per categorizzare i progetti
 - **Impostazioni della libreria dei prompt** — lingue disponibili e tag personalizzati per i prompt
@@ -34,6 +37,9 @@ Gli amministratori configurano le connessioni agli strumenti esterni:
 
 - **[SharePoint](/it/guides/integrations/sharepoint)** — abilita e fornisci l'URL del tuo tenant
 - **[Epona365](/it/guides/integrations/epona)** — abilita e fornisci l'URL della tua istanza
+- **[NetDocuments](/it/guides/integrations/netdocuments)** — attivatelo con la chiave di accesso del fornitore e la regione dello studio
+- **[Dillien](/it/guides/integrations/dillien)** — attivatelo per importare documenti dalle data room Dillien
+- **[Strumenti MCP](/it/guides/integrations/mcp-server/connect-tools)** — collegate strumenti esterni che l'IA può usare in chat
 - **Traduzione** — abilita o disabilita la [traduzione DeepL](/it/guides/translate)
 
 ## Tema e branding
@@ -43,6 +49,18 @@ Gli amministratori possono personalizzare l'aspetto dello spazio di lavoro: cari
 ## Stile dei documenti
 
 Gli amministratori possono configurare l'aspetto delle esportazioni Word generate da Saga. Usa [Stile dei documenti](/it/guides/administration/document-styling) per impostare caratteri, titoli, margini, intestazioni, piè di pagina, numeri di pagina e loghi a livello di studio.
+
+## Politica IA
+
+Gli amministratori possono caricare un documento di **Politica IA** per ogni lingua. Saga mostra quella politica come avviso in chat. Se una lingua non ha un file proprio, Saga usa la politica della lingua predefinita dello spazio di lavoro.
+
+## Conservazione dei dati
+
+Gli amministratori impostano per quanto tempo Saga conserva la cronologia chat, le chat di progetto e le revisioni a griglia. Aprite **Conservazione dei dati**, scegliete un periodo e rivedete la **Panoramica effetti** prima di salvare. L'anteprima mostra quanti chat e revisioni verranno eliminati per utente.
+
+Le modifiche hanno effetto dalla data indicata nel pannello. Gli elementi più vecchi del periodo scelto vengono eliminati dopo un periodo di grazia di 24 ore. Selezionate **Illimitato** se lo spazio di lavoro non deve eliminare automaticamente chat o revisioni.
+
+La conservazione dei dati non elimina altri dati di progetto, come i documenti.
 
 ## Fonti organizzative
 

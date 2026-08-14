@@ -6,11 +6,13 @@ El panel de administración es donde se gestionan la configuración, los usuario
 
 ## Roles
 
-Todos en su espacio de trabajo de Saga tienen uno de tres roles:
+Todas las personas de su espacio de trabajo de Saga tienen uno de estos roles:
 
 **Administrador** — Control total sobre el espacio de trabajo. Los administradores gestionan usuarios, configuran ajustes, establecen integraciones, personalizan la marca y supervisan todo en el panel de administración. Típicamente es alguien de operaciones legales o TI.
 
 **Administrador de contenido** — Gestiona el lado del contenido: [fuentes organizacionales](#fuentes-organizacionales), [asistentes personalizados](/es/guides/assistants/custom-assistants) y [bibliotecas](#bibliotecas) compartidas (prompts, plantillas de revisión en cuadrícula, flujos de trabajo). Los administradores de contenido no pueden gestionar usuarios, configuración del espacio de trabajo ni integraciones. Este rol está diseñado para personas que dan forma a cómo el despacho usa Saga en el día a día — y las organizaciones a menudo lo otorgan a los ingenieros jurídicos de Saga para que puedan ayudar a configurar y mantener el espacio de trabajo.
+
+**Admin de cuenta** — Gestiona solo facturación y usuarios. Los admins de cuenta pueden abrir el panel de administración para esas tareas, pero no pueden usar funciones del producto como chat, proyectos, revisión en cuadrícula, investigación jurídica, flujos de trabajo o los complementos de Word y Outlook. Este rol no consume un puesto de producto de pago, así que es la opción adecuada para finanzas o TI.
 
 **Usuario** — El rol estándar. Los usuarios pueden acceder a todas las funciones de Saga pero no tienen acceso al panel de administración.
 
@@ -20,6 +22,7 @@ Los administradores configuran los valores predeterminados del espacio de trabaj
 
 - **Asistente predeterminado** — el asistente de IA que se preselecciona para nuevas conversaciones
 - **Idioma predeterminado** — el idioma del espacio de trabajo
+- **Formato de fecha** — cómo se muestran las fechas en el espacio de trabajo (`dd-mm-yyyy`, `mm-dd-yyyy` o `yyyy-mm-dd`)
 - **Modelos habilitados** — qué modelos de IA están disponibles en el [selector de asistentes](/es/guides/assistants)
 - **Tipos de proyecto** — etiquetas personalizadas para categorizar proyectos
 - **Configuración de la biblioteca de prompts** — idiomas disponibles y etiquetado personalizado para prompts
@@ -34,6 +37,9 @@ Los administradores configuran las conexiones con herramientas externas:
 
 - **[SharePoint](/es/guides/integrations/sharepoint)** — habilitar y proporcionar la URL de su inquilino
 - **[Epona365](/es/guides/integrations/epona)** — habilitar y proporcionar la URL de su instancia
+- **[NetDocuments](/es/guides/integrations/netdocuments)** — actívelo con la clave de acceso de proveedor y la región de su despacho
+- **[Dillien](/es/guides/integrations/dillien)** — actívelo para importar documentos desde salas de datos de Dillien
+- **[Herramientas MCP](/es/guides/integrations/mcp-server/connect-tools)** — conecte herramientas externas que la IA puede usar en el chat
 - **Traducción** — habilitar o deshabilitar la [traducción con DeepL](/es/guides/translate)
 
 ## Tema y marca
@@ -43,6 +49,18 @@ Los administradores pueden personalizar la apariencia del espacio de trabajo: ca
 ## Estilo de documentos
 
 Los administradores pueden configurar cómo se ven las exportaciones de Word generadas por Saga. Use [Estilo de documentos](/es/guides/administration/document-styling) para definir fuentes, encabezados, márgenes, encabezados y pies de página, números de página y logotipos a nivel del despacho.
+
+## Política de IA
+
+Los administradores pueden cargar un documento de **Política de IA** por idioma. Saga muestra esa política como el aviso en el chat. Si un idioma no tiene archivo propio, Saga usa la política del idioma predeterminado del espacio de trabajo.
+
+## Retención de datos
+
+Los administradores definen cuánto tiempo conserva Saga el historial de chat, los chats de proyecto y las revisiones en cuadrícula. Abra **Retención de datos**, elija un plazo y revise la **Vista previa del efecto** antes de guardar. La vista previa muestra cuántos chats y revisiones se eliminarán por usuario.
+
+Los cambios entran en vigor en la fecha que muestra el panel. Los elementos más antiguos que el plazo elegido se eliminan tras un periodo de gracia de 24 horas. Seleccione **Ilimitado** si el espacio de trabajo no debe eliminar chats ni revisiones automáticamente.
+
+La retención de datos no elimina otros datos del proyecto, como los documentos.
 
 ## Fuentes organizacionales
 

@@ -6,11 +6,13 @@ Adminpanelen är där din organisations inställningar, användare och delat inn
 
 ## Roller
 
-Alla i din Saga-arbetsyta har en av tre roller:
+Alla i din Saga-arbetsyta har en av dessa roller:
 
 **Admin** — Full kontroll över arbetsytan. Admins hanterar användare, konfigurerar inställningar, sätter upp integrationer, anpassar varumärkesprofil och övervakar allt i adminpanelen. Vanligtvis är detta någon inom legal ops eller IT.
 
 **Innehållsadmin** — Hanterar innehållssidan: [organisationskällor](#organisationskällor), [anpassade assistenter](/sv/guides/assistants/custom-assistants) och delade [bibliotek](#bibliotek) (prompter, tabellgranskningsmallar, arbetsflöden). Innehållsadmins kan inte hantera användare, arbetsyteinställningar eller integrationer. Denna roll är utformad för personer som formar hur byrån använder Saga i vardagen — och organisationer ger den ofta till Sagas juridiska ingenjörer så att de kan hjälpa till att sätta upp och underhålla arbetsytan.
+
+**Kontoadministratör** — Hanterar bara fakturering och användare. Kontoadministratörer kan öppna adminpanelen för de uppgifterna, men kan inte använda produktfunktioner som chatt, projekt, rutnätsgranskning, juridisk research, arbetsflöden eller Word- och Outlook-tilläggen. Rollen förbrukar ingen betald produktplats.
 
 **Användare** — Standardrollen. Användare kan nå alla Sagas funktioner men har inte tillgång till adminpanelen.
 
@@ -20,6 +22,7 @@ Admins konfigurerar arbetsytans standardvärden som gäller för hela organisati
 
 - **Standardassistent** — den AI-assistent som är förvald för nya konversationer
 - **Standardspråk** — arbetsytans språk
+- **Datumformat** — hur datum visas i arbetsytan (`dd-mm-yyyy`, `mm-dd-yyyy` eller `yyyy-mm-dd`)
 - **Aktiverade modeller** — vilka AI-modeller som är tillgängliga i [assistentväljaren](/sv/guides/assistants)
 - **Projekttyper** — anpassade etiketter för att kategorisera projekt
 - **Promptbiblioteksinställningar** — tillgängliga språk och anpassad taggning för prompter
@@ -34,6 +37,9 @@ Admins konfigurerar anslutningarna till externa verktyg:
 
 - **[SharePoint](/sv/guides/integrations/sharepoint)** — aktivera och ange din klientorganisations-URL
 - **[Epona365](/sv/guides/integrations/epona)** — aktivera och ange din instans-URL
+- **[NetDocuments](/sv/guides/integrations/netdocuments)** — aktivera med byråns leverantörsnyckel och region
+- **[Dillien](/sv/guides/integrations/dillien)** — aktivera så att dokument kan importeras från Dillien-datarum
+- **[MCP-verktyg](/sv/guides/integrations/mcp-server/connect-tools)** — anslut externa verktyg som AI:n kan använda i chatten
 - **Översättning** — aktivera eller inaktivera [DeepL-översättning](/sv/guides/translate)
 
 ## Tema och varumärke
@@ -43,6 +49,18 @@ Admins kan anpassa arbetsytans utseende: ladda upp din byrås logotyp och faviko
 ## Dokumentstil
 
 Admins kan konfigurera hur Word-exporter som genereras av Saga ser ut. Använd [Dokumentstil](/sv/guides/administration/document-styling) för att ange byrågemensamma typsnitt, rubriker, marginaler, sidhuvuden, sidfötter, sidnummer och logotyper.
+
+## AI-policy
+
+Administratörer kan ladda upp ett **AI-policy**-dokument per språk. Saga visar den policyn som informationstexten i chatten. Om ett språk saknar egen fil använder Saga policyn för arbetsytans standardspråk.
+
+## Datalagring
+
+Administratörer anger hur länge Saga sparar chatthistorik, projektchattar och rutnätsgranskningar. Öppna **Datalagring**, välj en tidsram och granska **Effektöversikten** innan du sparar. Förhandsgranskningen visar hur många chattar och granskningar som raderas per användare.
+
+Ändringar träder i kraft det datum som visas i adminpanelen. Objekt äldre än den valda tidsramen raderas efter en respitperiod på 24 timmar. Välj **Obegränsat** om arbetsytan inte ska radera chattar eller granskningar automatiskt.
+
+Datalagring raderar inte andra projektdata, till exempel dokument.
 
 ## Organisationskällor
 

@@ -6,11 +6,13 @@ O painel de administração é onde as definições, utilizadores e conteúdo pa
 
 ## Papéis
 
-Todos no seu espaço de trabalho Saga têm um de três papéis:
+Todas as pessoas no espaço de trabalho Saga têm um destes papéis:
 
 **Administrador** — Controlo total sobre o espaço de trabalho. Os administradores gerem utilizadores, configuram definições, configuram integrações, personalizam o aspeto visual e supervisionam tudo no painel de administração. Tipicamente é alguém de operações jurídicas ou TI.
 
 **Administrador de conteúdo** — Gere o lado do conteúdo: [fontes organizacionais](#fontes-organizacionais), [assistentes personalizados](/pt/guides/assistants/custom-assistants) e [bibliotecas](#bibliotecas) partilhadas (prompts, modelos de revisão em grelha, fluxos de trabalho). Os administradores de conteúdo não podem gerir utilizadores, definições do espaço de trabalho nem integrações. Este papel é concebido para pessoas que moldam a forma como o escritório usa o Saga no dia a dia — e as organizações concedem-no frequentemente aos engenheiros jurídicos do Saga para que possam ajudar a configurar e manter o espaço de trabalho.
+
+**Admin de conta** — Gere apenas faturação e utilizadores. Os admins de conta podem abrir o painel de administração para essas tarefas, mas não podem usar funcionalidades do produto como chat, projetos, revisão em grelha, investigação jurídica, fluxos de trabalho ou os suplementos do Word e do Outlook. Esta função não consome um lugar de produto pago.
 
 **Utilizador** — O papel padrão. Os utilizadores podem aceder a todas as funcionalidades do Saga mas não têm acesso ao painel de administração.
 
@@ -20,6 +22,7 @@ Os administradores configuram as predefinições do espaço de trabalho que se a
 
 - **Assistente predefinido** — o assistente de IA que é pré-selecionado para novas conversas
 - **Idioma predefinido** — o idioma do espaço de trabalho
+- **Formato de data** — como as datas aparecem no espaço de trabalho (`dd-mm-yyyy`, `mm-dd-yyyy` ou `yyyy-mm-dd`)
 - **Modelos ativados** — que modelos de IA estão disponíveis no [seletor de assistentes](/pt/guides/assistants)
 - **Tipos de projeto** — etiquetas personalizadas para categorizar projetos
 - **Definições da biblioteca de prompts** — idiomas disponíveis e etiquetagem personalizada para prompts
@@ -34,6 +37,9 @@ Os administradores configuram as ligações a ferramentas externas:
 
 - **[SharePoint](/pt/guides/integrations/sharepoint)** — ativar e fornecer o URL do seu tenant
 - **[Epona365](/pt/guides/integrations/epona)** — ativar e fornecer o URL da sua instância
+- **[NetDocuments](/pt/guides/integrations/netdocuments)** — ative com a chave de acesso do fornecedor e a região do escritório
+- **[Dillien](/pt/guides/integrations/dillien)** — ative para importar documentos das data rooms Dillien
+- **[Ferramentas MCP](/pt/guides/integrations/mcp-server/connect-tools)** — ligue ferramentas externas que a IA pode usar no chat
 - **Tradução** — ativar ou desativar a [tradução DeepL](/pt/guides/translate)
 
 ## Tema e aspeto visual
@@ -43,6 +49,18 @@ Os administradores podem personalizar a aparência do espaço de trabalho: carre
 ## Estilo dos documentos
 
 Os administradores podem configurar o aspeto das exportações Word geradas pela Saga. Use [Estilo dos documentos](/pt/guides/administration/document-styling) para definir fontes, títulos, margens, cabeçalhos, rodapés, números de página e logótipos para toda a sociedade.
+
+## Política de IA
+
+Os administradores podem carregar um documento de **Política de IA** por idioma. A Saga mostra essa política como o aviso no chat. Se um idioma não tiver ficheiro próprio, a Saga usa a política do idioma predefinido do espaço de trabalho.
+
+## Retenção de dados
+
+Os administradores definem durante quanto tempo a Saga guarda o histórico de chat, os chats de projeto e as revisões em grelha. Abra **Retenção de dados**, escolha um prazo e reveja a **Pré-visualização do efeito** antes de guardar. A pré-visualização mostra quantos chats e revisões serão eliminados por utilizador.
+
+As alterações entram em vigor na data indicada no painel. Os itens mais antigos do que o prazo escolhido são eliminados após um período de tolerância de 24 horas. Selecione **Ilimitado** se o espaço de trabalho não deve eliminar chats ou revisões automaticamente.
+
+A retenção de dados não elimina outros dados do projeto, como documentos.
 
 ## Fontes organizacionais
 

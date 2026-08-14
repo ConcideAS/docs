@@ -6,11 +6,13 @@ Panel administracyjny to miejsce, w którym zarządzane są ustawienia organizac
 
 ## Role
 
-Każdy w Twojej przestrzeni roboczej Saga ma jedną z trzech ról:
+Każda osoba w przestrzeni roboczej Saga ma jedną z tych ról:
 
 **Administrator** — Pełna kontrola nad przestrzenią roboczą. Administratorzy zarządzają użytkownikami, konfigurują ustawienia, ustawiają integracje, dostosowują wygląd i nadzorują wszystko w panelu administracyjnym. Zazwyczaj jest to osoba z działu legal ops lub IT.
 
 **Administrator treści** — Zarządza stroną treściową: [źródłami organizacyjnymi](#źródła-organizacyjne), [niestandardowymi asystentami](/pl/guides/assistants/custom-assistants) i współdzielonymi [bibliotekami](#biblioteki) (prompty, szablony przeglądów tabelarycznych, przepływy pracy). Administratorzy treści nie mogą zarządzać użytkownikami, ustawieniami przestrzeni roboczej ani integracjami. Ta rola jest przeznaczona dla osób, które kształtują sposób codziennego korzystania z Saga w firmie — organizacje często przyznają ją inżynierom prawnym Saga, aby mogli pomagać w konfiguracji i utrzymaniu przestrzeni roboczej.
+
+**Administrator konta** — Zarządza tylko rozliczeniami i użytkownikami. Administratorzy kont mogą otworzyć panel administracyjny do tych zadań, ale nie mogą korzystać z funkcji produktu, takich jak czat, projekty, przegląd siatki, research prawny, przepływy pracy ani dodatki Word i Outlook. Ta rola nie zużywa płatnego stanowiska produktowego.
 
 **Użytkownik** — Standardowa rola. Użytkownicy mają dostęp do wszystkich funkcji Saga, ale nie mają dostępu do panelu administracyjnego.
 
@@ -20,6 +22,7 @@ Administratorzy konfigurują domyślne ustawienia przestrzeni roboczej obowiązu
 
 - **Domyślny asystent** — asystent AI wstępnie wybrany dla nowych rozmów
 - **Domyślny język** — lokalizacja przestrzeni roboczej
+- **Format daty** — jak daty wyglądają w przestrzeni roboczej (`dd-mm-yyyy`, `mm-dd-yyyy` lub `yyyy-mm-dd`)
 - **Włączone modele** — które modele AI są dostępne w [selektorze asystentów](/pl/guides/assistants)
 - **Typy projektów** — niestandardowe etykiety do kategoryzowania projektów
 - **Ustawienia biblioteki promptów** — dostępne języki i niestandardowe tagowanie promptów
@@ -34,11 +37,30 @@ Administratorzy konfigurują połączenia z zewnętrznymi narzędziami:
 
 - **[SharePoint](/pl/guides/integrations/sharepoint)** — włącz i podaj adres URL dzierżawy
 - **[Epona365](/pl/guides/integrations/epona)** — włącz i podaj adres URL instancji
+- **[NetDocuments](/pl/guides/integrations/netdocuments)** — włącz za pomocą klucza dostępu dostawcy i regionu kancelarii
+- **[Dillien](/pl/guides/integrations/dillien)** — włącz, aby importować dokumenty z data roomów Dillien
+- **[Narzędzia MCP](/pl/guides/integrations/mcp-server/connect-tools)** — podłącz zewnętrzne narzędzia, z których SI może korzystać na czacie
 - **Tłumaczenie** — włącz lub wyłącz [tłumaczenie DeepL](/pl/guides/translate)
 
 ## Motyw i branding
 
 Administratorzy mogą dostosować wygląd przestrzeni roboczej: przesłać logo i favicon firmy, ustawić awatar AI oraz zaktualizować tytuł i opis przestrzeni roboczej. Dzięki temu Saga wygląda jak Twoje własne narzędzie, a nie ogólna platforma.
+
+## Styl dokumentów
+
+Administratorzy mogą skonfigurować wygląd eksportów Word generowanych przez Saga. Użyj [Stylu dokumentów](/pl/guides/administration/document-styling), aby ustawić firmowe czcionki, nagłówki, marginesy, nagłówki i stopki, numery stron oraz logo.
+
+## Polityka SI
+
+Administratorzy mogą przesłać dokument **Polityka SI** dla każdego języka. Saga pokazuje tę politykę jako zastrzeżenie na czacie. Jeśli język nie ma własnego pliku, Saga używa polityki domyślnego języka przestrzeni roboczej.
+
+## Retencja danych
+
+Administratorzy ustawiają, jak długo Saga przechowuje historię czatu, czaty projektowe i przeglądy siatki. Otwórz **Retencję danych**, wybierz okres i sprawdź **Przegląd skutków** przed zapisaniem. Podgląd pokazuje, ile czatów i przeglądów zostanie usuniętych dla każdego użytkownika.
+
+Zmiany obowiązują od daty pokazanej w panelu. Elementy starsze niż wybrany okres są usuwane po 24-godzinnym okresie karencji. Wybierz **Bez limitu**, jeśli przestrzeń robocza nie ma automatycznie usuwać czatów ani przeglądów.
+
+Retencja danych nie usuwa innych danych projektu, takich jak dokumenty.
 
 ## Źródła organizacyjne
 
