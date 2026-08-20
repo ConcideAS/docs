@@ -6,7 +6,7 @@ Saga, her şeyi birbirine bağlayan birkaç temel fikir üzerine kurulmuştur. B
 
 ## Projeler
 
-Proje, bir dava, işlem veya başka herhangi bir çalışma için kullandığınız çalışma alanıdır. O konuyla ilgili her şeyi tek bir yerde tutar — üzerinde çalıştığınız belgeler, yaptığınız konuşmalar ve gerçekleştirdiğiniz yapılandırılmış incelemeler.
+Proje, bir dava, işlem veya başka herhangi bir çalışma için kullandığınız çalışma alanıdır. O konuyla ilgili her şeyi (üzerinde çalıştığınız belgeler, yaptığınız konuşmalar ve gerçekleştirdiğiniz yapılandırılmış incelemeler) tek bir yerde tutar.
 
 Bir proje oluşturduğunuzda, ona varsayılan bir asistan ve içindeki her yapay zeka konuşmasına uygulanan sabit talimatlar verebilirsiniz. Bu sayede, ilk sorunuzu sormadan önce yapay zeka doğru bağlama sahip olur.
 
@@ -14,27 +14,27 @@ Projeler, farklı izin seviyelerinde iş arkadaşlarınızla paylaşılabilir; b
 
 ## Bilgi tabanı
 
-Bilgi tabanı, bir projenin içindeki belge kütüphanesidir. Yüklediğiniz her dosya Saga tarafından işlenir — metin çıkarılır, pasajlara ayrılır ve dizinlenir; böylece yapay zeka talep üzerine doğru materyali bulabilir. Bir soru sorduğunuzda, yapay zeka tüm koleksiyonu arar ve en ilgili pasajları yanıta çeker; her kaynağa geri bağlantı veren atıflarla birlikte.
+Bilgi tabanı, bir projenin içindeki belge kütüphanesidir. Yüklediğiniz her dosya Saga tarafından işlenir; metin çıkarılır, bölümlere ayrılır ve dizinlenir. Böylece yapay zeka, ihtiyaç duyduğunda ilgili içeriği kolayca bulabilir. Bir soru sorduğunuzda yapay zeka, tüm belge koleksiyonunu tarar ve en ilgili bölümleri yanıtına ekler. Ayrıca, kullandığı her bilgi için ilgili kaynağa yönlendiren atıflar sunar.
 
-Saga'nın yanıtlarını doğru ve izlenebilir kılan budur. Yapay zeka yanıtları havadan üretmez — belgelerinizi okur ve gerçekten içlerinde bulunanları ortaya çıkarır.
+Saga'nın yanıtlarını doğru ve doğrulanabilir kılan da budur. Yapay zeka yanıtları kendiliğinden oluşturmaz; belgelerinizi analiz eder ve yalnızca içerdikleri bilgilere dayanarak yanıt verir.
 
 Belgeleri klasörler ve etiketlerle düzenleyebilir, kuruluşunuz bu entegrasyonları kurmuşsa SharePoint veya Epona365'ten dosya içe aktarabilirsiniz.
 
 ## Atıflar
 
-Yapay zeka bir belgeyi kullanarak yanıt verdiğinde — ister bilgi tabanınızdan, ister bir hukuk veritabanından, ister webden olsun — yararlandığı tam pasaja geri bağlantı verir. Bunlar atıflardır.
+Yapay zeka, ister bilgi tabanınızdan, ister bir hukuk veritabanından, ister webden yararlanarak yanıt oluştursun, kullandığı her bilgi için ilgili kaynağa atıf yapar.
 
-Her atıf, yapay zekanın yanıtında satır içi olarak görünür. Üzerine gelin ve orijinal alıntıyı görün. Tıklayın ve kaynak belgeyi yan panelde, ilgili pasaja kaydırılmış şekilde açın.
+Atıflar, yapay zekanın yanıtında satır içinde görüntülenir. Üzerine geldiğinizde ilgili alıntıyı görebilir, tıkladığınızda ise kaynak belge yan panelde doğrudan ilgili bölüm açılacak şekilde görüntülenir.
 
 Atıflar, yapay zekanın size söylediklerini doğrulamanızın yoludur. Belgeleri tek tek aramadan her iddiayı orijinal kaynağa karşı kontrol etmenizi mümkün kılar.
 
 ## Asistanlar ve modeller
 
-Bir **asistan**, yapay zekanın bir konuşmada nasıl davrandığıdır. İki türü vardır.
+Bir **asistan**, yapay zekanın bir konuşma boyunca nasıl davranacağını belirler. İki tür asistan bulunur.
 
-**Modeller**, kuruluşunuzun etkinleştirdiği temel yapay zeka sistemleridir — GPT, Claude, Mistral ve diğerleri. Her birinin farklı güçlü yönleri vardır. Üzerine önceden yapılandırılmış herhangi bir davranış eklenmeden belirli bir yapay zeka ile doğrudan çalışmak istediğinizde bir model seçersiniz.
+**Modeller**, kuruluşunuzun etkinleştirdiği temel yapay zeka sistemleridir — GPT, Claude, Mistral ve diğerleri. Her birinin farklı güçlü yönleri vardır. Yapılandırılmış ek talimatlar olmadan doğrudan belirli bir yapay zeka modeliyle çalışmak istediğinizde bir model seçebilirsiniz.
 
-**Özel asistanlar**, kuruluşunuzun yöneticileri veya Saga'nın hukuk mühendisleri tarafından modellerin üzerine inşa edilir. Bir adları, tanımlanmış bir amaçları ve nasıl yanıt verdiklerini şekillendiren yerleşik talimatları vardır — örneğin, neye bakılacağı ve bulguların nasıl raporlanacağı konusunda özel rehberliğe sahip bir sözleşme inceleme asistanı. Özel bir asistan görevinize uyduğunda, genellikle boş bir modelden başlamaktan daha iyi sonuçlar verir.
+**Özel asistanlar**, kuruluşunuzun yöneticileri veya Saga'nın hukuk mühendisleri tarafından modellerin üzerine inşa edilir. Bir adları, tanımlanmış bir amaçları ve nasıl yanıt verdiklerini şekillendiren yerleşik talimatları vardır — örneğin, neye bakılacağı ve bulguların nasıl raporlanacağı konusunda özel rehberliğe sahip bir sözleşme inceleme asistanı. Görevinize uygun bir özel asistan varsa, genellikle yalnızca bir model kullanarak başlamaya kıyasla daha iyi sonuçlar elde edersiniz.
 
 Bir projenin içinde, her yeni sohbet açtığınızda önceden seçilen varsayılan bir asistan belirleyebilirsiniz. Konuşma sırasında her zaman değiştirebilirsiniz.
 
@@ -62,4 +62,4 @@ Kendi uygulama alanlarınızı profilinizden ayarlayın, böylece platform sizin
 
 Kuruluş kaynağı, bir proje içinde değil firma düzeyinde bulunan bir bilgi tabanıdır. Yöneticiler tarafından yönetilir ve hangi projede çalışıyor olursanız olun tüm konuşmalarda erişilebilir.
 
-Kuruluş kaynaklarını konular arasında geçerli olan referans materyaller için kullanın: standart madde kütüphaneleri, dahili kılavuzlar, mevzuat el kitapları veya sıkça başvurulan mevzuat. Her ikisine de ihtiyaç duyduğunuzda yapay zeka bunları proje belgelerinizle birlikte kullanabilir.
+Kuruluş kaynakları, standart madde kütüphaneleri, dahili kılavuzlar, mevzuat el kitapları veya sıkça başvurulan mevzuat gibi projeler arasında ortak kullanılan referans materyalleri için kullanılabilir. Her ikisine de ihtiyaç duyduğunuzda yapay zeka bunları proje belgelerinizle birlikte kullanabilir.
