@@ -4,7 +4,7 @@ title: Anslut verktyg till Saga
 
 Du kan ansluta externa verktyg och datakällor till Saga så att AI:n kan använda dem medan du chattar. När ett verktyg är anslutet kan AI:n anropa det under ett samtal — till exempel för att slå upp något i ett anslutet system — utan att du lämnar Saga.
 
-Detta konfigureras av en administratör för hela organisationen. De flesta behöver bara [användarsteget](#if-a-tool-asks-for-your-personal-token) i slutet, och endast för vissa verktyg.
+En administratör konfigurerar verktyget för hela organisationen. Vissa verktyg kräver också att varje person ansluter sitt eget konto eller sin egen token innan Saga kan använda verktyget i deras chattar.
 
 ## Vad det är till för
 
@@ -17,9 +17,9 @@ Att ansluta ett verktyg ger Sagas AI en ny förmåga som den använder för din 
 1. **Lägg till verktyget.** Klicka på **Lägg till server**, ge det ett namn och klistra in verktygets webbadress (dess slutpunkts-URL). Verktygets leverantör ger dig denna adress.
 2. **Ange hur Saga loggar in.** Välj den autentisering som verktyget kräver:
    - **Ingen** — verktyget behöver inga autentiseringsuppgifter.
-   - **API Key** eller **Bearer Token** — klistra in nyckeln eller token som leverantören gav dig. Den lagras säkert och visas aldrig igen.
-   - **Basic Auth** — en kombination av användarnamn och lösenord, angiven i den kodade form som leverantören anger.
-   - **OAuth 2.1** — för verktyg som använder ett inloggningsflöde. Spara verktyget först, klicka sedan på **Anslut** för att logga in.
+   - **API Key** eller **Bearer Token** — klistra in den delade nyckeln eller token som leverantören gav dig. Den lagras säkert och visas aldrig igen.
+   - **Basic Auth** — en delad kombination av användarnamn och lösenord, angiven i den kodade form som leverantören anger.
+   - **OAuth 2.1** — ange OAuth-klientuppgifterna som leverantören ger dig, om de krävs. Servern konfigureras för organisationen, men inloggningen är personlig. Varje person måste klicka på **Anslut** för det verktyget för att ansluta sitt eget konto.
    - **Per-User API Token** — varje person anger sin egen personliga token i stället för en delad byråautentisering (se nedan).
 3. **Testa och slå på det.** Använd **Testa anslutning** för att bekräfta att Saga kan nå verktyget — ett lyckat test listar de förmågor det hittade. Slå på **Tillgänglig i chatt** så att personer i din organisation kan använda det.
 
@@ -27,16 +27,17 @@ Att ansluta ett verktyg ger Sagas AI en ny förmåga som den använder för din 
 Autentiseringsuppgifter du anger här lagras säkert och visas aldrig igen. Om du behöver ändra en, ange ett nytt värde.
 </Note>
 
-## Om ett verktyg ber om din personliga token
+## Anslut ditt eget konto eller din egen token
 
-Vissa verktyg är konfigurerade så att varje person loggar in med sin egen token i stället för en delad byråautentisering. Om din administratör valde **Per-User API Token** för ett verktyg behöver du lägga till din:
+Vissa verktyg är konfigurerade så att varje person ansluter sitt eget konto eller sin egen token i stället för att använda en delad byråautentisering. Det gäller verktyg som använder **OAuth 2.1** och verktyg som använder **Per-User API Token**.
 
 1. Gå till **Inställningar > Integrationer**.
-2. Hitta verktyget i listan och klistra in din personliga token.
-3. Spara. Verktyget är nu tillgängligt för dig i chatten.
+2. Hitta verktyget i listan.
+3. Klicka på **Anslut** för att logga in med OAuth, eller klistra in din personliga token om verktyget ber om den.
+4. Spara när Saga ber dig spara en token. Verktyget är nu tillgängligt för dig i chatten.
 
-Tills du lägger till din token är det verktyget inte tillgängligt i dina samtal, även om din administratör har konfigurerat det.
+Tills du ansluter ditt eget konto eller din egen token är det verktyget inte tillgängligt i dina samtal, även om din administratör har konfigurerat det. Om chatten ber dig att ansluta ett verktyg igen går du tillbaka till **Inställningar > Integrationer** och ansluter det igen.
 
 <Note>
-Vill du hellre att Saga ska vara verktyget som *andra* assistenter ansluter till? Det är den andra riktningen — se [Anslut din assistent till Saga](/guides/integrations/mcp-server/connect-assistants).
+Vill du hellre att Saga ska vara verktyget som *andra* assistenter ansluter till? Det är den andra riktningen — se [Anslut din assistent till Saga](/sv/guides/integrations/mcp-server/connect-assistants).
 </Note>
