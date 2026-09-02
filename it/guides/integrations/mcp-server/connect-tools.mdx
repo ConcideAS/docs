@@ -4,7 +4,7 @@ title: Connettere strumenti a Saga
 
 Puoi connettere strumenti e fonti di dati esterni a Saga così l'IA può utilizzarli mentre chatti. Una volta connesso uno strumento, l'IA può richiamarlo durante una conversazione — ad esempio per cercare qualcosa in un sistema connesso — senza che tu lasci Saga.
 
-Questa configurazione viene effettuata da un amministratore per l'intera organizzazione. La maggior parte delle persone avrà bisogno solo del [passaggio utente](#if-a-tool-asks-for-your-personal-token) alla fine, e solo per alcuni strumenti.
+Un amministratore configura lo strumento per l'intera organizzazione. Alcuni strumenti richiedono anche che ogni persona connetta il proprio account o token prima che Saga possa usare lo strumento nelle sue chat.
 
 ## A cosa serve
 
@@ -17,9 +17,9 @@ Apri il **Pannello di amministrazione** e vai alla sezione **MCP Servers**.
 1. **Aggiungi lo strumento.** Clicca su **Add Server**, assegna un nome e incolla l'indirizzo web dello strumento (il suo URL endpoint). Il fornitore dello strumento ti fornisce questo indirizzo.
 2. **Imposta come Saga accede.** Scegli l'autenticazione richiesta dallo strumento:
    - **None** — lo strumento non richiede credenziali.
-   - **API Key** o **Bearer Token** — incolla la chiave o il token forniti dal fornitore. Viene archiviato in modo sicuro e non viene più mostrato.
-   - **Basic Auth** — una combinazione di nome utente e password, inserita nella forma codificata specificata dal fornitore.
-   - **OAuth 2.1** — per strumenti che usano un flusso di accesso. Salva prima lo strumento, poi clicca su **Connect** per accedere.
+   - **API Key** o **Bearer Token** — incolla la chiave o il token condiviso forniti dal fornitore. Viene archiviato in modo sicuro e non viene più mostrato.
+   - **Basic Auth** — una combinazione condivisa di nome utente e password, inserita nella forma codificata specificata dal fornitore.
+   - **OAuth 2.1** — inserisci i dettagli del client OAuth forniti dal fornitore, se richiesti. Il server viene configurato per l'organizzazione, ma l'accesso è personale. Ogni persona deve cliccare su **Connect** per quello strumento e connettere il proprio account.
    - **Per-User API Token** — ogni persona inserisce il proprio token personale anziché un'unica credenziale condivisa dello studio (vedi sotto).
 3. **Testa e attivalo.** Usa **Test Connection** per confermare che Saga può raggiungere lo strumento — un test riuscito elenca le capacità trovate. Attiva **Available in Chat** così le persone della tua organizzazione possono utilizzarlo.
 
@@ -27,16 +27,17 @@ Apri il **Pannello di amministrazione** e vai alla sezione **MCP Servers**.
 Le credenziali che inserisci qui vengono archiviate in modo sicuro e non vengono più mostrate. Se devi modificarne una, inserisci un nuovo valore.
 </Note>
 
-## Se uno strumento richiede il tuo token personale
+## Connettere il tuo account o token
 
-Alcuni strumenti sono configurati in modo che ogni persona acceda con il proprio token anziché con un'unica credenziale condivisa dello studio. Se il tuo amministratore ha scelto **Per-User API Token** per uno strumento, dovrai aggiungere il tuo:
+Alcuni strumenti sono configurati in modo che ogni persona connetta il proprio account o token anziché usare un'unica credenziale condivisa dello studio. Questo vale per gli strumenti che usano **OAuth 2.1** e per quelli che usano **Per-User API Token**.
 
 1. Vai su **Impostazioni > Integrazioni**.
-2. Trova lo strumento nell'elenco e incolla il tuo token personale.
-3. Salva. Lo strumento è ora disponibile per te nella chat.
+2. Trova lo strumento nell'elenco.
+3. Clicca su **Connect** per accedere con OAuth, oppure incolla il tuo token personale se lo strumento lo richiede.
+4. Salva quando Saga ti chiede di salvare un token. Lo strumento è ora disponibile per te nella chat.
 
-Finché non aggiungi il tuo token, quello strumento non sarà disponibile nelle tue conversazioni, anche se il tuo amministratore lo ha configurato.
+Finché non connetti il tuo account o token, quello strumento non sarà disponibile nelle tue conversazioni, anche se il tuo amministratore lo ha configurato. Se la chat ti chiede di riconnettere uno strumento, torna in **Impostazioni > Integrazioni** e connettilo di nuovo.
 
 <Note>
-Vuoi invece che Saga sia lo strumento a cui si connettono *altri* assistenti? Questa è l'altra direzione — consulta [Connettere il tuo assistente a Saga](/guides/integrations/mcp-server/connect-assistants).
+Vuoi invece che Saga sia lo strumento a cui si connettono *altri* assistenti? Questa è l'altra direzione — consulta [Connettere il tuo assistente a Saga](/it/guides/integrations/mcp-server/connect-assistants).
 </Note>

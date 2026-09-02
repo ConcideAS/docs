@@ -4,7 +4,7 @@ title: Araçları Saga'ya bağlayın
 
 Harici araçları ve veri kaynaklarını Saga'ya bağlayabilirsiniz; böylece yapay zekâ, siz sohbet ederken bunları kullanabilir. Bir araç bağlandıktan sonra, yapay zekâ konuşma sırasında onu çağırabilir — örneğin bağlı bir sistemde bir şey aramak için — ve bunu Saga'dan ayrılmadan yapar.
 
-Bu, kuruluşun tamamı için bir yönetici tarafından kurulur. Çoğu kişi yalnızca sondaki [kullanıcı adımına](#if-a-tool-asks-for-your-personal-token) ihtiyaç duyar, o da yalnızca belirli araçlar için.
+Bir yönetici aracı tüm kuruluş için kurar. Bazı araçlar ayrıca Saga'nın aracı sohbetlerinde kullanabilmesi için her kişinin kendi hesabını veya token'ını bağlamasını gerektirir.
 
 ## Bu ne işe yarar
 
@@ -17,9 +17,9 @@ Bir aracı bağlamak, Saga'nın yapay zekâsına, sohbetler sırasında sizin ad
 1. **Aracı ekleyin.** **Add Server**'a tıklayın, ona bir ad verin ve aracın web adresini (uç nokta URL'sini) yapıştırın. Bu adresi aracın sağlayıcısı verir.
 2. **Saga'nın nasıl oturum açacağını ayarlayın.** Aracın gerektirdiği kimlik doğrulamasını seçin:
    - **None** — araç herhangi bir kimlik bilgisi gerektirmez.
-   - **API Key** veya **Bearer Token** — sağlayıcının size verdiği anahtarı veya token'ı yapıştırın. Güvenli bir şekilde saklanır ve bir daha asla gösterilmez.
-   - **Basic Auth** — sağlayıcının belirttiği kodlanmış biçimde girilen bir kullanıcı adı ve parola birleşimi.
-   - **OAuth 2.1** — oturum açma akışı kullanan araçlar için. Önce aracı kaydedin, ardından oturum açmak için **Connect**'e tıklayın.
+   - **API Key** veya **Bearer Token** — sağlayıcının size verdiği paylaşılan anahtarı veya token'ı yapıştırın. Güvenli bir şekilde saklanır ve bir daha asla gösterilmez.
+   - **Basic Auth** — sağlayıcının belirttiği kodlanmış biçimde girilen paylaşılan bir kullanıcı adı ve parola birleşimi.
+   - **OAuth 2.1** — sağlayıcının verdiği OAuth istemci ayrıntılarını, gerekiyorsa girin. Sunucu kuruluş için kurulur, ancak oturum açma kişiseldir. Her kişi, kendi hesabını bağlamak için o araçta **Connect**'e tıklamalıdır.
    - **Per-User API Token** — her kişi, tek bir ortak firma kimlik bilgisi yerine kendi kişisel token'ını girer (aşağıya bakın).
 3. **Test edin ve açın.** Saga'nın araca ulaşabildiğini doğrulamak için **Test Connection**'ı kullanın — başarılı bir test, bulunan yetenekleri listeler. Kuruluşunuzdaki kişilerin kullanabilmesi için **Available in Chat**'i açın.
 
@@ -27,16 +27,17 @@ Bir aracı bağlamak, Saga'nın yapay zekâsına, sohbetler sırasında sizin ad
 Burada girdiğiniz kimlik bilgileri güvenli bir şekilde saklanır ve bir daha asla gösterilmez. Birini değiştirmeniz gerekirse, yeni bir değer girin.
 </Note>
 
-## Bir araç kişisel token'ınızı isterse
+## Kendi hesabınızı veya token'ınızı bağlayın
 
-Bazı araçlar, her kişinin tek bir ortak firma kimlik bilgisi yerine kendi token'ıyla oturum açacağı şekilde kurulur. Yöneticiniz bir araç için **Per-User API Token** seçtiyse, kendi token'ınızı eklemeniz gerekir:
+Bazı araçlar, tek bir ortak firma kimlik bilgisi kullanmak yerine her kişinin kendi hesabını veya token'ını bağlayacağı şekilde kurulur. Bu, **OAuth 2.1** kullanan araçlar ve **Per-User API Token** kullanan araçlar için geçerlidir.
 
 1. **Ayarlar > Entegrasyonlar** bölümüne gidin.
-2. Aracı listede bulun ve kişisel token'ınızı yapıştırın.
-3. Kaydedin. Araç artık sohbette sizin için kullanılabilir.
+2. Aracı listede bulun.
+3. OAuth ile oturum açmak için **Connect**'e tıklayın veya araç isterse kişisel token'ınızı yapıştırın.
+4. Saga bir token kaydetmenizi istediğinde kaydedin. Araç artık sohbette sizin için kullanılabilir.
 
-Token'ınızı eklemediğiniz sürece, yöneticiniz aracı kurmuş olsa bile o araç konuşmalarınızda kullanılamaz.
+Kendi hesabınızı veya token'ınızı bağlamadığınız sürece, yöneticiniz aracı kurmuş olsa bile o araç konuşmalarınızda kullanılamaz. Sohbet sizden bir aracı yeniden bağlamanızı isterse **Ayarlar > Entegrasyonlar** bölümüne dönün ve aracı yeniden bağlayın.
 
 <Note>
-Saga'nın, *başka* asistanların bağlandığı araç olmasını mı istiyorsunuz? Bu, diğer yöndür — bkz. [Asistanınızı Saga'ya bağlayın](/guides/integrations/mcp-server/connect-assistants).
+Saga'nın, *başka* asistanların bağlandığı araç olmasını mı istiyorsunuz? Bu, diğer yöndür — bkz. [Asistanınızı Saga'ya bağlayın](/tr/guides/integrations/mcp-server/connect-assistants).
 </Note>

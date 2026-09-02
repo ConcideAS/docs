@@ -4,7 +4,7 @@ title: Hulpmiddelen verbinden met Saga
 
 U kunt externe hulpmiddelen en gegevensbronnen met Saga verbinden zodat de AI ze kan gebruiken terwijl u chat. Zodra een hulpmiddel is verbonden, kan de AI het tijdens een gesprek aanroepen — bijvoorbeeld om iets op te zoeken in een verbonden systeem — zonder dat u Saga verlaat.
 
-Dit wordt ingesteld door een beheerder voor de hele organisatie. De meeste mensen hebben alleen de [gebruikersstap](#if-a-tool-asks-for-your-personal-token) aan het einde nodig, en alleen voor bepaalde hulpmiddelen.
+Een beheerder stelt het hulpmiddel in voor de hele organisatie. Sommige hulpmiddelen vereisen ook dat elke persoon zijn eigen account of token verbindt voordat Saga het hulpmiddel in zijn chats kan gebruiken.
 
 ## Waar dit voor is
 
@@ -17,9 +17,9 @@ Open het **Beheerpaneel** en ga naar het gedeelte **MCP-servers**.
 1. **Voeg het hulpmiddel toe.** Klik op **Server toevoegen**, geef het een naam en plak het webadres van het hulpmiddel (de eindpunt-URL). De aanbieder van het hulpmiddel geeft u dit adres.
 2. **Stel in hoe Saga zich aanmeldt.** Kies de authenticatie die het hulpmiddel vereist:
    - **Geen** — het hulpmiddel heeft geen referenties nodig.
-   - **API Key** of **Bearer Token** — plak de sleutel of token die de aanbieder u gaf. Deze wordt veilig opgeslagen en nooit meer getoond.
-   - **Basic Auth** — een combinatie van gebruikersnaam en wachtwoord, ingevoerd in de gecodeerde vorm die de aanbieder aangeeft.
-   - **OAuth 2.1** — voor hulpmiddelen die een aanmeldingsstroom gebruiken. Sla het hulpmiddel eerst op en klik vervolgens op **Verbinden** om u aan te melden.
+   - **API Key** of **Bearer Token** — plak de gedeelde sleutel of token die de aanbieder u gaf. Deze wordt veilig opgeslagen en nooit meer getoond.
+   - **Basic Auth** — een gedeelde combinatie van gebruikersnaam en wachtwoord, ingevoerd in de gecodeerde vorm die de aanbieder aangeeft.
+   - **OAuth 2.1** — voer de OAuth-clientgegevens in die de aanbieder u geeft, als die nodig zijn. De server wordt ingesteld voor de organisatie, maar de aanmelding is persoonlijk. Elke persoon moet voor dat hulpmiddel op **Verbinden** klikken om zijn eigen account te verbinden.
    - **Per-User API Token** — elke persoon voert zijn eigen persoonlijke token in plaats van één gedeelde kantoorreferentie (zie hieronder).
 3. **Test en zet het aan.** Gebruik **Verbinding testen** om te bevestigen dat Saga het hulpmiddel kan bereiken — een geslaagde test toont de mogelijkheden die zijn gevonden. Zet **Beschikbaar in chat** aan zodat mensen in uw organisatie het kunnen gebruiken.
 
@@ -27,16 +27,17 @@ Open het **Beheerpaneel** en ga naar het gedeelte **MCP-servers**.
 Referenties die u hier invoert, worden veilig opgeslagen en nooit meer weergegeven. Als u er een wilt wijzigen, voert u een nieuwe waarde in.
 </Note>
 
-## Als een hulpmiddel om uw persoonlijke token vraagt
+## Uw eigen account of token verbinden
 
-Sommige hulpmiddelen zijn zo ingesteld dat elke persoon zich aanmeldt met zijn eigen token in plaats van één gedeelde kantoorreferentie. Als uw beheerder **Per-User API Token** koos voor een hulpmiddel, moet u de uwe toevoegen:
+Sommige hulpmiddelen zijn zo ingesteld dat elke persoon zijn eigen account of token verbindt in plaats van één gedeelde kantoorreferentie te gebruiken. Dit geldt voor hulpmiddelen die **OAuth 2.1** gebruiken en voor hulpmiddelen die **Per-User API Token** gebruiken.
 
 1. Ga naar **Instellingen > Integraties**.
-2. Zoek het hulpmiddel in de lijst en plak uw persoonlijke token.
-3. Sla op. Het hulpmiddel is nu voor u beschikbaar in de chat.
+2. Zoek het hulpmiddel in de lijst.
+3. Klik op **Verbinden** om u aan te melden met OAuth, of plak uw persoonlijke token als het hulpmiddel daarom vraagt.
+4. Sla op wanneer Saga vraagt om een token op te slaan. Het hulpmiddel is nu voor u beschikbaar in de chat.
 
-Totdat u uw token toevoegt, is dat hulpmiddel niet beschikbaar in uw gesprekken, ook al heeft uw beheerder het ingesteld.
+Totdat u uw eigen account of token verbindt, is dat hulpmiddel niet beschikbaar in uw gesprekken, ook al heeft uw beheerder het ingesteld. Als de chat u vraagt een hulpmiddel opnieuw te verbinden, gaat u terug naar **Instellingen > Integraties** en verbindt u het opnieuw.
 
 <Note>
-Wilt u liever dat Saga het hulpmiddel is waarmee *andere* assistenten verbinding maken? Dat is de andere richting — zie [Verbind uw assistent met Saga](/guides/integrations/mcp-server/connect-assistants).
+Wilt u liever dat Saga het hulpmiddel is waarmee *andere* assistenten verbinding maken? Dat is de andere richting — zie [Verbind uw assistent met Saga](/nl/guides/integrations/mcp-server/connect-assistants).
 </Note>

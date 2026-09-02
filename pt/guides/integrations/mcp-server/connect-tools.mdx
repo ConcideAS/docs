@@ -4,7 +4,7 @@ title: Ligar ferramentas ao Saga
 
 Pode ligar ferramentas e fontes de dados externas ao Saga para que a IA possa usá-las enquanto conversa. Uma vez ligada uma ferramenta, a IA pode invocá-la durante uma conversa — por exemplo, para procurar algo num sistema ligado — sem que saia do Saga.
 
-Isto é configurado por um administrador para toda a organização. A maioria das pessoas só precisará do [passo do utilizador](#if-a-tool-asks-for-your-personal-token) no final, e apenas para certas ferramentas.
+Um administrador configura a ferramenta para toda a organização. Algumas ferramentas também exigem que cada pessoa ligue a sua própria conta ou token antes de o Saga poder usar a ferramenta nas suas conversas.
 
 ## Para que serve
 
@@ -17,9 +17,9 @@ Abra o **Painel de administração** e vá à secção **MCP Servers**.
 1. **Adicione a ferramenta.** Clique em **Add Server**, dê-lhe um nome e cole o endereço web da ferramenta (o seu URL de endpoint). O fornecedor da ferramenta fornece-lhe este endereço.
 2. **Defina como o Saga inicia sessão.** Escolha a autenticação que a ferramenta requer:
    - **None** — a ferramenta não necessita de credenciais.
-   - **API Key** ou **Bearer Token** — cole a chave ou o token que o fornecedor lhe deu. É armazenado de forma segura e nunca mais é mostrado.
-   - **Basic Auth** — uma combinação de nome de utilizador e palavra-passe, introduzida na forma codificada que o fornecedor especificar.
-   - **OAuth 2.1** — para ferramentas que usam um fluxo de início de sessão. Guarde primeiro a ferramenta e depois clique em **Connect** para iniciar sessão.
+   - **API Key** ou **Bearer Token** — cole a chave ou o token partilhado que o fornecedor lhe deu. É armazenado de forma segura e nunca mais é mostrado.
+   - **Basic Auth** — uma combinação partilhada de nome de utilizador e palavra-passe, introduzida na forma codificada que o fornecedor especificar.
+   - **OAuth 2.1** — introduza os detalhes de cliente OAuth que o fornecedor lhe der, se forem necessários. O servidor é configurado para a organização, mas o início de sessão é pessoal. Cada pessoa deve clicar em **Connect** para essa ferramenta para ligar a sua própria conta.
    - **Per-User API Token** — cada pessoa introduz o seu próprio token pessoal em vez de uma credencial partilhada do escritório (ver abaixo).
 3. **Teste e ative-a.** Use **Test Connection** para confirmar que o Saga consegue aceder à ferramenta — um teste bem-sucedido lista as capacidades encontradas. Ative **Available in Chat** para que as pessoas da sua organização possam usá-la.
 
@@ -27,16 +27,17 @@ Abra o **Painel de administração** e vá à secção **MCP Servers**.
 As credenciais que introduz aqui são armazenadas de forma segura e nunca mais são apresentadas. Se precisar de alterar uma, introduza um novo valor.
 </Note>
 
-## Se uma ferramenta pedir o seu token pessoal
+## Ligar a sua própria conta ou token
 
-Algumas ferramentas estão configuradas para que cada pessoa inicie sessão com o seu próprio token em vez de uma credencial partilhada do escritório. Se o seu administrador escolheu **Per-User API Token** para uma ferramenta, terá de adicionar o seu:
+Algumas ferramentas estão configuradas para que cada pessoa ligue a sua própria conta ou token em vez de usar uma credencial partilhada do escritório. Isto aplica-se a ferramentas que usam **OAuth 2.1** e a ferramentas que usam **Per-User API Token**.
 
 1. Vá a **Definições > Integrações**.
-2. Encontre a ferramenta na lista e cole o seu token pessoal.
-3. Guarde. A ferramenta está agora disponível para si no chat.
+2. Encontre a ferramenta na lista.
+3. Clique em **Connect** para iniciar sessão com OAuth, ou cole o seu token pessoal se a ferramenta o pedir.
+4. Guarde quando o Saga pedir para guardar um token. A ferramenta está agora disponível para si no chat.
 
-Até adicionar o seu token, essa ferramenta não estará disponível nas suas conversas, mesmo que o seu administrador a tenha configurado.
+Até ligar a sua própria conta ou token, essa ferramenta não estará disponível nas suas conversas, mesmo que o seu administrador a tenha configurado. Se o chat lhe pedir para voltar a ligar uma ferramenta, regresse a **Definições > Integrações** e ligue-a novamente.
 
 <Note>
-Prefere que o Saga seja a ferramenta à qual *outros* assistentes se ligam? Essa é a outra direção — consulte [Ligar o seu assistente ao Saga](/guides/integrations/mcp-server/connect-assistants).
+Prefere que o Saga seja a ferramenta à qual *outros* assistentes se ligam? Essa é a outra direção — consulte [Ligar o seu assistente ao Saga](/pt/guides/integrations/mcp-server/connect-assistants).
 </Note>

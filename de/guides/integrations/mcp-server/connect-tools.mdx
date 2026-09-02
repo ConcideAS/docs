@@ -4,7 +4,7 @@ title: Werkzeuge mit Saga verbinden
 
 Sie können externe Werkzeuge und Datenquellen mit Saga verbinden, damit die KI sie nutzen kann, während Sie chatten. Sobald ein Werkzeug verbunden ist, kann die KI es während eines Gesprächs aufrufen — zum Beispiel, um etwas in einem verbundenen System nachzuschlagen — ohne dass Sie Saga verlassen.
 
-Dies wird von einem Administrator für die gesamte Organisation eingerichtet. Die meisten Personen benötigen nur den [Benutzerschritt](#if-a-tool-asks-for-your-personal-token) am Ende, und nur für bestimmte Werkzeuge.
+Ein Administrator richtet das Werkzeug für die gesamte Organisation ein. Einige Werkzeuge erfordern außerdem, dass jede Person ihr eigenes Konto oder Token verbindet, bevor Saga das Werkzeug in ihren Chats verwenden kann.
 
 ## Wofür das ist
 
@@ -17,9 +17,9 @@ Das Verbinden eines Werkzeugs gibt Sagas KI eine neue Fähigkeit, die sie währe
 1. **Fügen Sie das Werkzeug hinzu.** Klicken Sie auf **Server hinzufügen**, geben Sie ihm einen Namen und fügen Sie die Webadresse des Werkzeugs ein (seine Endpunkt-URL). Der Anbieter des Werkzeugs gibt Ihnen diese Adresse.
 2. **Legen Sie fest, wie Saga sich anmeldet.** Wählen Sie die Authentifizierung, die das Werkzeug erfordert:
    - **Keine** — das Werkzeug benötigt keine Anmeldeinformationen.
-   - **API Key** oder **Bearer Token** — fügen Sie den Schlüssel oder das Token ein, das der Anbieter Ihnen gegeben hat. Er wird sicher gespeichert und nie wieder angezeigt.
-   - **Basic Auth** — eine Kombination aus Benutzername und Passwort, eingegeben in der codierten Form, die der Anbieter angibt.
-   - **OAuth 2.1** — für Werkzeuge, die einen Anmeldevorgang verwenden. Speichern Sie das Werkzeug zuerst und klicken Sie dann auf **Verbinden**, um sich anzumelden.
+   - **API Key** oder **Bearer Token** — fügen Sie den gemeinsamen Schlüssel oder das gemeinsame Token ein, das der Anbieter Ihnen gegeben hat. Er wird sicher gespeichert und nie wieder angezeigt.
+   - **Basic Auth** — eine gemeinsame Kombination aus Benutzername und Passwort, eingegeben in der codierten Form, die der Anbieter angibt.
+   - **OAuth 2.1** — geben Sie die OAuth-Clientdetails ein, die der Anbieter Ihnen gibt, falls erforderlich. Der Server wird für die Organisation eingerichtet, aber die Anmeldung ist persönlich. Jede Person muss für dieses Werkzeug auf **Verbinden** klicken, um ihr eigenes Konto zu verbinden.
    - **Per-User API Token** — jede Person gibt ihr eigenes persönliches Token ein, statt einer gemeinsamen Kanzlei-Anmeldeinformation (siehe unten).
 3. **Testen und einschalten.** Verwenden Sie **Verbindung testen**, um zu bestätigen, dass Saga das Werkzeug erreichen kann — ein erfolgreicher Test listet die gefundenen Fähigkeiten auf. Schalten Sie **Im Chat verfügbar** ein, damit Personen in Ihrer Organisation es nutzen können.
 
@@ -27,16 +27,17 @@ Das Verbinden eines Werkzeugs gibt Sagas KI eine neue Fähigkeit, die sie währe
 Anmeldeinformationen, die Sie hier eingeben, werden sicher gespeichert und nie wieder angezeigt. Wenn Sie eine ändern müssen, geben Sie einen neuen Wert ein.
 </Note>
 
-## Wenn ein Werkzeug nach Ihrem persönlichen Token fragt
+## Eigenes Konto oder Token verbinden
 
-Einige Werkzeuge sind so eingerichtet, dass sich jede Person mit ihrem eigenen Token anmeldet, statt mit einer gemeinsamen Kanzlei-Anmeldeinformation. Wenn Ihr Administrator **Per-User API Token** für ein Werkzeug gewählt hat, müssen Sie Ihres hinzufügen:
+Einige Werkzeuge sind so eingerichtet, dass jede Person ihr eigenes Konto oder Token verbindet, statt eine gemeinsame Kanzlei-Anmeldeinformation zu verwenden. Das gilt für Werkzeuge mit **OAuth 2.1** und für Werkzeuge mit **Per-User API Token**.
 
 1. Gehen Sie zu **Einstellungen > Integrationen**.
-2. Finden Sie das Werkzeug in der Liste und fügen Sie Ihr persönliches Token ein.
-3. Speichern Sie. Das Werkzeug ist jetzt für Sie im Chat verfügbar.
+2. Finden Sie das Werkzeug in der Liste.
+3. Klicken Sie auf **Verbinden**, um sich mit OAuth anzumelden, oder fügen Sie Ihr persönliches Token ein, wenn das Werkzeug danach fragt.
+4. Speichern Sie, wenn Saga Sie auffordert, ein Token zu speichern. Das Werkzeug ist jetzt für Sie im Chat verfügbar.
 
-Bis Sie Ihr Token hinzufügen, ist dieses Werkzeug in Ihren Gesprächen nicht verfügbar, auch wenn Ihr Administrator es eingerichtet hat.
+Bis Sie Ihr eigenes Konto oder Token verbinden, ist dieses Werkzeug in Ihren Gesprächen nicht verfügbar, auch wenn Ihr Administrator es eingerichtet hat. Wenn der Chat Sie auffordert, ein Werkzeug erneut zu verbinden, kehren Sie zu **Einstellungen > Integrationen** zurück und verbinden Sie es erneut.
 
 <Note>
-Möchten Sie lieber, dass Saga das Werkzeug ist, mit dem sich *andere* Assistenten verbinden? Das ist die andere Richtung — siehe [Ihren Assistenten mit Saga verbinden](/guides/integrations/mcp-server/connect-assistants).
+Möchten Sie lieber, dass Saga das Werkzeug ist, mit dem sich *andere* Assistenten verbinden? Das ist die andere Richtung — siehe [Ihren Assistenten mit Saga verbinden](/de/guides/integrations/mcp-server/connect-assistants).
 </Note>
