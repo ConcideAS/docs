@@ -14,7 +14,7 @@ Her adımın bir yapılandırma paneli vardır. Tuvaldeki bir adımı seçerek k
 
 - **Adım başlığı** — bu adımın ne yaptığını tanımlayan bir etiket (diğer adımlardan referans verirken gördüğünüz budur)
 - **Talimatlar veya sorgu** — bu adım için istem, arama sorgusu veya yönergeler
-- **Asistan** — istem tabanlı adımlar için hangi yapay zeka modeli veya [özel asistanın](/tr/guides/assistants/custom-assistants) kullanılacağı
+- **Asistan** — hangi AI modelinin veya özel asistanın kullanılacağı (Run prompt, Drafting ve diğer istem tabanlı adımlarda kullanılabilir)
 - **Adıma özel seçenekler** — hangi [hukuki kaynakların](/tr/guides/legal-research) aranacağı, hangi diller arasında çeviri yapılacağı veya hangi [görevin](/tr/guides/chat#görevler) çalıştırılacağı gibi şeyler
 
 Yapay zekanın ifadenizi iyileştirmesine izin vermek için talimat alanlarında **İstemi iyileştir**'e de tıklayabilirsiniz.
@@ -29,7 +29,9 @@ Akış boyunca bağlam böyle oluşturulur. Bir istem adımı, bir yükleme adı
 
 İş akışınız hazır olduğunda **Kaydet**'e tıklayın. Bir ad, isteğe bağlı bir açıklama ve bir dil vereceksiniz. Ayrıca daha sonra bulmayı kolaylaştırmak için uygulama alanlarıyla etiketleyebilirsiniz. Tüm kuruluşunuza sunmak istiyorsanız, **Kuruluş genelinde yayınlanmasını talep et** seçeneğini işaretleyin — bir yönetici inceler ve onaylar.
 
-Bir iş akışının çalıştırılabilmesi için kaydedilmiş olması gerekir. İlk kayıttan sonra düzenlemeleriniz çalışırken otomatik olarak korunur — ayrı bir "değişiklikleri kaydet" düğmesi yoktur.
+Bir iş akışının çalıştırılabilmesi için kaydedilmiş olması gerekir.
+
+İlk kayıttan sonra düzenlemeleriniz çalışırken otomatik olarak korunur — ayrı bir "değişiklikleri kaydet" düğmesi yoktur.
 
 ## İş akışını çalıştırma
 
@@ -44,6 +46,8 @@ Yürütmeyi başlatmak için oluşturucuda **Çalıştır**'a tıklayın. Kenar 
 Bir adım giriş gerektirdiğinde — istem girişi veya dosya yükleme gibi — iş akışı duraklar ve devam etmeden önce sağlamanızı bekler. Gerekeni doldurun ve iş akışı kaldığı yerden devam eder.
 
 Her adım yürütme süresini gösterir ve nihai sonuçlar alt kısımdaki **Son varlıklar** bölümünde görünür — indirilecek belgeler, kopyalanacak metin, açılacak tablo incelemeleri veya göz atılacak araştırma sonuçları.
+
+Bir adım kaynaklara atıf yaptığında — özellikle Hukuki araştırma — adım çıktısı, sohbette olduğu gibi numaralı atıf çipleri gösterir. Kaynağı yan panelde açmak ve ilgili bölümü kontrol etmek için bir çipe tıklayın. Atıf içermeyen adımlar düz metin olarak kalır.
 
 ## Sohbetten çalıştırma
 

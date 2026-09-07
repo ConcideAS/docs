@@ -14,7 +14,7 @@ Hvert steg har et konfigurasjonspanel. Velg et steg på lerretet for å åpne de
 
 - **Stegtittel** — en etikett som identifiserer hva dette steget gjør (dette er det du ser når du refererer til det fra andre steg)
 - **Instruksjoner eller spørring** — instruksjonen, søkespørringen eller retningslinjene for dette steget
-- **Assistent** — for instruksjonsbaserte steg, hvilken AI-modell eller [egendefinert assistent](/no/guides/assistants/custom-assistants) som skal brukes
+- **Assistent** — hvilken AI-modell eller tilpasset assistent som skal brukes (tilgjengelig på Run prompt, Drafting og andre prompt-baserte steg)
 - **Stegspesifikke alternativer** — ting som hvilke [juridiske kilder](/no/guides/legal-research) det skal søkes i, hvilke språk det skal oversettes mellom, eller hvilken [oppgave](/no/guides/chat#oppgaver) som skal kjøres
 
 Du kan også klikke **Forbedre instruksjon** på instruksjonsfelt for å la AI-en forbedre formuleringen din.
@@ -29,7 +29,9 @@ Slik bygger du opp kontekst på tvers av flyten. Et instruksjonssteg kan analyse
 
 Klikk **Lagre** når arbeidsflyten er klar. Du gir den et navn, en valgfri beskrivelse og et språk. Du kan også tagge den med fagområder for å gjøre den lettere å finne senere. Hvis du vil gjøre den tilgjengelig for hele organisasjonen, huk av **Be om å gjøre organisasjonsdekkende** — en administrator vil gjennomgå og godkjenne den.
 
-En arbeidsflyt må lagres før den kan kjøres. Etter første lagring lagres redigeringene dine automatisk mens du jobber — det er ingen separat «lagre endringer»-knapp.
+En arbeidsflyt må lagres før den kan kjøres.
+
+Etter første lagring lagres redigeringene dine automatisk mens du jobber — det er ingen separat «lagre endringer»-knapp.
 
 ## Kjøre en arbeidsflyt
 
@@ -44,6 +46,8 @@ Klikk **Kjør** i byggeren for å starte utførelsen. Sidemenyen bytter til kjø
 Når et steg trenger inndata — som en instruksjonsinndata eller filopplasting — pauser arbeidsflyten og venter på at du gir det som trengs før den fortsetter. Fyll inn det som trengs, og arbeidsflyten fortsetter der den slapp.
 
 Hvert steg viser utførelsestiden, og de endelige resultatene vises i en **Endelige ressurser**-seksjon nederst — dokumenter å laste ned, tekst å kopiere, rutenettgjennomganger å åpne eller forskningsresultater å bla gjennom.
+
+Når et steg siterer kilder — særlig Juridisk forskning — viser stegresultatet nummererte sitatbrikker, på samme måte som i chat. Klikk på en brikke for å åpne kilden i sidepanelet og kontrollere passasjen. Steg uten sitater forblir ren tekst.
 
 ## Kjøre fra chat
 
