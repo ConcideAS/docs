@@ -14,7 +14,7 @@ Cada paso tiene un panel de configuración. Seleccione un paso en el lienzo para
 
 - **Título del paso** — una etiqueta que identifica lo que hace este paso (es lo que ve cuando lo referencia desde otros pasos)
 - **Instrucciones o consulta** — el prompt, la consulta de búsqueda o las indicaciones para este paso
-- **Asistente** — para pasos basados en prompts, qué modelo de IA o [asistente personalizado](/es/guides/assistants/custom-assistants) usar
+- **Asistente** — qué modelo de IA o asistente personalizado usar (disponible en Run prompt, Drafting y otros pasos basados en prompts)
 - **Opciones específicas del paso** — cosas como qué [fuentes jurídicas](/es/guides/legal-research) buscar, entre qué idiomas traducir, o qué [tarea](/es/guides/chat#tareas) ejecutar
 
 También puede hacer clic en **Mejorar prompt** en los campos de instrucciones para que la IA refine su formulación.
@@ -29,7 +29,9 @@ Así es como se construye contexto a lo largo del flujo. Un paso de prompt puede
 
 Haga clic en **Guardar** cuando su flujo de trabajo esté listo. Le dará un nombre, una descripción opcional y un idioma. También puede etiquetarlo con áreas de práctica para facilitar su búsqueda más adelante. Si desea ponerlo a disposición de toda su organización, marque **Solicitar hacer organizacional** — un administrador lo revisará y aprobará.
 
-Un flujo de trabajo debe guardarse antes de poder ejecutarse. Después del primer guardado, sus ediciones se guardan automáticamente mientras trabaja — no hay un botón separado de "guardar cambios".
+Un flujo de trabajo debe guardarse antes de poder ejecutarse.
+
+Después del primer guardado, sus ediciones se guardan automáticamente mientras trabaja — no hay un botón separado de "guardar cambios".
 
 ## Ejecutar un flujo de trabajo
 
@@ -44,6 +46,8 @@ Haga clic en **Ejecutar** en el constructor para iniciar la ejecución. La barra
 Cuando un paso necesita entrada — como una entrada de prompt o carga de archivos — el flujo de trabajo se pausa y espera a que usted la proporcione antes de continuar. Complete lo necesario y el flujo de trabajo retoma donde se quedó.
 
 Cada paso muestra su tiempo de ejecución, y los resultados finales aparecen en una sección de **Activos finales** en la parte inferior — documentos para descargar, texto para copiar, revisiones en cuadrícula para abrir o resultados de investigación para explorar.
+
+Cuando un paso cita fuentes — especialmente Investigación jurídica — la salida del paso muestra chips de cita numerados, igual que en el chat. Haga clic en un chip para abrir la fuente en el panel lateral y comprobar el pasaje. Los pasos sin citas permanecen como texto sin formato.
 
 ## Ejecutar desde el chat
 

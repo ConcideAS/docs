@@ -14,7 +14,7 @@ Jeder Schritt hat ein Konfigurationspanel. Wählen Sie einen Schritt auf der Arb
 
 - **Schritttitel** — eine Bezeichnung, die beschreibt, was dieser Schritt tut (das sehen Sie, wenn Sie ihn von anderen Schritten aus referenzieren)
 - **Anweisungen oder Anfrage** — der Prompt, die Suchanfrage oder die Vorgaben für diesen Schritt
-- **Assistent** — für prompt-basierte Schritte, welches KI-Modell oder welchen [benutzerdefinierten Assistenten](/de/guides/assistants/custom-assistants) Sie verwenden möchten
+- **Assistent** — welches KI-Modell oder welcher benutzerdefinierte Assistent verwendet werden soll (verfügbar für Run prompt, Drafting und andere promptbasierte Schritte)
 - **Schrittspezifische Optionen** — z. B. welche [Rechtsquellen](/de/guides/legal-research) durchsucht, zwischen welchen Sprachen übersetzt oder welche [Aufgabe](/de/guides/chat#aufgaben) ausgeführt werden soll
 
 Sie können auch auf **Prompt verbessern** in Anweisungsfeldern klicken, um die KI Ihre Formulierung verfeinern zu lassen.
@@ -29,7 +29,9 @@ So bauen Sie schrittweise Kontext im Ablauf auf. Ein Prompt-Schritt kann Dokumen
 
 Klicken Sie auf **Speichern**, wenn Ihr Workflow fertig ist. Sie geben ihm einen Namen, eine optionale Beschreibung und eine Sprache. Sie können ihn auch mit Praxisbereichen taggen, damit er später leichter zu finden ist. Wenn Sie ihn Ihrer gesamten Organisation zur Verfügung stellen möchten, aktivieren Sie **Als organisationsweit vorschlagen** — ein Administrator prüft und genehmigt ihn.
 
-Ein Workflow muss gespeichert werden, bevor er ausgeführt werden kann. Nach dem ersten Speichern werden Ihre Bearbeitungen automatisch beim Arbeiten gespeichert — es gibt keine separate „Änderungen speichern"-Schaltfläche.
+Ein Workflow muss gespeichert werden, bevor er ausgeführt werden kann.
+
+Nach dem ersten Speichern werden Ihre Bearbeitungen automatisch beim Arbeiten gespeichert — es gibt keine separate „Änderungen speichern"-Schaltfläche.
 
 ## Workflow ausführen
 
@@ -44,6 +46,8 @@ Klicken Sie im Builder auf **Ausführen**, um die Ausführung zu starten. Die Se
 Wenn ein Schritt eine Eingabe benötigt — wie eine Prompt-Eingabe oder ein Datei-Upload — pausiert der Workflow und wartet, bis Sie die Eingabe bereitgestellt haben, bevor er fortfährt. Füllen Sie das Benötigte aus und der Workflow setzt dort fort, wo er aufgehört hat.
 
 Jeder Schritt zeigt seine Ausführungszeit, und die Endergebnisse erscheinen in einem Abschnitt **Finale Ergebnisse** am unteren Rand — Dokumente zum Herunterladen, Text zum Kopieren, Rasterprüfungen zum Öffnen oder Recherche-Ergebnisse zum Durchsuchen.
+
+Wenn ein Schritt Quellen zitiert — insbesondere die Juristische Recherche — zeigt die Schrittausgabe nummerierte Zitatchips, genau wie im Chat. Klicken Sie auf einen Chip, um die Quelle im Seitenbereich zu öffnen und die Passage zu prüfen. Schritte ohne Zitate bleiben einfacher Text.
 
 ## Aus dem Chat ausführen
 

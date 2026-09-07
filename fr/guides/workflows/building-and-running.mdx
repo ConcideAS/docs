@@ -14,7 +14,7 @@ Chaque étape possède un panneau de configuration. Sélectionnez une étape sur
 
 - **Titre de l'étape** — un libellé qui identifie ce que fait cette étape (c'est ce que vous voyez lorsque vous y faites référence depuis d'autres étapes)
 - **Instructions ou requête** — le prompt, la requête de recherche ou les directives pour cette étape
-- **Assistant** — pour les étapes basées sur des prompts, quel modèle IA ou [assistant personnalisé](/fr/guides/assistants/custom-assistants) utiliser
+- **Assistant** — quel modèle d’IA ou assistant personnalisé utiliser (disponible dans Run prompt, Drafting et les autres étapes basées sur des prompts)
 - **Options spécifiques à l'étape** — par exemple quelles [sources juridiques](/fr/guides/legal-research) interroger, entre quelles langues traduire ou quelle [tâche](/fr/guides/chat#tâches) exécuter
 
 Vous pouvez également cliquer sur **Améliorer le prompt** dans les champs d'instructions pour laisser l'IA affiner votre formulation.
@@ -29,7 +29,9 @@ C'est ainsi que vous construisez le contexte à travers le flux. Une étape de p
 
 Cliquez sur **Enregistrer** lorsque votre workflow est prêt. Vous lui donnerez un nom, une description optionnelle et une langue. Vous pouvez également l'étiqueter avec des domaines de pratique pour le retrouver plus facilement par la suite. Si vous souhaitez le rendre disponible à toute votre organisation, cochez **Demander à rendre organisationnel** — un administrateur l'examinera et l'approuvera.
 
-Un workflow doit être enregistré avant de pouvoir être exécuté. Après le premier enregistrement, vos modifications sont conservées automatiquement au fil de votre travail — il n'y a pas de bouton « enregistrer les modifications » distinct.
+Un workflow doit être enregistré avant de pouvoir être exécuté.
+
+Après le premier enregistrement, vos modifications sont conservées automatiquement au fil de votre travail — il n'y a pas de bouton « enregistrer les modifications » distinct.
 
 ## Exécuter un workflow
 
@@ -44,6 +46,8 @@ Cliquez sur **Exécuter** dans le constructeur pour lancer l'exécution. La barr
 Lorsqu'une étape nécessite une entrée — comme une saisie de prompt ou un import de fichiers — le workflow se met en pause et attend que vous la fournissiez avant de continuer. Remplissez ce qui est demandé et le workflow reprend là où il s'était arrêté.
 
 Chaque étape affiche son temps d'exécution, et les résultats finaux apparaissent dans une section **Livrables finaux** en bas — documents à télécharger, texte à copier, revues en grille à ouvrir ou résultats de recherche à parcourir.
+
+Lorsqu’une étape cite des sources — en particulier Recherche juridique — la sortie de l’étape affiche des puces de citation numérotées, comme dans le chat. Cliquez sur une puce pour ouvrir la source dans le panneau latéral et vérifier le passage. Les étapes sans citation restent en texte simple.
 
 ## Exécuter depuis le chat
 

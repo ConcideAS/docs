@@ -14,7 +14,7 @@ Each step has a configuration panel. Select a step on the canvas to open it in t
 
 - **Step title** — a label that identifies what this step does (this is what you see when referencing it from other steps)
 - **Instructions or query** — the prompt, search query, or directions for this step
-- **Assistant** — for prompt-based steps, which AI model or [custom assistant](/guides/assistants/custom-assistants) to use
+- **Assistant** — which AI model or custom assistant to use (available on Run prompt, Drafting, and other prompt-based steps)
 - **Step-specific options** — things like which [legal sources](/guides/legal-research) to search, which languages to translate between, or which [task](/guides/chat#tasks) to run
 
 You can also click **Improve prompt** on instruction fields to let the AI refine your phrasing.
@@ -40,6 +40,8 @@ The workflow begins executing as soon as it's saved — there's no separate run 
 When a step needs input — like a prompt input or file upload — the workflow pauses and waits for you to provide it before continuing. Fill in what's needed and the workflow picks up where it left off.
 
 Each step shows its execution time, and the final results appear in a **Final assets** section at the bottom — documents to download, text to copy, grid reviews to open, or research results to browse.
+
+When a step cites sources — especially Legal research — the step output shows numbered citation chips, the same way chat does. Click a chip to open the source in the side panel and check the passage. Steps with no cites stay plain text.
 
 After the first save, edits to the workflow are persisted automatically as you work.
 
