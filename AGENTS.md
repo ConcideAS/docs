@@ -93,3 +93,7 @@ Avoid:
 - Run `mint broken-links`.
 - Run `git diff --check`.
 - If broken links already exist outside the change, report them separately and do not fix unrelated pages unless asked.
+
+## Cursor Cloud Environment
+
+`.cursor/install.sh` installs the Mintlify CLI (`mint`) globally and runs `mint validate` once, so `mint validate`, `mint broken-links`, and `mint dev` work in a cloud agent. It needs no secrets.
