@@ -51,12 +51,21 @@ Once connected, the agent has these tools:
 | Tool | What it does |
 |------|--------------|
 | `ask_saga` | Asks Saga a question and returns the answer, the same as chatting in the app. |
+| `ask_saga_project` | Asks a question grounded in one project's documents and returns a cited answer. The chat is saved in the project. |
 | `list_projects` | Lists your projects, including ones shared with you. |
 | `list_project_documents` | Lists the documents in a project. |
 | `search_project_documents` | Searches a project's knowledge base and returns the most relevant sections. |
 | `fetch_project_document` | Returns the full text of a document. |
+| `list_assistants` | Lists the active custom assistants in your workspace. |
+| `ask_saga_assistant` | Asks one custom assistant a question, with its instructions applied. |
+| `list_prompts` | Lists prompt-library entries (personal, organization, Saga Lab, or all), with optional search. |
+| `fetch_prompt` | Returns one prompt's text and its placeholder fields. |
 | `list_workflows` | Lists your workflows and the inputs each one expects. |
 | `execute_workflow` | Runs a workflow with text inputs and returns the result. |
+| `get_workflow_status` | Returns a workflow run's status and each step's status. |
+| `fetch_workflow_step_result` | Returns the output of one completed step. |
+| `submit_workflow_input` | Answers the step a run waits at and continues the run. |
+| `resume_workflow` | Starts a run that was created but never started. |
 
 Every tool runs as you. The agent sees only the projects, documents, and workflows your account can already access — the same permissions you have in the web app.
 
@@ -69,4 +78,4 @@ Every tool runs as you. The agent sees only the projects, documents, and workflo
 ## Troubleshooting
 
 - **The client can't connect or returns 401 Unauthorized** — check that the endpoint ends in `/api/mcp`, that the header is `Authorization: Api-Key <your-api-key>`, and that the key hasn't expired or been revoked. Create a fresh key in **Settings > API Key Management** if needed.
-- **A workflow reports as paused** — workflows that wait for input partway through can't be resumed over MCP, and file inputs aren't supported. Run those from the Saga app instead.
+- **A workflow waits for input**: use `submit_workflow_input` to answer a text input and continue the run. If the step needs a file, open the run in Saga and upload the file there.

@@ -51,12 +51,24 @@ Nach der Verbindung verfügt der Agent über diese Werkzeuge:
 | Werkzeug | Was es tut |
 |------|--------------|
 | `ask_saga` | Stellt Saga eine Frage und gibt die Antwort zurück, genau wie beim Chatten in der App. |
+
+| `ask_saga_project` | Stellt eine Frage, die auf den Dokumenten eines Projekts basiert, und gibt eine zitierte Antwort zurück. Der Chat wird im Projekt gespeichert. |
 | `list_projects` | Listet Ihre Projekte auf, einschließlich der mit Ihnen geteilten. |
 | `list_project_documents` | Listet die Dokumente in einem Projekt auf. |
 | `search_project_documents` | Durchsucht die Wissensdatenbank eines Projekts und gibt die relevantesten Abschnitte zurück. |
 | `fetch_project_document` | Gibt den vollständigen Text eines Dokuments zurück. |
+
+| `list_assistants` | Listet die aktiven benutzerdefinierten Assistenten in Ihrem Arbeitsbereich auf. |
+| `ask_saga_assistant` | Stellt einem benutzerdefinierten Assistenten eine Frage und wendet dessen Anweisungen an. |
+| `list_prompts` | Listet Einträge der Prompt-Bibliothek auf, persönlich, Organisation, Saga Lab oder alle, mit optionaler Suche. |
+| `fetch_prompt` | Gibt den Text eines Prompts und seine Platzhalterfelder zurück. |
 | `list_workflows` | Listet Ihre Workflows und die Eingaben auf, die jeder einzelne erwartet. |
 | `execute_workflow` | Führt einen Workflow mit Texteingaben aus und gibt das Ergebnis zurück. |
+
+| `get_workflow_status` | Gibt den Status eines Workflow-Laufs und den Status jedes Schritts zurück. |
+| `fetch_workflow_step_result` | Gibt die Ausgabe eines abgeschlossenen Schritts zurück. |
+| `submit_workflow_input` | Beantwortet den Schritt, bei dem ein Lauf wartet, und setzt den Lauf fort. |
+| `resume_workflow` | Startet einen Lauf, der erstellt, aber nie gestartet wurde. |
 
 Jedes Werkzeug wird als Sie ausgeführt. Der Agent sieht nur die Projekte, Dokumente und Workflows, auf die Ihr Konto bereits zugreifen kann — dieselben Berechtigungen, die Sie in der Web-App haben.
 
@@ -69,4 +81,4 @@ Jedes Werkzeug wird als Sie ausgeführt. Der Agent sieht nur die Projekte, Dokum
 ## Fehlerbehebung
 
 - **Der Client kann sich nicht verbinden oder gibt 401 Unauthorized zurück** — prüfen Sie, ob der Endpunkt auf `/api/mcp` endet, ob der Header `Authorization: Api-Key <your-api-key>` lautet und ob der Schlüssel nicht abgelaufen oder widerrufen wurde. Erstellen Sie bei Bedarf einen neuen Schlüssel unter **Einstellungen > API-Schlüsselverwaltung**.
-- **Ein Workflow wird als pausiert gemeldet** — Workflows, die zwischendurch auf Eingaben warten, können über MCP nicht fortgesetzt werden, und Dateieingaben werden nicht unterstützt. Führen Sie diese stattdessen über die Saga-App aus.
+- **Ein Workflow wartet auf Eingabe**: Verwenden Sie `submit_workflow_input`, um eine Texteingabe zu beantworten und den Lauf fortzusetzen. Wenn der Schritt eine Datei benötigt, öffnen Sie den Lauf in Saga und laden Sie die Datei dort hoch.

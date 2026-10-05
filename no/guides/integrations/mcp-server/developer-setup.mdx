@@ -55,6 +55,15 @@ Når den er tilkoblet, har agenten disse verktøyene:
 | `list_project_documents` | Lister opp dokumentene i et prosjekt. |
 | `search_project_documents` | Søker i et prosjekts kunnskapsbase og returnerer de mest relevante delene. |
 | `fetch_project_document` | Returnerer hele teksten i et dokument. |
+| `ask_saga_project` | Stiller Saga et spørsmål innenfor ett prosjekt. |
+| `list_assistants` | Lister opp custom assistants du kan bruke. |
+| `ask_saga_assistant` | Stiller Saga et spørsmål med en custom assistant. |
+| `list_prompts` | Lister opp instruksjoner fra instruksjonsbiblioteket ditt. |
+| `fetch_prompt` | Henter innholdet i en instruksjon. |
+| `get_workflow_status` | Returnerer statusen for en arbeidsflytkjøring. |
+| `fetch_workflow_step_result` | Henter resultatet fra et arbeidsflyttrinn. |
+| `submit_workflow_input` | Sender tekstinndata til en arbeidsflyt som er satt på pause. |
+| `resume_workflow` | Gjenopptar en arbeidsflyt som er klar til å fortsette. |
 | `list_workflows` | Lister opp arbeidsflytene dine og inndataene hver enkelt forventer. |
 | `execute_workflow` | Kjører en arbeidsflyt med tekstinndata og returnerer resultatet. |
 
@@ -69,4 +78,4 @@ Hvert verktøy kjører som deg. Agenten ser bare prosjektene, dokumentene og arb
 ## Feilsøking
 
 - **Klienten kan ikke koble til eller returnerer 401 Unauthorized** — sjekk at endepunktet slutter på `/api/mcp`, at headeren er `Authorization: Api-Key <your-api-key>`, og at nøkkelen ikke er utløpt eller tilbakekalt. Opprett en ny nøkkel under **Innstillinger > API-nøkkelhåndtering** om nødvendig.
-- **En arbeidsflyt rapporteres som satt på pause** — arbeidsflyter som venter på inndata underveis kan ikke gjenopptas over MCP, og filinndata støttes ikke. Kjør disse fra Saga-appen i stedet.
+- **En arbeidsflyt rapporteres som satt på pause**: bruk `submit_workflow_input` for tekstinndata. Åpne Saga for filinndata.

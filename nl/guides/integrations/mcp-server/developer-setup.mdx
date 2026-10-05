@@ -55,6 +55,15 @@ Eenmaal verbonden beschikt de agent over deze hulpmiddelen:
 | `list_project_documents` | Geeft een lijst van de documenten in een project. |
 | `search_project_documents` | Doorzoekt de kennisbank van een project en geeft de meest relevante secties terug. |
 | `fetch_project_document` | Geeft de volledige tekst van een document terug. |
+| `ask_saga_project` | Stelt Saga een vraag binnen één project. |
+| `list_assistants` | Geeft een lijst van de custom assistants die u kunt gebruiken. |
+| `ask_saga_assistant` | Stelt een vraag aan Saga met een custom assistant. |
+| `list_prompts` | Geeft een lijst van prompts uit uw promptbibliotheek. |
+| `fetch_prompt` | Haalt de inhoud van een prompt op. |
+| `get_workflow_status` | Geeft de status van een workflowrun terug. |
+| `fetch_workflow_step_result` | Haalt het resultaat van een workflowstap op. |
+| `submit_workflow_input` | Verstuurt tekstinvoer naar een gepauzeerde workflow. |
+| `resume_workflow` | Hervat een workflow die klaar is om verder te gaan. |
 | `list_workflows` | Geeft een lijst van uw workflows en de invoer die elke workflow verwacht. |
 | `execute_workflow` | Voert een workflow uit met tekstinvoer en geeft het resultaat terug. |
 
@@ -69,4 +78,4 @@ Elk hulpmiddel wordt als u uitgevoerd. De agent ziet alleen de projecten, docume
 ## Problemen oplossen
 
 - **De client kan geen verbinding maken of geeft 401 Unauthorized terug** — controleer of het eindpunt eindigt op `/api/mcp`, of de header `Authorization: Api-Key <your-api-key>` is en of de sleutel niet is verlopen of ingetrokken. Maak indien nodig een nieuwe sleutel aan in **Instellingen > API-sleutelbeheer**.
-- **Een workflow wordt als gepauzeerd gerapporteerd** — workflows die halverwege op invoer wachten kunnen niet via MCP worden hervat, en bestandsinvoer wordt niet ondersteund. Voer deze in plaats daarvan uit vanuit de Saga-app.
+- **Een workflow wordt als gepauzeerd gerapporteerd**: gebruik `submit_workflow_input` voor tekstinvoer. Open Saga voor bestandsinvoer.
