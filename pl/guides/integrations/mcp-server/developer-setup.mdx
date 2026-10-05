@@ -55,6 +55,15 @@ Po połączeniu agent ma dostęp do następujących narzędzi:
 | `list_project_documents` | Wyświetla dokumenty w projekcie. |
 | `search_project_documents` | Przeszukuje bazę wiedzy projektu i zwraca najbardziej odpowiednie sekcje. |
 | `fetch_project_document` | Zwraca pełny tekst dokumentu. |
+| `ask_saga_project` | Zadaje Sadze pytanie w ramach jednego projektu. |
+| `list_assistants` | Wyświetla custom assistants, których możesz używać. |
+| `ask_saga_assistant` | Zadaje Sadze pytanie z użyciem custom assistant. |
+| `list_prompts` | Wyświetla prompty z Twojej biblioteki promptów. |
+| `fetch_prompt` | Pobiera treść promptu. |
+| `get_workflow_status` | Zwraca status uruchomienia przepływu pracy. |
+| `fetch_workflow_step_result` | Pobiera wynik kroku przepływu pracy. |
+| `submit_workflow_input` | Przesyła dane tekstowe do wstrzymanego przepływu pracy. |
+| `resume_workflow` | Wznawia przepływ pracy gotowy do kontynuacji. |
 | `list_workflows` | Wyświetla Twoje przepływy pracy oraz dane wejściowe oczekiwane przez każdy z nich. |
 | `execute_workflow` | Uruchamia przepływ pracy z wejściami tekstowymi i zwraca wynik. |
 
@@ -69,4 +78,4 @@ Każde narzędzie działa w Twoim imieniu. Agent widzi tylko projekty, dokumenty
 ## Rozwiązywanie problemów
 
 - **Klient nie może się połączyć lub zwraca błąd 401 Unauthorized** — sprawdź, czy punkt końcowy kończy się na `/api/mcp`, czy nagłówek to `Authorization: Api-Key <your-api-key>` oraz czy klucz nie wygasł i nie został odwołany. W razie potrzeby utwórz nowy klucz w sekcji **Ustawienia > Zarządzanie kluczami API**.
-- **Przepływ pracy zgłaszany jest jako wstrzymany** — przepływy pracy, które w trakcie czekają na dane wejściowe, nie mogą być wznawiane przez MCP, a wejścia plikowe nie są obsługiwane. Uruchamiaj je zamiast tego z aplikacji Saga.
+- **Przepływ pracy zgłaszany jest jako wstrzymany**: użyj `submit_workflow_input` dla danych tekstowych. Otwórz Saga dla danych plikowych.

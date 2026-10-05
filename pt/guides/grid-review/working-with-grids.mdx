@@ -26,6 +26,10 @@ Pode também redimensionar colunas, ordenar pelos valores de uma coluna e altern
 
 A grelha mantém-se ativa enquanto trabalha com ela. Quando adiciona uma nova pergunta, a IA gera respostas para todos os documentos na grelha. Quando adiciona novos documentos, a IA preenche respostas para todas as perguntas. Se editar o texto de uma pergunta, as respostas existentes para essa coluna são limpas e regeneradas com a formulação atualizada.
 
+Cada linha de documento mostra o seu estado: **Queued**, **Reading**, **Running**, **Done** ou **Failed**. Se uma linha falhar, a mensagem indica o problema e o próximo passo. Enquanto ainda há linhas em processamento, a grelha mostra quantos documentos estão prontos e quantos falharam.
+
+Algum trabalho da grelha é executado no separador do navegador: carregar ficheiros a partir do computador, preparar linhas, gerar as primeiras respostas para uma coluna nova ou editada, e exportar para Excel. Durante esse trabalho, o Saga mostra a etapa e uma contagem, por exemplo **Uploading 12 of 40**, e pede-lhe para manter o separador aberto. Se tentar sair da página, o navegador pede-lhe confirmação.
+
 Isto significa que pode construir uma grelha de forma iterativa — comece com algumas perguntas, reveja os resultados e depois adicione mais perguntas ou documentos à medida que a análise evolui.
 
 ## Exportar

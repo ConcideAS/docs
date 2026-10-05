@@ -26,6 +26,10 @@ You can also resize columns, sort by a column's values, and toggle between trunc
 
 The grid stays alive as you work with it. When you add a new question, the AI generates answers for every document in the grid. When you add new documents, the AI fills in answers for every question. If you edit a question's text, existing answers for that column are cleared and regenerated with the updated phrasing.
 
+Each document row shows its status: **Queued**, **Reading**, **Running**, **Done**, or **Failed**. If a row fails, the message names the problem and the next step. While rows are still working, the grid shows how many documents are ready and how many failed.
+
+Some grid work runs in your browser tab: uploading files from your computer, preparing rows, the first answers for a new or edited column, and Excel export. During that work, Saga shows the stage and a count, for example **Uploading 12 of 40**, and asks you to keep the tab open. If you try to leave the page, your browser asks you to confirm.
+
 This means you can build a grid iteratively — start with a few questions, review the results, then add more questions or documents as the analysis evolves.
 
 ## Export

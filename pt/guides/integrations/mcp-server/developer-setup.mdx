@@ -51,12 +51,21 @@ Uma vez ligado, o agente dispõe destas ferramentas:
 | Ferramenta | O que faz |
 |------|--------------|
 | `ask_saga` | Faz uma pergunta ao Saga e devolve a resposta, tal como ao conversar na aplicação. |
+| `ask_saga_project` | Faz uma pergunta baseada nos documentos de um projeto e devolve uma resposta com citações. O chat é guardado no projeto. |
 | `list_projects` | Lista os seus projetos, incluindo os que foram partilhados consigo. |
 | `list_project_documents` | Lista os documentos de um projeto. |
 | `search_project_documents` | Pesquisa na base de conhecimento de um projeto e devolve as secções mais relevantes. |
 | `fetch_project_document` | Devolve o texto completo de um documento. |
+| `list_assistants` | Lista os assistentes personalizados ativos no seu espaço de trabalho. |
+| `ask_saga_assistant` | Faz uma pergunta a um assistente personalizado, aplicando as suas instruções. |
+| `list_prompts` | Lista entradas da biblioteca de prompts, pessoais, da organização, do Saga Lab ou todas, com pesquisa opcional. |
+| `fetch_prompt` | Devolve o texto de um prompt e os seus campos de marcador de posição. |
 | `list_workflows` | Lista os seus fluxos de trabalho e os inputs que cada um espera. |
 | `execute_workflow` | Executa um fluxo de trabalho com inputs de texto e devolve o resultado. |
+| `get_workflow_status` | Devolve o estado de uma execução de workflow e o estado de cada passo. |
+| `fetch_workflow_step_result` | Devolve o output de um passo concluído. |
+| `submit_workflow_input` | Responde ao passo em que uma execução está à espera e continua a execução. |
+| `resume_workflow` | Inicia uma execução que foi criada mas nunca iniciada. |
 
 Cada ferramenta é executada em seu nome. O agente vê apenas os projetos, documentos e fluxos de trabalho a que a sua conta já pode aceder — as mesmas permissões que tem na aplicação web.
 
@@ -69,4 +78,4 @@ Cada ferramenta é executada em seu nome. O agente vê apenas os projetos, docum
 ## Resolução de problemas
 
 - **O cliente não consegue ligar-se ou devolve 401 Unauthorized** — verifique se o endpoint termina em `/api/mcp`, se o cabeçalho é `Authorization: Api-Key <your-api-key>` e se a chave não expirou nem foi revogada. Crie uma nova chave em **Configurações > Gestão de chaves API** se necessário.
-- **Um fluxo de trabalho aparece como pausado** — os fluxos de trabalho que aguardam input a meio do processo não podem ser retomados via MCP, e os inputs de ficheiros não são suportados. Execute-os a partir da aplicação Saga em vez disso.
+- **Um fluxo de trabalho aguarda input**: use `submit_workflow_input` para responder a um input de texto e continuar a execução. Se o passo precisar de um ficheiro, abra a execução no Saga e carregue o ficheiro aí.

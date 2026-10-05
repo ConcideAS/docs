@@ -55,6 +55,15 @@ Bağlandıktan sonra aracı şu araçlara sahip olur:
 | `list_project_documents` | Bir projedeki belgeleri listeler. |
 | `search_project_documents` | Bir projenin bilgi tabanını arar ve en alakalı bölümleri döndürür. |
 | `fetch_project_document` | Bir belgenin tam metnini döndürür. |
+| `ask_saga_project` | Saga'ya tek bir proje içinde soru sorar. |
+| `list_assistants` | Kullanabileceğiniz custom assistants listesini döndürür. |
+| `ask_saga_assistant` | Saga'ya bir custom assistant ile soru sorar. |
+| `list_prompts` | İstem kütüphanenizdeki istemleri listeler. |
+| `fetch_prompt` | Bir istemin içeriğini getirir. |
+| `get_workflow_status` | Bir iş akışı çalışmasının durumunu döndürür. |
+| `fetch_workflow_step_result` | Bir iş akışı adımının sonucunu getirir. |
+| `submit_workflow_input` | Duraklatılmış bir iş akışına metin girdisi gönderir. |
+| `resume_workflow` | Devam etmeye hazır bir iş akışını sürdürür. |
 | `list_workflows` | İş akışlarınızı ve her birinin beklediği girdileri listeler. |
 | `execute_workflow` | Bir iş akışını metin girdileriyle çalıştırır ve sonucu döndürür. |
 
@@ -69,4 +78,4 @@ Her araç sizin adınıza çalışır. Aracı yalnızca hesabınızın halihazı
 ## Sorun giderme
 
 - **İstemci bağlanamıyor veya 401 Unauthorized döndürüyor** — uç noktanın `/api/mcp` ile bittiğini, başlığın `Authorization: Api-Key <your-api-key>` olduğunu ve anahtarın süresinin dolmadığını veya iptal edilmediğini kontrol edin. Gerekirse **Ayarlar > API Anahtarı Yönetimi** bölümünde yeni bir anahtar oluşturun.
-- **Bir iş akışı duraklatıldı olarak bildiriliyor** — ortada girdi bekleyen iş akışları MCP üzerinden devam ettirilemez ve dosya girdileri desteklenmez. Bunları bunun yerine Saga uygulamasından çalıştırın.
+- **Bir iş akışı duraklatıldı olarak bildiriliyor**: metin girdisi için `submit_workflow_input` kullanın. Dosya girdisi için Saga'yı açın.

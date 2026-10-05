@@ -26,6 +26,10 @@ También puede redimensionar columnas, ordenar por los valores de una columna y 
 
 La cuadrícula se mantiene activa mientras trabaja con ella. Cuando agrega una nueva pregunta, la IA genera respuestas para cada documento en la cuadrícula. Cuando agrega nuevos documentos, la IA completa las respuestas para cada pregunta. Si edita el texto de una pregunta, las respuestas existentes para esa columna se borran y se regeneran con la formulación actualizada.
 
+Cada fila de documento muestra su estado: **Queued**, **Reading**, **Running**, **Done** o **Failed**. Si una fila falla, el mensaje indica el problema y el siguiente paso. Mientras las filas siguen procesándose, la cuadrícula muestra cuántos documentos están listos y cuántos fallaron.
+
+Parte del trabajo de la cuadrícula se ejecuta en la pestaña del navegador: cargar archivos desde el ordenador, preparar filas, generar las primeras respuestas de una columna nueva o editada y exportar a Excel. Durante ese trabajo, Saga muestra la etapa y un contador, por ejemplo **Uploading 12 of 40**, y le pide mantener la pestaña abierta. Si intenta salir de la página, el navegador le pedirá confirmación.
+
 Esto significa que puede construir una cuadrícula de forma iterativa — comience con algunas preguntas, revise los resultados y luego agregue más preguntas o documentos a medida que evoluciona el análisis.
 
 ## Exportar

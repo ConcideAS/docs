@@ -55,6 +55,15 @@ När den är ansluten har agenten dessa verktyg:
 | `list_project_documents` | Listar dokumenten i ett projekt. |
 | `search_project_documents` | Söker i ett projekts kunskapsbas och returnerar de mest relevanta avsnitten. |
 | `fetch_project_document` | Returnerar hela texten i ett dokument. |
+| `ask_saga_project` | Ställer en fråga till Saga inom ett projekt. |
+| `list_assistants` | Listar custom assistants som du kan använda. |
+| `ask_saga_assistant` | Ställer en fråga till Saga med en custom assistant. |
+| `list_prompts` | Listar prompter från ditt promptbibliotek. |
+| `fetch_prompt` | Hämtar innehållet i en prompt. |
+| `get_workflow_status` | Returnerar status för en arbetsflödeskörning. |
+| `fetch_workflow_step_result` | Hämtar resultatet från ett arbetsflödessteg. |
+| `submit_workflow_input` | Skickar textindata till ett pausat arbetsflöde. |
+| `resume_workflow` | Återupptar ett arbetsflöde som är redo att fortsätta. |
 | `list_workflows` | Listar dina arbetsflöden och de indata vart och ett förväntar sig. |
 | `execute_workflow` | Kör ett arbetsflöde med textindata och returnerar resultatet. |
 
@@ -69,4 +78,4 @@ Varje verktyg körs som dig. Agenten ser bara de projekt, dokument och arbetsfl�
 ## Felsökning
 
 - **Klienten kan inte ansluta eller returnerar 401 Unauthorized** — kontrollera att slutpunkten slutar på `/api/mcp`, att headern är `Authorization: Api-Key <your-api-key>` och att nyckeln inte har gått ut eller återkallats. Skapa en ny nyckel under **Inställningar > API-nyckelhantering** vid behov.
-- **Ett arbetsflöde rapporteras som pausat** — arbetsflöden som väntar på indata längs vägen kan inte återupptas över MCP, och filindata stöds inte. Kör dessa från Saga-appen istället.
+- **Ett arbetsflöde rapporteras som pausat**: använd `submit_workflow_input` för textindata. Öppna Saga för filindata.
