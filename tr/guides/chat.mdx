@@ -95,6 +95,24 @@ Aynı belge sürümünden en fazla beş seçim ekleyebilir ve bunları tek bir t
 
 Tablo içeren seçimler henüz yapay zeka ile düzenlenemez. Çakışan seçimler, altıncı bir seçim veya farklı bir belge sürümünden metin engellenir. Metin eklemeden önce mesajdaki ekli dosyaları, bir görevi veya seçili bir iş akışını kaldırın.
 
+## Yapay zeka izinleri
+
+Saga'nın sohbetlerinizde kendiliğinden neler yapabileceğini seçmek için **Ayarlar > AI Permissions** bölümünü açın. Her satırda üç seçenek vardır: **Ask**, **Allow** veya **Off**.
+
+| Satır | Kapsadığı | Varsayılan |
+|---|---|---|
+| Web Search | Genel internette arama yapma | Ask |
+| Deep Web Search | Daha uzun ve derin web araştırması | Ask |
+| Legal Sources | Çalışma alanınız için etkinleştirilen hukuk veri tabanlarından kaynak gösterme | Ask |
+| MCPs | Bağlı MCP sunucularınızın araçlarını kullanma | Ask |
+| Drafting | Belge oluşturma ve düzeltme | Allow |
+| Workflow Generation | Göreviniz için bir iş akışı oluşturma | Allow |
+| Questioner | Sohbette size netleştirici sorular sorma | Allow (Ask seçeneği yok) |
+
+**Ask** seçiliyken Saga o özelliği kullanmadan önce durur ve sohbette bir kart gösterir: "Saga wants to use … for this request". Bir kez devam etmek için **Allow**, o satırı Allow olarak değiştirmek için **Always Allow**, özellik olmadan devam etmek için **Skip** seçeneğini seçin. Bir kaynağı mesaj alanında kendiniz açtığınızda Saga o mesaj için tekrar sormaz. **Off** seçiliyken Saga o özelliği hiç kullanmaz. Seçimleriniz hesabınıza kaydedilir.
+
+Drafting satırı, mesaj alanının yanındaki eski Auto drafting anahtarının yerini alır. Drafting kapalıyken Saga sohbette yanıt verir ve belge ya da sunum oluşturmaz.
+
 ## Sohbet metin boyutu
 
 Hesap menünüzü açın (kenar çubuğundaki avatarınız). Tema ayarının altında, **Sohbet metin boyutu** için **Varsayılan** veya **Kompakt** seçeneğini belirleyin. Kompakt, sohbet akışını daha sıkı gösterir; böylece uzun konuşmalar daha kolay taranır. Bu ayar yalnızca sohbet akışı için geçerlidir. Belgeleri, tabloları veya iş akışlarını değiştirmez. Telefonlarda Varsayılan ve Kompakt aynı görünür. Seçiminiz hemen hesabınıza kaydedilir.

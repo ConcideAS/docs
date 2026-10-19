@@ -95,6 +95,24 @@ Vous pouvez ajouter jusqu'à cinq sélections de la même version du document et
 
 Les sélections qui contiennent un tableau ne peuvent pas encore être modifiées avec l'IA. Les sélections qui se chevauchent, une sixième sélection ou du texte provenant d'une autre version du document sont bloquées. Retirez les fichiers joints, une tâche ou un workflow sélectionné du message avant d'insérer du texte.
 
+## Autorisations de l'IA
+
+Ouvrez **Paramètres > AI Permissions** pour choisir ce que Saga peut faire de lui-même dans vos chats. Chaque ligne propose trois choix : **Ask**, **Allow** ou **Off**.
+
+| Ligne | Ce qu'elle couvre | Par défaut |
+|---|---|---|
+| Web Search | Rechercher sur l'internet public | Ask |
+| Deep Web Search | Recherche web plus longue et plus approfondie | Ask |
+| Legal Sources | Citer des sources issues des bases de données juridiques activées pour votre espace de travail | Ask |
+| MCPs | Utiliser les outils de vos serveurs MCP connectés | Ask |
+| Drafting | Générer et réviser des documents | Allow |
+| Workflow Generation | Créer un workflow pour votre tâche | Allow |
+| Questioner | Vous poser des questions de clarification dans le chat | Allow (pas d'option Ask) |
+
+Avec **Ask**, Saga s'arrête avant d'utiliser cette fonction et affiche une carte dans le chat : "Saga wants to use … for this request". Choisissez **Allow** pour continuer une fois, **Always Allow** pour passer cette ligne sur Allow, ou **Skip** pour continuer sans elle. Si vous activez vous-même une source dans la zone de saisie, Saga ne redemande pas pour ce message. Avec **Off**, Saga n'utilise jamais cette fonction. Vos choix sont enregistrés dans votre compte.
+
+La ligne Drafting remplace l'ancien interrupteur Auto drafting situé à côté de la zone de saisie. Lorsque Drafting est désactivé, Saga répond dans le chat et ne crée ni documents ni présentations.
+
 ## Taille du texte du chat
 
 Ouvrez le menu de votre compte (votre avatar dans la barre latérale). Sous le sélecteur de thème, choisissez **Par défaut** ou **Compact** pour **Taille du texte du chat**. L'option Compact rend le fil du chat plus dense, ce qui facilite le parcours des longues conversations. Ce réglage s'applique uniquement au fil du chat. Il ne modifie pas les documents, les grilles ni les workflows. Sur téléphone, les options Par défaut et Compact s'affichent de la même façon. Votre choix est enregistré immédiatement dans votre compte.

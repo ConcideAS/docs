@@ -95,6 +95,24 @@ Sie können bis zu fünf Auswahlen aus derselben Dokumentversion hinzufügen und
 
 Auswahlen, die eine Tabelle enthalten, können noch nicht mit KI bearbeitet werden. Überlappende Auswahlen, eine sechste Auswahl oder Text aus einer anderen Dokumentversion werden blockiert. Entfernen Sie angehängte Dateien, eine Aufgabe oder einen ausgewählten Workflow aus der Nachricht, bevor Sie Text einfügen.
 
+## KI-Berechtigungen
+
+Öffnen Sie **Einstellungen > AI Permissions**, um festzulegen, was Saga in Ihren Chats selbstständig tun darf. Jede Zeile hat drei Optionen: **Ask**, **Allow** oder **Off**.
+
+| Zeile | Was sie umfasst | Standard |
+|---|---|---|
+| Web Search | Das öffentliche Internet durchsuchen | Ask |
+| Deep Web Search | Längere, gründlichere Webrecherche | Ask |
+| Legal Sources | Fundstellen aus den juristischen Datenbanken zitieren, die für Ihren Workspace aktiviert sind | Ask |
+| MCPs | Die Tools Ihrer verbundenen MCP-Server nutzen | Ask |
+| Drafting | Dokumente erstellen und überarbeiten | Allow |
+| Workflow Generation | Einen Workflow für Ihre Aufgabe erstellen | Allow |
+| Questioner | Ihnen im Chat Rückfragen stellen | Allow (keine Option Ask) |
+
+Bei **Ask** hält Saga an, bevor es diese Funktion nutzt, und zeigt im Chat eine Karte an: "Saga wants to use … for this request". Wählen Sie **Allow**, um einmalig fortzufahren, **Always Allow**, um diese Zeile auf Allow umzustellen, oder **Skip**, um ohne die Funktion fortzufahren. Wenn Sie eine Quelle selbst im Eingabefeld aktivieren, fragt Saga für diese Nachricht nicht erneut. Bei **Off** nutzt Saga diese Funktion nie. Ihre Auswahl wird in Ihrem Konto gespeichert.
+
+Die Zeile Drafting ersetzt den früheren Schalter Auto drafting neben der Eingabezeile. Ist Drafting ausgeschaltet, antwortet Saga im Chat und erstellt keine Dokumente oder Präsentationen.
+
 ## Textgröße im Chat
 
 Öffnen Sie Ihr Kontomenü (Ihr Avatar in der Seitenleiste). Wählen Sie unter der Design-Auswahl **Standard** oder **Kompakt** für **Textgröße im Chat**. Kompakt stellt den Nachrichtenverlauf dichter dar, sodass Sie lange Unterhaltungen leichter überfliegen können. Die Einstellung gilt nur für den Nachrichtenverlauf im Chat. Sie ändert keine Dokumente, Raster oder Workflows. Auf Smartphones sehen Standard und Kompakt gleich aus. Ihre Auswahl wird sofort in Ihrem Konto gespeichert.
