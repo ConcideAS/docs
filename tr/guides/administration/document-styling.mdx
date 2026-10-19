@@ -1,15 +1,23 @@
 ---
 title: Belge stili
-description: Saga tarafından oluşturulan Word dışa aktarımlarının firmanızın belge stilini nasıl izleyeceğini yapılandırın.
+description: Saga tarafından oluşturulan Word, Excel ve PowerPoint çıktılarının firmanızın belge stilini nasıl izleyeceğini yapılandırın.
 ---
 
 <Note>
 Belge stili bir [Enterprise](/tr/guides/administration/enterprise) özelliğidir. Her büronun kendi örneği vardır (örneğin `buronuz.sagalegal.io`) ve belge stili o örneğin yönetim panelinden yapılandırılır.
 </Note>
 
-Belge stili, Saga tarafından oluşturulan Word dışa aktarımları için bir yönetici ayarıdır. Firmanız taslakların, özetlerin, notların veya diğer AI tarafından oluşturulan belgelerin aynı yazı tiplerini, sayfa düzenini, üstbilgileri, altbilgileri ve sayfa numaralandırmasını kullanmasını istediğinde bunu kullanın.
+Belge stili, Saga tarafından oluşturulan Word, Excel ve PowerPoint çıktıları için bir yönetici ayarıdır. Firmanız taslakların, özetlerin, notların, indirilen tabloların ve sunumların aynı belge stilini izlemesini istediğinde bunu kullanın.
 
 Belge stilini yalnızca yöneticiler yapılandırabilir. Kullanıcılar, ayarlar kaydedildikten sonra oluşturulan içeriği dışa aktardıklarında sonucu görür.
+
+## Her stilin kullanıldığı yerler
+
+**Belge stili** üç sekme içerir: **Word**, **Excel** ve **PowerPoint**. Her sekme, stilinin nerede kullanıldığını belirtir:
+
+- **Word**: taslaklar, Word ve PDF indirmeleri ile yapay zekanın oluşturduğu Word dosyaları. UDF (UYAP) taslak dışa aktarımları da Word gövde yazı tipini ve başlık boyutlarını kullanır. Yapay zekanın oluşturduğu grafikler ve HTML sayfaları Word gövde yazı tipini kullanır.
+- **Excel**: sohbetten tablo indirmeleri, Grid Review dışa aktarımları ve yapay zekanın oluşturduğu elektronik tablolar.
+- **PowerPoint**: yapay zekanın sohbette ve iş akışlarında oluşturduğu sunumlar. Yapay zekanın oluşturduğu grafikler ve HTML sayfaları PowerPoint vurgu renklerini kullanır.
 
 ## Belge stilinin kontrol ettiği ayarlar
 
@@ -66,6 +74,10 @@ Excel stili, Saga'dan indirilen tabloların görünümünü kontrol eder. Yazı 
 2. **Belge stili > Excel dışa aktarma**ya gidin.
 3. En fazla 25 MB'lık bir `.xlsx` referans çalışma kitabı yükleyin veya değerleri elle ayarlayın.
 4. Önizlemeyi kontrol edin ve **Değişiklikleri kaydet**e tıklayın.
+
+## PowerPoint dışa aktarma stili
+
+Yapay zekanın sohbette ve iş akışlarında oluşturduğu sunumların stilini belirlemek için **Belge stili** içinde **PowerPoint** sekmesini seçin. Yapay zekanın oluşturduğu grafikler ve HTML sayfaları da PowerPoint vurgu renklerini kullanır.
 
 ## Stili ayarlayın ve test edin
 

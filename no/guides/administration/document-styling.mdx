@@ -1,15 +1,23 @@
 ---
 title: Dokumentstil
-description: Konfigurer hvordan Word-eksporter generert av Saga følger firmaets dokumentstil.
+description: Konfigurer hvordan Word-, Excel- og PowerPoint-innhold generert av Saga følger firmaets dokumentstil.
 ---
 
 <Note>
 Dokumentstil er en [Enterprise](/no/guides/administration/enterprise)-funksjon. Hvert firma har sin egen instans (for eksempel `dittfirma.sagalegal.io`), og dokumentstil konfigureres i administrasjonspanelet for den instansen.
 </Note>
 
-Dokumentstil er en administratorinnstilling for Word-eksporter generert av Saga. Bruk den når firmaet vil at utkast, sammendrag, notater eller andre AI-genererte dokumenter skal følge de samme skrifttypene, sideoppsettet, topptekstene, bunntekstene og sidetallene.
+Dokumentstil er en administratorinnstilling for Word-, Excel- og PowerPoint-innhold generert av Saga. Bruk den når firmaet vil at utkast, sammendrag, notater, nedlastede tabeller og presentasjoner skal følge samme dokumentstil.
 
 Bare administratorer kan konfigurere dokumentstil. Brukere ser resultatet når de eksporterer generert innhold etter at innstillingene er lagret.
+
+## Hvor hver stil brukes
+
+**Dokumentstil** har tre faner: **Word**, **Excel** og **PowerPoint**. Hver fane viser hvor stilen brukes:
+
+- **Word**: utkast, Word- og PDF-nedlastinger og Word-filer som AI-en lager. UDF-eksporter (UYAP) av utkast bruker også Word-brødtekstfonten og overskriftsstørrelsene. Diagrammer og HTML-sider som AI-en lager, bruker Word-brødtekstfonten.
+- **Excel**: tabellnedlastinger fra chatten, Grid Review-eksporter og regneark som AI-en lager.
+- **PowerPoint**: presentasjoner som AI-en lager, i chat og i arbeidsflyter. Diagrammer og HTML-sider som AI-en lager, bruker PowerPoint-aksentfargene.
 
 ## Hva dokumentstil styrer
 
@@ -66,6 +74,10 @@ Excel-stilen styrer utseendet til tabeller som lastes ned fra Saga. Du kan angi 
 2. Gå til **Dokumentstil > Excel-eksport**.
 3. Last opp en `.xlsx`-referansearbeidsbok (opptil 25 MB), eller juster verdiene manuelt.
 4. Se gjennom forhåndsvisningen og klikk **Lagre endringer**.
+
+## PowerPoint-eksportstil
+
+Velg fanen **PowerPoint** i **Dokumentstil** for å angi stilen for presentasjoner som AI-en lager, i chat og i arbeidsflyter. Diagrammer og HTML-sider som AI-en lager, bruker også PowerPoint-aksentfargene.
 
 ## Juster og test stilen
 

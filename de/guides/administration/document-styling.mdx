@@ -1,15 +1,23 @@
 ---
 title: Dokumentstil
-description: Konfigurieren Sie, wie von Saga generierte Word-Exporte dem Dokumentstil Ihrer Kanzlei folgen.
+description: Konfigurieren Sie, wie von Saga erstellte Word-, Excel- und PowerPoint-Ausgaben dem Dokumentstil Ihrer Kanzlei folgen.
 ---
 
 <Note>
 Dokumentstil ist eine [Enterprise](/de/guides/administration/enterprise)-Funktion. Jede Kanzlei nutzt ihre eigene Instanz (zum Beispiel `ihrekanzlei.sagalegal.io`), und der Dokumentstil wird im Admin-Panel dieser Instanz konfiguriert.
 </Note>
 
-Dokumentstil ist eine Admin-Einstellung für von Saga generierte Word-Exporte. Nutzen Sie sie, wenn Ihre Kanzlei möchte, dass Entwürfe, Zusammenfassungen, Memos oder andere KI-generierte Dokumente dieselben Schriftarten, dasselbe Seitenlayout, Kopf- und Fußzeilen sowie dieselbe Seitennummerierung verwenden.
+Dokumentstil ist eine Admin-Einstellung für von Saga erstellte Word-, Excel- und PowerPoint-Ausgaben. Nutzen Sie sie, wenn Ihre Kanzlei möchte, dass Entwürfe, Zusammenfassungen, Memos, heruntergeladene Tabellen und Präsentationen demselben Dokumentstil folgen.
 
 Nur Administratoren können den Dokumentstil konfigurieren. Benutzer sehen das Ergebnis, wenn sie generierte Inhalte exportieren, nachdem die Einstellungen gespeichert wurden.
+
+## Wo jeder Stil verwendet wird
+
+**Dokumentstil** hat drei Tabs: **Word**, **Excel** und **PowerPoint**. Jeder Tab nennt, wo sein Stil verwendet wird:
+
+- **Word**: Entwürfe, Word- und PDF-Downloads sowie Word-Dateien, die die KI erstellt. UDF-Exporte (UYAP) von Entwürfen verwenden ebenfalls die Word-Textschrift und die Überschriftengrößen. Diagramme und HTML-Seiten, die die KI erstellt, verwenden die Word-Textschrift.
+- **Excel**: Tabellen-Downloads aus dem Chat, Grid-Review-Exporte und Tabellenkalkulationen, die die KI erstellt.
+- **PowerPoint**: Präsentationen, die die KI im Chat und in Workflows erstellt. Diagramme und HTML-Seiten, die die KI erstellt, verwenden die PowerPoint-Akzentfarben.
 
 ## Was der Dokumentstil steuert
 
@@ -65,6 +73,10 @@ Der Excel-Exportstil steuert das Aussehen von Tabellen, die aus Saga heruntergel
 2. Gehen Sie zu **Dokumentstil > Excel-Export**.
 3. Laden Sie eine `.xlsx`-Referenzarbeitsmappe hoch (bis 25 MB) oder passen Sie die Werte manuell an.
 4. Prüfen Sie die Vorschau und klicken Sie auf **Änderungen speichern**.
+
+## PowerPoint-Exportstil
+
+Wählen Sie in **Dokumentstil** den Tab **PowerPoint**, um den Stil der Präsentationen festzulegen, die die KI im Chat und in Workflows erstellt. Diagramme und HTML-Seiten, die die KI erstellt, verwenden ebenfalls die PowerPoint-Akzentfarben.
 
 ## Stil anpassen und testen
 

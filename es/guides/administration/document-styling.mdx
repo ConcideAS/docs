@@ -1,15 +1,23 @@
 ---
 title: Estilo de documentos
-description: Configure cómo las exportaciones de Word generadas por Saga siguen el estilo documental de su despacho.
+description: Configure cómo los resultados de Word, Excel y PowerPoint generados por Saga siguen el estilo documental de su despacho.
 ---
 
 <Note>
 El estilo de documentos es una función de [Enterprise](/es/guides/administration/enterprise). Cada despacho tiene su propia instancia (por ejemplo, `sudespacho.sagalegal.io`), y el estilo de documentos se configura en el panel de administración de esa instancia.
 </Note>
 
-El estilo de documentos es una configuración de administración para las exportaciones de Word generadas por Saga. Úselo cuando su despacho quiera que borradores, resúmenes, memorandos u otros documentos generados por IA sigan las mismas fuentes, diseño de página, encabezados, pies de página y numeración.
+El estilo de documentos es una configuración de administración para los resultados de Word, Excel y PowerPoint generados por Saga. Úselo cuando su despacho quiera que borradores, resúmenes, memorandos, tablas descargadas y presentaciones sigan el mismo estilo documental.
 
 Solo los administradores pueden configurar el estilo de documentos. Los usuarios ven el resultado cuando exportan contenido generado después de guardar la configuración.
+
+## Dónde se usa cada estilo
+
+**Estilo de documentos** tiene tres pestañas: **Word**, **Excel** y **PowerPoint**. Cada pestaña indica dónde se usa su estilo:
+
+- **Word**: borradores, descargas en Word y PDF, y archivos de Word que crea la IA. Las exportaciones de borradores en UDF (UYAP) también usan la fuente del cuerpo y los tamaños de título de Word. Los gráficos y las páginas HTML que crea la IA usan la fuente del cuerpo de Word.
+- **Excel**: descargas de tablas del chat, exportaciones de Grid Review y hojas de cálculo que crea la IA.
+- **PowerPoint**: presentaciones que crea la IA, en el chat y en los flujos de trabajo. Los gráficos y las páginas HTML que crea la IA usan los colores de énfasis de PowerPoint.
 
 ## Qué controla el estilo de documentos
 
@@ -62,6 +70,10 @@ El estilo de Excel controla el aspecto de las tablas descargadas desde Saga. Pue
 2. Vaya a **Estilo de documentos > Exportación de Excel**.
 3. Cargue un libro `.xlsx` de referencia (hasta 25 MB) o ajuste los valores a mano.
 4. Revise la vista previa y haga clic en **Guardar cambios**.
+
+## Estilo de exportación de PowerPoint
+
+Seleccione la pestaña **PowerPoint** en **Estilo de documentos** para definir el estilo de las presentaciones que crea la IA, en el chat y en los flujos de trabajo. Los gráficos y las páginas HTML que crea la IA también usan los colores de énfasis de PowerPoint.
 
 ## Ajustar y probar el estilo
 
