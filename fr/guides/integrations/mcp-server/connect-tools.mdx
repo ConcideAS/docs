@@ -31,12 +31,20 @@ Les identifiants que vous saisissez ici sont stockés de manière sécurisée et
 
 Certains outils sont configurés de sorte que chaque personne connecte son propre compte ou jeton plutôt que d'utiliser un identifiant partagé du cabinet. Cela s'applique aux outils qui utilisent **OAuth 2.1** et aux outils qui utilisent **Per-User API Token**.
 
-1. Accédez à **Paramètres > Intégrations**.
+1. Accédez à **Paramètres > MCPs**.
 2. Trouvez l'outil dans la liste.
 3. Cliquez sur **Connect** pour vous connecter avec OAuth, ou collez votre jeton personnel si l'outil le demande.
 4. Enregistrez lorsque Saga vous demande d'enregistrer un jeton. L'outil est désormais disponible pour vous dans le chat.
 
-Tant que vous n'avez pas connecté votre propre compte ou jeton, cet outil ne sera pas disponible dans vos conversations, même si votre administrateur l'a configuré. Si le chat vous demande de reconnecter un outil, retournez dans **Paramètres > Intégrations** et reconnectez-le.
+Tant que vous n'avez pas connecté votre propre compte ou jeton, cet outil ne sera pas disponible dans vos conversations, même si votre administrateur l'a configuré. Si le chat vous demande de reconnecter un outil, retournez dans **Paramètres > MCPs** et reconnectez-le.
+
+## Utiliser des outils MCP dans un chat
+
+Ouvrez **Ajouter des sources** dans la zone de saisie. Sous **MCPs**, choisissez les serveurs connectés que Saga peut utiliser pour ce message. Vous pouvez en inclure jusqu'à la limite indiquée dans la liste. Utilisez **Manage MCP Connections** pour ouvrir vos connexions.
+
+Si un serveur nécessite votre connexion, le chat affiche **Connect to** suivi du nom du serveur, avec un bouton **Connect**. Si votre autorisation MCPs est réglée sur Ask, le chat affiche **Allow Saga to use** suivi du nom du serveur. Choisissez **Allow**, **Always Allow** ou **Skip**.
+
+Pendant que Saga travaille, la réponse indique le serveur ou l'outil utilisé. Si un serveur ne répond pas, la réponse précise que Saga ne l'a pas utilisé. Si les MCPs sont désactivés dans **Paramètres > AI Permissions**, la liste des MCPs l'indique.
 
 <Note>
 Vous souhaitez plutôt que Saga soit l'outil auquel *d'autres* assistants se connectent ? C'est l'autre direction — consultez [Connecter votre assistant à Saga](/fr/guides/integrations/mcp-server/connect-assistants).

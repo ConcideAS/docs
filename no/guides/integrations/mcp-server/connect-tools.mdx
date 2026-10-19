@@ -31,12 +31,20 @@ Legitimasjon du oppgir her, lagres sikkert og vises aldri igjen. Hvis du trenger
 
 Noen verktøy er satt opp slik at hver person kobler til sin egen konto eller token i stedet for å bruke én delt firmalegitimasjon. Dette gjelder verktøy som bruker **OAuth 2.1**, og verktøy som bruker **Per-User API Token**.
 
-1. Gå til **Innstillinger > Integrasjoner**.
+1. Gå til **Innstillinger > MCPs**.
 2. Finn verktøyet i listen.
 3. Klikk **Koble til** for å logge inn med OAuth, eller lim inn din personlige token hvis verktøyet ber om det.
 4. Lagre når Saga ber deg lagre en token. Verktøyet er nå tilgjengelig for deg i chat.
 
-Inntil du kobler til din egen konto eller token, vil ikke det verktøyet være tilgjengelig i samtalene dine, selv om administratoren din har satt det opp. Hvis chatten ber deg koble til et verktøy på nytt, går du tilbake til **Innstillinger > Integrasjoner** og kobler det til igjen.
+Inntil du kobler til din egen konto eller token, vil ikke det verktøyet være tilgjengelig i samtalene dine, selv om administratoren din har satt det opp. Hvis chatten ber deg koble til et verktøy på nytt, går du tilbake til **Innstillinger > MCPs** og kobler det til igjen.
+
+## Bruke MCP-verktøy i en chat
+
+Åpne **Legg til kilder** i skrivefeltet. Under **MCPs** velger du de tilkoblede serverne Saga kan bruke for denne meldingen. Du kan ta med så mange som grensen i listen viser. Bruk **Manage MCP Connections** for å åpne tilkoblingene dine.
+
+Hvis en server trenger at du logger inn, viser chatten **Connect to** med servernavnet og en **Connect**-knapp. Hvis tillatelsen for MCPs står på Ask, viser chatten **Allow Saga to use** med servernavnet. Velg **Allow**, **Always Allow** eller **Skip**.
+
+Mens Saga jobber, viser svaret hvilken server eller hvilket verktøy den bruker. Hvis en server ikke svarer, står det i svaret at Saga ikke brukte den. Hvis MCPs er slått av under **Innstillinger > AI Permissions**, står det i MCP-listen.
 
 <Note>
 Vil du heller at Saga skal være verktøyet som *andre* assistenter kobler seg til? Det er den andre retningen — se [Koble assistenten din til Saga](/no/guides/integrations/mcp-server/connect-assistants).

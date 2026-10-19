@@ -31,12 +31,20 @@ Burada girdiğiniz kimlik bilgileri güvenli bir şekilde saklanır ve bir daha 
 
 Bazı araçlar, tek bir ortak firma kimlik bilgisi kullanmak yerine her kişinin kendi hesabını veya token'ını bağlayacağı şekilde kurulur. Bu, **OAuth 2.1** kullanan araçlar ve **Per-User API Token** kullanan araçlar için geçerlidir.
 
-1. **Ayarlar > Entegrasyonlar** bölümüne gidin.
+1. **Ayarlar > MCPs** bölümüne gidin.
 2. Aracı listede bulun.
 3. OAuth ile oturum açmak için **Connect**'e tıklayın veya araç isterse kişisel token'ınızı yapıştırın.
 4. Saga bir token kaydetmenizi istediğinde kaydedin. Araç artık sohbette sizin için kullanılabilir.
 
-Kendi hesabınızı veya token'ınızı bağlamadığınız sürece, yöneticiniz aracı kurmuş olsa bile o araç konuşmalarınızda kullanılamaz. Sohbet sizden bir aracı yeniden bağlamanızı isterse **Ayarlar > Entegrasyonlar** bölümüne dönün ve aracı yeniden bağlayın.
+Kendi hesabınızı veya token'ınızı bağlamadığınız sürece, yöneticiniz aracı kurmuş olsa bile o araç konuşmalarınızda kullanılamaz. Sohbet sizden bir aracı yeniden bağlamanızı isterse **Ayarlar > MCPs** bölümüne dönün ve aracı yeniden bağlayın.
+
+## Sohbette MCP araçlarını kullanma
+
+Mesaj alanında **Kaynak ekle** menüsünü açın. **MCPs** altında Saga'nın bu mesaj için kullanabileceği bağlı sunucuları seçin. Listede gösterilen sınıra kadar sunucu ekleyebilirsiniz. Bağlantılarınızı açmak için **Manage MCP Connections** seçeneğini kullanın.
+
+Bir sunucu oturum açmanızı gerektiriyorsa sohbette sunucu adıyla birlikte **Connect to** ve bir **Connect** düğmesi görünür. MCPs izniniz Ask olarak ayarlıysa sohbette sunucu adıyla birlikte **Allow Saga to use** görünür. **Allow**, **Always Allow** veya **Skip** seçeneğini seçin.
+
+Saga çalışırken yanıt hangi sunucuyu veya aracı kullandığını gösterir. Bir sunucu yanıt vermezse yanıtta Saga'nın onu kullanmadığı belirtilir. MCPs, **Ayarlar > AI Permissions** altında kapalıysa MCP listesi bunu belirtir.
 
 <Note>
 Saga'nın, *başka* asistanların bağlandığı araç olmasını mı istiyorsunuz? Bu, diğer yöndür — bkz. [Asistanınızı Saga'ya bağlayın](/tr/guides/integrations/mcp-server/connect-assistants).
