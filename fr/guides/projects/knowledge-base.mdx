@@ -22,6 +22,8 @@ La taille maximale par fichier est de 1 Go. Un projet peut contenir jusqu'à 1 0
 
 Après l'import, chaque fichier passe par un traitement avant d'être disponible pour l'IA. Vous pouvez continuer à travailler pendant ce temps — les documents deviennent disponibles automatiquement dès qu'ils sont prêts. Si le traitement d'un fichier échoue, vous pouvez relancer l'opération depuis son menu d'actions. Si plusieurs imports échouent, une barre de récupération apparaît en haut de la base de connaissances afin que vous puissiez **tout réessayer** pour les imports échoués ou **tout supprimer** pour les imports échoués en une seule étape.
 
+Après un import, Saga fait défiler l'affichage jusqu'au premier nouveau fichier et ouvre son dossier si nécessaire. Les nouveaux fichiers affichent l'étiquette **New** pendant quelques secondes.
+
 ## Dossiers et étiquettes
 
 Vous pouvez organiser les documents avec des dossiers et des étiquettes à code couleur.
@@ -39,3 +41,7 @@ Dans un chat de projet, vous pouvez demander à Saga de classer des documents da
 Chaque document dispose d'un menu d'actions permettant de le renommer, de le déplacer vers un autre dossier, de gérer ses étiquettes, de le télécharger, de relancer le traitement ou de le supprimer.
 
 Pour agir sur plusieurs documents à la fois, utilisez les cases à cocher en regard de chaque document ou dossier. Une sélection active vous permet de **télécharger**, **supprimer**, **déplacer** ou **étiqueter** tous les documents sélectionnés en une seule étape. Les cases à cocher des dossiers affichent un indicateur de sélection partielle lorsque seuls certains fichiers du dossier sont sélectionnés, ce qui permet de voir précisément ce qui est inclus.
+
+Pour copier des documents dans un autre projet, choisissez **Copy to Project** dans le menu d'actions d'un document, ou sélectionnez plusieurs documents et utilisez **Copy to Project** dans la barre de sélection. Choisissez un projet dans lequel vous avez un droit de modification. Les copies sont placées au premier niveau de la base de connaissances de ce projet. Saga ignore les documents déjà présents dans ce projet, encore en cours de traitement ou qui dépasseraient sa limite de documents, et vous indique lesquels. Choisissez **Open Project** pour y accéder.
+
+Utilisez **Filter > Sort by** pour trier les fichiers par **Name** ou **Date uploaded**. Les dossiers restent triés de A à Z. Votre choix reste valable pendant la session.
