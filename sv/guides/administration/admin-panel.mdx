@@ -33,6 +33,16 @@ Admins konfigurerar arbetsytans standardvärden som gäller för hela organisati
 
 Admins kan se alla i arbetsytan, ändra roller, ta bort användare, återaktivera borttagna konton och inaktivera tvåfaktorsautentisering för användare som förlorat åtkomst. Du kan även exportera användarlistan till Excel med användningsstatistik.
 
+Under **Användare** beskriver rollmenyn varje roll:
+
+- **Användare**: använder Saga. Ingen adminpanel.
+- **Innehållsadmin**: använder Saga och hanterar delade prompter, arbetsflöden, mallar, assistenter och källor.
+- **Billing Admin**: använder Saga och hanterar fakturering.
+- **Admin (utan produktåtkomst)**: hanterar användare, användning och fakturering. Kan inte använda Saga.
+- **Admin**: använder Saga och hanterar alla admininställningar, användare och fakturering.
+
+När du väljer en ny roll ber Saga dig bekräfta och visar den nya åtkomsten. Inget ändras förrän du klickar på **Change Role**. Du kan inte ändra din egen roll, och bara en Admin kan ändra en Admins roll.
+
 ## Integrationer
 
 Admins konfigurerar anslutningarna till externa verktyg:
@@ -80,6 +90,8 @@ Både admins och innehållsadmins hanterar det delade innehåll som visas i alla
 När en användare skapar en personlig prompt, mall eller arbetsflöde och begär att göra det organisationsövergripande visas det här för granskning. Godkänn det så blir det tillgängligt för alla.
 
 I **Admin panel > Prompt Library** visar kolumnen **Created by** vem som skapade varje prompt och vem som bad om att dela den med organisationen.
+
+I **Prompt Library**, **Workflow Library** och **Grid Review Library** visar en banderoll hur många delningsförfrågningar som väntar på ditt godkännande. Välj klockan under **Actions** för att godkänna eller ignorera varje förfrågan. Godkända objekt delas med hela organisationen.
 
 ## Användning
 

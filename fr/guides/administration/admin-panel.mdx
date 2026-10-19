@@ -33,6 +33,16 @@ Les administrateurs configurent les valeurs par défaut de l'espace de travail q
 
 Les administrateurs peuvent voir tout le monde dans l'espace de travail, changer les rôles, supprimer des utilisateurs, réactiver des comptes supprimés et désactiver l'authentification à deux facteurs pour les utilisateurs qui ont perdu leur accès. Vous pouvez également exporter la liste des utilisateurs vers Excel avec des métriques d'utilisation.
 
+Dans **Utilisateurs**, le menu des rôles décrit chaque rôle :
+
+- **Utilisateur**: utilise Saga. Pas de panneau d'administration.
+- **Administrateur de contenu**: utilise Saga et gère les prompts, workflows, modèles, assistants et sources partagés.
+- **Billing Admin**: utilise Saga et gère la facturation.
+- **Administrateur (sans accès au produit)**: gère les utilisateurs, l'utilisation et la facturation. Ne peut pas utiliser Saga.
+- **Administrateur**: utilise Saga et gère tous les paramètres d'administration, les utilisateurs et la facturation.
+
+Lorsque vous choisissez un nouveau rôle, Saga vous demande de confirmer et affiche le nouvel accès. Rien ne change tant que vous n'avez pas cliqué sur **Change Role**. Vous ne pouvez pas modifier votre propre rôle, et seul un Administrateur peut modifier le rôle d'un Administrateur.
+
 ## Intégrations
 
 Les administrateurs configurent les connexions aux outils externes :
@@ -80,6 +90,8 @@ Les administrateurs et les administrateurs de contenu gèrent le contenu partag�
 Lorsqu'un utilisateur crée un prompt, un modèle ou un workflow personnel et demande à le rendre organisationnel, il apparaît ici pour examen. Approuvez-le et il devient accessible à tous.
 
 Dans **Admin panel > Prompt Library**, la colonne **Créé par** indique qui a créé chaque prompt et qui a demandé à le partager avec l'organisation.
+
+Dans **Prompt Library**, **Workflow Library** et **Grid Review Library**, une bannière indique combien de demandes de partage attendent votre approbation. Sélectionnez la cloche dans **Actions** pour approuver ou ignorer chaque demande. Les éléments approuvés sont partagés avec toute votre organisation.
 
 ## Utilisation
 
