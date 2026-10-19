@@ -33,6 +33,16 @@ Administratoren konfigurieren die Workspace-Standards, die organisationsweit gel
 
 Administratoren können alle Personen im Workspace einsehen, Rollen ändern, Benutzer entfernen, gelöschte Konten reaktivieren und die Zwei-Faktor-Authentifizierung für Benutzer deaktivieren, die den Zugang verloren haben. Sie können die Benutzerliste auch mit Nutzungsstatistiken nach Excel exportieren.
 
+Unter **Benutzer** beschreibt das Rollenmenü jede Rolle:
+
+- **Benutzer**: nutzt Saga. Kein Admin-Bereich.
+- **Content-Admin**: nutzt Saga und verwaltet geteilte Prompts, Workflows, Vorlagen, Assistenten und Quellen.
+- **Billing Admin**: nutzt Saga und verwaltet die Abrechnung.
+- **Admin (ohne Produktzugriff)**: verwaltet Benutzer, Nutzung und Abrechnung. Kann Saga selbst nicht nutzen.
+- **Admin**: nutzt Saga und verwaltet alle Admin-Einstellungen, Benutzer und die Abrechnung.
+
+Wenn Sie eine neue Rolle wählen, bittet Saga Sie um Bestätigung und zeigt den neuen Zugriff. Nichts ändert sich, bis Sie auf **Change Role** klicken. Sie können Ihre eigene Rolle nicht ändern, und nur ein Admin kann die Rolle eines Admins ändern.
+
 ## Integrationen
 
 Administratoren konfigurieren die Verbindungen zu externen Werkzeugen:
@@ -80,6 +90,8 @@ Sowohl Administratoren als auch Content-Admins verwalten die geteilten Inhalte, 
 Wenn ein Benutzer einen persönlichen Prompt, eine Vorlage oder einen Workflow erstellt und beantragt, diesen organisationsweit zu machen, erscheint er hier zur Prüfung. Genehmigen Sie ihn und er wird für alle verfügbar.
 
 In **Admin panel > Prompt Library** zeigt die Spalte **Erstellt von**, wer jeden Prompt erstellt hat und wer darum gebeten hat, ihn mit der Organisation zu teilen.
+
+In **Prompt Library**, **Workflow Library** und **Grid Review Library** zeigt ein Banner, wie viele Freigabeanfragen auf Ihre Genehmigung warten. Wählen Sie die Glocke unter **Actions**, um jede Anfrage zu genehmigen oder zu ignorieren. Genehmigte Elemente werden mit Ihrer gesamten Organisation geteilt.
 
 ## Nutzung
 

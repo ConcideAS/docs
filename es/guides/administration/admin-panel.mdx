@@ -33,6 +33,16 @@ Los administradores configuran los valores predeterminados del espacio de trabaj
 
 Los administradores pueden ver a todos en el espacio de trabajo, cambiar roles, eliminar usuarios, reactivar cuentas eliminadas y desactivar la autenticación de dos factores para usuarios que han perdido el acceso. También puede exportar la lista de usuarios a Excel con métricas de uso.
 
+En **Usuarios**, el menú de roles describe cada rol:
+
+- **Usuario**: usa Saga. Sin panel de administración.
+- **Administrador de contenido**: usa Saga y gestiona prompts, flujos de trabajo, plantillas, asistentes y fuentes compartidos.
+- **Billing Admin**: usa Saga y gestiona la facturación.
+- **Administrador (sin acceso al producto)**: gestiona usuarios, uso y facturación. No puede usar Saga.
+- **Administrador**: usa Saga y gestiona todos los ajustes de administración, los usuarios y la facturación.
+
+Cuando elige un rol nuevo, Saga le pide que confirme y muestra el nuevo acceso. Nada cambia hasta que hace clic en **Change Role**. No puede cambiar su propio rol, y solo un Administrador puede cambiar el rol de otro Administrador.
+
 ## Integraciones
 
 Los administradores configuran las conexiones con herramientas externas:
@@ -80,6 +90,8 @@ Tanto los administradores como los administradores de contenido gestionan el con
 Cuando un usuario crea un prompt, plantilla o flujo de trabajo personal y solicita hacerlo organizacional, aparece aquí para revisión. Apruébelo y queda disponible para todos.
 
 En **Admin panel > Prompt Library**, la columna **Creado por** muestra quién creó cada prompt y quién solicitó compartirlo con la organización.
+
+En **Prompt Library**, **Workflow Library** y **Grid Review Library**, un aviso muestra cuántas solicitudes para compartir esperan su aprobación. Seleccione la campana en **Actions** para aprobar o ignorar cada solicitud. Los elementos aprobados se comparten con toda su organización.
 
 ## Uso
 

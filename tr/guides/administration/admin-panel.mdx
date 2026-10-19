@@ -33,6 +33,16 @@ Yöneticiler, kuruluş genelinde geçerli olan çalışma alanı varsayılanlar�
 
 Yöneticiler çalışma alanındaki herkesi görüntüleyebilir, rolleri değiştirebilir, kullanıcıları kaldırabilir, silinen hesapları yeniden etkinleştirebilir ve erişimini kaybeden kullanıcılar için iki faktörlü kimlik doğrulamayı devre dışı bırakabilir. Kullanım metrikleriyle birlikte kullanıcı listesini Excel'e de aktarabilirsiniz.
 
+**Kullanıcılar** bölümünde rol menüsü her rolü açıklar:
+
+- **Kullanıcı**: Saga'yı kullanır. Yönetim paneli yoktur.
+- **İçerik yöneticisi**: Saga'yı kullanır ve paylaşılan prompt'ları, iş akışlarını, şablonları, asistanları ve kaynakları yönetir.
+- **Billing Admin**: Saga'yı kullanır ve faturalandırmayı yönetir.
+- **Yönetici (ürün erişimi yok)**: kullanıcıları, kullanımı ve faturalandırmayı yönetir. Saga'nın kendisini kullanamaz.
+- **Yönetici**: Saga'yı kullanır ve tüm yönetici ayarlarını, kullanıcıları ve faturalandırmayı yönetir.
+
+Yeni bir rol seçtiğinizde Saga onaylamanızı ister ve yeni erişimi gösterir. **Change Role** düğmesine tıklayana kadar hiçbir şey değişmez. Kendi rolünüzü değiştiremezsiniz ve bir Yöneticinin rolünü yalnızca bir Yönetici değiştirebilir.
+
 ## Entegrasyonlar
 
 Yöneticiler harici araçlara bağlantıları yapılandırır:
@@ -80,6 +90,8 @@ Hem yöneticiler hem de içerik yöneticileri, herkesin **Kuruluş** sekmesinde 
 Bir kullanıcı kişisel bir istem, şablon veya iş akışı oluşturup kuruluş genelinde yayınlanmasını talep ettiğinde, burada inceleme için görünür. Onaylayın ve herkesin kullanımına sunulur.
 
 In **Admin panel > Prompt Library**, **Created by** sütunu her istemi kimin oluşturduğunu ve kuruluşla paylaşılmasını kimin istediğini gösterir.
+
+**Prompt Library**, **Workflow Library** ve **Grid Review Library** bölümlerinde bir başlık, onayınızı bekleyen paylaşım isteklerinin sayısını gösterir. Her isteği onaylamak veya yok saymak için **Actions** altındaki zil simgesini seçin. Onaylanan öğeler tüm kuruluşunuzla paylaşılır.
 
 ## Kullanım
 
