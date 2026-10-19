@@ -22,6 +22,8 @@ El tamaño máximo de archivo es de 1 GB. Un proyecto puede contener hasta 1.000
 
 Después de la carga, cada archivo pasa por un procesamiento antes de estar disponible para la IA. Puede seguir trabajando mientras esto ocurre — los documentos se vuelven disponibles automáticamente a medida que están listos. Si un archivo no se procesa correctamente, puede reintentarlo desde su menú de acciones. Si falla más de una carga, aparece una barra de recuperación en la parte superior de la base de conocimiento para que pueda **reintentar todas** las cargas fallidas o **eliminar todas** las fallidas en un solo paso.
 
+Después de una carga, Saga se desplaza hasta el primer archivo nuevo y abre su carpeta si hace falta. Los archivos nuevos muestran la etiqueta **New** durante unos segundos.
+
 ## Carpetas y etiquetas
 
 Puede organizar los documentos con carpetas y etiquetas con código de color.
@@ -39,3 +41,7 @@ En un chat de proyecto, puede pedirle a Saga que ordene documentos en carpetas o
 Cada documento tiene un menú de acciones donde puede renombrarlo, moverlo a otra carpeta, gestionar sus etiquetas, descargarlo, reintentar el procesamiento o eliminarlo.
 
 Para actuar sobre varios documentos a la vez, use las casillas de verificación junto a cada documento o carpeta. Con una selección activa, puede **descargar**, **eliminar**, **mover** o **etiquetar** todos los documentos seleccionados en un solo paso. Las casillas de verificación de las carpetas muestran un indicador de selección parcial cuando solo algunos archivos de la carpeta están seleccionados, para que pueda ver exactamente qué está incluido.
+
+Para copiar documentos a otro proyecto, elija **Copy to Project** en el menú de acciones de un documento, o seleccione varios documentos y use **Copy to Project** en la barra de selección. Elija un proyecto en el que tenga permiso de edición. Las copias van al nivel superior de la base de conocimiento de ese proyecto. Saga omite los documentos que ya están en ese proyecto, que aún se están procesando o que superarían su límite de documentos, y le indica cuáles. Elija **Open Project** para ir allí.
+
+Use **Filter > Sort by** para ordenar los archivos por **Name** o **Date uploaded**. Las carpetas se mantienen en orden de la A a la Z. Su elección dura toda la sesión.

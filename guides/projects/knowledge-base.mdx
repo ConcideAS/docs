@@ -24,6 +24,8 @@ After upload, each file goes through processing before it's available to the AI.
 
 While a document is processing, its checkbox and bulk actions are temporarily disabled — actions on already-processed documents remain available. If the document counter ever seems stuck at a higher number than your file list (for example you've deleted files but uploads are still blocked), refresh the page; the counter recalculates from the server on reload. If it's still wrong after refresh, contact support.
 
+After an upload, Saga scrolls to the first new file and opens its folder if needed. New files show a **New** label for a few seconds.
+
 ## Folders and tags
 
 You can organize documents with folders and color-coded tags.
@@ -41,6 +43,10 @@ In a project chat, you can ask Saga to sort documents into folders or tags. Saga
 Each document has an action menu where you can rename it, move it to a different folder, manage its tags, download it, retry processing, or delete it.
 
 To act on several documents at once, use the checkboxes next to each document or folder. With a selection active, you can **download**, **delete**, **move**, or **tag** all selected documents in one step. Folder checkboxes show a partial-selection indicator when only some files inside are selected, so you can see exactly what's included.
+
+To copy documents into another project, choose **Copy to Project** in a document's action menu, or select several documents and use **Copy to Project** in the selection bar. Pick a project where you have edit access. The copies go to the top level of that project's knowledge base. Saga skips documents that are already in that project, are still processing, or would go over its document limit, and tells you which ones. Choose **Open Project** to go there.
+
+Use **Filter > Sort by** to sort files by **Name** or **Date uploaded**. Folders stay in A to Z order. Your choice lasts for the session.
 
 ## Duplicate filenames
 
