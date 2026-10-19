@@ -99,11 +99,23 @@ You can add up to five selections from the same document version and edit them w
 
 Selections that contain a table cannot be edited with AI yet. Overlapping selections, a sixth selection, or text from a different document version are blocked. Remove attached files, a task, or a selected workflow from the message before inserting text.
 
-## Auto drafting
+## AI permissions
 
-Auto drafting controls whether Saga is allowed to produce documents and presentations from a chat message. Open the chat behavior settings menu next to the message input to toggle it. The setting is saved per user and stays in effect across your future chats.
+Open **Settings > AI Permissions** to choose what Saga may do on its own in your chats. Each row has three choices: **Ask**, **Allow**, or **Off**.
 
-When Auto drafting is on — the default — Saga can draft a document or PowerPoint deck into the side panel whenever your request calls for one. When Auto drafting is off, Saga answers directly in the chat instead: it will not generate a document, will not generate a PowerPoint, and will not route a one-off drafting request through a workflow to work around the setting. Turn it off when you want the AI to answer directly in chat and skip the side panel.
+| Row | What it covers | Default |
+|---|---|---|
+| Web Search | Search the public internet | Ask |
+| Deep Web Search | Longer, deeper web research | Ask |
+| Legal Sources | Cite authorities from the legal databases enabled for your workspace | Ask |
+| MCPs | Use the tools of your connected MCP servers | Ask |
+| Drafting | Generate and revise documents | Allow |
+| Workflow Generation | Build a workflow for your task | Allow |
+| Questioner | Ask you clarifying questions in chat | Allow (no Ask option) |
+
+With **Ask**, Saga stops before it uses that feature and shows a card in the chat: "Saga wants to use … for this request". Choose **Allow** to continue once, **Always Allow** to switch that row to Allow, or **Skip** to continue without it. When you turn a source on in the composer yourself, Saga does not ask again for that message. With **Off**, Saga never uses that feature. Your choices save to your account.
+
+The Drafting row replaces the old Auto drafting switch next to the message input. With Drafting off, Saga answers in the chat and does not create documents or presentations.
 
 ## Chat text size
 

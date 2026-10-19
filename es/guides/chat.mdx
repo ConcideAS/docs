@@ -95,6 +95,24 @@ Puede añadir hasta cinco selecciones de la misma versión del documento y edita
 
 Las selecciones que contienen una tabla aún no se pueden editar con IA. Las selecciones superpuestas, una sexta selección o el texto de otra versión del documento quedan bloqueados. Quite los archivos adjuntos, una tarea o un flujo de trabajo seleccionado del mensaje antes de insertar texto.
 
+## Permisos de IA
+
+Abra **Configuración > AI Permissions** para elegir qué puede hacer Saga por su cuenta en sus chats. Cada fila tiene tres opciones: **Ask**, **Allow** u **Off**.
+
+| Fila | Qué abarca | Valor predeterminado |
+|---|---|---|
+| Web Search | Buscar en internet | Ask |
+| Deep Web Search | Investigación web más larga y profunda | Ask |
+| Legal Sources | Citar fuentes de las bases de datos jurídicas habilitadas para su espacio de trabajo | Ask |
+| MCPs | Usar las herramientas de sus servidores MCP conectados | Ask |
+| Drafting | Generar y revisar documentos | Allow |
+| Workflow Generation | Crear un flujo de trabajo para su tarea | Allow |
+| Questioner | Hacerle preguntas aclaratorias en el chat | Allow (sin opción Ask) |
+
+Con **Ask**, Saga se detiene antes de usar esa función y muestra una tarjeta en el chat: "Saga wants to use … for this request". Elija **Allow** para continuar una vez, **Always Allow** para cambiar esa fila a Allow, o **Skip** para continuar sin ella. Si usted mismo activa una fuente en el cuadro de mensaje, Saga no vuelve a preguntar para ese mensaje. Con **Off**, Saga nunca usa esa función. Sus elecciones se guardan en su cuenta.
+
+La fila Drafting sustituye al antiguo interruptor Auto drafting junto al cuadro de mensaje. Con Drafting desactivado, Saga responde en el chat y no crea documentos ni presentaciones.
+
 ## Tamaño del texto del chat
 
 Abra el menú de su cuenta (su avatar en la barra lateral). Debajo del selector de tema, elija **Predeterminado** o **Compacto** en **Tamaño del texto del chat**. Compacto hace que el hilo del chat sea más denso, por lo que las conversaciones largas son más fáciles de recorrer. La configuración solo se aplica al hilo del chat. No cambia los documentos, las cuadrículas ni los flujos de trabajo. En teléfonos, Predeterminado y Compacto se ven igual. Su elección se guarda en su cuenta de inmediato.
