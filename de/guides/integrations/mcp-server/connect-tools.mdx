@@ -31,12 +31,20 @@ Anmeldeinformationen, die Sie hier eingeben, werden sicher gespeichert und nie w
 
 Einige Werkzeuge sind so eingerichtet, dass jede Person ihr eigenes Konto oder Token verbindet, statt eine gemeinsame Kanzlei-Anmeldeinformation zu verwenden. Das gilt für Werkzeuge mit **OAuth 2.1** und für Werkzeuge mit **Per-User API Token**.
 
-1. Gehen Sie zu **Einstellungen > Integrationen**.
+1. Gehen Sie zu **Einstellungen > MCPs**.
 2. Finden Sie das Werkzeug in der Liste.
 3. Klicken Sie auf **Verbinden**, um sich mit OAuth anzumelden, oder fügen Sie Ihr persönliches Token ein, wenn das Werkzeug danach fragt.
 4. Speichern Sie, wenn Saga Sie auffordert, ein Token zu speichern. Das Werkzeug ist jetzt für Sie im Chat verfügbar.
 
-Bis Sie Ihr eigenes Konto oder Token verbinden, ist dieses Werkzeug in Ihren Gesprächen nicht verfügbar, auch wenn Ihr Administrator es eingerichtet hat. Wenn der Chat Sie auffordert, ein Werkzeug erneut zu verbinden, kehren Sie zu **Einstellungen > Integrationen** zurück und verbinden Sie es erneut.
+Bis Sie Ihr eigenes Konto oder Token verbinden, ist dieses Werkzeug in Ihren Gesprächen nicht verfügbar, auch wenn Ihr Administrator es eingerichtet hat. Wenn der Chat Sie auffordert, ein Werkzeug erneut zu verbinden, kehren Sie zu **Einstellungen > MCPs** zurück und verbinden Sie es erneut.
+
+## MCP-Tools in einem Chat verwenden
+
+Öffnen Sie **Quellen hinzufügen** im Eingabefeld. Wählen Sie unter **MCPs** die verbundenen Server aus, die Saga für diese Nachricht nutzen darf. Sie können so viele Server einbeziehen, wie die Liste als Grenze anzeigt. Über **Manage MCP Connections** öffnen Sie Ihre Verbindungen.
+
+Wenn ein Server Ihre Anmeldung braucht, zeigt der Chat **Connect to** mit dem Servernamen und eine Schaltfläche **Connect**. Wenn Ihre Berechtigung für MCPs auf Ask steht, zeigt der Chat **Allow Saga to use** mit dem Servernamen. Wählen Sie **Allow**, **Always Allow** oder **Skip**.
+
+Während Saga arbeitet, zeigt die Antwort, welchen Server oder welches Tool es nutzt. Wenn ein Server nicht antwortet, steht in der Antwort, dass Saga ihn nicht genutzt hat. Wenn MCPs unter **Einstellungen > AI Permissions** ausgeschaltet sind, weist die MCP-Liste darauf hin.
 
 <Note>
 Möchten Sie lieber, dass Saga das Werkzeug ist, mit dem sich *andere* Assistenten verbinden? Das ist die andere Richtung — siehe [Ihren Assistenten mit Saga verbinden](/de/guides/integrations/mcp-server/connect-assistants).

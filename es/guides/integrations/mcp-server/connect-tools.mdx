@@ -31,12 +31,20 @@ Las credenciales que introduce aquí se almacenan de forma segura y no se vuelve
 
 Algunas herramientas están configuradas para que cada persona conecte su propia cuenta o token en lugar de usar una credencial compartida del despacho. Esto se aplica a las herramientas que usan **OAuth 2.1** y a las que usan **Per-User API Token**.
 
-1. Vaya a **Configuración > Integraciones**.
+1. Vaya a **Configuración > MCPs**.
 2. Encuentre la herramienta en la lista.
 3. Haga clic en **Connect** para iniciar sesión con OAuth, o pegue su token personal si la herramienta lo solicita.
 4. Guarde cuando Saga le pida guardar un token. La herramienta ya está disponible para usted en el chat.
 
-Hasta que conecte su propia cuenta o token, esa herramienta no estará disponible en sus conversaciones, aunque su administrador la haya configurado. Si el chat le indica que vuelva a conectar una herramienta, regrese a **Configuración > Integraciones** y conéctela de nuevo.
+Hasta que conecte su propia cuenta o token, esa herramienta no estará disponible en sus conversaciones, aunque su administrador la haya configurado. Si el chat le indica que vuelva a conectar una herramienta, regrese a **Configuración > MCPs** y conéctela de nuevo.
+
+## Usar herramientas MCP en un chat
+
+Abra **Añadir fuentes** en el cuadro de mensaje. En **MCPs**, elija los servidores conectados que Saga puede usar para este mensaje. Puede incluir tantos como permita el límite que muestra la lista. Use **Manage MCP Connections** para abrir sus conexiones.
+
+Si un servidor necesita que inicie sesión, el chat muestra **Connect to** con el nombre del servidor y un botón **Connect**. Si su permiso de MCPs está en Ask, el chat muestra **Allow Saga to use** con el nombre del servidor. Elija **Allow**, **Always Allow** o **Skip**.
+
+Mientras Saga trabaja, la respuesta muestra qué servidor o herramienta usa. Si un servidor no responde, la respuesta indica que Saga no lo usó. Si los MCPs están desactivados en **Configuración > AI Permissions**, la lista de MCPs lo indica.
 
 <Note>
 ¿Prefiere que Saga sea la herramienta a la que se conectan *otros* asistentes? Esa es la otra dirección — consulte [Conectar su asistente a Saga](/es/guides/integrations/mcp-server/connect-assistants).

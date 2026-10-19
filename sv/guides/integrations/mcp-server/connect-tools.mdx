@@ -31,12 +31,20 @@ Autentiseringsuppgifter du anger här lagras säkert och visas aldrig igen. Om d
 
 Vissa verktyg är konfigurerade så att varje person ansluter sitt eget konto eller sin egen token i stället för att använda en delad byråautentisering. Det gäller verktyg som använder **OAuth 2.1** och verktyg som använder **Per-User API Token**.
 
-1. Gå till **Inställningar > Integrationer**.
+1. Gå till **Inställningar > MCPs**.
 2. Hitta verktyget i listan.
 3. Klicka på **Anslut** för att logga in med OAuth, eller klistra in din personliga token om verktyget ber om den.
 4. Spara när Saga ber dig spara en token. Verktyget är nu tillgängligt för dig i chatten.
 
-Tills du ansluter ditt eget konto eller din egen token är det verktyget inte tillgängligt i dina samtal, även om din administratör har konfigurerat det. Om chatten ber dig att ansluta ett verktyg igen går du tillbaka till **Inställningar > Integrationer** och ansluter det igen.
+Tills du ansluter ditt eget konto eller din egen token är det verktyget inte tillgängligt i dina samtal, även om din administratör har konfigurerat det. Om chatten ber dig att ansluta ett verktyg igen går du tillbaka till **Inställningar > MCPs** och ansluter det igen.
+
+## Använda MCP-verktyg i en chatt
+
+Öppna **Lägg till källor** i skrivfältet. Under **MCPs** väljer du de anslutna servrar som Saga får använda för det här meddelandet. Du kan ta med så många som gränsen i listan visar. Använd **Manage MCP Connections** för att öppna dina anslutningar.
+
+Om en server kräver att du loggar in visar chatten **Connect to** med servernamnet och en **Connect**-knapp. Om din behörighet för MCPs står på Ask visar chatten **Allow Saga to use** med servernamnet. Välj **Allow**, **Always Allow** eller **Skip**.
+
+Medan Saga arbetar visar svaret vilken server eller vilket verktyg som används. Om en server inte svarar står det i svaret att Saga inte använde den. Om MCPs är avstängda under **Inställningar > AI Permissions** står det i MCP-listan.
 
 <Note>
 Vill du hellre att Saga ska vara verktyget som *andra* assistenter ansluter till? Det är den andra riktningen — se [Anslut din assistent till Saga](/sv/guides/integrations/mcp-server/connect-assistants).

@@ -31,12 +31,20 @@ Dane uwierzytelniające wprowadzone tutaj są przechowywane bezpiecznie i nigdy 
 
 Niektóre narzędzia są skonfigurowane tak, że każda osoba łączy własne konto lub token zamiast używać jednego wspólnego klucza kancelarii. Dotyczy to narzędzi używających **OAuth 2.1** oraz narzędzi używających **Per-User API Token**.
 
-1. Przejdź do **Ustawienia > Integracje**.
+1. Przejdź do **Ustawienia > MCPs**.
 2. Znajdź narzędzie na liście.
 3. Kliknij **Connect**, aby zalogować się przez OAuth, albo wklej swój osobisty token, jeśli narzędzie o niego poprosi.
 4. Zapisz, gdy Saga poprosi o zapisanie tokenu. Narzędzie jest teraz dostępne dla Ciebie w czacie.
 
-Dopóki nie połączysz własnego konta lub tokenu, to narzędzie nie będzie dostępne w Twoich rozmowach, nawet jeśli administrator je skonfigurował. Jeśli czat poprosi Cię o ponowne połączenie narzędzia, wróć do **Ustawienia > Integracje** i połącz je ponownie.
+Dopóki nie połączysz własnego konta lub tokenu, to narzędzie nie będzie dostępne w Twoich rozmowach, nawet jeśli administrator je skonfigurował. Jeśli czat poprosi Cię o ponowne połączenie narzędzia, wróć do **Ustawienia > MCPs** i połącz je ponownie.
+
+## Używanie narzędzi MCP w czacie
+
+Otwórz **Dodaj źródła** w polu wiadomości. W sekcji **MCPs** wybierz połączone serwery, z których Saga może korzystać przy tej wiadomości. Możesz dodać ich tyle, na ile pozwala limit pokazany na liście. Użyj **Manage MCP Connections**, aby otworzyć swoje połączenia.
+
+Jeśli serwer wymaga Twojego logowania, czat pokazuje **Connect to** z nazwą serwera i przyciskiem **Connect**. Jeśli uprawnienie MCPs jest ustawione na Ask, czat pokazuje **Allow Saga to use** z nazwą serwera. Wybierz **Allow**, **Always Allow** lub **Skip**.
+
+Gdy Saga pracuje, odpowiedź pokazuje, z jakiego serwera lub narzędzia korzysta. Jeśli serwer nie odpowiada, odpowiedź informuje, że Saga z niego nie skorzystała. Jeśli MCPs są wyłączone w **Ustawienia > AI Permissions**, lista MCPs o tym informuje.
 
 <Note>
 Chcesz, aby to Saga była narzędziem, z którym łączą się *inni* asystenci? To drugi kierunek — zobacz [Połącz swojego asystenta z Saga](/pl/guides/integrations/mcp-server/connect-assistants).

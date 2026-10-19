@@ -31,12 +31,20 @@ Referenties die u hier invoert, worden veilig opgeslagen en nooit meer weergegev
 
 Sommige hulpmiddelen zijn zo ingesteld dat elke persoon zijn eigen account of token verbindt in plaats van één gedeelde kantoorreferentie te gebruiken. Dit geldt voor hulpmiddelen die **OAuth 2.1** gebruiken en voor hulpmiddelen die **Per-User API Token** gebruiken.
 
-1. Ga naar **Instellingen > Integraties**.
+1. Ga naar **Instellingen > MCPs**.
 2. Zoek het hulpmiddel in de lijst.
 3. Klik op **Verbinden** om u aan te melden met OAuth, of plak uw persoonlijke token als het hulpmiddel daarom vraagt.
 4. Sla op wanneer Saga vraagt om een token op te slaan. Het hulpmiddel is nu voor u beschikbaar in de chat.
 
-Totdat u uw eigen account of token verbindt, is dat hulpmiddel niet beschikbaar in uw gesprekken, ook al heeft uw beheerder het ingesteld. Als de chat u vraagt een hulpmiddel opnieuw te verbinden, gaat u terug naar **Instellingen > Integraties** en verbindt u het opnieuw.
+Totdat u uw eigen account of token verbindt, is dat hulpmiddel niet beschikbaar in uw gesprekken, ook al heeft uw beheerder het ingesteld. Als de chat u vraagt een hulpmiddel opnieuw te verbinden, gaat u terug naar **Instellingen > MCPs** en verbindt u het opnieuw.
+
+## MCP-hulpmiddelen in een chat gebruiken
+
+Open **Bronnen toevoegen** in het invoerveld. Kies onder **MCPs** de gekoppelde servers die Saga voor dit bericht mag gebruiken. U kunt er zoveel opnemen als de limiet in de lijst aangeeft. Gebruik **Manage MCP Connections** om uw verbindingen te openen.
+
+Als een server uw aanmelding nodig heeft, toont de chat **Connect to** met de naam van de server en een knop **Connect**. Als uw machtiging voor MCPs op Ask staat, toont de chat **Allow Saga to use** met de naam van de server. Kies **Allow**, **Always Allow** of **Skip**.
+
+Terwijl Saga werkt, toont het antwoord welke server of welk hulpmiddel het gebruikt. Als een server niet reageert, staat in het antwoord dat Saga die niet heeft gebruikt. Als MCPs uit staan in **Instellingen > AI Permissions**, meldt de lijst met MCPs dat.
 
 <Note>
 Wilt u liever dat Saga het hulpmiddel is waarmee *andere* assistenten verbinding maken? Dat is de andere richting — zie [Verbind uw assistent met Saga](/nl/guides/integrations/mcp-server/connect-assistants).

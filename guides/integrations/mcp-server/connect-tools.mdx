@@ -31,12 +31,20 @@ Credentials you enter here are stored securely and never displayed again. If you
 
 Some tools are set up so that each person connects with their own account or token rather than one shared firm credential. This applies to tools that use **OAuth 2.1** and tools that use **Per-User API Token**.
 
-1. Go to **Settings > Integrations**.
+1. Go to **Settings > MCPs**.
 2. Find the tool in the list.
 3. Click **Connect** to sign in with OAuth, or paste your personal token if the tool asks for one.
 4. Save when Saga asks you to save a token. The tool is now available to you in chat.
 
-Until you connect your own account or token, that tool won't be available in your conversations, even though your administrator has set it up. If chat tells you to reconnect a tool, return to **Settings > Integrations** and connect it again.
+Until you connect your own account or token, that tool won't be available in your conversations, even though your administrator has set it up. If chat tells you to reconnect a tool, return to **Settings > MCPs** and connect it again.
+
+## Use MCP tools in a chat
+
+Open **Add Sources** in the composer. Under **MCPs**, choose the connected servers Saga may use for this message. You can include up to the limit shown in the list. Use **Manage MCP Connections** to open your connections.
+
+If a server needs your sign-in, the chat shows **Connect to** and the server name, with a **Connect** button. If your MCPs permission is set to Ask, the chat shows **Allow Saga to use** and the server name. Choose **Allow**, **Always Allow**, or **Skip**.
+
+While Saga works, the answer shows which server or tool it uses. If a server does not respond, the answer says that Saga did not use it. If MCPs are off in **Settings > AI Permissions**, the MCPs list says so.
 
 <Note>
 Want Saga to be the tool that *other* assistants connect to instead? That's the other direction — see [Connect your assistant to Saga](/guides/integrations/mcp-server/connect-assistants).
