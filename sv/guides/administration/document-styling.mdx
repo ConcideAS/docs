@@ -1,15 +1,23 @@
 ---
 title: Dokumentstil
-description: Konfigurera hur Word-exporter som genereras av Saga följer byråns dokumentstil.
+description: Konfigurera hur Word-, Excel- och PowerPoint-innehåll som genereras av Saga följer byråns dokumentstil.
 ---
 
 <Note>
 Dokumentstil är en [Enterprise](/sv/guides/administration/enterprise)-funktion. Varje byrå har sin egen instans (till exempel `dinbyra.sagalegal.io`), och dokumentstil konfigureras i administrationspanelen för den instansen.
 </Note>
 
-Dokumentstil är en admininställning för Word-exporter som genereras av Saga. Använd den när byrån vill att utkast, sammanfattningar, PM eller andra AI-genererade dokument ska följa samma typsnitt, sidlayout, sidhuvuden, sidfötter och sidnumrering.
+Dokumentstil är en admininställning för Word-, Excel- och PowerPoint-innehåll som genereras av Saga. Använd den när byrån vill att utkast, sammanfattningar, PM, nedladdade tabeller och presentationer ska följa samma dokumentstil.
 
 Endast admins kan konfigurera dokumentstil. Användare ser resultatet när de exporterar genererat innehåll efter att inställningarna har sparats.
+
+## Var varje stil används
+
+**Dokumentstil** har tre flikar: **Word**, **Excel** och **PowerPoint**. Varje flik anger var stilen används:
+
+- **Word**: utkast, Word- och PDF-nedladdningar och Word-filer som AI:n skapar. UDF-exporter (UYAP) av utkast använder också Words brödtextteckensnitt och rubrikstorlekar. Diagram och HTML-sidor som AI:n skapar använder Words brödtextteckensnitt.
+- **Excel**: tabellnedladdningar från chatten, Grid Review-exporter och kalkylblad som AI:n skapar.
+- **PowerPoint**: presentationer som AI:n skapar, i chatten och i arbetsflöden. Diagram och HTML-sidor som AI:n skapar använder PowerPoints accentfärger.
 
 ## Vad dokumentstil styr
 
@@ -66,6 +74,10 @@ Excel-stilen styr hur tabeller som laddas ner från Saga ser ut. Du kan ange tec
 2. Gå till **Dokumentstil > Excel-export**.
 3. Ladda upp en `.xlsx`-referensarbetsbok (upp till 25 MB) eller justera värdena manuellt.
 4. Granska förhandsgranskningen och klicka på **Spara ändringar**.
+
+## PowerPoint-exportstil
+
+Välj fliken **PowerPoint** i **Dokumentstil** för att ange stilen för presentationer som AI:n skapar, i chatten och i arbetsflöden. Diagram och HTML-sidor som AI:n skapar använder också PowerPoints accentfärger.
 
 ## Justera och testa stilen
 

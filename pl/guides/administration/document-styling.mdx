@@ -1,15 +1,23 @@
 ---
 title: Styl dokumentów
-description: Skonfiguruj, jak eksporty Word generowane przez Saga mają stosować styl dokumentów Twojej kancelarii.
+description: Skonfiguruj, jak treści Word, Excel i PowerPoint generowane przez Saga mają stosować styl dokumentów Twojej kancelarii.
 ---
 
 <Note>
 Stylizacja dokumentów to funkcja planu [Enterprise](/pl/guides/administration/enterprise). Każda kancelaria ma własną instancję (na przykład `twojakancelaria.sagalegal.io`), a stylizację dokumentów konfiguruje się w panelu administracyjnym tej instancji.
 </Note>
 
-Styl dokumentów to ustawienie administracyjne dla eksportów Word generowanych przez Saga. Użyj go, gdy kancelaria chce, aby projekty, podsumowania, notatki lub inne dokumenty generowane przez AI stosowały te same czcionki, układ strony, nagłówki, stopki i numerację stron.
+Styl dokumentów to ustawienie administracyjne dla treści Word, Excel i PowerPoint generowanych przez Saga. Użyj go, gdy kancelaria chce, aby projekty, podsumowania, notatki, pobrane tabele i prezentacje stosowały ten sam styl dokumentów.
 
 Tylko administratorzy mogą konfigurować styl dokumentów. Użytkownicy widzą rezultat, gdy eksportują wygenerowaną treść po zapisaniu ustawień.
+
+## Gdzie używany jest każdy styl
+
+**Styl dokumentów** ma trzy zakładki: **Word**, **Excel** i **PowerPoint**. Każda zakładka podaje, gdzie używany jest jej styl:
+
+- **Word**: wersje robocze, pliki Word i PDF do pobrania oraz pliki Word tworzone przez AI. Eksporty wersji roboczych w formacie UDF (UYAP) również używają czcionki tekstu głównego i rozmiarów nagłówków z Worda. Wykresy i strony HTML tworzone przez AI używają czcionki tekstu głównego z Worda.
+- **Excel**: tabele pobierane z czatu, eksporty Grid Review i arkusze kalkulacyjne tworzone przez AI.
+- **PowerPoint**: prezentacje tworzone przez AI w czacie i w przepływach pracy. Wykresy i strony HTML tworzone przez AI używają kolorów akcentu z PowerPointa.
 
 ## Co kontroluje styl dokumentów
 
@@ -66,6 +74,10 @@ Styl Excel kontroluje wygląd tabel pobieranych z Saga. Możesz ustawić czcionk
 2. Przejdź do **Styl dokumentów > Eksport Excel**.
 3. Prześlij skoroszyt referencyjny `.xlsx` (do 25 MB) albo dostosuj wartości ręcznie.
 4. Sprawdź podgląd i kliknij **Zapisz zmiany**.
+
+## Styl eksportu PowerPoint
+
+Wybierz zakładkę **PowerPoint** w **Styl dokumentów**, aby ustawić styl prezentacji tworzonych przez AI w czacie i w przepływach pracy. Wykresy i strony HTML tworzone przez AI również używają kolorów akcentu z PowerPointa.
 
 ## Dostosuj i przetestuj styl
 

@@ -1,15 +1,23 @@
 ---
 title: Style des documents
-description: Configurez la manière dont les exports Word générés par Saga suivent le style documentaire de votre cabinet.
+description: Configurez la manière dont les contenus Word, Excel et PowerPoint générés par Saga suivent le style documentaire de votre cabinet.
 ---
 
 <Note>
 Le style de document est une fonctionnalité [Enterprise](/fr/guides/administration/enterprise). Chaque cabinet dispose de sa propre instance (par exemple `votrecabinet.sagalegal.io`), et le style de document se configure dans le panneau d'administration de cette instance.
 </Note>
 
-Le style des documents est un paramètre administrateur pour les exports Word générés par Saga. Utilisez-le lorsque votre cabinet souhaite que les brouillons, résumés, notes ou autres documents générés par l'IA suivent les mêmes polices, mises en page, en-têtes, pieds de page et numérotation.
+Le style des documents est un paramètre administrateur pour les contenus Word, Excel et PowerPoint générés par Saga. Utilisez-le lorsque votre cabinet souhaite que les brouillons, résumés, notes, tableaux téléchargés et présentations suivent le même style documentaire.
 
 Seuls les administrateurs peuvent configurer le style des documents. Les utilisateurs voient le résultat lorsqu'ils exportent du contenu généré après l'enregistrement des paramètres.
+
+## Où chaque style est utilisé
+
+**Style des documents** comporte trois onglets : **Word**, **Excel** et **PowerPoint**. Chaque onglet indique où son style est utilisé :
+
+- **Word**: brouillons, téléchargements Word et PDF, et fichiers Word créés par l'IA. Les exports de brouillons au format UDF (UYAP) utilisent aussi la police du corps de texte et les tailles de titres Word. Les graphiques et pages HTML créés par l'IA utilisent la police du corps de texte Word.
+- **Excel**: téléchargements de tableaux depuis le chat, exports Grid Review et feuilles de calcul créées par l'IA.
+- **PowerPoint**: présentations créées par l'IA, dans le chat et dans les workflows. Les graphiques et pages HTML créés par l'IA utilisent les couleurs d'accentuation PowerPoint.
 
 ## Ce que contrôle le style des documents
 
@@ -62,6 +70,10 @@ Le style Excel contrôle l'apparence des tableaux téléchargés depuis Saga. Vo
 2. Allez dans **Style des documents > Export Excel**.
 3. Importez un classeur `.xlsx` de référence (jusqu'à 25 Mo) ou ajustez les valeurs à la main.
 4. Vérifiez l'aperçu et cliquez sur **Enregistrer les modifications**.
+
+## Style d'export PowerPoint
+
+Sélectionnez l'onglet **PowerPoint** dans **Style des documents** pour définir le style des présentations créées par l'IA, dans le chat et dans les workflows. Les graphiques et pages HTML créés par l'IA utilisent aussi les couleurs d'accentuation PowerPoint.
 
 ## Ajuster et tester le style
 

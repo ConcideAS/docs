@@ -1,15 +1,23 @@
 ---
 title: Estilo dos documentos
-description: Configure como as exportações Word geradas pela Saga seguem o estilo documental da sua sociedade.
+description: Configure como os conteúdos Word, Excel e PowerPoint gerados pela Saga seguem o estilo documental da sua sociedade.
 ---
 
 <Note>
 O estilo de documentos é uma funcionalidade [Enterprise](/pt/guides/administration/enterprise). Cada escritório tem a sua própria instância (por exemplo, `seuescritorio.sagalegal.io`), e o estilo de documentos é configurado no painel de administração dessa instância.
 </Note>
 
-O estilo dos documentos é uma configuração de administração para exportações Word geradas pela Saga. Use quando a sua sociedade quiser que minutas, resumos, memorandos ou outros documentos gerados por IA sigam as mesmas fontes, layout de página, cabeçalhos, rodapés e numeração.
+O estilo dos documentos é uma configuração de administração para conteúdos Word, Excel e PowerPoint gerados pela Saga. Use quando a sua sociedade quiser que minutas, resumos, memorandos, tabelas descarregadas e apresentações sigam o mesmo estilo documental.
 
 Apenas administradores podem configurar o estilo dos documentos. Os utilizadores veem o resultado quando exportam conteúdo gerado depois de as configurações serem guardadas.
+
+## Onde cada estilo é usado
+
+**Estilo dos documentos** tem três separadores: **Word**, **Excel** e **PowerPoint**. Cada separador indica onde o seu estilo é usado:
+
+- **Word**: minutas, transferências em Word e PDF e ficheiros Word que a IA cria. As exportações de minutas em UDF (UYAP) também usam o tipo de letra do corpo e os tamanhos de título do Word. Os gráficos e as páginas HTML que a IA cria usam o tipo de letra do corpo do Word.
+- **Excel**: transferências de tabelas do chat, exportações de Grid Review e folhas de cálculo que a IA cria.
+- **PowerPoint**: apresentações que a IA cria, no chat e nos fluxos de trabalho. Os gráficos e as páginas HTML que a IA cria usam as cores de destaque do PowerPoint.
 
 ## O que o estilo dos documentos controla
 
@@ -62,6 +70,10 @@ O estilo Excel controla o aspeto das tabelas transferidas a partir da Saga. Pode
 2. Vá a **Estilo dos documentos > Exportação Excel**.
 3. Carregue um livro `.xlsx` de referência (até 25 MB) ou ajuste os valores manualmente.
 4. Reveja a pré-visualização e clique em **Guardar alterações**.
+
+## Estilo de exportação PowerPoint
+
+Selecione o separador **PowerPoint** em **Estilo dos documentos** para definir o estilo das apresentações que a IA cria, no chat e nos fluxos de trabalho. Os gráficos e as páginas HTML que a IA cria também usam as cores de destaque do PowerPoint.
 
 ## Ajustar e testar o estilo
 
