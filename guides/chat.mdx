@@ -133,6 +133,8 @@ Your conversations are saved in the chat history, accessible from the sidebar. Y
 
 Chats are scoped to the account and workspace that created them. If a chat seems to be missing, check that you're signed in to the same workspace (firms with multiple Saga subdomains have separate chat lists per subdomain), and remember that chats started inside a project live in the project — not in the global chat list. See [Troubleshooting](/guides/troubleshooting) for more recovery steps.
 
+When your workspace deletes old chats under its data retention setting, Saga warns you before a chat goes. The chat history row, the project chat card, and the open chat show **Expires in N days** or **Expires in N hours**. The warning starts 14 days before deletion for 3, 6 and 12 month settings, 7 days before for 1 month, 2 days before for 1 week, and at once for 24 hours. Admins can click the label to open the data retention settings.
+
 ## How long chats are handled
 
 You don't need to manage the AI's context window manually. The AI fetches document content on demand through tool calls rather than holding every document in its prompt, so long conversations no longer hit a hard percentage cutoff and there's no "context full" warning in current versions of Saga.
