@@ -1,0 +1,39 @@
+---
+title: SSO setup
+---
+
+Saga supports single sign-on with Microsoft Entra ID only, using OpenID Connect (OIDC). Each customer Saga host is pinned to that customer's own Entra tenant. People sign in with their work Microsoft account for that tenant.
+
+Saga support finishes the host configuration with you. Your IT team prepares Entra and sends Saga the details below.
+
+## Before you start
+
+You need:
+
+- Someone who can grant admin consent in your Entra tenant
+- Your Entra tenant ID (Directory ID)
+- Every email domain people use to sign in (for example `firm.com` and `firm.no`)
+
+For the Graph scopes the Saga Entra app requests, see [Microsoft permissions](/fr/guides/integrations/microsoft-permissions). The application (client) ID is `16eb83a1-4679-4ecd-8217-f9d0118b70d3`. <!-- pragma: allowlist secret -->
+
+## What your IT team does
+
+1. **Consent the Saga Entra app** in your tenant. A Global Administrator or Privileged Role Administrator grants admin consent if your tenant requires it.
+2. **Send Saga your Entra tenant ID** from Entra ID → Overview.
+3. **Send the email domains** that should sign in to this Saga host. Use the domains your users actually sign in with, not only the `*.onmicrosoft.com` domain, unless that is the domain they use day to day.
+4. **Assign users or groups to the app** if your tenant restricts access to assigned users. Add everyone who should reach Saga. If assignment is required and a person is missing, sign-in fails with an access denied message.
+5. **Test the first sign-in** after Saga support confirms the host is pinned. Open your Saga URL, choose Microsoft sign-in, and complete the flow with a licensed test account.
+
+## What Saga support does
+
+After you send the tenant ID and domains, Saga support pins your Saga host to your Entra tenant and confirms when you can test. Contact [support@sagalegal.io](mailto:support@sagalegal.io) to start or continue setup.
+
+## If sign-in fails
+
+See [Troubleshooting](/fr/guides/troubleshooting) for common sign-in failures. Confirm the test account is licensed in Saga, uses a domain you sent to support, and is assigned to the app when your tenant requires assignment.
+
+## Related pages
+
+- [Microsoft permissions](/fr/guides/integrations/microsoft-permissions)
+- [Enterprise](/fr/guides/administration/enterprise)
+- [Admin panel](/fr/guides/administration/admin-panel)
