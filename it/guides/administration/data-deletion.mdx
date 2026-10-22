@@ -1,0 +1,43 @@
+---
+title: Data deletion
+---
+
+This page lists what each deletion action removes, what it leaves, and who controls it. Use it when you set retention, remove a user, or ask what happens when a contract ends.
+
+Saga does not offer a per-user hard purge that erases one person's data while the workspace stays active. Removing a user deactivates the account. It does not wipe that person's history from the workspace.
+
+## Deletion actions
+
+| Action | Who controls it | Removes | Leaves | Timing |
+| --- | --- | --- | --- | --- |
+| Workspace retention | An admin, in **Data Retention** | Chats, project chats, grid reviews, legal research searches, and project activity | Documents and other project data | Choose a time frame below. Items older than the time frame are deleted after a 24-hour grace period. |
+| Remove a user | An admin, in **Users** | That person's access. The account is deactivated. | The account. Chats and projects stay associated with it. An admin can reactivate it. | On remove. Reactivation brings the same account back. |
+| Delete a document | A person deleting a file in a project knowledge base | That document | The rest of the project | Undo is available for a few seconds (about five). After that, the delete is permanent. |
+| Delete a project | A person who can delete that project (owner or co-owner) | Documents, chats, and grid reviews in the project. Collaborators lose access immediately. | The rest of the workspace | Permanent. Steps are on [Projects](/it/guides/projects). |
+| Contract end | Saga, after the contract ends. There is no admin-panel control. | Tenant data within 60 days. Backups within 36 days. | Not a per-user action | Platform logs are kept for 12 months. |
+
+## Workspace retention
+
+Admins set retention in the [admin panel](/it/guides/administration/admin-panel) under **Data Retention**.
+
+Unlimited is the default. With Unlimited, Saga does not delete activity on a schedule. The other values are 24 hours, 1 week, 1 month, 3 months, 6 months, and 12 months.
+
+When retention will remove a chat soon, Saga shows an expiry warning on the chat. The warning starts 14 days before deletion for 3, 6, and 12 month settings, 7 days before for 1 month, 2 days before for 1 week, and at once for 24 hours. See [Chat](/it/guides/chat).
+
+## Removing a user does not erase their data
+
+When a lawyer leaves the firm, an admin removes their account. Saga deactivates the account. The person cannot sign in. Their chats and projects stay with the account. If they return, an admin can reactivate the same account from **Users** in the [admin panel](/it/guides/administration/admin-panel). See [Troubleshooting](/it/guides/troubleshooting) for returning colleagues.
+
+There is no product control that erases one user's data while the workspace stays live.
+
+## When a contract ends
+
+When a Saga contract ends, Saga deletes the tenant's data within **60 days**. Backups of that data are purged within **36 days**. Platform logs are kept for **12 months**.
+
+Contract-end deletion is workspace-wide. It is not a way to erase one user.
+
+## Related pages
+
+- [Admin panel](/it/guides/administration/admin-panel)
+- [Enterprise](/it/guides/administration/enterprise)
+- [Projects](/it/guides/projects)

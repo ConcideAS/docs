@@ -1,0 +1,41 @@
+---
+title: Microsoft permissions
+---
+
+This page lists the Microsoft permissions Saga requests for workspace sign-in, the Word add-in, the Outlook add-in, and SharePoint. Word, Outlook, and workspace sign-in use one shared Microsoft Entra app. The application (client) ID is `16eb83a1-4679-4ecd-8217-f9d0118b70d3`. <!-- pragma: allowlist secret -->
+
+Sign-in steps differ by surface and stay on that surface's own page. Word's first sign-in is the magic link on [Word user setup](/it/guides/integrations/word-add-in/user-setup). Outlook uses **Sign in with Microsoft** on [Outlook user setup](/it/guides/integrations/outlook-add-in/user-setup). Workspace single sign-on is [SSO setup](/it/guides/administration/sso-setup).
+
+## Requested permissions
+
+| Surface | Office add-in permission | Requested scopes | Consent |
+| --- | --- | --- | --- |
+| Workspace sign-in | None | `openid`, `profile`, `email`, `offline_access`, `User.Read` | Customer IT consents the Entra app. Steps are on [SSO setup](/it/guides/administration/sso-setup). |
+| Word add-in | `ReadWriteDocument` | `profile`, `openid`, `User.Read`, `email`, `offline_access` | Same Entra app as workspace sign-in and Outlook. Deploy steps stay on [Word admin setup](/it/guides/integrations/word-add-in/admin-setup). |
+| Outlook add-in | `ReadWriteItem` | `profile`, `openid`, `User.Read`, `Mail.Read`, `email` | Same Entra app. The Outlook add-in manifest does not request `offline_access`. |
+| SharePoint | None | `Sites.Read.All` (delegated) | A tenant admin must consent. Import is one-way. Picker behavior stays on [SharePoint](/it/guides/integrations/sharepoint). |
+
+These Graph scopes are delegated. Saga acts as the signed-in person and can reach only what that person can already access in Microsoft 365.
+
+`Sites.Read.All` requires admin consent in the customer tenant. Until consent is granted, people may see an admin approval required message when they try to use SharePoint import.
+
+## Office add-in permissions
+
+| Add-in | Permission | What it allows |
+| --- | --- | --- |
+| Word | `ReadWriteDocument` | Read and write the open document |
+| Outlook | `ReadWriteItem` | Read and write the open mail item |
+
+These Office permissions apply only to the document or item open in the add-in. They are separate from the Microsoft Graph scopes above.
+
+## SharePoint access is read-only
+
+Saga copies documents from SharePoint into Saga. It does not write changes back to SharePoint. Updates in SharePoint do not appear in Saga until you import again. See [SharePoint](/it/guides/integrations/sharepoint).
+
+## Related pages
+
+- [Word add-in](/it/guides/integrations/word-add-in)
+- [Outlook add-in](/it/guides/integrations/outlook-add-in)
+- [SharePoint](/it/guides/integrations/sharepoint)
+- [SSO setup](/it/guides/administration/sso-setup)
+- [Admin panel](/it/guides/administration/admin-panel)
