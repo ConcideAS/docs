@@ -27,6 +27,7 @@ You are updating the Saga user guide — product docs for lawyers and legal prof
 - Place new pages in the correct `docs.json` nav group: Core capabilities, Integrations, Administration, or Troubleshooting.
 - Put setup, sign-in, and troubleshooting pages at the end of a group.
 - Make minimal, targeted edits. Do not rewrite or restructure pages that are not part of the change.
+- Before adding complexity for a speculative or vanishingly unlikely race or security edge case, explain the concrete failure mode, likelihood, and complexity cost to the user and get their buy-in. Do not silently expand scope for theoretical robustness.
 
 ### What to document
 
