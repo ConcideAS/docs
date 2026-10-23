@@ -57,6 +57,16 @@ Nach der Verbindung verfügt der Agent über diese Werkzeuge:
 | `list_project_documents` | Listet die Dokumente in einem Projekt auf. |
 | `search_project_documents` | Durchsucht die Wissensdatenbank eines Projekts und gibt die relevantesten Abschnitte zurück. |
 | `fetch_project_document` | Gibt den vollständigen Text eines Dokuments zurück. |
+| `list_project_folders` | Listet die Ordner und Tags der Wissensdatenbank eines Projekts auf, das Sie öffnen können. |
+| `list_project_memories` | Listet die kurzen Fakten auf, die im Projektgedächtnis eines Projekts gespeichert sind, das Sie öffnen können. |
+| `list_chats` | Listet die persönlichen Chats und Projekt-Chats auf, die Sie in der App öffnen können. Chats außerhalb der Aufbewahrungsfrist werden ausgelassen. |
+| `fetch_chat` | Gibt die Nachrichten eines persönlichen Chats oder Projekt-Chats zurück, den Sie öffnen können. Lange Chats werden auf das Token-Budget gekürzt. |
+| `list_grid_reviews` | Listet Ihre Rasterprüfungen auf. Übergeben Sie `project_id`, um nur die Prüfungen eines Projekts aufzulisten. |
+| `fetch_grid_review_answers` | Gibt die Antworten einer Rasterprüfung zurück, die Sie öffnen können. Große Prüfungen werden auf das Token-Budget gekürzt. |
+| `search_legal_research` | Durchsucht eine juristische Datenbank, auf die Sie Zugriff haben. Eine Rechtsordnung außerhalb Ihres Workspace wird abgelehnt. |
+| `list_workflow_runs` | Listet die Workflow-Läufe auf, die Sie gestartet haben. Verwenden Sie `get_workflow_status`, um einen Lauf zu lesen. |
+| `fetch_workflow` | Gibt die Schritte eines Workflows in Reihenfolge zurück. Für jeden Eingabeschritt zeigt es, was Sie angeben müssen und ob der Agent es über MCP angeben kann. |
+| `describe_action` | Erklärt, wie Sie die Saga-MCP-Werkzeuge verwenden. Ohne Argumente listet es jedes Werkzeug und die übliche Aufrufreihenfolge auf. Mit einem Werkzeugnamen gibt es die Eingaben, einen Beispielaufruf, die Rückgabe des Werkzeugs und den nächsten Aufruf zurück. |
 
 | `list_assistants` | Listet die aktiven benutzerdefinierten Assistenten in Ihrem Arbeitsbereich auf. |
 | `ask_saga_assistant` | Stellt einem benutzerdefinierten Assistenten eine Frage und wendet dessen Anweisungen an. |

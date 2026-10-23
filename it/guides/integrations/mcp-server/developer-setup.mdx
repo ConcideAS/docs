@@ -66,6 +66,16 @@ Una volta connesso, l'agente dispone di questi strumenti:
 | `fetch_workflow_step_result` | Restituisce l'output di un passaggio completato. |
 | `submit_workflow_input` | Risponde al passaggio in cui un'esecuzione è in attesa e continua l'esecuzione. |
 | `resume_workflow` | Avvia un'esecuzione che è stata creata ma mai iniziata. |
+| `list_project_folders` | Elenca le cartelle e i tag della knowledge base di un progetto che puoi aprire. |
+| `list_project_memories` | Elenca i fatti brevi salvati nella memoria di un progetto che puoi aprire. |
+| `list_chats` | Elenca le chat personali e le chat di progetto che puoi aprire nell'app. Le chat oltre il periodo di conservazione vengono omesse. |
+| `fetch_chat` | Restituisce i messaggi di una chat personale o di progetto che puoi aprire. Le chat lunghe vengono troncate al budget di token. |
+| `list_grid_reviews` | Elenca le tue revisioni a griglia. Passa `project_id` per elencare solo le revisioni di un progetto. |
+| `fetch_grid_review_answers` | Restituisce le risposte di una revisione a griglia che puoi aprire. Le revisioni grandi vengono troncate al budget di token. |
+| `search_legal_research` | Cerca in una banca dati giuridica a cui hai accesso. Una giurisdizione esterna al tuo workspace viene rifiutata. |
+| `list_workflow_runs` | Elenca le esecuzioni di flussi di lavoro che hai avviato. Usa `get_workflow_status` per leggere un'esecuzione. |
+| `fetch_workflow` | Restituisce i passaggi di un flusso di lavoro in ordine. Per ogni passaggio di input, mostra cosa devi fornire e se l'agente può fornirlo tramite MCP. |
+| `describe_action` | Spiega come usare gli strumenti MCP di Saga. Senza argomenti, elenca ogni strumento e l'ordine abituale delle chiamate. Con il nome di uno strumento, restituisce gli input, una chiamata di esempio, cosa restituisce lo strumento e cosa chiamare dopo. |
 
 Ogni strumento viene eseguito a tuo nome. L'agente vede solo i progetti, i documenti e i flussi di lavoro a cui il tuo account può già accedere — gli stessi permessi che hai nell'app web.
 

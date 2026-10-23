@@ -43,6 +43,8 @@ Steg delas in i två kategorier: **inmatningar** som samlar information från di
 | **Deep Web Research** | Kör en grundlig flerkällig webbsökningsomgång och returnerar en rapport med källhänvisningar (se [Deep web research](/sv/guides/chat/deep-research)) |
 | **Kodtolk** | Kör Python-kod för databearbetning, beräkningar eller analys |
 
+Ett **Kodtolk**-steg kan returnera filer, till exempel Excel- och CSV-filer, diagram och HTML-sidor. Filerna visas under **Slutgiltiga tillgångar** efter körningen. Se "Filer, diagram och HTML-sidor" i [chattöversikten](/sv/guides/chat) för förhandsvisning och nedladdning.
+
 ## Hur data flödar mellan steg
 
 Varje steg kan referera till resultatet av valfritt steg som kom före det. När du konfigurerar ett stegs instruktioner, skriv `@` för att nämna ett tidigare steg vid namn. Vid körning ersätts den omnämnandet med det faktiska resultatet från det steget.

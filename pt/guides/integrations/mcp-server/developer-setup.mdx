@@ -66,6 +66,16 @@ Uma vez ligado, o agente dispõe destas ferramentas:
 | `fetch_workflow_step_result` | Devolve o output de um passo concluído. |
 | `submit_workflow_input` | Responde ao passo em que uma execução está à espera e continua a execução. |
 | `resume_workflow` | Inicia uma execução que foi criada mas nunca iniciada. |
+| `list_project_folders` | Lista as pastas e etiquetas da base de conhecimento de um projeto que pode abrir. |
+| `list_project_memories` | Lista os factos curtos guardados na memória de um projeto que pode abrir. |
+| `list_chats` | Lista os chats pessoais e os chats de projeto que pode abrir na aplicação. Os chats fora do período de retenção são omitidos. |
+| `fetch_chat` | Devolve as mensagens de um chat pessoal ou de projeto que pode abrir. Os chats longos são truncados ao orçamento de tokens. |
+| `list_grid_reviews` | Lista as suas revisões em grelha. Passe `project_id` para listar apenas as revisões de um projeto. |
+| `fetch_grid_review_answers` | Devolve as respostas de uma revisão em grelha que pode abrir. As revisões grandes são truncadas ao orçamento de tokens. |
+| `search_legal_research` | Pesquisa numa base de dados jurídica a que tem acesso. Uma jurisdição fora do seu espaço de trabalho é recusada. |
+| `list_workflow_runs` | Lista as execuções de fluxos de trabalho que iniciou. Use `get_workflow_status` para ler uma execução. |
+| `fetch_workflow` | Devolve os passos de um fluxo de trabalho por ordem. Para cada passo de entrada, mostra o que tem de fornecer e se o agente o pode fornecer por MCP. |
+| `describe_action` | Explica como usar as ferramentas MCP do Saga. Sem argumentos, lista todas as ferramentas e a ordem habitual das chamadas. Com o nome de uma ferramenta, devolve as entradas, uma chamada de exemplo, o que a ferramenta devolve e o que chamar a seguir. |
 
 Cada ferramenta é executada em seu nome. O agente vê apenas os projetos, documentos e fluxos de trabalho a que a sua conta já pode aceder — as mesmas permissões que tem na aplicação web.
 
