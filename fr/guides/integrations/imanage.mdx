@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+L'intégration iManage vous permet d'importer des fichiers depuis iManage Work dans Saga. Vous connectez votre propre compte iManage, parcourez vos bibliothèques et ajoutez les fichiers dont vous avez besoin sans les télécharger puis les réimporter. Par exemple, vous pouvez récupérer les actes de procédure d'un dossier dans la base de connaissances du projet avant de demander à Saga de les résumer.
+
+## Où l'utiliser
+
+Lorsque votre administrateur a activé iManage, l'option **Importer depuis iManage** apparaît aux endroits suivants :
+
+- **Base de connaissances** : cliquez sur **Téléverser** et sélectionnez **Importer depuis iManage**
+- **Dossier de la base de connaissances** : ouvrez le menu d'un dossier et sélectionnez **Importer depuis iManage** pour ajouter les fichiers à ce dossier
+- **Chat** : cliquez sur le bouton de pièce jointe et sélectionnez **Importer depuis iManage**
+
+## Connecter votre compte
+
+La première fois que vous ouvrez le sélecteur iManage, cliquez sur **Connecter iManage** et connectez-vous avec votre compte iManage. Saga conserve la connexion pour votre compte, vous n'avez donc pas besoin de vous connecter à chaque fois. Pour vous déconnecter, cliquez sur **Se déconnecter** dans le sélecteur.
+
+## Parcourir et sélectionner des fichiers
+
+Une fois connecté, le sélecteur affiche vos **Bibliothèques** iManage. Choisissez une bibliothèque pour parcourir ses dossiers et fichiers, ou utilisez **Rechercher** pour trouver un document. Sélectionnez un ou plusieurs fichiers, puis cliquez sur **Ajouter des documents**. Le bouton indique combien de fichiers vous avez sélectionnés. {/* pragma: allowlist secret */}
+
+Les fichiers que Saga ne peut pas lire affichent **Type de fichier non pris en charge** et vous ne pouvez pas les sélectionner. Vous sélectionnez les fichiers un par un. Vous ne pouvez pas sélectionner un dossier entier.
+
+Les fichiers sont copiés dans Saga en import unidirectionnel. Les modifications que vous apportez dans Saga ne sont pas synchronisées vers iManage, et les mises à jour dans iManage n'apparaissent pas dans Saga. Si vous avez besoin d'une version plus récente, importez-la à nouveau.
+
+Si certains fichiers ne peuvent pas être téléchargés, Saga ajoute les autres et vous indique combien ont échoué. Sélectionnez les fichiers en échec et réessayez.
+
+## Configuration
+
+Votre administrateur configure iManage depuis le [panneau d'administration](/fr/guides/administration/admin-panel) sous **Intégrations**. L'administrateur active l'intégration et saisit ces valeurs depuis iManage Control Center :
+
+| Champ | Ce qu'il faut saisir |
+|---|---|
+| **Hôte Cloud** | Votre hôte iManage Work Cloud, par exemple `cloudimanage.com` |
+| **ID client** | L'ID client OAuth de l'application Saga dans iManage Control Center |
+| **Secret client** | Le secret client de cette application. Saga le stocke chiffré et ne l'affiche plus après l'enregistrement |
+| **Customer ID** | Facultatif. Votre ID client iManage |
+
+Cliquez sur **Copier l’URL de callback** et enregistrez l'URL dans l'application iManage. Cliquez sur **Tester la connexion** pour vérifier que Saga peut joindre l'hôte Cloud, puis cliquez sur **Enregistrer les modifications**.
+
+Si vous ne voyez pas l'option iManage lors de l'ajout de fichiers, demandez à votre administrateur de l'activer.

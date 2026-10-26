@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+The iManage integration lets you import files from iManage Work into Saga. You connect your own iManage account, browse your libraries, and add the files you need without downloading and uploading them again. For example, you can pull the pleadings for a matter into the project's knowledge base before you ask Saga to summarize them.
+
+## Where you can use it
+
+When your admin has turned on iManage, the **Upload from iManage** option appears in these places:
+
+- **Knowledge base**: click **Upload** and select **Upload from iManage**
+- **Knowledge base folder**: open a folder's menu and select **Upload from iManage** to add the files to that folder
+- **Chat**: click the attach button and select **Upload from iManage**
+
+## Connect your account
+
+The first time you open the iManage picker, click **Connect iManage** and sign in with your iManage account. Saga keeps the connection for your account, so you do not need to sign in each time. To disconnect, click **Log Out** in the picker.
+
+## Browse and select files
+
+After you connect, the picker shows your iManage **Libraries**. Choose a library to browse its matters and files, or use **Search** to find a document. Select one or more files, then click **Add Documents**. The button shows how many files you selected. {/* pragma: allowlist secret */}
+
+Files that Saga cannot read show **File type not supported** and you cannot select them. You select files one by one. You cannot select a whole folder.
+
+Files are copied into Saga as a one-way import. Changes you make in Saga do not sync back to iManage, and updates in iManage do not appear in Saga. If you need a newer version, import it again.
+
+If some files cannot be downloaded, Saga adds the others and tells you how many failed. Select the failed files and try again.
+
+## Setup
+
+Your admin sets up iManage in the [admin panel](/guides/administration/admin-panel) under **Integrations**. The admin turns on the integration and enters these values from iManage Control Center:
+
+| Field | What to enter |
+|---|---|
+| **Cloud host** | Your iManage Work Cloud host, for example `cloudimanage.com` |
+| **Client ID** | The OAuth client ID of the Saga application in iManage Control Center |
+| **Client secret** | The client secret of that application. Saga stores it encrypted and does not show it again after you save |
+| **Customer ID** | Optional. Your iManage customer ID |
+
+Click **Copy Callback URL** and register the URL on the iManage application. Click **Test Connection** to check that Saga can reach the Cloud host, then click **Save Changes**.
+
+If you don't see the iManage option when you add files, ask your admin to turn it on.

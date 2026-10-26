@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+iManage-integrationen låter dig importera dokument från iManage Work till Saga. Du ansluter ditt eget iManage-konto, bläddrar i dina bibliotek och lägger till de dokument du behöver utan att ladda ner och ladda upp dem igen. Du kan till exempel hämta inlagorna i ett ärende till projektets kunskapsbas innan du ber Saga att sammanfatta dem.
+
+## Var du kan använda det
+
+När din admin har aktiverat iManage visas alternativet **Ladda upp från iManage** på dessa ställen:
+
+- **Kunskapsbas**: klicka på **Ladda upp** och välj **Ladda upp från iManage**
+- **Mapp i kunskapsbasen**: öppna en mapps meny och välj **Ladda upp från iManage** för att lägga till dokumenten i den mappen
+- **Chatt**: klicka på bifoga-knappen och välj **Ladda upp från iManage**
+
+## Ansluta ditt konto
+
+Första gången du öppnar iManage-väljaren klickar du på **Anslut iManage** och loggar in med ditt iManage-konto. Saga sparar anslutningen för ditt konto, så du behöver inte logga in varje gång. För att koppla från klickar du på **Logga ut** i väljaren.
+
+## Bläddra och välja dokument
+
+När du har anslutit visar väljaren dina iManage-**Bibliotek**. Välj ett bibliotek för att bläddra bland dess ärenden och dokument, eller använd **Sök** för att hitta ett dokument. Välj ett eller flera dokument och klicka sedan på **Lägg till dokument**. Knappen visar hur många dokument du har valt.
+
+Dokument som Saga inte kan läsa visar **Filtypen stöds inte** och du kan inte välja dem. Du väljer dokument ett i taget. Du kan inte välja en hel mapp.
+
+Dokument kopieras till Saga som en envägsimport. Ändringar du gör i Saga synkroniseras inte tillbaka till iManage, och uppdateringar i iManage visas inte i Saga. Om du behöver en nyare version, importera den igen.
+
+Om vissa dokument inte kan laddas ner lägger Saga till de övriga och talar om hur många som misslyckades. Välj de dokument som misslyckades och försök igen.
+
+## Konfiguration
+
+Din admin konfigurerar iManage i [adminpanelen](/sv/guides/administration/admin-panel) under **Integrationer**. Admin aktiverar integrationen och anger dessa värden från iManage Control Center:
+
+| Fält | Vad du anger |
+|---|---|
+| **Cloud-värd** | Din iManage Work Cloud-värd, till exempel `cloudimanage.com` |
+| **Klient-ID** | OAuth-klient-ID:t för Saga-applikationen i iManage Control Center |
+| **Klienthemlighet** | Klienthemligheten för den applikationen. Saga lagrar den krypterad och visar den inte igen när du har sparat |
+| **Customer ID** | Valfritt. Ditt iManage-kund-ID |
+
+Klicka på **Kopiera callback-URL** och registrera URL:en i iManage-applikationen. Klicka på **Testa anslutning** för att kontrollera att Saga når Cloud-värden och klicka sedan på **Spara ändringar**.
+
+Om du inte ser iManage-alternativet när du lägger till dokument, be din admin att aktivera det.

@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+De iManage-integratie laat u documenten importeren vanuit iManage Work in Saga. U verbindt uw eigen iManage-account, bladert door uw bibliotheken en voegt de documenten toe die u nodig hebt, zonder ze te downloaden en opnieuw te uploaden. U kunt bijvoorbeeld de processtukken van een zaak in de kennisbank van het project zetten voordat u Saga vraagt ze samen te vatten.
+
+## Waar u het kunt gebruiken
+
+Wanneer uw beheerder iManage heeft ingeschakeld, verschijnt de optie **Uploaden vanuit iManage** op deze plaatsen:
+
+- **Kennisbank**: klik op **Uploaden** en selecteer **Uploaden vanuit iManage**
+- **Map in de kennisbank**: open het menu van een map en selecteer **Uploaden vanuit iManage** om de documenten aan die map toe te voegen
+- **Chat**: klik op de bijlageknop en selecteer **Uploaden vanuit iManage**
+
+## Uw account verbinden
+
+De eerste keer dat u de iManage-kiezer opent, klikt u op **iManage verbinden** en meldt u zich aan met uw iManage-account. Saga onthoudt de verbinding voor uw account, zodat u zich niet elke keer hoeft aan te melden. Om de verbinding te verbreken, klikt u in de kiezer op **Afmelden**.
+
+## Bladeren en documenten selecteren
+
+Nadat u verbinding hebt gemaakt, toont de kiezer uw iManage-**Bibliotheken**. Kies een bibliotheek om door de zaken en documenten te bladeren, of gebruik **Zoeken** om een document te vinden. Selecteer een of meer documenten en klik daarna op **Documenten toevoegen**. De knop toont hoeveel documenten u hebt geselecteerd.
+
+Documenten die Saga niet kan lezen, tonen **Bestandstype wordt niet ondersteund** en kunt u niet selecteren. U selecteert documenten een voor een. U kunt geen hele map selecteren.
+
+Documenten worden als eenrichtingsimport naar Saga gekopieerd. Wijzigingen die u in Saga aanbrengt, worden niet teruggesynchroniseerd naar iManage, en updates in iManage verschijnen niet in Saga. Als u een nieuwere versie nodig hebt, importeer deze dan opnieuw.
+
+Als sommige documenten niet kunnen worden gedownload, voegt Saga de andere toe en laat het u weten hoeveel er zijn mislukt. Selecteer de mislukte documenten en probeer het opnieuw.
+
+## Instelling
+
+Uw beheerder stelt iManage in vanuit het [beheerpaneel](/nl/guides/administration/admin-panel) onder **Integraties**. De beheerder schakelt de integratie in en voert deze waarden uit iManage Control Center in:
+
+| Veld | Wat u invoert |
+|---|---|
+| **Cloud-host** | Uw iManage Work Cloud-host, bijvoorbeeld `cloudimanage.com` |
+| **Client-ID** | De OAuth-client-ID van de Saga-applicatie in iManage Control Center |
+| **Clientgeheim** | Het clientgeheim van die applicatie. Saga slaat het versleuteld op en toont het niet meer nadat u hebt opgeslagen |
+| **Customer ID** | Optioneel. Uw iManage-klant-ID |
+
+Klik op **Callback-URL kopiëren** en registreer de URL bij de iManage-applicatie. Klik op **Verbinding testen** om te controleren of Saga de Cloud-host kan bereiken, en klik daarna op **Wijzigingen opslaan**.
+
+Als u de iManage-optie niet ziet bij het toevoegen van documenten, vraag uw beheerder om het in te schakelen.
