@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+iManage-integrasjonen lar deg importere dokumenter fra iManage Work inn i Saga. Du kobler til din egen iManage-konto, blar gjennom bibliotekene dine og legger til dokumentene du trenger uten å laste dem ned og opp på nytt. Du kan for eksempel hente prosesskrivene i en sak inn i prosjektets kunnskapsbase før du ber Saga om å oppsummere dem.
+
+## Hvor du kan bruke den
+
+Når administratoren din har slått på iManage, vises alternativet **Last opp fra iManage** på disse stedene:
+
+- **Kunnskapsbase**: klikk **Last opp** og velg **Last opp fra iManage**
+- **Mappe i kunnskapsbasen**: åpne menyen til en mappe og velg **Last opp fra iManage** for å legge dokumentene i den mappen
+- **Chat**: klikk vedleggsknappen og velg **Last opp fra iManage**
+
+## Koble til kontoen din
+
+Første gang du åpner iManage-velgeren, klikker du **Koble til iManage** og logger inn med iManage-kontoen din. Saga beholder tilkoblingen for kontoen din, så du trenger ikke å logge inn hver gang. For å koble fra klikker du **Logg ut** i velgeren.
+
+## Bla gjennom og velge dokumenter
+
+Når du har koblet til, viser velgeren iManage-**Biblioteker** dine. Velg et bibliotek for å bla gjennom sakene og dokumentene i det, eller bruk **Søk** for å finne et dokument. Velg ett eller flere dokumenter, og klikk deretter **Legg til dokumenter**. Knappen viser hvor mange dokumenter du har valgt.
+
+Dokumenter som Saga ikke kan lese, viser **Filtypen støttes ikke**, og du kan ikke velge dem. Du velger dokumenter ett og ett. Du kan ikke velge en hel mappe.
+
+Dokumenter kopieres inn i Saga som en enveisimport. Endringer du gjør i Saga synkroniseres ikke tilbake til iManage, og oppdateringer i iManage vises ikke i Saga. Hvis du trenger en nyere versjon, importer den på nytt.
+
+Hvis noen dokumenter ikke kan lastes ned, legger Saga til de andre og forteller deg hvor mange som mislyktes. Velg dokumentene som mislyktes, og prøv igjen.
+
+## Oppsett
+
+Administratoren din setter opp iManage i [administrasjonspanelet](/no/guides/administration/admin-panel) under **Integrasjoner**. Administratoren slår på integrasjonen og legger inn disse verdiene fra iManage Control Center:
+
+| Felt | Hva du legger inn |
+|---|---|
+| **Cloud-vert** | Din iManage Work Cloud-vert, for eksempel `cloudimanage.com` |
+| **Klient-ID** | OAuth-klient-ID-en til Saga-applikasjonen i iManage Control Center |
+| **Klienthemmelighet** | Klienthemmeligheten til den applikasjonen. Saga lagrer den kryptert og viser den ikke igjen etter at du har lagret |
+| **Customer ID** | Valgfritt. Din iManage-kunde-ID |
+
+Klikk **Kopier callback-URL** og registrer URL-en på iManage-applikasjonen. Klikk **Test tilkobling** for å sjekke at Saga når Cloud-verten, og klikk deretter **Lagre endringer**.
+
+Hvis du ikke ser iManage-alternativet når du legger til dokumenter, be administratoren din om å slå det på.

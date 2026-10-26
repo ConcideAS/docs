@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+Die iManage-Integration ermöglicht es Ihnen, Dokumente aus iManage Work in Saga zu importieren. Sie verbinden Ihr eigenes iManage-Konto, durchsuchen Ihre Bibliotheken und fügen die benötigten Dokumente hinzu, ohne sie herunterzuladen und erneut hochzuladen. Sie können zum Beispiel die Schriftsätze zu einem Mandat in die Wissensdatenbank des Projekts übernehmen, bevor Sie Saga bitten, sie zusammenzufassen.
+
+## Wo Sie die Integration nutzen können
+
+Wenn Ihr Administrator iManage eingeschaltet hat, erscheint die Option **Aus iManage hochladen** an diesen Stellen:
+
+- **Wissensdatenbank**: klicken Sie auf **Hochladen** und wählen Sie **Aus iManage hochladen**
+- **Ordner in der Wissensdatenbank**: öffnen Sie das Menü eines Ordners und wählen Sie **Aus iManage hochladen**, um die Dokumente diesem Ordner hinzuzufügen
+- **Chat**: klicken Sie auf die Anhängen-Schaltfläche und wählen Sie **Aus iManage hochladen**
+
+## Konto verbinden
+
+Wenn Sie die iManage-Auswahl zum ersten Mal öffnen, klicken Sie auf **iManage verbinden** und melden Sie sich mit Ihrem iManage-Konto an. Saga speichert die Verbindung für Ihr Konto, sodass Sie sich nicht jedes Mal anmelden müssen. Um die Verbindung zu trennen, klicken Sie in der Auswahl auf **Abmelden**.
+
+## Dokumente durchsuchen und auswählen
+
+Nach dem Verbinden zeigt die Auswahl Ihre iManage-**Bibliotheken**. Wählen Sie eine Bibliothek, um ihre Mandate und Dokumente zu durchsuchen, oder nutzen Sie **Suchen**, um ein Dokument zu finden. Wählen Sie ein oder mehrere Dokumente aus und klicken Sie dann auf **Dokumente hinzufügen**. Die Schaltfläche zeigt, wie viele Dokumente Sie ausgewählt haben.
+
+Dokumente, die Saga nicht lesen kann, zeigen **Dateityp wird nicht unterstützt** und lassen sich nicht auswählen. Sie wählen Dokumente einzeln aus. Einen ganzen Ordner können Sie nicht auswählen.
+
+Dokumente werden als Einweg-Import in Saga kopiert. Änderungen, die Sie in Saga vornehmen, werden nicht mit iManage synchronisiert, und Aktualisierungen in iManage erscheinen nicht in Saga. Wenn Sie eine neuere Version benötigen, importieren Sie sie erneut.
+
+Wenn einige Dokumente nicht heruntergeladen werden können, fügt Saga die übrigen hinzu und teilt Ihnen mit, wie viele fehlgeschlagen sind. Wählen Sie die fehlgeschlagenen Dokumente aus und versuchen Sie es erneut.
+
+## Einrichtung
+
+Ihr Administrator richtet iManage im [Admin-Bereich](/de/guides/administration/admin-panel) unter **Integrationen** ein. Der Administrator schaltet die Integration ein und gibt diese Werte aus dem iManage Control Center ein:
+
+| Feld | Was Sie eingeben |
+|---|---|
+| **Cloud-Host** | Ihr iManage Work Cloud-Host, zum Beispiel `cloudimanage.com` |
+| **Client-ID** | Die OAuth-Client-ID der Saga-Anwendung im iManage Control Center |
+| **Client-Geheimnis** | Das Client-Geheimnis dieser Anwendung. Saga speichert es verschlüsselt und zeigt es nach dem Speichern nicht mehr an |
+| **Customer ID** | Optional. Ihre iManage-Kunden-ID |
+
+Klicken Sie auf **Callback-URL kopieren** und registrieren Sie die URL in der iManage-Anwendung. Klicken Sie auf **Verbindung testen**, um zu prüfen, ob Saga den Cloud-Host erreicht, und klicken Sie dann auf **Änderungen speichern**.
+
+Wenn Sie die iManage-Option beim Hinzufügen von Dokumenten nicht sehen, bitten Sie Ihren Administrator, sie einzuschalten.

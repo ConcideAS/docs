@@ -1,0 +1,42 @@
+---
+title: iManage
+---
+
+iManage entegrasyonu, iManage Work'teki belgeleri Saga'ya aktarmanıza olanak tanır. Kendi iManage hesabınızı bağlar, kitaplıklarınıza göz atar ve ihtiyacınız olan belgeleri indirip yeniden yüklemeden eklersiniz. Örneğin, Saga'dan özetlemesini istemeden önce bir dosyanın dilekçelerini projenin bilgi tabanına çekebilirsiniz.
+
+## Nerede kullanabilirsiniz
+
+Yöneticiniz iManage'i açtığında **iManage’ten yükle** seçeneği şu yerlerde görünür:
+
+- **Bilgi tabanı**: **Yükle**'ye tıklayın ve **iManage’ten yükle**'yi seçin
+- **Bilgi tabanı klasörü**: bir klasörün menüsünü açın ve belgeleri o klasöre eklemek için **iManage’ten yükle**'yi seçin
+- **Sohbet**: ekleme düğmesine tıklayın ve **iManage’ten yükle**'yi seçin
+
+## Hesabınızı bağlama
+
+iManage seçiciyi ilk kez açtığınızda **iManage’e bağlan**'a tıklayın ve iManage hesabınızla oturum açın. Saga bağlantıyı hesabınız için saklar, bu yüzden her seferinde oturum açmanız gerekmez. Bağlantıyı kesmek için seçicide **Oturumu kapat**'a tıklayın.
+
+## Belgelere göz atma ve seçme
+
+Bağlandıktan sonra seçici iManage **Kitaplıklar** listenizi gösterir. Dosyalarına ve belgelerine göz atmak için bir kitaplık seçin ya da bir belgeyi bulmak için **Ara** alanını kullanın. Bir veya daha fazla belge seçin, ardından **Belgeleri ekle**'ye tıklayın. Düğme kaç belge seçtiğinizi gösterir.
+
+Saga'nın okuyamadığı belgelerde **Dosya türü desteklenmiyor** yazar ve bu belgeleri seçemezsiniz. Belgeleri tek tek seçersiniz. Bir klasörün tamamını seçemezsiniz.
+
+Belgeler tek yönlü bir içe aktarma olarak Saga'ya kopyalanır. Saga'da yaptığınız değişiklikler iManage'e geri senkronize edilmez ve iManage'teki güncellemeler Saga'da görünmez. Daha yeni bir sürüme ihtiyacınız varsa, tekrar içe aktarın.
+
+Bazı belgeler indirilemezse Saga diğerlerini ekler ve kaç tanesinin başarısız olduğunu size bildirir. Başarısız olan belgeleri seçin ve tekrar deneyin.
+
+## Kurulum
+
+Yöneticiniz iManage'i [yönetim paneli](/tr/guides/administration/admin-panel)nde **Entegrasyonlar** altında kurar. Yönetici entegrasyonu açar ve iManage Control Center'dan şu değerleri girer:
+
+| Alan | Ne girilir |
+|---|---|
+| **Cloud ana bilgisayarı** | iManage Work Cloud ana bilgisayarınız, örneğin `cloudimanage.com` |
+| **İstemci kimliği** | iManage Control Center'daki Saga uygulamasının OAuth istemci kimliği |
+| **İstemci gizli anahtarı** | Bu uygulamanın istemci gizli anahtarı. Saga bunu şifreli olarak saklar ve kaydettikten sonra tekrar göstermez |
+| **Customer ID** | İsteğe bağlı. iManage müşteri kimliğiniz |
+
+**Callback URL’sini kopyala**'ya tıklayın ve URL'yi iManage uygulamasına kaydedin. Saga'nın Cloud ana bilgisayarına erişebildiğini kontrol etmek için **Bağlantıyı test et**'e tıklayın, ardından **Değişiklikleri Kaydet**'e tıklayın.
+
+Belge eklerken iManage seçeneğini görmüyorsanız, yöneticinizden açmasını isteyin.

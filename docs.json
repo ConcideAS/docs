@@ -106,6 +106,7 @@
                   "guides/integrations/sharepoint",
                   "guides/integrations/epona",
                   "guides/integrations/netdocuments",
+                  "guides/integrations/imanage",
                   "guides/integrations/dillien"
                 ]
               },
@@ -234,6 +235,7 @@
                   "no/guides/integrations/sharepoint",
                   "no/guides/integrations/epona",
                   "no/guides/integrations/netdocuments",
+                  "no/guides/integrations/imanage",
                   "no/guides/integrations/dillien"
                 ]
               },
@@ -360,6 +362,7 @@
                   "nl/guides/integrations/sharepoint",
                   "nl/guides/integrations/epona",
                   "nl/guides/integrations/netdocuments",
+                  "nl/guides/integrations/imanage",
                   "nl/guides/integrations/dillien"
                 ]
               },
@@ -486,6 +489,7 @@
                   "pl/guides/integrations/sharepoint",
                   "pl/guides/integrations/epona",
                   "pl/guides/integrations/netdocuments",
+                  "pl/guides/integrations/imanage",
                   "pl/guides/integrations/dillien"
                 ]
               },
@@ -612,6 +616,7 @@
                   "es/guides/integrations/sharepoint",
                   "es/guides/integrations/epona",
                   "es/guides/integrations/netdocuments",
+                  "es/guides/integrations/imanage",
                   "es/guides/integrations/dillien"
                 ]
               },
@@ -738,6 +743,7 @@
                   "de/guides/integrations/sharepoint",
                   "de/guides/integrations/epona",
                   "de/guides/integrations/netdocuments",
+                  "de/guides/integrations/imanage",
                   "de/guides/integrations/dillien"
                 ]
               },
@@ -864,6 +870,7 @@
                   "it/guides/integrations/sharepoint",
                   "it/guides/integrations/epona",
                   "it/guides/integrations/netdocuments",
+                  "it/guides/integrations/imanage",
                   "it/guides/integrations/dillien"
                 ]
               },
@@ -990,6 +997,7 @@
                   "pt/guides/integrations/sharepoint",
                   "pt/guides/integrations/epona",
                   "pt/guides/integrations/netdocuments",
+                  "pt/guides/integrations/imanage",
                   "pt/guides/integrations/dillien"
                 ]
               },
@@ -1116,6 +1124,7 @@
                   "tr/guides/integrations/sharepoint",
                   "tr/guides/integrations/epona",
                   "tr/guides/integrations/netdocuments",
+                  "tr/guides/integrations/imanage",
                   "tr/guides/integrations/dillien"
                 ]
               },
@@ -1242,6 +1251,7 @@
                   "fr/guides/integrations/sharepoint",
                   "fr/guides/integrations/epona",
                   "fr/guides/integrations/netdocuments",
+                  "fr/guides/integrations/imanage",
                   "fr/guides/integrations/dillien"
                 ]
               },
@@ -1368,6 +1378,7 @@
                   "sv/guides/integrations/sharepoint",
                   "sv/guides/integrations/epona",
                   "sv/guides/integrations/netdocuments",
+                  "sv/guides/integrations/imanage",
                   "sv/guides/integrations/dillien"
                 ]
               },
