@@ -103,6 +103,27 @@ Wersje robocze zachowują cytowania, gdy pobierasz je jako pliki Word, PDF lub U
 
 Podczas edycji wersji roboczej w panelu bocznym użyj **Text color** na pasku narzędzi, aby pokolorować tekst (automatyczny, czerwony, pomarańczowy, zielony, niebieski, fioletowy lub szary). Kolor zostaje zachowany w plikach Word i PDF. Użyj **Insert image** albo wklej obraz, aby dodać do wersji roboczej obraz PNG, JPEG, GIF lub WebP. Menu wersji oznacza każdą wersję jej numerem, tym samym, który pokazuje czat, i wskazuje otwartą wersję.
 
+## Pliki, wykresy i strony HTML
+
+Saga może uruchamiać kod Python na danych, które jej przekażesz. Użyj tego do analizy danych, statystyk i obliczeń na arkuszu kalkulacyjnym lub pliku CSV oraz do wykresów wyników. Dołącz pliki do czatu i opisz, jakiego wyniku oczekujesz. Saga pisze kod, uruchamia go w bezpiecznym, odizolowanym środowisku (sandbox) i dołącza wynik do czatu.
+
+Saga może tworzyć takie pliki:
+
+- Tabele i arkusze Excel, na przykład oczyszczone lub połączone dane
+- Wykresy Twoich danych
+- Prezentacje PowerPoint
+- Strony HTML, na przykład oś czasu lub interaktywny dashboard z filtrami i wykresami
+
+Na przykład dołącz eksport faktur i poproś: „Utwórz interaktywny dashboard HTML tych faktur z filtrem według klienta i wykresem sum za każdy miesiąc.”
+
+Każdy plik pojawia się jako znacznik pod odpowiedzią. Kliknij znacznik, aby otworzyć podgląd. Saga pokazuje podgląd plików Excel i CSV, obrazów oraz stron HTML. W podglądzie strony HTML działają filtry, przyciski i interaktywne wykresy. Aby zapisać plik, najedź kursorem na znacznik i kliknij ikonę pobierania.
+
+Wykresy i strony HTML używają czcionek i kolorów, które administrator ustawia w [Stylu dokumentów](/pl/guides/administration/document-styling).
+
+Dashboard lub wykres pokazuje dane, które przekazałeś, w chwili, gdy Saga uruchomiła kod. Nie jest to dashboard na żywo. Nie łączy się z Twoimi innymi systemami, Saga nie publikuje go pod adresem internetowym i nie odświeża się on sam. Aby go zaktualizować, dołącz nowe dane i poproś ponownie.
+
+Gdy **Drafting** jest wyłączone w **Ustawienia > AI Permissions**, Saga nie tworzy dokumentów Word ani prezentacji PowerPoint. Nadal może analizować dane oraz tworzyć arkusze kalkulacyjne, wykresy i strony HTML.
+
 ## Panel boczny
 
 Gdy dokument jest otwarty w panelu bocznym obok czatu, przeciągnij separator między czatem a panelem, aby poszerzyć lub zwęzić dokument. Czat zajmuje pozostałą szerokość. Panel nie może być węższy niż jego domyślna szerokość, a czatowi zawsze zostaje dość miejsca, aby można było z niego korzystać. Kliknij dwukrotnie separator, aby wrócić do domyślnej szerokości.

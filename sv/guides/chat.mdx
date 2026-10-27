@@ -103,6 +103,27 @@ Utkast behåller sina källhänvisningar när du laddar ned dem som Word, PDF el
 
 När du redigerar ett utkast i sidpanelen använder du **Text color** i verktygsfältet för att färga text (automatisk, röd, orange, grön, blå, lila eller grå). Färgen behålls i Word- och PDF-nedladdningar. Använd **Insert image**, eller klistra in en bild, för att lägga till en PNG-, JPEG-, GIF- eller WebP-bild i utkastet. Versionsmenyn visar varje version med dess nummer, samma nummer som chatten visar, och markerar den öppna versionen.
 
+## Filer, diagram och HTML-sidor
+
+Saga kan köra Python-kod på data som du ger den. Använd detta för dataanalys, statistik och beräkningar på ett kalkylark eller en CSV-fil, och för diagram över resultaten. Bifoga filerna i chatten och beskriv resultatet du vill ha. Saga skriver koden, kör den i en säker sandlåda och bifogar resultatet i chatten.
+
+Saga kan skapa dessa filer:
+
+- Tabeller och Excel-filer, till exempel rensade eller sammanslagna data
+- Diagram över dina data
+- PowerPoint-presentationer
+- HTML-sidor, till exempel en tidslinje eller en interaktiv dashboard med filter och diagram
+
+Bifoga till exempel en fakturaexport och fråga: "Gör en interaktiv HTML-dashboard över de här fakturorna med ett filter per klient och ett diagram över summorna per månad."
+
+Varje fil visas som en markering under svaret. Klicka på markeringen för att öppna en förhandsvisning. Saga förhandsvisar Excel- och CSV-filer, bilder och HTML-sidor. I förhandsvisningen av en HTML-sida fungerar filtren, knapparna och de interaktiva diagrammen. För att spara en fil håller du muspekaren över markeringen och klickar på nedladdningsikonen.
+
+Diagram och HTML-sidor använder de typsnitt och färger som din administratör anger i [Dokumentstil](/sv/guides/administration/document-styling).
+
+En dashboard eller ett diagram visar de data som du gav, vid den tidpunkt då Saga körde koden. Det är ingen livedashboard. Den ansluter inte till dina andra system, Saga publicerar den inte på en webbadress och den uppdateras inte av sig själv. För att uppdatera den bifogar du de nya data och frågar igen.
+
+När **Drafting** är avstängt under **Inställningar > AI Permissions** skapar Saga inte Word-dokument eller PowerPoint-presentationer. Saga kan fortfarande analysera data och skapa kalkylark, diagram och HTML-sidor.
+
 ## Sidpanelen
 
 När ett dokument är öppet i sidpanelen bredvid chatten, dra skiljelinjen mellan chatten och panelen för att göra dokumentet bredare eller smalare. Chatten behåller resten av bredden. Panelen blir inte smalare än sin standardbredd, och chatten har alltid tillräckligt med utrymme för att förbli användbar. Dubbelklicka på skiljelinjen för att återgå till standardbredden.

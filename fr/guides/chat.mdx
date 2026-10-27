@@ -103,6 +103,27 @@ Les brouillons conservent leurs citations lorsque vous les téléchargez au form
 
 Lorsque vous modifiez un brouillon dans le panneau latéral, utilisez **Text color** dans la barre d'outils pour colorer le texte (automatique, rouge, orange, vert, bleu, violet ou gris). La couleur est conservée dans les téléchargements Word et PDF. Utilisez **Insert image**, ou collez une image, pour ajouter une image PNG, JPEG, GIF ou WebP au brouillon. Le menu des versions identifie chaque version par son numéro, le même que celui affiché dans le chat, et signale la version ouverte.
 
+## Fichiers, graphiques et pages HTML
+
+Saga peut exécuter du code Python sur les données que vous lui fournissez. Utilisez cette fonction pour l'analyse de données, les statistiques et les calculs sur un tableur ou un fichier CSV, et pour des graphiques des résultats. Joignez les fichiers au chat et décrivez le résultat souhaité. Saga écrit le code, l'exécute dans un environnement isolé et sécurisé, puis joint le résultat au chat.
+
+Saga peut créer ces fichiers :
+
+- Des tableaux et des fichiers Excel, par exemple des données nettoyées ou combinées
+- Des graphiques de vos données
+- Des présentations PowerPoint
+- Des pages HTML, par exemple une chronologie ou un tableau de bord (dashboard) interactif avec des filtres et des graphiques
+
+Par exemple, joignez un export de factures et demandez : « Crée un dashboard HTML interactif de ces factures avec un filtre par client et un graphique des totaux par mois. »
+
+Chaque fichier apparaît sous forme de pastille sous la réponse. Cliquez sur la pastille pour ouvrir un aperçu. Saga affiche un aperçu des fichiers Excel et CSV, des images et des pages HTML. Dans l'aperçu d'une page HTML, les filtres, les boutons et les graphiques interactifs fonctionnent. Pour enregistrer un fichier, survolez la pastille et cliquez sur l'icône de téléchargement.
+
+Les graphiques et les pages HTML utilisent les polices et les couleurs que votre administrateur définit dans [Style des documents](/fr/guides/administration/document-styling).
+
+Un dashboard ou un graphique montre les données que vous avez fournies, au moment où Saga a exécuté le code. Ce n'est pas un dashboard en temps réel. Il ne se connecte pas à vos autres systèmes, Saga ne l'héberge pas à une adresse web et il ne se met pas à jour tout seul. Pour le mettre à jour, joignez les nouvelles données et redemandez.
+
+Lorsque **Drafting** est désactivé dans **Paramètres > AI Permissions**, Saga ne crée pas de documents Word ni de présentations PowerPoint. Saga peut toujours analyser des données et créer des tableurs, des graphiques et des pages HTML.
+
 ## Le panneau latéral
 
 Lorsqu'un document est ouvert dans le panneau latéral à côté du chat, faites glisser le séparateur entre le chat et le panneau pour élargir ou rétrécir le document. Le chat occupe le reste de la largeur. Le panneau ne devient pas plus étroit que sa largeur par défaut, et le chat conserve toujours assez de place pour rester utilisable. Double-cliquez sur le séparateur pour revenir à la largeur par défaut.

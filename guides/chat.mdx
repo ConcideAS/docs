@@ -107,6 +107,27 @@ Drafts keep their citations when you download them as Word, PDF, or UDF, and whe
 
 When you edit a draft in the side panel, use **Text color** in the toolbar to color text (Automatic, red, orange, green, blue, purple, or gray). The color stays in Word and PDF downloads. Use **Insert image**, or paste an image, to add a PNG, JPEG, GIF, or WebP image to the draft. The version menu labels each version by its number, the same number the chat shows, and marks the version that is open.
 
+## Files, charts and HTML pages
+
+Saga can run Python code on data that you give it. Use this for data analysis, statistics, and calculations on a spreadsheet or a CSV file, and for charts of the results. Attach the files to the chat and describe the result that you want. Saga writes the code, runs it in a secure sandbox, and attaches the output to the chat.
+
+Saga can create these files:
+
+- Tables and Excel spreadsheets, for example cleaned or combined data
+- Charts of your data
+- PowerPoint presentations
+- HTML pages, for example a timeline or an interactive dashboard with filters and charts
+
+For example, attach an invoice export and ask: "Make an interactive HTML dashboard of these invoices with a filter by client and a chart of the totals per month."
+
+Each file appears as a chip below the answer. Click the chip to open a preview. Saga previews Excel and CSV files, images, and HTML pages. In the preview of an HTML page, the filters, buttons, and interactive charts work. To save a file, hover over the chip and click the download icon.
+
+Charts and HTML pages use the fonts and colors that your admin sets in [Document Styling](/guides/administration/document-styling).
+
+A dashboard or a chart shows the data that you supplied, at the time Saga ran the code. It is not a live dashboard. It does not connect to your other systems, Saga does not host it on a web address, and it does not refresh on its own. To update it, attach the new data and ask again.
+
+With **Drafting** off in **Settings > AI Permissions**, Saga does not create Word documents or PowerPoint presentations. It can still analyze data and create spreadsheets, charts, and HTML pages.
+
 ## The side panel
 
 When a document is open in the side panel beside the chat, drag the divider between the chat and the panel to make the document wider or narrower. The chat keeps the rest of the width. The panel does not get narrower than its default width, and the chat always keeps enough room to stay usable. Double-click the divider to go back to the default width.

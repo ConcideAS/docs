@@ -103,6 +103,27 @@ Os rascunhos mantêm as citações quando os descarrega em Word, PDF ou UDF e qu
 
 Ao editar um rascunho no painel lateral, use **Text color** na barra de ferramentas para colorir texto (automático, vermelho, laranja, verde, azul, roxo ou cinzento). A cor mantém-se nas transferências em Word e PDF. Use **Insert image**, ou cole uma imagem, para adicionar uma imagem PNG, JPEG, GIF ou WebP ao rascunho. O menu de versões identifica cada versão pelo seu número, o mesmo que o chat mostra, e assinala a versão aberta.
 
+## Ficheiros, gráficos e páginas HTML
+
+O Saga pode executar código Python sobre os dados que lhe fornece. Use esta função para análise de dados, estatísticas e cálculos sobre uma folha de cálculo ou um ficheiro CSV, e para gráficos dos resultados. Anexe os ficheiros ao chat e descreva o resultado que pretende. O Saga escreve o código, executa-o num ambiente isolado e seguro e anexa o resultado ao chat.
+
+O Saga pode criar estes ficheiros:
+
+- Tabelas e folhas de cálculo Excel, por exemplo dados limpos ou combinados
+- Gráficos dos seus dados
+- Apresentações PowerPoint
+- Páginas HTML, por exemplo uma cronologia ou um painel interativo (dashboard) com filtros e gráficos
+
+Por exemplo, anexe uma exportação de faturas e peça: "Cria um dashboard HTML interativo destas faturas com um filtro por cliente e um gráfico dos totais por mês."
+
+Cada ficheiro aparece como um indicador abaixo da resposta. Clique no indicador para abrir uma pré-visualização. O Saga pré-visualiza ficheiros Excel e CSV, imagens e páginas HTML. Na pré-visualização de uma página HTML, os filtros, os botões e os gráficos interativos funcionam. Para guardar um ficheiro, passe o cursor sobre o indicador e clique no ícone de transferência.
+
+Os gráficos e as páginas HTML usam os tipos de letra e as cores que o seu administrador define em [Estilo dos documentos](/pt/guides/administration/document-styling).
+
+Um dashboard ou um gráfico mostra os dados que forneceu, no momento em que o Saga executou o código. Não é um dashboard em tempo real. Não se liga aos seus outros sistemas, o Saga não o publica num endereço web e não se atualiza sozinho. Para o atualizar, anexe os novos dados e peça novamente.
+
+Com **Drafting** desativado em **Definições > AI Permissions**, o Saga não cria documentos Word nem apresentações PowerPoint. Continua a poder analisar dados e criar folhas de cálculo, gráficos e páginas HTML.
+
 ## O painel lateral
 
 Quando um documento está aberto no painel lateral ao lado do chat, arraste o divisor entre o chat e o painel para tornar o documento mais largo ou mais estreito. O chat fica com o resto da largura. O painel não fica mais estreito do que a sua largura predefinida, e o chat mantém sempre espaço suficiente para continuar utilizável. Faça duplo clique no divisor para voltar à largura predefinida.

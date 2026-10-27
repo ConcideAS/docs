@@ -66,8 +66,18 @@ Po połączeniu agent ma dostęp do następujących narzędzi:
 | `resume_workflow` | Wznawia przepływ pracy gotowy do kontynuacji. |
 | `list_workflows` | Wyświetla Twoje przepływy pracy oraz dane wejściowe oczekiwane przez każdy z nich. |
 | `execute_workflow` | Uruchamia przepływ pracy z wejściami tekstowymi i zwraca wynik. |
+| `list_project_folders` | Wyświetla foldery i tagi bazy wiedzy projektu, który możesz otworzyć. |
+| `list_project_memories` | Wyświetla krótkie fakty zapisane w pamięci projektu, który możesz otworzyć. |
+| `list_chats` | Wyświetla czaty osobiste i czaty projektów, które możesz otworzyć w aplikacji. Czaty poza okresem przechowywania są pomijane. |
+| `fetch_chat` | Zwraca wiadomości jednego czatu osobistego lub czatu projektu, który możesz otworzyć. Długie czaty są przycinane do budżetu tokenów. |
+| `list_grid_reviews` | Wyświetla Twoje przeglądy tabelaryczne. Przekaż `project_id`, aby wyświetlić tylko przeglądy jednego projektu. |
+| `fetch_grid_review_answers` | Zwraca odpowiedzi jednego przeglądu tabelarycznego, który możesz otworzyć. Duże przeglądy są przycinane do budżetu tokenów. |
+| `search_legal_research` | Przeszukuje jedną prawniczą bazę danych, do której masz dostęp. Jurysdykcja spoza Twojego obszaru roboczego jest odrzucana. |
+| `list_workflow_runs` | Wyświetla uruchomienia przepływów pracy, które rozpocząłeś. Użyj `get_workflow_status`, aby odczytać jedno uruchomienie. |
+| `fetch_workflow` | Zwraca kroki przepływu pracy w kolejności. Dla każdego kroku wejściowego pokazuje, co musisz podać i czy agent może to podać przez MCP. |
+| `describe_action` | Wyjaśnia, jak używać narzędzi MCP Saga. Bez argumentów wyświetla każde narzędzie i zwykłą kolejność wywołań. Z nazwą narzędzia zwraca dane wejściowe, przykładowe wywołanie, to, co zwraca narzędzie, i co wywołać dalej. |
 
-Każde narzędzie działa w Twoim imieniu. Agent widzi tylko projekty, dokumenty i przepływy pracy, do których Twoje konto ma już dostęp — z tymi samymi uprawnieniami, które masz w aplikacji internetowej.
+Każde narzędzie działa w Twoim imieniu. Agent widzi tylko projekty, dokumenty, czaty, przeglądy tabelaryczne i przepływy pracy, do których Twoje konto ma już dostęp — z tymi samymi uprawnieniami, które masz w aplikacji internetowej.
 
 ## Bezpieczeństwo
 

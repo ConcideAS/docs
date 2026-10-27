@@ -103,6 +103,27 @@ Entwürfe behalten ihre Quellenverweise, wenn Sie sie als Word, PDF oder UDF her
 
 Wenn Sie einen Entwurf im Seitenbereich bearbeiten, färben Sie Text mit **Text color** in der Symbolleiste ein (Automatisch, Rot, Orange, Grün, Blau, Lila oder Grau). Die Farbe bleibt in Word- und PDF-Downloads erhalten. Mit **Insert image** oder durch Einfügen fügen Sie dem Entwurf ein Bild im Format PNG, JPEG, GIF oder WebP hinzu. Das Versionsmenü bezeichnet jede Version mit ihrer Nummer, derselben Nummer wie im Chat, und markiert die geöffnete Version.
 
+## Dateien, Diagramme und HTML-Seiten
+
+Saga kann Python-Code auf Daten ausführen, die Sie bereitstellen. Nutzen Sie dies für Datenanalysen, Statistiken und Berechnungen mit einer Tabelle oder einer CSV-Datei und für Diagramme der Ergebnisse. Hängen Sie die Dateien an den Chat an und beschreiben Sie das gewünschte Ergebnis. Saga schreibt den Code, führt ihn in einer sicheren Sandbox aus und hängt die Ausgabe an den Chat an.
+
+Saga kann diese Dateien erstellen:
+
+- Tabellen und Excel-Dateien, zum Beispiel bereinigte oder zusammengeführte Daten
+- Diagramme Ihrer Daten
+- PowerPoint-Präsentationen
+- HTML-Seiten, zum Beispiel eine Zeitleiste oder ein interaktives Dashboard mit Filtern und Diagrammen
+
+Hängen Sie zum Beispiel einen Rechnungsexport an und fragen Sie: „Erstelle ein interaktives HTML-Dashboard dieser Rechnungen mit einem Filter nach Mandant und einem Diagramm der Summen pro Monat.“
+
+Jede Datei erscheint als Chip unter der Antwort. Klicken Sie auf den Chip, um eine Vorschau zu öffnen. Saga zeigt eine Vorschau für Excel- und CSV-Dateien, Bilder und HTML-Seiten. In der Vorschau einer HTML-Seite funktionieren Filter, Schaltflächen und interaktive Diagramme. Um eine Datei zu speichern, bewegen Sie den Mauszeiger über den Chip und klicken Sie auf das Download-Symbol.
+
+Diagramme und HTML-Seiten verwenden die Schriftarten und Farben, die Ihr Administrator unter [Dokumentstil](/de/guides/administration/document-styling) festlegt.
+
+Ein Dashboard oder ein Diagramm zeigt die Daten, die Sie bereitgestellt haben, zum Zeitpunkt der Codeausführung. Es ist kein Live-Dashboard. Es ist nicht mit Ihren anderen Systemen verbunden, Saga stellt es nicht unter einer Webadresse bereit, und es aktualisiert sich nicht von selbst. Um es zu aktualisieren, hängen Sie die neuen Daten an und fragen Sie erneut.
+
+Wenn **Drafting** unter **Einstellungen > AI Permissions** ausgeschaltet ist, erstellt Saga keine Word-Dokumente und keine PowerPoint-Präsentationen. Saga kann weiterhin Daten analysieren und Tabellen, Diagramme und HTML-Seiten erstellen.
+
 ## Der Seitenbereich
 
 Wenn ein Dokument im Seitenbereich neben dem Chat geöffnet ist, ziehen Sie die Trennlinie zwischen Chat und Seitenbereich, um das Dokument breiter oder schmaler zu machen. Der Chat behält die restliche Breite. Der Seitenbereich wird nicht schmaler als seine Standardbreite, und der Chat behält immer genug Platz, um nutzbar zu bleiben. Doppelklicken Sie auf die Trennlinie, um zur Standardbreite zurückzukehren.
