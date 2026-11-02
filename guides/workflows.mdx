@@ -43,6 +43,8 @@ Steps fall into two categories: **inputs** that collect information from you, an
 | **Deep Web Research** | Runs a thorough multi-source web research pass and returns a cited report (see [Deep web research](/guides/chat/deep-research)) |
 | **Code interpreter** | Executes Python code for data processing, calculations, or analysis |
 
+A **Code interpreter** step can return files, such as Excel and CSV files, charts, and HTML pages. The files appear in **Final assets** after the run. For previews and downloads, see "Files, charts and HTML pages" in the [Chat overview](/guides/chat).
+
 ## How data flows between steps
 
 Each step can reference the output of any step that came before it. When you're configuring a step's instructions, type `@` to mention a previous step by name. At runtime, that mention is replaced with the actual output from that step.

@@ -66,8 +66,18 @@ Une fois connecté, l'agent dispose de ces outils :
 | `fetch_workflow_step_result` | Renvoie le résultat d'une étape terminée. |
 | `submit_workflow_input` | Répond à l'étape où une exécution attend et continue l'exécution. |
 | `resume_workflow` | Démarre une exécution qui a été créée mais jamais lancée. |
+| `list_project_folders` | Liste les dossiers et les tags de la base de connaissances d'un projet que vous pouvez ouvrir. |
+| `list_project_memories` | Liste les faits courts enregistrés dans la mémoire d'un projet que vous pouvez ouvrir. |
+| `list_chats` | Liste les chats personnels et les chats de projet que vous pouvez ouvrir dans l'application. Les chats au-delà de la durée de conservation sont omis. |
+| `fetch_chat` | Renvoie les messages d'un chat personnel ou de projet que vous pouvez ouvrir. Les longs chats sont tronqués au budget de tokens. |
+| `list_grid_reviews` | Liste vos revues en grille. Passez `project_id` pour lister uniquement les revues d'un projet. |
+| `fetch_grid_review_answers` | Renvoie les réponses d'une revue en grille que vous pouvez ouvrir. Les grandes revues sont tronquées au budget de tokens. |
+| `search_legal_research` | Recherche dans une base de données juridique à laquelle vous avez accès. Une juridiction hors de votre espace de travail est refusée. |
+| `list_workflow_runs` | Liste les exécutions de workflows que vous avez lancées. Utilisez `get_workflow_status` pour lire une exécution. |
+| `fetch_workflow` | Renvoie les étapes d'un workflow dans l'ordre. Pour chaque étape d'entrée, il indique ce que vous devez fournir et si l'agent peut le fournir via MCP. |
+| `describe_action` | Explique comment utiliser les outils MCP de Saga. Sans argument, il liste chaque outil et l'ordre d'appel habituel. Avec un nom d'outil, il renvoie les entrées, un exemple d'appel, ce que l'outil renvoie et ce qu'il faut appeler ensuite. |
 
-Chaque outil s'exécute en votre nom. L'agent ne voit que les projets, documents et workflows auxquels votre compte a déjà accès — les mêmes autorisations que celles dont vous disposez dans l'application web.
+Chaque outil s'exécute en votre nom. L'agent ne voit que les projets, documents, chats, revues en grille et workflows auxquels votre compte a déjà accès — les mêmes autorisations que celles dont vous disposez dans l'application web.
 
 ## Sécurité
 

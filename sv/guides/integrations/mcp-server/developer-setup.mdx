@@ -66,8 +66,18 @@ När den är ansluten har agenten dessa verktyg:
 | `resume_workflow` | Återupptar ett arbetsflöde som är redo att fortsätta. |
 | `list_workflows` | Listar dina arbetsflöden och de indata vart och ett förväntar sig. |
 | `execute_workflow` | Kör ett arbetsflöde med textindata och returnerar resultatet. |
+| `list_project_folders` | Listar mapparna och taggarna i kunskapsbasen för ett projekt som du kan öppna. |
+| `list_project_memories` | Listar de korta fakta som sparats i projektminnet för ett projekt som du kan öppna. |
+| `list_chats` | Listar de personliga chattarna och projektchattarna som du kan öppna i appen. Chattar utanför lagringstiden utelämnas. |
+| `fetch_chat` | Returnerar meddelandena i en personlig chatt eller projektchatt som du kan öppna. Långa chattar kortas till tokenbudgeten. |
+| `list_grid_reviews` | Listar dina tabellgranskningar. Skicka `project_id` för att bara lista granskningarna i ett projekt. |
+| `fetch_grid_review_answers` | Returnerar svaren i en tabellgranskning som du kan öppna. Stora granskningar kortas till tokenbudgeten. |
+| `search_legal_research` | Söker i en juridisk databas som du har åtkomst till. En jurisdiktion utanför din arbetsyta avvisas. |
+| `list_workflow_runs` | Listar de arbetsflödeskörningar som du har startat. Använd `get_workflow_status` för att läsa en körning. |
+| `fetch_workflow` | Returnerar stegen i ett arbetsflöde i ordning. För varje inmatningssteg visar det vad du måste ange och om agenten kan ange det via MCP. |
+| `describe_action` | Förklarar hur du använder Sagas MCP-verktyg. Utan argument listar det varje verktyg och den vanliga anropsordningen. Med ett verktygsnamn returnerar det indata, ett exempelanrop, vad verktyget returnerar och vad du ska anropa sedan. |
 
-Varje verktyg körs som dig. Agenten ser bara de projekt, dokument och arbetsflöden som ditt konto redan har åtkomst till — samma behörigheter som du har i webbappen.
+Varje verktyg körs som dig. Agenten ser bara de projekt, dokument, chattar, tabellgranskningar och arbetsflöden som ditt konto redan har åtkomst till — samma behörigheter som du har i webbappen.
 
 ## Säkerhet
 

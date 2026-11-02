@@ -66,8 +66,18 @@ Once connected, the agent has these tools:
 | `fetch_workflow_step_result` | Returns the output of one completed step. |
 | `submit_workflow_input` | Answers the step a run waits at and continues the run. |
 | `resume_workflow` | Starts a run that was created but never started. |
+| `list_project_folders` | Lists the knowledge-base folders and tags of a project you can open. |
+| `list_project_memories` | Lists the short facts saved in the memory of a project you can open. |
+| `list_chats` | Lists the personal chats and project chats you can open in the app. Chats past the retention window are left out. |
+| `fetch_chat` | Returns the messages of one personal or project chat you can open. Long chats are truncated to the token budget. |
+| `list_grid_reviews` | Lists your grid reviews. Pass `project_id` to list only the reviews of one project. |
+| `fetch_grid_review_answers` | Returns the answers of one grid review you can open. Large reviews are truncated to the token budget. |
+| `search_legal_research` | Searches one legal database that you have access to. A jurisdiction outside your workspace is refused. |
+| `list_workflow_runs` | Lists the workflow runs that you started. Use `get_workflow_status` to read one run. |
+| `fetch_workflow` | Returns the steps of a workflow in order. For each input step, it shows what you must supply and whether the agent can supply it over MCP. |
+| `describe_action` | Explains how to use the Saga MCP tools. Without arguments, it lists every tool and the usual call order. With a tool name, it returns the inputs, an example call, what the tool returns, and what to call next. |
 
-Every tool runs as you. The agent sees only the projects, documents, and workflows your account can already access — the same permissions you have in the web app.
+Every tool runs as you. The agent sees only the projects, documents, chats, grid reviews, and workflows your account can already access — the same permissions you have in the web app.
 
 ## Security
 

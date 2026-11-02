@@ -51,26 +51,33 @@ Nach der Verbindung verfügt der Agent über diese Werkzeuge:
 | Werkzeug | Was es tut |
 |------|--------------|
 | `ask_saga` | Stellt Saga eine Frage und gibt die Antwort zurück, genau wie beim Chatten in der App. |
-
 | `ask_saga_project` | Stellt eine Frage, die auf den Dokumenten eines Projekts basiert, und gibt eine zitierte Antwort zurück. Der Chat wird im Projekt gespeichert. |
 | `list_projects` | Listet Ihre Projekte auf, einschließlich der mit Ihnen geteilten. |
 | `list_project_documents` | Listet die Dokumente in einem Projekt auf. |
 | `search_project_documents` | Durchsucht die Wissensdatenbank eines Projekts und gibt die relevantesten Abschnitte zurück. |
 | `fetch_project_document` | Gibt den vollständigen Text eines Dokuments zurück. |
-
 | `list_assistants` | Listet die aktiven benutzerdefinierten Assistenten in Ihrem Arbeitsbereich auf. |
 | `ask_saga_assistant` | Stellt einem benutzerdefinierten Assistenten eine Frage und wendet dessen Anweisungen an. |
 | `list_prompts` | Listet Einträge der Prompt-Bibliothek auf, persönlich, Organisation, Saga Lab oder alle, mit optionaler Suche. |
 | `fetch_prompt` | Gibt den Text eines Prompts und seine Platzhalterfelder zurück. |
 | `list_workflows` | Listet Ihre Workflows und die Eingaben auf, die jeder einzelne erwartet. |
 | `execute_workflow` | Führt einen Workflow mit Texteingaben aus und gibt das Ergebnis zurück. |
-
 | `get_workflow_status` | Gibt den Status eines Workflow-Laufs und den Status jedes Schritts zurück. |
 | `fetch_workflow_step_result` | Gibt die Ausgabe eines abgeschlossenen Schritts zurück. |
 | `submit_workflow_input` | Beantwortet den Schritt, bei dem ein Lauf wartet, und setzt den Lauf fort. |
 | `resume_workflow` | Startet einen Lauf, der erstellt, aber nie gestartet wurde. |
+| `list_project_folders` | Listet die Ordner und Tags der Wissensdatenbank eines Projekts auf, das Sie öffnen können. |
+| `list_project_memories` | Listet die kurzen Fakten auf, die im Projektgedächtnis eines Projekts gespeichert sind, das Sie öffnen können. |
+| `list_chats` | Listet die persönlichen Chats und Projekt-Chats auf, die Sie in der App öffnen können. Chats außerhalb der Aufbewahrungsfrist werden ausgelassen. |
+| `fetch_chat` | Gibt die Nachrichten eines persönlichen Chats oder Projekt-Chats zurück, den Sie öffnen können. Lange Chats werden auf das Token-Budget gekürzt. |
+| `list_grid_reviews` | Listet Ihre Rasterprüfungen auf. Übergeben Sie `project_id`, um nur die Prüfungen eines Projekts aufzulisten. |
+| `fetch_grid_review_answers` | Gibt die Antworten einer Rasterprüfung zurück, die Sie öffnen können. Große Prüfungen werden auf das Token-Budget gekürzt. |
+| `search_legal_research` | Durchsucht eine juristische Datenbank, auf die Sie Zugriff haben. Eine Rechtsordnung außerhalb Ihres Workspace wird abgelehnt. |
+| `list_workflow_runs` | Listet die Workflow-Läufe auf, die Sie gestartet haben. Verwenden Sie `get_workflow_status`, um einen Lauf zu lesen. |
+| `fetch_workflow` | Gibt die Schritte eines Workflows in Reihenfolge zurück. Für jeden Eingabeschritt zeigt es, was Sie angeben müssen und ob der Agent es über MCP angeben kann. |
+| `describe_action` | Erklärt, wie Sie die Saga-MCP-Werkzeuge verwenden. Ohne Argumente listet es jedes Werkzeug und die übliche Aufrufreihenfolge auf. Mit einem Werkzeugnamen gibt es die Eingaben, einen Beispielaufruf, die Rückgabe des Werkzeugs und den nächsten Aufruf zurück. |
 
-Jedes Werkzeug wird als Sie ausgeführt. Der Agent sieht nur die Projekte, Dokumente und Workflows, auf die Ihr Konto bereits zugreifen kann — dieselben Berechtigungen, die Sie in der Web-App haben.
+Jedes Werkzeug wird als Sie ausgeführt. Der Agent sieht nur die Projekte, Dokumente, Chats, Rasterprüfungen und Workflows, auf die Ihr Konto bereits zugreifen kann — dieselben Berechtigungen, die Sie in der Web-App haben.
 
 ## Sicherheit
 

@@ -66,8 +66,18 @@ Bağlandıktan sonra aracı şu araçlara sahip olur:
 | `resume_workflow` | Devam etmeye hazır bir iş akışını sürdürür. |
 | `list_workflows` | İş akışlarınızı ve her birinin beklediği girdileri listeler. |
 | `execute_workflow` | Bir iş akışını metin girdileriyle çalıştırır ve sonucu döndürür. |
+| `list_project_folders` | Açabildiğiniz bir projenin bilgi tabanındaki klasörleri ve etiketleri listeler. |
+| `list_project_memories` | Açabildiğiniz bir projenin hafızasına kaydedilen kısa bilgileri listeler. |
+| `list_chats` | Uygulamada açabildiğiniz kişisel sohbetleri ve proje sohbetlerini listeler. Saklama süresini aşan sohbetler dahil edilmez. |
+| `fetch_chat` | Açabildiğiniz bir kişisel sohbetin veya proje sohbetinin mesajlarını döndürür. Uzun sohbetler token bütçesine göre kısaltılır. |
+| `list_grid_reviews` | Tablo incelemelerinizi listeler. Yalnızca bir projenin incelemelerini listelemek için `project_id` iletin. |
+| `fetch_grid_review_answers` | Açabildiğiniz bir tablo incelemesinin yanıtlarını döndürür. Büyük incelemeler token bütçesine göre kısaltılır. |
+| `search_legal_research` | Erişiminiz olan bir hukuk veritabanında arama yapar. Çalışma alanınızın dışındaki bir yargı alanı reddedilir. |
+| `list_workflow_runs` | Başlattığınız iş akışı çalıştırmalarını listeler. Bir çalıştırmayı okumak için `get_workflow_status` kullanın. |
+| `fetch_workflow` | Bir iş akışının adımlarını sırayla döndürür. Her girdi adımı için neyi sağlamanız gerektiğini ve aracının bunu MCP üzerinden sağlayıp sağlayamayacağını gösterir. |
+| `describe_action` | Saga MCP araçlarının nasıl kullanılacağını açıklar. Argüman olmadan her aracı ve olağan çağrı sırasını listeler. Bir araç adıyla girdileri, örnek bir çağrıyı, aracın ne döndürdüğünü ve sonra neyin çağrılacağını döndürür. |
 
-Her araç sizin adınıza çalışır. Aracı yalnızca hesabınızın halihazırda erişebildiği projeleri, belgeleri ve iş akışlarını görür — web uygulamasında sahip olduğunuz izinlerin aynısı.
+Her araç sizin adınıza çalışır. Aracı yalnızca hesabınızın halihazırda erişebildiği projeleri, belgeleri, sohbetleri, tablo incelemelerini ve iş akışlarını görür — web uygulamasında sahip olduğunuz izinlerin aynısı.
 
 ## Güvenlik
 

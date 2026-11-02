@@ -66,8 +66,18 @@ Eenmaal verbonden beschikt de agent over deze hulpmiddelen:
 | `resume_workflow` | Hervat een workflow die klaar is om verder te gaan. |
 | `list_workflows` | Geeft een lijst van uw workflows en de invoer die elke workflow verwacht. |
 | `execute_workflow` | Voert een workflow uit met tekstinvoer en geeft het resultaat terug. |
+| `list_project_folders` | Geeft de mappen en tags van de kennisbank van een project dat u kunt openen. |
+| `list_project_memories` | Geeft de korte feiten die zijn opgeslagen in het geheugen van een project dat u kunt openen. |
+| `list_chats` | Geeft de persoonlijke chats en projectchats die u in de app kunt openen. Chats buiten de bewaartermijn worden weggelaten. |
+| `fetch_chat` | Geeft de berichten van een persoonlijke chat of projectchat die u kunt openen. Lange chats worden ingekort tot het tokenbudget. |
+| `list_grid_reviews` | Geeft uw rasterbeoordelingen. Geef `project_id` mee om alleen de beoordelingen van één project te tonen. |
+| `fetch_grid_review_answers` | Geeft de antwoorden van een rasterbeoordeling die u kunt openen. Grote beoordelingen worden ingekort tot het tokenbudget. |
+| `search_legal_research` | Doorzoekt één juridische database waar u toegang toe hebt. Een rechtsgebied buiten uw werkruimte wordt geweigerd. |
+| `list_workflow_runs` | Geeft de workflowuitvoeringen die u hebt gestart. Gebruik `get_workflow_status` om één uitvoering te lezen. |
+| `fetch_workflow` | Geeft de stappen van een workflow op volgorde. Voor elke invoerstap toont het wat u moet aanleveren en of de agent dit via MCP kan aanleveren. |
+| `describe_action` | Legt uit hoe u de Saga MCP-hulpmiddelen gebruikt. Zonder argumenten geeft het elk hulpmiddel en de gebruikelijke volgorde van aanroepen. Met de naam van een hulpmiddel geeft het de invoer, een voorbeeldaanroep, wat het hulpmiddel teruggeeft en wat u daarna aanroept. |
 
-Elk hulpmiddel wordt als u uitgevoerd. De agent ziet alleen de projecten, documenten en workflows waartoe uw account al toegang heeft — dezelfde rechten die u in de webapp hebt.
+Elk hulpmiddel wordt als u uitgevoerd. De agent ziet alleen de projecten, documenten, chats, rasterbeoordelingen en workflows waartoe uw account al toegang heeft — dezelfde rechten die u in de webapp hebt.
 
 ## Beveiliging
 

@@ -66,8 +66,18 @@ Når den er tilkoblet, har agenten disse verktøyene:
 | `resume_workflow` | Gjenopptar en arbeidsflyt som er klar til å fortsette. |
 | `list_workflows` | Lister opp arbeidsflytene dine og inndataene hver enkelt forventer. |
 | `execute_workflow` | Kjører en arbeidsflyt med tekstinndata og returnerer resultatet. |
+| `list_project_folders` | Viser mappene og taggene i kunnskapsbasen til et prosjekt du kan åpne. |
+| `list_project_memories` | Viser de korte faktaene som er lagret i prosjektminnet til et prosjekt du kan åpne. |
+| `list_chats` | Viser de personlige chattene og prosjektchattene du kan åpne i appen. Chatter utenfor oppbevaringsperioden utelates. |
+| `fetch_chat` | Returnerer meldingene i én personlig chat eller prosjektchat du kan åpne. Lange chatter kortes ned til tokenbudsjettet. |
+| `list_grid_reviews` | Viser rutenettgjennomgangene dine. Send `project_id` for å vise bare gjennomgangene i ett prosjekt. |
+| `fetch_grid_review_answers` | Returnerer svarene i én rutenettgjennomgang du kan åpne. Store gjennomganger kortes ned til tokenbudsjettet. |
+| `search_legal_research` | Søker i én juridisk database du har tilgang til. En jurisdiksjon utenfor arbeidsområdet ditt avvises. |
+| `list_workflow_runs` | Viser arbeidsflytkjøringene du har startet. Bruk `get_workflow_status` for å lese én kjøring. |
+| `fetch_workflow` | Returnerer stegene i en arbeidsflyt i rekkefølge. For hvert inndatasteg viser det hva du må oppgi, og om agenten kan oppgi det over MCP. |
+| `describe_action` | Forklarer hvordan du bruker Saga MCP-verktøyene. Uten argumenter viser det hvert verktøy og den vanlige rekkefølgen for kall. Med et verktøynavn returnerer det inndataene, et eksempelkall, hva verktøyet returnerer og hva du kaller neste gang. |
 
-Hvert verktøy kjører som deg. Agenten ser bare prosjektene, dokumentene og arbeidsflytene kontoen din allerede har tilgang til — de samme tillatelsene du har i nettappen.
+Hvert verktøy kjører som deg. Agenten ser bare prosjektene, dokumentene, chattene, rutenettgjennomgangene og arbeidsflytene kontoen din allerede har tilgang til — de samme tillatelsene du har i nettappen.
 
 ## Sikkerhet
 

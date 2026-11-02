@@ -66,8 +66,18 @@ Una vez conectado, el agente dispone de estas herramientas:
 | `fetch_workflow_step_result` | Devuelve la salida de un paso completado. |
 | `submit_workflow_input` | Responde al paso en el que una ejecución está esperando y continúa la ejecución. |
 | `resume_workflow` | Inicia una ejecución que se creó pero nunca se inició. |
+| `list_project_folders` | Enumera las carpetas y etiquetas de la base de conocimiento de un proyecto que puede abrir. |
+| `list_project_memories` | Enumera los datos breves guardados en la memoria de un proyecto que puede abrir. |
+| `list_chats` | Enumera los chats personales y de proyecto que puede abrir en la aplicación. Se omiten los chats que superan el período de retención. |
+| `fetch_chat` | Devuelve los mensajes de un chat personal o de proyecto que puede abrir. Los chats largos se recortan al presupuesto de tokens. |
+| `list_grid_reviews` | Enumera sus revisiones en cuadrícula. Pase `project_id` para enumerar solo las revisiones de un proyecto. |
+| `fetch_grid_review_answers` | Devuelve las respuestas de una revisión en cuadrícula que puede abrir. Las revisiones grandes se recortan al presupuesto de tokens. |
+| `search_legal_research` | Busca en una base de datos jurídica a la que tiene acceso. Se rechaza una jurisdicción fuera de su espacio de trabajo. |
+| `list_workflow_runs` | Enumera las ejecuciones de flujos de trabajo que usted inició. Use `get_workflow_status` para leer una ejecución. |
+| `fetch_workflow` | Devuelve los pasos de un flujo de trabajo en orden. Para cada paso de entrada, muestra lo que debe proporcionar y si el agente puede proporcionarlo por MCP. |
+| `describe_action` | Explica cómo usar las herramientas MCP de Saga. Sin argumentos, enumera todas las herramientas y el orden habitual de llamadas. Con el nombre de una herramienta, devuelve las entradas, una llamada de ejemplo, lo que devuelve la herramienta y qué llamar después. |
 
-Cada herramienta se ejecuta en su nombre. El agente solo ve los proyectos, documentos y flujos de trabajo a los que su cuenta ya puede acceder — los mismos permisos que tiene en la aplicación web.
+Cada herramienta se ejecuta en su nombre. El agente solo ve los proyectos, documentos, chats, revisiones en cuadrícula y flujos de trabajo a los que su cuenta ya puede acceder — los mismos permisos que tiene en la aplicación web.
 
 ## Seguridad
 

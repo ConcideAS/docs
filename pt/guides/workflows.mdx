@@ -43,6 +43,8 @@ Os passos dividem-se em duas categorias: **entradas** que recolhem informação 
 | **Deep Web Research** | Executa uma análise web exaustiva de múltiplas fontes e devolve um relatório com citações (consulte [Deep web research](/pt/guides/chat/deep-research)) |
 | **Interpretador de código** | Executa código Python para processamento de dados, cálculos ou análise |
 
+Um passo de **Interpretador de código** pode devolver ficheiros, como ficheiros Excel e CSV, gráficos e páginas HTML. Os ficheiros aparecem em **Ativos finais** após a execução. Para pré-visualizações e transferências, consulte "Ficheiros, gráficos e páginas HTML" na [visão geral do chat](/pt/guides/chat).
+
 ## Como os dados fluem entre passos
 
 Cada passo pode referenciar o resultado de qualquer passo que o precedeu. Ao configurar as instruções de um passo, escreva `@` para mencionar um passo anterior pelo nome. Na execução, essa menção é substituída pelo resultado real desse passo.
