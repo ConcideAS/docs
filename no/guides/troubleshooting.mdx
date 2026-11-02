@@ -43,6 +43,14 @@ Kvaliteten på AI-ens svar avhenger av konteksten den har og modellen du bruker.
 - **Sjekk referansene** — verifiser alltid AI-ens påstander mot de oppgitte kildene.
 </Accordion>
 
+<Accordion title="Taleinndata transkriberes på feil språk (eller blir uforståelig)">
+Taletranskripsjon drives av Deepgram. Språket den lytter etter, bestemmes av grensesnittspråket ditt i Saga, **ikke** av språket du faktisk snakker. Hvis grensesnittet er satt til engelsk og du dikterer på polsk, prøver Deepgram å tilpasse polske lyder til engelske ord, og transkripsjonen blir uforståelig.
+
+For å løse det bytter du grensesnittspråket til språket du vil diktere på. Åpne kontomenyen (avataren din i sidemenyen), klikk **Språk**, velg språket og last deretter inn siden på nytt.
+
+Støttede transkripsjonsspråk: engelsk, norsk, nederlandsk, dansk, polsk, spansk, tysk, italiensk, portugisisk, tyrkisk, fransk og svensk. Dette er de samme språkene som Saga-grensesnittet finnes på. Hvis grensesnittet ditt er satt til et språk utenfor denne listen, faller transkripsjonen tilbake til engelsk.
+</Accordion>
+
 <Accordion title="Jeg blir hastighetsbegrenset eller ser «for mange forespørsler»">
 Saga begrenser hvor ofte visse handlinger kan utføres. Hvis du ser dette under innlogging eller tofaktorautentisering, vent noen minutter og prøv igjen. For chatrelaterte hastighetsbegrensninger, vent litt og send meldingen på nytt.
 </Accordion>
