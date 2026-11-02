@@ -119,24 +119,29 @@ Tablo içeren seçimler henüz yapay zeka ile düzenlenemez. Çakışan seçimle
 
 ## Yapay zeka izinleri
 
-Saga'nın sohbetlerinizde kendiliğinden neler yapabileceğini seçmek için **Ayarlar > AI Permissions** bölümünü açın. Her satırda üç seçenek vardır: **Ask**, **Allow** veya **Off**.
+Saga'nın sohbetlerinizde kendiliğinden neler yapabileceğini seçmek için mesaj alanının altındaki **İzinler** düğmesine tıklayın. Bir satırı bulmak için arama alanına yazın. Çoğu satırda üç seçenek vardır: **Sor**, **İzin ver** veya **Kapalı**.
 
 | Satır | Kapsadığı | Varsayılan |
 |---|---|---|
-| Web Search | Genel internette arama yapma | Ask |
-| Deep Web Search | Daha uzun ve derin web araştırması | Ask |
-| Legal Sources | Çalışma alanınız için etkinleştirilen hukuk veri tabanlarından kaynak gösterme | Ask |
-| Internal Sources | Seçtiğiniz kuruluş kaynaklarındaki belgeleri kullanma | Ask |
-| MCPs | Bağlı MCP sunucularınızın araçlarını kullanma | Ask |
-| Drafting | Belge oluşturma ve düzeltme | Allow |
-| Workflow Generation | Göreviniz için bir iş akışı oluşturma | Allow |
-| Questioner | Sohbette size netleştirici sorular sorma | Allow (Ask seçeneği yok) |
+| Web’de Ara | Genel internette arama yapma | Sor |
+| Web’i Derinlemesine Araştır | Daha uzun ve derin web araştırması | Sor |
+| Hukuki Kaynaklarda Ara | Çalışma alanınız için etkinleştirilen hukuk veri tabanlarından kaynak gösterme | Sor |
+| Geçmiş Sohbetlerde Ara | Önceki sohbetlerinize göz atma | Sor |
+| İç Kaynaklarda Ara | Seçtiğiniz kuruluş kaynaklarındaki belgeleri kullanma | Sor |
+| MCP’leri Kullan | Bağlı MCP sunucularınızın araçlarını kullanma | Sor |
+| Belge Taslağı Hazırla | Belge oluşturma ve düzeltme | İzin ver |
+| İş Akışı Oluştur | Göreviniz için bir iş akışı oluşturma | İzin ver |
+| Soru Sor | Sohbette size netleştirici sorular sorma | Sor (İzin ver seçeneği yok) |
 
-**Ask** seçiliyken Saga o özelliği kullanmadan önce durur ve sohbette bir kart gösterir: "Saga wants to use … for this request". Bir kez devam etmek için **Allow**, o satırı Allow olarak değiştirmek için **Always Allow**, özellik olmadan devam etmek için **Skip** seçeneğini seçin. Bir kaynağı mesaj alanında kendiniz açtığınızda Saga o mesaj için tekrar sormaz. **Off** seçiliyken Saga o özelliği hiç kullanmaz. Seçimleriniz hesabınıza kaydedilir.
+**Soru Sor** satırında yalnızca **Sor** ve **Kapalı** vardır. **Kapalı** seçiliyken Saga size netleştirici sorular sormak için durmaz.
 
-Web araması satırlarının altında Saga, sohbetteki uyarının aynısını gösterir: "Web araması aktif. Gizli bilgiler veya kişisel veri yüklemeyin. Bu modu genel araştırma için kullanın." Çalışma alanınız web aramasını veya derin web aramasını kapattıysa o satır görünmez.
+**Sor** seçiliyken Saga o özelliği kullanmadan önce durur ve mesaj alanının yerinde bir kart gösterir. Arama için kartta "Saga … üzerinde arama yapmak istiyor" yazar. Diğer özellikler için "Saga bu istek için … kullanmak istiyor" yazar. Bir kez devam etmek için **İzin ver**, o satırı İzin ver olarak değiştirmek için **Her zaman izin ver**, özellik olmadan devam etmek için **Atla** seçeneğini seçin. Saga bir yanıtta aynı izne birden fazla kez ihtiyaç duyarsa tek bir kartı yanıtlarsınız. Ardından yanıt seçiminizi gösterir, örneğin "… aramasına izin verdiniz" veya "… aramasını atladınız, bu yüzden yanıtta kullanılmadı". Seçimleriniz hesabınıza kaydedilir.
 
-Drafting satırı, mesaj alanının yanındaki eski Auto drafting anahtarının yerini alır. Drafting kapalıyken Saga sohbette yanıt verir ve belge ya da sunum oluşturmaz.
+**Kapalı** seçiliyken Saga o özelliği kendiliğinden kullanmaz. Bir mesaj için web aramasını, bir hukuki kaynağı, bir iç kaynağı veya bir MCP sunucusunu kendiniz seçtiğinizde Saga onu o mesaj için kullanır. O kaynağın satırı **Sor** veya **Kapalı** olarak ayarlıysa Saga kaynağı kullanmadan önce yine de sorar. **İzin ver** seçiliyken sormaz.
+
+**Web’de Ara** veya **Web’i Derinlemesine Araştır** satırı **İzin ver** olarak ayarlıysa liste, sohbetteki uyarının aynısını gösterir: "Web araması aktif. Gizli bilgiler veya kişisel veri yüklemeyin. Bu modu genel araştırma için kullanın." Çalışma alanınız web aramasını veya derin web aramasını kapattıysa o satır görünmez.
+
+**Belge Taslağı Hazırla** satırı, mesaj alanının yanındaki eski Auto drafting anahtarının yerini alır. **Belge Taslağı Hazırla** kapalıyken Saga sohbette yanıt verir ve belge, sunum ya da e-posta taslağı oluşturmaz.
 
 ## Sohbet metin boyutu
 

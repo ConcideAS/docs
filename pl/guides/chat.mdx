@@ -119,24 +119,29 @@ Zaznaczeń zawierających tabelę nie można jeszcze edytować za pomocą AI. Na
 
 ## Uprawnienia AI
 
-Otwórz **Ustawienia > AI Permissions**, aby wybrać, co Saga może robić samodzielnie w Twoich czatach. Każdy wiersz ma trzy opcje: **Ask**, **Allow** lub **Off**.
+Kliknij **Uprawnienia** pod polem wiadomości, aby wybrać, co Saga może robić samodzielnie w Twoich czatach. Wpisz tekst w polu wyszukiwania, aby znaleźć wiersz. Większość wierszy ma trzy opcje: **Pytaj**, **Zezwól** lub **Wyłączone**.
 
 | Wiersz | Czego dotyczy | Domyślnie |
 |---|---|---|
-| Web Search | Wyszukiwanie w publicznym internecie | Ask |
-| Deep Web Search | Dłuższe, dokładniejsze wyszukiwanie w sieci | Ask |
-| Legal Sources | Cytowanie źródeł z prawniczych baz danych włączonych dla Twojej przestrzeni roboczej | Ask |
-| Internal Sources | Korzystanie z dokumentów ze źródeł organizacyjnych, które wybierzesz | Ask |
-| MCPs | Korzystanie z narzędzi połączonych serwerów MCP | Ask |
-| Drafting | Tworzenie i poprawianie dokumentów | Allow |
-| Workflow Generation | Tworzenie przepływu pracy dla Twojego zadania | Allow |
-| Questioner | Zadawanie Ci pytań doprecyzowujących w czacie | Allow (bez opcji Ask) |
+| Szukaj w sieci | Wyszukiwanie w publicznym internecie | Pytaj |
+| Szczegółowo badaj sieć | Dłuższe, dokładniejsze wyszukiwanie w sieci | Pytaj |
+| Szukaj w źródłach prawnych | Cytowanie źródeł z prawniczych baz danych włączonych dla Twojej przestrzeni roboczej | Pytaj |
+| Szukaj we wcześniejszych czatach | Przeglądanie Twoich wcześniejszych czatów | Pytaj |
+| Szukaj w źródłach wewnętrznych | Korzystanie z dokumentów ze źródeł organizacyjnych, które wybierzesz | Pytaj |
+| Używaj MCP | Korzystanie z narzędzi połączonych serwerów MCP | Pytaj |
+| Twórz dokumenty | Tworzenie i poprawianie dokumentów | Zezwól |
+| Generuj przepływy pracy | Tworzenie przepływu pracy dla Twojego zadania | Zezwól |
+| Zadawaj pytania | Zadawanie Ci pytań doprecyzowujących w czacie | Pytaj (bez opcji Zezwól) |
 
-Przy **Ask** Saga zatrzymuje się, zanim użyje danej funkcji, i pokazuje w czacie kartę: "Saga wants to use … for this request". Wybierz **Allow**, aby kontynuować jednorazowo, **Always Allow**, aby przestawić ten wiersz na Allow, lub **Skip**, aby kontynuować bez tej funkcji. Jeśli sam włączysz źródło w polu wiadomości, Saga nie pyta ponownie przy tej wiadomości. Przy **Off** Saga nigdy nie używa tej funkcji. Twoje wybory zapisują się na Twoim koncie.
+**Zadawaj pytania** ma tylko **Pytaj** i **Wyłączone**. Przy **Wyłączone** Saga nie zatrzymuje się, aby zadawać Ci pytania doprecyzowujące.
 
-Pod wierszami wyszukiwania w sieci Saga pokazuje to samo ostrzeżenie co w czacie: "Wyszukiwanie w sieci jest aktywne. Nie przesyłaj żadnych informacji poufnych ani danych osobowych. Używaj tego trybu do ogólnych badań." Jeśli Twoja przestrzeń robocza wyłączyła wyszukiwanie w sieci lub pogłębione wyszukiwanie w sieci, ten wiersz się nie wyświetla.
+Przy **Pytaj** Saga zatrzymuje się, zanim użyje danej funkcji, i pokazuje kartę w miejscu pola wiadomości. Przy wyszukiwaniu karta zawiera tekst "Saga chce przeszukać …". Przy innych funkcjach zawiera tekst "Saga chce użyć funkcji … dla tego zapytania". Wybierz **Zezwól**, aby kontynuować jednorazowo, **Zawsze zezwalaj**, aby przestawić ten wiersz na Zezwól, lub **Pomiń**, aby kontynuować bez tej funkcji. Jeśli Saga potrzebuje tego samego uprawnienia kilka razy w jednej odpowiedzi, odpowiadasz na jedną kartę. Odpowiedź pokazuje potem Twój wybór, na przykład "Zezwolono na wyszukiwanie w …" lub "Na Twoją prośbę pominięto wyszukiwanie w …, więc odpowiedź tego nie uwzględnia". Twoje wybory zapisują się na Twoim koncie.
 
-Wiersz Drafting zastępuje dawny przełącznik Auto drafting obok pola wiadomości. Gdy Drafting jest wyłączony, Saga odpowiada w czacie i nie tworzy dokumentów ani prezentacji.
+Przy **Wyłączone** Saga nie używa tej funkcji samodzielnie. Gdy sam wybierzesz dla wiadomości wyszukiwanie w sieci, źródło prawne, źródło wewnętrzne lub serwer MCP, Saga użyje go dla tej wiadomości. Jeśli wiersz tego źródła jest ustawiony na **Pytaj** lub **Wyłączone**, Saga i tak zapyta, zanim użyje źródła. Przy **Zezwól** nie pyta.
+
+Gdy **Szukaj w sieci** lub **Szczegółowo badaj sieć** jest ustawione na **Zezwól**, lista pokazuje to samo ostrzeżenie co w czacie: "Wyszukiwanie w sieci jest aktywne. Nie przesyłaj żadnych informacji poufnych ani danych osobowych. Używaj tego trybu do ogólnych badań." Jeśli Twoja przestrzeń robocza wyłączyła wyszukiwanie w sieci lub pogłębione wyszukiwanie w sieci, ten wiersz się nie wyświetla.
+
+Wiersz **Twórz dokumenty** zastępuje dawny przełącznik Auto drafting obok pola wiadomości. Gdy **Twórz dokumenty** jest wyłączone, Saga odpowiada w czacie i nie tworzy dokumentów, prezentacji ani wersji roboczych e-maili.
 
 ## Rozmiar tekstu czatu
 

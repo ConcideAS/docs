@@ -119,24 +119,29 @@ Markeringar som innehåller en tabell kan inte redigeras med AI ännu. Överlapp
 
 ## AI-behörigheter
 
-Öppna **Inställningar > AI Permissions** för att välja vad Saga får göra på egen hand i dina chattar. Varje rad har tre val: **Ask**, **Allow** eller **Off**.
+Klicka på **Behörigheter** under skrivfältet för att välja vad Saga får göra på egen hand i dina chattar. Skriv i sökfältet för att hitta en rad. De flesta rader har tre val: **Fråga**, **Tillåt** eller **Av**.
 
 | Rad | Vad den omfattar | Standard |
 |---|---|---|
-| Web Search | Söka på det öppna internet | Ask |
-| Deep Web Search | Längre och djupare webbsökning | Ask |
-| Legal Sources | Citera källor från de juridiska databaser som är aktiverade för din arbetsyta | Ask |
-| Internal Sources | Använda dokument från de organisationskällor du väljer | Ask |
-| MCPs | Använda verktygen i dina anslutna MCP-servrar | Ask |
-| Drafting | Skapa och revidera dokument | Allow |
-| Workflow Generation | Bygga ett arbetsflöde för din uppgift | Allow |
-| Questioner | Ställa förtydligande frågor till dig i chatten | Allow (inget Ask-val) |
+| Sök på webben | Söka på det öppna internet | Fråga |
+| Undersök webben på djupet | Längre och djupare webbsökning | Fråga |
+| Sök i rättskällor | Citera källor från de juridiska databaser som är aktiverade för din arbetsyta | Fråga |
+| Sök i tidigare chattar | Gå igenom dina tidigare chattar | Fråga |
+| Sök i interna källor | Använda dokument från de organisationskällor du väljer | Fråga |
+| Använd MCP:er | Använda verktygen i dina anslutna MCP-servrar | Fråga |
+| Skriv dokument | Skapa och revidera dokument | Tillåt |
+| Generera arbetsflöden | Bygga ett arbetsflöde för din uppgift | Tillåt |
+| Ställ frågor | Ställa förtydligande frågor till dig i chatten | Fråga (inget Tillåt-val) |
 
-Med **Ask** stannar Saga innan funktionen används och visar ett kort i chatten: "Saga wants to use … for this request". Välj **Allow** för att fortsätta en gång, **Always Allow** för att ställa raden på Allow, eller **Skip** för att fortsätta utan den. När du själv slår på en källa i skrivfältet frågar Saga inte igen för det meddelandet. Med **Off** använder Saga aldrig funktionen. Dina val sparas på ditt konto.
+**Ställ frågor** har bara **Fråga** och **Av**. Med **Av** stannar Saga inte för att ställa förtydligande frågor till dig.
 
-Under raderna för webbsökning visar Saga samma varning som i chatten: "Webbsökning är aktiv. Ladda inte upp konfidentiell information eller personuppgifter. Använd det här läget för allmän informationssökning." Om din arbetsyta har stängt av webbsökning eller djup webbsökning visas inte den raden.
+Med **Fråga** stannar Saga innan funktionen används och visar ett kort i stället för skrivfältet. För en sökning står det "Saga vill söka i …" på kortet. För andra funktioner står det "Saga vill använda … för den här begäran". Välj **Tillåt** för att fortsätta en gång, **Tillåt alltid** för att ställa raden på Tillåt, eller **Hoppa över** för att fortsätta utan den. Om Saga behöver samma behörighet flera gånger i ett svar svarar du på ett kort. Svaret visar sedan vad du valde, till exempel "Du tillät sökningar i …" eller "Du hoppade över sökningar i …, så det används inte i svaret". Dina val sparas på ditt konto.
 
-Raden Drafting ersätter den gamla Auto drafting-brytaren bredvid meddelandefältet. När Drafting är av svarar Saga i chatten och skapar inga dokument eller presentationer.
+Med **Av** använder Saga inte funktionen på egen hand. När du själv väljer webbsökning, en rättskälla, en intern källa eller en MCP-server för ett meddelande använder Saga den för det meddelandet. Om raden för källan står på **Fråga** eller **Av** frågar Saga ändå innan källan används. Med **Tillåt** frågar Saga inte.
+
+När **Sök på webben** eller **Undersök webben på djupet** står på **Tillåt** visar listan samma varning som i chatten: "Webbsökning är aktiv. Ladda inte upp konfidentiell information eller personuppgifter. Använd det här läget för allmän informationssökning." Om din arbetsyta har stängt av webbsökning eller djup webbsökning visas inte den raden.
+
+Raden **Skriv dokument** ersätter den gamla Auto drafting-brytaren bredvid meddelandefältet. När **Skriv dokument** är av svarar Saga i chatten och skapar inga dokument, presentationer eller e-postutkast.
 
 ## Textstorlek i chatten
 

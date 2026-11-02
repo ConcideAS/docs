@@ -119,24 +119,29 @@ Le selezioni che contengono una tabella non possono ancora essere modificate con
 
 ## Autorizzazioni IA
 
-Apri **Impostazioni > AI Permissions** per scegliere che cosa Saga può fare in autonomia nelle tue chat. Ogni riga offre tre scelte: **Ask**, **Allow** oppure **Off**.
+Fai clic su **Autorizzazioni** sotto il campo del messaggio per scegliere che cosa Saga può fare in autonomia nelle tue chat. Scrivi nel campo di ricerca per trovare una riga. La maggior parte delle righe offre tre scelte: **Chiedi**, **Consenti** oppure **Disattivato**.
 
 | Riga | Che cosa copre | Predefinito |
 |---|---|---|
-| Web Search | Cercare su internet | Ask |
-| Deep Web Search | Ricerca web più lunga e approfondita | Ask |
-| Legal Sources | Citare fonti dalle banche dati giuridiche abilitate per il tuo spazio di lavoro | Ask |
-| Internal Sources | Usare documenti dalle fonti organizzative che selezioni | Ask |
-| MCPs | Usare gli strumenti dei server MCP collegati | Ask |
-| Drafting | Generare e rivedere documenti | Allow |
-| Workflow Generation | Creare un workflow per la tua attività | Allow |
-| Questioner | Farti domande di chiarimento in chat | Allow (nessuna opzione Ask) |
+| Cerca sul web | Cercare su internet | Chiedi |
+| Ricerca approfondita sul web | Ricerca web più lunga e approfondita | Chiedi |
+| Cerca fonti giuridiche | Citare fonti dalle banche dati giuridiche abilitate per il tuo spazio di lavoro | Chiedi |
+| Cerca nelle chat precedenti | Consultare le tue chat precedenti | Chiedi |
+| Cerca nelle fonti interne | Usare documenti dalle fonti organizzative che selezioni | Chiedi |
+| Usa gli MCP | Usare gli strumenti dei server MCP collegati | Chiedi |
+| Redigi documenti | Generare e rivedere documenti | Consenti |
+| Genera workflow | Creare un workflow per la tua attività | Consenti |
+| Fai domande | Farti domande di chiarimento in chat | Chiedi (nessuna opzione Consenti) |
 
-Con **Ask**, Saga si ferma prima di usare quella funzione e mostra una scheda nella chat: "Saga wants to use … for this request". Scegli **Allow** per continuare una volta, **Always Allow** per impostare quella riga su Allow, oppure **Skip** per continuare senza. Se attivi tu stesso una fonte nel campo di composizione, Saga non chiede di nuovo per quel messaggio. Con **Off**, Saga non usa mai quella funzione. Le tue scelte vengono salvate nel tuo account.
+**Fai domande** ha solo **Chiedi** e **Disattivato**. Con **Disattivato**, Saga non si ferma a farti domande di chiarimento.
 
-Sotto le righe della ricerca web, Saga mostra lo stesso avviso della chat: "La ricerca web è attiva. Non caricare informazioni riservate o dati personali. Usa questa modalità per ricerche generali." Se il tuo spazio di lavoro ha disattivato la ricerca web o la ricerca web approfondita, quella riga non compare.
+Con **Chiedi**, Saga si ferma prima di usare quella funzione e mostra una scheda al posto del campo del messaggio. Per una ricerca, la scheda dice "Saga vuole cercare in …". Per le altre funzioni, dice "Saga vuole usare … per questa richiesta". Scegli **Consenti** per continuare una volta, **Consenti sempre** per impostare quella riga su Consenti, oppure **Salta** per continuare senza. Se Saga ha bisogno della stessa autorizzazione più volte in una risposta, rispondi a una sola scheda. La risposta mostra poi che cosa hai scelto, per esempio "Hai consentito la ricerca in …" oppure "Hai saltato la ricerca in …, quindi la risposta non ne tiene conto". Le tue scelte vengono salvate nel tuo account.
 
-La riga Drafting sostituisce il vecchio interruttore Auto drafting accanto al campo del messaggio. Con Drafting disattivato, Saga risponde nella chat e non crea documenti né presentazioni.
+Con **Disattivato**, Saga non usa quella funzione in autonomia. Quando scegli tu stesso la ricerca web, una fonte giuridica, una fonte interna o un server MCP per un messaggio, Saga la usa per quel messaggio. Se la riga di quella fonte è impostata su **Chiedi** o **Disattivato**, Saga chiede comunque prima di usare la fonte. Con **Consenti**, non chiede.
+
+Quando **Cerca sul web** o **Ricerca approfondita sul web** è impostata su **Consenti**, l'elenco mostra lo stesso avviso della chat: "La ricerca web è attiva. Non caricare informazioni riservate o dati personali. Usa questa modalità per ricerche generali." Se il tuo spazio di lavoro ha disattivato la ricerca web o la ricerca web approfondita, quella riga non compare.
+
+La riga **Redigi documenti** sostituisce il vecchio interruttore Auto drafting accanto al campo del messaggio. Con **Redigi documenti** disattivato, Saga risponde nella chat e non crea documenti, presentazioni né bozze di email.
 
 ## Dimensione del testo della chat
 

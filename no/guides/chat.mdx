@@ -119,24 +119,29 @@ Utvalg som inneholder en tabell, kan ikke redigeres med KI ennå. Overlappende u
 
 ## KI-tillatelser
 
-Åpne **Innstillinger > AI Permissions** for å velge hva Saga kan gjøre på egen hånd i chattene dine. Hver rad har tre valg: **Ask**, **Allow** eller **Off**.
+Klikk **Tillatelser** under skrivefeltet for å velge hva Saga kan gjøre på egen hånd i chattene dine. Skriv i søkefeltet for å finne en rad. De fleste radene har tre valg: **Spør**, **Tillat** eller **Av**.
 
 | Rad | Hva den dekker | Standard |
 |---|---|---|
-| Web Search | Søke på det åpne internett | Ask |
-| Deep Web Search | Lengre og grundigere nettsøk | Ask |
-| Legal Sources | Sitere kilder fra de juridiske databasene som er aktivert for arbeidsområdet ditt | Ask |
-| Internal Sources | Bruke dokumenter fra organisasjonskildene du velger | Ask |
-| MCPs | Bruke verktøyene til de tilkoblede MCP-serverne dine | Ask |
-| Drafting | Lage og revidere dokumenter | Allow |
-| Workflow Generation | Bygge en arbeidsflyt for oppgaven din | Allow |
-| Questioner | Stille deg oppklarende spørsmål i chatten | Allow (ingen Ask-valg) |
+| Søk på nettet | Søke på det åpne internett | Spør |
+| Undersøk nettet grundig | Lengre og grundigere nettsøk | Spør |
+| Søk i rettskilder | Sitere kilder fra de juridiske databasene som er aktivert for arbeidsområdet ditt | Spør |
+| Søk i tidligere chatter | Se gjennom de tidligere chattene dine | Spør |
+| Søk i interne kilder | Bruke dokumenter fra organisasjonskildene du velger | Spør |
+| Bruk MCP-er | Bruke verktøyene til de tilkoblede MCP-serverne dine | Spør |
+| Utarbeid dokumenter | Lage og revidere dokumenter | Tillat |
+| Generer arbeidsflyter | Bygge en arbeidsflyt for oppgaven din | Tillat |
+| Still spørsmål | Stille deg oppklarende spørsmål i chatten | Spør (ingen Tillat-valg) |
 
-Med **Ask** stopper Saga før den bruker funksjonen og viser et kort i chatten: "Saga wants to use … for this request". Velg **Allow** for å fortsette én gang, **Always Allow** for å sette raden til Allow, eller **Skip** for å fortsette uten. Når du selv slår på en kilde i skrivefeltet, spør ikke Saga på nytt for den meldingen. Med **Off** bruker Saga aldri funksjonen. Valgene dine lagres på kontoen din.
+**Still spørsmål** har bare **Spør** og **Av**. Med **Av** stopper ikke Saga for å stille deg oppklarende spørsmål.
 
-Under radene for nettsøk viser Saga den samme advarselen som i chatten: "Nettsøk er aktivt. Ikke last opp konfidensiell informasjon eller personopplysninger. Bruk denne modusen for generell informasjonssøk." Hvis arbeidsområdet ditt har slått av nettsøk eller grundig nettsøk, vises ikke den raden.
+Med **Spør** stopper Saga før den bruker funksjonen og viser et kort i stedet for skrivefeltet. For et søk står det "Saga vil søke i …" på kortet. For andre funksjoner står det "Saga vil bruke … for denne forespørselen". Velg **Tillat** for å fortsette én gang, **Tillat alltid** for å sette raden til Tillat, eller **Hopp over** for å fortsette uten. Hvis Saga trenger den samme tillatelsen flere ganger i et svar, svarer du på ett kort. Svaret viser deretter hva du valgte, for eksempel "Du tillot søk i …" eller "Du hoppet over søk i …, så det brukes ikke i svaret". Valgene dine lagres på kontoen din.
 
-Raden Drafting erstatter den gamle Auto drafting-bryteren ved siden av meldingsfeltet. Når Drafting er av, svarer Saga i chatten og lager ikke dokumenter eller presentasjoner.
+Med **Av** bruker ikke Saga funksjonen på egen hånd. Når du selv velger nettsøk, en rettskilde, en intern kilde eller en MCP-server for en melding, bruker Saga den for den meldingen. Hvis raden for kilden står på **Spør** eller **Av**, spør Saga likevel før den bruker kilden. Med **Tillat** spør den ikke.
+
+Når **Søk på nettet** eller **Undersøk nettet grundig** står på **Tillat**, viser listen den samme advarselen som i chatten: "Nettsøk er aktivt. Ikke last opp konfidensiell informasjon eller personopplysninger. Bruk denne modusen for generell informasjonssøk." Hvis arbeidsområdet ditt har slått av nettsøk eller grundig nettsøk, vises ikke den raden.
+
+Raden **Utarbeid dokumenter** erstatter den gamle Auto drafting-bryteren ved siden av meldingsfeltet. Når **Utarbeid dokumenter** er av, svarer Saga i chatten og lager ikke dokumenter, presentasjoner eller e-postutkast.
 
 ## Tekststørrelse i chat
 
