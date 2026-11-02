@@ -126,24 +126,29 @@ Seleções que contenham uma tabela ainda não podem ser editadas com IA. Seleç
 
 ## Permissões de IA
 
-Abra **Definições > AI Permissions** para escolher o que o Saga pode fazer por iniciativa própria nos seus chats. Cada linha tem três opções: **Ask**, **Allow** ou **Off**.
+Clique em **Permissões** abaixo da caixa de mensagem para escolher o que o Saga pode fazer por iniciativa própria nos seus chats. Escreva no campo de pesquisa para encontrar uma linha. A maioria das linhas tem três opções: **Perguntar**, **Permitir** ou **Desligado**.
 
 | Linha | O que abrange | Predefinição |
 |---|---|---|
-| Web Search | Pesquisar na internet pública | Ask |
-| Deep Web Search | Pesquisa web mais longa e aprofundada | Ask |
-| Legal Sources | Citar fontes das bases de dados jurídicas ativadas para o seu espaço de trabalho | Ask |
-| Internal Sources | Usar documentos das fontes organizacionais que selecionar | Ask |
-| MCPs | Usar as ferramentas dos seus servidores MCP ligados | Ask |
-| Drafting | Gerar e rever documentos | Allow |
-| Workflow Generation | Criar um fluxo de trabalho para a sua tarefa | Allow |
-| Questioner | Fazer-lhe perguntas de esclarecimento no chat | Allow (sem opção Ask) |
+| Pesquisar na Web | Pesquisar na internet pública | Perguntar |
+| Investigar a Web em profundidade | Pesquisa web mais longa e aprofundada | Perguntar |
+| Pesquisar fontes jurídicas | Citar fontes das bases de dados jurídicas ativadas para o seu espaço de trabalho | Perguntar |
+| Pesquisar chats anteriores | Consultar os seus chats anteriores | Perguntar |
+| Pesquisar fontes internas | Usar documentos das fontes organizacionais que selecionar | Perguntar |
+| Usar MCPs | Usar as ferramentas dos seus servidores MCP ligados | Perguntar |
+| Redigir documentos | Gerar e rever documentos | Permitir |
+| Gerar fluxos de trabalho | Criar um fluxo de trabalho para a sua tarefa | Permitir |
+| Fazer perguntas | Fazer-lhe perguntas de esclarecimento no chat | Perguntar (sem opção Permitir) |
 
-Com **Ask**, o Saga para antes de usar essa funcionalidade e mostra um cartão no chat: "Saga wants to use … for this request". Escolha **Allow** para continuar uma vez, **Always Allow** para mudar essa linha para Allow, ou **Skip** para continuar sem ela. Se ativar uma fonte na caixa de mensagem por si próprio, o Saga não volta a perguntar para essa mensagem. Com **Off**, o Saga nunca usa essa funcionalidade. As suas escolhas ficam guardadas na sua conta.
+**Fazer perguntas** só tem **Perguntar** e **Desligado**. Com **Desligado**, o Saga não para para lhe fazer perguntas de esclarecimento.
 
-Abaixo das linhas de pesquisa na web, o Saga mostra o mesmo aviso que no chat: "A pesquisa na web está ativa. Não carregue nenhuma informação confidencial ou dado pessoal. Use este modo para pesquisa geral." Se o seu espaço de trabalho tiver desativado a pesquisa na web ou a pesquisa aprofundada na web, essa linha não aparece.
+Com **Perguntar**, o Saga para antes de usar essa funcionalidade e mostra um cartão no lugar da caixa de mensagem. Numa pesquisa, o cartão diz "A Saga quer pesquisar em …". Noutras funcionalidades, diz "O Saga quer usar … neste pedido". Escolha **Permitir** para continuar uma vez, **Permitir sempre** para mudar essa linha para Permitir, ou **Ignorar** para continuar sem ela. Se o Saga precisar da mesma permissão mais de uma vez numa resposta, responde a um único cartão. A resposta mostra depois o que escolheu, por exemplo "Você permitiu a pesquisa em …" ou "Você ignorou a pesquisa em …, então a resposta não a utiliza". As suas escolhas ficam guardadas na sua conta.
 
-A linha Drafting substitui o antigo interruptor Auto drafting junto à caixa de mensagem. Com Drafting desativado, o Saga responde no chat e não cria documentos nem apresentações.
+Com **Desligado**, o Saga não usa essa funcionalidade por iniciativa própria. Quando escolhe por si próprio a pesquisa na web, uma fonte jurídica, uma fonte interna ou um servidor MCP para uma mensagem, o Saga usa-a nessa mensagem. Se a linha dessa fonte estiver em **Perguntar** ou **Desligado**, o Saga pergunta na mesma antes de usar a fonte. Com **Permitir**, não pergunta.
+
+Quando **Pesquisar na Web** ou **Investigar a Web em profundidade** está em **Permitir**, a lista mostra o mesmo aviso que no chat: "A pesquisa na web está ativa. Não carregue nenhuma informação confidencial ou dado pessoal. Use este modo para pesquisa geral." Se o seu espaço de trabalho tiver desativado a pesquisa na web ou a pesquisa aprofundada na web, essa linha não aparece.
+
+A linha **Redigir documentos** substitui o antigo interruptor Auto drafting junto à caixa de mensagem. Com **Redigir documentos** desativado, o Saga responde no chat e não cria documentos, apresentações nem rascunhos de email.
 
 ## Tamanho do texto do chat
 
