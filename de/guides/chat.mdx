@@ -24,21 +24,24 @@ Quellenverweise funktionieren für Projektdokumente, Rechtsrecherche-Ergebnisse 
 
 ## Nachrichtenaktionen
 
-Bewegen Sie den Mauszeiger über eine Nachricht, um die verfügbaren Aktionen zu sehen:
+Bewegen Sie den Mauszeiger über eine Nachricht, um ihre Aktionen zu sehen. Die Aktionen unter der neuesten Antwort sind immer sichtbar.
 
-- **Kopieren** — den Nachrichteninhalt in die Zwischenablage kopieren
-- **Neu generieren** — eine neue Antwort auf dieselbe Frage erzeugen
-- **Nach Word exportieren** — die Nachricht als .docx-Datei herunterladen
-- **Bearbeiten** — Ihre ursprüngliche Nachricht ändern, um eine überarbeitete Antwort zu erhalten
-- **Gefällt mir / Gefällt mir nicht** — Feedback zur Antwortqualität geben
-- **In Prompt-Bibliothek speichern** — einen geschriebenen Prompt zur Wiederverwendung speichern
-- **Löschen** — die Nachricht aus der Unterhaltung entfernen
+| Nachricht | Aktionen |
+|---|---|
+| Ihre Nachricht | **Prompt speichern** speichert sie in Ihrer Prompt-Bibliothek. **Bearbeiten** ändert sie und liefert eine neue Antwort. **Kopieren** kopiert sie in die Zwischenablage. **Löschen** entfernt sie aus der Unterhaltung. |
+| Eine Antwort | **Kopieren** kopiert sie in die Zwischenablage. **Erneut versuchen** liefert eine neue Antwort auf dieselbe Frage. **Nach Word exportieren** lädt sie als .docx-Datei herunter. Mit den Schaltflächen Daumen hoch und Daumen runter bewerten Sie die Antwort. |
+
+**Bearbeiten**, **Kopieren** und **Löschen** sind bei Ihrer Nachricht ausgeblendet, solange Saga antwortet.
+
+Jede Nachricht zeigt, wann sie gesendet wurde, zum Beispiel „gerade eben", „vor 12 Minuten" oder „gestern". Nachrichten, die älter als eine Woche sind, zeigen das Datum. Bewegen Sie den Mauszeiger über die Uhrzeit, um das vollständige Datum und die Uhrzeit zu sehen. Die Antwort zeigt außerdem, welches Modell sie geschrieben hat.
 
 Codeblöcke in einer Antwort haben eine Schaltfläche **Code kopieren**, die nur den Code kopiert.
 
+Um nach einem Teil einer Antwort zu fragen, markieren Sie den Text und klicken Sie auf **Zum Chat hinzufügen**. Saga fügt den Text als Zitat in das Eingabefeld ein, sodass Sie Ihre Frage darunter schreiben können.
+
 ## Nachrichtenversionen
 
-Wenn Sie eine Nachricht bearbeiten oder eine Antwort neu generieren, erstellt Saga eine neue Version, anstatt das Original zu überschreiben. Es erscheinen Navigationspfeile, mit denen Sie zwischen den Versionen wechseln können.
+Wenn Sie eine Nachricht bearbeiten oder eine Antwort erneut anfordern, erstellt Saga eine neue Version, anstatt das Original zu überschreiben. Mit den Pfeilen und der Versionsnummer, etwa `1/2`, wechseln Sie zwischen den Versionen. Bei Ihren Nachrichten und bei Antworten vor der neuesten erscheinen die Pfeile, wenn Sie den Mauszeiger über die Nachricht bewegen.
 
 Dies ist nützlich, wenn Sie verschiedene Blickwinkel auf dieselbe Frage erkunden möchten — zum Beispiel die KI bitten, eine Klausel unter zwei verschiedenen Rechtsordnungen zu analysieren, oder eine Frage umformulieren, um zu sehen, ob eine breitere oder engere Formulierung bessere Ergebnisse liefert. Jede Version bleibt erhalten, sodass Sie jederzeit zurückkehren können.
 
@@ -63,7 +66,9 @@ Wählen Sie eine Aufgabe aus dem Dropdown und stellen Sie dann den zu verarbeite
 
 ## Prompt verbessern
 
-Bevor Sie eine Nachricht senden, klicken Sie auf das Stift-Symbol neben der Senden-Schaltfläche, um die KI Ihren Prompt verfeinern zu lassen. Dies kann Ihnen helfen, gezieltere Ergebnisse zu erhalten, insbesondere bei komplexen Fragen. Wenn Sie Ihren Originaltext bevorzugen, klicken Sie auf den Rückgängig-Pfeil, um die Verbesserung rückgängig zu machen.
+Bevor Sie eine Nachricht senden, klicken Sie auf **Prompt verbessern** neben der Senden-Schaltfläche, um die KI Ihren Prompt verfeinern zu lassen. Dies kann Ihnen helfen, gezieltere Ergebnisse zu erhalten, insbesondere bei komplexen Fragen. Wenn Sie Ihren Originaltext bevorzugen, klicken Sie auf **Zurück zur ursprünglichen Eingabe**, um die Verbesserung rückgängig zu machen.
+
+Nachdem Sie einen verbesserten Prompt gesendet haben und die Antwort fertig ist, fragt Saga „Original-Prompt bevorzugen?". Klicken Sie auf **Original ausführen**, um stattdessen Ihren Originaltext zu senden. Saga fügt ihn als neue Version Ihrer Nachricht hinzu, sodass Sie beide Antworten vergleichen können. Klicken Sie auf **Ausblenden**, wenn Sie den verbesserten Prompt behalten möchten.
 
 ## Spracheingabe
 

@@ -24,21 +24,24 @@ As citações funcionam para documentos de projeto, resultados de pesquisa jurí
 
 ## Ações de mensagem
 
-Passe o cursor sobre qualquer mensagem para ver as ações disponíveis:
+Passe o cursor sobre uma mensagem para ver as suas ações. As ações sob a resposta mais recente estão sempre visíveis.
 
-- **Copiar** o conteúdo da mensagem para a área de transferência
-- **Regenerar** uma nova resposta à mesma pergunta
-- **Exportar para Word** para transferir a mensagem como ficheiro .docx
-- **Editar** a sua mensagem original para obter uma resposta revista
-- **Gosto / Não gosto** para dar feedback sobre a qualidade da resposta
-- **Guardar na biblioteca de prompts** para reutilizar um prompt que escreveu
-- **Eliminar** a mensagem da conversa
+| Mensagem | Ações |
+|---|---|
+| A sua mensagem | **Salvar Prompt** guarda-a na sua biblioteca de prompts. **Editar** altera-a e obtém uma nova resposta. **Copiar** copia-a para a área de transferência. **Excluir** remove-a da conversa. |
+| Uma resposta | **Copiar** copia-a para a área de transferência. **Tentar novamente** obtém uma nova resposta à mesma pergunta. **Exportar para o Word** transfere-a como ficheiro .docx. Os botões de polegar para cima e polegar para baixo avaliam a resposta. |
 
-Os blocos de código numa resposta têm um botão **Copy code** que copia apenas o código.
+**Editar**, **Copiar** e **Excluir** na sua mensagem ficam ocultos enquanto o Saga responde.
+
+Cada mensagem mostra quando foi enviada, por exemplo "agora mesmo", "há 12 minutos" ou "ontem". As mensagens com mais de uma semana mostram a data. Passe o cursor sobre a hora para ver a data e a hora completas. A resposta também mostra que modelo a escreveu.
+
+Os blocos de código numa resposta têm um botão **Copiar código** que copia apenas o código.
+
+Para perguntar sobre parte de uma resposta, selecione o texto e clique em **Adicionar ao chat**. O Saga adiciona o texto ao campo de mensagem como citação, para que possa escrever a sua pergunta por baixo.
 
 ## Versões de mensagem
 
-Quando edita uma mensagem ou regenera uma resposta, o Saga cria uma nova versão em vez de substituir a original. Aparecem setas de navegação para que possa alternar entre versões.
+Quando edita uma mensagem ou tenta novamente uma resposta, o Saga cria uma nova versão em vez de substituir a original. Use as setas e o número da versão, como `1/2`, para alternar entre versões. Nas suas mensagens, e nas respostas anteriores à mais recente, as setas aparecem quando passa o cursor sobre a mensagem.
 
 Isto é útil quando quer explorar diferentes ângulos da mesma pergunta — por exemplo, pedir à IA para analisar uma cláusula em duas jurisdições diferentes, ou reformular uma pergunta para ver se uma formulação mais ampla ou mais restrita produz melhores resultados. Cada versão é preservada, pelo que pode sempre voltar atrás.
 
@@ -63,7 +66,9 @@ Selecione uma tarefa a partir do menu e forneça o texto ou documentos a process
 
 ## Melhorar prompt
 
-Antes de enviar uma mensagem, clique no ícone de caneta junto ao botão de envio para permitir que a IA refine o seu prompt. Isto pode ajudá-lo a obter resultados mais direcionados, especialmente para perguntas complexas. Se preferir o seu texto original, clique na seta de reverter para desfazer a melhoria.
+Antes de enviar uma mensagem, clique em **Melhorar Prompt** junto ao botão de envio para permitir que a IA refine o seu prompt. Isto pode ajudá-lo a obter resultados mais direcionados, especialmente para perguntas complexas. Se preferir o seu texto original, clique em **Retornar ao prompt original** para desfazer a melhoria.
+
+Depois de enviar um prompt melhorado e de a resposta terminar, o Saga pergunta "Preferir o prompt original?". Clique em **Executar original** para enviar antes o seu texto original. O Saga adiciona-o como uma nova versão da sua mensagem, para que possa comparar as duas respostas. Clique em **Dispensar** se quiser manter o prompt melhorado.
 
 ## Entrada de voz
 
