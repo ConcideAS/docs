@@ -24,21 +24,24 @@ Källhänvisningar fungerar för projektdokument, juridiska sökresultat och web
 
 ## Meddelandeåtgärder
 
-Håll muspekaren över ett meddelande för att se tillgängliga åtgärder:
+Håll muspekaren över ett meddelande för att se dess åtgärder. Åtgärderna under det senaste svaret är alltid synliga.
 
-- **Kopiera** meddelandeinnehållet till urklipp
-- **Generera om** ett nytt svar på samma fråga
-- **Exportera till Word** för att ladda ner meddelandet som en .docx-fil
-- **Redigera** ditt ursprungliga meddelande för att få ett reviderat svar
-- **Gilla / Ogilla** för att ge feedback på svarets kvalitet
-- **Spara i promptbiblioteket** för att återanvända en prompt du har skrivit
-- **Ta bort** meddelandet från konversationen
+| Meddelande | Åtgärder |
+|---|---|
+| Ditt meddelande | **Spara uppmaning** sparar det i ditt promptbibliotek. **Redigera** ändrar det och ger ett nytt svar. **Kopiera** kopierar det till urklipp. **Radera** tar bort det från konversationen. |
+| Ett svar | **Kopiera** kopierar det till urklipp. **Försök igen** ger ett nytt svar på samma fråga. **Exportera till Word** laddar ner det som en .docx-fil. Med tumme upp- och tumme ned-knapparna betygsätter du svaret. |
 
-Kodblock har också knappen **Copy code**. Den kopierar bara koden, inte resten av svaret.
+**Redigera**, **Kopiera** och **Radera** på ditt meddelande är dolda medan Saga svarar.
+
+Varje meddelande visar när det skickades, till exempel "just nu", "för 12 minuter sedan" eller "i går". Meddelanden äldre än en vecka visar datumet. Håll muspekaren över tiden för att se fullständigt datum och klockslag. Svaret visar också vilken modell som skrev det.
+
+Kodblock har också knappen **Kopiera kod**. Den kopierar bara koden, inte resten av svaret.
+
+Om du vill fråga om en del av ett svar markerar du texten och klickar på **Lägg till i chatten**. Saga lägger till texten i meddelandefältet som ett citat, så att du kan skriva din fråga under det.
 
 ## Meddelandeversioner
 
-När du redigerar ett meddelande eller genererar om ett svar skapar Saga en ny version istället för att skriva över originalet. Navigeringspilar visas så att du kan flytta mellan versioner.
+När du redigerar ett meddelande eller försöker igen med ett svar skapar Saga en ny version istället för att skriva över originalet. Använd pilarna och versionsnumret, till exempel `1/2`, för att flytta mellan versioner. På dina meddelanden, och på svar före det senaste, visas pilarna när du håller muspekaren över meddelandet.
 
 Detta är användbart när du vill utforska olika vinklar på samma fråga — till exempel be AI:n analysera en klausul under två olika jurisdiktioner, eller omformulera en fråga för att se om en bredare eller smalare formulering ger bättre resultat. Varje version bevaras, så du kan alltid gå tillbaka.
 
@@ -63,7 +66,9 @@ Välj en uppgift från rullgardinsmenyn och ange sedan texten eller dokumenten a
 
 ## Förbättra prompt
 
-Innan du skickar ett meddelande, klicka på pennikonen bredvid skicka-knappen för att låta AI:n förfina din prompt. Detta kan hjälpa dig att få mer riktade resultat, särskilt för komplexa frågor. Om du föredrar din ursprungliga text, klicka på återställningspilen för att ångra förbättringen.
+Innan du skickar ett meddelande, klicka på **Förbättra prompten** bredvid skicka-knappen för att låta AI:n förfina din prompt. Detta kan hjälpa dig att få mer riktade resultat, särskilt för komplexa frågor. Om du föredrar din ursprungliga text, klicka på **Återgå till ursprunglig prompt** för att ångra förbättringen.
+
+När du har skickat en förbättrad prompt och svaret är klart frågar Saga "Föredrar du den ursprungliga prompten?". Klicka på **Kör original** för att skicka din ursprungliga text i stället. Saga lägger till den som en ny version av ditt meddelande, så att du kan jämföra båda svaren. Klicka på **Stäng** om du vill behålla den förbättrade prompten.
 
 ## Röstinmatning
 

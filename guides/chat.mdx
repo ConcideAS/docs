@@ -24,21 +24,24 @@ Citations work for project documents, legal research results, and web sources. T
 
 ## Message actions
 
-Hover over any message to see its available actions:
+Hover over a message to see its actions. The actions under the latest answer are always visible.
 
-- **Copy** the message content to your clipboard
-- **Regenerate** a new response to the same question
-- **Export to Word** to download the message as a .docx file
-- **Edit** your original message to get a revised response
-- **Like / Dislike** to give feedback on the response quality
-- **Save to Prompt Library** to reuse a prompt you've written
-- **Delete** the message from the conversation
+| Message | Actions |
+|---|---|
+| Your message | **Save Prompt** saves it to your prompt library. **Edit** changes it and gets a new answer. **Copy** copies it to your clipboard. **Delete** removes it from the conversation. |
+| An answer | **Copy** copies it to your clipboard. **Retry** gets a new answer to the same question. **Export to Word** downloads it as a .docx file. The thumbs up and thumbs down buttons rate the answer. |
 
-Code blocks in an answer have a **Copy code** button that copies only the code.
+**Edit**, **Copy**, and **Delete** on your message are hidden while Saga is answering.
+
+Each message shows when it was sent, for example "just now", "12 minutes ago", or "yesterday". Messages older than a week show the date. Hover over the time to see the full date and time. The answer also shows which model wrote it.
+
+Code blocks in an answer have a **Copy Code** button that copies only the code.
+
+To ask about part of an answer, select the text and click **Add to Chat**. Saga adds the text to the message input as a quote, so you can write your question below it.
 
 ## Message versions
 
-When you edit a message or regenerate a response, Saga creates a new version instead of overwriting the original. Navigation arrows appear so you can move between versions.
+When you edit a message or retry an answer, Saga creates a new version instead of overwriting the original. Use the arrows and the version number, such as `1/2`, to move between versions. On your messages, and on answers before the latest one, the arrows show when you hover over the message.
 
 This is useful when you want to explore different angles on the same question — for example, asking the AI to analyze a clause under two different jurisdictions, or rephrasing a question to see whether a broader or narrower framing surfaces better results. Each version is preserved, so you can always go back.
 
@@ -63,7 +66,9 @@ Select a task from the dropdown, then provide the text or documents to process.
 
 ## Improve prompt
 
-Before sending a message, click the pen icon next to the send button to let the AI refine your prompt. This can help you get more targeted results, especially for complex questions. If you prefer your original text, click the revert arrow to undo the improvement.
+Before sending a message, click **Improve Prompt** next to the send button to let the AI refine your prompt. This can help you get more targeted results, especially for complex questions. If you prefer your original text, click **Return to Original Prompt** to undo the improvement.
+
+After you send an improved prompt and the answer is done, Saga asks "Prefer the original prompt?". Click **Run Original** to send your original text instead. Saga adds it as a new version of your message, so you can compare both answers. Click **Dismiss** if you want to keep the improved prompt.
 
 ## Voice input
 

@@ -24,21 +24,24 @@ Les citations fonctionnent pour les documents de projet, les résultats de reche
 
 ## Actions sur les messages
 
-Survolez n'importe quel message pour voir les actions disponibles :
+Survolez un message pour voir ses actions. Les actions sous la dernière réponse sont toujours visibles.
 
-- **Copier** le contenu du message dans le presse-papiers
-- **Régénérer** une nouvelle réponse à la même question
-- **Exporter vers Word** pour télécharger le message au format .docx
-- **Modifier** votre message original pour obtenir une réponse révisée
-- **J'aime / Je n'aime pas** pour donner votre avis sur la qualité de la réponse
-- **Enregistrer dans la bibliothèque de prompts** pour réutiliser un prompt que vous avez rédigé
-- **Supprimer** le message de la conversation
+| Message | Actions |
+|---|---|
+| Votre message | **Enregistrer le Prompt** l'enregistre dans votre bibliothèque de prompts. **Modifier** le change et génère une nouvelle réponse. **Copier** le copie dans le presse-papiers. **Supprimer** le retire de la conversation. |
+| Une réponse | **Copier** la copie dans le presse-papiers. **Réessayer** génère une nouvelle réponse à la même question. **Exporter vers Word** la télécharge au format .docx. Les boutons pouce levé et pouce baissé permettent d'évaluer la réponse. |
 
-Les blocs de code dans une réponse ont un bouton **Copy code** qui copie uniquement le code.
+**Modifier**, **Copier** et **Supprimer** sont masqués sur votre message pendant que Saga répond.
+
+Chaque message indique quand il a été envoyé, par exemple « à l'instant », « il y a 12 minutes » ou « hier ». Les messages de plus d'une semaine affichent la date. Survolez l'heure pour voir la date et l'heure complètes. La réponse indique aussi quel modèle l'a rédigée.
+
+Les blocs de code dans une réponse ont un bouton **Copier le code** qui copie uniquement le code.
+
+Pour poser une question sur une partie d'une réponse, sélectionnez le texte et cliquez sur **Ajouter au chat**. Saga ajoute le texte au champ de saisie sous forme de citation, pour que vous puissiez écrire votre question en dessous.
 
 ## Versions des messages
 
-Lorsque vous modifiez un message ou régénérez une réponse, Saga crée une nouvelle version au lieu d'écraser l'originale. Des flèches de navigation apparaissent pour vous permettre de passer d'une version à l'autre.
+Lorsque vous modifiez un message ou réessayez une réponse, Saga crée une nouvelle version au lieu d'écraser l'originale. Utilisez les flèches et le numéro de version, par exemple `1/2`, pour passer d'une version à l'autre. Sur vos messages, et sur les réponses antérieures à la dernière, les flèches apparaissent lorsque vous survolez le message.
 
 C'est utile lorsque vous souhaitez explorer différents angles sur la même question — par exemple, demander à l'IA d'analyser une clause selon deux juridictions différentes, ou reformuler une question pour voir si un cadrage plus large ou plus étroit donne de meilleurs résultats. Chaque version est conservée, vous pouvez donc toujours revenir en arrière.
 
@@ -63,7 +66,9 @@ Sélectionnez une tâche dans le menu déroulant, puis fournissez le texte ou le
 
 ## Améliorer le prompt
 
-Avant d'envoyer un message, cliquez sur l'icône du stylo à côté du bouton d'envoi pour laisser l'IA affiner votre prompt. Cela peut vous aider à obtenir des résultats plus ciblés, en particulier pour les questions complexes. Si vous préférez votre texte original, cliquez sur la flèche de retour pour annuler l'amélioration.
+Avant d'envoyer un message, cliquez sur **Améliorer le prompt** à côté du bouton d'envoi pour laisser l'IA affiner votre prompt. Cela peut vous aider à obtenir des résultats plus ciblés, en particulier pour les questions complexes. Si vous préférez votre texte original, cliquez sur **Revenir au prompt original** pour annuler l'amélioration.
+
+Après l'envoi d'un prompt amélioré, une fois la réponse terminée, Saga demande « Préférer le prompt original ? ». Cliquez sur **Relancer l'original** pour envoyer votre texte original à la place. Saga l'ajoute comme nouvelle version de votre message, pour que vous puissiez comparer les deux réponses. Cliquez sur **Ignorer** si vous souhaitez conserver le prompt amélioré.
 
 ## Saisie vocale
 
