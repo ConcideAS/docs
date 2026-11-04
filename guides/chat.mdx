@@ -212,6 +212,24 @@ When your workspace deletes old chats under its data retention setting, Saga war
 
 ## How long chats are handled
 
-You don't need to manage the AI's context window manually. The AI fetches document content on demand through tool calls rather than holding every document in its prompt, so long conversations no longer hit a hard percentage cutoff and there's no "context full" warning in current versions of Saga.
+You don't need to manage the AI's context window manually. The AI fetches document content on demand through tool calls rather than holding every document in its prompt, so long conversations don't hit a hard percentage cutoff.
+
+Saga can still read only so much of a chat at once, and the amount depends on the model. When the earlier messages no longer fit, Saga leaves out the oldest ones and answers from the rest. A notice appears above the message box:
+
+> This chat is long, so Saga left out the 2 oldest messages
+
+With one message left out, the notice says "the oldest message". Click **Start a New Chat** in the notice to open a fresh chat, or close the notice to keep working. As a chat nears this point, the notice reads **This chat is getting long** and offers the same button.
+
+Saga keeps:
+
+- Your latest message and Saga's replies to it.
+- The project, attached files, and sources the chat uses.
+- As many earlier exchanges as fit, newest first. An exchange is one of your messages and Saga's replies to it, and Saga leaves out whole exchanges, never part of one.
+
+For older exchanges, Saga keeps the text of the conversation but not the document passages it fetched. It keeps those passages only for your latest message and the two before it.
+
+Left-out messages stay in your chat, but Saga doesn't read them when it answers. If you set an instruction in your first message, such as the tone for a draft, repeat it in a new message once the notice appears.
+
+If your latest message and its context are too large on their own, Saga can't answer and shows **This chat is too long for Saga to read at once**. Start a new chat, or select fewer documents. Your project and its files stay as they are.
 
 Very long chats can still feel slower because the AI has more history to read. If you're starting a new line of analysis or moving to a different document set, open a fresh chat — it's faster and keeps the focus tight. For ongoing work over days or weeks, upload your documents to a project's [knowledge base](/guides/projects/knowledge-base) instead of re-attaching them in each new chat.
