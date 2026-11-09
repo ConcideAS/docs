@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+L'intégration PureService vous permet de joindre à un chat des fichiers issus de tickets et de FAQ PureService. Vous recherchez dans PureService depuis Saga, sélectionnez les pièces jointes utiles et interrogez Saga à leur sujet sans les télécharger puis les importer à nouveau. Par exemple, vous pouvez joindre un contrat qu'un collègue a ajouté à un ticket du service d'assistance et demander à Saga de résumer ses clauses de résiliation.
+
+## Où l'utiliser
+
+Lorsque votre administrateur a activé PureService, l'option **Importer depuis PureService** apparaît dans le chat. Cliquez sur le bouton de pièce jointe et sélectionnez **Importer depuis PureService**.
+
+## Rechercher et sélectionner des fichiers
+
+La boîte de dialogue **Documents PureService** s'ouvre. Saisissez une recherche pour trouver des tickets et des FAQ. Utilisez **Tout**, **Tickets** ou **FAQ** pour affiner les résultats. Chaque résultat affiche son type, et un ticket affiche aussi son numéro de demande. {/* pragma: allowlist secret */}
+
+Cliquez sur un résultat pour voir ses pièces jointes. Sélectionnez un ou plusieurs fichiers, puis cliquez sur **Sélectionner**. La boîte de dialogue indique combien de fichiers vous avez sélectionnés. Saga joint les fichiers à votre message.
+
+Les fichiers sont copiés dans Saga en import à sens unique. Les modifications dans PureService n'apparaissent pas dans Saga. Si vous avez besoin d'une version plus récente, joignez-la à nouveau.
+
+## Configuration
+
+Votre administrateur configure PureService dans le [panneau d'administration](/fr/guides/administration/admin-panel) sous **Intégrations**. Sur la carte **Intégration PureService**, l'administrateur active **Activé** et saisit ces valeurs :
+
+| Champ | Valeur à saisir |
+|---|---|
+| **Hôte** | Votre hôte PureService, par exemple `acme.pureservice.com`. L'hôte doit être `pureservice.com` ou l'un de ses sous-domaines |
+| **Clé API** | La clé API de votre organisation dans PureService. Saga la stocke chiffrée et ne l'affiche plus après l'enregistrement |
+
+Pour n'afficher que les tickets et FAQ d'un service, activez **Limiter à une zone (service)** et saisissez l'**ID du service**. L'ID est un nombre entier positif, par exemple `8`.
+
+Cliquez sur **Tester la connexion** pour vérifier que Saga peut joindre PureService, puis cliquez sur **Enregistrer les modifications**.
+
+Si vous ne voyez pas l'option PureService dans le chat, demandez à votre administrateur de l'activer.

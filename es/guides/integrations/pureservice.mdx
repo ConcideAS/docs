@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+La integración con PureService le permite adjuntar a un chat archivos de tickets y FAQ de PureService. Busca en PureService desde Saga, selecciona los adjuntos que necesita y pregunta a Saga sobre ellos sin descargarlos y volver a subirlos. Por ejemplo, puede adjuntar un contrato que un compañero añadió a un ticket del servicio de asistencia y pedir a Saga que resuma sus cláusulas de terminación.
+
+## Dónde puede usarla
+
+Cuando su administrador ha activado PureService, la opción **Subir desde PureService** aparece en el chat. Haga clic en el botón de adjuntar y seleccione **Subir desde PureService**.
+
+## Buscar y seleccionar archivos
+
+Se abre el cuadro de diálogo **Documentos de PureService**. Escriba en el campo de búsqueda para encontrar tickets y FAQ. Use **Todos**, **Tickets** o **FAQ** para acotar los resultados. Cada resultado muestra su tipo, y un ticket muestra también su número de solicitud.
+
+Haga clic en un resultado para ver sus adjuntos. Seleccione uno o varios archivos y haga clic en **Seleccionar**. El cuadro de diálogo muestra cuántos archivos ha seleccionado. Saga adjunta los archivos a su mensaje.
+
+Los archivos se copian en Saga como una importación en un solo sentido. Los cambios en PureService no aparecen en Saga. Si necesita una versión más reciente, adjúntela de nuevo.
+
+## Configuración
+
+Su administrador configura PureService en el [panel de administración](/es/guides/administration/admin-panel) en **Integraciones**. En la tarjeta **Integración de PureService**, el administrador activa **Habilitado** e introduce estos valores:
+
+| Campo | Qué introducir |
+|---|---|
+| **Host** | Su host de PureService, por ejemplo `acme.pureservice.com`. El host debe ser `pureservice.com` o un subdominio |
+| **Clave API** | La clave API de su organización en PureService. Saga la guarda cifrada y no la vuelve a mostrar después de guardar |
+
+Para mostrar solo tickets y FAQ de un departamento, active **Restringir a una zona (departamento)** e introduzca el **ID de departamento**. El ID es un número entero positivo, por ejemplo `8`.
+
+Haga clic en **Probar conexión** para comprobar que Saga puede conectar con PureService y, después, haga clic en **Guardar cambios**.
+
+Si no ve la opción de PureService en el chat, pida a su administrador que la active.

@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+Met de PureService-integratie voegt u bestanden uit PureService-tickets en FAQ's toe aan een chat. U zoekt in PureService vanuit Saga, selecteert de bijlagen die u nodig hebt en stelt Saga er vragen over, zonder ze te downloaden en opnieuw te uploaden. U kunt bijvoorbeeld een contract toevoegen dat een collega aan een servicedeskticket heeft gehangen en Saga vragen de opzegbepalingen samen te vatten.
+
+## Waar u de integratie gebruikt
+
+Wanneer uw beheerder PureService heeft ingeschakeld, verschijnt in de chat de optie **Uploaden vanuit PureService**. Klik op de knop voor bijlagen en kies **Uploaden vanuit PureService**.
+
+## Bestanden zoeken en selecteren
+
+Het venster **PureService-documenten** opent. Typ in het zoekveld om tickets en FAQ's te vinden. Gebruik **Alle**, **Tickets** of **FAQ's** om de resultaten te beperken. Elk resultaat toont het type, en een ticket toont ook het aanvraagnummer.
+
+Klik op een resultaat om de bijlagen te zien. Selecteer een of meer bestanden en klik op **Selecteren**. Het venster toont hoeveel bestanden u hebt geselecteerd. Saga voegt de bestanden toe aan uw bericht.
+
+Bestanden worden als eenrichtingsimport naar Saga gekopieerd. Wijzigingen in PureService verschijnen niet in Saga. Hebt u een nieuwere versie nodig, voeg die dan opnieuw toe.
+
+## Instellen
+
+Uw beheerder stelt PureService in via het [beheerpaneel](/nl/guides/administration/admin-panel) onder **Integraties**. Op de kaart **PureService-integratie** zet de beheerder **Ingeschakeld** aan en vult deze waarden in:
+
+| Veld | Wat u invult |
+|---|---|
+| **Host** | Uw PureService-host, bijvoorbeeld `acme.pureservice.com`. De host moet `pureservice.com` of een subdomein daarvan zijn |
+| **API-sleutel** | De API-sleutel van uw organisatie in PureService. Saga slaat die versleuteld op en toont die na het opslaan niet meer |
+
+Om alleen tickets en FAQ's van één afdeling te tonen, zet u **Beperken tot één zone (afdeling)** aan en vult u de **Afdelings-ID** in. De ID is een positief geheel getal, bijvoorbeeld `8`.
+
+Klik op **Verbinding testen** om te controleren of Saga PureService bereikt en klik daarna op **Wijzigingen opslaan**.
+
+Ziet u de PureService-optie niet in de chat, vraag uw beheerder dan om die in te schakelen.
