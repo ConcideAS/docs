@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+L'integrazione PureService ti permette di allegare a una chat file da ticket e FAQ di PureService. Cerchi in PureService da Saga, selezioni gli allegati che ti servono e fai domande a Saga senza scaricarli e caricarli di nuovo. Ad esempio, puoi allegare un contratto che un collega ha aggiunto a un ticket dell'assistenza e chiedere a Saga di riassumere le clausole di recesso.
+
+## Dove puoi usarla
+
+Quando l'amministratore ha attivato PureService, l'opzione **Carica da PureService** compare nella chat. Clicca sul pulsante per allegare e seleziona **Carica da PureService**.
+
+## Cercare e selezionare i file
+
+Si apre la finestra **Documenti PureService**. Scrivi nel campo di ricerca per trovare ticket e FAQ. Usa **Tutti**, **Ticket** o **FAQ** per restringere i risultati. Ogni risultato mostra il suo tipo, e un ticket mostra anche il numero di richiesta.
+
+Clicca su un risultato per vedere i suoi allegati. Seleziona uno o più file, poi clicca su **Seleziona**. La finestra mostra quanti file hai selezionato. Saga allega i file al tuo messaggio.
+
+I file vengono copiati in Saga con un'importazione a senso unico. Le modifiche in PureService non compaiono in Saga. Se ti serve una versione più recente, allegala di nuovo.
+
+## Configurazione
+
+L'amministratore configura PureService nel [pannello di amministrazione](/it/guides/administration/admin-panel) sotto **Integrazioni**. Nella scheda **Integrazione PureService**, l'amministratore attiva **Abilitato** e inserisce questi valori:
+
+| Campo | Cosa inserire |
+|---|---|
+| **Host** | Il tuo host PureService, ad esempio `acme.pureservice.com`. L'host deve essere `pureservice.com` o un suo sottodominio |
+| **Chiave API** | La chiave API della tua organizzazione in PureService. Saga la conserva cifrata e non la mostra più dopo il salvataggio |
+
+Per mostrare solo ticket e FAQ di un reparto, attiva **Limita a una zona (reparto)** e inserisci l'**ID reparto**. L'ID è un numero intero positivo, ad esempio `8`.
+
+Clicca su **Testa connessione** per verificare che Saga raggiunga PureService, poi clicca su **Salva modifiche**.
+
+Se non vedi l'opzione PureService nella chat, chiedi all'amministratore di attivarla.
