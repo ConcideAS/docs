@@ -6,11 +6,11 @@ Costruire un flusso di lavoro significa disporre i passaggi che vuoi automatizza
 
 ## Il costruttore
 
-Apri il costruttore di flussi di lavoro dalla pagina **Flussi di lavoro** nella barra laterale. Vedrai un canvas visuale — uno spazio di lavoro vuoto dove assembli il tuo flusso.
+Apri il costruttore di flussi di lavoro dalla pagina **Flussi di lavoro** nella barra laterale. Il costruttore mostra il tuo flusso di lavoro come una sequenza di passaggi su un canvas.
 
-Aggiungi passaggi dal catalogo nella barra laterale, organizzato in **Input** e **Azioni**. Trascina un passaggio sul canvas o clicca per aggiungerlo. Collega i passaggi trascinando dalla maniglia di output di un passaggio alla maniglia di input del successivo. I collegamenti definiscono l'ordine di esecuzione e come i dati passano tra i passaggi.
+Clicca su **+** per aggiungere un passaggio. Per cambiare l'ordine, trascina un passaggio in una nuova posizione. I passaggi vengono eseguiti nell'ordine che hanno sul canvas.
 
-Ogni passaggio ha un pannello di configurazione. Seleziona un passaggio sul canvas per aprirlo nella barra laterale, dove puoi impostare:
+Ogni passaggio ha un pannello di configurazione. Seleziona un passaggio sul canvas per configurarlo. Puoi impostare:
 
 - **Titolo del passaggio** — un'etichetta che identifica cosa fa questo passaggio (è quello che vedi quando lo referenzi da altri passaggi)
 - **Istruzioni o query** — il prompt, la query di ricerca o le direttive per questo passaggio
@@ -18,6 +18,8 @@ Ogni passaggio ha un pannello di configurazione. Seleziona un passaggio sul canv
 - **Opzioni specifiche del passaggio** — cose come quali [fonti giuridiche](/it/guides/legal-research) cercare, tra quali lingue tradurre o quale [attività](/it/guides/chat#attività) eseguire
 
 Puoi anche cliccare su **Migliora il prompt** nei campi delle istruzioni per far perfezionare la formulazione dall'IA.
+
+In un passaggio che ti chiede un input, puoi scegliere file da una [knowledge base](/it/guides/projects/knowledge-base).
 
 ## Fare riferimento a passaggi precedenti
 
@@ -52,6 +54,8 @@ Quando un passaggio cita fonti — in particolare la Ricerca giuridica — l'out
 ## Esecuzione dalla chat
 
 Puoi anche avviare un flusso di lavoro direttamente da una conversazione in chat. Il flusso di lavoro viene eseguito inline — passaggio per passaggio nel thread della chat — così puoi vedere i risultati man mano che arrivano senza lasciare la conversazione.
+
+Quando Saga crea la bozza di un nuovo flusso di lavoro in chat, appare una scheda con un pulsante per avviare l'esecuzione. Mentre l'esecuzione è in corso, la scheda nasconde questo pulsante.
 
 ## Bozze
 

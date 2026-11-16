@@ -4,7 +4,7 @@ title: Oversikt
 
 Arbeidsflyter lar deg kjede sammen AI-oppgaver i en automatisert sekvens. I stedet for å kjøre hvert steg manuelt — hente ut nøkkeltermer, undersøke relevante lover, lage et sammendrag — bygger du en flyt én gang og kjører den når du trenger den. Hvert steg mater resultatet sitt inn i det neste, slik at hele prosessen kjører fra start til slutt uten at du bytter mellom verktøy.
 
-De er bygget på et visuelt lerret der du legger ut steg, kobler dem sammen og konfigurerer hva hvert steg gjør. Resultatet er en gjenbrukbar pipeline som kan håndtere komplekst, flerstegarbeid på en brøkdel av tiden det ville tatt å gjøre manuelt.
+De er bygget på et visuelt lerret der du legger til steg, setter dem i rekkefølge og konfigurerer hva hvert steg gjør. Resultatet er en gjenbrukbar pipeline som kan håndtere komplekst, flerstegarbeid på en brøkdel av tiden det ville tatt å gjøre manuelt.
 
 <Note>
 Sagas juridiske ingeniører kan hjelpe deg med å designe arbeidsflyter tilpasset firmaets spesifikke prosesser — kontakt kontoteamet ditt hvis du ønsker hjelp.
@@ -12,7 +12,7 @@ Sagas juridiske ingeniører kan hjelpe deg med å designe arbeidsflyter tilpasse
 
 ## Hvordan arbeidsflyter er strukturert
 
-En arbeidsflyt er en lineær sekvens av steg. Hvert steg er en **node** som gjør én ting — generere tekst, søke i juridiske kilder, oversette et dokument, kjøre en rutenettgjennomgang. Du kobler noder i den rekkefølgen du vil at de skal kjøre, og data flyter fra ett steg til det neste automatisk.
+En arbeidsflyt er en lineær sekvens av steg. Hvert steg er en **node** som gjør én ting. Et steg kan for eksempel generere tekst, søke i juridiske kilder, oversette et dokument eller kjøre en rutenettgjennomgang. Du setter noder i den rekkefølgen du vil at de skal kjøre, og data flyter fra ett steg til det neste automatisk.
 
 Det er ingen forgreining eller løkker — hver arbeidsflyt er en rett linje fra start til slutt. Dette holder ting forutsigbart: du vet alltid hva som kjører når, og hvert steg kan referere til resultatet fra et tidligere steg.
 

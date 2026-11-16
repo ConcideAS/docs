@@ -6,11 +6,11 @@ Construir um fluxo de trabalho significa dispor os passos que quer automatizar e
 
 ## O construtor
 
-Abra o construtor de fluxos de trabalho a partir da página **Fluxos de trabalho** na barra lateral. Verá um canvas visual — um espaço de trabalho vazio onde monta o seu fluxo.
+Abra o construtor de fluxos de trabalho a partir da página **Fluxos de trabalho** na barra lateral. O construtor mostra o seu fluxo de trabalho como uma sequência de passos num canvas.
 
-Adicione passos a partir do catálogo na barra lateral, que está organizado em **Entradas** e **Ações**. Arraste um passo para o canvas ou clique para o adicionar. Ligue os passos arrastando da saída de um passo para a entrada do passo seguinte. As ligações definem a ordem de execução e como os dados passam entre passos.
+Clique em **+** para adicionar um passo. Para mudar a ordem, arraste um passo para uma nova posição. Os passos são executados pela ordem que têm no canvas.
 
-Cada passo tem um painel de configuração. Selecione um passo no canvas para o abrir na barra lateral, onde pode definir:
+Cada passo tem um painel de configuração. Selecione um passo no canvas para o configurar. Pode definir:
 
 - **Título do passo** — uma etiqueta que identifica o que este passo faz (é o que vê ao referenciá-lo a partir de outros passos)
 - **Instruções ou consulta** — o prompt, consulta de pesquisa ou indicações para este passo
@@ -18,6 +18,8 @@ Cada passo tem um painel de configuração. Selecione um passo no canvas para o 
 - **Opções específicas do passo** — como que [fontes jurídicas](/pt/guides/legal-research) pesquisar, entre que idiomas traduzir, ou que [tarefa](/pt/guides/chat#tarefas) executar
 
 Pode também clicar em **Melhorar prompt** nos campos de instrução para que a IA refine a sua formulação.
+
+Num passo que lhe pede uma entrada, pode escolher ficheiros de uma [base de conhecimento](/pt/guides/projects/knowledge-base).
 
 ## Referenciar passos anteriores
 
@@ -50,6 +52,8 @@ Cada passo mostra o seu tempo de execução, e os resultados finais aparecem num
 ## Executar a partir do chat
 
 Pode também iniciar um fluxo de trabalho diretamente a partir de uma conversa de chat. O fluxo de trabalho corre inline — passo a passo no fio da conversa — para que possa ver os resultados à medida que vão surgindo sem sair da conversa.
+
+Quando o Saga cria um rascunho de um novo fluxo de trabalho no chat, aparece um cartão com um botão para iniciar a execução. Enquanto a execução decorre, o cartão oculta esse botão.
 
 ## Rascunhos
 
