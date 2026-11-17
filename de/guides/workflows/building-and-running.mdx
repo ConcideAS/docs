@@ -6,11 +6,11 @@ Einen Workflow erstellen bedeutet, die zu automatisierenden Schritte anzulegen u
 
 ## Der Builder
 
-Öffnen Sie den Workflow-Builder über die Seite **Workflows** in der Seitenleiste. Sie sehen eine visuelle Arbeitsfläche — einen leeren Arbeitsbereich, in dem Sie Ihren Ablauf zusammenstellen.
+Öffnen Sie den Workflow-Builder über die Seite **Workflows** in der Seitenleiste. Der Builder zeigt Ihren Workflow als Abfolge von Schritten auf einer Arbeitsfläche.
 
-Fügen Sie Schritte aus dem Seitenleisten-Katalog hinzu, der in **Eingaben** und **Aktionen** unterteilt ist. Ziehen Sie einen Schritt auf die Arbeitsfläche oder klicken Sie, um ihn hinzuzufügen. Verbinden Sie Schritte, indem Sie vom Ausgangs-Handle eines Schritts zum Eingangs-Handle des nächsten ziehen. Die Verbindungen definieren die Ausführungsreihenfolge und den Datenfluss zwischen den Schritten.
+Klicken Sie auf **+**, um einen Schritt hinzuzufügen. Um die Reihenfolge zu ändern, ziehen Sie einen Schritt an eine neue Position. Die Schritte werden in der Reihenfolge ausgeführt, die sie auf der Arbeitsfläche haben.
 
-Jeder Schritt hat ein Konfigurationspanel. Wählen Sie einen Schritt auf der Arbeitsfläche aus, um ihn in der Seitenleiste zu öffnen, wo Sie Folgendes festlegen können:
+Jeder Schritt hat ein Konfigurationspanel. Wählen Sie einen Schritt auf der Arbeitsfläche aus, um ihn zu konfigurieren. Sie können Folgendes festlegen:
 
 - **Schritttitel** — eine Bezeichnung, die beschreibt, was dieser Schritt tut (das sehen Sie, wenn Sie ihn von anderen Schritten aus referenzieren)
 - **Anweisungen oder Anfrage** — der Prompt, die Suchanfrage oder die Vorgaben für diesen Schritt
@@ -18,6 +18,8 @@ Jeder Schritt hat ein Konfigurationspanel. Wählen Sie einen Schritt auf der Arb
 - **Schrittspezifische Optionen** — z. B. welche [Rechtsquellen](/de/guides/legal-research) durchsucht, zwischen welchen Sprachen übersetzt oder welche [Aufgabe](/de/guides/chat#aufgaben) ausgeführt werden soll
 
 Sie können auch auf **Prompt verbessern** in Anweisungsfeldern klicken, um die KI Ihre Formulierung verfeinern zu lassen.
+
+In einem Schritt, der eine Eingabe von Ihnen anfordert, können Sie Dateien aus einer [Wissensdatenbank](/de/guides/projects/knowledge-base) auswählen.
 
 ## Frühere Schritte referenzieren
 
@@ -52,6 +54,8 @@ Wenn ein Schritt Quellen zitiert — insbesondere die Juristische Recherche — 
 ## Aus dem Chat ausführen
 
 Sie können einen Workflow auch direkt aus einer Chat-Unterhaltung starten. Der Workflow läuft inline — Schritt für Schritt im Chat-Thread — sodass Sie die Ergebnisse sehen können, sobald sie eintreffen, ohne die Unterhaltung zu verlassen.
+
+Wenn Saga im Chat einen neuen Workflow entwirft, erscheint eine Karte mit einer Schaltfläche zum Starten der Ausführung. Während die Ausführung läuft, blendet die Karte diese Schaltfläche aus.
 
 ## Entwürfe
 

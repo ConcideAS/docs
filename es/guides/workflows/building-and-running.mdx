@@ -6,11 +6,11 @@ Construir un flujo de trabajo significa disponer los pasos que desea automatizar
 
 ## El constructor
 
-Abra el constructor de flujos de trabajo desde la página **Flujos de trabajo** en la barra lateral. Verá un lienzo visual — un espacio de trabajo vacío donde ensambla su flujo.
+Abra el constructor de flujos de trabajo desde la página **Flujos de trabajo** en la barra lateral. El constructor muestra su flujo de trabajo como una secuencia de pasos en un lienzo.
 
-Agregue pasos desde el catálogo de la barra lateral, que está organizado en **Entradas** y **Acciones**. Arrastre un paso al lienzo o haga clic para agregarlo. Conecte los pasos arrastrando desde el conector de salida de un paso hasta el conector de entrada del siguiente. Las conexiones definen el orden de ejecución y cómo se pasan los datos entre pasos.
+Haga clic en **+** para agregar un paso. Para cambiar el orden, arrastre un paso a una nueva posición. Los pasos se ejecutan en el orden que tienen en el lienzo.
 
-Cada paso tiene un panel de configuración. Seleccione un paso en el lienzo para abrirlo en la barra lateral, donde puede configurar:
+Cada paso tiene un panel de configuración. Seleccione un paso en el lienzo para configurarlo. Puede configurar:
 
 - **Título del paso** — una etiqueta que identifica lo que hace este paso (es lo que ve cuando lo referencia desde otros pasos)
 - **Instrucciones o consulta** — el prompt, la consulta de búsqueda o las indicaciones para este paso
@@ -18,6 +18,8 @@ Cada paso tiene un panel de configuración. Seleccione un paso en el lienzo para
 - **Opciones específicas del paso** — cosas como qué [fuentes jurídicas](/es/guides/legal-research) buscar, entre qué idiomas traducir, o qué [tarea](/es/guides/chat#tareas) ejecutar
 
 También puede hacer clic en **Mejorar prompt** en los campos de instrucciones para que la IA refine su formulación.
+
+En un paso que le pide una entrada, puede elegir archivos de una [base de conocimiento](/es/guides/projects/knowledge-base).
 
 ## Hacer referencia a pasos anteriores
 
@@ -52,6 +54,8 @@ Cuando un paso cita fuentes — especialmente Investigación jurídica — la sa
 ## Ejecutar desde el chat
 
 También puede iniciar un flujo de trabajo directamente desde una conversación de chat. El flujo de trabajo se ejecuta en línea — paso a paso en el hilo del chat — para que pueda ver los resultados a medida que llegan sin abandonar la conversación.
+
+Cuando Saga redacta un nuevo flujo de trabajo en el chat, aparece una tarjeta con un botón para iniciar la ejecución. Mientras la ejecución está en curso, la tarjeta oculta ese botón.
 
 ## Borradores
 

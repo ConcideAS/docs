@@ -6,11 +6,11 @@ Building a workflow means laying out the steps you want to automate and configur
 
 ## The builder
 
-Open the workflow builder from the **Workflows** page in the sidebar. You'll see a visual canvas — an empty workspace where you assemble your flow.
+Open the workflow builder from the **Workflows** page in the sidebar. The builder shows your workflow as a sequence of steps on a canvas.
 
-Add steps from the sidebar catalog, which is organized into **Inputs** and **Actions**. Drag a step onto the canvas or click to add it. Connect steps by dragging from one step's output handle to the next step's input handle. The connections define the order of execution and how data passes between steps.
+Click **+** to add a step. To change the order, drag a step to a new position. The steps run in the order they have on the canvas.
 
-Each step has a configuration panel. Select a step on the canvas to open it in the sidebar, where you can set:
+Each step has a configuration panel. Select a step on the canvas to configure it. You can set:
 
 - **Step title** — a label that identifies what this step does (this is what you see when referencing it from other steps)
 - **Instructions or query** — the prompt, search query, or directions for this step
@@ -18,6 +18,8 @@ Each step has a configuration panel. Select a step on the canvas to open it in t
 - **Step-specific options** — things like which [legal sources](/guides/legal-research) to search, which languages to translate between, or which [task](/guides/chat#tasks) to run
 
 You can also click **Improve prompt** on instruction fields to let the AI refine your phrasing.
+
+In a **User Input** step, you can pick files from a [knowledge base](/guides/projects/knowledge-base).
 
 ## Referencing earlier steps
 
@@ -51,7 +53,7 @@ How a workflow starts depends on where it's coming from:
 
 - **From the library.** Open a workflow from the **Workflows** page and it starts running directly — no extra confirmation step.
 - **From chat, when the AI matches an existing workflow.** Saga runs it inline in the chat thread, pausing only when a step needs input from you.
-- **From chat, when the AI drafts a new workflow.** When Saga sketches a new flow on the fly to handle your request, it appears as an inline card with a **Start running** button. The draft waits for you to review the proposed steps and confirm before executing.
+- **From chat, when the AI drafts a new workflow.** When Saga sketches a new flow on the fly to handle your request, it appears as an inline card with a **Start Running** button. The draft waits for you to review the proposed steps and confirm before executing. While the run is in progress, the card hides the **Start Running** button.
 
 ## Drafts
 
@@ -81,7 +83,7 @@ There's no partial resume — re-running starts from the top.
 
 ## Inline workflow card doesn't appear or isn't clickable in chat
 
-When you ask the AI to run a workflow from chat, an inline card with a **Start running** button is rendered in the conversation. If the card is missing or unresponsive:
+When you ask the AI to run a workflow from chat, an inline card with a **Start Running** button is rendered in the conversation. While a run is in progress, the card hides the button. This is expected. If the card is missing or unresponsive at other times:
 
 - **Refresh the page.** The card depends on the live chat connection, which can drop after a long idle period.
 - **Try Chrome or Edge in the latest version** if you're on a less-tested browser.

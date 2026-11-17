@@ -6,11 +6,11 @@ Construire un workflow signifie disposer les étapes que vous souhaitez automati
 
 ## Le constructeur
 
-Ouvrez le constructeur de workflows depuis la page **Workflows** dans la barre latérale. Vous verrez un canevas visuel — un espace de travail vide où vous assemblez votre flux.
+Ouvrez le constructeur de workflows depuis la page **Workflows** dans la barre latérale. Le constructeur affiche votre workflow sous forme de séquence d'étapes sur un canevas.
 
-Ajoutez des étapes depuis le catalogue dans la barre latérale, organisé en **Entrées** et **Actions**. Faites glisser une étape sur le canevas ou cliquez pour l'ajouter. Connectez les étapes en faisant glisser depuis le point de sortie d'une étape vers le point d'entrée de la suivante. Les connexions définissent l'ordre d'exécution et la circulation des données entre les étapes.
+Cliquez sur **+** pour ajouter une étape. Pour changer l'ordre, faites glisser une étape vers une nouvelle position. Les étapes s'exécutent dans l'ordre qu'elles occupent sur le canevas.
 
-Chaque étape possède un panneau de configuration. Sélectionnez une étape sur le canevas pour l'ouvrir dans la barre latérale, où vous pouvez définir :
+Chaque étape possède un panneau de configuration. Sélectionnez une étape sur le canevas pour la configurer. Vous pouvez définir :
 
 - **Titre de l'étape** — un libellé qui identifie ce que fait cette étape (c'est ce que vous voyez lorsque vous y faites référence depuis d'autres étapes)
 - **Instructions ou requête** — le prompt, la requête de recherche ou les directives pour cette étape
@@ -18,6 +18,8 @@ Chaque étape possède un panneau de configuration. Sélectionnez une étape sur
 - **Options spécifiques à l'étape** — par exemple quelles [sources juridiques](/fr/guides/legal-research) interroger, entre quelles langues traduire ou quelle [tâche](/fr/guides/chat#tâches) exécuter
 
 Vous pouvez également cliquer sur **Améliorer le prompt** dans les champs d'instructions pour laisser l'IA affiner votre formulation.
+
+Dans une étape qui vous demande une saisie, vous pouvez choisir des fichiers dans une [base de connaissances](/fr/guides/projects/knowledge-base).
 
 ## Référencer les étapes précédentes
 
@@ -52,6 +54,8 @@ Lorsqu’une étape cite des sources — en particulier Recherche juridique — 
 ## Exécuter depuis le chat
 
 Vous pouvez également lancer un workflow directement depuis une conversation de chat. Le workflow s'exécute en ligne — étape par étape dans le fil de discussion — afin que vous puissiez voir les résultats au fur et à mesure sans quitter la conversation.
+
+Lorsque Saga rédige un nouveau workflow dans le chat, une carte apparaît avec un bouton pour lancer l'exécution. Pendant l'exécution, la carte masque ce bouton.
 
 ## Brouillons
 
