@@ -6,11 +6,11 @@ Budowanie przepływu pracy oznacza ułożenie kroków, które chcesz zautomatyzo
 
 ## Konstruktor
 
-Otwórz konstruktor przepływów pracy ze strony **Przepływy pracy** na pasku bocznym. Zobaczysz wizualne płótno — pustą przestrzeń roboczą, na której składasz swój przepływ.
+Otwórz konstruktor przepływów pracy ze strony **Przepływy pracy** na pasku bocznym. Konstruktor pokazuje przepływ pracy jako sekwencję kroków na płótnie.
 
-Dodawaj kroki z katalogu na pasku bocznym, który jest zorganizowany w **Dane wejściowe** i **Akcje**. Przeciągnij krok na płótno lub kliknij, aby go dodać. Łącz kroki, przeciągając z uchwytu wyjściowego jednego kroku do uchwytu wejściowego następnego. Połączenia definiują kolejność wykonania i sposób, w jaki dane przechodzą między krokami.
+Kliknij **+**, aby dodać krok. Aby zmienić kolejność, przeciągnij krok w nowe miejsce. Kroki są wykonywane w kolejności, w jakiej znajdują się na płótnie.
 
-Każdy krok ma panel konfiguracji. Wybierz krok na płótnie, aby otworzyć go na pasku bocznym, gdzie możesz ustawić:
+Każdy krok ma panel konfiguracji. Wybierz krok na płótnie, aby go skonfigurować. Możesz ustawić:
 
 - **Tytuł kroku** — etykieta identyfikująca, co ten krok robi (to jest to, co widzisz, odwołując się do niego z innych kroków)
 - **Instrukcje lub zapytanie** — prompt, zapytanie wyszukiwania lub wskazówki dla tego kroku
@@ -18,6 +18,8 @@ Każdy krok ma panel konfiguracji. Wybierz krok na płótnie, aby otworzyć go n
 - **Opcje specyficzne dla kroku** — takie jak, które [źródła prawne](/pl/guides/legal-research) przeszukać, między jakimi językami tłumaczyć lub które [zadanie](/pl/guides/chat#zadania) uruchomić
 
 Możesz też kliknąć **Ulepsz prompt** w polach instrukcji, aby AI dopracowało sformułowanie.
+
+W kroku, który prosi Cię o dane wejściowe, możesz wybrać pliki z [bazy wiedzy](/pl/guides/projects/knowledge-base).
 
 ## Odwoływanie się do wcześniejszych kroków
 
@@ -52,6 +54,8 @@ Gdy krok cytuje źródła — zwłaszcza Badania prawne — wynik kroku pokazuje
 ## Uruchamianie z czatu
 
 Możesz też uruchomić przepływ pracy bezpośrednio z rozmowy czatowej. Przepływ pracy uruchamia się inline — krok po kroku w wątku czatu — więc widzisz wyniki w miarę ich pojawiania się, bez opuszczania rozmowy.
+
+Gdy Saga tworzy w czacie wersję roboczą nowego przepływu pracy, pojawia się karta z przyciskiem do uruchomienia. W trakcie wykonywania karta ukrywa ten przycisk.
 
 ## Wersje robocze
 

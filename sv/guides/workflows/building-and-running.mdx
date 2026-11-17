@@ -6,11 +6,11 @@ Att bygga ett arbetsflöde innebär att lägga ut de steg du vill automatisera o
 
 ## Byggaren
 
-Öppna arbetsflödesbyggaren från sidan **Arbetsflöden** i sidofältet. Du ser en visuell arbetsyta — en tom yta där du monterar ditt flöde.
+Öppna arbetsflödesbyggaren från sidan **Arbetsflöden** i sidofältet. Byggaren visar ditt arbetsflöde som en följd av steg på en arbetsyta.
 
-Lägg till steg från sidofältets katalog, som är organiserad i **Inmatningar** och **Åtgärder**. Dra ett steg till arbetsytan eller klicka för att lägga till det. Koppla ihop steg genom att dra från ett stegs utmatningshandtag till nästa stegs inmatningshandtag. Kopplingarna definierar körningsordningen och hur data passerar mellan steg.
+Klicka på **+** för att lägga till ett steg. Dra ett steg till en ny position för att ändra ordningen. Stegen körs i den ordning de har på arbetsytan.
 
-Varje steg har en konfigurationspanel. Välj ett steg på arbetsytan för att öppna det i sidofältet, där du kan ställa in:
+Varje steg har en konfigurationspanel. Välj ett steg på arbetsytan för att konfigurera det. Du kan ställa in:
 
 - **Stegtitel** — en etikett som identifierar vad steget gör (det är detta du ser när du refererar det från andra steg)
 - **Instruktioner eller sökning** — prompten, sökfrågan eller anvisningarna för detta steg
@@ -18,6 +18,8 @@ Varje steg har en konfigurationspanel. Välj ett steg på arbetsytan för att ö
 - **Stegspecifika alternativ** — saker som vilka [juridiska källor](/sv/guides/legal-research) att söka i, vilka språk att översätta mellan, eller vilken [uppgift](/sv/guides/chat#uppgifter) att köra
 
 Du kan även klicka på **Förbättra prompt** på instruktionsfält för att låta AI:n förfina din formulering.
+
+I ett steg som ber dig om inmatning kan du välja filer från en [kunskapsbas](/sv/guides/projects/knowledge-base).
 
 ## Referera till tidigare steg
 
@@ -50,6 +52,8 @@ Varje steg visar sin körningstid, och de slutgiltiga resultaten visas i en sekt
 ## Köra från chatt
 
 Du kan även starta ett arbetsflöde direkt från en chattkonversation. Arbetsflödet körs inline — steg för steg i chatttråden — så att du kan se resultaten allt eftersom de kommer in utan att lämna konversationen.
+
+När Saga skapar ett utkast till ett nytt arbetsflöde i chatten visas ett kort med en knapp för att starta körningen. Medan körningen pågår döljer kortet knappen.
 
 ## Utkast
 

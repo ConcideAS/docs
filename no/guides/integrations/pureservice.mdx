@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+Med PureService-integrasjonen kan du legge ved filer fra saker og FAQ i PureService i en chat. Du søker i PureService fra Saga, velger vedleggene du trenger, og spør Saga om dem uten å laste dem ned og opp igjen. Du kan for eksempel legge ved en kontrakt som en kollega har lagt til i en sak i servicedesken, og be Saga oppsummere oppsigelsesvilkårene.
+
+## Hvor du kan bruke den
+
+Når administratoren har slått på PureService, vises valget **Last opp fra PureService** i chatten. Klikk på vedleggsknappen og velg **Last opp fra PureService**.
+
+## Finn og velg filer
+
+Dialogboksen **PureService-dokumenter** åpnes. Skriv i søkefeltet for å finne saker og FAQ. Bruk **Alle**, **Saker** eller **FAQ** for å avgrense resultatene. Hvert resultat viser typen, og en sak viser også saksnummeret.
+
+Klikk på et resultat for å se vedleggene. Velg én eller flere filer, og klikk deretter på **Velg**. Dialogboksen viser hvor mange filer du har valgt. Saga legger ved filene i meldingen din.
+
+Filene kopieres til Saga som en enveis import. Endringer i PureService vises ikke i Saga. Hvis du trenger en nyere versjon, legger du den ved på nytt.
+
+## Oppsett
+
+Administratoren setter opp PureService i [administrasjonspanelet](/no/guides/administration/admin-panel) under **Integrasjoner**. På kortet **PureService-integrasjon** slår administratoren på **Aktivert** og fyller inn disse verdiene:
+
+| Felt | Hva du fyller inn |
+|---|---|
+| **Vert** | PureService-verten deres, for eksempel `acme.pureservice.com`. Verten må være `pureservice.com` eller et underdomene av det |
+| **API-nøkkel** | API-nøkkelen til organisasjonen i PureService. Saga lagrer den kryptert og viser den ikke igjen etter at du har lagret |
+
+For å vise bare saker og FAQ fra én avdeling slår du på **Begrens til én sone (avdeling)** og fyller inn **Avdelings-ID**. ID-en er et positivt heltall, for eksempel `8`.
+
+Klikk på **Test tilkobling** for å sjekke at Saga når PureService, og klikk deretter på **Lagre endringer**.
+
+Hvis du ikke ser PureService-valget i chatten, ber du administratoren om å slå det på.

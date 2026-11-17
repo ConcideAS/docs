@@ -20,6 +20,8 @@ Yapay zekanın ne gördüğünü kontrol etmenin tam açıklaması için [Bağla
 
 Yapay zeka bir belgeye atıfta bulunduğunda, yararlandığı belirli pasaja bağlı küçük numaralı etiketler olan satır içi atıflar ekler. Orijinal alıntıyı görmek için bir atıfın üzerine gelin. Kaynak belgeyi yan panelde ilgili bölüme kaydırılmış şekilde açmak için tıklayın.
 
+Bir atıf işaretlenmişse, bilgi notunu atıf yapılan metinde açmak için atfa tıklayın. Saga uzun belgeleri baştan sona okur.
+
 Atıflar; proje belgeleri, hukuki araştırma sonuçları ve web kaynakları için çalışır. Dosyaları tek tek aramadan yapay zekanın söylediklerini doğrulamanın yoludur.
 
 ## Mesaj işlemleri
@@ -63,6 +65,8 @@ Görevler, yaygın işlemler için yerleşik komutlardır. Bunlara sohbet araç 
 | `/compare` | İki metni veya belge bölümünü karşılaştırır ve farkları vurgular |
 
 Açılır menüden bir görev seçin, ardından işlenecek metni veya belgeleri sağlayın.
+
+`/` menüsü ayrıca [istem kütüphanenizdeki](/tr/guides/chat/prompt-library) kişisel istemlerinizi ve yeni bir proje oluşturma seçeneğini listeler.
 
 ## Prompt'u İyileştir
 
@@ -204,7 +208,7 @@ Tüm sohbetleri görmek için **Sohbetler** listesinin sonundaki **Tüm sohbetle
 - Projeye veya görünürlük durumuna (**Paylaşılan** veya **Özel**) göre filtreleyin, en yeniye veya en eskiye göre sıralayın. **Filtreleri Temizle** filtreleri kaldırır.
 - **Seç**'e tıklayıp sohbetleri işaretleyin veya aramanız ve filtrelerinizle eşleşen tüm sohbetleri seçmek için **Tümünü Seç**'e tıklayın (en fazla 500 sohbet). Ardından **Projeye Taşı**, **Dışa Aktar** veya **Sil**'e tıklayın.
 
-**Dışa Aktar**, seçilen her sohbet için bir Word belgesi içeren tek bir `chat-export.zip` dosyası indirir.
+**Dışa Aktar**, seçilen her sohbet için bir Word belgesi içeren tek bir `chat-export.zip` dosyası indirir. Her Word belgesi, firmanızın [Belge stili](/tr/guides/administration/document-styling) ayarlarını kullanır.
 
 Sohbetler, onları oluşturan hesaba ve çalışma alanına bağlıdır. Bir sohbet eksik görünüyorsa aynı çalışma alanında oturum açtığınızdan emin olun (birden fazla Saga alt alan adına sahip firmalarda her alt alan adının ayrı bir sohbet listesi vardır). Daha fazla kurtarma adımı için [Sorun giderme](/tr/guides/troubleshooting) bölümüne bakın.
 

@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+Med PureService-integrationen kan du bifoga filer från ärenden och FAQ i PureService i en chatt. Du söker i PureService från Saga, väljer de bilagor du behöver och ställer frågor till Saga om dem utan att ladda ner och ladda upp dem igen. Du kan till exempel bifoga ett avtal som en kollega har lagt till i ett ärende i servicedesken och be Saga sammanfatta uppsägningsvillkoren.
+
+## Var du kan använda den
+
+När administratören har slagit på PureService visas alternativet **Ladda upp från PureService** i chatten. Klicka på knappen för bilagor och välj **Ladda upp från PureService**.
+
+## Hitta och välja filer
+
+Dialogrutan **PureService-dokument** öppnas. Skriv i sökfältet för att hitta ärenden och FAQ. Använd **Alla**, **Ärenden** eller **FAQ** för att begränsa resultaten. Varje resultat visar sin typ, och ett ärende visar också sitt ärendenummer.
+
+Klicka på ett resultat för att se dess bilagor. Markera en eller flera filer och klicka sedan på **Välj**. Dialogrutan visar hur många filer du har valt. Saga bifogar filerna i ditt meddelande.
+
+Filerna kopieras till Saga som en enkelriktad import. Ändringar i PureService visas inte i Saga. Om du behöver en nyare version bifogar du den igen.
+
+## Konfiguration
+
+Administratören konfigurerar PureService i [adminpanelen](/sv/guides/administration/admin-panel) under **Integrationer**. På kortet **PureService-integration** slår administratören på **Aktiverad** och anger dessa värden:
+
+| Fält | Vad du anger |
+|---|---|
+| **Värd** | Er PureService-värd, till exempel `acme.pureservice.com`. Värden måste vara `pureservice.com` eller en underdomän till den |
+| **API-nyckel** | Organisationens API-nyckel i PureService. Saga lagrar den krypterad och visar den inte igen när du har sparat |
+
+Om du bara vill visa ärenden och FAQ från en avdelning slår du på **Begränsa till en zon (avdelning)** och anger **Avdelnings-ID**. ID:t är ett positivt heltal, till exempel `8`.
+
+Klicka på **Testa anslutning** för att kontrollera att Saga når PureService och klicka sedan på **Spara ändringar**.
+
+Om du inte ser PureService-alternativet i chatten ber du administratören att slå på det.

@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+The PureService integration lets you attach files from PureService tickets and FAQs to a chat. You search PureService from Saga, select the attachments you need, and ask Saga about them without downloading and uploading them again. For example, you can attach a contract that a colleague added to a service desk ticket and ask Saga to summarize its termination terms.
+
+## Where you can use it
+
+When your admin has turned on PureService, the **Upload from PureService** option appears in the chat. Click the attach button and select **Upload from PureService**.
+
+## Find and select files
+
+The **PureService documents** dialog opens. Type in the search field to find tickets and FAQs. Use **All**, **Tickets**, or **FAQs** to narrow the results. Each result shows its type, and a ticket also shows its request number. {/* pragma: allowlist secret */}
+
+Click a result to see its attachments. Select one or more files, then click **Select**. The dialog shows how many files you selected. Saga attaches the files to your message.
+
+Files are copied into Saga as a one-way import. Changes in PureService do not appear in Saga. If you need a newer version, attach it again.
+
+## Setup
+
+Your admin sets up PureService in the [admin panel](/guides/administration/admin-panel) under **Integrations**. On the **PureService integration** card, the admin turns on **Enabled** and enters these values:
+
+| Field | What to enter |
+|---|---|
+| **Host** | Your PureService host, for example `acme.pureservice.com`. The host must be `pureservice.com` or a subdomain of it |
+| **API key** | The API key of your organization in PureService. Saga stores it encrypted and does not show it again after you save |
+
+To show only tickets and FAQs from one department, turn on **Restrict to one zone (department)** and enter the **Department ID**. The ID is a positive whole number, for example `8`.
+
+Click **Test Connection** to check that Saga can reach PureService, then click **Save Changes**.
+
+If you don't see the PureService option in the chat, ask your admin to turn it on.
