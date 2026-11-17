@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+Mit der PureService-Integration hängen Sie Dateien aus PureService-Tickets und FAQ an einen Chat an. Sie durchsuchen PureService direkt in Saga, wählen die benötigten Anhänge aus und stellen Saga Fragen dazu, ohne sie herunter- und wieder hochzuladen. Sie können zum Beispiel einen Vertrag anhängen, den eine Kollegin an ein Service-Desk-Ticket angehängt hat, und Saga bitten, die Kündigungsregeln zusammenzufassen.
+
+## Wo Sie die Integration verwenden
+
+Wenn Ihr Administrator PureService eingeschaltet hat, erscheint im Chat die Option **Aus PureService hochladen**. Klicken Sie auf die Schaltfläche zum Anhängen und wählen Sie **Aus PureService hochladen**.
+
+## Dateien suchen und auswählen
+
+Das Dialogfeld **PureService-Dokumente** öffnet sich. Geben Sie einen Suchbegriff ein, um Tickets und FAQ zu finden. Mit **Alle**, **Tickets** oder **FAQ** grenzen Sie die Ergebnisse ein. Jedes Ergebnis zeigt seinen Typ, ein Ticket zeigt außerdem seine Anfragenummer.
+
+Klicken Sie auf ein Ergebnis, um seine Anhänge zu sehen. Wählen Sie eine oder mehrere Dateien aus und klicken Sie dann auf **Auswählen**. Das Dialogfeld zeigt, wie viele Dateien Sie ausgewählt haben. Saga hängt die Dateien an Ihre Nachricht an.
+
+Die Dateien werden als einseitiger Import in Saga kopiert. Änderungen in PureService erscheinen nicht in Saga. Wenn Sie eine neuere Version brauchen, hängen Sie sie erneut an.
+
+## Einrichtung
+
+Ihr Administrator richtet PureService im [Admin-Bereich](/de/guides/administration/admin-panel) unter **Integrationen** ein. Auf der Karte **PureService-Integration** schaltet der Administrator **Aktiviert** ein und gibt diese Werte ein:
+
+| Feld | Was Sie eingeben |
+|---|---|
+| **Host** | Ihr PureService-Host, zum Beispiel `acme.pureservice.com`. Der Host muss `pureservice.com` oder eine Subdomain davon sein |
+| **API-Schlüssel** | Der API-Schlüssel Ihrer Organisation in PureService. Saga speichert ihn verschlüsselt und zeigt ihn nach dem Speichern nicht mehr an |
+
+Um nur Tickets und FAQ aus einer Abteilung zu zeigen, schalten Sie **Auf eine Zone (Abteilung) beschränken** ein und geben die **Abteilungs-ID** ein. Die ID ist eine positive ganze Zahl, zum Beispiel `8`.
+
+Klicken Sie auf **Verbindung testen**, um zu prüfen, ob Saga PureService erreicht, und klicken Sie dann auf **Änderungen speichern**.
+
+Wenn Sie die PureService-Option im Chat nicht sehen, bitten Sie Ihren Administrator, sie einzuschalten.

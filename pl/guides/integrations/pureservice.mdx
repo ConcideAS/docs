@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+Integracja z PureService pozwala dołączać do czatu pliki ze zgłoszeń i FAQ w PureService. Przeszukujesz PureService z poziomu Sagi, wybierasz potrzebne załączniki i zadajesz Sadze pytania na ich temat bez pobierania i ponownego przesyłania. Na przykład możesz dołączyć umowę, którą współpracownik dodał do zgłoszenia w service desku, i poprosić Sagę o streszczenie zasad jej wypowiedzenia.
+
+## Gdzie możesz z niej korzystać
+
+Gdy administrator włączy PureService, w czacie pojawia się opcja **Prześlij z PureService**. Kliknij przycisk załączania i wybierz **Prześlij z PureService**.
+
+## Wyszukiwanie i wybieranie plików
+
+Otwiera się okno **Dokumenty PureService**. Wpisz zapytanie w polu wyszukiwania, aby znaleźć zgłoszenia i FAQ. Użyj **Wszystkie**, **Zgłoszenia** lub **FAQ**, aby zawęzić wyniki. Każdy wynik pokazuje swój typ, a zgłoszenie pokazuje też numer zgłoszenia.
+
+Kliknij wynik, aby zobaczyć jego załączniki. Zaznacz jeden lub więcej plików, a następnie kliknij **Wybierz**. Okno pokazuje, ile plików wybrano. Saga dołącza pliki do Twojej wiadomości.
+
+Pliki są kopiowane do Sagi jako import jednokierunkowy. Zmiany w PureService nie pojawiają się w Sadze. Jeśli potrzebujesz nowszej wersji, dołącz ją ponownie.
+
+## Konfiguracja
+
+Administrator konfiguruje PureService w [panelu administracyjnym](/pl/guides/administration/admin-panel) w sekcji **Integracje**. Na karcie **Integracja PureService** administrator włącza **Włączone** i wpisuje te wartości:
+
+| Pole | Co wpisać |
+|---|---|
+| **Host** | Host PureService, na przykład `acme.pureservice.com`. Host musi być domeną `pureservice.com` lub jej subdomeną |
+| **Klucz API** | Klucz API Twojej organizacji w PureService. Saga przechowuje go w postaci zaszyfrowanej i nie pokazuje go ponownie po zapisaniu |
+
+Aby pokazywać tylko zgłoszenia i FAQ z jednego działu, włącz **Ogranicz do jednej strefy (działu)** i wpisz **ID działu**. ID to dodatnia liczba całkowita, na przykład `8`.
+
+Kliknij **Testuj połączenie**, aby sprawdzić, czy Saga łączy się z PureService, a następnie kliknij **Zapisz zmiany**.
+
+Jeśli nie widzisz opcji PureService w czacie, poproś administratora o jej włączenie.

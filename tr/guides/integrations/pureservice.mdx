@@ -1,0 +1,32 @@
+---
+title: PureService
+---
+
+PureService entegrasyonu, PureService biletlerindeki ve SSS kayıtlarındaki dosyaları bir sohbete eklemenizi sağlar. PureService'te Saga içinden arama yapar, ihtiyacınız olan ekleri seçer ve bunları indirip yeniden yüklemeden Saga'ya sorular sorarsınız. Örneğin bir meslektaşınızın destek masası biletine eklediği bir sözleşmeyi ekleyip Saga'dan fesih hükümlerini özetlemesini isteyebilirsiniz.
+
+## Nerede kullanabilirsiniz
+
+Yöneticiniz PureService'i açtığında sohbette **PureService’ten yükle** seçeneği görünür. Ekleme düğmesine tıklayın ve **PureService’ten yükle**yi seçin.
+
+## Dosya bulma ve seçme
+
+**PureService belgeleri** iletişim kutusu açılır. Bilet ve SSS bulmak için arama alanına yazın. Sonuçları daraltmak için **Tümü**, **Biletler** veya **SSS** seçeneğini kullanın. Her sonuç türünü gösterir; bir bilet ayrıca talep numarasını da gösterir.
+
+Eklerini görmek için bir sonuca tıklayın. Bir veya daha fazla dosya seçin, ardından **Seç**e tıklayın. İletişim kutusu kaç dosya seçtiğinizi gösterir. Saga dosyaları mesajınıza ekler.
+
+Dosyalar Saga'ya tek yönlü bir aktarımla kopyalanır. PureService'teki değişiklikler Saga'da görünmez. Daha yeni bir sürüme ihtiyacınız varsa dosyayı yeniden ekleyin.
+
+## Kurulum
+
+Yöneticiniz PureService'i [yönetim paneli](/tr/guides/administration/admin-panel)nde **Entegrasyonlar** altında kurar. **PureService Entegrasyonu** kartında yönetici **Etkin** seçeneğini açar ve şu değerleri girer:
+
+| Alan | Ne girilir |
+|---|---|
+| **Host** | PureService host adresiniz, örneğin `acme.pureservice.com`. Host `pureservice.com` veya onun bir alt alan adı olmalıdır |
+| **API anahtarı** | Kuruluşunuzun PureService'teki API anahtarı. Saga bu anahtarı şifreli saklar ve kaydettikten sonra bir daha göstermez |
+
+Yalnızca tek bir departmanın biletlerini ve SSS kayıtlarını göstermek için **Tek bir bölgeyle sınırla (departman)** seçeneğini açın ve **Departman kimliği**ni girin. Kimlik pozitif bir tam sayıdır, örneğin `8`.
+
+Saga'nın PureService'e ulaşabildiğini kontrol etmek için **Bağlantıyı test et**e, ardından **Değişiklikleri Kaydet**e tıklayın.
+
+Sohbette PureService seçeneğini görmüyorsanız yöneticinizden bu seçeneği açmasını isteyin.

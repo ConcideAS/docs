@@ -107,7 +107,8 @@
                   "guides/integrations/epona",
                   "guides/integrations/netdocuments",
                   "guides/integrations/imanage",
-                  "guides/integrations/dillien"
+                  "guides/integrations/dillien",
+                  "guides/integrations/pureservice"
                 ]
               },
               {
@@ -236,7 +237,8 @@
                   "no/guides/integrations/epona",
                   "no/guides/integrations/netdocuments",
                   "no/guides/integrations/imanage",
-                  "no/guides/integrations/dillien"
+                  "no/guides/integrations/dillien",
+                  "no/guides/integrations/pureservice"
                 ]
               },
               {
@@ -363,7 +365,8 @@
                   "nl/guides/integrations/epona",
                   "nl/guides/integrations/netdocuments",
                   "nl/guides/integrations/imanage",
-                  "nl/guides/integrations/dillien"
+                  "nl/guides/integrations/dillien",
+                  "nl/guides/integrations/pureservice"
                 ]
               },
               {
@@ -490,7 +493,8 @@
                   "pl/guides/integrations/epona",
                   "pl/guides/integrations/netdocuments",
                   "pl/guides/integrations/imanage",
-                  "pl/guides/integrations/dillien"
+                  "pl/guides/integrations/dillien",
+                  "pl/guides/integrations/pureservice"
                 ]
               },
               {
@@ -617,7 +621,8 @@
                   "es/guides/integrations/epona",
                   "es/guides/integrations/netdocuments",
                   "es/guides/integrations/imanage",
-                  "es/guides/integrations/dillien"
+                  "es/guides/integrations/dillien",
+                  "es/guides/integrations/pureservice"
                 ]
               },
               {
@@ -744,7 +749,8 @@
                   "de/guides/integrations/epona",
                   "de/guides/integrations/netdocuments",
                   "de/guides/integrations/imanage",
-                  "de/guides/integrations/dillien"
+                  "de/guides/integrations/dillien",
+                  "de/guides/integrations/pureservice"
                 ]
               },
               {
@@ -871,7 +877,8 @@
                   "it/guides/integrations/epona",
                   "it/guides/integrations/netdocuments",
                   "it/guides/integrations/imanage",
-                  "it/guides/integrations/dillien"
+                  "it/guides/integrations/dillien",
+                  "it/guides/integrations/pureservice"
                 ]
               },
               {
@@ -998,7 +1005,8 @@
                   "pt/guides/integrations/epona",
                   "pt/guides/integrations/netdocuments",
                   "pt/guides/integrations/imanage",
-                  "pt/guides/integrations/dillien"
+                  "pt/guides/integrations/dillien",
+                  "pt/guides/integrations/pureservice"
                 ]
               },
               {
@@ -1125,7 +1133,8 @@
                   "tr/guides/integrations/epona",
                   "tr/guides/integrations/netdocuments",
                   "tr/guides/integrations/imanage",
-                  "tr/guides/integrations/dillien"
+                  "tr/guides/integrations/dillien",
+                  "tr/guides/integrations/pureservice"
                 ]
               },
               {
@@ -1252,7 +1261,8 @@
                   "fr/guides/integrations/epona",
                   "fr/guides/integrations/netdocuments",
                   "fr/guides/integrations/imanage",
-                  "fr/guides/integrations/dillien"
+                  "fr/guides/integrations/dillien",
+                  "fr/guides/integrations/pureservice"
                 ]
               },
               {
@@ -1379,7 +1389,8 @@
                   "sv/guides/integrations/epona",
                   "sv/guides/integrations/netdocuments",
                   "sv/guides/integrations/imanage",
-                  "sv/guides/integrations/dillien"
+                  "sv/guides/integrations/dillien",
+                  "sv/guides/integrations/pureservice"
                 ]
               },
               {
