@@ -20,6 +20,10 @@ Saga geniş bir dosya türü yelpazesini destekler:
 
 Maksimum dosya boyutu 1 GB'tır. Her projenin bir belge sınırı vardır. Saga çalışma alanınız için farklı bir sınır belirlemediyse sınır 500 belgedir. Bir proje belge sınırına yaklaştığında, bilgi tabanı başlığı kullanılan belge sayısını ve sınırı gösteren bir kullanım rozeti gösterir; örneğin `410/500`. Rozet, proje belge sınırının yaklaşık %80'ine ulaştığında görünür. Bu eşiğin altında gösterilmez. Bir yükleme projeyi sınırın üzerine çıkaracaksa Saga **Belge limiti aşıldı** mesajını gösterir ve dosyaları yüklemez. Artık ihtiyacınız olmayan belgeleri silin, ardından yeniden yükleyin.
 
+Bir PDF, Word, Excel veya PowerPoint dosyasının açılış parolası varsa Saga bunu **Parolayı girin** penceresinde ister. Saga dosyanın kilidini tarayıcınızda açar ve kilidi açılmış kopyayı yükler. Parola yanlışsa yeniden deneyebilirsiniz. Saga, sayfayı yeniden yükleyene kadar aynı parolayı eklediğiniz diğer korumalı dosyalarda da dener. Parolayı kaydetmez. İptal ederseniz Saga dosyayı eklemez. Sohbette korumalı bir dosya eklediğinizde veya [Çeviri](/tr/guides/translate) sayfasında bir dosya eklediğinizde de aynı pencere açılır.
+
+Saga eski `.doc` dosyalarının ve Office 2007 şifrelemesi kullanan dosyaların kilidini açamaz. Parolayı Word, Excel veya PowerPoint'te kaldırın, ardından dosyayı yeniden yükleyin.
+
 Yüklemeden sonra her dosya, yapay zekaya sunulmadan önce işleme sürecinden geçer. Bu sırada çalışmaya devam edebilirsiniz — belgeler hazır oldukça otomatik olarak kullanılabilir hale gelir. Bir dosyanın işlenmesi başarısız olursa, işlem menüsünden yeniden deneyebilirsiniz. Birden fazla yükleme başarısız olursa, bilgi tabanının üst kısmında bir kurtarma çubuğu görünür; buradan başarısız yüklemelerin **tümünü yeniden deneyebilir** veya başarısız olanların **tümünü silebilirsiniz**.
 
 Bir yüklemeden sonra Saga ilk yeni dosyaya kaydırır ve gerekirse klasörünü açar. Yeni dosyalar birkaç saniye boyunca **New** etiketi gösterir.
