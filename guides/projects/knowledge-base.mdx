@@ -20,6 +20,10 @@ Saga supports a wide range of file types:
 
 The maximum file size is 1 GB. Each project has a document limit. The limit is 500 documents unless Saga has set a different limit for your workspace. When a project is near its document limit, the knowledge base header shows a usage badge with the number of documents used and the limit, such as `410/500`. The badge appears when the project reaches about 80% of its document limit. Below that threshold, it is not shown. If an upload would take the project over its limit, Saga shows **Document limit reached** and does not upload the files. Delete documents that you no longer need, then upload again.
 
+If a PDF, Word, Excel, or PowerPoint file has a password to open, Saga asks for it in the **Enter password** dialog. Saga unlocks the file in your browser and uploads the unlocked copy. If the password is wrong, you can try again. Saga tries the same password on other protected files that you add, until you reload the page. It does not save the password. If you cancel, Saga does not add the file. You get the same dialog when you attach a protected file in chat or add one in [Translate](/guides/translate).
+
+Saga cannot unlock older `.doc` files or files that use Office 2007 encryption. Remove the password in Word, Excel, or PowerPoint, then upload the file again.
+
 After upload, each file goes through processing before it's available to the AI. You can keep working while this happens — documents become available automatically as they're ready. If a file fails to process, you can retry it from its action menu. If more than one upload fails, a recovery bar appears at the top of the knowledge base so you can **retry all** failed uploads or **delete all** failed uploads in one step.
 
 While a document is processing, its checkbox and bulk actions are temporarily disabled — actions on already-processed documents remain available. If the document counter ever seems stuck at a higher number than your file list (for example you've deleted files but uploads are still blocked), refresh the page; the counter recalculates from the server on reload. If it's still wrong after refresh, contact support.
